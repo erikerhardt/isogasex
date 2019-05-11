@@ -1,0 +1,84 @@
+%  ADA1-defs.tex
+%  command definitions
+
+% begin verbatim environments with good line spacing
+\newcommand{\bVerb}        {\renewcommand{\baselinestretch}{.66} \small        \begin{Verbatim}[samepage=true]} % use to keep a block of verbatim on the same page
+\newcommand{\bverb}        {\renewcommand{\baselinestretch}{.66} \small        \begin{verbatim}}
+\newcommand{\everb}        {\renewcommand{\baselinestretch}{1} \normalsize}
+\newcommand{\bVerbsmall}   {\renewcommand{\baselinestretch}{.66} \small        \begin{Verbatim}[samepage=true]} % use to keep a block of verbatim on the same page
+\newcommand{\bverbsmall}   {\renewcommand{\baselinestretch}{.66} \small        \begin{verbatim}}
+\newcommand{\bVerbfootnote}{\renewcommand{\baselinestretch}{.66} \footnotesize \begin{Verbatim}[samepage=true]} % use to keep a block of verbatim on the same page
+\newcommand{\bverbfootnote}{\renewcommand{\baselinestretch}{.66} \footnotesize \begin{verbatim}}
+\newcommand{\bVerbscript}  {\renewcommand{\baselinestretch}{.66} \scriptsize   \begin{Verbatim}[samepage=true]} % use to keep a block of verbatim on the same page
+\newcommand{\bverbscript}  {\renewcommand{\baselinestretch}{.66} \scriptsize   \begin{verbatim}}
+\newcommand{\bVerbtiny}    {\renewcommand{\baselinestretch}{.66} \tiny         \begin{Verbatim}[samepage=true]} % use to keep a block of verbatim on the same page
+\newcommand{\bverbtiny}    {\renewcommand{\baselinestretch}{.66} \tiny         \begin{verbatim}}
+%% USE: Verbatim that can go between pages
+% \bverb
+%   text
+% \end{verbatim}
+% \everb
+%% OR, Verbatim that should all be on one page
+% \bVerb
+%   text
+% \end{Verbatim}
+% \everb
+
+%% Program listings
+% \noindent
+% Program editor contents:
+% \begin{lstlisting}[language=SAS]
+% \end{lstlisting}
+
+% \noindent
+% Output window contents:
+
+
+\newcommand{\R}{R} % R programming language
+
+% \lst{} to list inline code (helps with underscore program names)
+\newcommand{\lst}[1]{\lstinline[language=R,basicstyle=\small\ttfamily]{#1}} %\normalsize
+% Note: \Sexpr{signif(sqrt(9),5)}  will be replaced by the string '3' (without any quotes).
+
+\newcommand{\ADAfilename}{ADA1_notes}
+\newcommand{\FigPlotHt}{3in} %
+
+% for plotting figures from R
+\newcommand{\printplot}[2]{% #1 = <<label>> name
+\begin{center}
+\includegraphics[keepaspectratio=true,height=#2]{images/\ADAfilename -#1.pdf}  % #2 = \FigurePlotHeight
+\end{center}
+}
+
+\newcommand{\printplotTwo}[2]{% #1 = <<label>> name
+\begin{center}
+\includegraphics[keepaspectratio=true,width=0.495\textwidth]{images/\ADAfilename -#1.pdf}  % #2 = \FigurePlotHeight
+\includegraphics[keepaspectratio=true,width=0.495\textwidth]{images/\ADAfilename -#2.pdf}  % #2 = \FigurePlotHeight
+\end{center}
+}
+
+\newcommand{\printplotTwosmaller}[2]{% #1 = <<label>> name
+\begin{center}
+\includegraphics[keepaspectratio=true,width=0.43\textwidth]{images/\ADAfilename -#1.pdf}  % #2 = \FigurePlotHeight
+\includegraphics[keepaspectratio=true,width=0.43\textwidth]{images/\ADAfilename -#2.pdf}  % #2 = \FigurePlotHeight
+\end{center}
+}
+
+
+\newcommand{\Rcodeintro}{\noindent{\small\textsf{\# R code \#}}\vspace{-1ex}}
+
+
+\newcommand{\xClickerQ}[1]{%
+\begin{mdframed}[
+    linecolor=Black!25
+  , backgroundcolor=White %Black!00
+  , innerleftmargin=3ex
+  , innerrightmargin=3ex
+  , skipabove=3ex
+  , skipbelow=3ex
+  , nobreak=true]
+\rule{1ex}{1ex}\hfill {\large {\sc Clicker}{\em Q}\,s \quad --- \quad #1} \hfill\rule{1ex}{1ex}
+\end{mdframed}
+}%
+
+

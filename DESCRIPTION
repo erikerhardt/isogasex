@@ -1,11 +1,16 @@
 Package: isogasex
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Isotopic gas exchange using TDL and Licor input.  Updated version of package tdllicor.
+Version: 0.2.0
+Author: Erik B. Erhardt <erike@stat.unm.edu> and David T. Hanson <dthanson@unm.edu>
+Maintainer: Erik B. Erhardt <erike@stat.unm.edu>
+Description: Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals, and creates plots and tables.
+  Edit \file{tdllicor_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{tdllicor}}. See output in \file{./out} directory.
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1

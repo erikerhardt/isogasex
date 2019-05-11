@@ -1,0 +1,46 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Barbour et~al.(2007)Barbour, McDowell, Tcherkez, Bickford, and
+  Hanson]{barbour2007new}
+M.M. Barbour, N.G. McDowell, G.~Tcherkez, C.P. Bickford, and D.T. Hanson.
+\newblock A new measurement technique reveals rapid post-illumination changes
+  in the carbon isotope composition of leaf-respired co2.
+\newblock \emph{Plant, Cell \& Environment}, 30\penalty0 (4):\penalty0
+  469--482, 2007.
+
+\bibitem[Davison and Hinkley(1997)]{DavisonHinkley:1997:Bootstrapmethodsand}
+AC~Davison and DV~Hinkley.
+\newblock \emph{Bootstrap methods and their application}.
+\newblock Cambridge series on statistical and probabilistic mathematics.
+  Cambridge University Press, 1997.
+
+\bibitem[Erhardt and
+  Hanson(2012)]{ErhardtHanson:2011:tdllicor:estimatesdiscrimination}
+EB~Erhardt and DT~Hanson.
+\newblock \emph{\texttt{tdllicor}: estimates discrimination and other
+  parameters associated with leaf photosynthesis}, 0.1-21 edition, 10 2012.
+
+\bibitem[Farquhar and Richards(1984)]{farquhar1984isotopic}
+GD~Farquhar and RA~Richards.
+\newblock Isotopic composition of plant carbon correlates with water-use
+  efficiency of wheat genotypes.
+\newblock \emph{Functional Plant Biology}, 11\penalty0 (6):\penalty0 539--552,
+  1984.
+
+\bibitem[Farquhar and Sharkey(1982)]{farquhar1982stomatal}
+GD~Farquhar and TD~Sharkey.
+\newblock Stomatal conductance and photosynthesis.
+\newblock \emph{Annual Review of Plant Physiology}, 33\penalty0 (1):\penalty0
+  317--345, 1982.
+
+\bibitem[Sharkey(1988)]{sharkey1988estimating}
+TD~Sharkey.
+\newblock Estimating the rate of photorespiration in leaves.
+\newblock \emph{Physiol. Plant}, 73\penalty0 (1):\penalty0 147--152, 1988.
+
+\end{thebibliography}

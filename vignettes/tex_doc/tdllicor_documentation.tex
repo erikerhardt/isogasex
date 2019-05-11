@@ -1,0 +1,107 @@
+%   # R:
+%   setwd("C:/Dropbox/StatAcumen/consult/Authorship/DavidHanson_Isotopes_2009/R-package/tex_doc")
+%   require(highlight);
+%   # document shell
+%   fn <- "tdllicor_documentation";
+%     fn.tex <- paste(fn, ".tex", sep="");
+%     fn.pdf <- paste(fn, ".pdf", sep="");
+%   # functions
+%   fn.list <- c(fn, "tdllicor_install-execute", "tdllicor_calculations")
+%   for (i in 1:length(fn.list)) {
+%     fnfile.rnw <- paste(fn.list[i], ".Rnw", sep="");
+%       Stangle(fnfile.rnw); Sweave(fnfile.rnw, driver = HighlightWeaveLatex())
+%   }
+%   system(paste("bibtex ", fn, sep=""))
+%   system(paste("pdflatex.exe -shell-escape ", fn, ".tex", sep=""))
+%   system(paste("open ", fn.pdf))
+
+%  tdllicor_doc.tex
+
+  % Note: because I input the \documentclass{}, I can use the ADA_highlight.tex, otherwise it doesn't work
+\input{tdllicor_doc_documentclass.tex}
+
+% Environment (packages, etc)
+\input{tdllicor_doc_envi.tex}
+\input{tdllicor_doc_highlight.tex}  % for R code highlighting
+\input{eeenvi.tex}
+
+% to compile only what I'm currently working on
+%\includeonly{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% Any command definitions
+\input{tdllicor_doc_defs.tex}
+%\input{../slides/tdllicor_doc_Sweave.tex}
+\input{eedefs.tex}
+
+
+%=======================================================================
+  % Front matter
+\frontmatter
+\title{\tdllicor \\ R-package documentation}
+\author{Erik B.\ Erhardt \and David T.\ Hanson}
+\date{\today}
+
+\include{tdllicor_doc_TitleTOC}  %
+
+%=======================================================================
+  % Chapters
+\mainmatter
+%\part{Summaries and displays, and one-, two-, and many-way tests of means}
+\include{tdllicor_install-execute}  %
+\include{tdllicor_calculations}  %
+
+%=======================================================================
+  % Back matter
+\appendix   % Appendicies
+\backmatter
+%\include{}   % Bibliography.
+\bibliographystyle{plainnat}     % http://merkel.zoneo.net/Latex/natbib.php
+%\bibliographystyle{apalike}     %abbrvnat  plainnat unsrtnat
+\bibliography{ee_BayesCO2}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  some examples of tables and graphics
+%
+
+The plot in Figure~\ref{fi:ed31b} on page~\pageref{fi:ed31b}
+ \begin{figure}[hbtp]
+\begin{center}
+\includegraphics[scale=.7]{images/ed31b}
+\caption{ed31b }
+\label{fi:ed31b}
+\end{center}
+ \end{figure}
+
+By Table~\ref{tab:31c} on page~\pageref{tab:31c}
+ \begin{table}[hbtp]
+\begin{center}
+\caption{31c}
+\label{tab:31c}
+\begin{tabular}{l @{-} l @{=} r l}
+\hline
+\multicolumn{2}{c|}{Factors} & \multicolumn{2}{c}{Response Time} \\
+$\bar{y}_{1.}$ & $\bar{y}_{2.}$ & 185.25 & $\star$ \\
+\hline
+\end{tabular}
+\end{center}
+ \end{table}
+
+ %===============
+\begin{eqnarray}
+    & = &
+\nonumber\\ %===
+    & = &
+\nonumber
+\end{eqnarray}
+ %===============
+
+\begin{description}
+   \item[]
+\end{description}

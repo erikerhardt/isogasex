@@ -1,0 +1,1155 @@
+% # R:
+%   fn <- "tdllicor_documentation_20121018";
+%   setwd("C:/Dropbox/StatAcumen/consult/Authorship/DavidHanson_Isotopes_2009/R-package/tex_doc")
+%     fn.rnw <- paste(fn, ".Rnw", sep="");
+%     fn.tex <- paste(fn, ".tex", sep="");
+%     fn.pdf <- paste(fn, ".pdf", sep="");
+%   Stangle(fn.rnw);
+%   require(highlight);
+%   Sweave(fn.rnw, driver = HighlightWeaveLatex())
+%   shell(paste("move /Y ", fn, "-*.pdf .\\images", sep=""))
+%   system(paste("pdflatex.exe -shell-escape ", fn, ".tex", sep=""))
+%   system(paste("open ", fn.pdf))
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Summer 2011
+% CO2 Switzerland
+% Authors
+%  Erik Erhardt, Dave Hanson
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage{ Sweave }
+\newenvironment{Hinput}%
+{}%
+{}%
+\newenvironment{Houtput}%
+{}%
+{}%
+\newenvironment{Hchunk}%
+{\vspace{0.5em}\par\begin{flushleft}}%
+{\end{flushleft}}%
+
+\usepackage{color}%
+ 
+\newsavebox{\hlnormalsizeboxclosebrace}%
+\newsavebox{\hlnormalsizeboxopenbrace}%
+\newsavebox{\hlnormalsizeboxbackslash}%
+\newsavebox{\hlnormalsizeboxlessthan}%
+\newsavebox{\hlnormalsizeboxgreaterthan}%
+\newsavebox{\hlnormalsizeboxdollar}%
+\newsavebox{\hlnormalsizeboxunderscore}%
+\newsavebox{\hlnormalsizeboxand}%
+\newsavebox{\hlnormalsizeboxhash}%
+\newsavebox{\hlnormalsizeboxat}%
+\newsavebox{\hlnormalsizeboxpercent}% 
+\newsavebox{\hlnormalsizeboxhat}%
+\newsavebox{\hlnormalsizeboxsinglequote}%
+\newsavebox{\hlnormalsizeboxbacktick}%
+
+\setbox\hlnormalsizeboxopenbrace=\hbox{\begin{normalsize}\verb.{.\end{normalsize}}%
+\setbox\hlnormalsizeboxclosebrace=\hbox{\begin{normalsize}\verb.}.\end{normalsize}}%
+\setbox\hlnormalsizeboxlessthan=\hbox{\begin{normalsize}\verb.<.\end{normalsize}}%
+\setbox\hlnormalsizeboxdollar=\hbox{\begin{normalsize}\verb.$.\end{normalsize}}%
+\setbox\hlnormalsizeboxunderscore=\hbox{\begin{normalsize}\verb._.\end{normalsize}}%
+\setbox\hlnormalsizeboxand=\hbox{\begin{normalsize}\verb.&.\end{normalsize}}%
+\setbox\hlnormalsizeboxhash=\hbox{\begin{normalsize}\verb.#.\end{normalsize}}%
+\setbox\hlnormalsizeboxat=\hbox{\begin{normalsize}\verb.@.\end{normalsize}}%
+\setbox\hlnormalsizeboxbackslash=\hbox{\begin{normalsize}\verb.\.\end{normalsize}}%
+\setbox\hlnormalsizeboxgreaterthan=\hbox{\begin{normalsize}\verb.>.\end{normalsize}}%
+\setbox\hlnormalsizeboxpercent=\hbox{\begin{normalsize}\verb.%.\end{normalsize}}%
+\setbox\hlnormalsizeboxhat=\hbox{\begin{normalsize}\verb.^.\end{normalsize}}%
+\setbox\hlnormalsizeboxsinglequote=\hbox{\begin{normalsize}\verb.'.\end{normalsize}}%
+\setbox\hlnormalsizeboxbacktick=\hbox{\begin{normalsize}\verb.`.\end{normalsize}}%
+\setbox\hlnormalsizeboxhat=\hbox{\begin{normalsize}\verb.^.\end{normalsize}}%
+
+
+
+\newsavebox{\hltinyboxclosebrace}%
+\newsavebox{\hltinyboxopenbrace}%
+\newsavebox{\hltinyboxbackslash}%
+\newsavebox{\hltinyboxlessthan}%
+\newsavebox{\hltinyboxgreaterthan}%
+\newsavebox{\hltinyboxdollar}%
+\newsavebox{\hltinyboxunderscore}%
+\newsavebox{\hltinyboxand}%
+\newsavebox{\hltinyboxhash}%
+\newsavebox{\hltinyboxat}%
+\newsavebox{\hltinyboxpercent}% 
+\newsavebox{\hltinyboxhat}%
+\newsavebox{\hltinyboxsinglequote}%
+\newsavebox{\hltinyboxbacktick}%
+
+\setbox\hltinyboxopenbrace=\hbox{\begin{tiny}\verb.{.\end{tiny}}%
+\setbox\hltinyboxclosebrace=\hbox{\begin{tiny}\verb.}.\end{tiny}}%
+\setbox\hltinyboxlessthan=\hbox{\begin{tiny}\verb.<.\end{tiny}}%
+\setbox\hltinyboxdollar=\hbox{\begin{tiny}\verb.$.\end{tiny}}%
+\setbox\hltinyboxunderscore=\hbox{\begin{tiny}\verb._.\end{tiny}}%
+\setbox\hltinyboxand=\hbox{\begin{tiny}\verb.&.\end{tiny}}%
+\setbox\hltinyboxhash=\hbox{\begin{tiny}\verb.#.\end{tiny}}%
+\setbox\hltinyboxat=\hbox{\begin{tiny}\verb.@.\end{tiny}}%
+\setbox\hltinyboxbackslash=\hbox{\begin{tiny}\verb.\.\end{tiny}}%
+\setbox\hltinyboxgreaterthan=\hbox{\begin{tiny}\verb.>.\end{tiny}}%
+\setbox\hltinyboxpercent=\hbox{\begin{tiny}\verb.%.\end{tiny}}%
+\setbox\hltinyboxhat=\hbox{\begin{tiny}\verb.^.\end{tiny}}%
+\setbox\hltinyboxsinglequote=\hbox{\begin{tiny}\verb.'.\end{tiny}}%
+\setbox\hltinyboxbacktick=\hbox{\begin{tiny}\verb.`.\end{tiny}}%
+\setbox\hltinyboxhat=\hbox{\begin{tiny}\verb.^.\end{tiny}}%
+
+
+
+\newsavebox{\hlscriptsizeboxclosebrace}%
+\newsavebox{\hlscriptsizeboxopenbrace}%
+\newsavebox{\hlscriptsizeboxbackslash}%
+\newsavebox{\hlscriptsizeboxlessthan}%
+\newsavebox{\hlscriptsizeboxgreaterthan}%
+\newsavebox{\hlscriptsizeboxdollar}%
+\newsavebox{\hlscriptsizeboxunderscore}%
+\newsavebox{\hlscriptsizeboxand}%
+\newsavebox{\hlscriptsizeboxhash}%
+\newsavebox{\hlscriptsizeboxat}%
+\newsavebox{\hlscriptsizeboxpercent}% 
+\newsavebox{\hlscriptsizeboxhat}%
+\newsavebox{\hlscriptsizeboxsinglequote}%
+\newsavebox{\hlscriptsizeboxbacktick}%
+
+\setbox\hlscriptsizeboxopenbrace=\hbox{\begin{scriptsize}\verb.{.\end{scriptsize}}%
+\setbox\hlscriptsizeboxclosebrace=\hbox{\begin{scriptsize}\verb.}.\end{scriptsize}}%
+\setbox\hlscriptsizeboxlessthan=\hbox{\begin{scriptsize}\verb.<.\end{scriptsize}}%
+\setbox\hlscriptsizeboxdollar=\hbox{\begin{scriptsize}\verb.$.\end{scriptsize}}%
+\setbox\hlscriptsizeboxunderscore=\hbox{\begin{scriptsize}\verb._.\end{scriptsize}}%
+\setbox\hlscriptsizeboxand=\hbox{\begin{scriptsize}\verb.&.\end{scriptsize}}%
+\setbox\hlscriptsizeboxhash=\hbox{\begin{scriptsize}\verb.#.\end{scriptsize}}%
+\setbox\hlscriptsizeboxat=\hbox{\begin{scriptsize}\verb.@.\end{scriptsize}}%
+\setbox\hlscriptsizeboxbackslash=\hbox{\begin{scriptsize}\verb.\.\end{scriptsize}}%
+\setbox\hlscriptsizeboxgreaterthan=\hbox{\begin{scriptsize}\verb.>.\end{scriptsize}}%
+\setbox\hlscriptsizeboxpercent=\hbox{\begin{scriptsize}\verb.%.\end{scriptsize}}%
+\setbox\hlscriptsizeboxhat=\hbox{\begin{scriptsize}\verb.^.\end{scriptsize}}%
+\setbox\hlscriptsizeboxsinglequote=\hbox{\begin{scriptsize}\verb.'.\end{scriptsize}}%
+\setbox\hlscriptsizeboxbacktick=\hbox{\begin{scriptsize}\verb.`.\end{scriptsize}}%
+\setbox\hlscriptsizeboxhat=\hbox{\begin{scriptsize}\verb.^.\end{scriptsize}}%
+
+
+
+\newsavebox{\hlfootnotesizeboxclosebrace}%
+\newsavebox{\hlfootnotesizeboxopenbrace}%
+\newsavebox{\hlfootnotesizeboxbackslash}%
+\newsavebox{\hlfootnotesizeboxlessthan}%
+\newsavebox{\hlfootnotesizeboxgreaterthan}%
+\newsavebox{\hlfootnotesizeboxdollar}%
+\newsavebox{\hlfootnotesizeboxunderscore}%
+\newsavebox{\hlfootnotesizeboxand}%
+\newsavebox{\hlfootnotesizeboxhash}%
+\newsavebox{\hlfootnotesizeboxat}%
+\newsavebox{\hlfootnotesizeboxpercent}% 
+\newsavebox{\hlfootnotesizeboxhat}%
+\newsavebox{\hlfootnotesizeboxsinglequote}%
+\newsavebox{\hlfootnotesizeboxbacktick}%
+
+\setbox\hlfootnotesizeboxopenbrace=\hbox{\begin{footnotesize}\verb.{.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxclosebrace=\hbox{\begin{footnotesize}\verb.}.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxlessthan=\hbox{\begin{footnotesize}\verb.<.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxdollar=\hbox{\begin{footnotesize}\verb.$.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxunderscore=\hbox{\begin{footnotesize}\verb._.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxand=\hbox{\begin{footnotesize}\verb.&.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxhash=\hbox{\begin{footnotesize}\verb.#.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxat=\hbox{\begin{footnotesize}\verb.@.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxbackslash=\hbox{\begin{footnotesize}\verb.\.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxgreaterthan=\hbox{\begin{footnotesize}\verb.>.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxpercent=\hbox{\begin{footnotesize}\verb.%.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxhat=\hbox{\begin{footnotesize}\verb.^.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxsinglequote=\hbox{\begin{footnotesize}\verb.'.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxbacktick=\hbox{\begin{footnotesize}\verb.`.\end{footnotesize}}%
+\setbox\hlfootnotesizeboxhat=\hbox{\begin{footnotesize}\verb.^.\end{footnotesize}}%
+
+
+
+\newsavebox{\hlsmallboxclosebrace}%
+\newsavebox{\hlsmallboxopenbrace}%
+\newsavebox{\hlsmallboxbackslash}%
+\newsavebox{\hlsmallboxlessthan}%
+\newsavebox{\hlsmallboxgreaterthan}%
+\newsavebox{\hlsmallboxdollar}%
+\newsavebox{\hlsmallboxunderscore}%
+\newsavebox{\hlsmallboxand}%
+\newsavebox{\hlsmallboxhash}%
+\newsavebox{\hlsmallboxat}%
+\newsavebox{\hlsmallboxpercent}% 
+\newsavebox{\hlsmallboxhat}%
+\newsavebox{\hlsmallboxsinglequote}%
+\newsavebox{\hlsmallboxbacktick}%
+
+\setbox\hlsmallboxopenbrace=\hbox{\begin{small}\verb.{.\end{small}}%
+\setbox\hlsmallboxclosebrace=\hbox{\begin{small}\verb.}.\end{small}}%
+\setbox\hlsmallboxlessthan=\hbox{\begin{small}\verb.<.\end{small}}%
+\setbox\hlsmallboxdollar=\hbox{\begin{small}\verb.$.\end{small}}%
+\setbox\hlsmallboxunderscore=\hbox{\begin{small}\verb._.\end{small}}%
+\setbox\hlsmallboxand=\hbox{\begin{small}\verb.&.\end{small}}%
+\setbox\hlsmallboxhash=\hbox{\begin{small}\verb.#.\end{small}}%
+\setbox\hlsmallboxat=\hbox{\begin{small}\verb.@.\end{small}}%
+\setbox\hlsmallboxbackslash=\hbox{\begin{small}\verb.\.\end{small}}%
+\setbox\hlsmallboxgreaterthan=\hbox{\begin{small}\verb.>.\end{small}}%
+\setbox\hlsmallboxpercent=\hbox{\begin{small}\verb.%.\end{small}}%
+\setbox\hlsmallboxhat=\hbox{\begin{small}\verb.^.\end{small}}%
+\setbox\hlsmallboxsinglequote=\hbox{\begin{small}\verb.'.\end{small}}%
+\setbox\hlsmallboxbacktick=\hbox{\begin{small}\verb.`.\end{small}}%
+\setbox\hlsmallboxhat=\hbox{\begin{small}\verb.^.\end{small}}%
+
+
+
+\newsavebox{\hllargeboxclosebrace}%
+\newsavebox{\hllargeboxopenbrace}%
+\newsavebox{\hllargeboxbackslash}%
+\newsavebox{\hllargeboxlessthan}%
+\newsavebox{\hllargeboxgreaterthan}%
+\newsavebox{\hllargeboxdollar}%
+\newsavebox{\hllargeboxunderscore}%
+\newsavebox{\hllargeboxand}%
+\newsavebox{\hllargeboxhash}%
+\newsavebox{\hllargeboxat}%
+\newsavebox{\hllargeboxpercent}% 
+\newsavebox{\hllargeboxhat}%
+\newsavebox{\hllargeboxsinglequote}%
+\newsavebox{\hllargeboxbacktick}%
+
+\setbox\hllargeboxopenbrace=\hbox{\begin{large}\verb.{.\end{large}}%
+\setbox\hllargeboxclosebrace=\hbox{\begin{large}\verb.}.\end{large}}%
+\setbox\hllargeboxlessthan=\hbox{\begin{large}\verb.<.\end{large}}%
+\setbox\hllargeboxdollar=\hbox{\begin{large}\verb.$.\end{large}}%
+\setbox\hllargeboxunderscore=\hbox{\begin{large}\verb._.\end{large}}%
+\setbox\hllargeboxand=\hbox{\begin{large}\verb.&.\end{large}}%
+\setbox\hllargeboxhash=\hbox{\begin{large}\verb.#.\end{large}}%
+\setbox\hllargeboxat=\hbox{\begin{large}\verb.@.\end{large}}%
+\setbox\hllargeboxbackslash=\hbox{\begin{large}\verb.\.\end{large}}%
+\setbox\hllargeboxgreaterthan=\hbox{\begin{large}\verb.>.\end{large}}%
+\setbox\hllargeboxpercent=\hbox{\begin{large}\verb.%.\end{large}}%
+\setbox\hllargeboxhat=\hbox{\begin{large}\verb.^.\end{large}}%
+\setbox\hllargeboxsinglequote=\hbox{\begin{large}\verb.'.\end{large}}%
+\setbox\hllargeboxbacktick=\hbox{\begin{large}\verb.`.\end{large}}%
+\setbox\hllargeboxhat=\hbox{\begin{large}\verb.^.\end{large}}%
+
+
+
+\newsavebox{\hlLargeboxclosebrace}%
+\newsavebox{\hlLargeboxopenbrace}%
+\newsavebox{\hlLargeboxbackslash}%
+\newsavebox{\hlLargeboxlessthan}%
+\newsavebox{\hlLargeboxgreaterthan}%
+\newsavebox{\hlLargeboxdollar}%
+\newsavebox{\hlLargeboxunderscore}%
+\newsavebox{\hlLargeboxand}%
+\newsavebox{\hlLargeboxhash}%
+\newsavebox{\hlLargeboxat}%
+\newsavebox{\hlLargeboxpercent}% 
+\newsavebox{\hlLargeboxhat}%
+\newsavebox{\hlLargeboxsinglequote}%
+\newsavebox{\hlLargeboxbacktick}%
+
+\setbox\hlLargeboxopenbrace=\hbox{\begin{Large}\verb.{.\end{Large}}%
+\setbox\hlLargeboxclosebrace=\hbox{\begin{Large}\verb.}.\end{Large}}%
+\setbox\hlLargeboxlessthan=\hbox{\begin{Large}\verb.<.\end{Large}}%
+\setbox\hlLargeboxdollar=\hbox{\begin{Large}\verb.$.\end{Large}}%
+\setbox\hlLargeboxunderscore=\hbox{\begin{Large}\verb._.\end{Large}}%
+\setbox\hlLargeboxand=\hbox{\begin{Large}\verb.&.\end{Large}}%
+\setbox\hlLargeboxhash=\hbox{\begin{Large}\verb.#.\end{Large}}%
+\setbox\hlLargeboxat=\hbox{\begin{Large}\verb.@.\end{Large}}%
+\setbox\hlLargeboxbackslash=\hbox{\begin{Large}\verb.\.\end{Large}}%
+\setbox\hlLargeboxgreaterthan=\hbox{\begin{Large}\verb.>.\end{Large}}%
+\setbox\hlLargeboxpercent=\hbox{\begin{Large}\verb.%.\end{Large}}%
+\setbox\hlLargeboxhat=\hbox{\begin{Large}\verb.^.\end{Large}}%
+\setbox\hlLargeboxsinglequote=\hbox{\begin{Large}\verb.'.\end{Large}}%
+\setbox\hlLargeboxbacktick=\hbox{\begin{Large}\verb.`.\end{Large}}%
+\setbox\hlLargeboxhat=\hbox{\begin{Large}\verb.^.\end{Large}}%
+
+
+
+\newsavebox{\hlLARGEboxclosebrace}%
+\newsavebox{\hlLARGEboxopenbrace}%
+\newsavebox{\hlLARGEboxbackslash}%
+\newsavebox{\hlLARGEboxlessthan}%
+\newsavebox{\hlLARGEboxgreaterthan}%
+\newsavebox{\hlLARGEboxdollar}%
+\newsavebox{\hlLARGEboxunderscore}%
+\newsavebox{\hlLARGEboxand}%
+\newsavebox{\hlLARGEboxhash}%
+\newsavebox{\hlLARGEboxat}%
+\newsavebox{\hlLARGEboxpercent}% 
+\newsavebox{\hlLARGEboxhat}%
+\newsavebox{\hlLARGEboxsinglequote}%
+\newsavebox{\hlLARGEboxbacktick}%
+
+\setbox\hlLARGEboxopenbrace=\hbox{\begin{LARGE}\verb.{.\end{LARGE}}%
+\setbox\hlLARGEboxclosebrace=\hbox{\begin{LARGE}\verb.}.\end{LARGE}}%
+\setbox\hlLARGEboxlessthan=\hbox{\begin{LARGE}\verb.<.\end{LARGE}}%
+\setbox\hlLARGEboxdollar=\hbox{\begin{LARGE}\verb.$.\end{LARGE}}%
+\setbox\hlLARGEboxunderscore=\hbox{\begin{LARGE}\verb._.\end{LARGE}}%
+\setbox\hlLARGEboxand=\hbox{\begin{LARGE}\verb.&.\end{LARGE}}%
+\setbox\hlLARGEboxhash=\hbox{\begin{LARGE}\verb.#.\end{LARGE}}%
+\setbox\hlLARGEboxat=\hbox{\begin{LARGE}\verb.@.\end{LARGE}}%
+\setbox\hlLARGEboxbackslash=\hbox{\begin{LARGE}\verb.\.\end{LARGE}}%
+\setbox\hlLARGEboxgreaterthan=\hbox{\begin{LARGE}\verb.>.\end{LARGE}}%
+\setbox\hlLARGEboxpercent=\hbox{\begin{LARGE}\verb.%.\end{LARGE}}%
+\setbox\hlLARGEboxhat=\hbox{\begin{LARGE}\verb.^.\end{LARGE}}%
+\setbox\hlLARGEboxsinglequote=\hbox{\begin{LARGE}\verb.'.\end{LARGE}}%
+\setbox\hlLARGEboxbacktick=\hbox{\begin{LARGE}\verb.`.\end{LARGE}}%
+\setbox\hlLARGEboxhat=\hbox{\begin{LARGE}\verb.^.\end{LARGE}}%
+
+
+
+\newsavebox{\hlhugeboxclosebrace}%
+\newsavebox{\hlhugeboxopenbrace}%
+\newsavebox{\hlhugeboxbackslash}%
+\newsavebox{\hlhugeboxlessthan}%
+\newsavebox{\hlhugeboxgreaterthan}%
+\newsavebox{\hlhugeboxdollar}%
+\newsavebox{\hlhugeboxunderscore}%
+\newsavebox{\hlhugeboxand}%
+\newsavebox{\hlhugeboxhash}%
+\newsavebox{\hlhugeboxat}%
+\newsavebox{\hlhugeboxpercent}% 
+\newsavebox{\hlhugeboxhat}%
+\newsavebox{\hlhugeboxsinglequote}%
+\newsavebox{\hlhugeboxbacktick}%
+
+\setbox\hlhugeboxopenbrace=\hbox{\begin{huge}\verb.{.\end{huge}}%
+\setbox\hlhugeboxclosebrace=\hbox{\begin{huge}\verb.}.\end{huge}}%
+\setbox\hlhugeboxlessthan=\hbox{\begin{huge}\verb.<.\end{huge}}%
+\setbox\hlhugeboxdollar=\hbox{\begin{huge}\verb.$.\end{huge}}%
+\setbox\hlhugeboxunderscore=\hbox{\begin{huge}\verb._.\end{huge}}%
+\setbox\hlhugeboxand=\hbox{\begin{huge}\verb.&.\end{huge}}%
+\setbox\hlhugeboxhash=\hbox{\begin{huge}\verb.#.\end{huge}}%
+\setbox\hlhugeboxat=\hbox{\begin{huge}\verb.@.\end{huge}}%
+\setbox\hlhugeboxbackslash=\hbox{\begin{huge}\verb.\.\end{huge}}%
+\setbox\hlhugeboxgreaterthan=\hbox{\begin{huge}\verb.>.\end{huge}}%
+\setbox\hlhugeboxpercent=\hbox{\begin{huge}\verb.%.\end{huge}}%
+\setbox\hlhugeboxhat=\hbox{\begin{huge}\verb.^.\end{huge}}%
+\setbox\hlhugeboxsinglequote=\hbox{\begin{huge}\verb.'.\end{huge}}%
+\setbox\hlhugeboxbacktick=\hbox{\begin{huge}\verb.`.\end{huge}}%
+\setbox\hlhugeboxhat=\hbox{\begin{huge}\verb.^.\end{huge}}%
+
+
+
+\newsavebox{\hlHugeboxclosebrace}%
+\newsavebox{\hlHugeboxopenbrace}%
+\newsavebox{\hlHugeboxbackslash}%
+\newsavebox{\hlHugeboxlessthan}%
+\newsavebox{\hlHugeboxgreaterthan}%
+\newsavebox{\hlHugeboxdollar}%
+\newsavebox{\hlHugeboxunderscore}%
+\newsavebox{\hlHugeboxand}%
+\newsavebox{\hlHugeboxhash}%
+\newsavebox{\hlHugeboxat}%
+\newsavebox{\hlHugeboxpercent}% 
+\newsavebox{\hlHugeboxhat}%
+\newsavebox{\hlHugeboxsinglequote}%
+\newsavebox{\hlHugeboxbacktick}%
+
+\setbox\hlHugeboxopenbrace=\hbox{\begin{Huge}\verb.{.\end{Huge}}%
+\setbox\hlHugeboxclosebrace=\hbox{\begin{Huge}\verb.}.\end{Huge}}%
+\setbox\hlHugeboxlessthan=\hbox{\begin{Huge}\verb.<.\end{Huge}}%
+\setbox\hlHugeboxdollar=\hbox{\begin{Huge}\verb.$.\end{Huge}}%
+\setbox\hlHugeboxunderscore=\hbox{\begin{Huge}\verb._.\end{Huge}}%
+\setbox\hlHugeboxand=\hbox{\begin{Huge}\verb.&.\end{Huge}}%
+\setbox\hlHugeboxhash=\hbox{\begin{Huge}\verb.#.\end{Huge}}%
+\setbox\hlHugeboxat=\hbox{\begin{Huge}\verb.@.\end{Huge}}%
+\setbox\hlHugeboxbackslash=\hbox{\begin{Huge}\verb.\.\end{Huge}}%
+\setbox\hlHugeboxgreaterthan=\hbox{\begin{Huge}\verb.>.\end{Huge}}%
+\setbox\hlHugeboxpercent=\hbox{\begin{Huge}\verb.%.\end{Huge}}%
+\setbox\hlHugeboxhat=\hbox{\begin{Huge}\verb.^.\end{Huge}}%
+\setbox\hlHugeboxsinglequote=\hbox{\begin{Huge}\verb.'.\end{Huge}}%
+\setbox\hlHugeboxbacktick=\hbox{\begin{Huge}\verb.`.\end{Huge}}%
+\setbox\hlHugeboxhat=\hbox{\begin{Huge}\verb.^.\end{Huge}}%
+ 
+
+\def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}%
+
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.16,0.16,1}{#1}}
+\newcommand{\hlesc}[1]{\textcolor[rgb]{1,0,1}{#1}}
+\newcommand{\hlstr}[1]{\textcolor[rgb]{1,0,0}{#1}}
+\newcommand{\hldstr}[1]{\textcolor[rgb]{0.51,0.51,0}{#1}}
+\newcommand{\hlslc}[1]{\textcolor[rgb]{0.51,0.51,0.51}{\it{#1}}}
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.51,0.51,0.51}{\it{#1}}}
+\newcommand{\hldir}[1]{\textcolor[rgb]{0,0.51,0}{#1}}
+\newcommand{\hlsym}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\hlline}[1]{\textcolor[rgb]{0.33,0.33,0.33}{#1}}
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0,0,0}{\bf{#1}}}
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.51,0,0}{#1}}
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0,0,0}{\bf{#1}}}
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0,0,0.51}{#1}}
+
+\newcommand{\hlnumber}[1]{\textcolor[rgb]{0.0823529411764706,0.0784313725490196,0.709803921568627}{#1}}%
+\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{1,0,0}{#1}}%
+\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
+\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlargument}[1]{\textcolor[rgb]{0.694117647058824,0.247058823529412,0.0196078431372549}{#1}}%
+\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.8,0.8,0.8}{#1}}%
+\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0,0.592156862745098,1}{#1}}%
+\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.0705882352941176,0.713725490196078,0.0705882352941176}{#1}}%
+\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.0705882352941176,0.713725490196078,0.0705882352941176}{#1}}%
+\newcommand{\hlassignement}[1]{\textcolor[rgb]{0.215686274509804,0.215686274509804,0.384313725490196}{\textbf{#1}}}%
+\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.713725490196078,0.145098039215686}{#1}}%
+\newcommand{\hlslot}[1]{\textit{#1}}%
+\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlprompt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+%\usepackage{graphicx,amsmath,amssymb,totpages}
+%\usepackage{undertilde} % for \utilde environment
+%\usepackage{wasysym}     % symbol \permil
+%\usepackage{afterpage}  % \afterpage{\clearpage}, If it is undesirable to have a pagebreak
+%   %\afterpage{\clearpage} %% clearpage after the next new page
+%\usepackage{graphicx}   % graphic package for postscript figures
+%\usepackage{verbatim}   % for verbatim environment
+%\usepackage{comment}    % for comment environment
+
+% Any command definitions that I use in my thesis.
+\input{eeenvi.tex}
+\input{eedefs.tex}   % Any command definitions that I use in my thesis.
+
+%\usepackage{todonotes}  % \todo{Your task}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Erik Erhardt}
+\title{Bayesian estimation of
+  photorespiratory and respiratory carbon isotope fractionation in
+  {\em Arabidopsis thaliana} wildtype (WT) and mutants lacking peroxisomal malate dehydrogenase (PMDH)}
+
+\pagestyle{headings} % Define the page style for page numbers and headings
+\addtolength{\voffset}{-.5in}
+\addtolength{\textheight}{1in}
+%\addtolength{\footskip}{1cm}
+%\makeindex
+
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % delete current setting for header and footer
+\fancyhead[C]{David T.\ Hanson and Erik Barry Erhardt}
+\fancyhead[R]{\thepage/\ref{TotPages}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % make space for the rule
+\fancypagestyle{plain}{%
+       \fancyhead{} % get rid of headers on plain pages
+       \renewcommand{\headrulewidth}{0pt} % and the line
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\newcommand{\data}[1]{\tilde{#1}} % data notation
+\newcommand{\sdatasig}[1]{\sigma_{#1}^2} % data notation
+\newcommand{\vdatasig}[1]{\Sigma_{#1}} % data notation
+
+\newcommand{\subctpr}{ctpr} % subscript notation ctpr
+\newcommand{\subctp} {ctp}  % subscript notation ctp
+\newcommand{\subct}  {ct}   % subscript notation ct
+\newcommand{\subc}   {c}    % subscript notation ct
+\newcommand{\subt}   {t}    % subscript notation  t
+
+
+% CO2 variable definitions
+% dot indicates a constant
+\newcommand{\sdotab}{\dot{a}_{\textrm{b}}} % boundary
+\newcommand{\sdota}{\dot{a}} % stomata
+\newcommand{\sdotaw}{\dot{a}_{\textrm{w}}} % water
+\newcommand{\sdotbs}{\dot{b}_{\textrm{s}}} % CO2 entering solution at 20oC
+\newcommand{\sdotb}{\dot{b}} % internal conductance vai gm
+\newcommand{\sdotRstd}{\dot{R}_\textrm{std 13C}} % C ratio of standard
+\newcommand{\sdotkappaHtw}{\dot{\kappa}_{\textrm{H}12}} % concentration constants for high tanks
+\newcommand{\sdotkappaHth}{\dot{\kappa}_{\textrm{H}13}} % concentration constants for high tanks
+\newcommand{\sdotkappaLtw}{\dot{\kappa}_{\textrm{L}12}} % concentration constants for low  tanks
+\newcommand{\sdotkappaLth}{\dot{\kappa}_{\textrm{L}13}} % concentration constants for low  tanks
+\newcommand{\vdotkappaHtw}{\vector{\dot{\kappa}}_{\textrm{H}}} % vectors of concentration constants
+\newcommand{\vdotkappaLtw}{\vector{\dot{\kappa}}_{\textrm{L}}} % vectors of concentration constants
+\newcommand{\sdotfthC}{\dot{f}_{\textrm{13C}}} % fraction of C isotopologues not measured
+
+% Discrimination
+\newcommand{\sDeltacomp}{\Delta_{\textrm{comp}\subct}} % Discrimination, comprehensive model
+\newcommand{\sDeltaobs}{\Delta_{\textrm{obs}\subct}} % Discrimination, observed
+\newcommand{\sDeltapred}{\Delta_{\textrm{pred}\subct}} % Discrimination, predicted, also Delta_i
+
+% pressures
+\newcommand{\spa}{p_{\textrm{a}\subct}} %
+\newcommand{\sps}{p_{\textrm{s}\subct}} %
+\newcommand{\spi}{p_{\textrm{i}\subct}} %
+\newcommand{\spc}{p_{\textrm{c}\subct}} %
+\newcommand{\spatmL}{p_{\textrm{atm}\subctp}} % Licor atmospheric pressure
+\newcommand{\sallpressures}{\pi_{\subctp}}
+ % data
+ \newcommand{\sdatapatmL}{\data{p}_{\textrm{atm}\subctpr}} % Licor atmospheric pressure
+ \newcommand{\ssigpatmL}{\sdatasig{p_{\textrm{atm}}}} % Licor atmospheric pressure
+
+% respiration
+\newcommand{\sse}{e_{\subt}} %
+\newcommand{\sseprime}{e_{\subt}^{\prime}} %
+\newcommand{\sRd}{R_{\textrm{d}\subt}} %
+ % data
+ \newcommand{\sdataRd}{\data{R}_{\textrm{d}\subctp}} %
+ \newcommand{\ssigRd}{\sdatasig{R_{\textrm{d}}}}%\subct}}} %
+\newcommand{\ssk}{k_{\subt}} %
+ % data
+ \newcommand{\sdatak}{\data{k}_{\subctp}} %
+ \newcommand{\ssigk}{\sdatasig{k_{\subct}}} %
+\newcommand{\ssf}{f_{\subct}} %
+\newcommand{\ssfprime}{f_{\subct}^{\prime}} %
+\newcommand{\sGammastar}{\Gamma^{\ast}_{\subt}} %
+ % data
+ \newcommand{\sdataGammastar}{\data{\Gamma}^{\ast}_{\subt}} %
+ \newcommand{\ssigGammastar}{\sdatasig{\Gamma^{\ast}_{}}}%\subct}}} %
+
+% isotope ratios
+\newcommand{\sxi}{\xi_{\subctp}} %
+\newcommand{\sdeltao}{\delta_{\textrm{o}\subctp}} %
+\newcommand{\sdeltae}{\delta_{\textrm{e}\subctp}} %
+
+% concentrations
+\newcommand{\sCa}{C_{\textrm{a}\subctp}} %
+\newcommand{\sCo}{C_{\textrm{o}\subctp}} % same as Ca
+\newcommand{\sCs}{C_{\textrm{s}\subctp}} %
+\newcommand{\sCi}{C_{\textrm{i}\subctp}} %
+\newcommand{\sCe}{C_{\textrm{e}\subctp}} %
+% high and low tanks
+\newcommand{\skappaHtw}{\kappa_{\textrm{H}12\subctp}} % concentration constants for high tanks
+\newcommand{\skappaHth}{\kappa_{\textrm{H}13\subctp}} % concentration constants for high tanks
+\newcommand{\skappaLtw}{\kappa_{\textrm{L}12\subctp}} % concentration constants for low  tanks
+\newcommand{\skappaLth}{\kappa_{\textrm{L}13\subctp}} % concentration constants for low  tanks
+\newcommand{\vkappaH}{\vector{\kappa}_{\textrm{H}\subctp}} % vectors of concentration constants
+\newcommand{\vkappaL}{\vector{\kappa}_{\textrm{L}\subctp}} % vectors of concentration constants
+% ref and chamber
+\newcommand{\skappaRtw}{\kappa_{\textrm{R}12\subc}} % concentration constants for high tanks
+\newcommand{\skappaRth}{\kappa_{\textrm{R}13\subc}} % concentration constants for high tanks
+\newcommand{\skappaCtw}{\kappa_{\textrm{C}12\subctp}} % concentration constants for low  tanks
+\newcommand{\skappaCth}{\kappa_{\textrm{C}13\subctp}} % concentration constants for low  tanks
+\newcommand{\vkappaR}{\vector{\kappa}_{\textrm{R}\subc}} % vectors of concentration constants
+\newcommand{\vkappaC}{\vector{\kappa}_{\textrm{C}\subctp}} % vectors of concentration constants
+% corrected
+\newcommand{\skappaRtwp}{\skappaRtw^{\prime}} % concentration constants for high tanks
+\newcommand{\skappaRthp}{\skappaRth^{\prime}} % concentration constants for high tanks
+\newcommand{\skappaCtwp}{\skappaCtw^{\prime}} % concentration constants for low  tanks
+\newcommand{\skappaCthp}{\skappaCth^{\prime}} % concentration constants for low  tanks
+\newcommand{\vkappaRp}{\vkappaR^{\prime}} % vectors of concentration constants
+\newcommand{\vkappaCp}{\vkappaC^{\prime}} % vectors of concentration constants
+% gain offset
+\newcommand{\sgtw}{g_{\textrm{12}\subctp}} % gain
+\newcommand{\sgth}{g_{\textrm{13}\subctp}} % gain
+\newcommand{\sotw}{o_{\textrm{12}\subctp}} % offset
+\newcommand{\soth}{o_{\textrm{13}\subctp}} % offset
+ % data
+ \newcommand{\vdatakappaH}{\data{\vector{\kappa}}_{\textrm{H}\subctpr}} %
+ \newcommand{\vdatakappaL}{\data{\vector{\kappa}}_{\textrm{L}\subctpr}} %
+ \newcommand{\vdatakappaR}{\data{\vector{\kappa}}_{\textrm{R}\subctpr}} %
+ \newcommand{\vdatakappaC}{\data{\vector{\kappa}}_{\textrm{C}\subctpr}} %
+ \newcommand{\vsigkappaH}{\vdatasig{\vector{\kappa}_{\textrm{H}}}} %
+ \newcommand{\vsigkappaL}{\vdatasig{\vector{\kappa}_{\textrm{L}}}} %
+ \newcommand{\vsigkappaR}{\vdatasig{\vector{\kappa}_{\textrm{R}}}} %
+ \newcommand{\vsigkappaC}{\vdatasig{\vector{\kappa}_{\textrm{C}}}} %
+
+%
+\newcommand{\sAL}{A_{\subctp}} % photosynthesis from Licor
+ \newcommand{\sdataAL}{\data{A}_{\subctpr}} % photosynthesis from Licor
+ \newcommand{\ssigAL}{\sdatasig{A}} %
+
+\newcommand{\sgm}{g_{\textrm{m}\subctp}} % internal conductance (simple)
+
+\newcommand{\sE}{E_{\subctp}} %
+ \newcommand{\sdataE}{\data{E}_{\subctpr}} %
+ \newcommand{\ssigE}{\sdatasig{E}} %
+
+\newcommand{\sgbc}{g_{\textrm{bc}}} %
+ \newcommand{\sdotgbc}{\dot{g}_{\textrm{bc}}} %
+ \renewcommand{\sgbc}{\sdotgbc} %
+
+\newcommand{\sgtc}{g_{\textrm{tc}\subctp}} %
+ \newcommand{\sdatagtc}{\data{g}_{\textrm{tc}\subctpr}} %
+ \newcommand{\ssiggtc}{\sdatasig{g_{\textrm{tc}}}} %
+
+
+
+%==============
+\maketitle     % generate the title
+\tableofcontents  %insert the table of contents
+%\newpage
+%\listoffigures
+%\listoftables
+
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discrimination and (photo)respiration}
+
+We are interested in estimating the
+  amount of respiration $\sse$ and photorespiration $\ssf$
+  for each genotype and condition
+  using the comprehensive model.
+In the Bayesian paradigm, all model parameters are random
+  and informed by data and prior information,
+  or are defined in terms of other parameters.
+Inference for model parameters is based on the posterior joint probability distribution function (pdf)
+  of all the parameters given all the data and prior information,
+  though the structure of the posterior may often be simplified
+  by considering the conditionality structure of the parameters.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Background}
+
+% Tcherkez et al 2009 Plant Phys 13C fluxomic leaf resp in light.pdf
+Illuminated leaves simultaneously assimilate (gross photosynthetic assimilation)
+  and produce (photorespiration and day respiration) CO$_2$.
+While photosynthesis is a building process,
+  photorespiration
+  is a breaking-down process where photosynthesis is effectively running in reverse.
+Photorespiration is a wasteful process because it
+  produces waste ammonia that must be detoxified at a substantial cost
+  to the cell in ATP (energy) and reducing equivalents.
+Potential photosynthetic output may be reduced by photorespiration by up to 25\%
+  in C3 plants \citep{sharkey1988estimating}.
+Unlike photosynthesis and photorespiration, respiration does not depend on
+  light, so it occurs at night as well as during the day and generally thought to
+  be regulated independently of processes in the light.
+
+While the general metabolic scheme of the respiratory pathway is known, the
+  regulation of day respiration (respiration occurring during daylight hours) is
+  one conundrum of plant photosynthetic biology.
+In fact, day respiration is the cornerstone for nitrogen assimilation by leaves simply
+  because carbon assimilation produces organic materials (carbohydrates)
+  that are in turn converted to nitrogen acceptors by respiration.
+This process is also thought to be influenced by photorespiration,
+  potentially resulting in modified, non-cyclic respiratory pathway in leaves.
+Unsurprisingly then, intense efforts are currently devoted to elucidate the
+  metabolic basis of the regulation of day respiration and photorespiration,
+  with the optimization of nitrogen assimilation for a better
+  yield of crop plants as an ultimate goal.
+Thus, the development of a statistical model appropriately accounting for
+  sources of uncertainty and prior information
+  will have broad application in understanding photosynthetic pathways
+  and carbon usage in plants.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Research questions to be addressed}
+
+1) What are the rates of day
+  respiration $\sse$ (mitochondria) and
+  photorespiration $\ssf$ (ribisco grabs 1 O$_2$ and attaches to sugar,
+    WT takes relases 2 CO$_2$ and PMDH releases 4 CO$_2$ via phtorespiration)
+    and the isotopic signature of the CO$_2$ they release?
+2) What is the uncertainty of our estimations of day respiration and photorespiration rates?
+3) Are rates of photorespiration and day respiration linked?
+4) How much uncertainty do these estimates contribute to measures of photosynthetic parameters?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Strategy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Analysis procedures}
+
+The proposed model development and analysis procedures will comprise
+  four phases carried out over one semester and summer (6 months).
+
+\paragraph{Phase 0, Data has already been collected}
+For the initial data collection (already done),
+  we use a combined tunable diode laser (TDL) infrared gas analizer system
+  developed by \citet{barbour2007new}
+  to measure
+  the exchange of $^{13}$CO$_2$ and $^{12}$CO$_2$ between leaves and the air provided to them.
+The physical and biochemical processes leading to the differential assimilation of each isotopelogue
+are well defined, but
+the processes that release CO2 from the leaf back into the atmosphere are not.
+The two primary sources of CO2 are respiration and photorespiration.
+We can separate these by conducting gas exchange in low oxygen (2\%)
+  environments that inhibit photorespiration and compare these to
+  measurements made under ambient oxygen (21\%).
+The difference in isotopic exchange between these conditions will represent
+  the photorespiratory release.
+We can then get a respiration signal in (alluminator?) leaves by making measurements
+  at two temperatures because the temperature response of photosynthesis and respiration
+  are known and they differ.
+By modeling the photosynthetic exchange in two temperatures
+  and the associated isotopic effects
+  and comparing them to the measured changes we can calculate
+  respiratory effects by calculating the difference between the modeled and measured values.
+
+\paragraph{Phase 1, Frequentist (bootstrap) modeling}
+The functional form of measurable and theoretical parameters
+  will be written into a model.
+A prototype frequentist bootstrap estimation framework will be developed
+  for estimating (photo)respiration
+  subject to variability from measureable parameters.
+Using existing data from Dave Hanson we will fit the model using the plug-in principle.
+The plug-in principle is used when the underlying distribution
+  for the sampling distribution of a parameter is unknown
+  and a best guess is substituted for what that distribution is.
+For most sampling distributions we will substitute univariate normal distributions,
+  and estimate the distributional parameters (mean and variance) from the observed sample.
+Then, the Monte Carlo strategy will be used to draw a large number ($10^6$)
+  of samples from the estimated parametric distribution.
+In this way, parameters we can estimate directly with uncertainty
+  are used to infer parameters we can not,
+  while correctly accounting for the uncertainty in the inferred parameter
+  \citep{DavisonHinkley:1997:Bootstrapmethodsand}.
+This model has the advantage of computational simplicity,
+  relative to the Bayesian model in Phase 2.
+
+\paragraph{Phase 2, Bayesian modeling}
+The Bayesian estimation framework will extend the frequentist framework from phase 1.
+This model estimates non-fixed parameters conditional on the data and all the other parameters.
+This model also incorporates prior information on parameters,
+  so that prior belief about each parameter may be informed from previous studies.
+The model will be fit and compared to the frequentist framework in Phase 1.
+Sensitivity analyses will be conducted to assess the effect of the priors on the posterior inference.
+This model has the advantage of including prior information,
+  jointly estimating the parameters,
+  and a probabilistic interpretation,
+  but at the costs of higher required statistical expertise and computational demands.
+This model represents the best estimation that can currently be done.
+
+\paragraph{Phase 3, Experiment}
+Using experimental design methodology,
+  a parsimonious, realizable, and powerful experiment will be designed
+  allowing all parameters to be estimated (avoiding confounding).
+Data collected with tunable diode laser (TDL) and Licor instruments
+  under these designed gas conditions
+  will be used to inform the model parameters (from Phases 1 and 2) regarding
+  (photo)respiration (Table~\ref{tab:design} and Figure~\ref{fi:tdl}.
+This experiment will supplement the existing data used in Phases 1 and 2.
+Custom software will preprocess the TDL and Licor data
+  \citep{ErhardtHanson:2011:tdllicor:estimatesdiscrimination}.
+
+\paragraph{Phase 4, Validation}
+Finally, we will use (photo)respiration-related data
+  published in other studies as prior information in our model
+  to inform estimates we observe in our experiment.
+In principle, our estimates will reflect the best information available
+  (similar to a well-done meta-analysis).
+We will provide discussion of the practical points regarding model fit, diagnostics,
+  and implementation of the model to guide usage by plant physiologists.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Experimental design}
+
+The experiment is designed to estimate all model parameters well
+  and to isolate respiration $\sse$ and photorespiration $\ssf$ from each other.
+We record measurements under 6 controlled conditions
+  by varying the gas characteristics flowing through a leaf chamber (Figure~\ref{fi:tdl})
+  high CO$_2$ (1000ppm), ambient CO$_2$ (400ppm), and low O$_2$ (2\%),
+  each at two reference isotope ratios $\delta=+148\permil$ and $-4\permil$ (Table~\ref{tab:design}).
+For each condition, 3 plants each of model organism
+  {\em Arabidopsis thaliana} wildtype (WT) and
+  mutants lacking peroxisomal malate dehydrogenase (PMDH)
+  genotypes
+  are each measured 3 times.
+There are a total of $108=6\times 2\times 3\times 3$ multivariate observations.
+
+The conditions specified in Table~\ref{tab:design} allow us to estimate the rate parameters in the following way.
+It is assumed that $\sse$ and $\ssf$ are independent.
+It is assumed that $\sse$ is constant under the different CO$_2$ and O$_2$ conditions.
+Under low O$_2$ (conditions 5 and 6) it is assumed that $\ssf\equiv 0$, so $\sse$ can be estimated.
+The contrast between ambient and low O$_2$ (3 and 4 versus 5 and 6) allows estimation of $\ssf$.
+High CO$_2$ (conditions 1 and 2) should decrease the overall rate of (photo)respiration,
+  thus an additional parameter $\lambda$ can be estimated for this proportion reduction.
+The large difference between the $-4$ and $+148$ $\delta$ conditions allows precise estimation
+  of these parameters.
+
+
+ \begin{figure}[!hbtp]
+\begin{center}
+%\includegraphics[width=.495\textwidth]{taub_figure2_ksm.jpg}
+\includegraphics[width=0.8\textwidth]{Schematic_TDL-Licor2}
+\caption{
+ % (a)  Modify image to include CO$_2$ leaving the leaf.
+  Schematic of the experimental configuration.
+  }
+\label{fi:tdl}
+\end{center}
+ \end{figure}
+
+ \begin{table}[!hbtp]
+  \begin{center}
+\begin{tabular}{rrrrrrll}
+\hline
+     &          &             &           & \multicolumn{2}{c}{Type ($t=1,2$)} \\
+Cond & $\delta$ & CO$_2$      & O$_2$     &  WT  & PMDH & Purpose     & Estimate \\
+\hline
+$c=3$&   $+148$ & Hi(1000ppm) & Amb(21\%) & 3    & 3 & reduced $\ssf$ & $\lambda$: $(1-\lambda)\ssf$\\
+   4 &   $  -4$ & Hi(1000ppm) & Amb(21\%) & 3    & 3 & reduced $\ssf$ & $\lambda$: $(1-\lambda)\ssf$\\
+   5 &   $+148$ & Amb(400ppm) & Amb(21\%) & 3    & 3 & baseline       & $\ssf+\sse$\\
+   6 &   $  -4$ & Amb(400ppm) & Amb(21\%) & 3    & 3 & baseline       & $\ssf+\sse$\\
+   7 &   $+148$ & Amb(400ppm) & Low( 2\%) & 3    & 3 & $\ssf\equiv 0$ & $\sse$\\
+   8 &   $  -4$ & Amb(400ppm) & Low( 2\%) & 3    & 3 & $\ssf\equiv 0$ & $\sse$\\
+\hline
+\end{tabular}
+\caption{{\bf Experiment.}  For each of 6 conditions and 2 genotypes, 3 plants are measured.}
+\label{tab:design}
+\end{center}
+ \end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Comprehensive model for discrimination}
+
+Farquhar's comprehensive model for discrimination \eqref{eq:comp}
+  includes terms for respiration $\sse$ and photorespiration $\ssf$ \citep{farquhar1982stomatal,farquhar1984isotopic}.
+By conducting controlled experiments that
+  precisely estimate the other model parameters
+  and that isolate when respiration and photorespiration are active
+  we can make inference on $\sse$ and $\ssf$.
+ %===============
+\begin{eqnarray}
+  \sDeltacomp
+    & = &
+  \spa^{-1}
+    \big\lbrack
+      \sdotab(\spa-\sps)+\sdota(\sps-\spi)+(\sdotbs+\sdotaw)(\spi-\spc) + \sdotb\spc
+\nonumber\\ %===
+    &&
+    \qquad
+      -
+      \left\lbrace
+        \sse\sRd\ssk^{-1} + \ssf\sGammastar
+      \right\rbrace
+    \big\rbrack
+\label{eq:comp}
+\end{eqnarray}
+ %===============
+Frequentist (bootstrap) methods solve for and estimate an approximate sampling distribution for
+  the (photo)respiration parameters by drawing samples from the
+  estimated sampling distributions of the other parameters.
+The Bayesian approach estimates the posterior joint probability density function (pdf)
+  of all these parameters
+  conditional on data and prior information
+  providing inference for all parameters.
+
+\subparagraph{Illustration of bootstrap method}
+To understand the intuition behind the bootstrap method,
+  let's see how to estimate an intermediate pressure parameter, $\spa$.
+The basic structure is that each parameter depends on a combination of
+  constants (fixed and assumed known),
+  sampling distributions of parameter estimates informed by data,
+  or other parameters.
+Thus, all parameters are ultimately informed by constants or data.
+
+First we define notation.
+Let ``dot'', $\dot{x}$, indicate a constant,
+  ``tilde'', $\data{x}$, indicate data, and
+  ``undertilde'', $\vector{x}$, indicate a vector.
+The four subscripts are
+  $c$=condition (1, 2, 3, 4, 5, 6; Table~\ref{tab:design}),
+  $t$=genotype (1=WT, 2=PMDH),
+  $p$=plant number (1, 2, 3), and
+  $r$=repetition (1, 2, 3).
+
+This pressure term,
+  $\spa = (\sCa 10^{-6})(\spatmL 10^3)$,
+  depends on a concentration ($\sCa$) and the atmospheric pressure ($\spatmL$).
+The atmospheric pressure from is measured from the Licor instument,
+  and we assume that the observed data follow a normal distribution
+  for which we estimate the mean and variance from the sample data,
+    $\sdatapatmL \sim \Normal(\spatmL,\ssigpatmL)$.
+The concentration of CO$_2$ in the chamber depends on
+  the corrected concentration of $^{12}$C and $^{13}$C and a constant,
+  $\sCa \equiv \sCo = (\skappaCtwp+\skappaCthp)(1-\sdotfthC)^{-1}$.
+The constant is the fraction of C isotopologues not measured, $\sdotfthC\equiv 0.004922$.
+The corrected concentrations depend on the observed concentrations,
+  as well as calibration gain and offset values,
+  $\skappaCtwp = \skappaCtw\sgtw + \sotw$ and
+  $\skappaCthp = \skappaCth\sgth + \soth$.
+The offset depends on constatnts, the gain, and the observed concentrations.
+The known concentration constants for high and low calibration tanks are
+  $\vdotkappaHtw
+    \equiv (\sdotkappaHtw, \sdotkappaHth)^\transpose
+    \equiv (473.3358029, 5.183209292)^\transpose      $ and
+  $\vdotkappaLtw
+    \equiv (\sdotkappaLtw, \sdotkappaLth)^\transpose
+    \equiv (243.4737846, 2.666301131)^\transpose      $.
+The gain depends on constants and observed concentrations,
+  $\sgtw = (\sdotkappaHtw - \sdotkappaLtw)(\skappaHtw - \skappaLtw)^{-1}$ and
+  $\sgth = (\sdotkappaHth - \sdotkappaLth)(\skappaHth - \skappaLth)^{-1}$.
+Finally, we assume that the observed concentrations follow a bivariate normal distribution
+  for which we estimate the mean and covariance from the sample data,
+  $\vdatakappaH \sim \Normal(\vkappaH,\vsigkappaH)$ and
+  $\vdatakappaL \sim \Normal(\vkappaL,\vsigkappaL)$.
+
+Each parameter has a similar chain of dependencies.
+The bootstrap draws samples from the sampling distributions
+  and the series of parameter relationships are used to make inference
+  on parameters of interest, including the uncertainty associated with all other parameters.
+
+
+The posterior joint pdf of all these parameters
+  conditional on data and priors
+  provides inference for all parameters.
+
+While $\sDeltacomp$ is intended for making predictions,
+  in the current experiment it estimates what is observed,
+  $\sDeltaobs$.
+Therefore, we set $\sDeltacomp\equiv\sDeltaobs$.
+
+%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Respiration and photorespiration}
+
+For simplicity, let the pressure terms be
+ %===============
+\begin{eqnarray}
+  \sallpressures
+    & \equiv &
+  \sdotab(\spa-\sps)+\sdota(\sps-\spi)+(\sdotbs+\sdotaw)(\spi-\spc) + \sdotb\spc.
+\nonumber
+\end{eqnarray}
+ %===============
+
+The comprehensive model may be written as
+ %===============
+\begin{eqnarray}
+  \spa\sDeltaobs
+    & = &
+  \sallpressures - ( \sse\sRd\ssk^{-1} + \ssf\sGammastar ).
+\nonumber
+\end{eqnarray}
+ %===============
+
+Solving for $\sse$ and $\ssf$, we obtain
+ %===============
+\begin{eqnarray}
+  \sseprime
+    & = &
+  (\sallpressures - \spa\sDeltaobs - \ssf\sGammastar )(\sRd\ssk^{-1})^{-1}
+\nonumber\\ %===
+  \ssfprime
+    & = &
+  (\sallpressures - \spa\sDeltaobs - \sse\sRd\ssk^{-1} )(\sGammastar)^{-1}
+\nonumber
+\end{eqnarray}
+ %===============
+where we let our observed values each be distributed normally:
+ %===============
+\begin{eqnarray}
+  \sseprime
+    & \sim &
+  \Normal(\sse,\sdatasig{\sse}) \quad\textrm{and}
+\nonumber\\ %===
+  \ssfprime
+    & \sim &
+  \Normal(\ssf,\sdatasig{\ssf}).
+\nonumber
+\end{eqnarray}
+ %===============
+{\bf (priors for e and f)}
+
+These (photo)respiration parameters are currently estimated in another way {\bf (why)},
+and are taken as plant-level estimates each with a condition/genotype-specific mean
+  and common variance.
+
+Rd is estimated as 0.5 of the dark respiration and assumed to be independent of condition.
+
+$k$ and $\Gamma^{\ast}$ are each estimated from other datasets,
+  so we take them as input as data to this model.
+
+ %===============
+\begin{eqnarray}
+  \sdataRd
+    & \sim &
+  \Normal(\sRd,\ssigRd)
+\nonumber\\ %===
+  \sdatak
+    & \sim &
+  \Normal(\ssk,\ssigk)
+\nonumber\\ %===
+  \sdataGammastar
+    & \sim &
+  \Normal(\sGammastar,\ssigGammastar)
+\nonumber
+\end{eqnarray}
+ %===============
+
+
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Constants}
+
+While each of these values have their own associated uncertainty,
+  we take them to be constant at their (accepted) values for the current analysis.
+
+{\bf (make eqnarray with text notes for what things are)}
+
+$\sdotab\equiv 2.96 \permil   $ boundary
+
+$\sdota\equiv 4.44 \permil    $ stomata
+
+$\sdotaw\equiv 0.7 \permil    $ water
+
+$\sdotbs\equiv 1.1 \permil    $ CO2 entering solution at 20$^\circ$C
+
+$\sdotb\equiv 29 \permil      $ internal conductance via gm
+
+$\sdotRstd\equiv 0.0111797    $ C ratio of standard
+
+$\vdotkappaHtw
+  \equiv (\sdotkappaHtw, \sdotkappaHth)^\transpose
+  \equiv (473.3358029, 5.183209292)^\transpose      $ concentration constants for high tanks
+
+$\vdotkappaLtw
+  \equiv (\sdotkappaLtw, \sdotkappaLth)^\transpose
+  \equiv (243.4737846, 2.666301131)^\transpose      $ concentration constants for low  tanks
+
+$\sdotfthC\equiv 0.004922     $ fraction of C isotopologues not measured
+
+$\sgbc\equiv 3$  conductance at the boundary level
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Partial Pressures}
+
+$\spa = (\sCa 10^{-6})(\spatmL 10^3)$ atmosphere
+
+$\sps = (\sCs 10^{-6})(\spatmL 10^3)$ surface
+
+$\spi = (\sCi 10^{-6})(\spatmL 10^3)$ internal
+
+$\spc = \spi - \sAL \sgm^{-1}$ (chloroplast) carboxylation site
+
+$\sgm = (\sdotb - \sdotbs - \sdotaw)\sAL\spa^{-1}(\sDeltapred-\sDeltaobs)^{-1}$
+
+Data:
+
+$\sdatapatmL \sim \Normal(\spatmL,\ssigpatmL)$ atmospheric pressure from Licor
+
+$\sdataAL \sim \Normal(\sAL, \ssigAL)$ photosynthesis from Licor (can also get from TDL)
+
+
+%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Discrimination}
+
+{\bf (can put priors here, if desired)}
+
+$\sDeltaobs = \sxi(\sdeltao-\sdeltae)\{1+\sdeltao-\sxi(\sdeltao-\sdeltae)\}^{-1}10^3$
+
+$\sDeltapred = \spa^{-1} \{ \sdotab(\spa-\sps) + \sdota(\sps-\spi) + \sdotb\spc \}$
+
+(circular, assume $\spc\equiv\spi$)
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Concentration}
+
+\noindent
+Total mol fractions (paired, either both Licor or both TDL)
+
+$\sCe = (\skappaRtwp+\skappaRthp)(1-\sdotfthC)^{-1}$ entering Reference
+
+$\sCa \equiv \sCo = (\skappaCtwp+\skappaCthp)(1-\sdotfthC)^{-1}$ outgoing Chamber
+
+\noindent
+delta
+
+$\sdeltae = \{ (\skappaRthp/\skappaRtwp)/\sdotRstd - 1 \} 10^3\permil$ Ref
+
+$\sdeltao = \{ (\skappaCthp/\skappaCtwp)/\sdotRstd - 1 \} 10^3\permil$ Chamber
+
+\noindent
+xi
+
+$\sxi=\sCe(\sCe-\sCo)^{-1}$
+
+\noindent
+Corrected
+
+$\skappaRtwp = \skappaRtw\sgtw + \sotw$ Ref
+
+$\skappaRthp = \skappaRth\sgth + \soth$ Ref
+
+$\skappaCtwp = \skappaCtw\sgtw + \sotw$ Chamber
+
+$\skappaCthp = \skappaCth\sgth + \soth$ Chamber
+
+\noindent
+Gain
+
+$\sgtw = (\sdotkappaHtw - \sdotkappaLtw)(\skappaHtw - \skappaLtw)^{-1}$
+
+$\sgth = (\sdotkappaHth - \sdotkappaLth)(\skappaHth - \skappaLth)^{-1}$
+
+\noindent
+Offset
+
+$\sotw = \sdotkappaHtw - \sgtw\skappaHtw$
+
+$\soth = \sdotkappaHth - \sgth\skappaHth$
+
+\noindent
+Data
+
+$\vdatakappaH \sim \Normal(\vkappaH,\vsigkappaH)$
+
+$\vdatakappaL \sim \Normal(\vkappaL,\vsigkappaL)$
+
+$\vdatakappaR \sim \Normal(\vkappaR,\vsigkappaR)$
+
+$\vdatakappaC \sim \Normal(\vkappaC,\vsigkappaC)$
+
+For simplicity, let $\vsigkappaH\equiv\widehat{\vsigkappaH}$ be estimated as the observed within-plant
+covariance.
+
+\noindent
+Leaf surface:
+
+$\sCs = \{ (\sgbc - \sE/2000)\sCo - \sAL \} ( \sgbc + \sE/2000 )^{-1}$
+
+$\sCi = \{ (\sgtc - \sE/2000)\sCo - \sAL \} ( \sgtc + \sE/2000 )^{-1}$
+
+$\sdatagtc \sim \Normal(\sgtc, \ssiggtc)$
+
+$\sdataE \sim \Normal(\sE, \ssigE)$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{References}
+
+\bibliographystyle{plainnat}     % http://merkel.zoneo.net/Latex/natbib.php
+%\bibliographystyle{apalike}     %abbrvnat  plainnat unsrtnat
+\bibliography{ee_BayesCO2}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  some examples of tables and graphics
+%
+
+The plot in Figure~\ref{fi:ed31b} on page~\pageref{fi:ed31b}
+ \begin{figure}[hbtp]
+\begin{center}
+\includegraphics[scale=.7]{ed31b}
+\caption{ed31b }
+\label{fi:ed31b}
+\end{center}
+ \end{figure}
+
+By Table~\ref{tab:31c} on page~\pageref{tab:31c}
+ \begin{table}[hbtp]
+\begin{center}
+\begin{tabular}{l @{-} l @{=} r l}
+\hline
+\multicolumn{2}{c|}{Factors} & \multicolumn{2}{c}{Response Time} \\
+$\bar{y}_{3.}$ & $\bar{y}_{4.}$ & 267.50 & $\star$ \\
+\hline
+\end{tabular}
+\caption{31c}
+\label{tab:31c}
+\end{center}
+ \end{table}
+
+ %===============
+\begin{eqnarray}
+      & = &
+\nonumber\\ %===
+      & = &
+\nonumber
+\end{eqnarray}
+ %===============
+

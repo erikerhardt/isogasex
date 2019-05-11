@@ -1,0 +1,1147 @@
+%
+%  eedefs.tex     Erik B. Erhardt
+%
+%  This is the common command definitions for my thesis.
+%
+
+% font commands
+\newcommand{\defin}{\bf}
+\renewcommand{\vector}{\utilde}
+%\renewcommand{\vector}{\mathbf}
+\renewcommand{\matrix}{\mathbf}
+
+%\newcommand{\Normal}          {\mathcal{N}}
+\newcommand{\Normal}          {\textrm{Normal}}
+\newcommand{\Wishart}         {\textrm{Wishart}} %{\mathcal{W}}
+\newcommand{\IWishart}        {\textrm{Inv-Wishart}}
+\newcommand{\Chisq}           {\textrm{scaled-$\chi^2$}} %{\mathcal{W}}
+\newcommand{\IChisq}          {\textrm{Scaled-inv-$\chi^2$}}
+%\newcommand{\Dirichlet}       {\mathcal{D}\textrm{ir}}
+\newcommand{\Dirichlet}       {\textrm{Dirichlet}}
+\newcommand{\dBeta}           {\textrm{Beta}}
+\newcommand{\dGamma}          {\textrm{Gamma}}
+\newcommand{\dIGamma}         {\textrm{Inv-Gamma}}
+\newcommand{\Uniform}         {\textrm{Uniform}}
+
+\newcommand{\transpose}       {\top}%             for matrix transpose
+
+%% tdllicor begin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tdllicor}{\texttt{tdllicor}}
+
+\newcommand{\data}[1]{\tilde{#1}} % data notation
+\newcommand{\sdatasig}[1]{\sigma_{#1}^2} % data notation
+\newcommand{\vdatasig}[1]{\Sigma_{#1}} % data notation
+
+\newcommand{\subctpr}{}%{ctpr} % subscript notation ctpr
+\newcommand{\subctp} {}%{ctp}  % subscript notation ctp
+\newcommand{\subct}  {}%{ct}   % subscript notation ct
+\newcommand{\subc}   {}%{c}    % subscript notation ct
+\newcommand{\subt}   {}%{t}    % subscript notation  t
+
+
+% CO2 variable definitions
+% dot indicates a constant
+\newcommand{\sdotab}{\dot{a}_{\textrm{b}}} % boundary
+\newcommand{\sdota}{\dot{a}} % stomata
+\newcommand{\sdotaw}{\dot{a}_{\textrm{w}}} % water
+\newcommand{\sdotal}{\dot{a}_{\textrm{l}}} % water (same as \sdotaw)
+\newcommand{\sdotbs}{\dot{b}_{\textrm{s}}} % CO2 entering solution at 20oC
+\newcommand{\sdotb}{\dot{b}} % internal conductance vai gm
+\newcommand{\sdotRstd}{\dot{R}_\textrm{std 13C}} % C ratio of standard
+\newcommand{\sdotkappaHtw}{\dot{\kappa}_{\textrm{H}12}} % concentration constants for high tanks
+\newcommand{\sdotkappaHth}{\dot{\kappa}_{\textrm{H}13}} % concentration constants for high tanks
+\newcommand{\sdotkappaLtw}{\dot{\kappa}_{\textrm{L}12}} % concentration constants for low  tanks
+\newcommand{\sdotkappaLth}{\dot{\kappa}_{\textrm{L}13}} % concentration constants for low  tanks
+\newcommand{\vdotkappaHtw}{\vector{\dot{\kappa}}_{\textrm{H}}} % vectors of concentration constants
+\newcommand{\vdotkappaLtw}{\vector{\dot{\kappa}}_{\textrm{L}}} % vectors of concentration constants
+\newcommand{\sdotfthC}{\dot{f}_{\textrm{13C}}} % fraction of C isotopologues not measured
+
+% Discrimination
+\newcommand{\sDeltacomp}{\Delta_{\textrm{comp}\subct}} % Discrimination, comprehensive model
+\newcommand{\sDeltaobs}{\Delta_{\textrm{obs}\subct}} % Discrimination, observed
+\newcommand{\sDeltapred}{\Delta_{\textrm{pred}\subct}} % Discrimination, predicted, also Delta_i
+
+% pressures
+\newcommand{\spa}{p_{\textrm{a}\subct}} %
+\newcommand{\sps}{p_{\textrm{s}\subct}} %
+\newcommand{\spi}{p_{\textrm{i}\subct}} %
+\newcommand{\spc}{p_{\textrm{c}\subct}} %
+\newcommand{\spatmL}{p_{\textrm{atm}\subctp}} % Licor atmospheric pressure
+\newcommand{\sallpressures}{\pi_{\subctp}}
+ % data
+ \newcommand{\sdatapatmL}{\data{p}_{\textrm{atm}\subctpr}} % Licor atmospheric pressure
+ \newcommand{\ssigpatmL}{\sdatasig{p_{\textrm{atm}}}} % Licor atmospheric pressure
+
+% respiration
+\newcommand{\sse}{e_{\subt}} %
+\newcommand{\sseprime}{e_{\subt}^{\prime}} %
+\newcommand{\sRd}{R_{\textrm{d}\subt}} %
+ % data
+ \newcommand{\sdataRd}{\data{R}_{\textrm{d}\subctp}} %
+ \newcommand{\ssigRd}{\sdatasig{R_{\textrm{d}}}}%\subct}}} %
+\newcommand{\ssk}{k_{\subt}} %
+ % data
+ \newcommand{\sdatak}{\data{k}_{\subctp}} %
+ \newcommand{\ssigk}{\sdatasig{k_{\subct}}} %
+\newcommand{\ssf}{f_{\subct}} %
+\newcommand{\ssfprime}{f_{\subct}^{\prime}} %
+\newcommand{\sGammastar}{\Gamma^{\ast}_{\subt}} %
+ % data
+ \newcommand{\sdataGammastar}{\data{\Gamma}^{\ast}_{\subt}} %
+ \newcommand{\ssigGammastar}{\sdatasig{\Gamma^{\ast}_{}}}%\subct}}} %
+
+% isotope ratios
+\newcommand{\sxi}{\xi_{\subctp}} %
+\newcommand{\sdeltao}{\delta_{\textrm{o}\subctp}} %
+\newcommand{\sdeltae}{\delta_{\textrm{e}\subctp}} %
+
+% concentrations
+\newcommand{\sCa}{C_{\textrm{a}\subctp}} %
+\newcommand{\sCo}{C_{\textrm{o}\subctp}} % same as Ca
+\newcommand{\sCs}{C_{\textrm{s}\subctp}} %
+\newcommand{\sCi}{C_{\textrm{i}\subctp}} %
+\newcommand{\sCe}{C_{\textrm{e}\subctp}} %
+% high and low tanks
+\newcommand{\skappaHtw}{\kappa_{\textrm{H}12\subctp}} % concentration constants for high tanks
+\newcommand{\skappaHth}{\kappa_{\textrm{H}13\subctp}} % concentration constants for high tanks
+\newcommand{\skappaLtw}{\kappa_{\textrm{L}12\subctp}} % concentration constants for low  tanks
+\newcommand{\skappaLth}{\kappa_{\textrm{L}13\subctp}} % concentration constants for low  tanks
+\newcommand{\vkappaH}{\vector{\kappa}_{\textrm{H}\subctp}} % vectors of concentration constants
+\newcommand{\vkappaL}{\vector{\kappa}_{\textrm{L}\subctp}} % vectors of concentration constants
+% ref and chamber
+\newcommand{\skappaRtw}{\kappa_{\textrm{R}12\subc}} % concentration constants for high tanks
+\newcommand{\skappaRth}{\kappa_{\textrm{R}13\subc}} % concentration constants for high tanks
+\newcommand{\skappaCtw}{\kappa_{\textrm{C}12\subctp}} % concentration constants for low  tanks
+\newcommand{\skappaCth}{\kappa_{\textrm{C}13\subctp}} % concentration constants for low  tanks
+\newcommand{\vkappaR}{\vector{\kappa}_{\textrm{R}\subc}} % vectors of concentration constants
+\newcommand{\vkappaC}{\vector{\kappa}_{\textrm{C}\subctp}} % vectors of concentration constants
+% corrected
+\newcommand{\skappaRtwp}{\skappaRtw^{\prime}} % concentration constants for high tanks
+\newcommand{\skappaRthp}{\skappaRth^{\prime}} % concentration constants for high tanks
+\newcommand{\skappaCtwp}{\skappaCtw^{\prime}} % concentration constants for low  tanks
+\newcommand{\skappaCthp}{\skappaCth^{\prime}} % concentration constants for low  tanks
+\newcommand{\vkappaRp}{\vkappaR^{\prime}} % vectors of concentration constants
+\newcommand{\vkappaCp}{\vkappaC^{\prime}} % vectors of concentration constants
+% gain offset
+\newcommand{\sgtw}{g_{\textrm{12}\subctp}} % gain
+\newcommand{\sgth}{g_{\textrm{13}\subctp}} % gain
+\newcommand{\sotw}{o_{\textrm{12}\subctp}} % offset
+\newcommand{\soth}{o_{\textrm{13}\subctp}} % offset
+ % data
+ \newcommand{\vdatakappaH}{\data{\vector{\kappa}}_{\textrm{H}\subctpr}} %
+ \newcommand{\vdatakappaL}{\data{\vector{\kappa}}_{\textrm{L}\subctpr}} %
+ \newcommand{\vdatakappaR}{\data{\vector{\kappa}}_{\textrm{R}\subctpr}} %
+ \newcommand{\vdatakappaC}{\data{\vector{\kappa}}_{\textrm{C}\subctpr}} %
+ \newcommand{\sdatakappaHtw}{\data{\kappa}_{\textrm{H}12\subctpr}} %
+ \newcommand{\sdatakappaHth}{\data{\kappa}_{\textrm{H}13\subctpr}} %
+ \newcommand{\sdatakappaLtw}{\data{\kappa}_{\textrm{L}12\subctpr}} %
+ \newcommand{\sdatakappaLth}{\data{\kappa}_{\textrm{L}13\subctpr}} %
+ \newcommand{\sdatakappaRtw}{\data{\kappa}_{\textrm{R}12\subctpr}} %
+ \newcommand{\sdatakappaRth}{\data{\kappa}_{\textrm{R}13\subctpr}} %
+ \newcommand{\sdatakappaCtw}{\data{\kappa}_{\textrm{C}12\subctpr}} %
+ \newcommand{\sdatakappaCth}{\data{\kappa}_{\textrm{C}13\subctpr}} %
+ \newcommand{\vsigkappaH}{\vdatasig{\vector{\kappa}_{\textrm{H}}}} %
+ \newcommand{\vsigkappaL}{\vdatasig{\vector{\kappa}_{\textrm{L}}}} %
+ \newcommand{\vsigkappaR}{\vdatasig{\vector{\kappa}_{\textrm{R}}}} %
+ \newcommand{\vsigkappaC}{\vdatasig{\vector{\kappa}_{\textrm{C}}}} %
+
+%
+\newcommand{\sAL}{A_{\subctp}} % photosynthesis from Licor
+ \newcommand{\sdataAL}{\data{A}_{\subctpr}} % photosynthesis from Licor
+ \newcommand{\ssigAL}{\sdatasig{A}} %
+
+\newcommand{\sgm}{g_{\textrm{m}\subctp}} % internal conductance (simple)
+
+\newcommand{\sE}{E_{\subctp}} %
+ \newcommand{\sdataE}{\data{E}_{\subctpr}} %
+ \newcommand{\ssigE}{\sdatasig{E}} %
+
+\newcommand{\sgsc}{g_{\textrm{sc}}} %
+ \newcommand{\sdotgsc}{\dot{g}_{\textrm{sc}}} %
+ \renewcommand{\sgsc}{\sdotgsc} %
+
+\newcommand{\sgbc}{g_{\textrm{bc}}} %
+ \newcommand{\sdotgbc}{\dot{g}_{\textrm{bc}}} %
+ \renewcommand{\sgbc}{\sdotgbc} %
+
+\newcommand{\sgtc}{g_{\textrm{tc}\subctp}} %
+ \newcommand{\sdatagtc}{\data{g}_{\textrm{tc}\subctpr}} %
+ \newcommand{\ssiggtc}{\sdatasig{g_{\textrm{tc}}}} %
+%% tdllicor end   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%% %%%% tdllicor values with subscripts
+%% \newcommand{\tdllicor}{\texttt{tdllicor}}
+%%
+%% \newcommand{\data}[1]{\tilde{#1}} % data notation
+%% \newcommand{\sdatasig}[1]{\sigma_{#1}^2} % data notation
+%% \newcommand{\vdatasig}[1]{\Sigma_{#1}} % data notation
+%%
+%% \newcommand{\subctpr}{ctpr} % subscript notation ctpr
+%% \newcommand{\subctp} {ctp}  % subscript notation ctp
+%% \newcommand{\subct}  {ct}   % subscript notation ct
+%% \newcommand{\subc}   {c}    % subscript notation ct
+%% \newcommand{\subt}   {t}    % subscript notation  t
+%%
+%%
+%% % CO2 variable definitions
+%% % dot indicates a constant
+%% \newcommand{\sdotab}{\dot{a}_{\textrm{b}}} % boundary
+%% \newcommand{\sdota}{\dot{a}} % stomata
+%% \newcommand{\sdotaw}{\dot{a}_{\textrm{w}}} % water
+%% \newcommand{\sdotal}{\dot{a}_{\textrm{l}}} % water (same as \sdotaw)
+%% \newcommand{\sdotbs}{\dot{b}_{\textrm{s}}} % CO2 entering solution at 20oC
+%% \newcommand{\sdotb}{\dot{b}} % internal conductance vai gm
+%% \newcommand{\sdotRstd}{\dot{R}_\textrm{std 13C}} % C ratio of standard
+%% \newcommand{\sdotkappaHtw}{\dot{\kappa}_{\textrm{H}12}} % concentration constants for high tanks
+%% \newcommand{\sdotkappaHth}{\dot{\kappa}_{\textrm{H}13}} % concentration constants for high tanks
+%% \newcommand{\sdotkappaLtw}{\dot{\kappa}_{\textrm{L}12}} % concentration constants for low  tanks
+%% \newcommand{\sdotkappaLth}{\dot{\kappa}_{\textrm{L}13}} % concentration constants for low  tanks
+%% \newcommand{\vdotkappaHtw}{\vector{\dot{\kappa}}_{\textrm{H}}} % vectors of concentration constants
+%% \newcommand{\vdotkappaLtw}{\vector{\dot{\kappa}}_{\textrm{L}}} % vectors of concentration constants
+%% \newcommand{\sdotfthC}{\dot{f}_{\textrm{13C}}} % fraction of C isotopologues not measured
+%%
+%% % Discrimination
+%% \newcommand{\sDeltacomp}{\Delta_{\textrm{comp}\subct}} % Discrimination, comprehensive model
+%% \newcommand{\sDeltaobs}{\Delta_{\textrm{obs}\subct}} % Discrimination, observed
+%% \newcommand{\sDeltapred}{\Delta_{\textrm{pred}\subct}} % Discrimination, predicted, also Delta_i
+%%
+%% % pressures
+%% \newcommand{\spa}{p_{\textrm{a}\subct}} %
+%% \newcommand{\sps}{p_{\textrm{s}\subct}} %
+%% \newcommand{\spi}{p_{\textrm{i}\subct}} %
+%% \newcommand{\spc}{p_{\textrm{c}\subct}} %
+%% \newcommand{\spatmL}{p_{\textrm{atm}\subctp}} % Licor atmospheric pressure
+%% \newcommand{\sallpressures}{\pi_{\subctp}}
+%%  % data
+%%  \newcommand{\sdatapatmL}{\data{p}_{\textrm{atm}\subctpr}} % Licor atmospheric pressure
+%%  \newcommand{\ssigpatmL}{\sdatasig{p_{\textrm{atm}}}} % Licor atmospheric pressure
+%%
+%% % respiration
+%% \newcommand{\sse}{e_{\subt}} %
+%% \newcommand{\sseprime}{e_{\subt}^{\prime}} %
+%% \newcommand{\sRd}{R_{\textrm{d}\subt}} %
+%%  % data
+%%  \newcommand{\sdataRd}{\data{R}_{\textrm{d}\subctp}} %
+%%  \newcommand{\ssigRd}{\sdatasig{R_{\textrm{d}}}}%\subct}}} %
+%% \newcommand{\ssk}{k_{\subt}} %
+%%  % data
+%%  \newcommand{\sdatak}{\data{k}_{\subctp}} %
+%%  \newcommand{\ssigk}{\sdatasig{k_{\subct}}} %
+%% \newcommand{\ssf}{f_{\subct}} %
+%% \newcommand{\ssfprime}{f_{\subct}^{\prime}} %
+%% \newcommand{\sGammastar}{\Gamma^{\ast}_{\subt}} %
+%%  % data
+%%  \newcommand{\sdataGammastar}{\data{\Gamma}^{\ast}_{\subt}} %
+%%  \newcommand{\ssigGammastar}{\sdatasig{\Gamma^{\ast}_{}}}%\subct}}} %
+%%
+%% % isotope ratios
+%% \newcommand{\sxi}{\xi_{\subctp}} %
+%% \newcommand{\sdeltao}{\delta_{\textrm{o}\subctp}} %
+%% \newcommand{\sdeltae}{\delta_{\textrm{e}\subctp}} %
+%%
+%% % concentrations
+%% \newcommand{\sCa}{C_{\textrm{a}\subctp}} %
+%% \newcommand{\sCo}{C_{\textrm{o}\subctp}} % same as Ca
+%% \newcommand{\sCs}{C_{\textrm{s}\subctp}} %
+%% \newcommand{\sCi}{C_{\textrm{i}\subctp}} %
+%% \newcommand{\sCe}{C_{\textrm{e}\subctp}} %
+%% % high and low tanks
+%% \newcommand{\skappaHtw}{\kappa_{\textrm{H}12\subctp}} % concentration constants for high tanks
+%% \newcommand{\skappaHth}{\kappa_{\textrm{H}13\subctp}} % concentration constants for high tanks
+%% \newcommand{\skappaLtw}{\kappa_{\textrm{L}12\subctp}} % concentration constants for low  tanks
+%% \newcommand{\skappaLth}{\kappa_{\textrm{L}13\subctp}} % concentration constants for low  tanks
+%% \newcommand{\vkappaH}{\vector{\kappa}_{\textrm{H}\subctp}} % vectors of concentration constants
+%% \newcommand{\vkappaL}{\vector{\kappa}_{\textrm{L}\subctp}} % vectors of concentration constants
+%% % ref and chamber
+%% \newcommand{\skappaRtw}{\kappa_{\textrm{R}12\subc}} % concentration constants for high tanks
+%% \newcommand{\skappaRth}{\kappa_{\textrm{R}13\subc}} % concentration constants for high tanks
+%% \newcommand{\skappaCtw}{\kappa_{\textrm{C}12\subctp}} % concentration constants for low  tanks
+%% \newcommand{\skappaCth}{\kappa_{\textrm{C}13\subctp}} % concentration constants for low  tanks
+%% \newcommand{\vkappaR}{\vector{\kappa}_{\textrm{R}\subc}} % vectors of concentration constants
+%% \newcommand{\vkappaC}{\vector{\kappa}_{\textrm{C}\subctp}} % vectors of concentration constants
+%% % corrected
+%% \newcommand{\skappaRtwp}{\skappaRtw^{\prime}} % concentration constants for high tanks
+%% \newcommand{\skappaRthp}{\skappaRth^{\prime}} % concentration constants for high tanks
+%% \newcommand{\skappaCtwp}{\skappaCtw^{\prime}} % concentration constants for low  tanks
+%% \newcommand{\skappaCthp}{\skappaCth^{\prime}} % concentration constants for low  tanks
+%% \newcommand{\vkappaRp}{\vkappaR^{\prime}} % vectors of concentration constants
+%% \newcommand{\vkappaCp}{\vkappaC^{\prime}} % vectors of concentration constants
+%% % gain offset
+%% \newcommand{\sgtw}{g_{\textrm{12}\subctp}} % gain
+%% \newcommand{\sgth}{g_{\textrm{13}\subctp}} % gain
+%% \newcommand{\sotw}{o_{\textrm{12}\subctp}} % offset
+%% \newcommand{\soth}{o_{\textrm{13}\subctp}} % offset
+%%  % data
+%%  \newcommand{\vdatakappaH}{\data{\vector{\kappa}}_{\textrm{H}\subctpr}} %
+%%  \newcommand{\vdatakappaL}{\data{\vector{\kappa}}_{\textrm{L}\subctpr}} %
+%%  \newcommand{\vdatakappaR}{\data{\vector{\kappa}}_{\textrm{R}\subctpr}} %
+%%  \newcommand{\vdatakappaC}{\data{\vector{\kappa}}_{\textrm{C}\subctpr}} %
+%%  \newcommand{\vsigkappaH}{\vdatasig{\vector{\kappa}_{\textrm{H}}}} %
+%%  \newcommand{\vsigkappaL}{\vdatasig{\vector{\kappa}_{\textrm{L}}}} %
+%%  \newcommand{\vsigkappaR}{\vdatasig{\vector{\kappa}_{\textrm{R}}}} %
+%%  \newcommand{\vsigkappaC}{\vdatasig{\vector{\kappa}_{\textrm{C}}}} %
+%%
+%% %
+%% \newcommand{\sAL}{A_{\subctp}} % photosynthesis from Licor
+%%  \newcommand{\sdataAL}{\data{A}_{\subctpr}} % photosynthesis from Licor
+%%  \newcommand{\ssigAL}{\sdatasig{A}} %
+%%
+%% \newcommand{\sgm}{g_{\textrm{m}\subctp}} % internal conductance (simple)
+%%
+%% \newcommand{\sE}{E_{\subctp}} %
+%%  \newcommand{\sdataE}{\data{E}_{\subctpr}} %
+%%  \newcommand{\ssigE}{\sdatasig{E}} %
+%%
+%% \newcommand{\sgsc}{g_{\textrm{sc}}} %
+%%  \newcommand{\sdotgsc}{\dot{g}_{\textrm{sc}}} %
+%%  \renewcommand{\sgsc}{\sdotgsc} %
+%%
+%% \newcommand{\sgbc}{g_{\textrm{bc}}} %
+%%  \newcommand{\sdotgbc}{\dot{g}_{\textrm{bc}}} %
+%%  \renewcommand{\sgbc}{\sdotgbc} %
+%%
+%% \newcommand{\sgtc}{g_{\textrm{tc}\subctp}} %
+%%  \newcommand{\sdatagtc}{\data{g}_{\textrm{tc}\subctpr}} %
+%%  \newcommand{\ssiggtc}{\sdatasig{g_{\textrm{tc}}}} %
+
+
+
+
+%%   % Any command definitions that you may want
+%%   % to use in documents other than your thesis.
+%% %=======================================================================
+%% %
+%% % Definitions
+%% %
+%% %==============
+%% % \ud to un-italisize d in dx and dy in integrals (pg 46 short intro to latex)
+%% %     use: \ud x  for dx
+%% \newcommand{\ud}              {\,\mathrm{d}}
+%% % uncomment this to use \utilde instead of manually defined \utl
+%% %\renewcommand{\undertilde}[1]{\utilde{#1}}
+%% %
+%% %
+%% % statistics commands
+%% \newcommand{\E}               {\textrm{E}}
+%% \newcommand{\Var}             {\textrm{Var}}
+%% \newcommand{\Varhat}          {\widehat{\textrm{Var}}}
+%% \newcommand{\Cov}             {\textrm{Cov}}
+%% \newcommand{\Cor}             {\textrm{Cor}}
+%% \newcommand{\Corr}            {\textrm{Corr}}
+%% \newcommand{\Mode}            {\textrm{Mode}}
+%% \newcommand{\SD}              {\textrm{SD}}
+%% \newcommand{\SE}              {\textrm{SE}}
+%% \renewcommand{\Pr}            {\textrm{Pr}}
+%% \newcommand{\pval}            {\textrm{p-value}}
+%% \newcommand{\logit}           {\textrm{logit}}
+%% \newcommand{\diag}            {\textrm{diag}}
+%% \newcommand{\goesto}          {\rightarrow}
+%% \newcommand{\goesinas}        {\xrightarrow{a.s.}}
+%% \newcommand{\goesinp}         {\xrightarrow{p}}
+%% \newcommand{\goesinlaw}       {\xrightarrow{\mathscr{L}}}
+%% \newcommand{\iid}             {\stackrel{\textrm{iid}}{\sim}}
+%% \newcommand{\ind}             {\stackrel{\textrm{ind}}{\sim}}
+%% \newcommand{\realR}           {\mathbb{R}}
+%% \renewcommand{\Vec}           {\textrm{Vec}}
+%% \newcommand{\tr}              {\textrm{tr}}  % trace
+%% %
+%% %\newcommand{\deriv}           [1]{\dot{#1}}%      for derivative
+%% \newcommand{\deriv}           [1]{\stackrel{\centerdot}{#1}}%      for derivative
+%% \newcommand{\dderiv}          [1]{\stackrel{\centerdot\centerdot}{#1}}% for second derivative
+%%                               % \otimes is the kronecker symbol
+%% %
+%% \newcommand{\tissue}          {\textrm{T}}
+%% \newcommand{\diet}            {\textrm{D}}
+%% \newcommand{\blood}           {\textrm{T}}
+%% %
+%% \newcommand{\xx}              {\textrm{x}}%   % for \mAlphax and \vbetax that includes the simplex condition
+%% %
+%% % indicies
+%% \newcommand{\sB}              {B}% biomass
+%% \newcommand{\sM}              {M}% mixture
+%% \renewcommand{\ss}            {s}% sources index
+%% \newcommand{\sS}              {S}% number of sources
+%% \newcommand{\si}              {i}% isotope index
+%% \newcommand{\sI}              {I}% number of isotopes
+%% \newcommand{\sj}              {j}% subject index
+%% \newcommand{\sJ}              {J}% number of subjects
+%% \newcommand{\sk}              {k}% measurements index
+%% \newcommand{\sK}              {K}% number of measurements
+%% \newcommand{\sKj}             [1]{K_{#1}}% number of measurements of subject j
+%% \newcommand{\sKs}             [1]{K_{#1}}% number of measurements of source s
+%% \newcommand{\sq}              {q}% implicit function theorem number of distinct sample sizes
+%% \newcommand{\sr}              {r}% replications index  (also for run for standards used for measurement error)
+%% \newcommand{\sR}              {R}% number of replications
+%% \newcommand{\sn}              {n}% number in implicit-function
+%% \newcommand{\snp}             {n^{\prime}}% number in implicit-function
+%% \newcommand{\su}              {u}% tissues in diet-shift model
+%% \newcommand{\sU}              {U}% tissues in diet-shift model
+%% \newcommand{\st}              {t}% time in diet-shift model
+%% \newcommand{\sonetoS}         {\ss=1,\ldots,\sS}%
+%% \newcommand{\ionetoI}         {\si=1,\ldots,\sI}%
+%% \newcommand{\ionetoIS}        {\si=1,\ldots,\sS}%{\si=1,\ldots,\sI,\sS}%
+%% \newcommand{\jonetoJ}         {\sj=1,\ldots,\sJ}%
+%% \newcommand{\konetoKj}        [1]{\sk=1,\ldots,\sK_{#1}}%
+%% \newcommand{\konetoKs}        [1]{\sk=1,\ldots,\sK_{#1}}%
+%% \newcommand{\ronetoR}         {\sr=1,\ldots,\sR}%
+%% \newcommand{\uonetoU}         {\su=1,\ldots,\sU}% % mixture tissues in diet-shift model
+%% \newcommand{\cO}              {O}% Open set in implicit-function
+%% \newcommand{\sll}             {l}% Ch 3, line set in random-directions symmetric mixing algorithm
+%% %
+%% %
+%% % matrix commands
+%% \newcommand{\mone}            {\matrix{1}}%
+%% % Matrix A
+%% \newcommand{\mA}              {\matrix{\hat{A}}}                               % sample A
+%% \newcommand{\mAinv}           {\mA^{-1}}
+%% \newcommand{\mAxhatrinv}      {\mA_{\xx}^{(\sr)-1}}  % bootstrap rep
+%% \newcommand{\mAxhatinv}       {\mA_{\xx}^{-1}}  % bootstrap rep
+%% \newcommand{\mAlpha}          {\matrix{A}}                                    % population A
+%% \newcommand{\mAlphainv}       {\mAlpha^{-1}}
+%% \newcommand{\mAlphainvp}      {\mAlpha^{-\transpose}}
+%% \newcommand{\mAlphaast}       {\mAlpha^{\ast}} % for Alpha without last column
+%% \newcommand{\mAlphaastp}      {\mAlpha^{\ast\transpose}} % for Alpha without last column
+%% \newcommand{\mAx}             {\mA_{\xx}}                                      % with simplex constraint
+%% \newcommand{\mAxinv}          {\mA_{\xx}^{-1}}                              % with simplex constraint
+%% \newcommand{\mAlphax}         {\mAlpha_{\xx}}                                    % population A
+%% \newcommand{\mAlphaxinv}      {\mAlpha_{\xx}^{-1}}
+%% \newcommand{\mAlphaxinvp}     {\mAlpha_{\xx}^{-\transpose}}
+%% %% moving from Alpha to A and Ahat
+%% %\newcommand{\mA}              {\matrix{A}}                                     % sample A
+%% %\newcommand{\mAhat}           {\matrix{\hat{A}}}
+%% %\newcommand{\mAinv}           {\matrix{A}^{-1}}
+%% %\newcommand{\mAxhatrinv}      {\hat{A}_{\xx}^{(\sr)-1}}  % bootstrap rep
+%% %\newcommand{\mAlpha}          {\mathcal{A}}                                    % population A
+%% %\newcommand{\mAlphahat}       {\mathcal{\hat{A}}}
+%% %\newcommand{\mAlphainv}       {\mathcal{A}^{-1}}
+%% %\newcommand{\mAlphainvp}      {\mathcal{A}^{-\transpose}}
+%% %\newcommand{\mAlphahatrinv}   {\mathcal{\hat{A}}^{(\sr)-1}}  % bootstrap rep
+%% %\newcommand{\mAlphahatinv}    {\mathcal{\hat{A}}^{-1}}
+%% %\newcommand{\mAlphahatinvp}   {\mathcal{\hat{A}}^{-\transpose}}
+%% %\newcommand{\mAlphaast}       {\mathcal{A}^{\ast}} % for Alpha without last column
+%% %\newcommand{\mAlphaastp}      {\mathcal{A}^{\ast\transpose}} % for Alpha without last column
+%% %\newcommand{\mAx}             {\matrix{A}_{\xx}}                                      % with simplex constraint
+%% %\newcommand{\mAxhat}          {\matrix{\hat{A}}_{\xx}}
+%% %\newcommand{\mAxinv}          {\matrix{A}_{\xx}^{-1}}                              % with simplex constraint
+%% %\newcommand{\mAlphax}         {\mathcal{A}_{\xx}}                                    % population A
+%% %\newcommand{\mAlphaxhat}      {\mathcal{\hat{A}}_{\xx}}
+%% %\newcommand{\mAlphaxinv}      {\mathcal{A}_{\xx}^{-1}}
+%% %\newcommand{\mAlphaxinvp}     {\mathcal{A}_{\xx}^{-\transpose}}
+%% %\newcommand{\mAlphaxhatrinv}  {\mathcal{\hat{A}}_{\xx}^{(\sr)-1}}  % bootstrap rep
+%% %\newcommand{\mAlphaxhatinv}   {\mathcal{\hat{A}}_{\xx}^{-1}}
+%% %\newcommand{\mAlphaxhatinvp}  {\mathcal{\hat{A}}_{\xx}^{-\transpose}}
+%% % Matrix B is (A-beta*1p)
+%% \newcommand{\mB}              {\matrix{\hat{B}}}                               % sample B
+%% \newcommand{\mBinv}           {\mB^{-1}}
+%% \newcommand{\mBxhatrinv}      {\mB_{\xx}^{(\sr)-1}}  % bootstrap rep
+%% \newcommand{\mBeta}           {\matrix{B}}                                    % population B
+%% \newcommand{\mBetainv}        {\mBeta^{-1}}
+%% \newcommand{\mBetainvp}       {\mBeta^{-\transpose}}
+%% \newcommand{\mBetaast}        {\mBeta^{\ast}} % for Beta without last column
+%% \newcommand{\mBetaastp}       {\mBeta^{\ast\transpose}} % for Beta without last column
+%% \newcommand{\mBx}             {\mB_{\xx}}                                      % with simplex constraint
+%% \newcommand{\mBxinv}          {\mB_{\xx}^{-1}}                              % with simplex constraint
+%% \newcommand{\mBetax}          {\mBeta_{\xx}}                                    % population B
+%% \newcommand{\mBetaxinv}       {\mBeta_{\xx}^{-1}}
+%% \newcommand{\mBetaxinvp}      {\mBeta_{\xx}^{-\transpose}}
+%% \newcommand{\mBLM}            {\matrix{B}}              % ALM theory
+%% \newcommand{\mBLMp}           {\matrix{B}^{\transpose}} % ALM theory
+%% \newcommand{\mBLMhat}         {\hat{\matrix{B}}} % ALM theory
+%% %\newcommand{\mBobs}           {\matrix{B}^{\textrm{\scriptsize obs}}}
+%% %\newcommand{\mBobsp}          {\matrix{B}^{\textrm{\scriptsize obs}\transpose}}
+%% \newcommand{\mE}              {\matrix{E}}
+%% \newcommand{\mEp}             {\matrix{E}^{\transpose}}
+%% \newcommand{\me}              {\matrix{e}}  % ALM theory
+%% \newcommand{\mR}              {\matrix{R}}
+%% \newcommand{\mRp}             {\matrix{R}^{\transpose}}
+%% \newcommand{\mRinv}           {\matrix{R}^{-1}}
+%% \newcommand{\mRhat}           {\hat{\matrix{R}}}
+%% \newcommand{\mRtilde}         {\tilde{\matrix{R}}}
+%% \newcommand{\mRR}             {\mathbb{R}}
+%% \newcommand{\mRRp}            {\mathbb{R}^{\transpose}}
+%% \newcommand{\mRRinv}          {\mathbb{R}^{-1}}
+%% \newcommand{\mD}              {\matrix{D}}
+%% \newcommand{\mDp}             {\matrix{D}^{\transpose}}
+%% \newcommand{\mDinv}           {\matrix{D}^{-1}}
+%% \newcommand{\mDhat}           {\hat{\matrix{D}}}
+%% \newcommand{\mDtilde}         {\tilde{\matrix{D}}}
+%% \newcommand{\mDD}             {\mathbb{D}}
+%% \newcommand{\mDDp}            {\mathbb{D}^{\transpose}}
+%% \newcommand{\mDDinv}          {\mathbb{D}^{-1}}
+%% \newcommand{\mI}              {\matrix{I}}
+%% \newcommand{\mG}              {\matrix{G}}
+%% \newcommand{\mGinv}           {\matrix{G}^{-1}}
+%% \newcommand{\mGhatinv}        {\hat{\matrix{G}}^{-1}}
+%% \newcommand{\mH}              {\matrix{H}}
+%% \newcommand{\mHhat}           {\hat{\matrix{H}}}
+%% \newcommand{\mK}              {\matrix{K}}
+%% \newcommand{\mGamma}          {\Gamma}
+%% \newcommand{\mL}              {\matrix{L}}
+%% \newcommand{\mLhat}           {\hat{\matrix{L}}}
+%% \newcommand{\mLp}             {\matrix{L}^{\transpose}}
+%% \newcommand{\mLhatp}          {\hat{\matrix{L}}^{\transpose}}
+%% \newcommand{\mM}              {\matrix{M}}
+%% \newcommand{\mOmega}          {\matrix{\Omega}}
+%% \newcommand{\mOmegak}         {\matrix{\Omega}_k}
+%% \newcommand{\mOmegahat}       {\hat{\matrix{\Omega}}}
+%% \newcommand{\mOmegahatk}      {\hat{\matrix{\Omega}}_k}
+%% \newcommand{\mQ}              {\matrix{Q}}
+%% \newcommand{\mS}              {\matrix{S}}
+%% \newcommand{\mSinv}           {\matrix{S}^{-1}}
+%% \newcommand{\mSigma}          [1]{\Sigma_{#1}}
+%% \newcommand{\mSigmainv}       [1]{\Sigma_{#1}^{-1}}
+%% \newcommand{\mSigmahat}       [1]{\hat{\Sigma}_{#1}}
+%% %\newcommand{\mLambda}         [1]{\Lambda_{#1}}                       % precision is \mSigmainv
+%% %\newcommand{\mLambdainv}      [1]{\Lambda_{#1}^{-1}}
+%% %\newcommand{\mLambdahat}      [1]{\hat{\Lambda}_{#1}}
+%% \newcommand{\mV}              {\matrix{V}}
+%% \newcommand{\mVinv}           {\matrix{V}^{-1}}
+%% \newcommand{\mVhat}           {\hat{\matrix{V}}}
+%% \newcommand{\mVhatinv}        {\hat{\matrix{V}}^{-1}}
+%% \newcommand{\mW}              {\matrix{W}}
+%% \newcommand{\mX}              {\matrix{X}}
+%% \newcommand{\mXp}             {\matrix{X}^{\transpose}}
+%% \newcommand{\mY}              {\matrix{Y}}  % ALM theory
+%% \newcommand{\mYp}             {\matrix{Y}^{\transpose}}  % ALM theory
+%% \newcommand{\mYhat}           {\hat{\matrix{Y}}}  % ALM theory
+%% \newcommand{\mZ}              {\matrix{Z}}
+%% \newcommand{\mZp}             {\matrix{Z}^{\transpose}}
+%% \newcommand{\mzero}           {\matrix{0}}
+%% %
+%% % vector commands
+%% \newcommand{\vzero}           {\vector{0}}%
+%% \newcommand{\vzerop}          {\vector{0}^{\transpose}}%
+%% \newcommand{\vone}            {\vector{1}}%
+%% \newcommand{\vonep}           {\vector{1}^{\transpose}}%
+%% \newcommand{\vas}             [1]{\vector{a}_{#1}}%               column of A for source s
+%% \newcommand{\vasbar}          [1]{\vector{\bar{a}}_{#1}}%               column of A for source s
+%% \newcommand{\vask}            [2]{\vector{a}_{#1#2}}%               column of A for source s, sample k
+%% \newcommand{\valphapi}        {\vector{\alpha}_{\pi}}%               parameters for Dirichlet distribution
+%% \newcommand{\valphas}         [1]{\vector{\alpha}_{#1}}%               column of A for source s
+%% \newcommand{\valphai}         [1]{\vector{\alpha}_{#1}^{\transpose}}%               row of A for isotope i
+%% \newcommand{\valphaip}         [1]{\vector{\alpha}_{#1}}%               row of A for isotope i
+%% \newcommand{\valphashat}      [1]{\vector{\hat{\alpha}}_{#1}}%               column of A for source s
+%% \newcommand{\vA}              [1]{\vector{\mA}_{#1}}%
+%% \newcommand{\vAp}             [1]{\vector{\mA}_{#1}^{\transpose}}%
+%% \newcommand{\vAhat}           [1]{\vector{\hat{\mA}}_{#1}}%
+%% \newcommand{\vpi}             {\vector{\pi}}%
+%% \newcommand{\vpihat}          {\vector{\hat{\pi}}}%
+%% \newcommand{\vpiB}            {\vector{\pi}}%                        %{\vector{\pi}_{B}}%
+%% \newcommand{\vpiBs}           [1]{\vector{\pi}_{#1}^\ast}%           %[1]{\vector{\pi}_{B#1}^\ast}%             % for sec 4.3 weighted least squares, instances of unique solutions
+%% \newcommand{\vpihatBs}        [1]{\vector{\hat{\pi}}_{#1}^\ast}%     %[1]{\vector{\hat{\pi}}_{B#1}^\ast}%       % for sec 4.3 weighted least squares, instances of unique solutions
+%% \newcommand{\vpiBast}         {\vector{\pi}^{\ast}}%                 %{\vector{\pi}_{B}^{\ast}}%
+%% \newcommand{\vpiBhat}         {\vector{\hat{\pi}}}%                  %{\vector{\hat{\pi}}_{B}}%
+%% \newcommand{\vpihatk}         {\vector{\hat{\pi}}_{\sk}}%                  %{\vector{\hat{\pi}}_{B}}%
+%% \newcommand{\vpizeroB}        {\vector{\pi}_{0}}%                    %{\vector{\pi}_{0B}}%
+%% \newcommand{\vpijB}           [1]{\vector{\pi}_{#1}}%                %[1]{\vector{\pi}_{#1B}}%
+%% \newcommand{\vpijBast}        [1]{\vector{\pi}_{#1}^{\ast}}%         %[1]{\vector{\pi}_{#1B}^{\ast}}%
+%% \newcommand{\vpijBhat}        [1]{\vector{\hat{\pi}}_{#1}}%          %[1]{\vector{\hat{\pi}}_{#1B}}%
+%% \newcommand{\vbjkobs}         [2]{\vector{b}_{#1#2}}%^{\textrm{\scriptsize obs}}}%
+%% \newcommand{\vbjkobsx}        [2]{\vector{b}_{\xx #1#2}}%^{\textrm{\scriptsize obs}}}%  % with simplex constraint
+%% \newcommand{\vbjkobsp}        [2]{\vector{b}_{#1#2}^\transpose}%^{\textrm{\scriptsize obs} \transpose}}%
+%% \newcommand{\vbjbarobs}       [1]{\vector{\bar{b}}_{#1}}%
+%% \newcommand{\vbjbarobsp}      [1]{\vector{\bar{b}}_{#1}^\transpose}%
+%% \newcommand{\vbbarbarobs}     {\vector{\bar{b}}}%
+%% \newcommand{\vbbarbarobsp}    {\vector{\bar{b}}^\transpose}%
+%% \newcommand{\vbjk}            [2]{\vector{b}_{#1#2}}%
+%% \newcommand{\vbjkbar}         [2]{\vector{\bar{b}}_{#1#2}}%
+%% \newcommand{\vbjkbarbar}      [2]{\vector{\bar{\bar{b}}}_{#1#2}}%
+%% \newcommand{\vbj}             [1]{\vector{b}_{#1}}%
+%% \newcommand{\vbjx}            [1]{\vector{b}_{\xx #1}}%                             % with simplex constraint
+%% \newcommand{\vbjp}            [1]{\vector{b}_{#1}^{\transpose}}%
+%% \newcommand{\vbbarp}          {\vector{\bar{b}}^{\transpose}}%
+%% \newcommand{\vbjhat}          [1]{\vector{\hat{b}}_{#1}}%
+%% \newcommand{\vbjhatx}         [1]{\vector{\hat{b}}_{\xx #1}}%                    % with simplex constraint
+%% \newcommand{\vbetap}          {\vector{\beta}^{\transpose}}%
+%% \newcommand{\vbetax}          {\vector{\beta}_{\xx}}%
+%% \newcommand{\vbetahat}        {\vector{\hat{\beta}}}%
+%% \newcommand{\vbetaxhat}       {\vector{\hat{\beta}}_{\xx}}%                      % with simplex constraint
+%% \newcommand{\vbetajk}         [2]{\vector{\beta}_{#1#2}}%
+%% \newcommand{\vbetajkbar}      [2]{\vector{\bar{\beta}}_{#1#2}}%
+%% \newcommand{\vbetajkbarbar}   [2]{\vector{\bar{\bar{\beta}}}_{#1#2}}%
+%% \newcommand{\vbetaj}          [1]{\vector{\beta}_{#1}}%
+%% \newcommand{\vbetajx}         [1]{\vector{\beta}_{\xx #1}}%                             % with simplex constraint
+%% \newcommand{\vbetajp}         [1]{\vector{\beta}_{#1}^{\transpose}}%
+%% \newcommand{\vbetajhat}       [1]{\vector{\hat{\beta}}_{#1}}%
+%% \newcommand{\vbetajhatx}      [1]{\vector{\hat{\beta}}_{\xx #1}}%                    % with simplex constraint
+%% %\newcommand{\vb}              {\vector{b}}%
+%% \newcommand{\vbp}             {\vector{b}^{\transpose}}%
+%% \newcommand{\vbx}             {\vector{b}_{\xx}}%                                     % with simplex constraint
+%% \newcommand{\vbk}             [1]{\vector{b}_{#1}}%
+%% \newcommand{\vbbar}           {\vector{\bar{b}}}%
+%% \newcommand{\vbbarx}          {\vector{\bar{b}}_{\xx}}%
+%% \newcommand{\vbhat}           {\vector{\hat{b}}}%
+%% \newcommand{\vbhatx}          {\vector{\hat{b}}_{\xx}}%                          % with simplex constraint
+%% \newcommand{\vejk}            [2]{\vector{\varepsilon}_{#1#2}}%   % measurement error variation
+%% \newcommand{\veps}            {\vector{\varepsilon}}%
+%% \newcommand{\vzk}             [1]{\vector{z}_{#1}}% % observed measurement error from standards
+%% \newcommand{\vpsijk}          [2]{\vector{\psi}_{#1#2}}%    % measurement error variation
+%% \newcommand{\vxijk}           [2]{\vector{\xi}_{#1#2}}%    % subject-specific source adjustments
+%% \newcommand{\vyk}             {\vector{y}_{\sk}}%{\vector{y}_{\vector{\sk}}}%                          % implicit function vector of all measurement means
+%% \newcommand{\vyik}            [1]{\vector{y}_{#1\sk}}%{\vector{y}_{\vector{\sk}}}%                          % implicit function vector of all measurement means
+%% \newcommand{\vmuyk}           {\vector{\mu}_{y}}%{\vector{\mu}_{\vector{y}}}%  %\vyk                          % implicit function vector of all measurement means
+%% \newcommand{\vmuykzero}       {\vector{\mu}_{0y}}%{\vector{y}_{0\vector{\sk}}}%                     % implicit function vector of all measurement means
+%% \newcommand{\vykzero}         {\vector{y}_{0\sk}}%{\vector{y}_{0\vector{\sk}}}%                     % implicit function vector of all measurement means
+%% \newcommand{\vY}              {\vector{Y}}%
+%% %\newcommand{\vgamma}          {\vector{\gamma}}%
+%% %\newcommand{\vgammaj}         [1]{\vector{\gamma}_{#1}}%
+%% %\newcommand{\vgammahat}       {\hat{\vector{\gamma}}}%
+%% \newcommand{\vlambda}         {\vector{\lambda}}%
+%% \newcommand{\vlambdaj}        [1]{\vector{\lambda}_{#1}}%
+%% \newcommand{\vtheta}          {\vector{\theta}}%
+%% \renewcommand{\vee}           {\vector{e}}%
+%% \newcommand{\vy}              [1]{\vector{y}_{#1}}%  % ALM theory
+%% \newcommand{\veh}             [1]{\vector{e}_{#1}}%  % ALM theory
+%% \newcommand{\vx}              [1]{\vector{x}_{#1}}%  % ALM theory
+%% \newcommand{\vX}              [1]{\vector{#1}}%    convergence definitions
+%% \newcommand{\vgammai}         [1]{\vector{\gamma}_{#1}}%  # discrimination regression
+%% \newcommand{\vgammaihat}      [1]{\vector{\hat{\gamma}}_{#1}}%  # discrimination regression
+%% \newcommand{\vT}              {\vector{T}}%  # over-constrained vector of estimates
+%% %\newcommand{\vphi}            {\vector{\phi}}%   % proportion consumed model
+%% %
+%% %
+%% % scalar commands
+%% \newcommand{\sais}            [2]{a_{#1#2}}%
+%% \newcommand{\saisk}           [3]{a_{#1#2#3}}%                    sampled values a_{isk}
+%% \newcommand{\saisbar}         [2]{\bar{a}_{#1#2}}%                    sampled values a_{isk}
+%% \newcommand{\salphais}        [2]{\alpha_{#1#2}}%
+%% \newcommand{\salphaishat}     [2]{\hat{\alpha}_{#1#2}}%
+%% \newcommand{\spizeroBs}       [1]{\pi_{0#1}}%                    %{\vector{\pi}_{0B}}%
+%% \newcommand{\spiBs}           [1]{\pi_{#1}}%                          %[1]{\pi_{B#1}}%                                     % use as \spiBs{s}{1} for \pi_{i1}
+%% \newcommand{\spiis}           [2]{\varpi_{#1#2}}%                         %[2]{\pi_{#1#2}}%                                     % use as \spiji{i}{1} for \pi_{i1}
+%% \newcommand{\spijBs}          [2]{\pi_{#1#2}}%                        %[2]{\pi_{#1B#2}}%                                     % use as \spijBs{i}{1} for \pi_{i1}
+%% \newcommand{\spihatBs}        [1]{\hat{\pi}_{#1}}%                    %[1]{\hat{\pi}_{B#1}}%                                % use as \spihatBs{s} for \hat{pi}_i
+%% \newcommand{\spitildeBs}      [1]{\tilde{\pi}_{#1}}%                  %[1]{\tilde{\pi}_{B#1}}%                         % for sec 4.3 weighted least squares, instances of unique solutions
+%% \newcommand{\sbjikobs}        [3]{b_{#1#2#3}}%^{\textrm{\scriptsize obs}}}%      % use as \sbijobs{i}{j}{1} for b_jik
+%% \newcommand{\sbjibarobs}      [2]{\bar{b}_{#1#2}}%^{\textrm{\scriptsize obs}}}%      % use as \sbijobs{i}{j}{1} for b_jik
+%% \newcommand{\sbbaribarobs}    [1]{\bar{b}_{#1}}%^{\textrm{\scriptsize obs}}}%      % use as \sbijobs{i}{j}{1} for b_jik
+%% \newcommand{\sbjk}            [2]{b_{#1#2}}%
+%% \newcommand{\sbji}            [2]{b_{#1#2}}%
+%% \newcommand{\sbi}             [1]{b_{#1}}%
+%% \newcommand{\sbibar}          [1]{\bar{b}_{#1}}%
+%% \newcommand{\sbik}            [2]{b_{#1#2}}%
+%% \newcommand{\sbetai}          [1]{\beta_{#1}}%
+%% \newcommand{\sbetaihat}       [1]{\hat{\beta}_{#1}}%
+%% \newcommand{\snu}             [1]{\nu_{#1}}%                         % degrees of freedom for IW distributions
+%% \newcommand{\ssigma}          [1]{\sigma_{#1}}%
+%% \newcommand{\ssigmahat}       [1]{\hat{\sigma}_{#1}}%
+%% \newcommand{\ssigmabetaiihat} [2]{\hat{\sigma}_{\vbeta #1#2}}%
+%% \newcommand{\ssigmabetaii}    [2]{\sigma_{\vbeta #1#2}}%
+%% \newcommand{\ssigmabiihat}    [2]{\hat{\sigma}_{\vb #1#2}}%
+%% \newcommand{\ssigmaalphasiihat} [3]{\hat{\sigma}_{\valphas{#1} #2#3}}%
+%% \newcommand{\sv}              [1]{v_{#1}}%
+%% \newcommand{\sssq}            [1]{s_{#1}^2}%
+%% \newcommand{\ssigmasq}        [1]{\sigma_{#1}^2}%
+%% \newcommand{\seps}            {\varepsilon}%
+%% \newcommand{\sz}              {z}% % observed measurement error from standards
+%% \newcommand{\szk}             [1]{z_{#1}}% % observed measurement error from standards
+%% %\newcommand{\sejki}           [3]{\varepsilon_{#1#2#3}}%                          % use as \seij{1} for e_ij1
+%% \newcommand{\smuyi}           [1]{\mu_{y#1}}%                                            % implicit function scalar of one measurement means
+%% \newcommand{\smuyizero}       [1]{\mu_{0y#1}}%{\vector{y}_{0\vector{\sk}}}%                     % implicit function vector of all measurement means
+%% \newcommand{\syi}             [1]{y_{#1}}%                                            % implicit function scalar of one measurement means
+%% \newcommand{\salphapis}       [1]{\alpha_{\pi#1}}%               parameters for Dirichlet distribution
+%% \newcommand{\salphapi}        {\alpha_{\pi}}%               parameters for Dirichlet distribution
+%% \newcommand{\salphazpi}       {\alpha_{0\pi}}%               parameters for Dirichlet distribution
+%% \newcommand{\salphab}         {\alpha_b}%                                            % implicit function scalar of one measurement means
+%% \newcommand{\salphas}         [1]{\alpha_{#1}}%                                            % implicit function scalar of one measurement means
+%% \newcommand{\sgammajk}        [2]{\gamma_{#1#2}}%
+%% \newcommand{\sy}              [1]{y_{#1}}%  % ALM theory
+%% \newcommand{\seh}             [1]{e_{#1}}%  % ALM theory
+%% %\newcommand{\staueps}         {\tau_{\varepsilon}}%  % measurement precision
+%% \newcommand{\staub}           {\tau_{b}}%  % measurement precision
+%% \newcommand{\staud}           [1]{\tau_{#1}}%  % source isotope precision
+%% \newcommand{\stauzero}        {\tau_{0}}%  % measurement precision
+%% \newcommand{\sgammai}         [1]{\gamma_{#1}}%  # discrimination regression
+%% \newcommand{\sgammaihat}      [1]{\hat{\gamma}_{#1}}%  # discrimination regression
+%% \newcommand{\sTs}             [1]{T_{#1}}%  # over-constrained estimate
+%% \newcommand{\spiBstilde}      [1]{\tilde{\pi}_{#1}}%                  %[1]{\tilde{\pi}_{B#1}}%                         % for sec 4.3 weighted least squares, instances of unique solutions
+%% \newcommand{\slambdajs}       [2]{\lambda_{#1#2}}%
+%% \newcommand{\slambdas}        [1]{\lambda_{#1}}%
+%% \newcommand{\sphis}           [1]{\phi_{#1}}%   % proportion consumed model
+%% \newcommand{\sxijis}          [3]{\xi_{#1#2#3}}%    % subject-specific source adjustments
+%% %
+%% %
+%% % isotopic measurement commands
+%% \renewcommand{\sb}            {b}%
+%% \newcommand{\vb}              {\vector{b}}%
+%% \newcommand{\sbeta}           {\beta}%
+%% \newcommand{\vbeta}           {\vector{\beta}}%
+%% \newcommand{\sd}              {d}%
+%% \newcommand{\vd}              {\vector{d}}%
+%% \newcommand{\sdelta}          {\delta}%
+%% \newcommand{\vdelta}          {\vector{\delta}}%
+%% \newcommand{\sD}              {D}%
+%% \newcommand{\vD}              {\vector{D}}%
+%% \newcommand{\sDelta}          {\Delta}%
+%% \newcommand{\vDelta}          {\vector{\Delta}}%
+%% \renewcommand{\sc}            {c}%
+%% \newcommand{\vc}              {\vector{c}}%
+%% \newcommand{\skappa}          {\kappa}%
+%% \newcommand{\vkappa}          {\vector{\kappa}}%
+%% \newcommand{\se}              {e}%
+%% \newcommand{\ve}              {\vector{e}}%
+%% \newcommand{\seta}            {\eta}%
+%% \newcommand{\veta}            {\vector{\eta}}%
+%% \newcommand{\sm}              {m}%
+%% \newcommand{\vm}              {\vector{m}}%
+%% \newcommand{\smu}             {\mu}%
+%% \newcommand{\vmu}             {\vector{\mu}}%
+%% \newcommand{\vk}              {\vector{k}}%  %subscript for implicit function theorem
+%% \newcommand{\vpiBtilde}       {\vector{\tilde{\pi}}}%                  %[1]{\tilde{\pi}_{B#1}}%                         % for sec 4.3 weighted least squares, instances of unique solutions
+%% % 2-stage model notation for groups of parameters and data
+%% \newcommand{\mdeltaast}        {\matrix{\delta}^{\ast}}%
+%% \newcommand{\mdeltaSast}       {\matrix{\delta}_{\textrm{S}}^{\ast}}%
+%% \newcommand{\mdeltaDast}       {\matrix{\delta}_{\diet}^{\ast}}%
+%% \newcommand{\mdeltaTast}       {\matrix{\delta}_{\tissue}^{\ast}}%
+%% \newcommand{\mdDeltaast}       {\matrix{\delta}^{\prime\ast}}%
+%% \newcommand{\mSigmaast}        {\Sigma^{\ast}}%
+%% \newcommand{\mSigmaSast}       {\Sigma_{\textrm{S}}^{\ast}}%
+%% \newcommand{\mSigmaDast}       {\Sigma_{\diet}^{\ast}}%
+%% \newcommand{\mSigmaTast}       {\Sigma_{\tissue}^{\ast}}%
+%% \newcommand{\mbast}            {\matrix{b}^{\ast}}%
+%% \newcommand{\mdsast}           [1]{\matrix{d}_{#1}^{\ast}}%
+%% \newcommand{\mdDsast}          [1]{\matrix{d}_{\diet #1}^{\ast}}%
+%% \newcommand{\mdTsast}          [1]{\matrix{d}_{\tissue #1}^{\ast}}%
+%% \newcommand{\mdast}            {\matrix{d}^{\ast}}%
+%% \newcommand{\mdDast}           {\matrix{d}_{\diet}^{\ast}}%
+%% \newcommand{\mdTast}           {\matrix{d}_{\tissue}^{\ast}}%
+%% \newcommand{\mDast}            {\matrix{D}^{\ast}}%
+%% \newcommand{\mepsast}          {\matrix{\varepsilon}^{\ast}}%
+%% \newcommand{\mzast}            {\matrix{z}^{\ast}}% % observed measurement error from standards
+%%
+%% %
+%% \newcommand{\sEis}            [2]{\sd_{#1#2}}%                                          %[2]{E_{#1#2}}%                                            % generic isotopic value
+%% % b mixture                                                                                   %
+%% \newcommand{\sdEiM}           [1]{\sb_{#1}}%                                   %[2]{\delta E_{#1#2}}%                                     % source/mixture isotopic value
+%% \newcommand{\vdEM}            {\vb}%                            %[1]{\delta \vector{E}_{#1}}%                              % source/mixture isotopic value
+%% \newcommand{\vdEMbar}         {\bar{\vb}}%                            %[1]{\delta \vector{E}_{#1}}%                              % source/mixture isotopic value
+%% \newcommand{\sdEM}            {\sb}%                            %[1]{\delta \vector{E}_{#1}}%                              % source/mixture isotopic value
+%% \newcommand{\vdEMk}           [1]{\vb_{#1}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\vdEjM}           [1]{\vb_{#1}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\smudEiM}         [1]{\sbeta_{#1}}%                             %[2]{\mu_{\delta E_{#1#2}}}%                               % source/mixture isotopic value
+%% \newcommand{\smupdEiM}        [1]{\partial(\sbeta_{#1})}%                             %[2]{\mu_{\delta E_{#1#2}}}%                               % source/mixture isotopic value
+%% \newcommand{\smudEjiM}        [2]{\sbeta_{#1#2}}%                           %[3]{\mu_{\delta E_{#1#2#3}}}%                             % source/mixture isotopic value
+%% \newcommand{\vmudEM}          {\vbeta}%                      %[1]{\mu_{\delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\smudEM}          {\sbeta}%                      %[1]{\mu_{\delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\vmudEjM}         [1]{\vbeta_{#1}}%                    %[2]{\mu_{\delta \vector{E}_{#1#2}}}%                      % source/mixture isotopic value
+%% \newcommand{\vmudEMhat}       {\hat{\vbeta}}%
+%% \newcommand{\vmuzdEM}         {\vbeta_{0}}%                     %[1]{\mu_{0\delta \vector{E}_{#1}}}%                       % source/mixture isotopic value
+%% \newcommand{\sdEiMbar}        [1]{\bar{\sb}_{#1}}%                             %[2]{\delta \bar{E}_{#1#2}}%                               % source/mixture isotopic value
+%% \newcommand{\sdEjiMbar}       [2]{\bar{\sb}_{#1#2}}%                             %[2]{\delta \bar{E}_{#1#2}}%                               % source/mixture isotopic value
+%% \newcommand{\spdEiMbar}       [1]{\partial(\bar{\sb}_{#1})}%                   %[2]{\partial(\delta \bar{E}_{#1#2})}%                     % source/mixture isotopic value
+%% \newcommand{\sdEiMk}          [2]{\sb_{#1#2}}%                                 %[3]{\delta E_{#1#2#3}}%                                   % source/mixture isotopic value sampled
+%% \newcommand{\sdEjM}           [1]{\sb_{#1}}%                                 %[3]{\delta E_{#1#2#3}}%                                   % source/mixture isotopic value sampled
+%% \newcommand{\sdEjiMk}         [3]{\sb_{#1#2#3}}%                               %[4]{\delta E_{#1#2#3#4}}%                                 % source/mixture isotopic value sampled
+%% \newcommand{\vdEjMk}          [2]{\vb_{#1#2}}%                        %[3]{\delta \vector{E}_{#1#2#3}}%                          % source/mixture isotopic value
+%% \newcommand{\vdEjMbar}        [1]{\bar{\vb}_{#1}}%                        %[3]{\delta \vector{E}_{#1#2#3}}%                          % source/mixture isotopic value
+%% \newcommand{\sdEjMbar}        [1]{\bar{\sb}_{#1}}%                        %[3]{\delta \vector{E}_{#1#2#3}}%                          % source/mixture isotopic value
+%% \newcommand{\sdEiMp}          [1]{\sb_{#1}^{\transpose}}%                      %[2]{\delta E_{#1#2}^{\transpose}}%                        % discrimination corrected signature
+%% \newcommand{\sdEiMpbar}       [1]{\bar{\sb}_{#1}^{\transpose}}%                %[2]{\delta \bar{E}_{#1#2}^{\transpose}}%                  % discrimination corrected signature
+%% \newcommand{\supsilon}        [1]{\upsilon_{#1}}%                             % number of prior measurements on a prior mean
+%% % d                                                                                   %
+%% \newcommand{\sdEis}           [2]{\sd_{#1#2}}%                                   %[2]{\delta E_{#1#2}}%                                     % source/mixture isotopic value
+%% \newcommand{\vdEs}            [1]{\vd_{#1}}%                            %[1]{\delta \vector{E}_{#1}}%                              % source/mixture isotopic value
+%% \newcommand{\sdEs}            [1]{\sd_{#1}}%                            %[1]{\delta \vector{E}_{#1}}%                              % source/mixture isotopic value
+%% \newcommand{\vdEsk}           [2]{\vd_{#1#2}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\sdEsk}           [2]{\sd_{#1#2}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\vdEjs}           [2]{\vd_{#1#2}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\smudEis}         [2]{\sdelta_{#1#2}}%                             %[2]{\mu_{\delta E_{#1#2}}}%                               % source/mixture isotopic value
+%% \newcommand{\smupdEis}        [2]{\partial(\sdelta_{#1#2})}%                             %[2]{\mu_{\delta E_{#1#2}}}%                               % source/mixture isotopic value
+%% \newcommand{\smudEjis}        [3]{\sdelta_{#1#2#3}}%                           %[3]{\mu_{\delta E_{#1#2#3}}}%                             % source/mixture isotopic value
+%% \newcommand{\vmudEs}          [1]{\vdelta_{#1}}%                      %[1]{\mu_{\delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\smudEs}          [1]{\sdelta_{#1}}%                      %[1]{\mu_{\delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\vmudEshat}       [1]{\hat{\vdelta}_{#1}}%
+%% \newcommand{\smudEishat}      [2]{\hat{\sdelta}_{#1#2}}%
+%% \newcommand{\vmudEjs}         [2]{\vdelta_{#1#2}}%                    %[2]{\mu_{\delta \vector{E}_{#1#2}}}%                      % source/mixture isotopic value
+%% \newcommand{\vmuzdEs}         [1]{\vdelta_{0#1}}%                     %[1]{\mu_{0\delta \vector{E}_{#1}}}%                       % source/mixture isotopic value
+%% \newcommand{\sdEisbar}        [2]{\bar{\sd}_{#1#2}}%                             %[2]{\delta \bar{E}_{#1#2}}%                               % source/mixture isotopic value
+%% \newcommand{\spdEisbar}       [2]{\partial(\bar{\sd}_{#1#2})}%                   %[2]{\partial(\delta \bar{E}_{#1#2})}%                     % source/mixture isotopic value
+%% \newcommand{\vdEsbar}         [1]{\bar{\vd}_{#1}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\sdEisk}          [3]{\sd_{#1#2#3}}%                                 %[3]{\delta E_{#1#2#3}}%                                   % source/mixture isotopic value sampled
+%% \newcommand{\sdEisp}          [2]{\sd_{#1#2}^{\transpose}}%                      %[2]{\delta E_{#1#2}^{\transpose}}%                        % discrimination corrected signature
+%% \newcommand{\sdEispbar}       [2]{\bar{\sd}_{#1#2}^{\transpose}}%                %[2]{\delta \bar{E}_{#1#2}^{\transpose}}%                  % discrimination corrected signature
+%% % D                                                                                   %
+%% \newcommand{\sDEis}           [2]{\sD_{#1#2}}%                                   %[2]{\Delta E_{#1#2}}%                                     % discrimination
+%% \newcommand{\vDEs}            [1]{\vD_{#1}}%                            %[1]{\Delta \vector{E}_{#1}}%                              % source/mixture isotopic value
+%% \newcommand{\vDEsk}           [2]{\vD_{#1#2}}%                          %[2]{\Delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\smuDEis}         [2]{\sDelta_{#1#2}}%                             %[2]{\mu_{\Delta E_{#1#2}}}%                               % source/mixture isotopic value
+%% \newcommand{\smupDEis}        [2]{\partial(\sDelta_{#1#2})}%                             %[2]{\mu_{\Delta E_{#1#2}}}%                               % source/mixture isotopic value
+%% \newcommand{\vmuDEs}          [1]{\vDelta_{#1}}%                      %[1]{\mu_{\Delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\smuDEs}          [1]{\sDelta_{#1}}%                      %[1]{\mu_{\Delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\vmuDEshat}       [1]{\hat{\vDelta}_{#1}}%
+%% \newcommand{\smuDEshat}       [1]{\hat{\sDelta}_{#1}}%                      %[1]{\mu_{\Delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\smuDEishat}      [2]{\hat{\sDelta}_{#1#2}}%                      %[1]{\mu_{\Delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\vmuzDEs}         [1]{\vDelta_{0#1}}%                     %[1]{\mu_{0\Delta \vector{E}_{#1}}}%                       % source/mixture isotopic value
+%% \newcommand{\vDEsbar}         [1]{\bar{\vD}_{#1}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\sDEisbar}        [2]{\bar{\sD}_{#1#2}}%                             %[2]{\Delta \bar{E}_{#1#2}}%                               % discrimination
+%% \newcommand{\spDEisbar}       [2]{\partial(\bar{\sD}_{#1#2})}%                   %[2]{\partial(\Delta \bar{E}_{#1#2})}%                     % discrimination
+%% % dD                                                                                   %
+%% \newcommand{\sdDEis}          [2]{\sd_{#1#2}^{\prime}}%                                   %[2]{\delta E_{#1#2}}%                                     % source/mixture isotopic value
+%% \newcommand{\vdDEs}           [1]{\vd_{#1}^{\prime}}%                            %[1]{\delta \vector{E}_{#1}}%                              % source/mixture isotopic value
+%% \newcommand{\sdDEs}           [1]{\sd_{#1}^{\prime}}%                            %[1]{\delta \vector{E}_{#1}}%                              % source/mixture isotopic value
+%% \newcommand{\vdDEsk}          [2]{\vd_{#1#2}^{\prime}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\sdDEsk}          [2]{\sd_{#1#2}^{\prime}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\vdDEjs}          [2]{\vd_{#1#2}^{\prime}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\smudDEis}        [2]{\sdelta_{#1#2}^{\prime}}%                             %[2]{\mu_{\delta E_{#1#2}}}%                               % source/mixture isotopic value
+%% \newcommand{\smupdDEis}       [2]{\partial(\sdelta_{#1#2}^{\prime})}%                             %[2]{\mu_{\delta E_{#1#2}}}%                               % source/mixture isotopic value
+%% \newcommand{\smudDEjis}       [3]{\sdelta_{#1#2#3}^{\prime}}%                           %[3]{\mu_{\delta E_{#1#2#3}}}%                             % source/mixture isotopic value
+%% \newcommand{\vmudDEs}         [1]{\vdelta_{#1}^{\prime}}%                      %[1]{\mu_{\delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\smudDEs}         [1]{\sdelta_{#1}^{\prime}}%                      %[1]{\mu_{\delta \vector{E}_{#1}}}%                        % source/mixture isotopic value
+%% \newcommand{\vmudDEshat}      [1]{\hat{\vdelta}_{#1}^{\prime}}%
+%% \newcommand{\smudDEishat}     [2]{\hat{\sdelta}_{#1#2}^{\prime}}%
+%% \newcommand{\smudDEishatr}    [2]{\hat{\sdelta}_{#1#2}^{\prime(\sr)}}%
+%% \newcommand{\vmudDEir}        [1]{\vdelta_{#1}^{\prime\textrm{r}}}%  % a row of \mAlpha
+%% \newcommand{\vmudDEjs}        [2]{\vdelta_{#1#2}^{\prime}}%                    %[2]{\mu_{\delta \vector{E}_{#1#2}}}%                      % source/mixture isotopic value
+%% \newcommand{\vmuzdDEs}        [1]{\vdelta_{0#1}^{\prime}}%                     %[1]{\mu_{0\delta \vector{E}_{#1}}}%                       % source/mixture isotopic value
+%% \newcommand{\sdDEisbar}       [2]{\bar{\sd}_{#1#2}^{\prime}}%                             %[2]{\delta \bar{E}_{#1#2}}%                               % source/mixture isotopic value
+%% \newcommand{\spdDEisbar}      [2]{\partial(\bar{\sd}_{#1#2}^{\prime})}%                   %[2]{\partial(\delta \bar{E}_{#1#2})}%                     % source/mixture isotopic value
+%% \newcommand{\sdDEishat}       [2]{\hat{\sd}_{#1#2}^{\prime}}%                             %[2]{\delta \hat{E}_{#1#2}}%                               % source/mixture isotopic value
+%% \newcommand{\spdDEishat}      [2]{\partial(\hat{\sd}_{#1#2}^{\prime})}%                   %[2]{\partial(\delta \hat{E}_{#1#2})}%                     % source/mixture isotopic value
+%% \newcommand{\vdDEsbar}        [1]{\bar{\vd}_{#1}^{\prime}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\sdDEisk}         [3]{\sd_{#1#2#3}^{\prime}}%                                 %[3]{\delta E_{#1#2#3}}%                                   % source/mixture isotopic value sampled
+%% \newcommand{\sdDEisp}         [2]{\sd_{#1#2}^{\prime\transpose}}%                      %[2]{\delta E_{#1#2}^{\transpose}}%                        % discrimination corrected signature
+%% \newcommand{\sdDEispbar}      [2]{\bar{\sd}_{#1#2}^{\prime\transpose}}%                %[2]{\delta \bar{E}_{#1#2}^{\transpose}}%                  % discrimination corrected signature
+%% % c                                                                                   %
+%% %\newcommand{\cEis}           [2]{\lbrack E_{#1#2}\rbrack}%                           %[2]{\lbrack E_{#1#2}\rbrack}%                             % concentration
+%% %\newcommand{\cEisbar}        [2]{\lbrack \bar{E}_{#1#2}\rbrack}%                     %[2]{\lbrack \bar{E}_{#1#2}\rbrack}%                       % concentration
+%% %\newcommand{\pcEisbar}       [2]{\partial(\lbrack \bar{E}_{#1#2}\rbrack)}%           %[2]{\partial(\lbrack \bar{E}_{#1#2}\rbrack)}%             % concentration
+%% \newcommand{\vcEs}            [1]{\vc_{#1}}%                                 %[1]{[\vector{E}_{#1}]}%                                   % concentration
+%% \newcommand{\vcEsk}           [2]{\vc_{#1#2}}%                               %[2]{[\vector{E}_{#1#2}]}%                                 % concentration
+%% \newcommand{\scEis}           [2]{\sc_{#1#2}}%                                        %[2]{[E_{#1#2}]}%                                          % concentration
+%% \newcommand{\smucEis}         [2]{\skappa_{#1#2}}%                                  %[2]{\mu_{[E_{#1#2}]}}%                                    % concentration
+%% \newcommand{\vmucEs}          [1]{\vkappa_{#1}}%                           %[1]{\mu_{[\vector{E}_{#1}]}}%                             % concentration
+%% \newcommand{\vmuzcEs}         [1]{\vkappa_{0#1}}%                          %[1]{\mu_{0[\vector{E}_{#1}]}}%                            % concentration
+%% \newcommand{\scEisbar}        [2]{\bar{\sc}_{#1#2}}%                                  %[2]{[\bar{E}_{#1#2}]}%                                    % concentration
+%% \newcommand{\vcEsbar}         [1]{\bar{\vc}_{#1}}%                          %[2]{\delta \vector{E}_{#1#2}}%                            % source/mixture isotopic value
+%% \newcommand{\vpcEisbar}       [2]{\partial(\bar{\vc}_{#1#2})}%                        %[2]{\partial([\bar{E}_{#1#2}])}%                          % concentration
+%% % e                                                                                   %
+%% \newcommand{\veEs}            [1]{\ve_{#1}}%                                   %[1]{\vector{e}_{#1}}%                                     % assimilation efficiency
+%% \newcommand{\veEsk}           [2]{\ve_{#1#2}}%                                 %[2]{\vector{e}_{#1#2}}%                                   % assimilation efficiency
+%% \newcommand{\seEis}           [2]{\se_{#1#2}}%                                          %[2]{e_{#1#2}}%                                            % assimilation efficiency
+%% \newcommand{\smueEis}         [2]{\seta_{#1#2}}%                                    %[2]{\mu_{e_{#1#2}}}%                                      % concentration
+%% \newcommand{\vmueEs}          [1]{\veta_{#1}}%                             %[1]{\mu_{\vector{e}_{#1}}}%                               % concentration
+%% \newcommand{\vmuzeEs}         [1]{\veta_{0#1}}%                            %[1]{\mu_{0\vector{e}_{#1}}}%                              % concentration
+%% \newcommand{\seEisbar}        [2]{\bar{\se}_{#1#2}}%                                    %[2]{\bar{e}_{#1#2}}%                                      % assimilation efficiency
+%% \newcommand{\speEisbar}       [2]{\partial(\bar{\se}_{#1#2})}%                          %[2]{\partial(\bar{e}_{#1#2})}%                            % assimilation efficiency
+%% % m # mass for PSCMM                        %
+%% \newcommand{\vmE}            [1]{\vm_{#1}}%
+%% \newcommand{\vmEsk}           [2]{\vm_{#1#2}}%
+%% \newcommand{\smEis}           [2]{\sm_{#1#2}}%
+%% \newcommand{\smumEis}         [2]{\smu_{#1#2}}%
+%% \newcommand{\vmumEs}          [1]{\vmu_{#1}}%
+%% \newcommand{\vmuzmEs}         [1]{\vmu_{0#1}}%
+%% \newcommand{\smEisbar}        [2]{\bar{\sm}_{#1#2}}%
+%% %                                                                                     %
+%% \newcommand{\sdEipsp}         [2]{\sd_{#1^{\prime}#2^{\prime}}}%                 %[2]{\delta E_{#1^{\prime}#2^{\prime}}}%                   % source isotopic value
+%% \newcommand{\sdEipspbar}      [2]{\bar{\sd}_{#1^{\prime}#2^{\prime}}}%           %[2]{\delta \bar{E}_{#1^{\prime}#2^{\prime}}}%             % source isotopic value
+%% \newcommand{\sDEipsp}         [2]{\sD_{#1^{\prime}#2^{\prime}}}%                 %[2]{\Delta E_{#1^{\prime}#2^{\prime}}}%                   % discrimination
+%% \newcommand{\sDEipspbar}      [2]{\bar{\sD}_{#1^{\prime}#2^{\prime}}}%           %[2]{\Delta \bar{E}_{#1^{\prime}#2^{\prime}}}%             % discrimination
+%% \newcommand{\sdEipspp}        [2]{\sd_{#1^{\prime}#2^{\prime}}^{\prime}}%        %[2]{\delta E_{#1^{\prime}#2^{\prime}}^{\prime}}%          % discrimination corrected signature
+%% \newcommand{\sdEipsppbar}     [2]{\bar{\sd}_{#1^{\prime}#2^{\prime}}^{\prime}}%  %[2]{\delta \bar{E}_{#1^{\prime}#2^{\prime}}^{\prime}}%    % discrimination corrected signature
+%% \newcommand{\sBi}             [1]{B_{#1}}%                                            %[1]{B_{#1}}%                                              % Consumable Biomass
+%% \newcommand{\sBPIi}           [1]{BPI_{#1}}%                                          %[1]{BPI_{#1}}%                                            % Biomass Per Individual
+%% \newcommand{\sNCIi}           [1]{NCI_{#1}}%                                          %[1]{NCI_{#1}}%                                            % Number of Consumable Individuals
+%% % residuals (standards)
+%% \newcommand{\vepsk}           [1]{\veps_{#1}}%
+%% \newcommand{\vepsjk}          [2]{\veps_{#1#2}}%
+%% \newcommand{\sepsk}           [1]{\seps_{#1}}%
+%% %\newcommand{\sepsjk}          [2]{\seps_{#1#2}}%
+%% %
+%% %
+%% % commenting commands
+%% \newcommand{\I}               [1]{\marginpar{  {\tiny\sc \SISUS} }}     %\color{red}
+%% \newcommand{\A}               [1]{\marginpar{  {\tiny\sf Assumption} }} %\color{red}
+%% \newcommand{\B}               [1]{\marginpar{  {\tiny\sf Biases} }}     %\color{red}
+%% \newcommand{\Q}               [1]{\marginpar{  {\tiny\sf ?Question?} }} %\color{red}
+%% \newcommand{\W}               [1]{\marginpar{  {\tiny\sf Website} }}    %\color{red}
+%% \newcommand{\Blair}           [1]{\marginpar{  {\tiny\sf Blair added} }} %\color{red}
+%% \newcommand{\RETURN}          [1]{\marginpar{  {\tiny\sf Return: #1} }} %\color{red}
+%% %
+%% \newcommand{\ToDo}            [1]{\marginpar{
+%%     \fcolorbox{red}{white}{\parbox{1.0in}{
+%%             \color{red} \small \sf To Do: #1 }}}}
+%% %
+%% \newcommand{\Rcodesize}{\scriptsize \setlength{\baselineskip}{0.8\baselineskip}}
+%% %
+%% % SISUS commands
+%% %\newcommand{\SISUS}{\textsf{SISUS}}
+%% \newcommand{\SISUS}{SISUS}
+%% \newcommand{\SISUSlong}{Stable Isotope Sourcing using Sampling}
+%% \newcommand{\SISUShttp}{http:/\!/StatAcumen.com/sisus}
+%% \newcommand{\SISUSWiki}{\textsf{SISUS\textit{Wiki}}}
+%% \newcommand{\SISUSGettingStarted}{\textsf{Getting Started}}
+%% % others
+%% \newcommand{\IsoSource}{IsoSource}
+%% \newcommand{\IsoError}{IsoError}
+%% \newcommand{\WinBUGS}{WinBUGS}
+%% %
+%% %
+%% %
+%% % define the title as \SISUSlong
+%% \newcommand{\Title}{\SISUSlong}
+%% %
+%% %
+%% %% 10pt logo
+%% %   \newcommand{\wdth}{15pt}
+%% %   \newcommand{\wdthb}{17pt}
+%% %   \newcommand{\hght}{8pt}
+%% %   \newcommand{\lett}{\larger\sf }
+%% %   \newcommand{\wrd}{\tiny\sc }
+%% %\newcommand{\SISUSlogo}{
+%% %   \parbox{\wdth}{\lett S} \hspace{-\wdthb} \parbox{\wdth}{\vspace{-\hght}\wrd table}
+%% %   \parbox{\wdth}{\lett I} \hspace{-\wdthb} \parbox{\wdth}{\vspace{ \hght}\wrd sotope}
+%% %   \parbox{\wdth}{\lett S} \hspace{-\wdthb} \parbox{\wdth}{\vspace{-\hght}\wrd ourcing}
+%% %   \parbox{\wdth}{\lett U} \hspace{-7.5pt } \parbox{\wdth}{\vspace{ \hght}\wrd sing} \hspace{-9.5pt }
+%% %   \parbox{\wdth}{\lett S} \hspace{-\wdthb} \parbox{\wdth}{\vspace{-\hght}\wrd ampling}
+%% %   }
+%% %
+%% % 12pt logo
+%%    \newcommand{\wdth}{1.58em}
+%%    \newcommand{\wdthb}{1.75em}
+%%    \newcommand{\hght}{0.66em}
+%%    \newcommand{\lett}{\Huge\sf }
+%%    \newcommand{\wrd}{\tiny\sc }
+%% \newcommand{\SISUSlogo}{
+%%    \parbox{\wdth}{\lett S} \hspace{-\wdthb} \parbox{\wdth}{\vspace{-\hght}\wrd table}
+%%    \parbox{\wdth}{\lett I} \hspace{-\wdthb} \parbox{\wdth}{\vspace{ \hght}\wrd sotope}
+%%    \parbox{\wdth}{\lett S} \hspace{-\wdthb} \parbox{\wdth}{\vspace{-\hght}\wrd ourcing}
+%%    \parbox{\wdth}{\lett U} \hspace{-1em }   \parbox{\wdth}{\vspace{ \hght}\wrd sing} \hspace{-0.75em }
+%%    \parbox{\wdth}{\lett S} \hspace{-\wdthb} \parbox{\wdth}{\vspace{-\hght}\wrd ampling}
+%%    }
+%% %
+%% % poster logo
+%%    \newcommand{\wdthp}{1.58em}
+%%    \newcommand{\wdthbp}{1.5em}
+%%    \newcommand{\hghtp}{0.66em}
+%%    \newcommand{\lettp}{\Huge\sf }
+%%    \newcommand{\wrdp}{\tiny\sc }
+%% \newcommand{\SISUSlogoposter}{
+%%    \parbox{\wdth}{\lett S} \hspace{-\wdthbp} \parbox{\wdthp}{\vspace{-\hghtp}\wrdp table}
+%%    \parbox{\wdth}{\lett I} \hspace{-\wdthbp} \parbox{\wdthp}{\vspace{ \hghtp}\wrdp sotope}
+%%    \parbox{\wdth}{\lett S} \hspace{-\wdthbp} \parbox{\wdthp}{\vspace{-\hghtp}\wrdp ourcing}
+%%    \parbox{\wdth}{\lett U} \hspace{-.4em }   \parbox{\wdthp}{\vspace{ \hghtp}\wrdp sing} \hspace{-.75em }
+%%    \parbox{\wdth}{\lett S} \hspace{-\wdthbp} \parbox{\wdthp}{\vspace{-\hghtp}\wrdp ampling}
+%%    }
+%% %
+%% %
+%% % Models (proper case and lowercase)
+%% \newcommand{\BMM}    {BMM}
+%% \newcommand{\BMModel}{Basic mixing model}
+%% \newcommand{\bmmodel}{basic mixing model}
+%% \newcommand{\CMM}    {CMM}
+%% \newcommand{\CMModel}{Concentration mixing model}
+%% \newcommand{\cmmodel}{concentration mixing model}
+%% \newcommand{\EMM}    {EMM}
+%% \newcommand{\EMModel}{Extended mixing model}
+%% \newcommand{\emmodel}{extended mixing model}
+%% % redefine old names
+%% \newcommand{\CDMM}    {\CMM}
+%% \newcommand{\CDMModel}{\CMModel}
+%% \newcommand{\cdmmodel}{\cmmodel}
+%% \newcommand{\AECDMM}    {\EMM}
+%% \newcommand{\AECDMModel}{\EMModel}
+%% \newcommand{\aecdmmodel}{\emmodel}
+%% %\newcommand{\CDMM}    {CDMM}
+%% %\newcommand{\CDMModel}{Concentration-dependent mixing model}
+%% %\newcommand{\cdmmodel}{concentration-dependent mixing model}
+%% %\newcommand{\AECDMM}{AECDMM}
+%% %\newcommand{\AECDMModel}{Assimilation efficiency concentration-dependent mixing model}
+%% %\newcommand{\aecdmmodel}{assimilation efficiency concentration-dependent mixing model}
+%% \newcommand{\MCDMM}{MCDMM}
+%% \newcommand{\MCDMModel}{Macronutrient concentration-dependent mixing model}
+%% \newcommand{\mcdmmodel}{macronutrient concentration-dependent mixing model}
+%% \newcommand{\PSCMM}{PSCMM}
+%% \newcommand{\PSCMModel}{Proportions of sources consumed mixing model}
+%% \newcommand{\pscmmodel}{proportions of sources consumed mixing model}
+%% %
+%% % means model and subject-specific representation
+%% \newcommand{\IRep}{Implicit Representation}
+%% \newcommand{\Irep}{Implicit representation}
+%% \newcommand{\irep}{implicit representation}
+%% \newcommand{\IR}{ImRep}
+%% \newcommand{\ERep}{Explicit Representation}
+%% \newcommand{\Erep}{Explicit representation}
+%% \newcommand{\erep}{explicit representation}
+%% \newcommand{\ER}{ExRep}
+%% %
+%% % Variable names in model equations
+%% \newcommand{\BioMass}{\textrm{BioMass}}
+%% %
+%%    % Population Mass variables
+%%    \newcommand{\MPI}{\textrm{MPI}}
+%%    \newcommand{\NICP}{\textrm{NICP}}
+%%    \newcommand{\PopMass}{\textrm{PopMass}}
+%%    \newcommand{\PopMassCon}{\textrm{PopMassCon}}
+%%    \newcommand{\PopMassConTotal}{\textrm{PopMassConTotal}}
+%%    \newcommand{\PopMassProp}{\textrm{PopMassProp}}
+%%    \newcommand{\PopMassConProp}{\textrm{PopMassConProp}}
+%% %
+%% %
+%% % Theorems, Definitions, Remarks using amsthm
+%% %\theoremstyle{plain}% default
+%% \theoremstyle{definition}
+%% %\theoremstyle{remark}
+%%    \newtheorem{thm}{Theorem}[section]
+%%    \newtheorem{lem}[thm]{Lemma}
+%%    \newtheorem{prop}[thm]{Proposition}
+%%    \newtheorem{cor}[thm]{Corollary}
+%%    \newtheorem{defn}[thm]{Definition}
+%%    \newtheorem{conj}[thm]{Conjecture}
+%%    \newtheorem{exmp}[thm]{Example}
+%%    \newtheorem{rem}[thm]{Remark}
+%%    \newtheorem{com}[thm]{Comment}
+%%    %\newtheorem{note}[thm]{Note}
+%%    \newtheorem{case}[thm]{Case}
+%%    \newtheorem*{notation}{Notation}
+%% %
+%% \newcommand{\markendoftheorem}{\square}
+%% \newcommand{\markendofother}{\vartriangle}
+%% %
+%% %end
+%% %
+%% %
+%% %% reg exp for highlight {.}{.}:  \x7B(.)\x7D\x7B(.)\x7D
+%% %% reg exp to swap arguments of {0}{1}:  \x7B(.)\x7D\x7B(.)\x7D  with  \x7B\1\x7D\x7B\0\x7D
+%% %
+%% %
+%% %
+%% %%% matrix commands
+%% %%\newcommand{\mA}{\mathbf{A}}
+%% %%\newcommand{\mAlpha}{\mathcal{A}}                                    % population A
+%% %%\newcommand{\mAhat}{\mathbf{\hat{A}}}
+%% %%\newcommand{\mAinv}{\mathbf{A}^{-1}}
+%% %%\newcommand{\mAs}{\mathbf{A}_s}                                      % with simplex constraint
+%% %%\newcommand{\mAsinv}{\mathbf{A}_s^{-1}}                              % with simplex constraint
+%% %%\newcommand{\mB}{\mathbf{B}}
+%% %%\newcommand{\mBobs}{\mathbf{B}^{\textrm{\scriptsize obs}}}
+%% %%\newcommand{\mBobsp}{\mathbf{B}^{\textrm{\scriptsize obs}\prime}}
+%% %%\newcommand{\mE}{\mathbf{E}}
+%% %%\newcommand{\mR}{\mathbf{R}}
+%% %%\newcommand{\mRp}{\mathbf{R}^{\prime}}
+%% %%\newcommand{\mRinv}{\mathbf{R}^{-1}}
+%% %%\newcommand{\mRhat}{\hat{\mathbf{R}}}
+%% %%\newcommand{\mRtilde}{\tilde{\mathbf{R}}}
+%% %%\newcommand{\mRR}{\mathbb{R}}
+%% %%\newcommand{\mRRp}{\mathbb{R}^{\prime}}
+%% %%\newcommand{\mRRinv}{\mathbb{R}^{-1}}
+%% %%\newcommand{\mD}{\mathbf{D}}
+%% %%\newcommand{\mDp}{\mathbf{D}^{\prime}}
+%% %%\newcommand{\mDinv}{\mathbf{D}^{-1}}
+%% %%\newcommand{\mDhat}{\hat{\mathbf{D}}}
+%% %%\newcommand{\mDtilde}{\tilde{\mathbf{D}}}
+%% %%\newcommand{\mDD}{\mathbb{D}}
+%% %%\newcommand{\mDDp}{\mathbb{D}^{\prime}}
+%% %%\newcommand{\mDDinv}{\mathbb{D}^{-1}}
+%% %%\newcommand{\mI}{\mathbf{I}}
+%% %%\newcommand{\mG}{\mathbf{J}}
+%% %%\newcommand{\mGinv}{\mathbf{J}^{-1}}
+%% %%\newcommand{\mH}{\mathbf{H}}
+%% %%\newcommand{\mK}{\mathbf{K}}
+%% %%\newcommand{\mGamma}{\Gamma}
+%% %%\newcommand{\mS}{\mathbf{S}}
+%% %%\newcommand{\mSigma}{\Sigma}
+%% %%\newcommand{\mSigmainv}{\Sigma^{-1}}
+%% %%\newcommand{\mSigmahat}{\hat{\Sigma}}
+%% %%\newcommand{\mV}{\mathbf{V}}
+%% %%\newcommand{\mVinv}{\mathbf{V}^{-1}}
+%% %%\newcommand{\mVhat}{\hat{\mathbf{V}}}
+%% %%\newcommand{\mVhatinv}{\hat{\mathbf{V}}^{-1}}
+%% %%\newcommand{\mW}{\mathbf{W}}
+%% %%\newcommand{\mX}{\mathbf{X}}
+%% %%\newcommand{\mXp}{\mathbf{X}^{\prime}}
+%% %%\newcommand{\mZ}{\mathbf{Z}}
+%% %%\newcommand{\mZp}{\mathbf{Z}^{\prime}}
+%% %%\newcommand{\mzero}{\mathbf{0}}
+%% %%
+%% %%% vector commands
+%%  %%\newcommand{\vzero}{\utilde{0}}
+%%  %%\newcommand{\vzerop}{\utilde{0}^{\prime}}
+%%  %%\newcommand{\vA}[1]{\utilde{\mA}_{#1}}
+%%  %%\newcommand{\vAp}[1]{\utilde{\mA}_{#1}^{\prime}}
+%%  %%\newcommand{\vAhat}[1]{\utilde{\hat{\mA}}_{#1}}
+%%  %%\newcommand{\vpi}{\utilde{\pi}}
+%%  %%\newcommand{\vpihat}{\utilde{\hat{\pi}}}
+%%  %%\newcommand{\vpii}[1]{\utilde{\pi}_{#1}}
+%%  %%\newcommand{\vpii}[1]{\utilde{\pi}_{#1}}
+%%  %%\newcommand{\vpii}[1]{\utilde{\pi}_{#1}}
+%%  %%\newcommand{\vpiihat}[1]{\utilde{\hat{\pi}}_{#1}}
+%% %%\newcommand{\vbjiobs}[2]{\utilde{b}_{#1#2}^{\textrm{\scriptsize obs}}}
+%% %%\newcommand{\vbsjiobs}[2]{\utilde{b}_{s#1#2}^{\textrm{\scriptsize obs}}}   % with simplex constraint
+%% %%\newcommand{\vbjiobsp}[2]{\utilde{b}_{#1#2}^{\textrm{\scriptsize obs} \prime}}
+%% %%\newcommand{\vbji}[2]{\utilde{b}_{#1#2}}
+%% %%\newcommand{\vbjibar}[2]{\utilde{\bar{b}}_{#1#2}}
+%% %%\newcommand{\vbjibarbar}[2]{\utilde{\bar{\bar{b}}}_{#1#2}}
+%% %%\newcommand{\vbi}[1]{\utilde{b}_{#1}}
+%% %%\newcommand{\vbsi}[1]{\utilde{b}_{s#1}}                              % with simplex constraint
+%% %%\newcommand{\vbip}[1]{\utilde{b}_{#1}^{\prime}}
+%% %%\newcommand{\vbihat}[1]{\utilde{\hat{b}}_{#1}}
+%% %%\newcommand{\vbsihat}[1]{\utilde{\hat{b}}_{s#1}}                     % with simplex constraint
+%% %%\newcommand{\vb}{\utilde{b}}
+%% %%\newcommand{\vbp}{\utilde{b}^{\prime}}
+%% %%\newcommand{\vbs}{\utilde{b}_s}                                      % with simplex constraint
+%% %%\newcommand{\vbhat}{\utilde{\hat{b}}}
+%% %%\newcommand{\vbshat}{\utilde{\hat{b}}_{s}}                           % with simplex constraint
+%%  %%\newcommand{\veji}[2]{\utilde{\varepsilon}_{#1#2}}
+%%  %%\newcommand{\vesji}[2]{\utilde{\varepsilon}_{s#1#2}}                 % with simplex constraint
+%%  %%\newcommand{\vejip}[2]{\utilde{\varepsilon}_{#1#2}^{\prime}}
+%%  %%\newcommand{\vynp}{\utilde{y}_{n^{\prime}}}                          % implicit function vector of all measurement means
+%%  %%\newcommand{\vmuynp}{\utilde{\mu}_{\vynp}}                           % implicit function vector of all measurement means
+%%  %%\newcommand{\vynpzero}{\utilde{y}_{n^{\prime}0}}                     % implicit function vector of all measurement means
+%%  %%\newcommand{\vY}{\utilde{Y}}
+%%  %%\newcommand{\vbeta}{\utilde{\beta}}
+%%  %%\newcommand{\vbetahat}{\utilde{\hat{\beta}}}
+%%  %%\newcommand{\vbetashat}{\utilde{\hat{\beta}}_s}                      % with simplex constraint
+%%  %%\newcommand{\vgamma}{\utilde{\gamma}}
+%%  %%\newcommand{\vlambda}{\utilde{\lambda}}
+%%  %%\newcommand{\vgammahat}{\hat{\utilde{\gamma}}}
+%%  %%\newcommand{\vtheta}{\utilde{\theta}}
+%%  %%\newcommand{\ve}{\utilde{e}}
+%% %%
+%% %%% scalar commands
+%% %%\newcommand{\saji}[2]{a_{#1#2}}
+%% %%\newcommand{\spiis}[2]{\pi_{#1#2}}                                     % use as \spiji{i}{1} for \pi_{i1}
+%%  %%\newcommand{\spiji}[2]{\pi_{#1#2}}                                     % use as \spiji{i}{1} for \pi_{i1}
+%%     %%\newcommand{\spiki}[2]{\pi_{#1#2}}                                     % use as \spiki{i}{1} for \pi_{i1}
+%%     %%\newcommand{\spihati}[1]{\hat{\pi}_{#1}}                                % use as \spihati{i} for \hat{pi}_i
+%%  %%\newcommand{\sbjikobs}[3]{b_{#1#2#3}^{\textrm{\scriptsize obs}}}      % use as \sbijobs{i}{j}{1} for b_ij1
+%%  %%\newcommand{\sbji}[2]{b_{#1#2}}
+%%  %%\newcommand{\sbi}[1]{b_{#1}}
+%%  %%\newcommand{\sejik}[3]{\varepsilon_{#1#2#3}}                          % use as \seij{1} for e_ij1
+%%  %%\newcommand{\syi}[1]{y_{#1}}                                            % implicit function scalar of one measurement means
+%% %%
+%% %%
+%% %%% isotopic measurement commands
+%%        %%\newcommand{\dEji}[2]{\delta E_{#1#2}}                                 % source/mixture isotopic value
+%%     %%\newcommand{\dEjibar}[2]{\delta \bar{E}_{#1#2}}                                 % source/mixture isotopic value
+%%    %%\newcommand{\pdEjibar}[2]{\partial(\delta \bar{E}_{#1#2})}                                 % source/mixture isotopic value
+%%        %%\newcommand{\DEji}[2]{\Delta E_{#1#2}}                                 % discrimination
+%%     %%\newcommand{\DEjibar}[2]{\Delta \bar{E}_{#1#2}}                                 % discrimination
+%%    %%\newcommand{\pDEjibar}[2]{\partial(\Delta \bar{E}_{#1#2})}                                 % discrimination
+%%       %%\newcommand{\dEjip}[2]{\delta E_{#1#2}^{\prime}}                       % discrimination corrected signature
+%%    %%\newcommand{\dEjipbar}[2]{\delta \bar{E}_{#1#2}^{\prime}}                       % discrimination corrected signature
+%%  %%%\newcommand{\cEji}[2]{\lbrack E_{#1#2}\rbrack}                         % concentration
+%%  %%%\newcommand{\cEjibar}[2]{\lbrack \bar{E}_{#1#2}\rbrack}                         % concentration
+%%  %%%\newcommand{\pcEjibar}[2]{\partial(\lbrack \bar{E}_{#1#2}\rbrack)}                         % concentration
+%%  %%\newcommand{\cEji}[2]{[E_{#1#2}]}                         % concentration
+%%  %%\newcommand{\cEjibar}[2]{[\bar{E}_{#1#2}]}                         % concentration
+%%  %%\newcommand{\pcEjibar}[2]{\partial([\bar{E}_{#1#2}])}                         % concentration
+%%  %%\newcommand{\eEji}[2]{e_{#1#2}}                                        % assimilation efficiency
+%%  %%\newcommand{\eEjibar}[2]{\bar{e}_{#1#2}}                                        % assimilation efficiency
+%%  %%\newcommand{\peEjibar}[2]{\partial(\bar{e}_{#1#2})}                      % assimilation efficiency
+%%  %%\newcommand{\dEjpip}[2]{\delta E_{#1^{\prime}#2^{\prime}}}             % source isotopic value
+%%  %%\newcommand{\dEjpipbar}[2]{\delta \bar{E}_{#1^{\prime}#2^{\prime}}}             % source isotopic value
+%%  %%\newcommand{\DEjpip}[2]{\Delta E_{#1^{\prime}#2^{\prime}}}             % discrimination
+%%  %%\newcommand{\DEjpipbar}[2]{\Delta \bar{E}_{#1^{\prime}#2^{\prime}}}             % discrimination
+%%  %%\newcommand{\dEjpipp}[2]{\delta E_{#1^{\prime}#2^{\prime}}^{\prime}}   % discrimination corrected signature
+%%  %%\newcommand{\dEjpippbar}[2]{\delta \bar{E}_{#1^{\prime}#2^{\prime}}^{\prime}}   % discrimination corrected signature
+%% %%\newcommand{\Bi}[1]{B_{#1}}                                 % Consumable Biomass
+%% %%\newcommand{\BPIi}[1]{BPI_{#1}}                                 % Biomass Per Individual
+%% %%\newcommand{\NCIi}[1]{NCI_{#1}}                                 % Number of Consumable Individuals
+%% %%
+%% %%% indicies
+%%  %%\newcommand{\ioneton}{i=1,\ldots,n}
+%%  %%\newcommand{\jonetok}{j=1,\ldots,k}
+%%
+%%

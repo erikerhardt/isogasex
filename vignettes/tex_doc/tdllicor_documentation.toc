@@ -1,0 +1,28 @@
+\contentsline {chapter}{\numberline {1}Install and execute}{1}
+\contentsline {section}{\numberline {1.1}Install software}{1}
+\contentsline {section}{\numberline {1.2}Install the \texttt {tdllicor}\ package}{1}
+\contentsline {section}{\numberline {1.3}Analyze your TDL and/or Licor data with \texttt {tdllicor}}{2}
+\contentsline {chapter}{\numberline {2}Calculations}{5}
+\contentsline {section}{\numberline {2.1}Gas exchange calculations}{5}
+\contentsline {subsection}{\numberline {2.1.1}Constants}{5}
+\contentsline {subsection}{\numberline {2.1.2}Data}{5}
+\contentsline {subsubsection}{TDL}{5}
+\contentsline {subsubsection}{Licor}{5}
+\contentsline {subsection}{\numberline {2.1.3}Calculations}{6}
+\contentsline {subsubsection}{Concentration}{6}
+\contentsline {subsection}{\numberline {2.1.4}Partial Pressures}{6}
+\contentsline {subsubsection}{Discrimination}{6}
+\contentsline {section}{\numberline {2.2}Discrimination and (photo)respiration}{7}
+\contentsline {subsection}{\numberline {2.2.1}Background}{7}
+\contentsline {subsection}{\numberline {2.2.2}Research questions to be addressed}{7}
+\contentsline {subsection}{\numberline {2.2.3}Strategy}{7}
+\contentsline {paragraph}{Analysis procedures}{7}
+\contentsline {paragraph}{Phase 0, Data has already been collected}{7}
+\contentsline {paragraph}{Phase 1, Frequentist (bootstrap) modeling}{8}
+\contentsline {paragraph}{Phase 2, Bayesian modeling}{8}
+\contentsline {paragraph}{Phase 3, Experiment}{8}
+\contentsline {paragraph}{Phase 4, Validation}{9}
+\contentsline {paragraph}{Experimental design}{9}
+\contentsline {subsection}{\numberline {2.2.4}Comprehensive model for discrimination}{10}
+\contentsline {subparagraph}{Illustration of bootstrap method}{10}
+\contentsline {subsubsection}{Respiration and photorespiration}{11}

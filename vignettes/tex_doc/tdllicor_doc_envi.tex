@@ -1,0 +1,243 @@
+%  ADA1_envi.tex
+%  Package environment
+
+% comment this on final compilation
+%\usepackage{showkeys}  % shows symbolic references in the margin, [notcite] to not show citations
+
+\usepackage[twoside, bindingoffset=0.5in, includeheadfoot, hmargin=0.5in, vmargin=0.5in]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% with this we ensure that the chapter and section
+% headings are in lowercase.
+\renewcommand{\chaptermark}[1]{%
+  \markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\ #1}}
+%\renewcommand{\subsectionmark}[1]{%
+%  \markleft{\thesubsection\ #1}}
+\fancyhf{} % delete current header and footer
+\fancyhead[LE,RO]{\thepage}  %\bfseries
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % space for the rule
+\fancypagestyle{plain}{%
+  \fancyhead{} % get rid of headers on plain pages
+  \renewcommand{\headrulewidth}{0pt} % and the line
+}
+
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{mdframed} % gray frames around code  \begin{mdframed} \end{mdframed}
+\mdfsetup{%
+    linecolor=Black!10
+  , backgroundcolor=Black!05
+  , innerleftmargin=0pt
+  , innerrightmargin=0pt
+  , skipabove=1ex
+  , skipbelow=1ex
+  , splittopskip=2ex
+  , splitbottomskip=1ex
+  , nobreak=false
+  , needspace=1in
+}
+
+\usepackage{nameref} % to reference chapter names in RFunctions chapter
+\usepackage{url} % to reference urls
+
+\usepackage{graphicx}
+%\usepackage{subfigure}
+\DeclareGraphicsExtensions{.eps,.ps,.pdf,.jpg}
+
+\usepackage{amsmath}    % math enhancements latex2e (replaces amstex)
+\usepackage{amsthm}     % proclaims theoremstyle/proof environments
+%\usepackage{amscd}      % commutative Diagram environment
+\usepackage{amssymb}    % AMSFonts and symbols
+%\usepackage{eucal}      % Euler Cal/Script Fonts
+%\usepackage{latexsym}   % latex symbols (like \pounds)
+\usepackage{verbatim}   % for verbatim environment
+\usepackage{fancyvrb}   % for fancy verbatim environment, e.g., to keep blocks on the same page http://www.ctex.org/documents/packages/verbatim/fancyvrb.pdf
+\usepackage{comment}    % for comment environment
+%\usepackage{makeidx}    % for \makeindex and \printindex
+%\usepackage[english]{babel}      % to use multinational characters
+\usepackage{lineno}     % line numbering
+\usepackage{afterpage}  % \afterpage{\clearpage}, If it is undesirable to have a pagebreak
+   %\afterpage{\clearpage} %% clearpage after the next new page
+
+
+% For Homework, Quizzes, and Exams
+%\usepackage[coverpage,pointsonboth,totalsonright,nosolutions,forpaper]{eqexam}
+%\usepackage[nosolutions, forpaper,pointsonboth,totalsonright]{eqexam}
+%\usepackage[solutionsafter, forpaper,pointsonboth,totalsonright]{eqexam}
+
+
+
+
+\usepackage[colon]{natbib} % bibliography format   longnamesfirst
+        % http://merkel.zoneo.net/Latex/natbib.php
+        %   Options that can be added to \usepackage
+        %
+        %    * round: (default) for round parentheses;
+        %    * square: for square brackets;
+        %    * curly: for curly braces;
+        %    * angle: for angle brackets;
+        %    * colon: (default) to separate multiple citations with colons;
+        %    * comma: to use commas as separaters;
+        %    * authoryear: (default) for author-year citations;
+        %    * numbers: for numerical citations;
+        %    * super: for superscripted numerical citations, as in Nature;
+        %    * sort: orders multiple citations into the sequence in which they appear in the list of references;
+        %    * sort&compress: as sort but in addition multiple numerical citations are compressed if possible (as 3-6, 15);
+        %    * longnamesfirst: makes the first citation of any reference the equivalent of the starred variant (full author list) and subsequent citations normal (abbreviated list);
+        %    * sectionbib: redefines \thebibliography to issue \section* instead of \chapter*; valid only for classes with a \chapter command; to be used with the chapterbib package;
+        %    * nonamebreak: keeps all the authors' names in a citation on one line; causes overfull hboxes but helps with some hyperref problems.
+
+
+%\usepackage{undertilde} % for \utilde environment
+\usepackage{totpages}   % total pages
+%\usepackage[usenames,dvipsnames]{color}
+%\usepackage[dvips]{color}     % color for red box
+%\usepackage{fixfoot}  % to repeat a footnote symbol, info 4/7th down in http://edu.stuccess.com/knowcenter/TeX/FAQs/00000008.htm
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% allow different definitions for using latex and pdflatex
+%\newif\ifPDF
+%\ifx\pdfoutput\undefined\PDFfalse
+%\else\ifnum\pdfoutput > 0\PDFtrue
+%       \else\PDFfalse
+%       \fi
+%\fi
+%
+%\ifPDF
+%%%       %\usepackage[T1]{fontenc}
+%%%       %\usepackage{aeguill}
+%%%       \usepackage[pdftex]{graphicx}
+%%%       \usepackage{color}
+%%%       % pdftex/hyperref must be the LAST COMMAND in the preamble
+%%%   \IfFileExists{eethesis_slides.tex}{}
+%%%   {
+%       \usepackage[pdfauthor={Erik Barry Erhardt},%
+%            pdfsubject={Dissertation},%
+%            pdftitle={Erhardt, Erik Barry, Dissertation: \Title},%
+%            pdfkeywords={Statistics, Bayesian},%
+%            pdftex]{hyperref}
+%       \hypersetup{colorlinks=false,%
+%                   citecolor=black,%
+%                   filecolor=black,%
+%                   linkcolor=black,%
+%                   urlcolor=black,%
+%                   pdftex}
+%%%   } % end %\IfFileExists%
+%\else
+%%%       %\usepackage[T1]{fontenc}
+%%%       \usepackage[dvips]{graphicx}
+%%%       %\usepackage[dvips,colorlinks,hyperindex]{hyperref}
+%       \usepackage[colorlinks,hyperindex]{hyperref}
+%          \def\AnchorColor{anchors}
+%          \def\LinkColor{links}
+%          \def\pdfBorderAttrs{/Border [0 0 0] } % No border around Links
+%\fi
+
+
+%%% Use:
+%%%\begin{theorem}*    (the * will remove numbering if desired)
+%%%  ...
+%%%\end{theorem}
+%%%\begin{proof}[Proof of the Main Theorem]
+%%%  ...
+%%%\end{proof}
+
+
+%\newcommand{\bfi}{\bfseries\itshape}
+
+
+
+%% start listings
+%
+   \usepackage{listings}
+  \renewcommand{\ttdefault}{pcr}
+  \usepackage{bold-extra}  % for bold ttfamily
+   %\usepackage[usenames,dvipsnames]{color}
+  %\definecolor{Brown}{cmyk}{0,0.81,1,0.60}
+  %\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+  %\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+  %\definecolor{Blue}{rgb}{0,0,1}
+  %\definecolor{Purple}{rgb}{1,0,1}
+  %\definecolor{DarkGreen}{rgb}{0.0,0.4,0.0}
+   \newcommand{\codesize}{\small} %\normalsize}%{\scriptsize}
+
+   \lstloadlanguages{R}%
+   \lstset{ language=R,
+   %         frame=single,                           % Single frame around code
+           frame=ltrb,
+           framesep=5pt,
+           basicstyle=\codesize\normalfont\ttfamily,
+           keywordstyle=\codesize\normalfont\ttfamily,
+           %keywordstyle=\normalfont\bfseries\ttfamily,
+           %commentstyle=\itshape,
+   %        keywordstyle=\color{OliveGreen},
+   %        keywordstyle=[1]\color{Blue}\bf,        % MATLAB functions bold and blue
+   %        keywordstyle=[2]\color{Purple},         % MATLAB function arguments purple
+   %        keywordstyle=[3]\color{Blue}\underbar,  % User functions underlined and blue
+   %        %morekeywords=[1]{on, off, interp},
+   %        %morekeywords=[2]{on, off, interp},
+   %        %morekeywords=[3]{FindESS, homework_example},
+   %        identifierstyle=\color{CadetBlue}\bfseries,
+   %        commentstyle=\color{Brown},
+   %         commentstyle=\usefont{T1}{pcr}{m}{sl}\color{DarkGreen},
+   %        stringstyle=\color{DarkGreen}, % Strings
+           showstringspaces=false,                 % Don't put marks in string spaces
+   %        showstringspaces=true
+           tabsize=2                              % 2 spaces per tab
+   %        numbers=left,                           % Line numbers on left
+   %        firstnumber=1,                          % Line numbers start with line 1
+   %        numberstyle=\tiny\color{CadetBlue},     % Line numbers are blue
+   %        stepnumber=5                            % Line numbers go in steps of 5
+           }
+%%   \lstset{language=Matlab,                        % Use MATLAB
+%%          frame=single,                           % Single frame around code
+%%          basicstyle=\codesize\ttfamily,             % Use small true type font
+%%   %       keywordstyle=[1]\color{Blue}\bf,        % MATLAB functions bold and blue
+%%   %       keywordstyle=[2]\color{Purple},         % MATLAB function arguments purple
+%%   %       keywordstyle=[3]\color{Blue}\underbar,  % User functions underlined and blue
+%%          identifierstyle=,                       % Nothing special about identifiers
+%%                                                  % Comments small dark green courier
+%%   %       commentstyle=\usefont{T1}{pcr}{m}{sl}\color{DarkGreen}\codesize,
+%%   %       stringstyle=\color{Purple},             % Strings are purple
+%%          showstringspaces=false,                 % Don't put marks in string spaces
+%%          tabsize=3,                              % 5 spaces per tab
+%%          %
+%%          %%% Put standard MATLAB functions not included in the default
+%%          %%% language here
+%%          morekeywords={xlim,ylim,var,alpha,factorial,poissrnd,normpdf,normcdf},
+%%          %
+%%          %%% Put MATLAB function parameters here
+%%          morekeywords=[2]{on, off, interp},
+%%          %
+%%          %%% Put user defined functions here
+%%          morekeywords=[3]{FindESS, homework_example},
+%%          %
+%%   %       morecomment=[l][\color{Blue}]{...},     % Line continuation (...) like blue comment
+%%          numbers=left,                           % Line numbers on left
+%%          firstnumber=1,                          % Line numbers start with line 1
+%%   %       numberstyle=\tiny\color{Blue},          % Line numbers are blue
+%%          stepnumber=5                            % Line numbers go in steps of 5
+%%          }
+%%
+%%   % Include a C source file. Use like:
+%%   %   \csourcefile{stuff.c}{Code to do something or another}
+%%   %  First argument is file to include, second is caption for the label
+%%   \newcommand{\csourcefile}[2]
+%%    {\begin{itemize}\item[]\lstinputlisting[caption=#2,label=#1]{#1}\end{itemize}}
+%%   \newcommand{\matlabscript}[2]
+%%    {\begin{itemize}\item[]\lstinputlisting[caption=#2,label=#1]{#1}\end{itemize}}
+%%   \newcommand{\rsourcefile}[2]
+%%    {\begin{itemize}\item[]\lstinputlisting[caption=#2,label=#1]{#1}\end{itemize}}
+%%%
+%%%% end listings
+
+% end

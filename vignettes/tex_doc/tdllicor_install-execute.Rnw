@@ -1,0 +1,123 @@
+\renewcommand{\ADAfilename}{tdl_inst} % for R plot filenames
+\chapter{Install and execute}
+\label{ch:tdllicor_install_execute}
+
+<<setseed, echo=FALSE>>=
+options(width=70, keep.source=TRUE, prompt=" ", continue=" ")
+@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Install software}
+
+\R\ and Perl are required.  Rstudio may make your experience more enjoyable.
+\begin{enumerate}
+\item \R\ (requires R 2.15.1+)
+  \begin{enumerate}
+  \item Windows (\url{http://cran.r-project.org/bin/windows/base/})
+  \item Mac (\url{http://cran.r-project.org/bin/macosx/})
+  \end{enumerate}
+\item Rstudio
+  \begin{enumerate}
+  \item Rstudio (\url{http://www.rstudio.org/download/}) nicer GUI
+  \end{enumerate}
+\item Perl
+  \begin{enumerate}
+  \item Mac and linux, you already have it installed
+  \item Windows
+    \begin{enumerate}
+    \item \url{http://www.activestate.com/activeperl/downloads}
+    \item Change the path variable to include \verb|C:\Perl\bin| (or whatever it is on your machine, and use backslashes): \url{http://www.java.com/en/download/help/path.xml}
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Install the \tdllicor\ package}
+
+Install the tdllicor package
+From the shared dropbox folder \verb|./TDL_R_scripts/| install the current version of tdllicor.
+The package installation file will appear in a folder named something like
+\begin{itemize}
+\item \verb|./tdllicor_0.1-21_20121017-R2.15.1-template4/|
+\end{itemize}
+and will include two files, such as
+\begin{itemize}
+\item the package: \lst{tdllicor_0.1-21.tar.gz}
+\item and the template: \lst{tdllicor_template4.xls}
+\end{itemize}
+
+There doesn't seem to be a way to install local packages within R anymore, so it has to be done from the command prompt.
+From your shell or command prompt:
+\begin{enumerate}
+\item Windows, open your command prompt (cmd), change to directory with install file, and install it (you need to get the correct path, filename, and R command name).
+  \begin{enumerate}
+  \item {\footnotesize \verb|cd C:\[your path]\TDL_R_scripts\tdllicor_0.1-21_20121017-R2.15.1-template4| }
+  \item {\footnotesize \verb|"C:\Program Files\R\R-2.15.1\bin\x64\R" CMD INSTALL tdllicor_0.1-21.tar.gz| }
+  \end{enumerate}
+\item Mac, I can't walk you through this since I don't have access to a Mac right now, but it's similar, probably something like this:
+  \begin{enumerate}
+  \item {\footnotesize \verb|cd ~/[your path]/TDL_R_scripts/tdllicor_0.1-21_20121017-R2.15.1-template4| }
+  \item {\footnotesize \verb|R CMD INSTALL tdllicor_0.1-21.tar.gz| }
+  \end{enumerate}
+\end{enumerate}
+
+Copy the template file to your data directory before you rename and edit it.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analyze your TDL and/or Licor data with \tdllicor}
+
+{\em Try to avoid using spaces in your directory names (folder names) and file names.} \\
+
+\noindent
+Analyze your TDL and/or Licor data
+\begin{enumerate}
+\item Create a new data analysis directory, such as \verb|./Name_WT001|
+\item Copy your TDL and Licor files into your new dir
+\item Copy the \verb|tdllicor_template4.xls| into your new dir
+\item Append a meaningful suffix to the \verb|.xls| file, such as \verb|tdllicor_template4_Name_WT001.xls|
+\item Edit the \verb|.xls| file and specify the TDL and Licor filenames, and make any other necessary changes to template inputs.
+\item Load the library: (see end of doc for the remaining steps all together)
+  \begin{enumerate}
+  \item \lst{library(tdllicor)}
+  \end{enumerate}
+\item Assign the xls filename to a variable
+  \begin{enumerate}
+  \item \lst{input.fn <- "tdllicor_template4_Name_WT001.xls"}
+  \end{enumerate}
+\item Specify your new dir (using forward slashes for all systems is preferred)
+  \begin{enumerate}
+  \item Mac, Linux:
+    \begin{enumerate}
+    \item \lst{path <- "/Users/username/Analysis/Name_WT001"}
+    \end{enumerate}
+  \item Windows:
+    \begin{enumerate}
+    \item \lst{path <- "C:/Dropbox/Analysis/Name_WT001"}
+    \end{enumerate}
+  \end{enumerate}
+\item Run the analysis
+  \begin{enumerate}
+  \item a.  \lst{tdllicor(input.fn, path)}
+  \end{enumerate}
+\item It will create an \verb|./out| directory where output files are created.
+\item Documentation is available with \lst{?tdllicor}
+\end{enumerate}
+
+Use a block of code like this, set your file name and directory, and copy/paste into R.
+<<ex, echo=TRUE, size=footnotesize, strip.white=FALSE, eval=FALSE>>=
+library(tdllicor)
+# ?tdllicor
+input.fn <- "tdllicor_template4_Name_WT001.xls"
+path <- "/Users/username/Analysis/Name_WT001" # Mac
+path <- "C:/Dropbox/Analysis/Name_WT001"      # Windows
+tdllicor(input.fn, path)
+@
+
+% END
+
+<<setseed, echo=FALSE>>=
+options(width=80, keep.source=FALSE, prompt="> ", continue="+ ") # back to default
+@
