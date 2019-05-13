@@ -1,12 +1,29 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+title: "isogasex: Isotopic Gas Exchange"
+subtitle: "R package documentation for TDL and Licor data processing"
+author: "Erik B. Erhardt and David T. Hanson"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  rmarkdown::html_vignette:
+    fig_caption: yes
+    toc: yes
+    toc_depth: 5
+    number_sections: true
+  html_document:
+    toc: yes
+    toc_depth: 5
+    number_sections: false
+    code_folding: hide
+  pdf_document:
+    toc: yes
+    toc_depth: 5
+    number_sections: false
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{isogasex: Isotopic Gas Exchange}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+bibliography:
+  EE_BayesCO2.bib
 ---
 
 ```{r setup, include = FALSE}
@@ -16,50 +33,290 @@ knitr::opts_chunk$set(
 )
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+<!---
+# Erik's compile commands in R:
+  rm(list=ls())
+  #dev.off(dev.list()["RStudioGD"])  # close all plots
+  fn.this <- "isogasex_user_guide.Rmd"
+  setwd("C:/Dropbox/StatAcumen/consult/Authorship/2009_DavidHanson_Isotopes/R-package/isogasex/vignettes")
+  library(knitr)
+  knitr::purl(fn.this)
+  rmarkdown::render(fn.this)
+-->
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r ch_01, echo=FALSE}
+knitr::opts_chunk$set(comment = NA, message = FALSE, warning = FALSE, width = 100)
+knitr::opts_chunk$set(fig.align = "center", fig.height = 4, fig.width = 6)
+#knitr::opts_chunk$set(echo = FALSE)
+#knitr::opts_chunk$set(cache = TRUE, autodep=TRUE)  #$
+knitr::opts_chunk$set(cache = TRUE) #, autodep=TRUE)  #$
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+--------------------------------------------------------------------------------
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+# Installation
 
-## More Examples
+## Install R
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+R and Perl are required.  Rstudio may make your experience more enjoyable.
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+1. R (requires R 2.15.1+)
+
+    1. Windows (http://cran.r-project.org/bin/windows/base/)
+    1. Mac (http://cran.r-project.org/bin/macosx/)
+
+1. Rstudio
+
+    1. Rstudio (http://www.rstudio.org/download/) nicer GUI
+
+1. Perl
+
+    1. Mac and linux, you already have it installed
+    1. Windows
+
+        * http://www.activestate.com/activeperl/downloads
+        * Change the path variable to include `C:\Perl\bin` (or whatever it is on your machine, and use backslashes): http://www.java.com/en/download/help/path.xml
+
+
+
+
+
+## Install the isogasex and required packages
+
+### Install the isogasex package
+
+From the shared dropbox folder `./TDL_R_scripts/` install the current version of isogasex.
+
+The package installation file will appear in a folder named something like
+
+1. `./isogasex_0.1-21_20121017-R2.15.1-template4/`
+
+and will include two files, such as
+
+1. the package: `isogasex_0.1-21.tar.gz`
+1. and the template: `isogasex_template4.xls`
+
+
+There doesn't seem to be a way to install local packages within R anymore, so it has to be done from the command prompt.
+From your shell or command prompt:
+
+1. Windows, open your command prompt (cmd), change to directory with install file, and install it (you need to get the correct path, filename, and R command name).
+
+    1. `cd C:\[your path]\TDL_R_scripts\isogasex_0.1-21_20121017-R2.15.1-template4`
+    1. `"C:\Program Files\R\R-2.15.1\bin\x64\R" CMD INSTALL isogasex_0.1-21.tar.gz`
+
+1. Mac, I can't walk you through this since I don't have access to a Mac right now, but it's similar, probably something like this:
+
+    1. `cd ~/[your path]/TDL_R_scripts/isogasex_0.1-21_20121017-R2.15.1-template4`
+    1. `R CMD INSTALL isogasex_0.1-21.tar.gz`
+
+
+Copy the template file to your data directory before you rename and edit it.
+
+
+### Install package dependencies
+
+These should install automatically with the command above.
+But if not, these commands will do it:
+```
+  XXX commands here
 ```
 
-Also a quote using `>`:
+# Execution
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+_Try to avoid using spaces in your directory names (folder names) and file names._
+
+Analyze your TDL and/or Licor data
+
+1. Create a new data analysis directory, such as `./Name_WT001`
+1. Copy your TDL and Licor files into your new dir
+1. Copy the `isogasex_template4.xls` into your new dir
+1. Append a meaningful suffix to the `.xls` file, such as `isogasex_template4_Name_WT001.xls`
+1. Edit the `.xls` file and specify the TDL and Licor filenames, and make any other necessary changes to template inputs.
+1. Load the library: (see end of doc for the remaining steps all together)
+
+    1. `library(isogasex)`
+
+1. Assign the xls filename to a variable
+
+    1. `input.fn <- "isogasex_template4_Name_WT001.xls"`
+
+1. Specify your new dir (using forward slashes for all systems is preferred)
+
+    1. Mac, Linux:
+
+        1. `path <- "/Users/username/Analysis/Name_WT001"`
+
+    1. Windows:
+
+        1. `path <- "C:/Dropbox/Analysis/Name_WT001"`
+
+
+1. Run the analysis
+
+    1. a.  `isogasex(input.fn, path)}
+
+1. It will create an `./out` directory where output files are created.
+1. Documentation is available with `?isogasex`
+
+Use a block of code like this, set your file name and directory, and copy/paste into R.
+```{r, eval=FALSE}
+library(isogasex)
+# ?isogasex
+input.fn <- "isogasex_template4_Name_WT001.xls"
+path <- "/Users/username/Analysis/Name_WT001" # Mac
+path <- "C:/Dropbox/Analysis/Name_WT001"      # Windows
+isogasex(input.fn, path)
+```
+
+
+# Gas exchange calculations
+
+## Constants
+
+While each of these values have their own associated uncertainty,
+  we take them to be constant at their (accepted) values for an analysis.
+Common values are included below, though these may be changed in the template.
+
+```
+%{\bf (make eqnarray with text notes for what things are)}
+
+$\sdotab\equiv 2.96 \permil   $ boundary
+
+$\sdota\equiv 4.44 \permil    $ stomata
+
+$\sdotaw\equiv 0.7 \permil \equiv \sdotal   $ water
+
+$\sdotbs\equiv 1.1 \permil    $ CO2 entering solution at 20$^\circ$C
+
+$\sdotb\equiv 29 \permil      $ internal conductance via gm
+
+$\sdotRstd\equiv 0.0111797    $ C ratio of standard
+
+$\vdotkappaHtw
+  \equiv (\sdotkappaHtw, \sdotkappaHth)^\transpose
+  \equiv (473.3358029, 5.183209292)^\transpose      $ concentration constants for high tanks
+
+$\vdotkappaLtw
+  \equiv (\sdotkappaLtw, \sdotkappaLth)^\transpose
+  \equiv (243.4737846, 2.666301131)^\transpose      $ concentration constants for low  tanks
+
+$\sdotfthC\equiv 0.004922     $ natural fractional abundance of C isotopologues not measured
+
+$\sgbc\equiv 3$  conductance at the boundary level, can also be obtained from Licor
+
+
+## Data
+
+### TDL
+
+Concentrations for high and low calibration tanks (H and L),
+  reference gas entering the chamber (R),
+  and chamber gas exiting the chamber (C).
+
+$\vdatakappaH = (\sdatakappaHtw,\sdatakappaHth)^\transpose$
+
+$\vdatakappaL = (\sdatakappaLtw,\sdatakappaLth)^\transpose$
+
+$\vdatakappaR = (\sdatakappaRtw,\sdatakappaRth)^\transpose$
+
+$\vdatakappaC = (\sdatakappaCtw,\sdatakappaCth)^\transpose$
+
+
+### Licor
+
+$\sdatapatmL \sim \Normal(\spatmL,\ssigpatmL)$ atmospheric pressure from Licor
+
+$\sdataAL \sim \Normal(\sAL, \ssigAL)$ photosynthesis from Licor (can also calculate from TDL)
+
+$\sdatagtc \sim \Normal(\sgtc, \ssiggtc)$ total conductance of CO$_2$
+  (I have a note that this is a function of $\sgbc$, $\sgsc$, $\sdotab$, $\sdotgsc$, and $\sdotgbc$.)
+
+$\sdataE \sim \Normal(\sE, \ssigE)$ transpiration rate (water vapor)
+
+
+## Calculations
+
+### Concentration
+
+
+Offset
+
+$\sotw = \sdotkappaHtw - \sgtw\skappaHtw$
+
+$\soth = \sdotkappaHth - \sgth\skappaHth$
+
+
+Gain
+
+$\sgtw = (\sdotkappaHtw - \sdotkappaLtw)(\skappaHtw - \skappaLtw)^{-1}$
+
+$\sgth = (\sdotkappaHth - \sdotkappaLth)(\skappaHth - \skappaLth)^{-1}$
+
+
+Corrected
+
+$\skappaRtwp = \skappaRtw\sgtw + \sotw$ Ref
+
+$\skappaRthp = \skappaRth\sgth + \soth$ Ref
+
+$\skappaCtwp = \skappaCtw\sgtw + \sotw$ Chamber
+
+$\skappaCthp = \skappaCth\sgth + \soth$ Chamber
+
+
+xi
+
+$\sxi=\sCe(\sCe-\sCo)^{-1}$
+
+
+delta
+
+$\sdeltae = \{ (\skappaRthp/\skappaRtwp)/\sdotRstd - 1 \} 10^3\permil$ Ref
+
+$\sdeltao = \{ (\skappaCthp/\skappaCtwp)/\sdotRstd - 1 \} 10^3\permil$ Chamber
+
+
+Total mol fractions (paired, either both Licor or both TDL)
+
+$\sCe = (\skappaRtwp+\skappaRthp)(1-\sdotfthC)^{-1}$ entering Reference
+
+$\sCa \equiv \sCo = (\skappaCtwp+\skappaCthp)(1-\sdotfthC)^{-1}$ outgoing Chamber
+
+
+
+## Partial Pressures
+
+$\spa = (\sCa 10^{-6})(\spatmL 10^3)$ atmosphere
+
+$\sps = (\sCs 10^{-6})(\spatmL 10^3)$ surface
+
+$\spi = (\sCi 10^{-6})(\spatmL 10^3)$ internal
+
+$\spc = \spi - \sAL \sgm^{-1}$ (chloroplast) carboxylation site
+
+$\sgm = (\sdotb - \sdotbs - \sdotaw)\sAL\spa^{-1}(\sDeltapred-\sDeltaobs)^{-1}$
+
+
+
+### Discrimination
+
+{\bf (can put priors here, if desired)}
+
+$\sDeltaobs = \sxi(\sdeltao-\sdeltae)\{1+\sdeltao-\sxi(\sdeltao-\sdeltae)\}^{-1}10^3$
+
+$\sDeltapred = \spa^{-1} \{ \sdotab(\spa-\sps) + \sdota(\sps-\spi) + \sdotb\spc \}$
+
+(circular, assume $\spc\equiv\spi$)
+
+
+
+Leaf surface:
+
+$\sCs = \{ (\sgbc - \sE/2000)\sCo - \sAL \} ( \sgbc + \sE/2000 )^{-1}$
+
+$\sCi = \{ (\sgtc - \sE/2000)\sCo - \sAL \} ( \sgtc + \sE/2000 )^{-1}$
+
+Either of these valuse can be from the TDL or Licor: $\sCo$ and $\sAL$.
+```
