@@ -1,3 +1,20 @@
+#' Title
+#'
+#' @param reference.delta.e
+#' @param chamber.delta.o
+#' @param chamber.reference.delta.diff.CoCe
+#' @param Delta.obs
+#' @param p
+#' @param delta.13C.Assim
+#' @param delta.13C.Resp
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_delta_Delta_p <-
 function# Plot delta, Delta, and p
 ###

@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param gbc
+#' @param gsc
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_gtc <-
 function# gtc, total (stomatal and boundary layer) conductance for CO2
 ###

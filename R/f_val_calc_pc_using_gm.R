@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param pi
+#' @param A
+#' @param gm
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_pc_using_gm <-
 function# pc using gm,  total partial pressure of CO2 at the site of carboxylation, Press is the atmospheric pressure value from the LI6400
 ###

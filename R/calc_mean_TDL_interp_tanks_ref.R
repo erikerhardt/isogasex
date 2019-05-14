@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param TDL
+#' @param TDL.cycle
+#'
+#' @return
+#' @export
+#'
+#' @examples
 calc_mean_TDL_interp_tanks_ref <-
 function# Summary values for TDL interpolated tanks and reference
 ###

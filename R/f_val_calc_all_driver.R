@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param val.TDL
+#' @param val.Licor
+#' @param val.const
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_all_driver <-
 function# This function calls all the \code{f.val.calc.*} files
 (val.TDL

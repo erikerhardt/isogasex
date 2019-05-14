@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param Delta
+#' @param pa
+#' @param ps
+#' @param a
+#' @param b.gm
+#' @param a.b
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_pc_using_simple_Delta_for_gm <-
 function# pc using simple D for gm, includes boundary layer
 ###

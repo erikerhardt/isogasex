@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param D
+#' @param path
+#'
+#' @return
+#' @export
+#'
+#' @examples
 assign_variables <-
 function# Assign variables from input file to variable names
 ###
@@ -6,12 +15,12 @@ function# Assign variables from input file to variable names
 , path
 ###
 )
-################################################################################
-# Assign variables from input file to variable names
-#   When making changes to the workbook, need to:
-#     1. get_data.R define sheet names
-#     2. assign_variables.R define variables
 {
+  ################################################################################
+  # Assign variables from input file to variable names
+  #   When making changes to the workbook, need to:
+  #     1. get_data.R define sheet names
+  #     2. assign_variables.R define variables
   ## DEBUG
   # D <- DATA
 

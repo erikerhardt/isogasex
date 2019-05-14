@@ -1,3 +1,19 @@
+#' Title
+#'
+#' @param chamber.Totalpa
+#' @param chamber.12pa
+#' @param chamber.13pa
+#' @param chamber.Totalps
+#' @param chamber.12ps
+#' @param chamber.13ps
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_pa_ps <-
 function# Plot Pa Ps, partial pressure of CO2 above the leaf and at the leaf surface
 ###

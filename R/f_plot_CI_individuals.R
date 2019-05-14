@@ -1,3 +1,19 @@
+#' Title
+#'
+#' @param x.bs
+#' @param x.sum
+#' @param x.CI
+#' @param x.title
+#' @param x.time
+#' @param x.n
+#' @param R.bootstrap
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_plot_CI_individuals <-
 function# plot all variables with bs values, mean value, and CI intervals
 ###

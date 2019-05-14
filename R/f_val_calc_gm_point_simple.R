@@ -1,3 +1,17 @@
+#' Title
+#'
+#' @param b
+#' @param bs
+#' @param al
+#' @param A
+#' @param pa
+#' @param Di
+#' @param D.obs
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_gm_point_simple <-
 function# gm point simple, internal leaf (mesophyll) conductance calculated for every D value ignoring decarboxylation effects
 ###

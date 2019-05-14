@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param val
+#' @param TDL.cycle
+#' @param output.summary.TDL.fn
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write_summary_TDL_file <-
 function# write_output section: TDL file
 ### Write TDL summary values for all time points.

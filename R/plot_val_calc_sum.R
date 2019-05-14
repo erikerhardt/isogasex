@@ -1,3 +1,17 @@
+#' Title
+#'
+#' @param val.TDL
+#' @param val.Licor
+#' @param val.const
+#' @param val.temp
+#' @param plot.format.list
+#' @param output.fn.prefix
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_val_calc_sum <-
 function# This function plots all the calculated values
 ### most plots are not created when not using Licor file

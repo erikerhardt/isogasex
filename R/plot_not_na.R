@@ -1,3 +1,18 @@
+#' Title
+#'
+#' @param x.time
+#' @param y.var
+#' @param pch
+#' @param type
+#' @param cex
+#' @param xlab
+#' @param ylab
+#' @param main
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_not_na <-
 function# if no data to plot, plot a dummy box (for when certain Licor columns are not collected)
 ###

@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param TDL.time
+#' @param TDL.n
+#' @param Licor.time
+#' @param Licor.n
+#' @param val.timewindow
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 align_TDL_Licor_times <-
 function# find the overlapping time window of the TDL and Licor files and return the start/end indices of each file
 ###

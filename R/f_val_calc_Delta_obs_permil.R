@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param reference.delta.e
+#' @param chamber.delta.o
+#' @param xi
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_Delta_obs_permil <-
 function# Delta per mil, observed discrimination
 ###

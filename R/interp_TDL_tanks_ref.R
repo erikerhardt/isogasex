@@ -1,3 +1,15 @@
+#' Title
+#'
+#' @param TDL
+#' @param TDL.cycle
+#' @param plot.format.list
+#' @param output.fn.prefix
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 interp_TDL_tanks_ref <-
 function# Interpolate TDL tank and reference values
 ###

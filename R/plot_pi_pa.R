@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param chamber.Totalpi
+#' @param chamber.Totalpa
+#' @param chamber.Totalpi_pa
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_pi_pa <-
 function# Plot Totalpi_pa, ratio of substomatal CO2 partial pressure to CO2 partial pressure above leaf = Ci/Ca ratio of mol fractions
 ###

@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param val
+#' @param TDL.cycle
+#' @param output.CI.Licor.fn
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write_CI_Licor_file <-
 function# write_output section: Licor file
 ### Write observed Licor values with BS CIs for all time points.

@@ -1,3 +1,21 @@
+#' Title
+#'
+#' @param ref.12C
+#' @param ref.13C
+#' @param cham.12C
+#' @param cham.13C
+#' @param ref.tot
+#' @param cham.tot
+#' @param diff.tot
+#' @param xi
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_corrected_total_diff_xi <-
 function# Plot corrected 12CO2 and 13CO2, total, and difference for reference and sample
 ###

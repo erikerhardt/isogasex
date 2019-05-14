@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param flow
+#' @param H2OR
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_flow_adjusted <-
 function# Adjusted flow
 ### Deprecated (0.1-20, 9/5/2012)

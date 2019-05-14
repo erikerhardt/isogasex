@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param obs.12C
+#' @param obs.13C
+#' @param R.std
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_delta_proportion <-
 function# delta as proportion (Isotopic composition (d) as fraction)
 ###   I prefer using the fraction for calculations and then converting to composition at the end

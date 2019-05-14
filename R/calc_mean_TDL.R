@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param TDL
+#' @param TDL.cycle
+#'
+#' @return
+#' @export
+#'
+#' @examples
 calc_mean_TDL <-
 function# Calculate the mean and variance for the TDL/Licor data based on last measurements
 ###

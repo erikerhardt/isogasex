@@ -1,3 +1,19 @@
+#' Title
+#'
+#' @param VPD
+#' @param E.transpiration
+#' @param leaf.temp
+#' @param air.temp
+#' @param light.in
+#' @param light.out
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_Licor_temp_light <-
 function# Plot Licor Temp Light values
 ###

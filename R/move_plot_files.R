@@ -1,3 +1,11 @@
+#' Title
+#'
+#' @param plot.format
+#'
+#' @return
+#' @export
+#'
+#' @examples
 move_plot_files <-
 function# move selected plot files to subdirectories
 ###

@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param Licor.fn
+#' @param Licor.TDL.time.offset.seconds
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 read_Licor <-
 function# read_Licor file
 ###

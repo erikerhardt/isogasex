@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param chamber.Totalpc.using.gm
+#' @param chamber.12pc.using.gm
+#' @param chamber.13pc.using.gm
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_pc_total <-
 function# Plot pc, total partial pressure of CO2 at the site of carboxylation
 ###

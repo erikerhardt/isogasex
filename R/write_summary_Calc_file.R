@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param val
+#' @param TDL.cycle
+#' @param output.summary.Calc.fn
+#' @param output.summary.Calc.last.fn
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write_summary_Calc_file <-
 function# write_output section
 ### Write summary values for all time points.

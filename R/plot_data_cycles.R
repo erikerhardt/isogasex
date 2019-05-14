@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param TDL
+#' @param TDL.cycle
+#' @param plot.format.list
+#' @param output.fn.prefix
+#' @param Rstd.13C
+#' @param full.or.window
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_data_cycles <-
 function# Plot each cycle of TDL measurements (visual diagnostics)
 ###

@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param filename.prefix
+#' @param plot.filename
+#' @param plot.mode
+#' @param plot.format
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s_plot_settings_begin_end <-
 function# Plot settings for all plots
 ###

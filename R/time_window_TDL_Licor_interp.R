@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param TDL
+#' @param Licor
+#' @param TDL.Licor.times
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 time_window_TDL_Licor_interp <-
 function# keep only the overlapping time window of TDL and Licor files
 ### interpolate the Licor measurements via cubic splines to TDL faster sampling rate

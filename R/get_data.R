@@ -1,3 +1,11 @@
+#' Title
+#'
+#' @param filename
+#'
+#' @return
+#' @export
+#'
+#' @examples
 get_data <-
 function# Get data from Excel spreadsheet
 ###

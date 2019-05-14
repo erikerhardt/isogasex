@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param bs
+#' @param val.calc.bs.temp
+#' @param i.bs
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_bs_matrix <-
 function# update values for each bs iterate
 ###

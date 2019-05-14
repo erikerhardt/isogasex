@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param flow
+#' @param Ce
+#' @param Co
+#' @param leaf.area
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_TDL_A_photosynthesis <-
 function# A, TDL photosynthesis
 ###

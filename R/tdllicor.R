@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param input.fn
+#' @param path
+#'
+#' @return
+#' @export
+#'
+#' @examples
 tdllicor <-
 function# Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals.
 ### Edit \file{tdllicor_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{tdllicor}}. See output in \file{./out} directory.
@@ -9,8 +18,8 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
 , path=getwd()
 ### Directory where TDL and Licor data are to be read from, and where ./out directory for results are to be written to.
 )
-# DRIVER FUNCTION -------------------------------------------------------------
 {
+  # DRIVER FUNCTION -------------------------------------------------------------
   # DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG
   # #library(tdllicor)
   # #path <- "C:/Dropbox/StatAcumen/consult/Authorship/DavidHanson_Isotopes_2009/Sharing with Erhardt/Daves problem July 19";

@@ -1,3 +1,11 @@
+#' Title
+#'
+#' @param time.start
+#'
+#' @return
+#' @export
+#'
+#' @examples
 progress_time <-
 function# Calc amount of time since program started
 ###

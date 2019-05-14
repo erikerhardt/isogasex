@@ -1,3 +1,19 @@
+#' Title
+#'
+#' @param chamber.Totalgbc
+#' @param chamber.13gbc
+#' @param chamber.Totalgsc
+#' @param chamber.13gsc
+#' @param chamber.Totalgtc
+#' @param chamber.13gtc
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_gbc_gsc_gtc <-
 function# Plot gbc, gsc, gtc: boundary layer, stomatal, and total conductance for CO2
 ###

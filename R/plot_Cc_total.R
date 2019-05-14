@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param chamber.TotalCc
+#' @param chamber.12Cc
+#' @param chamber.13Cc
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_Cc_total <-
 function# Plot Cc, ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol
 ###

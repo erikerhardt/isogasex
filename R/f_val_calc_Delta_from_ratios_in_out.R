@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param ref.12Ce
+#' @param ref.13Ce
+#' @param cham.12Co
+#' @param cham.13Co
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_Delta_from_ratios_in_out <-
 function# Delta from ratios in and out?, (Re/Ro)-1, is this really the same?
 ###

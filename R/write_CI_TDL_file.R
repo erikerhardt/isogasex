@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param val
+#' @param TDL.cycle
+#' @param output.CI.TDL.fn
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write_CI_TDL_file <-
 function# write_output section: TDL file
 ### Write observed TDL values with BS CIs for all time points.

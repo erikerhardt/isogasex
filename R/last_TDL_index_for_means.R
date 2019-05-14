@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param TDL
+#' @param TDL.cycle
+#'
+#' @return
+#' @export
+#'
+#' @examples
 last_TDL_index_for_means <-
 function# Determine the last index for admissible values to calculate means
 ###

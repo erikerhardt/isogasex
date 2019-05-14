@@ -1,3 +1,11 @@
+#' Title
+#'
+#' @param TDL.cycle
+#'
+#' @return
+#' @export
+#'
+#' @examples
 set_TDL_cycle <-
 function# TDL.cycle variables
 ###

@@ -1,3 +1,15 @@
+#' Title
+#'
+#' @param val.bs.sum
+#' @param val.bs
+#' @param i.bs
+#' @param R.bootstrap
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_bs_save_TDL_Licor <-
 function# save BS resample of TDL and Licor means
 ###

@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param obs.12C
+#' @param obs.13C
+#' @param R.std
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_delta_permil <-
 function# delta permil (Isotopic composition (d) per mil)
 ###

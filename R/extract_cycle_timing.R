@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param TDL
+#' @param TDL.cycle
+#' @param TDL.site.timing.filename
+#'
+#' @return
+#' @export
+#'
+#' @examples
 extract_cycle_timing <-
 function# Cycle timing
 ###

@@ -1,3 +1,18 @@
+#' Title
+#'
+#' @param true.value.hi.12C
+#' @param true.value.hi.13C
+#' @param true.value.lo.12C
+#' @param true.value.lo.13C
+#' @param cal.tank.hi.12C
+#' @param cal.tank.hi.13C
+#' @param cal.tank.lo.12C
+#' @param cal.tank.lo.13C
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_gain <-
 function# gain (12C Gain, 13C Gain)
 ###

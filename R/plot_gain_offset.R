@@ -1,3 +1,17 @@
+#' Title
+#'
+#' @param gain.12C
+#' @param gain.13C
+#' @param offset.12C
+#' @param offset.13C
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_gain_offset <-
 function# Plot active gains, offsets, and corrected magnitudes
 ###

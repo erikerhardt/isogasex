@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param y
+#' @param x
+#'
+#' @return
+#' @export
+#'
+#' @examples
 my_reg_fit <-
 function# basic SLR beta fit
 ###

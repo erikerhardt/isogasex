@@ -1,3 +1,17 @@
+#' Title
+#'
+#' @param Licor.flow.uin
+#' @param Licor.H2OR.xin
+#' @param Licor.La
+#' @param Licor.Atm.press
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_Licor_flow_press <-
 function# Plot Licor uin, xin, La, Atm.press values 7/21/2012
 ###

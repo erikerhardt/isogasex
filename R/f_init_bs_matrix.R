@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param n
+#' @param R.bootstrap
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_init_bs_matrix <-
 function# init bs values to zero
 ###

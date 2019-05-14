@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param text.to.cat
+#' @param time.start
+#' @param type.print
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write_progress <-
 function# write_progress to the screen with time elapsed
 ###

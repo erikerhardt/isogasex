@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param cham.12Co
+#' @param cham.13Co
+#' @param TDL.13A
+#' @param TDL.12A
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_Delta_from_A_ratio <-
 function# D from A ratio, (Ro/(13A/12A))-1, should be the same as Dobs above
 ###

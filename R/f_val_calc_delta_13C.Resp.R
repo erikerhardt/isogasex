@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param reference.delta.e
+#' @param chamber.delta.o
+#' @param p
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_delta_13C_Resp <-
 function# delta13C Respired, isotopic composition of respired CO2
 ###

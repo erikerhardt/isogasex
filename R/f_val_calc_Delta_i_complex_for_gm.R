@@ -1,3 +1,22 @@
+#' Title
+#'
+#' @param a
+#' @param b
+#' @param a.b
+#' @param pa
+#' @param ps
+#' @param pi
+#' @param b.gm
+#' @param f.photo
+#' @param Gamma.star
+#' @param e
+#' @param Rd
+#' @param k
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_Delta_i_complex_for_gm <-
 function# Delta.i complex for gm  CHECK DERIVATION  predicted discrimination including boundary layer effects AND decarboxylation effects
 ###

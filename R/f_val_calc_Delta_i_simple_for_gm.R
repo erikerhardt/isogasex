@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param a
+#' @param b
+#' @param a.b
+#' @param pa
+#' @param ps
+#' @param pi
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_Delta_i_simple_for_gm <-
 function# Delta.i simple for gm, predicted discrimination including boundary layer effects but not decarboxylation effects
 ###

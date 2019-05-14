@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param TDL
+#' @param Licor
+#' @param TDL.cycle
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 calc_mean_Licor <-
 function# Calculate the mean for the Licor data based on last measurements
 ###

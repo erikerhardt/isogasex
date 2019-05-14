@@ -1,3 +1,15 @@
+#' Title
+#'
+#' @param val.obs.TDL
+#' @param val.sum.TDL
+#' @param val.obs.Licor
+#' @param val.sum.Licor
+#' @param var.interp
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_bs_iter_TDL_Licor <-
 function# one BS resample of TDL and Licor means
 ###

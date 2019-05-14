@@ -1,3 +1,19 @@
+#' Title
+#'
+#' @param chamber.TotalCi
+#' @param chamber.12Ci
+#' @param chamber.13Ci
+#' @param chamber.Totalpi
+#' @param chamber.12pi
+#' @param chamber.13pi
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_Ci_pi <-
 function# Plot Ci, pi, CO2 concentration and partial pressure of CO2 in the substomatal cavities
 ###

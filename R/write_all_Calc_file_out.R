@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param val
+#' @param TDL.cycle
+#' @param output.all.Calc.fn
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write_all_Calc_file <-
 function# write_output section
 ### Write all observed and calculated values for all time points.

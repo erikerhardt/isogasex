@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param TDL.fn
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 read_TDL <-
 function# read_TDL file
 ###

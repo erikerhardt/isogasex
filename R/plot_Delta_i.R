@@ -1,3 +1,18 @@
+#' Title
+#'
+#' @param chamber.Delta.i.simple.for.gm
+#' @param chamber.Delta.i.simple.for.modeling
+#' @param chamber.Delta.i.complex.for.gm
+#' @param chamber.Delta.i.simple.for.gm_Delta.obs
+#' @param chamber.Delta.i.complex.for.gm_Delta.obs
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_Delta_i <-
 function# Plot Delta.i, predicted discrimination
 ###

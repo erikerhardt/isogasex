@@ -1,3 +1,15 @@
+#' Title
+#'
+#' @param x
+#' @param first.ind
+#' @param last.ind
+#' @param n.sam
+#' @param n
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_np_bs_mean <-
 function# calculate NP BS mean
 ###

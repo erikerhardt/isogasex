@@ -1,3 +1,17 @@
+#' Title
+#'
+#' @param chamber.Totalpc.using.simple.Delta.for.gm
+#' @param chamber.Totalpc.using.simple.Delta.for.modeling
+#' @param chamber.Totalpc.using.complex.Delta.no.decarboxylation
+#' @param chamber.Totalpc.using.complex.Delta.full.model
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_pc_simple_complex <-
 function# Plot pc, simple and complex
 ###

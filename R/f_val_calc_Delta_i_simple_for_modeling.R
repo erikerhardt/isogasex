@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param a
+#' @param b
+#' @param pa
+#' @param pi
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_Delta_i_simple_for_modeling <-
 function# Delta.i simple for modeling  a + (b-a) pi/pa predicted discrimination including boundary layer effects but using b adjustments to approximate effects of gm and decarboxylations
 ###

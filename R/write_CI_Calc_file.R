@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param val
+#' @param TDL.cycle
+#' @param output.CI.Calc.fn
+#' @param output.CI.Calc.last.fn
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write_CI_Calc_file <-
 function# write_output section
 ### Write all observed and calculated values with BS CIs for all time points.

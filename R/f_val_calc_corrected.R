@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param obs.12C
+#' @param obs.13C
+#' @param gain.12C
+#' @param gain.13C
+#' @param offset.12C
+#' @param offset.13C
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_corrected <-
 function# corrected (Corrected 12C, Corrected 13C)
 ###

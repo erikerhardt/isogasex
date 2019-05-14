@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param val.calc.bs
+#' @param val.bs.TDL
+#' @param val.bs.Licor
+#' @param R.bootstrap
+#' @param sig.CI
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_bs_CI <-
 function# create CI for each calculated value
 ###

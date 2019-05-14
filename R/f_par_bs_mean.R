@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param x
+#' @param x.var
+#' @param n.sam
+#' @param n
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_par_bs_mean <-
 function# calculate Par BS mean
 ###

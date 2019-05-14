@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param obs.12C
+#' @param obs.13C
+#' @param fo.13C
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_total_mol_fraction_CO2 <-
 function# Total mol fraction CO2
 ###

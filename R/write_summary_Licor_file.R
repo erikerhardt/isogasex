@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param val
+#' @param TDL.cycle
+#' @param output.summary.Licor.fn
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write_summary_Licor_file <-
 function# write_output section: Licor file
 ### Write Licor summary values for all time points.

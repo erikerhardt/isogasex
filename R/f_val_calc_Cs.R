@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param gbc
+#' @param E
+#' @param Co
+#' @param A
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_Cs <-
 function# Cs, ppm CO2 concentration at the leaf surface, cs calculated from eq 40 Ball 1987 Ch 20 Stomatal Function, eds Zeiger, Farquhar, Cowan
 ###

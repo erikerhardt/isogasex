@@ -1,3 +1,11 @@
+#' Title
+#'
+#' @param text.to.cat
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write_out <-
 function# write_progress to the screen
 ###

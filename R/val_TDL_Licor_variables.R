@@ -1,3 +1,15 @@
+#' Title
+#'
+#' @param TDL
+#' @param Licor
+#' @param TDL.cycle
+#' @param val
+#' @param sw
+#'
+#' @return
+#' @export
+#'
+#' @examples
 val_TDL_Licor_variables <-
 function# Assign TDL and Licor values to val variable names, raw and summarized values
 ###

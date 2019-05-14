@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param TDL
+#' @param bad.ind
+#'
+#' @return
+#' @export
+#'
+#' @examples
 fix_missing_TDL_values <-
 function# Replace NA and NAN values in TDL$data by previous value for that variable
 ###

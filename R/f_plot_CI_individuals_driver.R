@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param val
+#' @param R.bootstrap
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_plot_CI_individuals_driver <-
 function# plot each individual variable
 ###

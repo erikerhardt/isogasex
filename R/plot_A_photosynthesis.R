@@ -1,3 +1,19 @@
+#' Title
+#'
+#' @param TDL.A.photosynthesis
+#' @param TDL.12A.photosynthesis
+#' @param TDL.13A.photosynthesis
+#' @param Licor.A.photosynthesis
+#' @param Delta.from.ratios.in.out
+#' @param Delta.from.A.ratio
+#' @param x.time
+#' @param plot.format.list
+#' @param output.fn.prefix
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_A_photosynthesis <-
 function# Plot A photosynthesis
 ###

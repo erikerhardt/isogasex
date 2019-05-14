@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param true.value.hi.12C
+#' @param true.value.hi.13C
+#' @param gain.12C
+#' @param gain.13C
+#' @param cal.tank.hi.12C
+#' @param cal.tank.hi.13C
+#'
+#' @return
+#' @export
+#'
+#' @examples
 f_val_calc_offset <-
 function# offset (12C Offset, 13C Offset) using hi tank
 ###

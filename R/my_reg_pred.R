@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param beta.hat
+#' @param x
+#'
+#' @return
+#' @export
+#'
+#' @examples
 my_reg_pred <-
 function# basic SLR y pred
 ###
