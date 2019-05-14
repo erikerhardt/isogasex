@@ -3,6 +3,8 @@ title: "isogasex: Isotopic Gas Exchange"
 subtitle: "R package documentation for TDL and Licor data processing"
 author: "Erik B. Erhardt and David T. Hanson"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
+header-includes:
+   - \usepackage{amsmath,wasysym,undertilde}
 output:
   rmarkdown::html_vignette:
     fig_caption: yes
@@ -15,9 +17,10 @@ output:
     number_sections: false
     code_folding: hide
   pdf_document:
+    latex_engine: xelatex
     toc: yes
     toc_depth: 5
-    number_sections: false
+    number_sections: true
 vignette: >
   %\VignetteIndexEntry{isogasex: Isotopic Gas Exchange}
   %\VignetteEngine{knitr::rmarkdown}
@@ -51,6 +54,180 @@ knitr::opts_chunk$set(fig.align = "center", fig.height = 4, fig.width = 6)
 #knitr::opts_chunk$set(cache = TRUE, autodep=TRUE)  #$
 knitr::opts_chunk$set(cache = TRUE) #, autodep=TRUE)  #$
 ```
+
+%
+%  eedefs.tex     Erik B. Erhardt
+%
+%  This is the common command definitions for my thesis.
+%
+
+% font commands
+\newcommand{\defin}{\bf}
+%\renewcommand{\vector}{\utilde}
+\renewcommand{\vector}{} % \mathbf
+\renewcommand{\matrix}{\mathbf}
+\renewcommand{\permil}{‰}
+\renewcommand{\circ}{°}
+
+%\newcommand{\Normal}          {\mathcal{N}}
+\newcommand{\Normal}          {\textrm{Normal}}
+\newcommand{\Wishart}         {\textrm{Wishart}} %{\mathcal{W}}
+\newcommand{\IWishart}        {\textrm{Inv-Wishart}}
+\newcommand{\Chisq}           {\textrm{scaled-$\chi^2$}} %{\mathcal{W}}
+\newcommand{\IChisq}          {\textrm{Scaled-inv-$\chi^2$}}
+%\newcommand{\Dirichlet}       {\mathcal{D}\textrm{ir}}
+\newcommand{\Dirichlet}       {\textrm{Dirichlet}}
+\newcommand{\dBeta}           {\textrm{Beta}}
+\newcommand{\dGamma}          {\textrm{Gamma}}
+\newcommand{\dIGamma}         {\textrm{Inv-Gamma}}
+\newcommand{\Uniform}         {\textrm{Uniform}}
+
+\newcommand{\transpose}       {\top}%             for matrix transpose
+
+%% tdllicor begin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tdllicor}{\texttt{tdllicor}}
+
+\newcommand{\data}[1]{\tilde{#1}} % data notation
+\newcommand{\sdatasig}[1]{\sigma_{#1}^2} % data notation
+\newcommand{\vdatasig}[1]{\Sigma_{#1}} % data notation
+
+\newcommand{\subctpr}{}%{ctpr} % subscript notation ctpr
+\newcommand{\subctp} {}%{ctp}  % subscript notation ctp
+\newcommand{\subct}  {}%{ct}   % subscript notation ct
+\newcommand{\subc}   {}%{c}    % subscript notation ct
+\newcommand{\subt}   {}%{t}    % subscript notation  t
+
+
+% CO2 variable definitions
+% dot indicates a constant
+\newcommand{\sdotab}{\dot{a}_{\textrm{b}}} % boundary
+\newcommand{\sdota}{\dot{a}} % stomata
+\newcommand{\sdotaw}{\dot{a}_{\textrm{w}}} % water
+\newcommand{\sdotal}{\dot{a}_{\textrm{l}}} % water (same as \sdotaw)
+\newcommand{\sdotbs}{\dot{b}_{\textrm{s}}} % CO2 entering solution at 20oC
+\newcommand{\sdotb}{\dot{b}} % internal conductance vai gm
+\newcommand{\sdotRstd}{\dot{R}_\textrm{std 13C}} % C ratio of standard
+\newcommand{\sdotkappaHtw}{\dot{\kappa}_{\textrm{H}12}} % concentration constants for high tanks
+\newcommand{\sdotkappaHth}{\dot{\kappa}_{\textrm{H}13}} % concentration constants for high tanks
+\newcommand{\sdotkappaLtw}{\dot{\kappa}_{\textrm{L}12}} % concentration constants for low  tanks
+\newcommand{\sdotkappaLth}{\dot{\kappa}_{\textrm{L}13}} % concentration constants for low  tanks
+\newcommand{\vdotkappaHtw}{\vector{\dot{\kappa}}_{\textrm{H}}} % vectors of concentration constants
+\newcommand{\vdotkappaLtw}{\vector{\dot{\kappa}}_{\textrm{L}}} % vectors of concentration constants
+\newcommand{\sdotfthC}{\dot{f}_{\textrm{13C}}} % fraction of C isotopologues not measured
+
+% Discrimination
+\newcommand{\sDeltacomp}{\Delta_{\textrm{comp}\subct}} % Discrimination, comprehensive model
+\newcommand{\sDeltaobs}{\Delta_{\textrm{obs}\subct}} % Discrimination, observed
+\newcommand{\sDeltapred}{\Delta_{\textrm{pred}\subct}} % Discrimination, predicted, also Delta_i
+
+% pressures
+\newcommand{\spa}{p_{\textrm{a}\subct}} %
+\newcommand{\sps}{p_{\textrm{s}\subct}} %
+\newcommand{\spi}{p_{\textrm{i}\subct}} %
+\newcommand{\spc}{p_{\textrm{c}\subct}} %
+\newcommand{\spatmL}{p_{\textrm{atm}\subctp}} % Licor atmospheric pressure
+\newcommand{\sallpressures}{\pi_{\subctp}}
+ % data
+ \newcommand{\sdatapatmL}{\data{p}_{\textrm{atm}\subctpr}} % Licor atmospheric pressure
+ \newcommand{\ssigpatmL}{\sdatasig{p_{\textrm{atm}}}} % Licor atmospheric pressure
+
+% respiration
+\newcommand{\sse}{e_{\subt}} %
+\newcommand{\sseprime}{e_{\subt}^{\prime}} %
+\newcommand{\sRd}{R_{\textrm{d}\subt}} %
+ % data
+ \newcommand{\sdataRd}{\data{R}_{\textrm{d}\subctp}} %
+ \newcommand{\ssigRd}{\sdatasig{R_{\textrm{d}}}}%\subct}}} %
+\newcommand{\ssk}{k_{\subt}} %
+ % data
+ \newcommand{\sdatak}{\data{k}_{\subctp}} %
+ \newcommand{\ssigk}{\sdatasig{k_{\subct}}} %
+\newcommand{\ssf}{f_{\subct}} %
+\newcommand{\ssfprime}{f_{\subct}^{\prime}} %
+\newcommand{\sGammastar}{\Gamma^{\ast}_{\subt}} %
+ % data
+ \newcommand{\sdataGammastar}{\data{\Gamma}^{\ast}_{\subt}} %
+ \newcommand{\ssigGammastar}{\sdatasig{\Gamma^{\ast}_{}}}%\subct}}} %
+
+% isotope ratios
+\newcommand{\sxi}{\xi_{\subctp}} %
+\newcommand{\sdeltao}{\delta_{\textrm{o}\subctp}} %
+\newcommand{\sdeltae}{\delta_{\textrm{e}\subctp}} %
+
+% concentrations
+\newcommand{\sCa}{C_{\textrm{a}\subctp}} %
+\newcommand{\sCo}{C_{\textrm{o}\subctp}} % same as Ca
+\newcommand{\sCs}{C_{\textrm{s}\subctp}} %
+\newcommand{\sCi}{C_{\textrm{i}\subctp}} %
+\newcommand{\sCe}{C_{\textrm{e}\subctp}} %
+% high and low tanks
+\newcommand{\skappaHtw}{\kappa_{\textrm{H}12\subctp}} % concentration constants for high tanks
+\newcommand{\skappaHth}{\kappa_{\textrm{H}13\subctp}} % concentration constants for high tanks
+\newcommand{\skappaLtw}{\kappa_{\textrm{L}12\subctp}} % concentration constants for low  tanks
+\newcommand{\skappaLth}{\kappa_{\textrm{L}13\subctp}} % concentration constants for low  tanks
+\newcommand{\vkappaH}{\vector{\kappa}_{\textrm{H}\subctp}} % vectors of concentration constants
+\newcommand{\vkappaL}{\vector{\kappa}_{\textrm{L}\subctp}} % vectors of concentration constants
+% ref and chamber
+\newcommand{\skappaRtw}{\kappa_{\textrm{R}12\subc}} % concentration constants for high tanks
+\newcommand{\skappaRth}{\kappa_{\textrm{R}13\subc}} % concentration constants for high tanks
+\newcommand{\skappaCtw}{\kappa_{\textrm{C}12\subctp}} % concentration constants for low  tanks
+\newcommand{\skappaCth}{\kappa_{\textrm{C}13\subctp}} % concentration constants for low  tanks
+\newcommand{\vkappaR}{\vector{\kappa}_{\textrm{R}\subc}} % vectors of concentration constants
+\newcommand{\vkappaC}{\vector{\kappa}_{\textrm{C}\subctp}} % vectors of concentration constants
+% corrected
+\newcommand{\skappaRtwp}{\skappaRtw^{\prime}} % concentration constants for high tanks
+\newcommand{\skappaRthp}{\skappaRth^{\prime}} % concentration constants for high tanks
+\newcommand{\skappaCtwp}{\skappaCtw^{\prime}} % concentration constants for low  tanks
+\newcommand{\skappaCthp}{\skappaCth^{\prime}} % concentration constants for low  tanks
+\newcommand{\vkappaRp}{\vkappaR^{\prime}} % vectors of concentration constants
+\newcommand{\vkappaCp}{\vkappaC^{\prime}} % vectors of concentration constants
+% gain offset
+\newcommand{\sgtw}{g_{\textrm{12}\subctp}} % gain
+\newcommand{\sgth}{g_{\textrm{13}\subctp}} % gain
+\newcommand{\sotw}{o_{\textrm{12}\subctp}} % offset
+\newcommand{\soth}{o_{\textrm{13}\subctp}} % offset
+ % data
+ \newcommand{\vdatakappaH}{\data{\vector{\kappa}}_{\textrm{H}\subctpr}} %
+ \newcommand{\vdatakappaL}{\data{\vector{\kappa}}_{\textrm{L}\subctpr}} %
+ \newcommand{\vdatakappaR}{\data{\vector{\kappa}}_{\textrm{R}\subctpr}} %
+ \newcommand{\vdatakappaC}{\data{\vector{\kappa}}_{\textrm{C}\subctpr}} %
+ \newcommand{\sdatakappaHtw}{\data{\kappa}_{\textrm{H}12\subctpr}} %
+ \newcommand{\sdatakappaHth}{\data{\kappa}_{\textrm{H}13\subctpr}} %
+ \newcommand{\sdatakappaLtw}{\data{\kappa}_{\textrm{L}12\subctpr}} %
+ \newcommand{\sdatakappaLth}{\data{\kappa}_{\textrm{L}13\subctpr}} %
+ \newcommand{\sdatakappaRtw}{\data{\kappa}_{\textrm{R}12\subctpr}} %
+ \newcommand{\sdatakappaRth}{\data{\kappa}_{\textrm{R}13\subctpr}} %
+ \newcommand{\sdatakappaCtw}{\data{\kappa}_{\textrm{C}12\subctpr}} %
+ \newcommand{\sdatakappaCth}{\data{\kappa}_{\textrm{C}13\subctpr}} %
+ \newcommand{\vsigkappaH}{\vdatasig{\vector{\kappa}_{\textrm{H}}}} %
+ \newcommand{\vsigkappaL}{\vdatasig{\vector{\kappa}_{\textrm{L}}}} %
+ \newcommand{\vsigkappaR}{\vdatasig{\vector{\kappa}_{\textrm{R}}}} %
+ \newcommand{\vsigkappaC}{\vdatasig{\vector{\kappa}_{\textrm{C}}}} %
+
+%
+\newcommand{\sAL}{A_{\subctp}} % photosynthesis from Licor
+ \newcommand{\sdataAL}{\data{A}_{\subctpr}} % photosynthesis from Licor
+ \newcommand{\ssigAL}{\sdatasig{A}} %
+
+\newcommand{\sgm}{g_{\textrm{m}\subctp}} % internal conductance (simple)
+
+\newcommand{\sE}{E_{\subctp}} %
+ \newcommand{\sdataE}{\data{E}_{\subctpr}} %
+ \newcommand{\ssigE}{\sdatasig{E}} %
+
+\newcommand{\sgsc}{g_{\textrm{sc}}} %
+ \newcommand{\sdotgsc}{\dot{g}_{\textrm{sc}}} %
+ \renewcommand{\sgsc}{\sdotgsc} %
+
+\newcommand{\sgbc}{g_{\textrm{bc}}} %
+ \newcommand{\sdotgbc}{\dot{g}_{\textrm{bc}}} %
+ \renewcommand{\sgbc}{\sdotgbc} %
+
+\newcommand{\sgtc}{g_{\textrm{tc}\subctp}} %
+ \newcommand{\sdatagtc}{\data{g}_{\textrm{tc}\subctpr}} %
+ \newcommand{\ssiggtc}{\sdatasig{g_{\textrm{tc}}}} %
+%% tdllicor end   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 --------------------------------------------------------------------------------
@@ -179,33 +356,42 @@ While each of these values have their own associated uncertainty,
   we take them to be constant at their (accepted) values for an analysis.
 Common values are included below, though these may be changed in the template.
 
+$$
+\begin{aligned}
+\sdotab
+  & \equiv & 2.96 \permil
+  & \quad\textrm{boundary} \\
+\sdota
+  & \equiv & 4.44 \permil
+  & \quad\textrm{stomata}  \\
+\sdotaw
+  & \equiv & \sdotal \equiv 0.7 \permil
+  & \quad\textrm{water}    \\
+\sdotbs
+  & \equiv &  1.1 \permil
+  & \quad\textrm{CO2 entering solution at 20$^\circ$ C} \\
+\sdotb
+  & \equiv &  29 \permil
+  & \quad\textrm{internal conductance via gm} \\
+\sdotRstd
+  & \equiv &  0.0111797
+  & \quad\textrm{C ratio of standard} \\
+\vdotkappaHtw
+  & \equiv &  (\sdotkappaHtw, \sdotkappaHth)  \equiv (473.3358029, 5.183209292)
+  & \quad\textrm{concentration constants for high tanks} \\
+\vdotkappaLtw
+  & \equiv &  (\sdotkappaLtw, \sdotkappaLth)  \equiv (243.4737846, 2.666301131)
+  & \quad\textrm{concentration constants for low  tanks} \\
+\sdotfthC
+  & \equiv &  0.004922
+  & \quad\textrm{natural fractional abundance of C isotopologues not measured} \\
+\sgbc
+  & \equiv &  3
+  & \quad\textrm{conductance at the boundary level, can also be obtained from Licor} \\
+\end{aligned}
+$$
+
 ```
-%{\bf (make eqnarray with text notes for what things are)}
-
-$\sdotab\equiv 2.96 \permil   $ boundary
-
-$\sdota\equiv 4.44 \permil    $ stomata
-
-$\sdotaw\equiv 0.7 \permil \equiv \sdotal   $ water
-
-$\sdotbs\equiv 1.1 \permil    $ CO2 entering solution at 20$^\circ$C
-
-$\sdotb\equiv 29 \permil      $ internal conductance via gm
-
-$\sdotRstd\equiv 0.0111797    $ C ratio of standard
-
-$\vdotkappaHtw
-  \equiv (\sdotkappaHtw, \sdotkappaHth)^\transpose
-  \equiv (473.3358029, 5.183209292)^\transpose      $ concentration constants for high tanks
-
-$\vdotkappaLtw
-  \equiv (\sdotkappaLtw, \sdotkappaLth)^\transpose
-  \equiv (243.4737846, 2.666301131)^\transpose      $ concentration constants for low  tanks
-
-$\sdotfthC\equiv 0.004922     $ natural fractional abundance of C isotopologues not measured
-
-$\sgbc\equiv 3$  conductance at the boundary level, can also be obtained from Licor
-
 
 ## Data
 
