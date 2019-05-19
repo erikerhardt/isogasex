@@ -48,7 +48,7 @@ function# Assign variables from input file to variable names
 
   ##details<<
   ## Template version
-  r.v<-r.v+1; sw$template.version <- as.numeric(D[r.v,c.v]); # Version of template must match tdllicor
+  r.v<-r.v+1; sw$template.version <- as.numeric(D[r.v,c.v]); # Version of template must match isogasex
   r.v<-r.v+1; # blank spreadsheet line
 
   # Parameter

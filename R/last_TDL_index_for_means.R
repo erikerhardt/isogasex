@@ -33,7 +33,7 @@ function# Determine the last index for admissible values to calculate means
   sites.in.TDL.file.NOT.in.template <- unique(sites.in.TDL.file)[!(unique(sites.in.TDL.file) %in% TDL.cycle$table[,1])];
   if (length(sites.in.TDL.file.NOT.in.template)) {
     for (i.site in sites.in.TDL.file.NOT.in.template) {
-      p.o <- paste("WARNING: TDL site number", i.site, "is in TDL file but not defined in the tdllicor_template.xls file.\n"); wWw <- write_out(p.o);
+      p.o <- paste("WARNING: TDL site number", i.site, "is in TDL file but not defined in the isogasex_template.xls file.\n"); wWw <- write_out(p.o);
     }
     ##details<<
     ## Remove indices in TDL file not defined in the template (do not calculate for these).
@@ -46,7 +46,7 @@ function# Determine the last index for admissible values to calculate means
   sites.in.template.NOT.in.TDL.file <- TDL.cycle$table[!(TDL.cycle$table[,1] %in% unique(sites.in.TDL.file)),1];
   if (length(sites.in.template.NOT.in.TDL.file)) {
     for (i.site in sites.in.template.NOT.in.TDL.file) {
-      p.o <- paste("WARNING: TDL site number", i.site, "is in TDL file but not defined in the tdllicor_template.xls file.\n"); wWw <- write_out(p.o);
+      p.o <- paste("WARNING: TDL site number", i.site, "is in TDL file but not defined in the isogasex_template.xls file.\n"); wWw <- write_out(p.o);
     }
   }
 
@@ -123,15 +123,15 @@ function# Determine the last index for admissible values to calculate means
   #   current.site <- TDL$data[current.ind,"PrevSite"];                               # site associated with current index
   #   if (sum(TDL.cycle$table[,1] == current.site) == 0) { # error checking
   #     if (!(current.site %in% sites.in.TDL.not.in.template)) {
-  #       p.o <- paste("WARNING: TDL site number", current.site, "is in TDL file but not defined in the tdllicor_template.xls file.\n"); wWw <- write_out(p.o);
+  #       p.o <- paste("WARNING: TDL site number", current.site, "is in TDL file but not defined in the isogasex_template.xls file.\n"); wWw <- write_out(p.o);
   #       sites.in.TDL.not.in.template <- c(sites.in.TDL.not.in.template, current.site);
   #     }
-  #     #error.message <- paste("TDL site number", current.site, "is in TDL file but not defined in the tdllicor_template.xls file. Check xls file site numbers.");
+  #     #error.message <- paste("TDL site number", current.site, "is in TDL file but not defined in the isogasex_template.xls file. Check xls file site numbers.");
   #     #stop(error.message);
   #   }
   #
   #   current.last.n.obs <- TDL.cycle$table[(TDL.cycle$table[,1] == current.site),2]; # number of observations to look back for this site
-  #   if (!length(current.last.n.obs)) { # if site in TDL file is not defined in tdllicor_template.xls file, look back one site
+  #   if (!length(current.last.n.obs)) { # if site in TDL file is not defined in isogasex_template.xls file, look back one site
   #     current.ind <- current.ind - 1;                                             # search back one index at a time
   #   } else {
   #     test.ind <- current.ind-current.last.n.obs+1;                                   # index to test whether same site

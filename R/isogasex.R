@@ -7,30 +7,30 @@
 #' @export
 #'
 #' @examples
-tdllicor <-
+isogasex <-
 function# Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals.
-### Edit \file{tdllicor_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{tdllicor}}. See output in \file{./out} directory.
-### Edit tdllicor_templateX.xls and input parameters and TDL/Licor filenames.
-### Run tdllicor().
+### Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{isogasex}}. See output in \file{./out} directory.
+### Edit isogasex_templateX.xls and input parameters and TDL/Licor filenames.
+### Run isogasex().
 ### See output in ./out directory.
 (input.fn
-### The Excel workbook name.  A modified version of tdllicor_templateX.xls
+### The Excel workbook name.  A modified version of isogasex_templateX.xls
 , path=getwd()
 ### Directory where TDL and Licor data are to be read from, and where ./out directory for results are to be written to.
 )
 {
   # DRIVER FUNCTION -------------------------------------------------------------
   # DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG
-  # #library(tdllicor)
+  # #library(isogasex)
   # #path <- "C:/Dropbox/StatAcumen/consult/Authorship/DavidHanson_Isotopes_2009/Sharing with Erhardt/Daves problem July 19";
-  # #input.fn <- "tdllicor_template3.xls"
+  # #input.fn <- "isogasex_template3.xls"
   # #setwd(path);
   # rm(list=ls()); # clear workspace
-  # library(tdllicor)
+  # library(isogasex)
   # path <- "c:\\Dropbox\\StatAcumen\\consult\\Authorship\\DavidHanson_Isotopes_2009\\Sharing\ with\ Erhardt\\201207_Photoresp_conf_paper\\Pater2011round2data";
   # setwd(path);
-  # input.fn <- "2011Pater_tdllicor_05262011AT_PMDH201.xls"
-  # #tdllicor(input.fn)
+  # input.fn <- "2011Pater_isogasex_05262011AT_PMDH201.xls"
+  # #isogasex(input.fn)
   #
   # DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG
 
@@ -48,14 +48,14 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   ## SECTION Preamble
   ## Set version.
   ## Display header.
-  tdllicor.version  <- "0.1-23";
-  tdllicor.date     <- "2014-04-08"; # yyyy-mm-dd
-  tdllicor.template <- 4;
+  isogasex.version  <- "0.1-23";
+  isogasex.date     <- "2014-04-08"; # yyyy-mm-dd
+  isogasex.template <- 4;
 
   ##details<<
   ## Save original working directory, change to data dir.
   ## (This is a little hokey.)  Change to data dir, then to out dir, then back to original at end.
-    path.original <- getwd(); # changed back at very end of tdllicor()
+    path.original <- getwd(); # changed back at very end of isogasex()
   ##details<<
   ## Create output directory.
   setwd(path);
@@ -63,8 +63,8 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   p.o.temp <- NULL; # initial output buffer to print after we create prefix output directory
 
   time.start <- proc.time()[3];    # start timer
-    p.o.temp <- rbind(p.o.temp, paste("tdllicor: TDL/Licor processing", "\n\n", sep=""));
-    p.o.temp <- rbind(p.o.temp, paste("  Version: ", tdllicor.version, ", Date: ", tdllicor.date,", Template ", tdllicor.template, "\n", sep=""));
+    p.o.temp <- rbind(p.o.temp, paste("isogasex: TDL/Licor processing", "\n\n", sep=""));
+    p.o.temp <- rbind(p.o.temp, paste("  Version: ", isogasex.version, ", Date: ", isogasex.date,", Template ", isogasex.template, "\n", sep=""));
     p.o.temp <- rbind(p.o.temp, paste("  Concept by David T. Hanson", "\n"));
     p.o.temp <- rbind(p.o.temp, paste("  Written by Erik B. Erhardt", "\n"));
     p.o.temp <- rbind(p.o.temp, paste("  Professors at the University of New Mexico", "\n\n"));
@@ -127,10 +127,10 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   wWw <- write_out(p.o.temp); # write log so far
 
   ##details<<
-  ## Check that template version matches version of tdllicor.
-  if (sw$template.version != tdllicor.template) {
+  ## Check that template version matches version of isogasex.
+  if (sw$template.version != isogasex.template) {
     error.message <- paste("ERROR: Template version mismatch! \n",
-                           "       Template version of ", input.fn, " is ", sw$template.version, ". tdllicor version ", tdllicor.version, "requires template ", tdllicor.template, " \n", sep="");
+                           "       Template version of ", input.fn, " is ", sw$template.version, ". isogasex version ", isogasex.version, "requires template ", isogasex.template, " \n", sep="");
     stop(error.message);
   };
 

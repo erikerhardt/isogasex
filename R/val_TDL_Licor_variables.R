@@ -41,7 +41,7 @@ function# Assign TDL and Licor values to val variable names, raw and summarized 
   ##
   ## EXPECTED column names for Licor:
   ## \preformatted{
-  ## (in tdllicor)     (column from Licor)
+  ## (in isogasex)     (column from Licor)
   ## Obs               Obs
   ## HHMMSS            HHMMSS
   ## FTime             FTime
@@ -86,7 +86,7 @@ function# Assign TDL and Licor values to val variable names, raw and summarized 
   ##
   ## EXPECTED column names for TDL:
   ## \preformatted{
-  ## (in tdllicor)       (column from TDL)
+  ## (in isogasex)       (column from TDL)
   ## TIMESTAMP           TIMESTAMP
   ## RECORD              RECORD
   ## PrevSite            PrevSite
