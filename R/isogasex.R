@@ -71,6 +71,16 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
     p.o.temp <- rbind(p.o.temp, paste("  Professors at the University of New Mexico", "\n\n"));
     p.o.temp <- rbind(p.o.temp, paste("Starting ", Sys.time(), "\n\n"));
 
+    p.o.temp <- rbind(p.o.temp, paste("\n\n"));
+    p.o.temp <- rbind(p.o.temp, paste("SESSION INFO AND PACKAGE VERSION ==== BEGIN ===================================="));
+    p.o.temp <- rbind(p.o.temp, paste("\n\n"));
+    p.o.temp <- rbind(p.o.temp, as.matrix(capture.output(sessionInfo()), ncol=1));
+    p.o.temp <- rbind(p.o.temp, paste("\n\n"));
+    p.o.temp <- rbind(p.o.temp, as.matrix(capture.output(packageDescription("isogasex")), ncol=1));
+    p.o.temp <- rbind(p.o.temp, paste("\n\n"));
+    p.o.temp <- rbind(p.o.temp, paste("SESSION INFO AND PACKAGE VERSION ==== END   ===================================="));
+    p.o.temp <- rbind(p.o.temp, paste("\n\n"));
+
   # convert date/time from character to POSIX
     options(digits.secs=1); # set resolution of seconds in time to 0.1
 
