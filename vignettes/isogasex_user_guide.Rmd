@@ -4,7 +4,7 @@ subtitle: "R package documentation for TDL and Licor data processing"
 author: "Erik B. Erhardt and David T. Hanson"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 header-includes:
-   - \usepackage{amsmath,wasysym,undertilde}
+   - \usepackage{amsmath,wasysym}
 output:
   rmarkdown::html_vignette:
     fig_caption: yes
@@ -55,27 +55,18 @@ knitr::opts_chunk$set(fig.align = "center", fig.height = 4, fig.width = 6)
 knitr::opts_chunk$set(cache = TRUE) #, autodep=TRUE)  #$
 ```
 
-%
-%  eedefs.tex     Erik B. Erhardt
-%
-%  This is the common command definitions for my thesis.
-%
-
 % font commands
 \newcommand{\defin}{\bf}
-%\renewcommand{\vector}{\utilde}
 \renewcommand{\vector}{} % \mathbf
 \renewcommand{\matrix}{\mathbf}
 \renewcommand{\permil}{‰}
 \renewcommand{\circ}{°}
 
-%\newcommand{\Normal}          {\mathcal{N}}
 \newcommand{\Normal}          {\textrm{Normal}}
 \newcommand{\Wishart}         {\textrm{Wishart}} %{\mathcal{W}}
 \newcommand{\IWishart}        {\textrm{Inv-Wishart}}
 \newcommand{\Chisq}           {\textrm{scaled-$\chi^2$}} %{\mathcal{W}}
 \newcommand{\IChisq}          {\textrm{Scaled-inv-$\chi^2$}}
-%\newcommand{\Dirichlet}       {\mathcal{D}\textrm{ir}}
 \newcommand{\Dirichlet}       {\textrm{Dirichlet}}
 \newcommand{\dBeta}           {\textrm{Beta}}
 \newcommand{\dGamma}          {\textrm{Gamma}}
@@ -84,8 +75,8 @@ knitr::opts_chunk$set(cache = TRUE) #, autodep=TRUE)  #$
 
 \newcommand{\transpose}       {\top}%             for matrix transpose
 
-%% tdllicor begin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\tdllicor}{\texttt{tdllicor}}
+%% isogasex begin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\isogasex}{\texttt{isogasex}}
 
 \newcommand{\data}[1]{\tilde{#1}} % data notation
 \newcommand{\sdatasig}[1]{\sigma_{#1}^2} % data notation
@@ -226,7 +217,7 @@ knitr::opts_chunk$set(cache = TRUE) #, autodep=TRUE)  #$
 \newcommand{\sgtc}{g_{\textrm{tc}\subctp}} %
  \newcommand{\sdatagtc}{\data{g}_{\textrm{tc}\subctpr}} %
  \newcommand{\ssiggtc}{\sdatasig{g_{\textrm{tc}}}} %
-%% tdllicor end   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% isogasex end   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -391,7 +382,6 @@ $$
 \end{aligned}
 $$
 
-```
 
 ## Data
 
@@ -401,26 +391,46 @@ Concentrations for high and low calibration tanks (H and L),
   reference gas entering the chamber (R),
   and chamber gas exiting the chamber (C).
 
-$\vdatakappaH = (\sdatakappaHtw,\sdatakappaHth)^\transpose$
+$$
+\begin{aligned}
+\vdatakappaH
+  & = & (\sdatakappaHtw,\sdatakappaHth)^\transpose
+  & \quad \\
+\vdatakappaL
+  & = & (\sdatakappaLtw,\sdatakappaLth)^\transpose
+  & \quad  \\
+\vdatakappaR
+  & = & (\sdatakappaRtw,\sdatakappaRth)^\transpose
+  & \quad  \\
+\vdatakappaC
+  & = & (\sdatakappaCtw,\sdatakappaCth)^\transpose
+  & \quad  \\
+\end{aligned}
+$$
 
-$\vdatakappaL = (\sdatakappaLtw,\sdatakappaLth)^\transpose$
-
-$\vdatakappaR = (\sdatakappaRtw,\sdatakappaRth)^\transpose$
-
-$\vdatakappaC = (\sdatakappaCtw,\sdatakappaCth)^\transpose$
 
 
 ### Licor
 
-$\sdatapatmL \sim \Normal(\spatmL,\ssigpatmL)$ atmospheric pressure from Licor
 
-$\sdataAL \sim \Normal(\sAL, \ssigAL)$ photosynthesis from Licor (can also calculate from TDL)
+$$
+\begin{aligned}
+\sdatapatmL
+  & \sim & \Normal(\spatmL,\ssigpatmL)
+  & \quad \textrm{atmospheric pressure from Licor} \\
+\sdataAL
+  & \sim & \Normal(\sAL, \ssigAL)
+  & \quad \textrm{photosynthesis from Licor (can also calculate from TDL)} \\
+\sdatagtc
+  & \sim & \Normal(\sgtc, \ssiggtc)
+  & \quad \textrm{total conductance of CO_2} \\
+\sdataE
+  & \sim & \Normal(\sE, \ssigE)
+  & \quad \textrm{transpiration rate (water vapor)} \\
+\end{aligned}
+$$
 
-$\sdatagtc \sim \Normal(\sgtc, \ssiggtc)$ total conductance of CO$_2$
-  (I have a note that this is a function of $\sgbc$, $\sgsc$, $\sdotab$, $\sdotgsc$, and $\sdotgbc$.)
-
-$\sdataE \sim \Normal(\sE, \ssigE)$ transpiration rate (water vapor)
-
+I have a note that $\sdatagtc$ is a function of $\sgbc$, $\sgsc$, $\sdotab$, $\sdotgsc$, and $\sdotgbc$.
 
 ## Calculations
 
@@ -429,60 +439,113 @@ $\sdataE \sim \Normal(\sE, \ssigE)$ transpiration rate (water vapor)
 
 Offset
 
-$\sotw = \sdotkappaHtw - \sgtw\skappaHtw$
-
-$\soth = \sdotkappaHth - \sgth\skappaHth$
+$$
+\begin{aligned}
+\sotw
+  & = & \sdotkappaHtw - \sgtw\skappaHtw
+  & \quad \textrm{} \\
+\soth
+  & = & \sdotkappaHth - \sgth\skappaHth
+  & \quad \textrm{} \\
+\end{aligned}
+$$
 
 
 Gain
 
-$\sgtw = (\sdotkappaHtw - \sdotkappaLtw)(\skappaHtw - \skappaLtw)^{-1}$
-
-$\sgth = (\sdotkappaHth - \sdotkappaLth)(\skappaHth - \skappaLth)^{-1}$
+$$
+\begin{aligned}
+\sgtw
+  & = & (\sdotkappaHtw - \sdotkappaLtw)(\skappaHtw - \skappaLtw)^{-1}
+  & \quad \textrm{} \\
+\sgth
+  & = & (\sdotkappaHth - \sdotkappaLth)(\skappaHth - \skappaLth)^{-1}
+  & \quad \textrm{} \\
+\end{aligned}
+$$
 
 
 Corrected
 
-$\skappaRtwp = \skappaRtw\sgtw + \sotw$ Ref
-
-$\skappaRthp = \skappaRth\sgth + \soth$ Ref
-
-$\skappaCtwp = \skappaCtw\sgtw + \sotw$ Chamber
-
-$\skappaCthp = \skappaCth\sgth + \soth$ Chamber
+$$
+\begin{aligned}
+\skappaRtwp
+  & = & \skappaRtw\sgtw + \sotw
+  & \quad \textrm{Ref} \\
+\skappaRthp
+  & = & \skappaRth\sgth + \soth
+  & \quad \textrm{Ref} \\
+\skappaCtwp
+  & = & \skappaCtw\sgtw + \sotw
+  & \quad \textrm{Chamber} \\
+\skappaCthp
+  & = & \skappaCth\sgth + \soth
+  & \quad \textrm{Chamber} \\
+\end{aligned}
+$$
 
 
 xi
 
-$\sxi=\sCe(\sCe-\sCo)^{-1}$
+$$
+\begin{aligned}
+\sxi
+  & = & \sCe(\sCe-\sCo)^{-1}
+  & \quad \textrm{} \\
+\end{aligned}
+$$
 
 
 delta
 
-$\sdeltae = \{ (\skappaRthp/\skappaRtwp)/\sdotRstd - 1 \} 10^3\permil$ Ref
-
-$\sdeltao = \{ (\skappaCthp/\skappaCtwp)/\sdotRstd - 1 \} 10^3\permil$ Chamber
+$$
+\begin{aligned}
+\sdeltae
+  & = & \{ (\skappaRthp/\skappaRtwp)/\sdotRstd - 1 \} 10^3\permil
+  & \quad \textrm{Ref} \\
+\sdeltao
+  & = & \{ (\skappaCthp/\skappaCtwp)/\sdotRstd - 1 \} 10^3\permil
+  & \quad \textrm{Chamber} \\
+\end{aligned}
+$$
 
 
 Total mol fractions (paired, either both Licor or both TDL)
 
-$\sCe = (\skappaRtwp+\skappaRthp)(1-\sdotfthC)^{-1}$ entering Reference
-
-$\sCa \equiv \sCo = (\skappaCtwp+\skappaCthp)(1-\sdotfthC)^{-1}$ outgoing Chamber
+$$
+\begin{aligned}
+\sCe
+  & = (& \skappaRtwp+\skappaRthp)(1-\sdotfthC)^{-1}
+  & \quad \textrm{entering Reference} \\
+\sCa
+  & \equiv & \sCo = (\skappaCtwp+\skappaCthp)(1-\sdotfthC)^{-1}
+  & \quad \textrm{outgoing Chamber} \\
+\end{aligned}
+$$
 
 
 
 ## Partial Pressures
 
-$\spa = (\sCa 10^{-6})(\spatmL 10^3)$ atmosphere
-
-$\sps = (\sCs 10^{-6})(\spatmL 10^3)$ surface
-
-$\spi = (\sCi 10^{-6})(\spatmL 10^3)$ internal
-
-$\spc = \spi - \sAL \sgm^{-1}$ (chloroplast) carboxylation site
-
-$\sgm = (\sdotb - \sdotbs - \sdotaw)\sAL\spa^{-1}(\sDeltapred-\sDeltaobs)^{-1}$
+$$
+\begin{aligned}
+\spa
+  & = & (\sCa 10^{-6})(\spatmL 10^3)
+  & \quad \textrm{atmosphere} \\
+\sps
+  & = & (\sCs 10^{-6})(\spatmL 10^3)
+  & \quad \textrm{surface} \\
+\spi
+  & = & (\sCi 10^{-6})(\spatmL 10^3)
+  & \quad \textrm{internal} \\
+\spc
+  & = & \spi - \sAL \sgm^{-1}
+  & \quad \textrm{(chloroplast) carboxylation site} \\
+\sgm
+  & = & (\sdotb - \sdotbs - \sdotaw)\sAL\spa^{-1}(\sDeltapred-\sDeltaobs)^{-1}
+  & \quad \textrm{}\\
+\end{aligned}
+$$
 
 
 
@@ -490,9 +553,16 @@ $\sgm = (\sdotb - \sdotbs - \sdotaw)\sAL\spa^{-1}(\sDeltapred-\sDeltaobs)^{-1}$
 
 {\bf (can put priors here, if desired)}
 
-$\sDeltaobs = \sxi(\sdeltao-\sdeltae)\{1+\sdeltao-\sxi(\sdeltao-\sdeltae)\}^{-1}10^3$
-
-$\sDeltapred = \spa^{-1} \{ \sdotab(\spa-\sps) + \sdota(\sps-\spi) + \sdotb\spc \}$
+$$
+\begin{aligned}
+\sDeltaobs
+  & = & \sxi(\sdeltao-\sdeltae)\{1+\sdeltao-\sxi(\sdeltao-\sdeltae)\}^{-1}10^3
+  & \quad \textrm{}\\
+\sDeltapred
+  & = & \spa^{-1} \{ \sdotab(\spa-\sps) + \sdota(\sps-\spi) + \sdotb\spc \}
+  & \quad \textrm{}\\
+\end{aligned}
+$$
 
 (circular, assume $\spc\equiv\spi$)
 
@@ -500,9 +570,15 @@ $\sDeltapred = \spa^{-1} \{ \sdotab(\spa-\sps) + \sdota(\sps-\spi) + \sdotb\spc 
 
 Leaf surface:
 
-$\sCs = \{ (\sgbc - \sE/2000)\sCo - \sAL \} ( \sgbc + \sE/2000 )^{-1}$
+$$
+\begin{aligned}
+\sCs
+  & = & \{ (\sgbc - \sE/2000)\sCo - \sAL \} ( \sgbc + \sE/2000 )^{-1}
+  & \quad \textrm{}\\
+\sCi
+  & = & \{ (\sgtc - \sE/2000)\sCo - \sAL \} ( \sgtc + \sE/2000 )^{-1}
+  & \quad \textrm{}\\
+\end{aligned}
+$$
 
-$\sCi = \{ (\sgtc - \sE/2000)\sCo - \sAL \} ( \sgtc + \sE/2000 )^{-1}$
-
-Either of these valuse can be from the TDL or Licor: $\sCo$ and $\sAL$.
-```
+Either of these values can be from the TDL or Licor: $\sCo$ and $\sAL$.
