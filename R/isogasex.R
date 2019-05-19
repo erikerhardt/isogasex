@@ -19,6 +19,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
 ### Directory where TDL and Licor data are to be read from, and where ./out directory for results are to be written to.
 )
 {
+  isogasex_logo()
   # DRIVER FUNCTION -------------------------------------------------------------
   # DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG
   # #library(isogasex)
