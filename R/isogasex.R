@@ -49,8 +49,8 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   ## SECTION Preamble
   ## Set version.
   ## Display header.
-  isogasex.version  <- "0.1-23";
-  isogasex.date     <- "2014-04-08"; # yyyy-mm-dd
+  #isogasex.version  <- "0.1-23";
+  #isogasex.date     <- "2014-04-08"; # yyyy-mm-dd
   isogasex.template <- 4;
 
   ##details<<
@@ -65,20 +65,22 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
 
   time.start <- proc.time()[3];    # start timer
     p.o.temp <- rbind(p.o.temp, paste("isogasex: TDL/Licor processing", "\n\n", sep=""));
-    p.o.temp <- rbind(p.o.temp, paste("  Version: ", isogasex.version, ", Date: ", isogasex.date,", Template ", isogasex.template, "\n", sep=""));
+    #p.o.temp <- rbind(p.o.temp, paste("  Version: ", isogasex.version, ", Date: ", isogasex.date,", Template ", isogasex.template, "\n", sep=""));
     p.o.temp <- rbind(p.o.temp, paste("  Concept by David T. Hanson", "\n"));
     p.o.temp <- rbind(p.o.temp, paste("  Written by Erik B. Erhardt", "\n"));
     p.o.temp <- rbind(p.o.temp, paste("  Professors at the University of New Mexico", "\n\n"));
     p.o.temp <- rbind(p.o.temp, paste("Starting ", Sys.time(), "\n\n"));
 
     p.o.temp <- rbind(p.o.temp, paste("\n\n"));
-    p.o.temp <- rbind(p.o.temp, paste("SESSION INFO AND PACKAGE VERSION ==== BEGIN ===================================="));
+    p.o.temp <- rbind(p.o.temp, paste("================================================================================\n"));
+    p.o.temp <- rbind(p.o.temp, paste("SESSION INFO AND PACKAGE VERSION ---- BEGIN ------------------------------------\n"));
     p.o.temp <- rbind(p.o.temp, paste("\n\n"));
-    p.o.temp <- rbind(p.o.temp, as.matrix(capture.output(sessionInfo()), ncol=1));
+    p.o.temp <- rbind(p.o.temp, as.matrix(paste0(capture.output(sessionInfo()), "\n"), ncol=1));
     p.o.temp <- rbind(p.o.temp, paste("\n\n"));
-    p.o.temp <- rbind(p.o.temp, as.matrix(capture.output(packageDescription("isogasex")), ncol=1));
+    p.o.temp <- rbind(p.o.temp, as.matrix(paste0(capture.output(packageDescription("isogasex")), "\n"), ncol=1));
     p.o.temp <- rbind(p.o.temp, paste("\n\n"));
-    p.o.temp <- rbind(p.o.temp, paste("SESSION INFO AND PACKAGE VERSION ==== END   ===================================="));
+    p.o.temp <- rbind(p.o.temp, paste("SESSION INFO AND PACKAGE VERSION ---- END   ------------------------------------\n"));
+    p.o.temp <- rbind(p.o.temp, paste("================================================================================\n"));
     p.o.temp <- rbind(p.o.temp, paste("\n\n"));
 
   # convert date/time from character to POSIX
