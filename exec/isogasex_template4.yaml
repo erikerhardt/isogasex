@@ -1,0 +1,134 @@
+|
+  output.summary.TDL.fn: write_summary_Licor_file_summary_TDL.csv
+  sig.CI: 0.95
+  output.summary.Calc.fn: write_summary_Licor_file_summary_Calc.csv
+  output.CI.TDL.fn: write_summary_Licor_file_CI_TDL.csv
+  R.bootstrap: 0.0
+  output.fn.prefix: write_summary_Licor_file
+  seed: 0.0
+  Licor.TDL.time.offset.seconds: 0.0
+  sw:
+    template.version: 4.0
+    use.TDL: 1.0
+    use.Licor: 1.0
+    print.TDL.missing: 1.0
+    print.TDL.cycle.timing: 0.0
+    write.all.obs.file: 0.0
+    save.RData: 0.0
+    interp.tank.hi: 1.0
+    interp.tank.low: 1.0
+    interp.reference: 2.0
+    Licor.or.TDL.A.photosynthesis: 1.0
+    val.const.override.Licor.flow.rate: 1.0
+    val.const.override.Licor.leaf.area: 1.0
+    val.const.override.Licor.boundary.layer.cond.to.water: 1.0
+    val.const.override.Licor.H2OS: 1.0
+    val.const.override.Licor.StmRat: 1.0
+    calc.pc.to.use: 1.0
+    calc.Delta.i.to.use: .na.real
+    calc.gm.to.use: 1.0
+  output.CI.Calc.fn: write_summary_Licor_file_CI_Calc.csv
+  Licor.fn: C:\Dropbox\StatAcumen\consult\Authorship\2009_DavidHanson_Isotopes\package_testing/Soybean
+    Flame 5
+  output.all.Calc.fn: write_summary_Licor_file_all_Calc.csv
+  output.summary.Licor.fn: write_summary_Licor_file_summary_Licor.csv
+  TDL.fn: C:\Dropbox\StatAcumen\consult\Authorship\2009_DavidHanson_Isotopes\package_testing/20120530_CR3000_2_RawData.dat
+  plot.format.list:
+  - 5.0
+  - 6.0
+  output.CI.Calc.last.fn: write_summary_Licor_file_CI_Calc_last.csv
+  TDL.cycle:
+    number.tank.hi: 9.0
+    number.tank.low: 10.0
+    number.reference: 1.0
+    number.chamber: 21.0
+    name.tank.hi: tank.hi
+    name.tank.low: tank.low
+    name.reference: reference
+    name.chamber: chamber
+    seconds.tank.hi: 10.0
+    seconds.tank.low: 10.0
+    seconds.reference: 10.0
+    seconds.chamber: 10.0
+    Hz: 10.0
+    seconds.exclude.first.chamber: 20.0
+    last.n.obs.tank.hi: 100.0
+    last.n.obs.tank.low: 100.0
+    last.n.obs.reference: 100.0
+    last.n.obs.chamber: 100.0
+    first.n.last.skip.chamber: 2.0
+    table:
+    - 9.0
+    - 10.0
+    - 1.0
+    - 21.0
+    - 100.0
+    - 100.0
+    - 100.0
+    - 100.0
+    table.name:
+    - tank.hi
+    - tank.low
+    - reference
+    - chamber
+  val:
+    const:
+      true.value.hi.12C: 473.3358029
+      true.value.hi.13C: 5.1832093
+      true.value.lo.12C: 243.4737846
+      true.value.lo.13C: 2.6663011
+      fo.13C: 0.004922
+      fo.18O: 0.000821
+      Rstd.13C: 0.0111797
+      Rstd.18O: 0.0020052
+      Gamma.star: 1.0
+      f.photo.respiration: 1.0
+      e: 1.0
+      Rd: 1.0
+      k: 1.0
+      b.gm: 29.0
+      b.modeling: 27.0
+      b.s: 1.1
+      a: 4.44
+      a.b: 2.96
+      a.l: 0.7
+      a.i: 1.8
+      flow.rate: 288.0
+      leaf.area: 5.0
+      boundary.layer.cond.to.water: 2.55
+      H2OS: 88.0
+      StmRat: 99.0
+      gbc.1.37: 1.37
+      gsc.1.6: 1.6
+    calc:
+      obs: []
+      all: []
+      sum: []
+    write: []
+    timewindow:
+      start.time:
+        sec: .na.real
+        min: .na.integer
+        hour: .na.integer
+        mday: .na.integer
+        mon: .na.integer
+        year: .na.integer
+        wday: .na.integer
+        yday: .na.integer
+        isdst: -1
+        zone: ''
+        gmtoff: .na.integer
+      end.time:
+        sec: .na.real
+        min: .na.integer
+        hour: .na.integer
+        mday: .na.integer
+        mon: .na.integer
+        year: .na.integer
+        wday: .na.integer
+        yday: .na.integer
+        isdst: -1
+        zone: ''
+        gmtoff: .na.integer
+  output.CI.Licor.fn: write_summary_Licor_file_CI_Licor.csv
+  output.summary.Calc.last.fn: write_summary_Licor_file_summary_Calc_last.csv
