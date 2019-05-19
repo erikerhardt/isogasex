@@ -1,3 +1,11 @@
+#' logo
+#'
+#' @param sw_unicode
+#'
+#' @return
+#' @export
+#'
+#' @examples
 isogasex_logo <- function (sw_unicode = l10n_info()$`UTF-8`) {
   logo <-
     c(
