@@ -6,6 +6,7 @@
 #' @param sw
 #'
 #' @return
+#' @importFrom zoo zoo
 #' @export
 #'
 #' @examples
@@ -95,8 +96,8 @@ function# keep only the overlapping time window of TDL and Licor files
       TDL$time_org <- Licor$time;
     }
 
-    TDL.time.merge      <- zoo(1:TDL$n,   TDL$time_org);
-    Licor.time.merge    <- zoo(1:Licor$n, Licor$time);
+    TDL.time.merge      <- zoo::zoo(1:TDL$n,   TDL$time_org);
+    Licor.time.merge    <- zoo::zoo(1:Licor$n, Licor$time);
     TL.merge            <- merge(TDL.time.merge, Licor.time.merge);      # matching TDL with Licor times
     TDL.ind.match.Licor <- TL.merge[is.finite(TL.merge[,2]),1]; # indices of TDL matching Licor times
     #Licor.matched.with.non.NA.TDL <- (1:length(TDL.ind.match.Licor))[!is.na(TDL.ind.match.Licor)]; # 2/9/2012 0:22AM add - if NA in TDL file, skip those
@@ -121,7 +122,7 @@ function# keep only the overlapping time window of TDL and Licor files
         Licor$n             <- length(Licor.ind.keep);
         Licor$time          <- Licor$time[Licor.ind.keep];
         Licor$data          <- Licor$data[Licor.ind.keep,];
-        Licor.time.merge    <- zoo(1:Licor$n, Licor$time);
+        Licor.time.merge    <- zoo::zoo(1:Licor$n, Licor$time);
         TL.merge            <- merge(TDL.time.merge, Licor.time.merge);      # matching TDL with Licor times
         TDL.ind.match.Licor <- TL.merge[is.finite(TL.merge[,2]),1]; # indices of TDL matching Licor times
         if (sum(is.na(TL.merge[,1]))) { # NA records in TDL file, see read_TDL.R for # Where TDL$StartSeqFlag!=0 or TDL$SeqActiveFlag==0
