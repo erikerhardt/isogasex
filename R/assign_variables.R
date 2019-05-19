@@ -44,7 +44,7 @@ function# Assign variables from input file to variable names
   c.v <- 2;
 
   # first row is header, then count from there
-  r.v <- 1;
+  r.v <- 0;
 
   ##details<<
   ## Template version

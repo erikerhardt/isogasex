@@ -3,6 +3,7 @@
 #' @param filename
 #'
 #' @return
+#' @importFrom readxl read_xls
 #' @export
 #'
 #' @examples
@@ -44,7 +45,8 @@ function# Get data from Excel spreadsheet
     # assign each worksheet to a variable within the DATA environment
     #perl.command <- system("which perl", intern=TRUE);
     #i.sheet <- 1; DATA = as.matrix( read.xls(filename, sheet=i.sheet, verbose=FALSE, header=FALSE, perl=perl.command) ); wWw <- write_out(paste(" ", i.sheet));
-    i.sheet <- 1; DATA = as.matrix( read.xls(filename, sheet=i.sheet, verbose=FALSE, header=FALSE, blank.lines.skip=FALSE, perl="perl") ); # wWw <- write_out(paste(" ", i.sheet));
+    #i.sheet <- 1; DATA = as.matrix( read.xls(filename, sheet=i.sheet, verbose=FALSE, header=FALSE, blank.lines.skip=FALSE, perl="perl") ); # wWw <- write_out(paste(" ", i.sheet));
+    i.sheet <- 1; DATA = as.matrix( readxl::read_xls(filename, sheet=i.sheet)); #, verbose=FALSE, header=FALSE, blank.lines.skip=FALSE, perl="perl") ); # wWw <- write_out(paste(" ", i.sheet));
       #wWw <- write_out(paste("\n"));
   #} # unix
 
