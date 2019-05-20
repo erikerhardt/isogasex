@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_gbc_gsc_gtc.R
 \name{plot_gbc_gsc_gtc}
 \alias{plot_gbc_gsc_gtc}
-\title{Title}
+\title{Plot gbc, gsc, gtc: boundary layer, stomatal, and total conductance for CO2}
 \usage{
 plot_gbc_gsc_gtc(chamber_Totalgbc, chamber_13gbc, chamber_Totalgsc,
   chamber_13gsc, chamber_Totalgtc, chamber_13gtc, x_time, plot_format_list,
@@ -12,5 +12,5 @@ plot_gbc_gsc_gtc(chamber_Totalgbc, chamber_13gbc, chamber_Totalgsc,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+Plots the input variables.
 }

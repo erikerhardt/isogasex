@@ -1,9 +1,11 @@
-#' Title
+#' gtc, total (stomatal and boundary layer) conductance for CO2
+#'
+#' \deqn{gtc = 1 / ((1 / gbc) + (1 / gsc))}
 #'
 #' @param gbc
 #' @param gsc
 #'
-#' @return
+#' @return gtc
 #' @export
 #'
 #' @examples

@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_pc_using_simple_Delta_for_gm.R
 \name{f_val_calc_pc_using_simple_Delta_for_gm}
 \alias{f_val_calc_pc_using_simple_Delta_for_gm}
-\title{Title}
+\title{pc using simple D for gm, includes boundary layer}
 \usage{
 f_val_calc_pc_using_simple_Delta_for_gm(Delta, pa, ps, a, b_gm, a_b)
 }
 \arguments{
 \item{a_b}{}
 }
+\value{
+pc
+}
 \description{
-Title
+\deqn{pc = (Delta * pa - a_b * (pa - ps) - a * ps) / (b_gm - a)}
 }

@@ -1,11 +1,15 @@
-#' Title
+#' Calculate the mean for the Licor data based on last measurements
+#'
+#' create Licor$summary for numerical summaries
+#'
+#' Calculate mean for each site for retained observations
 #'
 #' @param TDL
 #' @param Licor
 #' @param TDL_cycle
 #' @param sw
 #'
-#' @return
+#' @return Licor
 #' @export
 #'
 #' @examples

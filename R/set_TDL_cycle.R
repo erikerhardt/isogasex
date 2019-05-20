@@ -1,8 +1,10 @@
-#' Title
+#' TDL_cycle variables
+#'
+#' \code{last_n_obs.*} is the number of observations to take to be \code{seconds.*} long.
 #'
 #' @param TDL_cycle
 #'
-#' @return
+#' @return TDL_cycle
 #' @export
 #'
 #' @examples

@@ -1,10 +1,12 @@
-#' Title
+#' update values for each bs iterate
+#'
+#' Move current value of \code{val_calc_bs_temp} into \code{bs$*} after checked with \code{\link{f_val_bs_matrix_check}}.
 #'
 #' @param bs
 #' @param val_calc_bs_temp
 #' @param i_bs
 #'
-#' @return
+#' @return bs
 #' @export
 #'
 #' @examples

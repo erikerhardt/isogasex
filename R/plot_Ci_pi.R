@@ -1,4 +1,6 @@
-#' Title
+#' Plot Ci, pi, CO2 concentration and partial pressure of CO2 in the substomatal cavities
+#'
+#' Plots the input variables.
 #'
 #' @param chamber_TotalCi
 #' @param chamber_12Ci
@@ -10,7 +12,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -57,7 +59,7 @@ function# Plot Ci, pi, CO2 concentration and partial pressure of CO2 in the subs
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

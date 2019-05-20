@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_gain_offset.R
 \name{plot_gain_offset}
 \alias{plot_gain_offset}
-\title{Title}
+\title{Plot active gains, offsets, and corrected magnitudes}
 \usage{
 plot_gain_offset(gain_12C, gain_13C, offset_12C, offset_13C, x_time,
   plot_format_list, output_fn_prefix)
@@ -11,5 +11,5 @@ plot_gain_offset(gain_12C, gain_13C, offset_12C, offset_13C, x_time,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+Plots the input variables.
 }

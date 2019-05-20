@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_np_bs_mean.R
 \name{f_np_bs_mean}
 \alias{f_np_bs_mean}
-\title{Title}
+\title{calculate NP BS mean}
 \usage{
 f_np_bs_mean(x, first_ind, last_ind, n_sam, n)
 }
 \arguments{
 \item{n}{}
 }
+\value{
+x_mean
+}
 \description{
-Title
+Resample from data with replacement, calculating mean of n nonparametric bootstrap resamples.
 }

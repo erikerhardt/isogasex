@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_pc_using_simple_Delta_for_modeling.R
 \name{f_val_calc_pc_using_simple_Delta_for_modeling}
 \alias{f_val_calc_pc_using_simple_Delta_for_modeling}
-\title{Title}
+\title{pc using simple D for modeling}
 \usage{
 f_val_calc_pc_using_simple_Delta_for_modeling(Delta, pa, a, b_modeling)
 }
 \arguments{
 \item{b_modeling}{}
 }
+\value{
+pc
+}
 \description{
-Title
+\deqn{pc = (pa * (Delta - a)) / (b_modeling - a)}
 }

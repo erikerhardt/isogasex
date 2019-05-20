@@ -1,11 +1,13 @@
-#' Title
+#' write output section
+#'
+#' Write summary values for all time points.
 #'
 #' @param val
 #' @param TDL_cycle
 #' @param output_summary_Calc_fn
 #' @param output_summary_Calc_last_fn
 #'
-#' @return
+#' @return val$write
 #' @export
 #'
 #' @examples
@@ -145,7 +147,6 @@ function# write_output section
       rbind( val$write$summary_Calc
         ,paste(
            format(val$sum$TDL$time[i_time],format="%Y-%m-%d")
-          ,format(val$sum$TDL$time[i_time],format="%H:%M:%S")  # "%H:%M:%OS" ## can't use %OS format since Excel doesn't display decimal seconds automatically
           ,val$sum$TDL$site[i_time]
           ,TDL_cycle$table_name[(TDL_cycle$table[,1] == val$sum$TDL$site[i_time])]
           ,val$sum$TDL$first_ind[i_time]

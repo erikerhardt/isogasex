@@ -1,4 +1,6 @@
-#' Title
+#' Plot pc, total partial pressure of CO2 at the site of carboxylation
+#'
+#' Plots the input variables.
 #'
 #' @param chamber_Totalpc_using_gm
 #' @param chamber_12pc_using_gm
@@ -7,7 +9,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -45,7 +47,7 @@ function# Plot pc, total partial pressure of CO2 at the site of carboxylation
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

@@ -2,13 +2,16 @@
 % Please edit documentation in R/my_reg_fit.R
 \name{my_reg_fit}
 \alias{my_reg_fit}
-\title{Title}
+\title{basic SLR beta fit}
 \usage{
 my_reg_fit(y, x)
 }
 \arguments{
 \item{x}{}
 }
+\value{
+beta_hat
+}
 \description{
-Title
+Calculate intercept and slope of a simple linear regression fit.
 }

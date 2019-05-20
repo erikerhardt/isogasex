@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_Cs.R
 \name{f_val_calc_Cs}
 \alias{f_val_calc_Cs}
-\title{Title}
+\title{Cs, ppm CO2 concentration at the leaf surface, cs calculated from eq 40 Ball 1987 Ch 20 Stomatal Function, eds Zeiger, Farquhar, Cowan}
 \usage{
 f_val_calc_Cs(gbc, E, Co, A)
 }
 \arguments{
 \item{A}{}
 }
+\value{
+Cs
+}
 \description{
-Title
+\deqn{Cs = (((gbc - (E / 2000)) * Co) - A) / (gbc + (E / 2000))}
 }

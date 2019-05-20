@@ -2,13 +2,19 @@
 % Please edit documentation in R/calc_mean_TDL_interp_tanks_ref.R
 \name{calc_mean_TDL_interp_tanks_ref}
 \alias{calc_mean_TDL_interp_tanks_ref}
-\title{Title}
+\title{Summary values for TDL interpolated tanks and reference}
 \usage{
 calc_mean_TDL_interp_tanks_ref(TDL, TDL_cycle)
 }
 \arguments{
 \item{TDL_cycle}{}
 }
+\value{
+TDL
+}
 \description{
-Title
+Calculate mean, var, and sd for each site for interpolated ranges.
+}
+\details{
+Data updated to exclude indices that we don't summarize.
 }

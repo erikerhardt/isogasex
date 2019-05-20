@@ -1,4 +1,27 @@
-#' Title
+#' Find the overlapping time window of the TDL and Licor files and return the start/end indices of each file
+#'
+#' Unused sites (comment):
+#' When sites are specified in TDL file that are not in the template file (because more than 4 sites are used),
+#' then there are NAs for times for used sites.  In this case, the matching times above may be different
+#' from the min/max times below.  In this case, we should use the matching times (that is, always use the matching times)
+#' otherwise errors result from NA times in \code{\link{time_window_TDL_Licor_interp}}.
+#' The logic is: use the widest matching times within the timewindow.
+#'
+#' Indicate first and last times for TDL and Licor.
+#'
+#' Report first and last times.
+#'
+#' Indicate the time window specified.
+#'
+#' Set TDL and Licor times to NA outside the time window.
+#'
+#' Indicate the first and last matching TDL and Licor times in time window.
+#'
+#' Check that TDL and Licor first and last times are identical.
+#'
+#' Indices for first and last times in TDL and Licor files.
+#'
+#' Use narrower timewindow start and end times, if specified.
 #'
 #' @param TDL_time
 #' @param TDL_n
@@ -7,7 +30,7 @@
 #' @param val_timewindow
 #' @param sw
 #'
-#' @return
+#' @return TDL_Licor_times
 #' @export
 #'
 #' @examples

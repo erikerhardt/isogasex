@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_pp.R
 \name{f_val_calc_pp}
 \alias{f_val_calc_pp}
-\title{Title}
+\title{pa, partial pressure of CO2 above the leaf, Press is the atmospheric pressure value from the LI6400}
 \usage{
 f_val_calc_pp(Co, Press)
 }
 \arguments{
 \item{Press}{}
 }
+\value{
+pa
+}
 \description{
-Title
+\deqn{pa = (Co / 10^6) * (Press * 1000)}
 }

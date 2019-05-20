@@ -1,4 +1,6 @@
-#' Title
+#' plot all variables with bs values, mean value, and CI intervals
+#'
+#' For every variable, plots the mean and bootstrap CI, after removing NAs with \code{\link{plot_not_na}}.
 #'
 #' @param x_bs
 #' @param x_sum
@@ -10,7 +12,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -63,7 +65,7 @@ function# plot all variables with bs values, mean value, and CI intervals
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_par_bs_mean.R
 \name{f_par_bs_mean}
 \alias{f_par_bs_mean}
-\title{Title}
+\title{calculate Par BS mean}
 \usage{
 f_par_bs_mean(x, x_var, n_sam, n)
 }
 \arguments{
 \item{n}{}
 }
+\value{
+x_mean
+}
 \description{
-Title
+Sample from normal distribution with mean and se from the data, calculating mean of n parametric bootstrap resamples.
 }

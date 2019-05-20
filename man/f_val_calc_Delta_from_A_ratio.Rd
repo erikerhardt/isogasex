@@ -2,13 +2,20 @@
 % Please edit documentation in R/f_val_calc_Delta_from_A_ratio.R
 \name{f_val_calc_Delta_from_A_ratio}
 \alias{f_val_calc_Delta_from_A_ratio}
-\title{Title}
+\title{D from A ratio, (Ro/(13A/12A))-1, should be the same as Dobs above}
 \usage{
 f_val_calc_Delta_from_A_ratio(cham.12Co, cham.13Co, TDL.13A, TDL.12A)
 }
 \arguments{
 \item{TDL.12A}{}
 }
+\value{
+Delta_from_A_ratio
+}
 \description{
-Title
+First calculates R_cham with \code{\link{f_val_calc_isotope_ratio}}
+}
+\details{
+\deqn{Delta_from_A_ratio <- (R_cham / (TDL.13A / TDL.12A)) - 1}
+this quantity is not in per mil
 }

@@ -1,10 +1,12 @@
-#' Title
+#' create CI endpoints
+#'
+#' Sorts BS samples, takes quantiles for equal-tailed sig_CI Level CIs.
 #'
 #' @param x
 #' @param n
 #' @param ind_CI
 #'
-#' @return
+#' @return x_CI
 #' @export
 #'
 #' @examples

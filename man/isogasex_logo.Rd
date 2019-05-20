@@ -2,7 +2,7 @@
 % Please edit documentation in R/isogasex_logo.R
 \name{isogasex_logo}
 \alias{isogasex_logo}
-\title{logo}
+\title{isogasex logo, just for fun}
 \usage{
 isogasex_logo(sw_unicode = l10n_info()$`UTF-8`)
 }
@@ -10,5 +10,5 @@ isogasex_logo(sw_unicode = l10n_info()$`UTF-8`)
 \item{sw_unicode}{}
 }
 \description{
-logo
+isogasex logo, just for fun
 }

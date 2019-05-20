@@ -1,9 +1,15 @@
-#' Title
+#' Replace NA and NAN values in TDL$data by previous value for that variable
+#'
+#' Look at each field.
+#'
+#' If not finite, then it's a bad value to replace.
+#'
+#' Replace bad value with previous value in the file.
 #'
 #' @param TDL
 #' @param bad_ind
 #'
-#' @return
+#' @return TDL
 #' @export
 #'
 #' @examples

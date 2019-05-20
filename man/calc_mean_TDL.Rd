@@ -2,13 +2,19 @@
 % Please edit documentation in R/calc_mean_TDL.R
 \name{calc_mean_TDL}
 \alias{calc_mean_TDL}
-\title{Title}
+\title{Calculate the mean and variance for the TDL/Licor data based on last measurements}
 \usage{
 calc_mean_TDL(TDL, TDL_cycle)
 }
 \arguments{
 \item{TDL_cycle}{}
 }
+\value{
+TDL
+}
 \description{
-Title
+create TDL$summary for numerical summaries
+}
+\details{
+Calculate mean, var, and sd for each site for retained observations
 }

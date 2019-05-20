@@ -1,10 +1,24 @@
-#' Title
+#' read Licor file
+#'
+#' See \code{\link{val_TDL_Licor_variables}} for expected column names.
+#'
+#' Create \code{Licor} to hold data.
+#'
+#' Read Licor file
+#'
+#' Find the row where the column headers and data begin.
+#'
+#' Look for "Obs" as the first row (used to look for $STARTOFDATA$, but not in every version of Licor file).
+#'
+#' If any extra lines in Licor file, remove those lines and fix the Obs and HHMMSS columns.
+#'
+#' Date (day) of run, fix Thursday (Thr to Thu) representation.
 #'
 #' @param Licor_fn
 #' @param Licor_TDL_time_offset_seconds
 #' @param sw
 #'
-#' @return
+#' @return Licor
 #' @export
 #'
 #' @examples

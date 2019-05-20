@@ -1,13 +1,15 @@
-#' Title
+#' Plot each cycle of TDL measurements (visual diagnostics)
+#'
+#' Plots the input variables.
 #'
 #' @param TDL
 #' @param TDL_cycle
 #' @param plot_format_list
 #' @param output_fn_prefix
-#' @param Rstd.13C
+#' @param Rstd_13C
 #' @param full_or_window
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -22,7 +24,7 @@ function# Plot each cycle of TDL measurements (visual diagnostics)
 ###
 , output_fn_prefix
 ###
-, Rstd.13C
+, Rstd_13C
 ###
 , full_or_window
 ###
@@ -37,7 +39,7 @@ function# Plot each cycle of TDL measurements (visual diagnostics)
   # TDL_cycle         <-  TDL_cycle         ;
   # plot_format_list  <-  plot_format_list  ;
   # output_fn_prefix  <-  output_fn_prefix  ;
-  # Rstd.13C          <-  val$const$Rstd.13C;
+  # Rstd_13C          <-  val$const$Rstd_13C;
   # full_or_window    <-  "full"            ;
 
   # plot full data
@@ -188,7 +190,7 @@ function# Plot each cycle of TDL measurements (visual diagnostics)
       ind_vline <- c(0,seq(1,length(ind_all))[ind_all %in% ind2[,2]]);
 
       delta_permil <-
-        f_val_calc_delta_permil( TDL$data[,"ConcA"][ind_all], TDL$data[,"ConcB"][ind_all], Rstd.13C);
+        f_val_calc_delta_permil( TDL$data[,"ConcA"][ind_all], TDL$data[,"ConcB"][ind_all], Rstd_13C);
 
       plot(delta_permil,pch=20, ylab="delta_permil", xlab="");
         abline(v=ind_vline);
@@ -227,7 +229,7 @@ function# Plot each cycle of TDL measurements (visual diagnostics)
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end");
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

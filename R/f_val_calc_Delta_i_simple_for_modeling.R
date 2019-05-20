@@ -1,11 +1,13 @@
-#' Title
+#' Delta_i simple for modeling  a + (b-a) pi/pa predicted discrimination including boundary layer effects but using b adjustments to approximate effects of gm and decarboxylations
+#'
+#' \deqn{Delta_i_simple_for_modeling = a + (b - a) * pi / pa}
 #'
 #' @param a
 #' @param b
 #' @param pa
 #' @param pi
 #'
-#' @return
+#' @return Delta_i_simple_for_modeling
 #' @export
 #'
 #' @examples

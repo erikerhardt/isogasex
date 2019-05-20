@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_total_mol_fraction_CO2.R
 \name{f_val_calc_total_mol_fraction_CO2}
 \alias{f_val_calc_total_mol_fraction_CO2}
-\title{Title}
+\title{Total mol fraction CO2}
 \usage{
-f_val_calc_total_mol_fraction_CO2(obs.12C, obs.13C, fo.13C)
+f_val_calc_total_mol_fraction_CO2(obs_12C, obs_13C, fo_13C)
 }
 \arguments{
-\item{fo.13C}{}
+\item{fo_13C}{}
+}
+\value{
+total_mol_fraction_CO2
 }
 \description{
-Title
+\deqn{total_mol_fraction_CO2 = (obs_12C + obs_13C) / (1 - fo_13C)}
 }

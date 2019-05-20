@@ -1,22 +1,24 @@
-#' Title
+#' corrected (Corrected 12C, Corrected 13C)
 #'
-#' @param obs.12C
-#' @param obs.13C
+#' \deqn{corrected = (obs * gain) + offset}
+#'
+#' @param obs_12C
+#' @param obs_13C
 #' @param gain_12C
 #' @param gain_13C
 #' @param offset_12C
 #' @param offset_13C
 #'
-#' @return
+#' @return corrected 12C and 13C
 #' @export
 #'
 #' @examples
 f_val_calc_corrected <-
 function# corrected (Corrected 12C, Corrected 13C)
 ###
-(obs.12C
+(obs_12C
 ###
-, obs.13C
+, obs_13C
 ###
 , gain_12C
 ###
@@ -32,8 +34,8 @@ function# corrected (Corrected 12C, Corrected 13C)
 
   ##details<<
   ##\deqn{corrected = (obs * gain) + offset;}
-  corrected$corrected_12C <- (obs.12C * gain_12C) + offset_12C;
-  corrected$corrected_13C <- (obs.13C * gain_13C) + offset_13C;
+  corrected$corrected_12C <- (obs_12C * gain_12C) + offset_12C;
+  corrected$corrected_13C <- (obs_13C * gain_13C) + offset_13C;
 
   return( corrected );
   ### corrected 12C and 13C

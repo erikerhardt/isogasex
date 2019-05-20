@@ -1,4 +1,11 @@
-#' Title
+#' one BS resample of TDL and Licor means
+#'
+#' create val_bs_sum for calculated observed values to use in NP bootstrap
+#'
+#' TDL using \code{\link{f_np_bs_mean}}
+#'
+#' Licor
+#' XXX Still need to determine what to do about BS for Licor data
 #'
 #' @param val_obs_TDL
 #' @param val_sum_TDL
@@ -6,7 +13,7 @@
 #' @param val_sum_Licor
 #' @param var_interp
 #'
-#' @return
+#' @return val_bs_sum
 #' @export
 #'
 #' @examples

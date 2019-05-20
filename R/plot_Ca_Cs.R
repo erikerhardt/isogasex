@@ -1,4 +1,6 @@
-#' Title
+#' Plot Ca Cs, CO2 concentrations above the leaf and at the leaf surface
+#'
+#' Plots the input variables.
 #'
 #' @param chamber_TotalCa
 #' @param chamber_12Ca
@@ -10,7 +12,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -57,7 +59,7 @@ function# Plot Ca Cs, CO2 concentrations above the leaf and at the leaf surface
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

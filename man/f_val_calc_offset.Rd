@@ -2,7 +2,7 @@
 % Please edit documentation in R/f_val_calc_offset.R
 \name{f_val_calc_offset}
 \alias{f_val_calc_offset}
-\title{Title}
+\title{offset (12C Offset, 13C Offset) using hi tank}
 \usage{
 f_val_calc_offset(true_value_hi_12C, true_value_hi_13C, gain_12C, gain_13C,
   cal_tank_hi_12C, cal_tank_hi_13C)
@@ -10,6 +10,9 @@ f_val_calc_offset(true_value_hi_12C, true_value_hi_13C, gain_12C, gain_13C,
 \arguments{
 \item{cal_tank_hi_13C}{}
 }
+\value{
+offset for 12C and 13C
+}
 \description{
-Title
+\deqn{offset = true_value_hi - (gain * cal.tank_hi)}
 }

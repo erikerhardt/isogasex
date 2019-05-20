@@ -2,7 +2,7 @@
 % Please edit documentation in R/f_bs_iter_TDL_Licor.R
 \name{f_bs_iter_TDL_Licor}
 \alias{f_bs_iter_TDL_Licor}
-\title{Title}
+\title{one BS resample of TDL and Licor means}
 \usage{
 f_bs_iter_TDL_Licor(val_obs_TDL, val_sum_TDL, val_obs_Licor, val_sum_Licor,
   var_interp)
@@ -10,6 +10,15 @@ f_bs_iter_TDL_Licor(val_obs_TDL, val_sum_TDL, val_obs_Licor, val_sum_Licor,
 \arguments{
 \item{var_interp}{}
 }
+\value{
+val_bs_sum
+}
 \description{
-Title
+create val_bs_sum for calculated observed values to use in NP bootstrap
+}
+\details{
+TDL using \code{\link{f_np_bs_mean}}
+
+Licor
+XXX Still need to determine what to do about BS for Licor data
 }

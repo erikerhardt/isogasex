@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_Cc_total.R
 \name{plot_Cc_total}
 \alias{plot_Cc_total}
-\title{Title}
+\title{Plot Cc, ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol}
 \usage{
 plot_Cc_total(chamber_TotalCc, chamber_12Cc, chamber_13Cc, x_time,
   plot_format_list, output_fn_prefix)
@@ -11,5 +11,5 @@ plot_Cc_total(chamber_TotalCc, chamber_12Cc, chamber_13Cc, x_time,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+Plots the input variables.
 }

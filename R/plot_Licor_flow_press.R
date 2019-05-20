@@ -1,4 +1,6 @@
-#' Title
+#' Plot Licor uin, xin, La, Atm_press values 7/21/2012
+#'
+#' Plots the input variables.
 #'
 #' @param Licor_flow_uin
 #' @param Licor_H2OR_xin
@@ -8,7 +10,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -49,7 +51,7 @@ function# Plot Licor uin, xin, La, Atm_press values 7/21/2012
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

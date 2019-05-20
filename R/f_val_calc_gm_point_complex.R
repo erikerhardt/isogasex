@@ -1,4 +1,6 @@
-#' Title
+#' gm point complex, internal leaf (mesophyll) conductance calculated for every D value estimating decarboxylation effects
+#'
+#' \deqn{gm_point_complex = ((b - bs - al) * A / pa) / (Di - D_obs - (f_photo * Gamma_star / pa) - ((e * Rd) / (k * pa)))}
 #'
 #' @param b
 #' @param bs
@@ -13,7 +15,7 @@
 #' @param Rd
 #' @param k
 #'
-#' @return
+#' @return gm_point_complex
 #' @export
 #'
 #' @examples

@@ -1,9 +1,11 @@
-#' Title
+#' p
+#'
+#' \deqn{p = (Co-Ce) / Co}
 #'
 #' @param Ce
 #' @param Co
 #'
-#' @return
+#' @return p
 #' @export
 #'
 #' @examples

@@ -1,4 +1,6 @@
-#' Title
+#' Delta_i complex for gm  CHECK DERIVATION  predicted discrimination including boundary layer effects AND decarboxylation effects
+#'
+#' \deqn{Delta_i_complex_for_gm = a_b * ((pa - ps) / pa) + a * ((ps - pi) / pa) + b * (pi / pa) - (f_photo * Gamma_star / pa) - (e * Rd / (k * pa))}
 #'
 #' @param a
 #' @param b
@@ -13,7 +15,7 @@
 #' @param Rd
 #' @param k
 #'
-#' @return
+#' @return Delta_i_complex_for_gm
 #' @export
 #'
 #' @examples

@@ -1,9 +1,11 @@
-#' Title
+#' pa, partial pressure of CO2 above the leaf, Press is the atmospheric pressure value from the LI6400
+#'
+#' \deqn{pa = (Co / 10^6) * (Press * 1000)}
 #'
 #' @param Co
 #' @param Press
 #'
-#' @return
+#' @return pa
 #' @export
 #'
 #' @examples

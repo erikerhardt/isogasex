@@ -1,11 +1,131 @@
-#' Title
+#' This function calls all the \code{f_val_calc.*} files
+#'
+#' SECTION Licor data assign variables
+#'
+#' SECTION Concentrations.
+#'
+#' Calibration tank concentrations
+#'
+#' Calibration tank gain. \code{\link{f_val_calc_gain}}
+#'
+#' Calibration tank offset. \code{\link{f_val_calc_offset}}
+#'
+#' Corrected reference values. \code{\link{f_val_calc_corrected}}
+#'
+#' Corrected chamber values. \code{\link{f_val_calc_corrected}}
+#'
+#' Total reference and chamber values. \code{\link{f_val_calc_total_mol_fraction_CO2}}
+#'
+#' xi. \code{\link{f_val_calc_xi}}
+#'
+#' SECTION A Photosynthesis
+#'
+#' A, TDL photosynthesis. \code{\link{f_val_calc_TDL_A_photosynthesis}}
+#'
+#' 12A, TDL photosynthesis. \code{\link{f_val_calc_TDL_A_photosynthesis}}
+#'
+#' 13A, TDL photosynthesis. \code{\link{f_val_calc_TDL_A_photosynthesis}}
+#'
+#' Total A LI6400  Photo LI6400 header, these values listed because I will likely use them in a plot
+#'
+#' Delta from ratios in and out?, (Re/Ro)-1, is this really the same? \code{\link{f_val_calc_Delta_from_ratios_in_out}}
+#'
+#' D from A ratio, (Ro/(13A/12A))-1, should be the same as Dobs above. \code{\link{f_val_calc_Delta_from_A_ratio}}
+#'
+#' Select TDL or Licor based on switch
+#'
+#' SECTION Delta
+#'
+#' delta reference and chamber values. \code{\link{f_val_calc_delta_proportion}}
+#'
+#' delta diff
+#'
+#' Delta discrim
+#'
+#' Dobs observed discrimination. \code{\link{f_val_calc_Delta_obs}}
+#'
+#' Dobs per mil  1000*Dobs. \code{\link{f_val_calc_Delta_obs_permil}}
+#'
+#' delta13C Assimilated, isotopic composition of assimilated sugars. \code{\link{f_val_calc_delta_13C_Assim}}
+#'
+#' p (Co - Ce) / Co. \code{\link{f_val_calc_p}}
+#'
+#' delta13C Respired, isotopic composition of respired CO2. \code{\link{f_val_calc_delta_13C_Resp}}
+#'
+#' SECTION g conductance
+#'
+#' gbw BLcond  boundary layer conductance for water, Blcond is LI 6400 header
+#'
+#' gbc BLcond/1.37 boundary layer conductance for CO2
+#'
+#' gsw cond  stomatal conductance for water, cond is LI6400 header
+#'
+#' gsc gsw/1.6 stomatal conductance for CO2
+#'
+#' gtc, total (stomatal and boundary layer) conductance for CO2
+#'
+#' SECTION Cx and px (concentrations and pressures)
+#'
+#' Ca = Co, ppm CO2 concentration above the leaf = concentration leaving the leaf chamber = ambient CO2 concentration
+#'
+#' Cs, ppm CO2 concentration at the leaf surface, cs calculated from eq 40 Ball 1987 Ch 20 Stomatal Function, eds Zeiger, Farquhar, Cowan. \code{\link{f_val_calc_Cs}}
+#'
+#' pa, partial pressure of CO2 above the leaf, Press is the atmospheric pressure value from the LI6400. \code{\link{f_val_calc_pp}}
+#'
+#' ps, partial pressure of CO2 at the leaf surface, Press is the atmospheric pressure value from the LI6400. \code{\link{f_val_calc_pp}}
+#' NB: same formula as pa, but using Cs instead of Co
+#'
+#' Ci, ppm CO2 concentration in the sub-stomatal cavities, ci calculated from eq 35 Ball 1987 Ch 20 Stomatal Function, eds Zeiger, Farquhar, Cowan. \code{\link{f_val_calc_Cs}}
+#' NB: same formula as Cs, but using gtc instead of gbc
+#'
+#' pi, partial pressure of CO2 in the substomatal cavities, Press is the atmospheric pressure value from the LI6400. \code{\link{f_val_calc_pp}}
+#' NB: same formula as pa, but using Ci instead of Co
+#'
+#' pi/pa total pi/pa or total Ci/Ca  ratio of substomatal CO2 partial pressure to CO2 partial pressure above leaf = Ci/Ca ratio of mol fractions
+#'
+#' SECTION Delta_i predictions
+#'
+#' Delta_i simple for gm, predicted discrimination including boundary layer effects but not decarboxylation effects. \code{\link{f_val_calc_Delta_i_simple_for_gm}}
+#'
+#' Delta_i simple for modeling  a + (b-a) pi/pa predicted discrimination including boundary layer effects but using b adjustments to approximate effects of gm and decarboxylations. \code{\link{f_val_calc_Delta_i_simple_for_modeling}}
+#'
+#' Delta_i complex for gm  CHECK DERIVATION  predicted discrimination including boundary layer effects AND decarboxylation effects. \code{\link{f_val_calc_Delta_i_complex_for_gm}}
+#'
+#' Delta_i simple for gm-Dobs   (Di simple for gm)-(Dobs per mil)
+#'
+#' Delta_i complex for gm-Dobs  (Di complex for gm)-(Dobs per mil)
+#'
+#' SECTION gm mesophyll conductance
+#'
+#' gm point simple, internal leaf (mesophyll) conductance calculated for every D value ignoring decarboxylation effects. \code{\link{f_val_calc_gm_point_simple}}
+#'
+#' gm point complex, internal leaf (mesophyll) conductance calculated for every D value estimating decarboxylation effects. \code{\link{f_val_calc_gm_point_complex}}
+#'
+#' select one of the calculated gm values to use
+#'
+#' SECTION pc
+#'
+#' pc using gm,  total partial pressure of CO2 at the site of carboxylation, Press is the atmospheric pressure value from the LI6400. \code{\link{f_val_calc_pc_using_gm}}
+#'
+#' pc using simple D for gm, includes boundary layer. \code{\link{f_val_calc_pc_using_simple_Delta_for_gm}}
+#'
+#' pc using simple D for modeling. \code{\link{f_val_calc_pc_using_simple_Delta_for_modeling}}
+#'
+#' pc using complex D, no decarboxylation  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-Dpa]/(bs+al-b)  is this different from two up? They give different values but both may not be derived properly. \code{\link{f_val_calc_pc_using_complex_Delta_no_decarboxylation}}
+#'
+#' pc using complex D, full model  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-(eRd/k+fG*)-Dpa]/(bs+al-b)  includes boundary layer and decarboxylation effects. \code{\link{f_val_calc_pc_using_complex_Delta_full_model}}
+#'
+#' select one of the calculated pc values to use
+#'
+#' Cc  (pc*10^6)/(Press*1000)  ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol. \code{\link{f_val_calc_pp}}
+#' NB: same formula as pa, but using pc instead of Co
 #'
 #' @param val_TDL
 #' @param val_Licor
 #' @param val_const
 #' @param sw
 #'
-#' @return
+#' @return val_temp
 #' @export
 #'
 #' @examples
@@ -140,9 +260,9 @@ function# This function calls all the \code{f_val_calc.*} files
     # Total Ce  Total Site 1
     # Total Co  Total Site 21
   val_temp$reference_TotalCe <-
-    f_val_calc_total_mol_fraction_CO2(val_temp$reference_12Ce, val_temp$reference_13Ce, val_const$fo.13C);
+    f_val_calc_total_mol_fraction_CO2(val_temp$reference_12Ce, val_temp$reference_13Ce, val_const$fo_13C);
   val_temp$chamber_TotalCo   <-
-    f_val_calc_total_mol_fraction_CO2(val_temp$chamber_12Co, val_temp$chamber_13Co, val_const$fo.13C);
+    f_val_calc_total_mol_fraction_CO2(val_temp$chamber_12Co, val_temp$chamber_13Co, val_const$fo_13C);
 
     # Ce-Co Total Site 1 - Total Site 21  I like having this as an output for diagnostics
   val_temp$chamber_reference_Total_diff_CeCo <- val_temp$reference_TotalCe - val_temp$chamber_TotalCo;
@@ -249,10 +369,10 @@ function# This function calls all the \code{f_val_calc.*} files
   ## delta reference and chamber values. \code{\link{f_val_calc_delta_proportion}}
     # de  d13C Site 1
   val_temp$reference_delta_e <-
-    f_val_calc_delta_proportion(val_temp$reference_12Ce, val_temp$reference_13Ce, val_const$Rstd.13C);
+    f_val_calc_delta_proportion(val_temp$reference_12Ce, val_temp$reference_13Ce, val_const$Rstd_13C);
     # do  d13C Site 21
   val_temp$chamber_delta_o   <-
-    f_val_calc_delta_proportion(val_temp$chamber_12Co, val_temp$chamber_13Co, val_const$Rstd.13C);
+    f_val_calc_delta_proportion(val_temp$chamber_12Co, val_temp$chamber_13Co, val_const$Rstd_13C);
 
   ##details<<
   ## delta diff
@@ -301,7 +421,7 @@ function# This function calls all the \code{f_val_calc.*} files
   val_temp$chamber_Totalgbw <- val_Licor$gbw;
   ##details<<
   ## gbc BLcond/1.37 boundary layer conductance for CO2
-  val_temp$chamber_Totalgbc <- val_Licor$gbw / val_const$gbc.1.37;
+  val_temp$chamber_Totalgbc <- val_Licor$gbw / val_const$gbc_1.37;
   val_temp$chamber_12gbc    <- val_temp$chamber_Totalgbc;
   val_temp$chamber_13gbc    <- val_temp$chamber_Totalgbc / (1 + (val_const$a_b / 1000));
 
@@ -310,7 +430,7 @@ function# This function calls all the \code{f_val_calc.*} files
   val_temp$chamber_Totalgsw <- val_Licor$gsc;
   ##details<<
   ## gsc gsw/1.6 stomatal conductance for CO2
-  val_temp$chamber_Totalgsc <- val_temp$chamber_Totalgsw / val_const$gsc.1.6;
+  val_temp$chamber_Totalgsc <- val_temp$chamber_Totalgsw / val_const$gsc_1.6;
   val_temp$chamber_12gsc    <- val_temp$chamber_Totalgsc;
   val_temp$chamber_13gsc    <- val_temp$chamber_Totalgsc / (1 + (val_const$a_b / 1000));
 
@@ -479,26 +599,26 @@ function# This function calls all the \code{f_val_calc.*} files
   ## gm point simple, internal leaf (mesophyll) conductance calculated for every D value ignoring decarboxylation effects. \code{\link{f_val_calc_gm_point_simple}}
   val_temp$chamber_Totalgm_point_simple <-
     # switch added for A_photosynthesis 9/5/2012
-    #f_val_calc_gm_point_simple( val_const$b_gm, val_const$b.s, val_const$a.l, val_Licor$A
-    f_val_calc_gm_point_simple( val_const$b_gm, val_const$b.s, val_const$a.l, val_temp$selected_A_photosynthesis
+    #f_val_calc_gm_point_simple( val_const$b_gm, val_const$b_s, val_const$a_l, val_Licor$A
+    f_val_calc_gm_point_simple( val_const$b_gm, val_const$b_s, val_const$a_l, val_temp$selected_A_photosynthesis
                                ,val_temp$chamber_Totalpa, val_temp$chamber_Delta_i_simple_for_gm, val_temp$Delta_obs_permil);  # 8/19/2011  use permil
   # switch added for A_photosynthesis 9/5/2012
   #val_temp$chamber_12gm_point_simple <- val_temp$chamber_Totalgm_point_simple;
   val_temp$chamber_12gm_point_simple <-
-    f_val_calc_gm_point_simple( val_const$b_gm, val_const$b.s, val_const$a.l, val_temp$selected_12A_photosynthesis
+    f_val_calc_gm_point_simple( val_const$b_gm, val_const$b_s, val_const$a_l, val_temp$selected_12A_photosynthesis
                                ,val_temp$chamber_12pa, val_temp$chamber_Delta_i_simple_for_gm, val_temp$Delta_obs_permil);
   val_temp$chamber_13gm_point_simple <-
     # switch added for A_photosynthesis 9/5/2012
-    #f_val_calc_gm_point_simple( val_const$b_gm, val_const$b.s, val_const$a.l, val_temp$TDL_13A_photosynthesis
-    f_val_calc_gm_point_simple( val_const$b_gm, val_const$b.s, val_const$a.l, val_temp$selected_13A_photosynthesis
+    #f_val_calc_gm_point_simple( val_const$b_gm, val_const$b_s, val_const$a_l, val_temp$TDL_13A_photosynthesis
+    f_val_calc_gm_point_simple( val_const$b_gm, val_const$b_s, val_const$a_l, val_temp$selected_13A_photosynthesis
                                ,val_temp$chamber_13pa, val_temp$chamber_Delta_i_simple_for_gm, val_temp$Delta_obs_permil);
 
   ##details<<
   ## gm point complex, internal leaf (mesophyll) conductance calculated for every D value estimating decarboxylation effects. \code{\link{f_val_calc_gm_point_complex}}
   val_temp$chamber_Totalgm_point_complex <-
     # switch added for A_photosynthesis 9/5/2012
-    #f_val_calc_gm_point_complex( val_const$b_gm, val_const$b.s, val_const$a.l, val_Licor$A
-    f_val_calc_gm_point_complex( val_const$b_gm, val_const$b.s, val_const$a.l, val_temp$selected_A_photosynthesis
+    #f_val_calc_gm_point_complex( val_const$b_gm, val_const$b_s, val_const$a_l, val_Licor$A
+    f_val_calc_gm_point_complex( val_const$b_gm, val_const$b_s, val_const$a_l, val_temp$selected_A_photosynthesis
                                 ,val_temp$chamber_Totalpa, val_temp$chamber_Delta_i_complex_for_gm, val_temp$Delta_obs_permil  # 8/19/2011  use permil
                                 ,val_const$f_photo_respiration, val_const$Gamma_star
                                 ,val_const$e, val_const$Rd, val_const$k);
@@ -553,7 +673,7 @@ function# This function calls all the \code{f_val_calc.*} files
   val_temp$chamber_Totalpc_using_complex_Delta_no_decarboxylation <-
     f_val_calc_pc_using_complex_Delta_no_decarboxylation( val_temp$chamber_Delta_i_complex_for_gm, val_temp$chamber_Totalpa
                                                          ,val_temp$chamber_Totalps, val_temp$chamber_Totalpi
-                                                         ,val_const$a, val_const$a_b, val_const$a.l, val_const$b_modeling, val_const$b.s)
+                                                         ,val_const$a, val_const$a_b, val_const$a_l, val_const$b_modeling, val_const$b_s)
 
   # # # What value of b to use here?
   ##details<<
@@ -561,7 +681,7 @@ function# This function calls all the \code{f_val_calc.*} files
   val_temp$chamber_Totalpc_using_complex_Delta_full_model <-
     f_val_calc_pc_using_complex_Delta_full_model( val_temp$chamber_Delta_i_complex_for_gm, val_temp$chamber_Totalpa
                                                  ,val_temp$chamber_Totalps, val_temp$chamber_Totalpi
-                                                 ,val_const$a, val_const$a_b, val_const$a.l, val_const$b_modeling, val_const$b.s
+                                                 ,val_const$a, val_const$a_b, val_const$a_l, val_const$b_modeling, val_const$b_s
                                                  ,val_const$e, val_const$Rd, val_const$k, val_const$Gamma_star, val_const$f_photo_respiration)
 
 

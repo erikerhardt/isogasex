@@ -1,4 +1,6 @@
-#' Title
+#' if no data to plot, plot a dummy box (for when certain Licor columns are not collected)
+#'
+#' If no data to plot, returns a "no data" (0,0) point as plot place holder.
 #'
 #' @param x_time
 #' @param y_var
@@ -9,7 +11,7 @@
 #' @param ylab
 #' @param main
 #'
-#' @return
+#' @return plot_not_na_val
 #' @export
 #'
 #' @examples

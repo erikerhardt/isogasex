@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_delta_permil.R
 \name{f_val_calc_delta_permil}
 \alias{f_val_calc_delta_permil}
-\title{Title}
+\title{delta permil (Isotopic composition (d) per mil)}
 \usage{
-f_val_calc_delta_permil(obs.12C, obs.13C, R_std)
+f_val_calc_delta_permil(obs_12C, obs_13C, R_std)
 }
 \arguments{
 \item{R_std}{}
 }
+\value{
+delta_permil
+}
 \description{
-Title
+Multiply 1000 by \code{\link{f_val_calc_delta_proportion}}
 }

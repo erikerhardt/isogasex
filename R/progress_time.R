@@ -1,8 +1,10 @@
-#' Title
+#' Calc amount of time since program started
+#'
+#' Calculate time elapsed.
 #'
 #' @param time_start
 #'
-#' @return
+#' @return time_sofar
 #' @export
 #'
 #' @examples

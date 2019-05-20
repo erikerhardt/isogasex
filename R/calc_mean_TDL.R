@@ -1,9 +1,13 @@
-#' Title
+#' Calculate the mean and variance for the TDL/Licor data based on last measurements
+#'
+#' create TDL$summary for numerical summaries
+#'
+#' Calculate mean, var, and sd for each site for retained observations
 #'
 #' @param TDL
 #' @param TDL_cycle
 #'
-#' @return
+#' @return TDL
 #' @export
 #'
 #' @examples

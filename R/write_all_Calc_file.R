@@ -1,10 +1,12 @@
-#' Title
+#' write output section
+#'
+#' Write all observed and calculated values for all time points.
 #'
 #' @param val
 #' @param TDL_cycle
 #' @param output_all_Calc_fn
 #'
-#' @return
+#' @return val$write
 #' @export
 #'
 #' @examples
@@ -145,7 +147,6 @@ function# write_output section
     val$write$all_Calc[i_time+1] <-
         paste(
            format(val$calc$all$time[i_time],format="%Y-%m-%d")
-          ,format(val$calc$all$time[i_time],format="%H:%M:%S")  # "%H:%M:%OS" ## can't use %OS format since Excel doesn't display decimal seconds automatically
           ,val$calc$all$site[i_time]
           #,TDL_cycle$table_name[(TDL_cycle$table[,1] == val$calc$all$site[i_time])]
           # In the case of NAs, this vector was 4 NAs. So either use the single value, or a single NA.

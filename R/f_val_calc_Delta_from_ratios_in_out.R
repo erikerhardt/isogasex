@@ -1,11 +1,16 @@
-#' Title
+#' Delta from ratios in and out?, (Re/Ro)-1, is this really the same?
+#'
+#' First calculates R_ref and R_cham with \code{\link{f_val_calc_isotope_ratio}}
+#'
+#' \deqn{Delta_from_ratios_in_out <- (R_ref / R_cham) - 1}
+#' this quantity is not in per mil
 #'
 #' @param ref.12Ce
 #' @param ref.13Ce
 #' @param cham.12Co
 #' @param cham.13Co
 #'
-#' @return
+#' @return Delta_from_ratios_in_out
 #' @export
 #'
 #' @examples

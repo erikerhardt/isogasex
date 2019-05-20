@@ -2,7 +2,7 @@
 % Please edit documentation in R/s_plot_settings_begin_end.R
 \name{s_plot_settings_begin_end}
 \alias{s_plot_settings_begin_end}
-\title{Title}
+\title{Plot settings for all plots}
 \usage{
 s_plot_settings_begin_end(filename_prefix = "Prefix",
   plot_filename = "default_filename", plot_mode = "settings",
@@ -12,5 +12,32 @@ s_plot_settings_begin_end(filename_prefix = "Prefix",
 \item{plot_format}{}
 }
 \description{
-Title
+Settings:
+}
+\details{
+filenames
+
+devices settings
+
+par settings
+
+Begin:
+
+to interactive display
+
+png is default output since quick display on web and used to convert to other raster formats
+
+ps
+
+pdf
+
+bmp
+
+jpeg
+
+tiff
+
+par settings
+
+End:
 }

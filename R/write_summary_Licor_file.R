@@ -1,10 +1,11 @@
-#' Title
+#' write output section: Licor file
+#'
 #'
 #' @param val
 #' @param TDL_cycle
 #' @param output_summary_Licor_fn
 #'
-#' @return
+#' @return val$write
 #' @export
 #'
 #' @examples
@@ -71,7 +72,6 @@ function# write_output section: Licor file
       rbind( val$write$summary_Licor
         ,paste(
            format(val$sum$Licor$time[i_time],format="%Y-%m-%d")
-          ,format(val$sum$Licor$time[i_time],format="%H:%M:%S")  # "%H:%M:%OS" ## can't use %OS format since Excel doesn't display decimal seconds automatically
           ,val$sum$Licor$site[i_time]
           ,TDL_cycle$table_name[(TDL_cycle$table[,1] == val$sum$Licor$site[i_time])]
           ,val$sum$Licor$first_ind[i_time]

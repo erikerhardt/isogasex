@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_corrected_total_diff_xi.R
 \name{plot_corrected_total_diff_xi}
 \alias{plot_corrected_total_diff_xi}
-\title{Title}
+\title{Plot corrected 12CO2 and 13CO2, total, and difference for reference and sample}
 \usage{
 plot_corrected_total_diff_xi(ref.12C, ref.13C, cham.12C, cham.13C, ref_tot,
   cham_tot, diff_tot, xi, x_time, plot_format_list, output_fn_prefix)
@@ -11,5 +11,5 @@ plot_corrected_total_diff_xi(ref.12C, ref.13C, cham.12C, cham.13C, ref_tot,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+Plots the input variables.
 }

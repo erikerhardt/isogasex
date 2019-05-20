@@ -1,4 +1,6 @@
-#' Title
+#' Plot corrected 12CO2 and 13CO2, total, and difference for reference and sample
+#'
+#' Plots the input variables.
 #'
 #' @param ref.12C
 #' @param ref.13C
@@ -12,7 +14,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -65,7 +67,7 @@ function# Plot corrected 12CO2 and 13CO2, total, and difference for reference an
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

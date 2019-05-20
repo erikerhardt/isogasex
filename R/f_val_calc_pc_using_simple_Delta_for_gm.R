@@ -1,4 +1,6 @@
-#' Title
+#' pc using simple D for gm, includes boundary layer
+#'
+#' \deqn{pc = (Delta * pa - a_b * (pa - ps) - a * ps) / (b_gm - a)}
 #'
 #' @param Delta
 #' @param pa
@@ -7,7 +9,7 @@
 #' @param b_gm
 #' @param a_b
 #'
-#' @return
+#' @return pc
 #' @export
 #'
 #' @examples

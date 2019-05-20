@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_bs_CI_endpoints.R
 \name{f_val_bs_CI_endpoints}
 \alias{f_val_bs_CI_endpoints}
-\title{Title}
+\title{create CI endpoints}
 \usage{
 f_val_bs_CI_endpoints(x, n, ind_CI)
 }
 \arguments{
 \item{ind_CI}{}
 }
+\value{
+x_CI
+}
 \description{
-Title
+Sorts BS samples, takes quantiles for equal-tailed sig_CI Level CIs.
 }

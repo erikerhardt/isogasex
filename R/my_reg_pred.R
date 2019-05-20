@@ -1,9 +1,11 @@
-#' Title
+#' basic SLR y pred
+#'
+#' Calculate predictions given the intercept and slope of a simple linear regression fit.
 #'
 #' @param beta_hat
 #' @param x
 #'
-#' @return
+#' @return y_hat
 #' @export
 #'
 #' @examples

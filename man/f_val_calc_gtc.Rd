@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_gtc.R
 \name{f_val_calc_gtc}
 \alias{f_val_calc_gtc}
-\title{Title}
+\title{gtc, total (stomatal and boundary layer) conductance for CO2}
 \usage{
 f_val_calc_gtc(gbc, gsc)
 }
 \arguments{
 \item{gsc}{}
 }
+\value{
+gtc
+}
 \description{
-Title
+\deqn{gtc = 1 / ((1 / gbc) + (1 / gsc))}
 }

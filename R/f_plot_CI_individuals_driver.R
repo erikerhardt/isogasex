@@ -1,11 +1,13 @@
-#' Title
+#' plot each individual variable
+#'
+#' For every variable, creates plots using \code{\link{f_plot_CI_individuals}}.
 #'
 #' @param val
 #' @param R_bootstrap
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -167,7 +169,7 @@ function# plot each individual variable
   f_plot_CI_individuals(val$calc$bs$chamber_12Cc                                          , val$calc$sum$chamber_12Cc                                          , val$calc$CI$chamber_12Cc                                          , "val$calc$sum$chamber_12Cc                                          ", 1:val$sum$TDL$n, val$sum$Licor$n, R_bootstrap, plot_format_list, output_fn_prefix)
   f_plot_CI_individuals(val$calc$bs$chamber_13Cc                                          , val$calc$sum$chamber_13Cc                                          , val$calc$CI$chamber_13Cc                                          , "val$calc$sum$chamber_13Cc                                          ", 1:val$sum$TDL$n, val$sum$Licor$n, R_bootstrap, plot_format_list, output_fn_prefix)
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

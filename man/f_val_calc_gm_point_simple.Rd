@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_gm_point_simple.R
 \name{f_val_calc_gm_point_simple}
 \alias{f_val_calc_gm_point_simple}
-\title{Title}
+\title{gm point simple, internal leaf (mesophyll) conductance calculated for every D value ignoring decarboxylation effects}
 \usage{
 f_val_calc_gm_point_simple(b, bs, al, A, pa, Di, D_obs)
 }
 \arguments{
 \item{D_obs}{}
 }
+\value{
+gm_point_simple
+}
 \description{
-Title
+\deqn{gm_point_simple = (( b - bs - al) * A / pa) / (Di - D_obs)}
 }

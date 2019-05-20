@@ -1,4 +1,6 @@
-#' Title
+#' gm point simple, internal leaf (mesophyll) conductance calculated for every D value ignoring decarboxylation effects
+#'
+#' \deqn{gm_point_simple = (( b - bs - al) * A / pa) / (Di - D_obs)}
 #'
 #' @param b
 #' @param bs
@@ -8,7 +10,7 @@
 #' @param Di
 #' @param D_obs
 #'
-#' @return
+#' @return gm_point_simple
 #' @export
 #'
 #' @examples

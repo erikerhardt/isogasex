@@ -2,7 +2,7 @@
 % Please edit documentation in R/write_CI_Calc_file.R
 \name{write_CI_Calc_file}
 \alias{write_CI_Calc_file}
-\title{Title}
+\title{write output section}
 \usage{
 write_CI_Calc_file(val, TDL_cycle, output_CI_Calc_fn,
   output_CI_Calc_last_fn)
@@ -10,6 +10,9 @@ write_CI_Calc_file(val, TDL_cycle, output_CI_Calc_fn,
 \arguments{
 \item{output_CI_Calc_last_fn}{}
 }
+\value{
+val$write
+}
 \description{
-Title
+Write all observed and calculated values with BS CIs for all time points.
 }

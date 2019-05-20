@@ -1,4 +1,6 @@
-#' Title
+#' Plot pc, simple and complex
+#'
+#' Plots the input variables.
 #'
 #' @param chamber_Totalpc_using_simple_Delta_for_gm
 #' @param chamber_Totalpc_using_simple_Delta_for_modeling
@@ -8,7 +10,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -49,7 +51,7 @@ function# Plot pc, simple and complex
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

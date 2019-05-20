@@ -2,7 +2,7 @@
 % Please edit documentation in R/move_plot_files.R
 \name{move_plot_files}
 \alias{move_plot_files}
-\title{Title}
+\title{move selected plot files to subdirectories}
 \usage{
 move_plot_files(plot_format)
 }
@@ -10,5 +10,10 @@ move_plot_files(plot_format)
 \item{plot_format}{}
 }
 \description{
-Title
+Create \file{BS} and \file{var} directories.
+}
+\details{
+Move \file{BS_CHECK*} files into \file{BS} directory.
+
+Move files that are not (TDL, Licor, offset) into \file{var} directory.
 }

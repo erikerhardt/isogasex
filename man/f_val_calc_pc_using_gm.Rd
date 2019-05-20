@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_pc_using_gm.R
 \name{f_val_calc_pc_using_gm}
 \alias{f_val_calc_pc_using_gm}
-\title{Title}
+\title{pc using gm,  total partial pressure of CO2 at the site of carboxylation, Press is the atmospheric pressure value from the LI6400}
 \usage{
 f_val_calc_pc_using_gm(pi, A, gm)
 }
 \arguments{
 \item{gm}{}
 }
+\value{
+pc
+}
 \description{
-Title
+\deqn{pc = pi - (A / gm)}
 }

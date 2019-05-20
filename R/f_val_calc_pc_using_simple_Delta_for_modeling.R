@@ -1,11 +1,13 @@
-#' Title
+#' pc using simple D for modeling
+#'
+#' \deqn{pc = (pa * (Delta - a)) / (b_modeling - a)}
 #'
 #' @param Delta
 #' @param pa
 #' @param a
 #' @param b_modeling
 #'
-#' @return
+#' @return pc
 #' @export
 #'
 #' @examples

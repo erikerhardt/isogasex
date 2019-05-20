@@ -1,4 +1,6 @@
-#' Title
+#' pc using complex D, full model  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-(eRd/k+fG*)-Dpa]/(bs+al-b)  includes boundary layer and decarboxylation effects
+#'
+#' \deqn{pc = (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa  - (e * Rd / k + f * Gamma_star)) / (bs + al - b)}
 #'
 #' @param Delta
 #' @param pa
@@ -15,7 +17,7 @@
 #' @param f
 #' @param Gamma_star
 #'
-#' @return
+#' @return pc
 #' @export
 #'
 #' @examples

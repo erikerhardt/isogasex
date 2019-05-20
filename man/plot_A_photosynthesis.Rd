@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_A_photosynthesis.R
 \name{plot_A_photosynthesis}
 \alias{plot_A_photosynthesis}
-\title{Title}
+\title{Plot A photosynthesis}
 \usage{
 plot_A_photosynthesis(TDL_A_photosynthesis, TDL_12A_photosynthesis,
   TDL_13A_photosynthesis, Licor_A_photosynthesis, Delta_from_ratios_in_out,
@@ -12,5 +12,5 @@ plot_A_photosynthesis(TDL_A_photosynthesis, TDL_12A_photosynthesis,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+Plots the input variables.
 }

@@ -2,13 +2,48 @@
 % Please edit documentation in R/assign_variables.R
 \name{assign_variables}
 \alias{assign_variables}
-\title{Title}
+\title{Assign variables from input file to variable names}
 \usage{
 assign_variables(D, path)
 }
 \arguments{
 \item{path}{}
 }
+\value{
+VARIABLES list of all inputs from Excel template
+}
 \description{
-Title
+initialize lists to hold all data/output
+}
+\details{
+Template version
+
+switches to use and filenames for TDL and Licor files
+
+Prefix for output filenames
+
+TIME WINDOW SECTION
+
+OUTPUT SECTION
+
+plot formats
+
+interpolation:  1 = smooth_spline() like tanks
+2 = use last reference mean until next measurement (horizontal interp) - for abrupt ref gas changes
+
+Bootstrap
+
+TDL sampling information
+
+CONSTANTS SECTION
+
+True calibration tank values
+
+Which values to use
+
+constants in formulas not given names
+
+Calculation information
+
+create a list to all returned parameters
 }

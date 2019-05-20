@@ -2,13 +2,19 @@
 % Please edit documentation in R/calc_mean_Licor.R
 \name{calc_mean_Licor}
 \alias{calc_mean_Licor}
-\title{Title}
+\title{Calculate the mean for the Licor data based on last measurements}
 \usage{
 calc_mean_Licor(TDL, Licor, TDL_cycle, sw)
 }
 \arguments{
 \item{sw}{}
 }
+\value{
+Licor
+}
 \description{
-Title
+create Licor$summary for numerical summaries
+}
+\details{
+Calculate mean for each site for retained observations
 }

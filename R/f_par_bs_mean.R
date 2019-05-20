@@ -1,11 +1,13 @@
-#' Title
+#' calculate Par BS mean
+#'
+#' Sample from normal distribution with mean and se from the data, calculating mean of n parametric bootstrap resamples.
 #'
 #' @param x
 #' @param x_var
 #' @param n_sam
 #' @param n
 #'
-#' @return
+#' @return x_mean
 #' @export
 #'
 #' @examples

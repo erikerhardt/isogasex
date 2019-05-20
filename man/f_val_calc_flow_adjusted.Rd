@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_flow_adjusted.R
 \name{f_val_calc_flow_adjusted}
 \alias{f_val_calc_flow_adjusted}
-\title{Title}
+\title{Adjusted flow}
 \usage{
 f_val_calc_flow_adjusted(flow, H2OR)
 }
 \arguments{
 \item{H2OR}{}
 }
+\value{
+flow_adjusted
+}
 \description{
-Title
+Deprecated (0.1-20, 9/5/2012
 }

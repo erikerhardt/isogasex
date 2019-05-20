@@ -2,13 +2,21 @@
 % Please edit documentation in R/f_val_bs_CI.R
 \name{f_val_bs_CI}
 \alias{f_val_bs_CI}
-\title{Title}
+\title{create CI for each calculated value}
 \usage{
 f_val_bs_CI(val_calc_bs, val_bs_TDL, val_bs_Licor, R_bootstrap, sig_CI, sw)
 }
 \arguments{
 \item{sw}{}
 }
+\value{
+val_CI
+}
 \description{
-Title
+Create val_CI CI endpoints for $TDL, $Licor, and $calc.
+}
+\details{
+Calculate quantile indices of sorted data for sig_CI.
+
+For reasonable variables, calculates CIs using \code{\link{f_val_bs_CI_endpoints}}.
 }

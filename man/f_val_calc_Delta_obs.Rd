@@ -2,13 +2,19 @@
 % Please edit documentation in R/f_val_calc_Delta_obs.R
 \name{f_val_calc_Delta_obs}
 \alias{f_val_calc_Delta_obs}
-\title{Title}
+\title{Delta, observed discrimination}
 \usage{
 f_val_calc_Delta_obs(reference_delta_e, chamber_delta_o, xi)
 }
 \arguments{
 \item{xi}{}
 }
+\value{
+Delta_obs
+}
 \description{
-Title
+\deqn{temp_xidode = xi * (chamber_delta_o - reference_delta_e)}
+}
+\details{
+\deqn{Delta_obs = temp_xidode / (1 + chamber_delta_o - temp_xidode)}
 }

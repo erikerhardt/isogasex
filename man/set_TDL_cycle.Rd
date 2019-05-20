@@ -2,13 +2,16 @@
 % Please edit documentation in R/set_TDL_cycle.R
 \name{set_TDL_cycle}
 \alias{set_TDL_cycle}
-\title{Title}
+\title{TDL_cycle variables}
 \usage{
 set_TDL_cycle(TDL_cycle)
 }
 \arguments{
 \item{TDL_cycle}{}
 }
+\value{
+TDL_cycle
+}
 \description{
-Title
+\code{last_n_obs.*} is the number of observations to take to be \code{seconds.*} long.
 }

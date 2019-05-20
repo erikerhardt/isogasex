@@ -1,10 +1,12 @@
-#' Title
+#' Cycle timing
+#'
+#' Write cycle timing to the timing file.
 #'
 #' @param TDL
 #' @param TDL_cycle
 #' @param TDL_site_timing_filename
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -30,7 +32,6 @@ function# Cycle timing
           ,paste(
            # Changed to format() when adding full TDL interp 12/12/2009 2:03PM
            # strftime(TDL$time[old_time],format="%Y-%m-%d")
-           #,strftime(TDL$time[old_time],format="%H:%M:%S")  # "%H:%M:%OS" ## can't use %OS format since Excel doesn't display decimal seconds automatically
             format(TDL$time[old_time],format="%Y-%m-%d")
            ,format(TDL$time[old_time],format="%H:%M:%S")  # "%H:%M:%OS" ## can't use %OS format since Excel doesn't display decimal seconds automatically
            ,round(as.numeric(difftime(TDL$time[i_time],TDL$time[old_time],units="secs")),1)
@@ -45,7 +46,7 @@ function# Cycle timing
   };
   write(TDL_site_timing, file = TDL_site_timing_filename, append = FALSE);
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

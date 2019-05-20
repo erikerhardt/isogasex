@@ -1,4 +1,6 @@
-#' Title
+#' Plot Licor Temp Light values
+#'
+#' Plots the input variables.
 #'
 #' @param VPD
 #' @param E_transpiration
@@ -10,7 +12,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -60,7 +62,7 @@ function# Plot Licor Temp Light values
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

@@ -1,11 +1,39 @@
-#' Title
+#' Plot settings for all plots
+#'
+#' Settings:
+#'
+#' filenames
+#'
+#' devices settings
+#'
+#' par settings
+#'
+#' Begin:
+#'
+#' to interactive display
+#'
+#' png is default output since quick display on web and used to convert to other raster formats
+#'
+#' ps
+#'
+#' pdf
+#'
+#' bmp
+#'
+#' jpeg
+#'
+#' tiff
+#'
+#' par settings
+#'
+#' End:
 #'
 #' @param filename_prefix
 #' @param plot_filename
 #' @param plot_mode
 #' @param plot_format
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -254,7 +282,7 @@ function# Plot settings for all plots
     #graphics.off(); # don't use
   } # end
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 } # s_plot_settings_begin_end()
 

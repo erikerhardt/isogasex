@@ -2,13 +2,16 @@
 % Please edit documentation in R/progress_time.R
 \name{progress_time}
 \alias{progress_time}
-\title{Title}
+\title{Calc amount of time since program started}
 \usage{
 progress_time(time_start)
 }
 \arguments{
 \item{time_start}{}
 }
+\value{
+time_sofar
+}
 \description{
-Title
+Calculate time elapsed.
 }

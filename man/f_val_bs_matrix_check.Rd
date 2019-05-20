@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_bs_matrix_check.R
 \name{f_val_bs_matrix_check}
 \alias{f_val_bs_matrix_check}
-\title{Title}
+\title{Helper for \code{\link{f_val_bs_matrix}}, if the vector has zero length, return NA (for when using only TDL and not Licor)}
 \usage{
 f_val_bs_matrix_check(val)
 }
 \arguments{
 \item{val}{}
 }
+\value{
+val
+}
 \description{
-Title
+Helper for \code{\link{f_val_bs_matrix}}, if the vector has zero length, return NA (for when using only TDL and not Licor)
 }

@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_bs_matrix.R
 \name{f_val_bs_matrix}
 \alias{f_val_bs_matrix}
-\title{Title}
+\title{update values for each bs iterate}
 \usage{
 f_val_bs_matrix(bs, val_calc_bs_temp, i_bs)
 }
 \arguments{
 \item{i_bs}{}
 }
+\value{
+bs
+}
 \description{
-Title
+Move current value of \code{val_calc_bs_temp} into \code{bs$*} after checked with \code{\link{f_val_bs_matrix_check}}.
 }

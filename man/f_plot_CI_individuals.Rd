@@ -2,7 +2,7 @@
 % Please edit documentation in R/f_plot_CI_individuals.R
 \name{f_plot_CI_individuals}
 \alias{f_plot_CI_individuals}
-\title{Title}
+\title{plot all variables with bs values, mean value, and CI intervals}
 \usage{
 f_plot_CI_individuals(x_bs, x_sum, x_CI, x_title, x_time, x_n, R_bootstrap,
   plot_format_list, output_fn_prefix)
@@ -11,5 +11,5 @@ f_plot_CI_individuals(x_bs, x_sum, x_CI, x_title, x_time, x_n, R_bootstrap,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+For every variable, plots the mean and bootstrap CI, after removing NAs with \code{\link{plot_not_na}}.
 }

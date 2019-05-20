@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_TDL_A_photosynthesis.R
 \name{f_val_calc_TDL_A_photosynthesis}
 \alias{f_val_calc_TDL_A_photosynthesis}
-\title{Title}
+\title{A, TDL photosynthesis}
 \usage{
 f_val_calc_TDL_A_photosynthesis(flow, Ce, Co, leaf_area)
 }
 \arguments{
 \item{leaf_area}{}
 }
+\value{
+A
+}
 \description{
-Title
+\deqn{A = (flow / 10^6) * (Ce - Co) / (leaf_area / 10^4)}
 }

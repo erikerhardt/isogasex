@@ -1,4 +1,6 @@
-#' Title
+#' offset (12C Offset, 13C Offset) using hi tank
+#'
+#' \deqn{offset = true_value_hi - (gain * cal.tank_hi)}
 #'
 #' @param true_value_hi_12C
 #' @param true_value_hi_13C
@@ -7,7 +9,7 @@
 #' @param cal_tank_hi_12C
 #' @param cal_tank_hi_13C
 #'
-#' @return
+#' @return offset for 12C and 13C
 #' @export
 #'
 #' @examples

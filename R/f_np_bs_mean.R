@@ -1,4 +1,6 @@
-#' Title
+#' calculate NP BS mean
+#'
+#' Resample from data with replacement, calculating mean of n nonparametric bootstrap resamples.
 #'
 #' @param x
 #' @param first_ind
@@ -6,7 +8,7 @@
 #' @param n_sam
 #' @param n
 #'
-#' @return
+#' @return x_mean
 #' @export
 #'
 #' @examples

@@ -1,11 +1,13 @@
-#' Title
+#' A, TDL photosynthesis
+#'
+#' \deqn{A = (flow / 10^6) * (Ce - Co) / (leaf_area / 10^4)}
 #'
 #' @param flow
 #' @param Ce
 #' @param Co
 #' @param leaf_area
 #'
-#' @return
+#' @return A
 #' @export
 #'
 #' @examples

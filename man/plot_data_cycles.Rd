@@ -2,14 +2,14 @@
 % Please edit documentation in R/plot_data_cycles.R
 \name{plot_data_cycles}
 \alias{plot_data_cycles}
-\title{Title}
+\title{Plot each cycle of TDL measurements (visual diagnostics)}
 \usage{
 plot_data_cycles(TDL, TDL_cycle, plot_format_list, output_fn_prefix,
-  Rstd.13C, full_or_window)
+  Rstd_13C, full_or_window)
 }
 \arguments{
 \item{full_or_window}{}
 }
 \description{
-Title
+Plots the input variables.
 }

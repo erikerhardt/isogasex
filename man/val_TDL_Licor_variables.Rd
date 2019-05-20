@@ -2,13 +2,94 @@
 % Please edit documentation in R/val_TDL_Licor_variables.R
 \name{val_TDL_Licor_variables}
 \alias{val_TDL_Licor_variables}
-\title{Title}
+\title{Assign TDL and Licor values to val variable names, raw and summarized values}
 \usage{
 val_TDL_Licor_variables(TDL, Licor, TDL_cycle, val, sw)
 }
 \arguments{
 \item{sw}{}
 }
+\value{
+val
+}
 \description{
-Title
+Function to assign TDL and Licor values to variable names,
+summaries and some smart way for individual observations (later for NPBS).
+If the variable has values, use those, if not then populate with NAs.
+}
+\details{
+These are the columns expected from the Licor and TDL.
+Any columns with headers not listed here will not be used.
+
+EXPECTED column names for Licor:
+\preformatted{
+(in tdllicor)     (column from Licor)
+Obs               Obs
+HHMMSS            HHMMSS
+FTime             FTime
+A                 Photo
+E                 Trmmol
+temp_air          Tair
+temp_leaf         Tleaf
+temp_block        TBlk
+Ce                CO2R
+Co                CO2S
+xin               H2OR
+xout              H2OS
+rh_ref            RH_R
+rh_sam            RH_S
+uin               Flow
+par_int           PARi
+par_ext           PARo
+Atm_press         Press
+CsMch             CsMch
+HsMch             HsMch
+StableF           StableF
+Status            Status
+gsc               Cond
+Ci                Ci
+VPD               VpdL
+La                Area
+StmRat            StmRat
+gbw               BLCond
+VpdA              VpdA
+Ci_Ca             Ci_Ca
+pi                Ci_Pa
+uc_20_mV          uc_20_mV
+uc_21_mV          uc_21_mV
+U_S               X.U.S.
+Trans             Trans
+CndCO2            CndCO2
+Ref_mV            Ref_mV
+xTemp1            xTemp1
+xTemp2            xTemp2
+TChamAir          TChamAir
+}
+
+EXPECTED column names for TDL:
+\preformatted{
+(in tdllicor)       (column from TDL)
+TIMESTAMP           TIMESTAMP
+RECORD              RECORD
+PrevSite            PrevSite
+SiteOutput          SiteOutput
+StartSeqFlag        StartSeqFlag
+SeqActiveFlag       SeqActiveFlag
+SiteCount           SiteCount
+conc12CO2           ConcA
+conc13CO2           ConcB
+ConcC               ConcC
+TGAStatus           TGAStatus
+TGApressure         TGApressure
+MassFlow1           MassFlow1
+Pressure1           Pressure1
+MassFlow2           MassFlow2
+Pressure2           Pressure2
+PressureProMan      PressureProMan
+}
+
+Conventions, put everything in \code{val}.
+Observed values from TDL or Licor  prefix: \code{val$obs$*}
+
+Summarized values from TDL or Licor  prefix: \code{val$sum$*}
 }

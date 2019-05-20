@@ -1,11 +1,16 @@
-#' Title
+#' D from A ratio, (Ro/(13A/12A))-1, should be the same as Dobs above
+#'
+#' First calculates R_cham with \code{\link{f_val_calc_isotope_ratio}}
+#'
+#' \deqn{Delta_from_A_ratio <- (R_cham / (TDL.13A / TDL.12A)) - 1}
+#' this quantity is not in per mil
 #'
 #' @param cham.12Co
 #' @param cham.13Co
 #' @param TDL.13A
 #' @param TDL.12A
 #'
-#' @return
+#' @return Delta_from_A_ratio
 #' @export
 #'
 #' @examples

@@ -1,8 +1,14 @@
-#' Title
+#' move selected plot files to subdirectories
+#'
+#' Create \file{BS} and \file{var} directories.
+#'
+#' Move \file{BS_CHECK*} files into \file{BS} directory.
+#'
+#' Move files that are not (TDL, Licor, offset) into \file{var} directory.
 #'
 #' @param plot_format
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -52,7 +58,7 @@ function# move selected plot files to subdirectories
 
   } # ii
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

@@ -1,4 +1,6 @@
-#' Title
+#' pc using complex D, no decarboxylation  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-Dpa]/(bs+al-b)  is this different from two up? They give different values but both may not be derived properly
+#'
+#' \deqn{pc = (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa) / (bs + al - b)}
 #'
 #' @param Delta
 #' @param pa
@@ -10,7 +12,7 @@
 #' @param b
 #' @param bs
 #'
-#' @return
+#' @return pc
 #' @export
 #'
 #' @examples

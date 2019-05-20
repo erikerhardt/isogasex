@@ -2,13 +2,16 @@
 % Please edit documentation in R/write_summary_Licor_file.R
 \name{write_summary_Licor_file}
 \alias{write_summary_Licor_file}
-\title{Title}
+\title{write output section: Licor file}
 \usage{
 write_summary_Licor_file(val, TDL_cycle, output_summary_Licor_fn)
 }
 \arguments{
 \item{output_summary_Licor_fn}{}
 }
+\value{
+val$write
+}
 \description{
-Title
+write output section: Licor file
 }

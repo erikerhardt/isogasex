@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_xi.R
 \name{f_val_calc_xi}
 \alias{f_val_calc_xi}
-\title{Title}
+\title{xi}
 \usage{
 f_val_calc_xi(Ce, Co)
 }
 \arguments{
 \item{Co}{}
 }
+\value{
+xi
+}
 \description{
-Title
+\deqn{xi = Ce / (Ce - Co)}
 }

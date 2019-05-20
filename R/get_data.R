@@ -1,8 +1,10 @@
-#' Title
+#' Get data from Excel spreadsheet
+#'
+#' Read Excel template with \code{gdata} \code{read.xls} using perl.
 #'
 #' @param filename
 #'
-#' @return
+#' @return DATA
 #' @importFrom readxl read_xls
 #' @export
 #'

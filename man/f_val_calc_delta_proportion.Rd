@@ -2,13 +2,21 @@
 % Please edit documentation in R/f_val_calc_delta_proportion.R
 \name{f_val_calc_delta_proportion}
 \alias{f_val_calc_delta_proportion}
-\title{Title}
+\title{delta as proportion (Isotopic composition (d) as fraction)}
 \usage{
-f_val_calc_delta_proportion(obs.12C, obs.13C, R_std)
+f_val_calc_delta_proportion(obs_12C, obs_13C, R_std)
 }
 \arguments{
 \item{R_std}{}
 }
+\value{
+delta_proportion
+}
 \description{
-Title
+I prefer using the fraction for calculations and then converting to composition at the end
+}
+\details{
+First calculates R_obs with \code{\link{f_val_calc_isotope_ratio}}
+\deqn{delta_proportion <- (R_obs / R_std) - 1}
+this quantity is not in per mil
 }

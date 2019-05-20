@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_gm.R
 \name{plot_gm}
 \alias{plot_gm}
-\title{Title}
+\title{Plot gm point simple and complex, internal leaf (mesophyll) conductance calculated for every D value ignoring and estimating decarboxylation effects}
 \usage{
 plot_gm(chamber_Totalgm_point_simple, chamber_12gm_point_simple,
   chamber_13gm_point_simple, chamber_Totalgm_point_complex, x_time,
@@ -12,5 +12,5 @@ plot_gm(chamber_Totalgm_point_simple, chamber_12gm_point_simple,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+Plots the input variables.
 }

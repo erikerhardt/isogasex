@@ -1007,4 +1007,17 @@ s/x[.]n/x_n/g
 #   as_character as.character
 #   smooth_spline smooth.spline
 #   interp. interp_
-#
+#   obs.12C obs_12C
+#   obs.13C obs_13C
+#   fo.13C                       fo_13C
+#   fo.18O                       fo_18O
+#   Rstd.13C                     Rstd_13C
+#   Rstd.18O                     Rstd_18O
+#   a.l                          a_l
+#   a.i                          a_i
+#   b.s                          b_s
+#   flow.rate                    flow_rate
+#   boundary.layer.cond.to.water boundary_layer_cond_to_water
+#   gbc.1.37                     gbc_1.37
+#   gsc.1.6                      gsc_1.6
+

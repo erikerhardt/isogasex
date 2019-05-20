@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_pc_simple_complex.R
 \name{plot_pc_simple_complex}
 \alias{plot_pc_simple_complex}
-\title{Title}
+\title{Plot pc, simple and complex}
 \usage{
 plot_pc_simple_complex(chamber_Totalpc_using_simple_Delta_for_gm,
   chamber_Totalpc_using_simple_Delta_for_modeling,
@@ -14,5 +14,5 @@ plot_pc_simple_complex(chamber_Totalpc_using_simple_Delta_for_gm,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+Plots the input variables.
 }

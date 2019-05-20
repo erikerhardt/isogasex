@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_Licor_temp_light.R
 \name{plot_Licor_temp_light}
 \alias{plot_Licor_temp_light}
-\title{Title}
+\title{Plot Licor Temp Light values}
 \usage{
 plot_Licor_temp_light(VPD, E_transpiration, leaf_temp, air_temp, light_in,
   light_out, x_time, plot_format_list, output_fn_prefix)
@@ -11,5 +11,5 @@ plot_Licor_temp_light(VPD, E_transpiration, leaf_temp, air_temp, light_in,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+Plots the input variables.
 }

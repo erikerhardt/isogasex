@@ -1,9 +1,11 @@
-#' Title
+#' basic SLR beta fit
+#'
+#' Calculate intercept and slope of a simple linear regression fit.
 #'
 #' @param y
 #' @param x
 #'
-#' @return
+#' @return beta_hat
 #' @export
 #'
 #' @examples

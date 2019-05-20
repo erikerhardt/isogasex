@@ -2,13 +2,53 @@
 % Please edit documentation in R/time_window_TDL_Licor_interp.R
 \name{time_window_TDL_Licor_interp}
 \alias{time_window_TDL_Licor_interp}
-\title{Title}
+\title{keep only the overlapping time window of TDL and Licor files}
 \usage{
 time_window_TDL_Licor_interp(TDL, Licor, TDL_Licor_times, sw)
 }
 \arguments{
 \item{sw}{}
 }
+\value{
+TDL_and_Licor_interp
+}
 \description{
-Title
+interpolate the Licor measurements via cubic splines to TDL faster sampling rate
+assign variables names within TDL and Licor_interp
+}
+\details{
+BEGIN If use TDL
+
+- Indices to keep based on TDL/Licor time window overlap.
+
+- TDL summary ind to keep.
+
+- Reduce TDL summary.
+
+- Reduce TDL interp.
+
+END
+
+BEGIN If use Licor
+
+- Indices to keep based on TDL/Licor time window overlap.
+
+- Use \code{zoo} to merge the times for TDL and Licor.
+
+Create \code{Licor_interp} to hold interpolated Licor values at resolution of TDL observations.
+
+populate with observed values in right locations
+
+These indices have actual Licor values, the others are interpolated.
+
+Some Licor values maybe shouldn't be interpolated --
+
+If all values are NA, then consider column as a missing column and don't interp.
+
+Cubic interpolation of Licor values to TDL sampling time points using \code{nknots}=\code{df}=
+Cubic spline interpolation using \code{smooth_spline} with \code{nknots}=\code{df}=number of Licor times matching TDL times.
+
+END
+
+Put TDL and Licor_interp together to return.
 }

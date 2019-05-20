@@ -1,9 +1,42 @@
-#' Title
+#' Assign variables from input file to variable names
+#'
+#' initialize lists to hold all data/output
+#'
+#' Template version
+#'
+#' switches to use and filenames for TDL and Licor files
+#'
+#' Prefix for output filenames
+#'
+#' TIME WINDOW SECTION
+#'
+#' OUTPUT SECTION
+#'
+#' plot formats
+#'
+#' interpolation:  1 = smooth_spline() like tanks
+#' 2 = use last reference mean until next measurement (horizontal interp) - for abrupt ref gas changes
+#'
+#' Bootstrap
+#'
+#' TDL sampling information
+#'
+#' CONSTANTS SECTION
+#'
+#' True calibration tank values
+#'
+#' Which values to use
+#'
+#' constants in formulas not given names
+#'
+#' Calculation information
+#'
+#' create a list to all returned parameters
 #'
 #' @param D
 #' @param path
 #'
-#' @return
+#' @return VARIABLES list of all inputs from Excel template
 #' @export
 #'
 #' @examples
@@ -207,10 +240,10 @@ function# Assign variables from input file to variable names
   r_v<-r_v+1; val$const$true_value_lo_12C             <- as.numeric(D[r_v,c_v]);
   r_v<-r_v+1; val$const$true_value_lo_13C             <- as.numeric(D[r_v,c_v]);
   r_v<-r_v+1; # blank spreadsheet line
-  r_v<-r_v+1; val$const$fo.13C                        <- as.numeric(D[r_v,c_v]); # 0.00474;  # if only 12 and 13CO2 are measured, fo means fraction of other isotopologues not measured
-  r_v<-r_v+1; val$const$fo.18O                        <- as.numeric(D[r_v,c_v]); # if 12 and 13CO2, and 12C18O16O are measured (not ususal for Dave's machine)
-  r_v<-r_v+1; val$const$Rstd.13C                      <- as.numeric(D[r_v,c_v]); # (Rvpdb)
-  r_v<-r_v+1; val$const$Rstd.18O                      <- as.numeric(D[r_v,c_v]); # (Rvsmow) may occaisionally be used with Dave's machine, method not tested yet
+  r_v<-r_v+1; val$const$fo_13C                        <- as.numeric(D[r_v,c_v]); # 0.00474;  # if only 12 and 13CO2 are measured, fo means fraction of other isotopologues not measured
+  r_v<-r_v+1; val$const$fo_18O                        <- as.numeric(D[r_v,c_v]); # if 12 and 13CO2, and 12C18O16O are measured (not ususal for Dave's machine)
+  r_v<-r_v+1; val$const$Rstd_13C                      <- as.numeric(D[r_v,c_v]); # (Rvpdb)
+  r_v<-r_v+1; val$const$Rstd_18O                      <- as.numeric(D[r_v,c_v]); # (Rvsmow) may occaisionally be used with Dave's machine, method not tested yet
   r_v<-r_v+1; # blank spreadsheet line
   r_v<-r_v+1; val$const$Gamma_star                    <- as.numeric(D[r_v,c_v]); # CO2 compensation point in absence of day respiration.  I will need to specify experiment specific values for these constants in the equations below
   r_v<-r_v+1; val$const$f_photo_respiration           <- as.numeric(D[r_v,c_v]); # fractionation associated with photorespiration
@@ -219,35 +252,35 @@ function# Assign variables from input file to variable names
   r_v<-r_v+1; val$const$k                             <- as.numeric(D[r_v,c_v]); # carboxylation efficiency, often initial slope of A/Ci, or better A/Cc
   r_v<-r_v+1; val$const$b_gm                          <- as.numeric(D[r_v,c_v]);
   r_v<-r_v+1; val$const$b_modeling                    <- as.numeric(D[r_v,c_v]);
-  r_v<-r_v+1; val$const$b.s                           <- as.numeric(D[r_v,c_v]); #  per mil fractionation as CO2 enters solution at 25C bs =  1.1
+  r_v<-r_v+1; val$const$b_s                           <- as.numeric(D[r_v,c_v]); #  per mil fractionation as CO2 enters solution at 25C bs =  1.1
   r_v<-r_v+1; # blank spreadsheet line
   r_v<-r_v+1; val$const$a                             <- as.numeric(D[r_v,c_v]); #  per mil fractionation in still air (stomatal pore and substomata) a1 =  0.7
   r_v<-r_v+1; val$const$a_b                           <- as.numeric(D[r_v,c_v]); #  per mil fractionation in boundary layer (slightly mixed)  a = 4.44
-  r_v<-r_v+1; val$const$a.l                           <- as.numeric(D[r_v,c_v]); #  per mil fractionation during diffusion in water
-  r_v<-r_v+1; val$const$a.i                           <- val$const$a.l + val$const$b.s; #  al+bs
+  r_v<-r_v+1; val$const$a_l                           <- as.numeric(D[r_v,c_v]); #  per mil fractionation during diffusion in water
+  r_v<-r_v+1; val$const$a_i                           <- val$const$a_l + val$const$b_s; #  al+bs
   r_v<-r_v+1; # blank spreadsheet line
 
   ##details<<
   ## Which values to use
   r_v<-r_v+1; # blank spreadsheet line
-  r_v<-r_v+1; sw$Licor_or_TDL_A_photosynthesis                          <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow.rate, val$const$leaf_area, val$const$boundary.layer.cond.to.water, val$const$H2OS, val$const$StmRat)
+  r_v<-r_v+1; sw$Licor_or_TDL_A_photosynthesis                          <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow_rate, val$const$leaf_area, val$const$boundary_layer_cond_to_water, val$const$H2OS, val$const$StmRat)
   r_v<-r_v+1; # blank spreadsheet line
-  r_v<-r_v+1; sw$val_const_override_Licor_flow_rate                     <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow.rate, val$const$leaf_area, val$const$boundary.layer.cond.to.water, val$const$H2OS, val$const$StmRat)
-  r_v<-r_v+1; val$const$flow.rate                                       <- as.numeric(D[r_v,c_v]); #  these values will normally come from the LI6400, but occaisonally I may want to specify different constants,
-  r_v<-r_v+1; sw$val_const_override_Licor_leaf_area                     <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow.rate, val$const$leaf_area, val$const$boundary.layer.cond.to.water, val$const$H2OS, val$const$StmRat)
+  r_v<-r_v+1; sw$val_const_override_Licor_flow_rate                     <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow_rate, val$const$leaf_area, val$const$boundary_layer_cond_to_water, val$const$H2OS, val$const$StmRat)
+  r_v<-r_v+1; val$const$flow_rate                                       <- as.numeric(D[r_v,c_v]); #  these values will normally come from the LI6400, but occaisonally I may want to specify different constants,
+  r_v<-r_v+1; sw$val_const_override_Licor_leaf_area                     <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow_rate, val$const$leaf_area, val$const$boundary_layer_cond_to_water, val$const$H2OS, val$const$StmRat)
   r_v<-r_v+1; val$const$leaf_area                                       <- as.numeric(D[r_v,c_v]); #  so when they are used in equations below,
-  r_v<-r_v+1; sw$val_const_override_Licor_boundary_layer_cond_to_water  <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow.rate, val$const$leaf_area, val$const$boundary.layer.cond.to.water, val$const$H2OS, val$const$StmRat)
-  r_v<-r_v+1; val$const$boundary.layer.cond.to.water                    <- as.numeric(D[r_v,c_v]); #  I would like to have the option to choose these constants instead of the values in the LI64000 file  (gbw)
-  r_v<-r_v+1; sw$val_const_override_Licor_H2OS                          <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow.rate, val$const$leaf_area, val$const$boundary.layer.cond.to.water, val$const$H2OS, val$const$StmRat)
+  r_v<-r_v+1; sw$val_const_override_Licor_boundary_layer_cond_to_water  <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow_rate, val$const$leaf_area, val$const$boundary_layer_cond_to_water, val$const$H2OS, val$const$StmRat)
+  r_v<-r_v+1; val$const$boundary_layer_cond_to_water                    <- as.numeric(D[r_v,c_v]); #  I would like to have the option to choose these constants instead of the values in the LI64000 file  (gbw)
+  r_v<-r_v+1; sw$val_const_override_Licor_H2OS                          <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow_rate, val$const$leaf_area, val$const$boundary_layer_cond_to_water, val$const$H2OS, val$const$StmRat)
   r_v<-r_v+1; val$const$H2OS                                            <- as.numeric(D[r_v,c_v]); #  Not in calcs below yet
-  r_v<-r_v+1; sw$val_const_override_Licor_StmRat                        <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow.rate, val$const$leaf_area, val$const$boundary.layer.cond.to.water, val$const$H2OS, val$const$StmRat)
+  r_v<-r_v+1; sw$val_const_override_Licor_StmRat                        <- as.numeric(D[r_v,c_v]); #  1=use Licor values, 0=use specified values for (val$const$flow_rate, val$const$leaf_area, val$const$boundary_layer_cond_to_water, val$const$H2OS, val$const$StmRat)
   r_v<-r_v+1; val$const$StmRat                                          <- as.numeric(D[r_v,c_v]); #  Not in calcs below yet
 
   ##details<<
   ## constants in formulas not given names
   r_v<-r_v+1; # blank spreadsheet line
-  r_v<-r_v+1; val$const$gbc.1.37                      <- as.numeric(D[r_v,c_v]); #  gbc  BLcond/1.37 boudary layer conductance for CO2
-  r_v<-r_v+1; val$const$gsc.1.6                       <- as.numeric(D[r_v,c_v]); #  gsc  gsw/1.6 stomatal conductance for CO2
+  r_v<-r_v+1; val$const$gbc_1.37                      <- as.numeric(D[r_v,c_v]); #  gbc  BLcond/1.37 boudary layer conductance for CO2
+  r_v<-r_v+1; val$const$gsc_1.6                       <- as.numeric(D[r_v,c_v]); #  gsc  gsw/1.6 stomatal conductance for CO2
 
   r_v<-r_v+1; # blank spreadsheet line
 

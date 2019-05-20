@@ -1,9 +1,30 @@
-#' Title
+#' Determine the last index for admissible values to calculate means
+#'
+#' Rind indices just before where site change occurs.
+#'
+#' Error checking which sites are defined in template/TDL file but not the other.
+#'
+#' Determine sites in TDL file not in template file.
+#'
+#' Remove indices in TDL file not defined in the template (do not calculate for these).
+#'
+#' Determine sites in template file not in TDL file.
+#'
+#' Make sure the last TDL_cycle$table[,"last_n_obs"] are the same site as temp_last_ind.
+#'
+#' If chamber, then go back and keep calculating index blocks.
+#'
+#' For chamber, skip the first TDL_cycle$first_n_last_skip_chamber number of blocks.
+#' Note that these are in reverse order, so the last rows in TDL$last_list are the first cycles.
+#' Check that the last TDL_cycle$first_n_last_skip_chamber number of blocks are all chambers
+#' and if so, then remove these cycles.
+#'
+#' Sort by index.
 #'
 #' @param TDL
 #' @param TDL_cycle
 #'
-#' @return
+#' @return TDL
 #' @export
 #'
 #' @examples

@@ -1,4 +1,10 @@
-#' Title
+#' create CI for each calculated value
+#'
+#' Create val_CI CI endpoints for $TDL, $Licor, and $calc.
+#'
+#' Calculate quantile indices of sorted data for sig_CI.
+#'
+#' For reasonable variables, calculates CIs using \code{\link{f_val_bs_CI_endpoints}}.
 #'
 #' @param val_calc_bs
 #' @param val_bs_TDL
@@ -7,7 +13,7 @@
 #' @param sig_CI
 #' @param sw
 #'
-#' @return
+#' @return val_CI
 #' @export
 #'
 #' @examples

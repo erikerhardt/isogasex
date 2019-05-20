@@ -1,4 +1,6 @@
-#' Title
+#' Plot Cc, ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol
+#'
+#' Plots the input variables.
 #'
 #' @param chamber_TotalCc
 #' @param chamber_12Cc
@@ -7,7 +9,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -45,7 +47,7 @@ function# Plot Cc, ppm CO2 concentration at the site of carboxylation, generally
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

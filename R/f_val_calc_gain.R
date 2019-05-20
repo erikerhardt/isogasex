@@ -1,4 +1,6 @@
-#' Title
+#' gain (12C Gain, 13C Gain)
+#'
+#' \deqn{gain = (true_value_hi - true.value.lo) / (cal.tank_hi - cal.tank.lo)}
 #'
 #' @param true_value_hi_12C
 #' @param true_value_hi_13C
@@ -9,7 +11,7 @@
 #' @param cal_tank_lo_12C
 #' @param cal_tank_lo_13C
 #'
-#' @return
+#' @return gain for 12C and 13C
 #' @export
 #'
 #' @examples

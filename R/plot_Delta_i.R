@@ -1,4 +1,6 @@
-#' Title
+#' Plot Delta_i, predicted discrimination
+#'
+#' Plots the input variables.
 #'
 #' @param chamber_Delta_i_simple_for_gm
 #' @param chamber_Delta_i_simple_for_modeling
@@ -9,7 +11,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -53,7 +55,7 @@ function# Plot Delta_i, predicted discrimination
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

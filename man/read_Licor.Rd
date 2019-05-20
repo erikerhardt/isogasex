@@ -2,13 +2,29 @@
 % Please edit documentation in R/read_Licor.R
 \name{read_Licor}
 \alias{read_Licor}
-\title{Title}
+\title{read Licor file}
 \usage{
 read_Licor(Licor_fn, Licor_TDL_time_offset_seconds, sw)
 }
 \arguments{
 \item{sw}{}
 }
+\value{
+Licor
+}
 \description{
-Title
+See \code{\link{val_TDL_Licor_variables}} for expected column names.
+}
+\details{
+Create \code{Licor} to hold data.
+
+Read Licor file
+
+Find the row where the column headers and data begin.
+
+Look for "Obs" as the first row (used to look for $STARTOFDATA$, but not in every version of Licor file).
+
+If any extra lines in Licor file, remove those lines and fix the Obs and HHMMSS columns.
+
+Date (day) of run, fix Thursday (Thr to Thu) representation.
 }

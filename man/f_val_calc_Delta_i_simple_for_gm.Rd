@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_Delta_i_simple_for_gm.R
 \name{f_val_calc_Delta_i_simple_for_gm}
 \alias{f_val_calc_Delta_i_simple_for_gm}
-\title{Title}
+\title{Delta_i simple for gm, predicted discrimination including boundary layer effects but not decarboxylation effects}
 \usage{
 f_val_calc_Delta_i_simple_for_gm(a, b, a_b, pa, ps, pi)
 }
 \arguments{
 \item{pi}{}
 }
+\value{
+Delta_i_simple_for_gm
+}
 \description{
-Title
+\deqn{Delta_i_simple_for_gm = a_b * ((pa - ps) / pa) + a*((ps - pi) / pa) + b * (pi / pa)}
 }

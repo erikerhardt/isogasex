@@ -2,13 +2,23 @@
 % Please edit documentation in R/f_bs_save_TDL_Licor.R
 \name{f_bs_save_TDL_Licor}
 \alias{f_bs_save_TDL_Licor}
-\title{Title}
+\title{save BS resample of TDL and Licor means}
 \usage{
 f_bs_save_TDL_Licor(val_bs_sum, val_bs, i_bs, R_bootstrap, sw)
 }
 \arguments{
 \item{sw}{}
 }
+\value{
+val_bs
+}
 \description{
-Title
+create val_bs$TDL and $Licor for calculated observed values to use in NP bootstrap
+}
+\details{
+Initialize values to zeros.
+
+If using TDL, copy val_bs_sum$TDL$* to val_bs$TDL$*
+
+If using Licor, copy val_bs_sum$Licor$* to val_bs$Licor$*
 }

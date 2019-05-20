@@ -1,4 +1,6 @@
-#' Title
+#' Plot active gains, offsets, and corrected magnitudes
+#'
+#' Plots the input variables.
 #'
 #' @param gain_12C
 #' @param gain_13C
@@ -8,7 +10,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -68,7 +70,7 @@ function# Plot active gains, offsets, and corrected magnitudes
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/f_val_calc_gain.R
 \name{f_val_calc_gain}
 \alias{f_val_calc_gain}
-\title{Title}
+\title{gain (12C Gain, 13C Gain)}
 \usage{
 f_val_calc_gain(true_value_hi_12C, true_value_hi_13C, true_value_lo_12C,
   true_value_lo_13C, cal_tank_hi_12C, cal_tank_hi_13C, cal_tank_lo_12C,
@@ -11,6 +11,9 @@ f_val_calc_gain(true_value_hi_12C, true_value_hi_13C, true_value_lo_12C,
 \arguments{
 \item{cal_tank_lo_13C}{}
 }
+\value{
+gain for 12C and 13C
+}
 \description{
-Title
+\deqn{gain = (true_value_hi - true.value.lo) / (cal.tank_hi - cal.tank.lo)}
 }

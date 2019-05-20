@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_Delta_i_simple_for_modeling.R
 \name{f_val_calc_Delta_i_simple_for_modeling}
 \alias{f_val_calc_Delta_i_simple_for_modeling}
-\title{Title}
+\title{Delta_i simple for modeling  a + (b-a) pi/pa predicted discrimination including boundary layer effects but using b adjustments to approximate effects of gm and decarboxylations}
 \usage{
 f_val_calc_Delta_i_simple_for_modeling(a, b, pa, pi)
 }
 \arguments{
 \item{pi}{}
 }
+\value{
+Delta_i_simple_for_modeling
+}
 \description{
-Title
+\deqn{Delta_i_simple_for_modeling = a + (b - a) * pi / pa}
 }

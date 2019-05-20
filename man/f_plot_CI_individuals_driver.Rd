@@ -2,7 +2,7 @@
 % Please edit documentation in R/f_plot_CI_individuals_driver.R
 \name{f_plot_CI_individuals_driver}
 \alias{f_plot_CI_individuals_driver}
-\title{Title}
+\title{plot each individual variable}
 \usage{
 f_plot_CI_individuals_driver(val, R_bootstrap, plot_format_list,
   output_fn_prefix)
@@ -11,5 +11,5 @@ f_plot_CI_individuals_driver(val, R_bootstrap, plot_format_list,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+For every variable, creates plots using \code{\link{f_plot_CI_individuals}}.
 }

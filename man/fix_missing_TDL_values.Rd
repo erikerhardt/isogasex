@@ -2,13 +2,21 @@
 % Please edit documentation in R/fix_missing_TDL_values.R
 \name{fix_missing_TDL_values}
 \alias{fix_missing_TDL_values}
-\title{Title}
+\title{Replace NA and NAN values in TDL$data by previous value for that variable}
 \usage{
 fix_missing_TDL_values(TDL, bad_ind)
 }
 \arguments{
 \item{bad_ind}{}
 }
+\value{
+TDL
+}
 \description{
-Title
+Look at each field.
+}
+\details{
+If not finite, then it's a bad value to replace.
+
+Replace bad value with previous value in the file.
 }

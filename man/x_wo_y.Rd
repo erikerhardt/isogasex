@@ -2,13 +2,16 @@
 % Please edit documentation in R/x_wo_y.R
 \name{x_wo_y}
 \alias{x_wo_y}
-\title{Title}
+\title{x without y}
 \usage{
 x_wo_y(x, y)
 }
 \arguments{
 \item{y}{}
 }
+\value{
+x without y
+}
 \description{
-Title
+x without y
 }

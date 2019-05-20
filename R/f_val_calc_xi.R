@@ -1,9 +1,11 @@
-#' Title
+#' xi
+#'
+#' \deqn{xi = Ce / (Ce - Co)}
 #'
 #' @param Ce
 #' @param Co
 #'
-#' @return
+#' @return xi
 #' @export
 #'
 #' @examples

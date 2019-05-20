@@ -1,9 +1,13 @@
-#' Title
+#' Summary values for TDL interpolated tanks and reference
+#'
+#' Calculate mean, var, and sd for each site for interpolated ranges.
+#'
+#' Data updated to exclude indices that we don't summarize.
 #'
 #' @param TDL
 #' @param TDL_cycle
 #'
-#' @return
+#' @return TDL
 #' @export
 #'
 #' @examples

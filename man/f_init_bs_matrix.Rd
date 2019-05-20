@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_init_bs_matrix.R
 \name{f_init_bs_matrix}
 \alias{f_init_bs_matrix}
-\title{Title}
+\title{init bs values to zero}
 \usage{
 f_init_bs_matrix(n, R_bootstrap)
 }
 \arguments{
 \item{R_bootstrap}{}
 }
+\value{
+bs
+}
 \description{
-Title
+Create bs for calculated bootstrap values to estimate error, initializing to zeros.
 }

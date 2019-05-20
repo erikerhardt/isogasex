@@ -1,8 +1,8 @@
-#' Title
+#' write progress to the screen
 #'
 #' @param text_to_cat
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -17,7 +17,7 @@ function# write_progress to the screen
   capture.output(expr = cat(text_to_cat), append=TRUE, file="process_info.txt");
   flush.console();
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 } # write_out()
 

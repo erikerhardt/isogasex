@@ -2,7 +2,7 @@
 % Please edit documentation in R/f_val_calc_Delta_i_complex_for_gm.R
 \name{f_val_calc_Delta_i_complex_for_gm}
 \alias{f_val_calc_Delta_i_complex_for_gm}
-\title{Title}
+\title{Delta_i complex for gm  CHECK DERIVATION  predicted discrimination including boundary layer effects AND decarboxylation effects}
 \usage{
 f_val_calc_Delta_i_complex_for_gm(a, b, a_b, pa, ps, pi, b_gm, f_photo,
   Gamma_star, e, Rd, k)
@@ -10,6 +10,9 @@ f_val_calc_Delta_i_complex_for_gm(a, b, a_b, pa, ps, pi, b_gm, f_photo,
 \arguments{
 \item{k}{}
 }
+\value{
+Delta_i_complex_for_gm
+}
 \description{
-Title
+\deqn{Delta_i_complex_for_gm = a_b * ((pa - ps) / pa) + a * ((ps - pi) / pa) + b * (pi / pa) - (f_photo * Gamma_star / pa) - (e * Rd / (k * pa))}
 }

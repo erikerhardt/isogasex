@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_Delta_i.R
 \name{plot_Delta_i}
 \alias{plot_Delta_i}
-\title{Title}
+\title{Plot Delta_i, predicted discrimination}
 \usage{
 plot_Delta_i(chamber_Delta_i_simple_for_gm,
   chamber_Delta_i_simple_for_modeling, chamber_Delta_i_complex_for_gm,
@@ -14,5 +14,5 @@ plot_Delta_i(chamber_Delta_i_simple_for_gm,
 \item{output_fn_prefix}{}
 }
 \description{
-Title
+Plots the input variables.
 }

@@ -1,9 +1,11 @@
-#' Title
+#' init bs values to zero
+#'
+#' Create bs for calculated bootstrap values to estimate error, initializing to zeros.
 #'
 #' @param n
 #' @param R_bootstrap
 #'
-#' @return
+#' @return bs
 #' @export
 #'
 #' @examples

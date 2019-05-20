@@ -1,4 +1,40 @@
-#' Title
+#' This function plots all the calculated values
+#'
+#' most plots are not created when not using Licor file
+#'
+#' Plots many variables by calling the \code{plot.*} functions.
+#'
+#' Plot active gains, offsets, and corrected magnitudes. \code{\link{plot_gain_offset}}
+#'
+#' Plot corrected 12CO2 and 13CO2, total, and difference for reference and sample. \code{\link{plot_corrected_total_diff_xi}}
+#'
+#' Plot A photosynthesis. \code{\link{plot_A_photosynthesis}}
+#'
+#' Plot Licor Temp Light values. \code{\link{plot_Licor_temp_light}}
+#'
+#' Plot Licor uin, xin, La, Atm_press values 7/21/2012. \code{\link{plot_Licor_flow_press}}
+#'
+#' Plot delta, Delta, and p. \code{\link{plot_delta_Delta_p}}
+#'
+#' Plot Ca Cs, CO2 concentrations above the leaf and at the leaf surface. \code{\link{plot_Ca_Cs}}
+#'
+#' Plot Pa Ps, partial pressure of CO2 above the leaf and at the leaf surface. \code{\link{plot_pa_ps}}
+#'
+#' Plot gbc, gsc, gtc: boundary layer, stomatal, and total conductance for CO2. \code{\link{plot_gbc_gsc_gtc}}
+#'
+#' Plot Ci, Pi, CO2 concentration and partial pressure of CO2 in the substomatal cavities. \code{\link{plot_Ci_pi}}
+#'
+#' Plot Totalpi_pa, ratio of substomatal CO2 partial pressure to CO2 partial pressure above leaf = Ci/Ca ratio of mol fractions. \code{\link{plot_pi_pa}}
+#'
+#' Plot Delta_i, predicted discrimination. \code{\link{plot_Delta_i}}
+#'
+#' Plot gm point simple and complex, internal leaf (mesophyll) conductance calculated for every D value ignoring and estimating decarboxylation effects. \code{\link{plot_gm}}
+#'
+#' Plot pc, total partial pressure of CO2 at the site of carboxylation. \code{\link{plot_pc_total}}
+#'
+#' Plot pc, simple and complex. \code{\link{plot_pc_simple_complex}}
+#'
+#' Plot Cc, ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol. \code{\link{plot_Cc_total}}
 #'
 #' @param val_TDL
 #' @param val_Licor
@@ -8,7 +44,7 @@
 #' @param output_fn_prefix
 #' @param sw
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -155,7 +191,7 @@ function# This function plots all the calculated values
                ,val_TDL$time, plot_format_list, output_fn_prefix)
  } # if (sw$use_Licor )
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

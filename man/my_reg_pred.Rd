@@ -2,13 +2,16 @@
 % Please edit documentation in R/my_reg_pred.R
 \name{my_reg_pred}
 \alias{my_reg_pred}
-\title{Title}
+\title{basic SLR y pred}
 \usage{
 my_reg_pred(beta_hat, x)
 }
 \arguments{
 \item{x}{}
 }
+\value{
+y_hat
+}
 \description{
-Title
+Calculate predictions given the intercept and slope of a simple linear regression fit.
 }

@@ -2,13 +2,16 @@
 % Please edit documentation in R/f_val_calc_p.R
 \name{f_val_calc_p}
 \alias{f_val_calc_p}
-\title{Title}
+\title{p}
 \usage{
 f_val_calc_p(Ce, Co)
 }
 \arguments{
 \item{Co}{}
 }
+\value{
+p
+}
 \description{
-Title
+\deqn{p = (Co-Ce) / Co}
 }

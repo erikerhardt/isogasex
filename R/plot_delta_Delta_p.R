@@ -1,4 +1,6 @@
-#' Title
+#' Plot delta, Delta, and p
+#'
+#' Plots the input variables.
 #'
 #' @param reference_delta_e
 #' @param chamber_delta_o
@@ -11,7 +13,7 @@
 #' @param plot_format_list
 #' @param output_fn_prefix
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
 #' @examples
@@ -62,7 +64,7 @@ function# Plot delta, Delta, and p
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
-  return( NULL );
+  invisible(NULL);
   ### NULL
 }
 

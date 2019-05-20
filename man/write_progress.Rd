@@ -2,7 +2,7 @@
 % Please edit documentation in R/write_progress.R
 \name{write_progress}
 \alias{write_progress}
-\title{Title}
+\title{write progress to the screen with time elapsed}
 \usage{
 write_progress(text_to_cat, time_start, type_print = "cat")
 }
@@ -10,5 +10,5 @@ write_progress(text_to_cat, time_start, type_print = "cat")
 \item{type_print}{}
 }
 \description{
-Title
+write progress to the screen with time elapsed
 }

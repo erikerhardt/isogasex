@@ -1,4 +1,6 @@
-#' Title
+#' Delta_i simple for gm, predicted discrimination including boundary layer effects but not decarboxylation effects
+#'
+#' \deqn{Delta_i_simple_for_gm = a_b * ((pa - ps) / pa) + a*((ps - pi) / pa) + b * (pi / pa)}
 #'
 #' @param a
 #' @param b
@@ -7,7 +9,7 @@
 #' @param ps
 #' @param pi
 #'
-#' @return
+#' @return Delta_i_simple_for_gm
 #' @export
 #'
 #' @examples

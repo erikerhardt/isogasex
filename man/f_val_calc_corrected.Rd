@@ -2,14 +2,17 @@
 % Please edit documentation in R/f_val_calc_corrected.R
 \name{f_val_calc_corrected}
 \alias{f_val_calc_corrected}
-\title{Title}
+\title{corrected (Corrected 12C, Corrected 13C)}
 \usage{
-f_val_calc_corrected(obs.12C, obs.13C, gain_12C, gain_13C, offset_12C,
+f_val_calc_corrected(obs_12C, obs_13C, gain_12C, gain_13C, offset_12C,
   offset_13C)
 }
 \arguments{
 \item{offset_13C}{}
 }
+\value{
+corrected 12C and 13C
+}
 \description{
-Title
+\deqn{corrected = (obs * gain) + offset}
 }

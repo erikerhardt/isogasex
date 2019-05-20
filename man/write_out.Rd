@@ -2,7 +2,7 @@
 % Please edit documentation in R/write_out.R
 \name{write_out}
 \alias{write_out}
-\title{Title}
+\title{write progress to the screen}
 \usage{
 write_out(text_to_cat)
 }
@@ -10,5 +10,5 @@ write_out(text_to_cat)
 \item{text_to_cat}{}
 }
 \description{
-Title
+write progress to the screen
 }

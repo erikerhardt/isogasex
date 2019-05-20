@@ -2,13 +2,16 @@
 % Please edit documentation in R/get_data.R
 \name{get_data}
 \alias{get_data}
-\title{Title}
+\title{Get data from Excel spreadsheet}
 \usage{
 get_data(filename)
 }
 \arguments{
 \item{filename}{}
 }
+\value{
+DATA
+}
 \description{
-Title
+Read Excel template with \code{gdata} \code{read.xls} using perl.
 }

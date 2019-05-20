@@ -2,13 +2,22 @@
 % Please edit documentation in R/f_val_calc_delta_13C_Assim.R
 \name{f_val_calc_delta_13C_Assim}
 \alias{f_val_calc_delta_13C_Assim}
-\title{Title}
+\title{delta13C Assimilated, isotopic composition of assimilated sugars}
 \usage{
 f_val_calc_delta_13C_Assim(chamber_delta_o, Delta_obs)
 }
 \arguments{
 \item{Delta_obs}{}
 }
+\value{
+delta_13C_Assim
+}
 \description{
-Title
+d13CA (do-Dobs)/(Dobs+1)  isotopic composition of assimilated sugars
+(Chris did this differently for d13Cs in his paper see following:
+I think this could be calculated for modelling using the equivalent of de instead of do
+i.e. when the leaf modelled is not in a chamber so the air above a leaf is equivalent to the bulk atmosphere)
+}
+\details{
+\deqn{delta_13C_Assim = (chamber_delta_o - Delta_obs) / (Delta_obs + 1)}
 }

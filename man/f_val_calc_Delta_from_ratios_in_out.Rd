@@ -2,7 +2,7 @@
 % Please edit documentation in R/f_val_calc_Delta_from_ratios_in_out.R
 \name{f_val_calc_Delta_from_ratios_in_out}
 \alias{f_val_calc_Delta_from_ratios_in_out}
-\title{Title}
+\title{Delta from ratios in and out?, (Re/Ro)-1, is this really the same?}
 \usage{
 f_val_calc_Delta_from_ratios_in_out(ref.12Ce, ref.13Ce, cham.12Co,
   cham.13Co)
@@ -10,6 +10,13 @@ f_val_calc_Delta_from_ratios_in_out(ref.12Ce, ref.13Ce, cham.12Co,
 \arguments{
 \item{cham.13Co}{}
 }
+\value{
+Delta_from_ratios_in_out
+}
 \description{
-Title
+First calculates R_ref and R_cham with \code{\link{f_val_calc_isotope_ratio}}
+}
+\details{
+\deqn{Delta_from_ratios_in_out <- (R_ref / R_cham) - 1}
+this quantity is not in per mil
 }

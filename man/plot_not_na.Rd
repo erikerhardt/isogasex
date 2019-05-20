@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_not_na.R
 \name{plot_not_na}
 \alias{plot_not_na}
-\title{Title}
+\title{if no data to plot, plot a dummy box (for when certain Licor columns are not collected)}
 \usage{
 plot_not_na(x_time, y_var, pch = 20, type, cex = 0.1, xlab = "",
   ylab, main)
@@ -10,6 +10,9 @@ plot_not_na(x_time, y_var, pch = 20, type, cex = 0.1, xlab = "",
 \arguments{
 \item{main}{}
 }
+\value{
+plot_not_na_val
+}
 \description{
-Title
+If no data to plot, returns a "no data" (0,0) point as plot place holder.
 }

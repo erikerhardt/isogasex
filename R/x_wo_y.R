@@ -1,9 +1,9 @@
-#' Title
+#' x without y
 #'
 #' @param x
 #' @param y
 #'
-#' @return
+#' @return x without y
 #' @export
 #'
 #' @examples

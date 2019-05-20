@@ -2,7 +2,7 @@
 % Please edit documentation in R/extract_cycle_timing.R
 \name{extract_cycle_timing}
 \alias{extract_cycle_timing}
-\title{Title}
+\title{Cycle timing}
 \usage{
 extract_cycle_timing(TDL, TDL_cycle, TDL_site_timing_filename)
 }
@@ -10,5 +10,5 @@ extract_cycle_timing(TDL, TDL_cycle, TDL_site_timing_filename)
 \item{TDL_site_timing_filename}{}
 }
 \description{
-Title
+Write cycle timing to the timing file.
 }

@@ -1,10 +1,14 @@
-#' Title
+#' Delta, observed discrimination
+#'
+#' \deqn{temp_xidode = xi * (chamber_delta_o - reference_delta_e)}
+#'
+#' \deqn{Delta_obs = temp_xidode / (1 + chamber_delta_o - temp_xidode)}
 #'
 #' @param reference_delta_e
 #' @param chamber_delta_o
 #' @param xi
 #'
-#' @return
+#' @return Delta_obs
 #' @export
 #'
 #' @examples
