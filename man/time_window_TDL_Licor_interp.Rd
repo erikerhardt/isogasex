@@ -4,7 +4,7 @@
 \alias{time_window_TDL_Licor_interp}
 \title{Title}
 \usage{
-time_window_TDL_Licor_interp(TDL, Licor, TDL.Licor.times, sw)
+time_window_TDL_Licor_interp(TDL, Licor, TDL_Licor_times, sw)
 }
 \arguments{
 \item{sw}{}

@@ -4,10 +4,10 @@
 \alias{write_CI_TDL_file}
 \title{Title}
 \usage{
-write_CI_TDL_file(val, TDL.cycle, output.CI.TDL.fn)
+write_CI_TDL_file(val, TDL_cycle, output_CI_TDL_fn)
 }
 \arguments{
-\item{output.CI.TDL.fn}{}
+\item{output_CI_TDL_fn}{}
 }
 \description{
 Title

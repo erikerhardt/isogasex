@@ -1,11 +1,11 @@
 #' Title
 #'
-#' @param true.value.hi.12C
-#' @param true.value.hi.13C
-#' @param gain.12C
-#' @param gain.13C
-#' @param cal.tank.hi.12C
-#' @param cal.tank.hi.13C
+#' @param true_value_hi_12C
+#' @param true_value_hi_13C
+#' @param gain_12C
+#' @param gain_13C
+#' @param cal_tank_hi_12C
+#' @param cal_tank_hi_13C
 #'
 #' @return
 #' @export
@@ -14,26 +14,26 @@
 f_val_calc_offset <-
 function# offset (12C Offset, 13C Offset) using hi tank
 ###
-(true.value.hi.12C
+(true_value_hi_12C
 ###
-, true.value.hi.13C
+, true_value_hi_13C
 ###
-, gain.12C
+, gain_12C
 ###
-, gain.13C
+, gain_13C
 ###
-, cal.tank.hi.12C
+, cal_tank_hi_12C
 ###
-, cal.tank.hi.13C
+, cal_tank_hi_13C
 ###
 )
 {
   offset <- as.list(new.env());  # create a list to return with data
 
   ##details<<
-  ##\deqn{offset = true.value.hi - (gain * cal.tank.hi)}
-  offset$offset.12C <- true.value.hi.12C - (gain.12C * cal.tank.hi.12C);
-  offset$offset.13C <- true.value.hi.13C - (gain.13C * cal.tank.hi.13C);
+  ##\deqn{offset = true_value_hi - (gain * cal.tank_hi)}
+  offset$offset_12C <- true_value_hi_12C - (gain_12C * cal_tank_hi_12C);
+  offset$offset_13C <- true_value_hi_13C - (gain_13C * cal_tank_hi_13C);
 
   return( offset );
   ### offset for 12C and 13C

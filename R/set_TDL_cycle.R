@@ -1,36 +1,36 @@
 #' Title
 #'
-#' @param TDL.cycle
+#' @param TDL_cycle
 #'
 #' @return
 #' @export
 #'
 #' @examples
 set_TDL_cycle <-
-function# TDL.cycle variables
+function# TDL_cycle variables
 ###
-(TDL.cycle
+(TDL_cycle
 ###
 )
 {
   ##details<<
-  ## \code{last.n.obs.*} is the number of observations to take to be \code{seconds.*} long.
+  ## \code{last_n_obs.*} is the number of observations to take to be \code{seconds.*} long.
 
-          # last.n.obs is the number of observations to take to be seconds.* long
-  TDL.cycle$last.n.obs.tank.hi      <- TDL.cycle$Hz * TDL.cycle$seconds.tank.hi  ;
-  TDL.cycle$last.n.obs.tank.low     <- TDL.cycle$Hz * TDL.cycle$seconds.tank.low ;
-  TDL.cycle$last.n.obs.reference    <- TDL.cycle$Hz * TDL.cycle$seconds.reference;
-  TDL.cycle$last.n.obs.chamber      <- TDL.cycle$Hz * TDL.cycle$seconds.chamber  ;
-  TDL.cycle$first.n.last.skip.chamber<- ceiling(TDL.cycle$Hz * TDL.cycle$seconds.exclude.first.chamber / TDL.cycle$last.n.obs.chamber); # number of last.list groups to skip as chamber equilbrates from reference
-  TDL.cycle$table <-
+          # last_n_obs is the number of observations to take to be seconds.* long
+  TDL_cycle$last_n_obs_tank_hi      <- TDL_cycle$Hz * TDL_cycle$seconds_tank_hi  ;
+  TDL_cycle$last_n_obs_tank_low     <- TDL_cycle$Hz * TDL_cycle$seconds_tank_low ;
+  TDL_cycle$last_n_obs_reference    <- TDL_cycle$Hz * TDL_cycle$seconds_reference;
+  TDL_cycle$last_n_obs_chamber      <- TDL_cycle$Hz * TDL_cycle$seconds_chamber  ;
+  TDL_cycle$first_n_last_skip_chamber<- ceiling(TDL_cycle$Hz * TDL_cycle$seconds_exclude_first_chamber / TDL_cycle$last_n_obs_chamber); # number of last_list groups to skip as chamber equilbrates from reference
+  TDL_cycle$table <-
     matrix(c(
-       TDL.cycle$number.tank.hi     ,TDL.cycle$number.tank.low     ,TDL.cycle$number.reference     ,TDL.cycle$number.chamber
-      ,TDL.cycle$last.n.obs.tank.hi ,TDL.cycle$last.n.obs.tank.low ,TDL.cycle$last.n.obs.reference ,TDL.cycle$last.n.obs.chamber
+       TDL_cycle$number_tank_hi     ,TDL_cycle$number_tank_low     ,TDL_cycle$number_reference     ,TDL_cycle$number_chamber
+      ,TDL_cycle$last_n_obs_tank_hi ,TDL_cycle$last_n_obs_tank_low ,TDL_cycle$last_n_obs_reference ,TDL_cycle$last_n_obs_chamber
       ),ncol=2)
-  TDL.cycle$table.name <- c(TDL.cycle$name.tank.hi       ,TDL.cycle$name.tank.low       ,TDL.cycle$name.reference       ,TDL.cycle$name.chamber);
-  colnames(TDL.cycle$table) <- c("site","last.n.obs"); # name columns
+  TDL_cycle$table_name <- c(TDL_cycle$name_tank_hi       ,TDL_cycle$name_tank_low       ,TDL_cycle$name_reference       ,TDL_cycle$name_chamber);
+  colnames(TDL_cycle$table) <- c("site","last_n_obs"); # name columns
 
-  return( TDL.cycle );
-  ### TDL.cycle
+  return( TDL_cycle );
+  ### TDL_cycle
 }
 

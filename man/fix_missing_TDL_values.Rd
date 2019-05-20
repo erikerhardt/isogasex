@@ -4,10 +4,10 @@
 \alias{fix_missing_TDL_values}
 \title{Title}
 \usage{
-fix_missing_TDL_values(TDL, bad.ind)
+fix_missing_TDL_values(TDL, bad_ind)
 }
 \arguments{
-\item{bad.ind}{}
+\item{bad_ind}{}
 }
 \description{
 Title

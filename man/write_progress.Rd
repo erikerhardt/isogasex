@@ -4,10 +4,10 @@
 \alias{write_progress}
 \title{Title}
 \usage{
-write_progress(text.to.cat, time.start, type.print = "cat")
+write_progress(text_to_cat, time_start, type_print = "cat")
 }
 \arguments{
-\item{type.print}{}
+\item{type_print}{}
 }
 \description{
 Title

@@ -4,10 +4,10 @@
 \alias{calc_mean_TDL}
 \title{Title}
 \usage{
-calc_mean_TDL(TDL, TDL.cycle)
+calc_mean_TDL(TDL, TDL_cycle)
 }
 \arguments{
-\item{TDL.cycle}{}
+\item{TDL_cycle}{}
 }
 \description{
 Title

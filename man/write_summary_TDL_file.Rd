@@ -4,10 +4,10 @@
 \alias{write_summary_TDL_file}
 \title{Title}
 \usage{
-write_summary_TDL_file(val, TDL.cycle, output.summary.TDL.fn)
+write_summary_TDL_file(val, TDL_cycle, output_summary_TDL_fn)
 }
 \arguments{
-\item{output.summary.TDL.fn}{}
+\item{output_summary_TDL_fn}{}
 }
 \description{
 Title

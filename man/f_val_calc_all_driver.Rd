@@ -4,7 +4,7 @@
 \alias{f_val_calc_all_driver}
 \title{Title}
 \usage{
-f_val_calc_all_driver(val.TDL, val.Licor, val.const, sw)
+f_val_calc_all_driver(val_TDL, val_Licor, val_const, sw)
 }
 \arguments{
 \item{sw}{}

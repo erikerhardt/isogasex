@@ -4,7 +4,7 @@
 \alias{read_TDL}
 \title{Title}
 \usage{
-read_TDL(TDL.fn, sw)
+read_TDL(TDL_fn, sw)
 }
 \arguments{
 \item{sw}{}

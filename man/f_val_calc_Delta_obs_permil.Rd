@@ -4,7 +4,7 @@
 \alias{f_val_calc_Delta_obs_permil}
 \title{Title}
 \usage{
-f_val_calc_Delta_obs_permil(reference.delta.e, chamber.delta.o, xi)
+f_val_calc_Delta_obs_permil(reference_delta_e, chamber_delta_o, xi)
 }
 \arguments{
 \item{xi}{}

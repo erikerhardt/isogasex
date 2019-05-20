@@ -4,11 +4,11 @@
 \alias{f_plot_CI_individuals_driver}
 \title{Title}
 \usage{
-f_plot_CI_individuals_driver(val, R.bootstrap, plot.format.list,
-  output.fn.prefix)
+f_plot_CI_individuals_driver(val, R_bootstrap, plot_format_list,
+  output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

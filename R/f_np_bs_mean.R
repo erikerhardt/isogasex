@@ -1,9 +1,9 @@
 #' Title
 #'
 #' @param x
-#' @param first.ind
-#' @param last.ind
-#' @param n.sam
+#' @param first_ind
+#' @param last_ind
+#' @param n_sam
 #' @param n
 #'
 #' @return
@@ -15,11 +15,11 @@ function# calculate NP BS mean
 ###
 (x
 ###
-, first.ind
+, first_ind
 ###
-, last.ind
+, last_ind
 ###
-, n.sam
+, n_sam
 ###
 , n
 ###
@@ -27,12 +27,12 @@ function# calculate NP BS mean
 {
   ##details<<
   ## Resample from data with replacement, calculating mean of n nonparametric bootstrap resamples.
-  x.mean <- rep(0,n);
-  for (i.bs in 1:n) {
-    x.mean[i.bs] <- mean( sample(x=x[seq(first.ind[i.bs],last.ind[i.bs])], size=n.sam[i.bs], replace=TRUE), na.rm=TRUE);
+  x_mean <- rep(0,n);
+  for (i_bs in 1:n) {
+    x_mean[i_bs] <- mean( sample(x=x[seq(first_ind[i_bs],last_ind[i_bs])], size=n_sam[i_bs], replace=TRUE), na.rm=TRUE);
   };
 
-  return( x.mean );
-  ### x.mean
+  return( x_mean );
+  ### x_mean
 }
 

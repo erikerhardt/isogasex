@@ -4,10 +4,10 @@
 \alias{write_out}
 \title{Title}
 \usage{
-write_out(text.to.cat)
+write_out(text_to_cat)
 }
 \arguments{
-\item{text.to.cat}{}
+\item{text_to_cat}{}
 }
 \description{
 Title

@@ -4,11 +4,11 @@
 \alias{plot_Licor_flow_press}
 \title{Title}
 \usage{
-plot_Licor_flow_press(Licor.flow.uin, Licor.H2OR.xin, Licor.La,
-  Licor.Atm.press, x.time, plot.format.list, output.fn.prefix)
+plot_Licor_flow_press(Licor_flow_uin, Licor_H2OR_xin, Licor_La,
+  Licor_Atm_press, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

@@ -4,10 +4,10 @@
 \alias{last_TDL_index_for_means}
 \title{Title}
 \usage{
-last_TDL_index_for_means(TDL, TDL.cycle)
+last_TDL_index_for_means(TDL, TDL_cycle)
 }
 \arguments{
-\item{TDL.cycle}{}
+\item{TDL_cycle}{}
 }
 \description{
 Title

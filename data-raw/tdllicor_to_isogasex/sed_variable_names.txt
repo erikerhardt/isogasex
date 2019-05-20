@@ -1,0 +1,1010 @@
+# Rename function names with underscores instead of periods
+# CD C:\Dropbox\StatAcumen\consult\Authorship\2009_DavidHanson_Isotopes\R-package\isogasex\R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt align_TDL_Licor_times.R                                > align_TDL_Licor_times_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt assign_variables.R                                     > assign_variables_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt calc_mean_Licor.R                                      > calc_mean_Licor_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt calc_mean_TDL.R                                        > calc_mean_TDL_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt calc_mean_TDL_interp_tanks_ref.R                       > calc_mean_TDL_interp_tanks_ref_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt extract_cycle_timing.R                                 > extract_cycle_timing_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_bs_iter_TDL_Licor.R                                  > f_bs_iter_TDL_Licor_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_bs_save_TDL_Licor.R                                  > f_bs_save_TDL_Licor_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_init_bs_matrix.R                                     > f_init_bs_matrix_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_np_bs_mean.R                                         > f_np_bs_mean_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_par_bs_mean.R                                        > f_par_bs_mean_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_plot_CI_individuals.R                                > f_plot_CI_individuals_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_plot_CI_individuals_driver.R                         > f_plot_CI_individuals_driver_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_bs_CI.R                                          > f_val_bs_CI_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_bs_CI_endpoints.R                                > f_val_bs_CI_endpoints_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_bs_matrix.R                                      > f_val_bs_matrix_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_bs_matrix_check.R                                > f_val_bs_matrix_check_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_all_driver.R                                > f_val_calc_all_driver_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_corrected.R                                 > f_val_calc_corrected_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_Cs.R                                        > f_val_calc_Cs_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_delta_13C_Resp.R                            > f_val_calc_delta_13C_out_Resp_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_delta_13C_Assim.R                           > f_val_calc_delta_13C_Assim_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_Delta_from_A_ratio.R                        > f_val_calc_Delta_from_A_ratio_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_Delta_from_ratios_in_out.R                  > f_val_calc_Delta_from_ratios_in_out_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_Delta_i_complex_for_gm.R                    > f_val_calc_Delta_i_complex_for_gm_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_Delta_i_simple_for_gm.R                     > f_val_calc_Delta_i_simple_for_gm_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_Delta_i_simple_for_modeling.R               > f_val_calc_Delta_i_simple_for_modeling_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_Delta_obs.R                                 > f_val_calc_Delta_obs_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_Delta_obs_permil.R                          > f_val_calc_Delta_obs_permil_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_delta_permil.R                              > f_val_calc_delta_permil_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_delta_proportion.R                          > f_val_calc_delta_proportion_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_flow_adjusted.R                             > f_val_calc_flow_adjusted_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_gain.R                                      > f_val_calc_gain_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_gm_point_complex.R                          > f_val_calc_gm_point_complex_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_gm_point_simple.R                           > f_val_calc_gm_point_simple_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_gtc.R                                       > f_val_calc_gtc_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_isotope_ratio.R                             > f_val_calc_isotope_ratio_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_offset.R                                    > f_val_calc_offset_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_p.R                                         > f_val_calc_p_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_pc_using_complex_Delta_full_model.R         > f_val_calc_pc_using_complex_Delta_full_model_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_pc_using_complex_Delta_no_decarboxylation.R > f_val_calc_pc_using_complex_Delta_no_decarboxylation_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_pc_using_gm.R                               > f_val_calc_pc_using_gm_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_pc_using_simple_Delta_for_gm.R              > f_val_calc_pc_using_simple_Delta_for_gm_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_pc_using_simple_Delta_for_modeling.R        > f_val_calc_pc_using_simple_Delta_for_modeling_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_pp.R                                        > f_val_calc_pp_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_TDL_A_photosynthesis.R                      > f_val_calc_TDL_A_photosynthesis_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_total_mol_fraction_CO2.R                    > f_val_calc_total_mol_fraction_CO2_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt f_val_calc_xi.R                                        > f_val_calc_xi_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt fix_missing_TDL_values.R                               > fix_missing_TDL_values_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt get_data.R                                             > get_data_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt hello.R                                                > hello_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt interp_TDL_tanks_ref.R                                 > interp_TDL_tanks_ref_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt isogasex.R                                             > isogasex_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt isogasex_logo.R                                        > isogasex_logo_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt last_TDL_index_for_means.R                             > last_TDL_index_for_means_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt move_plot_files.R                                      > move_plot_files_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt my_reg_fit.R                                           > my_reg_fit_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt my_reg_pred.R                                          > my_reg_pred_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_A_photosynthesis.R                                > plot_A_photosynthesis_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_Ca_Cs.R                                           > plot_Ca_Cs_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_Cc_total.R                                        > plot_Cc_total_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_Ci_pi.R                                           > plot_Ci_pi_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_corrected_total_diff_xi.R                         > plot_corrected_total_diff_xi_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_data_cycles.R                                     > plot_data_cycles_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_delta_Delta_p_out.R                               > plot_delta_Delta_p_out_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_Delta_i.R                                         > plot_Delta_i_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_gain_offset.R                                     > plot_gain_offset_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_gbc_gsc_gtc.R                                     > plot_gbc_gsc_gtc_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_gm.R                                              > plot_gm_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_Licor_flow_press.R                                > plot_Licor_flow_press_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_Licor_temp_light.R                                > plot_Licor_temp_light_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_not_na.R                                          > plot_not_na_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_pa_ps.R                                           > plot_pa_ps_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_pc_simple_complex.R                               > plot_pc_simple_complex_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_pc_total.R                                        > plot_pc_total_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_pi_pa.R                                           > plot_pi_pa_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt plot_val_calc_sum.R                                    > plot_val_calc_sum_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt progress_time.R                                        > progress_time_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt read_input_settings.R                                  > read_input_settings_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt read_Licor.R                                           > read_Licor_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt read_TDL_out.R                                         > read_TDL_out_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt s_plot_settings_begin_end.R                            > s_plot_settings_begin_end_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt set_TDL_cycle.R                                        > set_TDL_cycle_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt time_window_TDL_Licor_interp.R                         > time_window_TDL_Licor_interp_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt utils-pipe.R                                           > utils-pipe_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt val_TDL_Licor_variables.R                              > val_TDL_Licor_variables_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt write_all_Calc_file_out.R                              > write_all_Calc_file_out_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt write_CI_Calc_file.R                                   > write_CI_Calc_file_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt write_CI_Licor_file.R                                  > write_CI_Licor_file_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt write_CI_TDL_file.R                                    > write_CI_TDL_file_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt write_out.R                                            > write_out_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt write_progress.R                                       > write_progress_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt write_summary_Calc_file.R                              > write_summary_Calc_file_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt write_summary_Licor_file.R                             > write_summary_Licor_file_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt write_summary_TDL_file.R                               > write_summary_TDL_file_out.R
+# sed -f ..\data-raw\tdllicor_to_isogasex\sed_variable_names.txt x_wo_y.R                                               > x_wo_y_out.R
+#
+#
+# del align_TDL_Licor_times.R
+# del assign_variables.R
+# del calc_mean_Licor.R
+# del calc_mean_TDL.R
+# del calc_mean_TDL_interp_tanks_ref.R
+# del extract_cycle_timing.R
+# del f_bs_iter_TDL_Licor.R
+# del f_bs_save_TDL_Licor.R
+# del f_init_bs_matrix.R
+# del f_np_bs_mean.R
+# del f_par_bs_mean.R
+# del f_plot_CI_individuals.R
+# del f_plot_CI_individuals_driver.R
+# del f_val_bs_CI.R
+# del f_val_bs_CI_endpoints.R
+# del f_val_bs_matrix.R
+# del f_val_bs_matrix_check.R
+# del f_val_calc_all_driver.R
+# del f_val_calc_corrected.R
+# del f_val_calc_Cs.R
+# del f_val_calc_delta_13C_Resp.R
+# del f_val_calc_delta_13C_Assim.R
+# del f_val_calc_Delta_from_A_ratio.R
+# del f_val_calc_Delta_from_ratios_in_out.R
+# del f_val_calc_Delta_i_complex_for_gm.R
+# del f_val_calc_Delta_i_simple_for_gm.R
+# del f_val_calc_Delta_i_simple_for_modeling.R
+# del f_val_calc_Delta_obs.R
+# del f_val_calc_Delta_obs_permil.R
+# del f_val_calc_delta_permil.R
+# del f_val_calc_delta_proportion.R
+# del f_val_calc_flow_adjusted.R
+# del f_val_calc_gain.R
+# del f_val_calc_gm_point_complex.R
+# del f_val_calc_gm_point_simple.R
+# del f_val_calc_gtc.R
+# del f_val_calc_isotope_ratio.R
+# del f_val_calc_offset.R
+# del f_val_calc_p.R
+# del f_val_calc_pc_using_complex_Delta_full_model.R
+# del f_val_calc_pc_using_complex_Delta_no_decarboxylation.R
+# del f_val_calc_pc_using_gm.R
+# del f_val_calc_pc_using_simple_Delta_for_gm.R
+# del f_val_calc_pc_using_simple_Delta_for_modeling.R
+# del f_val_calc_pp.R
+# del f_val_calc_TDL_A_photosynthesis.R
+# del f_val_calc_total_mol_fraction_CO2.R
+# del f_val_calc_xi.R
+# del fix_missing_TDL_values.R
+# del get_data.R
+# del hello.R
+# del interp_TDL_tanks_ref.R
+# del isogasex.R
+# del isogasex_logo.R
+# del last_TDL_index_for_means.R
+# del move_plot_files.R
+# del my_reg_fit.R
+# del my_reg_pred.R
+# del plot_A_photosynthesis.R
+# del plot_Ca_Cs.R
+# del plot_Cc_total.R
+# del plot_Ci_pi.R
+# del plot_corrected_total_diff_xi.R
+# del plot_data_cycles.R
+# del plot_delta_Delta_p_out.R
+# del plot_Delta_i.R
+# del plot_gain_offset.R
+# del plot_gbc_gsc_gtc.R
+# del plot_gm.R
+# del plot_Licor_flow_press.R
+# del plot_Licor_temp_light.R
+# del plot_not_na.R
+# del plot_pa_ps.R
+# del plot_pc_simple_complex.R
+# del plot_pc_total.R
+# del plot_pi_pa.R
+# del plot_val_calc_sum.R
+# del progress_time.R
+# del read_input_settings.R
+# del read_Licor.R
+# del read_TDL_out.R
+# del s_plot_settings_begin_end.R
+# del set_TDL_cycle.R
+# del time_window_TDL_Licor_interp.R
+# del utils-pipe.R
+# del val_TDL_Licor_variables.R
+# del write_all_Calc_file_out.R
+# del write_CI_Calc_file.R
+# del write_CI_Licor_file.R
+# del write_CI_TDL_file.R
+# del write_out.R
+# del write_progress.R
+# del write_summary_Calc_file.R
+# del write_summary_Licor_file.R
+# del write_summary_TDL_file.R
+# del x_wo_y.R
+#
+#
+# ren align_TDL_Licor_times_out.R                                       align_TDL_Licor_times.R
+# ren assign_variables_out.R                                            assign_variables.R
+# ren calc_mean_Licor_out.R                                             calc_mean_Licor.R
+# ren calc_mean_TDL_out.R                                               calc_mean_TDL.R
+# ren calc_mean_TDL_interp_tanks_ref_out.R                              calc_mean_TDL_interp_tanks_ref.R
+# ren extract_cycle_timing_out.R                                        extract_cycle_timing.R
+# ren f_bs_iter_TDL_Licor_out.R                                         f_bs_iter_TDL_Licor.R
+# ren f_bs_save_TDL_Licor_out.R                                         f_bs_save_TDL_Licor.R
+# ren f_init_bs_matrix_out.R                                            f_init_bs_matrix.R
+# ren f_np_bs_mean_out.R                                                f_np_bs_mean.R
+# ren f_par_bs_mean_out.R                                               f_par_bs_mean.R
+# ren f_plot_CI_individuals_out.R                                       f_plot_CI_individuals.R
+# ren f_plot_CI_individuals_driver_out.R                                f_plot_CI_individuals_driver.R
+# ren f_val_bs_CI_out.R                                                 f_val_bs_CI.R
+# ren f_val_bs_CI_endpoints_out.R                                       f_val_bs_CI_endpoints.R
+# ren f_val_bs_matrix_out.R                                             f_val_bs_matrix.R
+# ren f_val_bs_matrix_check_out.R                                       f_val_bs_matrix_check.R
+# ren f_val_calc_all_driver_out.R                                       f_val_calc_all_driver.R
+# ren f_val_calc_corrected_out.R                                        f_val_calc_corrected.R
+# ren f_val_calc_Cs_out.R                                               f_val_calc_Cs.R
+# ren f_val_calc_delta_13C_Resp_out.R                                   f_val_calc_delta_13C_Resp.R
+# ren f_val_calc_delta_13C_Assim_out.R                                  f_val_calc_delta_13C_Assim.R
+# ren f_val_calc_Delta_from_A_ratio_out.R                               f_val_calc_Delta_from_A_ratio.R
+# ren f_val_calc_Delta_from_ratios_in_out_out.R                         f_val_calc_Delta_from_ratios_in_out.R
+# ren f_val_calc_Delta_i_complex_for_gm_out.R                           f_val_calc_Delta_i_complex_for_gm.R
+# ren f_val_calc_Delta_i_simple_for_gm_out.R                            f_val_calc_Delta_i_simple_for_gm.R
+# ren f_val_calc_Delta_i_simple_for_modeling_out.R                      f_val_calc_Delta_i_simple_for_modeling.R
+# ren f_val_calc_Delta_obs_out.R                                        f_val_calc_Delta_obs.R
+# ren f_val_calc_Delta_obs_permil_out.R                                 f_val_calc_Delta_obs_permil.R
+# ren f_val_calc_delta_permil_out.R                                     f_val_calc_delta_permil.R
+# ren f_val_calc_delta_proportion_out.R                                 f_val_calc_delta_proportion.R
+# ren f_val_calc_flow_adjusted_out.R                                    f_val_calc_flow_adjusted.R
+# ren f_val_calc_gain_out.R                                             f_val_calc_gain.R
+# ren f_val_calc_gm_point_complex_out.R                                 f_val_calc_gm_point_complex.R
+# ren f_val_calc_gm_point_simple_out.R                                  f_val_calc_gm_point_simple.R
+# ren f_val_calc_gtc_out.R                                              f_val_calc_gtc.R
+# ren f_val_calc_isotope_ratio_out.R                                    f_val_calc_isotope_ratio.R
+# ren f_val_calc_offset_out.R                                           f_val_calc_offset.R
+# ren f_val_calc_p_out.R                                                f_val_calc_p.R
+# ren f_val_calc_pc_using_complex_Delta_full_model_out.R                f_val_calc_pc_using_complex_Delta_full_model.R
+# ren f_val_calc_pc_using_complex_Delta_no_decarboxylation_out.R        f_val_calc_pc_using_complex_Delta_no_decarboxylation.R
+# ren f_val_calc_pc_using_gm_out.R                                      f_val_calc_pc_using_gm.R
+# ren f_val_calc_pc_using_simple_Delta_for_gm_out.R                     f_val_calc_pc_using_simple_Delta_for_gm.R
+# ren f_val_calc_pc_using_simple_Delta_for_modeling_out.R               f_val_calc_pc_using_simple_Delta_for_modeling.R
+# ren f_val_calc_pp_out.R                                               f_val_calc_pp.R
+# ren f_val_calc_TDL_A_photosynthesis_out.R                             f_val_calc_TDL_A_photosynthesis.R
+# ren f_val_calc_total_mol_fraction_CO2_out.R                           f_val_calc_total_mol_fraction_CO2.R
+# ren f_val_calc_xi_out.R                                               f_val_calc_xi.R
+# ren fix_missing_TDL_values_out.R                                      fix_missing_TDL_values.R
+# ren get_data_out.R                                                    get_data.R
+# ren hello_out.R                                                       hello.R
+# ren interp_TDL_tanks_ref_out.R                                        interp_TDL_tanks_ref.R
+# ren isogasex_out.R                                                    isogasex.R
+# ren isogasex_logo_out.R                                               isogasex_logo.R
+# ren last_TDL_index_for_means_out.R                                    last_TDL_index_for_means.R
+# ren move_plot_files_out.R                                             move_plot_files.R
+# ren my_reg_fit_out.R                                                  my_reg_fit.R
+# ren my_reg_pred_out.R                                                 my_reg_pred.R
+# ren plot_A_photosynthesis_out.R                                       plot_A_photosynthesis.R
+# ren plot_Ca_Cs_out.R                                                  plot_Ca_Cs.R
+# ren plot_Cc_total_out.R                                               plot_Cc_total.R
+# ren plot_Ci_pi_out.R                                                  plot_Ci_pi.R
+# ren plot_corrected_total_diff_xi_out.R                                plot_corrected_total_diff_xi.R
+# ren plot_data_cycles_out.R                                            plot_data_cycles.R
+# ren plot_delta_Delta_p_out_out.R                                      plot_delta_Delta_p_out.R
+# ren plot_Delta_i_out.R                                                plot_Delta_i.R
+# ren plot_gain_offset_out.R                                            plot_gain_offset.R
+# ren plot_gbc_gsc_gtc_out.R                                            plot_gbc_gsc_gtc.R
+# ren plot_gm_out.R                                                     plot_gm.R
+# ren plot_Licor_flow_press_out.R                                       plot_Licor_flow_press.R
+# ren plot_Licor_temp_light_out.R                                       plot_Licor_temp_light.R
+# ren plot_not_na_out.R                                                 plot_not_na.R
+# ren plot_pa_ps_out.R                                                  plot_pa_ps.R
+# ren plot_pc_simple_complex_out.R                                      plot_pc_simple_complex.R
+# ren plot_pc_total_out.R                                               plot_pc_total.R
+# ren plot_pi_pa_out.R                                                  plot_pi_pa.R
+# ren plot_val_calc_sum_out.R                                           plot_val_calc_sum.R
+# ren progress_time_out.R                                               progress_time.R
+# ren read_input_settings_out.R                                         read_input_settings.R
+# ren read_Licor_out.R                                                  read_Licor.R
+# ren read_TDL_out_out.R                                                read_TDL_out.R
+# ren s_plot_settings_begin_end_out.R                                   s_plot_settings_begin_end.R
+# ren set_TDL_cycle_out.R                                               set_TDL_cycle.R
+# ren time_window_TDL_Licor_interp_out.R                                time_window_TDL_Licor_interp.R
+# ren utils-pipe_out.R                                                  utils-pipe.R
+# ren val_TDL_Licor_variables_out.R                                     val_TDL_Licor_variables.R
+# ren write_all_Calc_file_out_out.R                                     write_all_Calc_file_out.R
+# ren write_CI_Calc_file_out.R                                          write_CI_Calc_file.R
+# ren write_CI_Licor_file_out.R                                         write_CI_Licor_file.R
+# ren write_CI_TDL_file_out.R                                           write_CI_TDL_file.R
+# ren write_out_out.R                                                   write_out.R
+# ren write_progress_out.R                                              write_progress.R
+# ren write_summary_Calc_file_out.R                                     write_summary_Calc_file.R
+# ren write_summary_Licor_file_out.R                                    write_summary_Licor_file.R
+# ren write_summary_TDL_file_out.R                                      write_summary_TDL_file.R
+# ren x_wo_y_out.R                                                      x_wo_y.R
+
+s/chamber[.]Totalpc[.]using[.]complex[.]Delta[.]no[.]decarboxylation[.]CI[.]L/chamber_Totalpc_using_complex_Delta_no_decarboxylation_CI_L/g
+s/chamber[.]Totalpc[.]using[.]complex[.]Delta[.]no[.]decarboxylation/chamber_Totalpc_using_complex_Delta_no_decarboxylation/g
+s/val[.]const[.]override[.]Licor[.]boundary[.]layer[.]cond[.]to[.]water/val_const_override_Licor_boundary_layer_cond_to_water/g
+s/chamber[.]Totalpc[.]using[.]simple[.]Delta[.]for[.]modeling[.]CI[.]L/chamber_Totalpc_using_simple_Delta_for_modeling_CI_L/g
+s/chamber[.]Totalpc[.]using[.]complex[.]Delta[.]full[.]model[.]CI[.]L/chamber_Totalpc_using_complex_Delta_full_model_CI_L/g
+s/chamber[.]Totalpc[.]using[.]simple[.]Delta[.]for[.]modeling/chamber_Totalpc_using_simple_Delta_for_modeling/g
+s/chamber[.]Totalpc[.]using[.]complex[.]Delta[.]full[.]model/chamber_Totalpc_using_complex_Delta_full_model/g
+s/chamber[.]Totalpc[.]using[.]simple[.]Delta[.]for[.]gm[.]CI[.]L/chamber_Totalpc_using_simple_Delta_for_gm_CI_L/g
+s/chamber[.]Delta[.]i[.]complex[.]for[.]gm_Delta[.]obs[.]CI[.]L/chamber_Delta_i_complex_for_gm_Delta_obs_CI_L/g
+s/chamber[.]Delta[.]i[.]simple[.]for[.]gm_Delta[.]obs[.]CI[.]L/chamber_Delta_i_simple_for_gm_Delta_obs_CI_L/g
+s/chamber[.]Totalpc[.]using[.]simple[.]Delta[.]for[.]gm/chamber_Totalpc_using_simple_Delta_for_gm/g
+s/pc[.]using[.]complex[.]Delta[.]no[.]decarboxylation/pc_using_complex_Delta_no_decarboxylation/g
+s/chamber[.]Delta[.]i[.]complex[.]for[.]gm_Delta[.]obs/chamber_Delta_i_complex_for_gm_Delta_obs/g
+s/chamber[.]Delta[.]i[.]simple[.]for[.]modeling[.]CI[.]L/chamber_Delta_i_simple_for_modeling_CI_L/g
+s/chamber[.]Delta[.]i[.]simple[.]for[.]gm_Delta[.]obs/chamber_Delta_i_simple_for_gm_Delta_obs/g
+s/chamber[.]reference[.]delta[.]diff[.]CoCe[.]CI[.]L/chamber_reference_delta_diff_CoCe_CI_L/g
+s/chamber[.]reference[.]Total[.]diff[.]CeCo[.]CI[.]L/chamber_reference_Total_diff_CeCo_CI_L/g
+s/chamber[.]Delta[.]i[.]complex[.]for[.]gm[.]CI[.]L/chamber_Delta_i_complex_for_gm_CI_L/g
+s/chamber[.]Delta[.]i[.]simple[.]for[.]modeling/chamber_Delta_i_simple_for_modeling/g
+s/chamber[.]reference[.]12[.]diff[.]CeCo[.]CI[.]L/chamber_reference_12_diff_CeCo_CI_L/g
+s/chamber[.]reference[.]13[.]diff[.]CeCo[.]CI[.]L/chamber_reference_13_diff_CeCo_CI_L/g
+s/chamber[.]Delta[.]i[.]simple[.]for[.]gm[.]CI[.]L/chamber_Delta_i_simple_for_gm_CI_L/g
+s/chamber[.]Totalgm[.]point[.]complex[.]CI[.]L/chamber_Totalgm_point_complex_CI_L/g
+s/pc[.]using[.]simple[.]Delta[.]for[.]modeling/pc_using_simple_Delta_for_modeling/g
+s/val[.]const[.]override[.]Licor[.]flow[.]rate/val_const_override_Licor_flow_rate/g
+s/val[.]const[.]override[.]Licor[.]leaf[.]area/val_const_override_Licor_leaf_area/g
+s/chamber[.]reference[.]delta[.]diff[.]CoCe/chamber_reference_delta_diff_CoCe/g
+s/chamber[.]reference[.]Total[.]diff[.]CeCo/chamber_reference_Total_diff_CeCo/g
+s/chamber[.]Totalgm[.]point[.]simple[.]CI[.]L/chamber_Totalgm_point_simple_CI_L/g
+s/pc[.]using[.]complex[.]Delta[.]full[.]model/pc_using_complex_Delta_full_model/g
+s/sites[.]in[.]TDL[.]file[.]NOT[.]in[.]template/sites_in_TDL_file_NOT_in_template/g
+s/sites[.]in[.]template[.]NOT[.]in[.]TDL[.]file/sites_in_template_NOT_in_TDL_file/g
+s/TDL[.]remove[.]first[.]to[.]last[.]subind/TDL_remove_first_to_last_subind/g
+s/val[.]const[.]override[.]Licor[.]StmRat/val_const_override_Licor_StmRat/g
+s/chamber[.]12gm[.]point[.]simple[.]CI[.]L/chamber_12gm_point_simple_CI_L/g
+s/chamber[.]13gm[.]point[.]simple[.]CI[.]L/chamber_13gm_point_simple_CI_L/g
+s/chamber[.]Delta[.]i[.]complex[.]for[.]gm/chamber_Delta_i_complex_for_gm/g
+s/chamber[.]reference[.]12[.]diff[.]CeCo/chamber_reference_12_diff_CeCo/g
+s/chamber[.]reference[.]13[.]diff[.]CeCo/chamber_reference_13_diff_CeCo/g
+s/TDL[.]notrun[.]ind[.]num[.]diff[.]nonone/TDL_notrun_ind_num_diff_nonone/g
+s/chamber[.]Delta[.]i[.]simple[.]for[.]gm/chamber_Delta_i_simple_for_gm/g
+s/chamber[.]Totalgm[.]point[.]complex/chamber_Totalgm_point_complex/g
+s/chamber[.]Totalpc[.]using[.]gm[.]CI[.]L/chamber_Totalpc_using_gm_CI_L/g
+s/Delta[.]from[.]ratios[.]in[.]out[.]CI[.]L/Delta_from_ratios_in_out_CI_L/g
+s/Licor[.]matched[.]with[.]non[.]NA[.]TDL/Licor_matched_with_non_NA_TDL/g
+s/Licor[.]or[.]TDL[.]A[.]photosynthesis/Licor_or_TDL_A_photosynthesis/g
+s/Licor[.]TDL[.]time[.]offset[.]seconds/Licor_TDL_time_offset_seconds/g
+s/seconds[.]exclude[.]first[.]chamber/seconds_exclude_first_chamber/g
+s/val[.]const[.]override[.]Licor[.]H2OS/val_const_override_Licor_H2OS/g
+s/chamber[.]Totalgm[.]point[.]simple/chamber_Totalgm_point_simple/g
+s/pc[.]using[.]simple[.]Delta[.]for[.]gm/pc_using_simple_Delta_for_gm/g
+s/sites[.]in[.]TDL[.]not[.]in[.]template/sites_in_TDL_not_in_template/g
+s/chamber[.]Totalgm[.]to[.]use[.]CI[.]L/chamber_Totalgm_to_use_CI_L/g
+s/chamber[.]Totalpc[.]to[.]use[.]CI[.]L/chamber_Totalpc_to_use_CI_L/g
+s/Delta[.]i[.]simple[.]for[.]modeling/Delta_i_simple_for_modeling/g
+s/Licor[.]A[.]photosynthesis[.]CI[.]L/Licor_A_photosynthesis_CI_L/g
+s/output[.]summary[.]Calc[.]last[.]fn/output_summary_Calc_last_fn/g
+s/selected[.]12A[.]photosynthesis/selected_12A_photosynthesis/g
+s/selected[.]13A[.]photosynthesis/selected_13A_photosynthesis/g
+s/TDL[.]12A[.]photosynthesis[.]CI[.]L/TDL_12A_photosynthesis_CI_L/g
+s/TDL[.]13A[.]photosynthesis[.]CI[.]L/TDL_13A_photosynthesis_CI_L/g
+s/chamber[.]12pc[.]using[.]gm[.]CI[.]L/chamber_12pc_using_gm_CI_L/g
+s/chamber[.]13pc[.]using[.]gm[.]CI[.]L/chamber_13pc_using_gm_CI_L/g
+s/chamber[.]12gm[.]point[.]simple/chamber_12gm_point_simple/g
+s/chamber[.]13gm[.]point[.]simple/chamber_13gm_point_simple/g
+s/first[.]n[.]last[.]skip[.]chamber/first_n_last_skip_chamber/g
+s/selected[.]A[.]photosynthesis/selected_A_photosynthesis/g
+s/TDL[.]A[.]photosynthesis[.]CI[.]L/TDL_A_photosynthesis_CI_L/g
+s/temp[.]Licor[.]time[.]ind[.]first/temp_Licor_time_ind_first/g
+s/chamber[.]Totalpc[.]using[.]gm/chamber_Totalpc_using_gm/g
+s/Delta[.]from[.]ratios[.]in[.]out/Delta_from_ratios_in_out/g
+s/interp[.]reference[.]12[.]CI[.]L/interp_reference_12_CI_L/g
+s/interp[.]reference[.]13[.]CI[.]L/interp_reference_13_CI_L/g
+s/Licor[.]time[.]first[.]decimal/Licor_time_first_decimal/g
+s/Licor[.]time[.]no[.]correction/Licor_time_no_correction/g
+s/TDL[.]site[.]timing[.]filename/TDL_site_timing_filename/g
+s/temp[.]Licor[.]time[.]ind[.]last/temp_Licor_time_ind_last/g
+s/chamber[.]Totalpi_pa[.]CI[.]L/chamber_Totalpi_pa_CI_L/g
+s/Delta[.]from[.]A[.]ratio[.]CI[.]L/Delta_from_A_ratio_CI_L/g
+s/interp[.]tank[.]low[.]12[.]CI[.]L/interp_tank_low_12_CI_L/g
+s/interp[.]tank[.]low[.]13[.]CI[.]L/interp_tank_low_13_CI_L/g
+s/Licor[.]time[.]window[.]first/Licor_time_window_first/g
+s/output[.]summary[.]Licor[.]fn/output_summary_Licor_fn/g
+s/TDL[.]interp[.]summary[.]mean/TDL_interp_summary_mean/g
+s/TDL[.]notrun[.]ind[.]num[.]diff/TDL_notrun_ind_num_diff/g
+s/temp[.]TDL[.]time[.]ind[.]first/temp_TDL_time_ind_first/g
+s/chamber[.]Delta[.]i[.]to[.]use/chamber_Delta_i_to_use/g
+s/chamber[.]Totalgm[.]to[.]use/chamber_Totalgm_to_use/g
+s/chamber[.]Totalpc[.]to[.]use/chamber_Totalpc_to_use/g
+s/Delta[.]i[.]complex[.]for[.]gm/Delta_i_complex_for_gm/g
+s/interp[.]tank[.]hi[.]12[.]CI[.]L/interp_tank_hi_12_CI_L/g
+s/interp[.]tank[.]hi[.]13[.]CI[.]L/interp_tank_hi_13_CI_L/g
+s/Licor[.]A[.]photosynthesis/Licor_A_photosynthesis/g
+s/Licor[.]time[.]window[.]last/Licor_time_window_last/g
+s/output[.]CI[.]Calc[.]last[.]fn/output_CI_Calc_last_fn/g
+s/output[.]summary[.]Calc[.]fn/output_summary_Calc_fn/g
+s/print[.]TDL[.]cycle[.]timing/print_TDL_cycle_timing/g
+s/reference[.]delta[.]e[.]CI[.]L/reference_delta_e_CI_L/g
+s/reference[.]TotalCe[.]CI[.]L/reference_TotalCe_CI_L/g
+s/TDL[.]12A[.]photosynthesis/TDL_12A_photosynthesis/g
+s/TDL[.]13A[.]photosynthesis/TDL_13A_photosynthesis/g
+s/TDL[.]interp[.]summary[.]var/TDL_interp_summary_var/g
+s/temp[.]TDL[.]time[.]ind[.]last/temp_TDL_time_ind_last/g
+s/total[.]mol[.]fraction[.]CO2/total_mol_fraction_CO2/g
+s/chamber[.]12pc[.]using[.]gm/chamber_12pc_using_gm/g
+s/chamber[.]13pc[.]using[.]gm/chamber_13pc_using_gm/g
+s/chamber[.]Totalgbc[.]CI[.]L/chamber_Totalgbc_CI_L/g
+s/chamber[.]Totalgbw[.]CI[.]L/chamber_Totalgbw_CI_L/g
+s/chamber[.]Totalgsc[.]CI[.]L/chamber_Totalgsc_CI_L/g
+s/chamber[.]Totalgsw[.]CI[.]L/chamber_Totalgsw_CI_L/g
+s/chamber[.]Totalgtc[.]CI[.]L/chamber_Totalgtc_CI_L/g
+s/Delta[.]i[.]simple[.]for[.]gm/Delta_i_simple_for_gm/g
+s/Delta[.]obs[.]permil[.]CI[.]L/Delta_obs_permil_CI_L/g
+s/Licor[.]temp[.]block[.]CI[.]L/Licor_temp_block_CI_L/g
+s/output[.]summary[.]TDL[.]fn/output_summary_TDL_fn/g
+s/path[.]output[.]fn[.]prefix/path_output_fn_prefix/g
+s/TDL[.]interp[.]summary[.]sd/TDL_interp_summary_sd/g
+s/TDL[.]time[.]window[.]first/TDL_time_window_first/g
+s/chamber[.]delta[.]o[.]CI[.]L/chamber_delta_o_CI_L/g
+s/chamber[.]TotalCa[.]CI[.]L/chamber_TotalCa_CI_L/g
+s/chamber[.]TotalCc[.]CI[.]L/chamber_TotalCc_CI_L/g
+s/chamber[.]TotalCi[.]CI[.]L/chamber_TotalCi_CI_L/g
+s/chamber[.]TotalCo[.]CI[.]L/chamber_TotalCo_CI_L/g
+s/chamber[.]TotalCs[.]CI[.]L/chamber_TotalCs_CI_L/g
+s/chamber[.]Totalpa[.]CI[.]L/chamber_Totalpa_CI_L/g
+s/chamber[.]Totalpi[.]CI[.]L/chamber_Totalpi_CI_L/g
+s/chamber[.]Totalps[.]CI[.]L/chamber_Totalps_CI_L/g
+s/delta[.]13C[.]Assim[.]CI[.]L/delta_13C_Assim_CI_L/g
+s/E[.]transpiration[.]CI[.]L/E_transpiration_CI_L/g
+s/ind[.]remaining[.]offset/ind_remaining_offset/g
+s/last[.]n[.]obs[.]reference/last_n_obs_reference/g
+s/Licor[.]Atm[.]press[.]CI[.]L/Licor_Atm_press_CI_L/g
+s/Licor[.]ind[.]not[.]in[.]TDL/Licor_ind_not_in_TDL/g
+s/Licor[.]run[.]time[.]first/Licor_run_time_first/g
+s/Licor[.]time[.]corrected/Licor_time_corrected/g
+s/Licor[.]time[.]ind[.]first/Licor_time_ind_first/g
+s/TDL[.]A[.]photosynthesis/TDL_A_photosynthesis/g
+s/TDL[.]and[.]Licor[.]interp/TDL_and_Licor_interp/g
+s/TDL[.]time[.]window[.]last/TDL_time_window_last/g
+s/calc[.]Delta[.]i[.]to[.]use/calc_Delta_i_to_use/g
+s/delta[.]13C[.]Resp[.]CI[.]L/delta_13C_Resp_CI_L/g
+s/f[.]photo[.]respiration/f_photo_respiration/g
+s/ind[.]remaining[.]Licor/ind_remaining_Licor/g
+s/interp[.]reference[.]12/interp_reference_12/g
+s/interp[.]reference[.]13/interp_reference_13/g
+s/last[.]n[.]obs[.]tank[.]low/last_n_obs_tank_low/g
+s/Licor[.]flow[.]uin[.]CI[.]L/Licor_flow_uin_CI_L/g
+s/Licor[.]H2OR[.]xin[.]CI[.]L/Licor_H2OR_xin_CI_L/g
+s/Licor[.]run[.]time[.]last/Licor_run_time_last/g
+s/Licor[.]time[.]ind[.]last/Licor_time_ind_last/g
+s/PressureProMan[.]CI[.]L/PressureProMan_CI_L/g
+s/reference[.]12Ce[.]CI[.]L/reference_12Ce_CI_L/g
+s/reference[.]13Ce[.]CI[.]L/reference_13Ce_CI_L/g
+s/TDL[.]ind[.]match[.]Licor/TDL_ind_match_Licor/g
+s/TDL[.]remove[.]blocks[.]n/TDL_remove_blocks_n/g
+s/temp[.]site[.]first[.]ind/temp_site_first_ind/g
+s/chamber[.]12gbc[.]CI[.]L/chamber_12gbc_CI_L/g
+s/chamber[.]12gsc[.]CI[.]L/chamber_12gsc_CI_L/g
+s/chamber[.]12gtc[.]CI[.]L/chamber_12gtc_CI_L/g
+s/chamber[.]13gbc[.]CI[.]L/chamber_13gbc_CI_L/g
+s/chamber[.]13gsc[.]CI[.]L/chamber_13gsc_CI_L/g
+s/chamber[.]13gtc[.]CI[.]L/chamber_13gtc_CI_L/g
+s/chamber[.]Totalpi_pa/chamber_Totalpi_pa/g
+s/current[.]last[.]n[.]obs/current_last_n_obs/g
+s/Delta[.]from[.]A[.]ratio/Delta_from_A_ratio/g
+s/flow[.]adjusted[.]CI[.]L/flow_adjusted_CI_L/g
+s/i[.]site[.]list[.]smooth/i_site_list_smooth/g
+s/interp[.]tank[.]low[.]12/interp_tank_low_12/g
+s/interp[.]tank[.]low[.]13/interp_tank_low_13/g
+s/last[.]n[.]obs[.]chamber/last_n_obs_chamber/g
+s/last[.]n[.]obs[.]tank[.]hi/last_n_obs_tank_hi/g
+s/Licor[.]StableF[.]CI[.]L/Licor_StableF_CI_L/g
+s/output[.]all[.]Calc[.]fn/output_all_Calc_fn/g
+s/output[.]CI[.]Licor[.]fn/output_CI_Licor_fn/g
+s/seconds[.]diff[.]Licor/seconds_diff_Licor/g
+s/TDL[.]notrun[.]ind[.]num/TDL_notrun_ind_num/g
+s/TDL[.]run[.]time[.]first/TDL_run_time_first/g
+s/TDL[.]time[.]ind[.]first/TDL_time_ind_first/g
+s/temp[.]site[.]last[.]ind/temp_site_last_ind/g
+s/temp[.]site[.]num[.]calc/temp_site_num_calc/g
+s/write[.]all[.]obs[.]file/write_all_obs_file/g
+s/chamber[.]12Ca[.]CI[.]L/chamber_12Ca_CI_L/g
+s/chamber[.]12Cc[.]CI[.]L/chamber_12Cc_CI_L/g
+s/chamber[.]12Ci[.]CI[.]L/chamber_12Ci_CI_L/g
+s/chamber[.]12Co[.]CI[.]L/chamber_12Co_CI_L/g
+s/chamber[.]12Cs[.]CI[.]L/chamber_12Cs_CI_L/g
+s/chamber[.]12pa[.]CI[.]L/chamber_12pa_CI_L/g
+s/chamber[.]12pi[.]CI[.]L/chamber_12pi_CI_L/g
+s/chamber[.]12ps[.]CI[.]L/chamber_12ps_CI_L/g
+s/chamber[.]13Ca[.]CI[.]L/chamber_13Ca_CI_L/g
+s/chamber[.]13Cc[.]CI[.]L/chamber_13Cc_CI_L/g
+s/chamber[.]13Ci[.]CI[.]L/chamber_13Ci_CI_L/g
+s/chamber[.]13Co[.]CI[.]L/chamber_13Co_CI_L/g
+s/chamber[.]13Cs[.]CI[.]L/chamber_13Cs_CI_L/g
+s/chamber[.]13pa[.]CI[.]L/chamber_13pa_CI_L/g
+s/chamber[.]13pi[.]CI[.]L/chamber_13pi_CI_L/g
+s/chamber[.]13ps[.]CI[.]L/chamber_13ps_CI_L/g
+s/ind[.]remaining[.]TDL/ind_remaining_TDL/g
+s/interp[.]tank[.]hi[.]12/interp_tank_hi_12/g
+s/interp[.]tank[.]hi[.]13/interp_tank_hi_13/g
+s/isogasex[.]template/isogasex_template/g
+s/Licor[.]header[.]skip/Licor_header_skip/g
+s/Licor[.]rh[.]sam[.]CI[.]L/Licor_rh_sam_CI_L/g
+s/Licor[.]Status[.]CI[.]L/Licor_Status_CI_L/g
+s/Licor[.]StmRat[.]CI[.]L/Licor_StmRat_CI_L/g
+s/Licor[.]time[.]points/Licor_time_points/g
+s/Licor[.]time[.]window/Licor_time_window/g
+s/output[.]CI[.]Calc[.]fn/output_CI_Calc_fn/g
+s/print[.]TDL[.]missing/print_TDL_missing/g
+s/reference[.]delta[.]e/reference_delta_e/g
+s/reference[.]TotalCe/reference_TotalCe/g
+s/seconds[.]reference/seconds_reference/g
+s/sites[.]in[.]TDL[.]file/sites_in_TDL_file/g
+s/sw[.]additional[.]col/sw_additional_col/g
+s/TDL[.]Licor[.]summary/TDL_Licor_summary/g
+s/TDL[.]run[.]time[.]last/TDL_run_time_last/g
+s/TDL[.]time[.]ind[.]last/TDL_time_ind_last/g
+s/time[.]window[.]first/time_window_first/g
+s/true[.]value[.]hi[.]12C/true_value_hi_12C/g
+s/true[.]value[.]hi[.]13C/true_value_hi_13C/g
+s/true[.]value[.]lo[.]12C/true_value_lo_12C/g
+s/true[.]value[.]lo[.]13C/true_value_lo_13C/g
+s/updated[.]last[.]list/updated_last_list/g
+s/A[.]photosynthesis/A_photosynthesis/g
+s/chamber[.]Totalgbc/chamber_Totalgbc/g
+s/chamber[.]Totalgbw/chamber_Totalgbw/g
+s/chamber[.]Totalgsc/chamber_Totalgsc/g
+s/chamber[.]Totalgsw/chamber_Totalgsw/g
+s/chamber[.]Totalgtc/chamber_Totalgtc/g
+s/Delta[.]obs[.]permil/Delta_obs_permil/g
+s/delta[.]proportion/delta_proportion/g
+s/gm[.]point[.]complex/gm_point_complex/g
+s/i[.]site[.]list[.]flat/i_site_list_flat/g
+s/i[.]site[.]list[.]none/i_site_list_none/g
+s/interp[.]reference/interp_reference/g
+s/isogasex[.]version/isogasex_version/g
+s/Licor[.]CsMch[.]CI[.]L/Licor_CsMch_CI_L/g
+s/Licor[.]date[.]start/Licor_date_start/g
+s/Licor[.]head[.]nrows/Licor_head_nrows/g
+s/Licor[.]HsMch[.]CI[.]L/Licor_HsMch_CI_L/g
+s/Licor[.]temp[.]block/Licor_temp_block/g
+s/Licor[.]time[.]merge/Licor_time_merge/g
+s/Licor[.]time[.]start/Licor_time_start/g
+s/list[.]of[.]packages/list_of_packages/g
+s/not[.]in[.]TDL[.]sites/not_in_TDL_sites/g
+s/number[.]reference/number_reference/g
+s/output[.]CI[.]TDL[.]fn/output_CI_TDL_fn/g
+s/output[.]fn[.]prefix/output_fn_prefix/g
+s/plot[.]format[.]list/plot_format_list/g
+s/process[.]filename/process_filename/g
+s/seconds[.]tank[.]low/seconds_tank_low/g
+s/template[.]version/template_version/g
+s/TGApressure[.]CI[.]L/TGApressure_CI_L/g
+s/time[.]window[.]last/time_window_last/g
+s/val[.]calc[.]bs[.]temp/val_calc_bs_temp/g
+s/cal[.]tank[.]hi[.]12C/cal_tank_hi_12C/g
+s/cal[.]tank[.]hi[.]13C/cal_tank_hi_13C/g
+s/cal[.]tank[.]lo[.]12C/cal_tank_lo_12C/g
+s/cal[.]tank[.]lo[.]13C/cal_tank_lo_13C/g
+s/chamber[.]12[.]CI[.]L/chamber_12_CI_L/g
+s/chamber[.]13[.]CI[.]L/chamber_13_CI_L/g
+s/chamber[.]delta[.]o/chamber_delta_o/g
+s/chamber[.]TotalCa/chamber_TotalCa/g
+s/chamber[.]TotalCc/chamber_TotalCc/g
+s/chamber[.]TotalCi/chamber_TotalCi/g
+s/chamber[.]TotalCo/chamber_TotalCo/g
+s/chamber[.]TotalCs/chamber_TotalCs/g
+s/chamber[.]Totalpa/chamber_Totalpa/g
+s/chamber[.]Totalpi/chamber_Totalpi/g
+s/chamber[.]Totalps/chamber_Totalps/g
+s/convert[.]command/convert_command/g
+s/delta[.]13C[.]Assim/delta_13C_Assim/g
+s/E[.]transpiration/E_transpiration/g
+s/filename[.]prefix/filename_prefix/g
+s/gm[.]point[.]simple/gm_point_simple/g
+s/interp[.]tank[.]low/interp_tank_low/g
+s/Licor[.]Atm[.]press/Licor_Atm_press/g
+s/Licor[.]date[.]temp/Licor_date_temp/g
+s/Licor[.]var[.]names/Licor_var_names/g
+s/Licor[.]xout[.]CI[.]L/Licor_xout_CI_L/g
+s/number[.]tank[.]low/number_tank_low/g
+s/offset[.]12C[.]CI[.]L/offset_12C_CI_L/g
+s/offset[.]13C[.]CI[.]L/offset_13C_CI_L/g
+s/plot_not_na[.]val/plot_not_na_val/g
+s/seconds[.]chamber/seconds_chamber/g
+s/seconds[.]tank[.]hi/seconds_tank_hi/g
+s/TDL[.]Licor[.]times/TDL_Licor_times/g
+s/TDL[.]site[.]timing/TDL_site_timing/g
+s/TDL[.]summary[.]ind/TDL_summary_ind/g
+s/TDL[.]time[.]points/TDL_time_points/g
+s/TDL[.]time[.]window/TDL_time_window/g
+s/temp[.]block[.]CI[.]L/temp_block_CI_L/g
+s/temp[.]site[.]match/temp_site_match/g
+s/Atm[.]press[.]CI[.]L/Atm_press_CI_L/g
+s/calc[.]gm[.]to[.]use/calc_gm_to_use/g
+s/calc[.]pc[.]to[.]use/calc_pc_to_use/g
+s/conc12CO2[.]CI[.]L/conc12CO2_CI_L/g
+s/conc13CO2[.]CI[.]L/conc13CO2_CI_L/g
+s/delta[.]13C[.]Resp/delta_13C_Resp/g
+s/Delta[.]obs[.]CI[.]L/Delta_obs_CI_L/g
+s/full[.]or[.]window/full_or_window/g
+s/interp[.]tank[.]hi/interp_tank_hi/g
+s/leaf[.]temp[.]CI[.]L/leaf_temp_CI_L/g
+s/Licor[.]flow[.]uin/Licor_flow_uin/g
+s/Licor[.]gbw[.]CI[.]L/Licor_gbw_CI_L/g
+s/Licor[.]gsc[.]CI[.]L/Licor_gsc_CI_L/g
+s/Licor[.]H2OR[.]xin/Licor_H2OR_xin/g
+s/Licor[.]ind[.]keep/Licor_ind_keep/g
+s/light[.]out[.]CI[.]L/light_out_CI_L/g
+s/MassFlow1[.]CI[.]L/MassFlow1_CI_L/g
+s/MassFlow2[.]CI[.]L/MassFlow2_CI_L/g
+s/name[.]reference/name_reference/g
+s/number[.]chamber/number_chamber/g
+s/number[.]tank[.]hi/number_tank_hi/g
+s/Pressure1[.]CI[.]L/Pressure1_CI_L/g
+s/Pressure2[.]CI[.]L/Pressure2_CI_L/g
+s/R[.]workspace[.]fn/R_workspace_fn/g
+s/reference[.]12Ce/reference_12Ce/g
+s/reference[.]13Ce/reference_13Ce/g
+s/remaining[.]list/remaining_list/g
+s/tank[.]reference/tank_reference/g
+s/TDL[.]notrun[.]ind/TDL_notrun_ind/g
+s/TDL[.]time[.]merge/TDL_time_merge/g
+s/temp[.]corrected/temp_corrected/g
+s/temp[.]del[.]first/temp_del_first/g
+s/temp[.]keep[.]rows/temp_keep_rows/g
+s/temp[.]leaf[.]CI[.]L/temp_leaf_CI_L/g
+s/temp[.]site[.]list/temp_site_list/g
+s/temp[.]site[.]name/temp_site_name/g
+s/val[.]timewindow/val_timewindow/g
+s/air[.]temp[.]CI[.]L/air_temp_CI_L/g
+s/chamber[.]12gbc/chamber_12gbc/g
+s/chamber[.]12gsc/chamber_12gsc/g
+s/chamber[.]12gtc/chamber_12gtc/g
+s/chamber[.]13gbc/chamber_13gbc/g
+s/chamber[.]13gsc/chamber_13gsc/g
+s/chamber[.]13gtc/chamber_13gtc/g
+s/compress[.]tiff/compress_tiff/g
+s/corrected[.]12C/corrected_12C/g
+s/corrected[.]13C/corrected_13C/g
+s/flow[.]adjusted/flow_adjusted/g
+s/gain[.]12C[.]CI[.]L/gain_12C_CI_L/g
+s/gain[.]13C[.]CI[.]L/gain_13C_CI_L/g
+s/ind[.]block[.]out/ind_block_out/g
+s/ind[.]reference/ind_reference/g
+s/ind[.]remaining/ind_remaining/g
+s/isogasex[.]date/isogasex_date/g
+s/isotope[.]ratio/isotope_ratio/g
+s/Licor[.]Ce[.]CI[.]L/Licor_Ce_CI_L/g
+s/Licor[.]Ci[.]CI[.]L/Licor_Ci_CI_L/g
+s/Licor[.]Co[.]CI[.]L/Licor_Co_CI_L/g
+s/Licor[.]La[.]CI[.]L/Licor_La_CI_L/g
+s/Licor[.]StableF/Licor_StableF/g
+s/light[.]in[.]CI[.]L/light_in_CI_L/g
+s/name[.]tank[.]low/name_tank_low/g
+s/noninterp[.]ind/noninterp_ind/g
+s/path[.]original/path_original/g
+s/plot[.]filename/plot_filename/g
+s/PLOT[.]SETTINGS/PLOT_SETTINGS/g
+s/smooth[.]spline/smooth_spline/g
+s/TDL[.]nonNA[.]ind/TDL_nonNA_ind/g
+s/TDL[.]TIMESTAMP/TDL_TIMESTAMP/g
+s/TDL[.]var[.]names/TDL_var_names/g
+s/temp[.]air[.]CI[.]L/temp_air_CI_L/g
+s/temp[.]del[.]last/temp_del_last/g
+s/temp[.]last[.]ind/temp_last_ind/g
+s/temp[.]site[.]num/temp_site_num/g
+s/true[.]value[.]hi/true_value_hi/g
+s/uc_20_mV[.]CI[.]L/uc_20_mV_CI_L/g
+s/uc_21_mV[.]CI[.]L/uc_21_mV_CI_L/g
+s/val[.]obs[.]Licor/val_obs_Licor/g
+s/val[.]sum[.]Licor/val_sum_Licor/g
+s/as[.]character/as_character/g
+s/chamber[.]12Ca/chamber_12Ca/g
+s/chamber[.]12Cc/chamber_12Cc/g
+s/chamber[.]12Ci/chamber_12Ci/g
+s/chamber[.]12Co/chamber_12Co/g
+s/chamber[.]12Cs/chamber_12Cs/g
+s/chamber[.]12pa/chamber_12pa/g
+s/chamber[.]12pi/chamber_12pi/g
+s/chamber[.]12ps/chamber_12ps/g
+s/chamber[.]13Ca/chamber_13Ca/g
+s/chamber[.]13Cc/chamber_13Cc/g
+s/chamber[.]13Ci/chamber_13Ci/g
+s/chamber[.]13Co/chamber_13Co/g
+s/chamber[.]13Cs/chamber_13Cs/g
+s/chamber[.]13pa/chamber_13pa/g
+s/chamber[.]13pi/chamber_13pi/g
+s/chamber[.]13ps/chamber_13ps/g
+s/convert[.]path/convert_path/g
+s/current[.]site/current_site/g
+s/delta[.]permil/delta_permil/g
+s/header[.]names/header_names/g
+s/ii[.]fix[.]count/ii_fix_count/g
+s/ind[.]block[.]in/ind_block_in/g
+s/ind[.]last:TDL/ind_last:TDL/g
+s/ind[.]tank[.]low/ind_tank_low/g
+s/Licor[.]HHMMSS/Licor_HHMMSS/g
+s/Licor[.]interp/Licor_interp/g
+s/Licor[.]rh[.]ref/Licor_rh_ref/g
+s/Licor[.]rh[.]sam/Licor_rh_sam/g
+s/Licor[.]Status/Licor_Status/g
+s/Licor[.]StmRat/Licor_StmRat/g
+s/name[.]chamber/name_chamber/g
+s/name[.]tank[.]hi/name_tank_hi/g
+s/new[.]packages/new_packages/g
+s/par[.]ext[.]CI[.]L/par_ext_CI_L/g
+s/par[.]int[.]CI[.]L/par_int_CI_L/g
+s/perl[.]command/perl_command/g
+s/program[.]name/program_name/g
+s/quality[.]jpeg/quality_jpeg/g
+s/reference[.]12/reference_12/g
+s/reference[.]13/reference_13/g
+s/StableF[.]CI[.]L/StableF_CI_L/g
+s/TDL[.]ind[.]keep/TDL_ind_keep/g
+s/TDL[.]keep[.]ind/TDL_keep_ind/g
+s/temp[.]loop[.]sw/temp_loop_sw/g
+s/temp[.]n[.]Licor/temp_n_Licor/g
+s/unique[.]sites/unique_sites/g
+s/val[.]bs[.]Licor/val_bs_Licor/g
+s/window[.]start/window_start/g
+s/xls[.]getshlib/xls_getshlib/g
+s/BS[.]list[.]all/BS_list_all/g
+s/CndCO2[.]CI[.]L/CndCO2_CI_L/g
+s/current[.]ind/current_ind/g
+s/digits[.]secs/digits_secs/g
+s/i[.]ind[.]first/i_ind_first/g
+s/i[.]ind[.]vline/i_ind_vline/g
+s/ind[.]summary/ind_summary/g
+s/ind[.]tank[.]hi/ind_tank_hi/g
+s/ind[.]temp[.]NA/ind_temp_NA/g
+s/Licor[.]CsMch/Licor_CsMch/g
+s/Licor[.]FTime/Licor_FTime/g
+s/Licor[.]HsMch/Licor_HsMch/g
+s/names[.]Licor/names_Licor/g
+s/path[.]prefix/path_prefix/g
+s/pc[.]using[.]gm/pc_using_gm/g
+s/plot[.]format/plot_format/g
+s/R[.]bootstrap/R_bootstrap/g
+s/Ref_mV[.]CI[.]L/Ref_mV_CI_L/g
+s/rh[.]sam[.]CI[.]L/rh_sam_CI_L/g
+s/Status[.]CI[.]L/Status_CI_L/g
+s/StmRat[.]CI[.]L/StmRat_CI_L/g
+s/tank[.]low[.]12/tank_low_12/g
+s/tank[.]low[.]13/tank_low_13/g
+s/TDL[.]missing/TDL_missing/g
+s/TDL[.]summary/TDL_summary/g
+s/temp[.]offset/temp_offset/g
+s/temp[.]xidode/temp_xidode/g
+s/text[.]to[.]cat/text_to_cat/g
+s/TeXtext[.]enc/TeXtext_enc/g
+s/val[.]calc[.]bs/val_calc_bs/g
+s/val[.]obs[.]TDL/val_obs_TDL/g
+s/val[.]sum[.]TDL/val_sum_TDL/g
+s/xTemp1[.]CI[.]L/xTemp1_CI_L/g
+s/xTemp2[.]CI[.]L/xTemp2_CI_L/g
+s/b[.]modeling/b_modeling/g
+s/chamber[.]12/chamber_12/g
+s/chamber[.]13/chamber_13/g
+s/Ci[.]Ca[.]CI[.]L/Ci_Ca_CI_L/g
+s/CsMch[.]CI[.]L/CsMch_CI_L/g
+s/data[.]frame/data_frame/g
+s/f[.]val[.]calc/f_val_calc/g
+s/fix[.]factor/fix_factor/g
+s/FTime[.]CI[.]L/FTime_CI_L/g
+s/Gamma[.]star/Gamma_star/g
+s/HsMch[.]CI[.]L/HsMch_CI_L/g
+s/i[.]ind[.]last/i_ind_last/g
+s/ind[.]nomove/ind_nomove/g
+s/ind[.]temp[.]y/ind_temp_y/g
+s/last[.]n[.]obs/last_n_obs/g
+s/last[.]sites/last_sites/g
+s/Licor[.]date/Licor_date/g
+s/Licor[.]head/Licor_head/g
+s/Licor[.]time/Licor_time/g
+s/Licor[.]xout/Licor_xout/g
+s/offset[.]12C/offset_12C/g
+s/offset[.]13C/offset_13C/g
+s/save[.]RData/save_RData/g
+s/site[.]means/site_means/g
+s/start[.]time/start_time/g
+s/table[.]name/table_name/g
+s/tank[.]hi[.]12/tank_hi_12/g
+s/tank[.]hi[.]13/tank_hi_13/g
+s/temp[.]block/temp_block/g
+s/temp[.]order/temp_order/g
+s/time[.]sofar/time_sofar/g
+s/time[.]start/time_start/g
+s/Trans[.]CI[.]L/Trans_CI_L/g
+s/type[.]print/type_print/g
+s/val[.]bs[.]sum/val_bs_sum/g
+s/val[.]bs[.]TDL/val_bs_TDL/g
+s/var[.]interp/var_interp/g
+s/window[.]end/window_end/g
+s/Atm[.]press/Atm_press/g
+s/data[.]prev/data_prev/g
+s/Delta[.]obs/Delta_obs/g
+s/file[.]jpeg/file_jpeg/g
+s/file[.]temp/file_temp/g
+s/file[.]tiff/file_tiff/g
+s/first[.]ind/first_ind/g
+s/height[.]in/height_in/g
+s/height[.]px/height_px/g
+s/i[.]bad[.]ind/i_bad_ind/g
+s/i[.]ind[.]all/i_ind_all/g
+s/ind[.]first/ind_first/g
+s/ind[.]match/ind_match/g
+s/ind[.]table/ind_table/g
+s/ind[.]vline/ind_vline/g
+s/last[.]list/last_list/g
+s/last[.]mean/last_mean/g
+s/last[.]time/last_time/g
+s/leaf[.]area/leaf_area/g
+s/leaf[.]temp/leaf_temp/g
+s/Licor[.]gbw/Licor_gbw/g
+s/Licor[.]gsc/Licor_gsc/g
+s/light[.]out/light_out/g
+s/par[.]mfrow/par_mfrow/g
+s/plot[.]list/plot_list/g
+s/plot[.]mode/plot_mode/g
+s/rows[.]temp/rows_temp/g
+s/site[.]name/site_name/g
+s/TDL[.]cycle/TDL_cycle/g
+s/temp[.]gain/temp_gain/g
+s/temp[.]leaf/temp_leaf/g
+s/test[.]site/test_site/g
+s/use[.]Licor/use_Licor/g
+s/val[.]const/val_const/g
+s/val[.]Licor/val_Licor/g
+s/VpdA[.]CI[.]L/VpdA_CI_L/g
+s/xout[.]CI[.]L/xout_CI_L/g
+s/air[.]temp/air_temp/g
+s/beta[.]hat/beta_hat/g
+s/bs[.]y[.]sum/bs_y_sum/g
+s/cham[.]tot/cham_tot/g
+s/data[.]bad/data_bad/g
+s/diff[.]tot/diff_tot/g
+s/end[.]time/end_time/g
+s/file[.]bmp/file_bmp/g
+s/file[.]eps/file_eps/g
+s/file[.]gif/file_gif/g
+s/file[.]pdf/file_pdf/g
+s/file[.]png/file_png/g
+s/gain[.]12C/gain_12C/g
+s/gain[.]13C/gain_13C/g
+s/gbw[.]CI[.]L/gbw_CI_L/g
+s/gsc[.]CI[.]L/gsc_CI_L/g
+s/i[.]time-1/i_time-1/g
+s/i[.]time+1/i_time+1/g
+s/ind[.]last/ind_last/g
+s/ind[.]move/ind_move/g
+s/ind[.]temp/ind_temp/g
+s/input[.]fn/input_fn/g
+s/last[.]ind/last_ind/g
+s/Licor[.]Ce/Licor_Ce/g
+s/Licor[.]Ci/Licor_Ci/g
+s/Licor[.]Co/Licor_Co/g
+s/Licor[.]fn/Licor_fn/g
+s/Licor[.]La/Licor_La/g
+s/light[.]in/light_in/g
+s/n[.]sheets/n_sheets/g
+s/old[.]time/old_time/g
+s/p[.]o[.]temp/p_o_temp/g
+s/path[.]out/path_out/g
+s/print[.]it/print_it/g
+s/tank[.]low/tank_low/g
+s/TDL[.]time/TDL_time/g
+s/temp[.]add/temp_add/g
+s/temp[.]air/temp_air/g
+s/test[.]ind/test_ind/g
+s/test[.]png/test_png/g
+s/TL[.]merge/TL_merge/g
+s/U_S[.]CI[.]L/U_S_CI_L/g
+s/uin[.]CI[.]L/uin_CI_L/g
+s/val[.]temp/val_temp/g
+s/VPD[.]CI[.]L/VPD_CI_L/g
+s/width[.]in/width_in/g
+s/width[.]px/width_px/g
+s/xin[.]CI[.]L/xin_CI_L/g
+s/bad[.]ind/bad_ind/g
+s/BS[.]list/BS_list/g
+s/bs[.]time/bs_time/g
+s/bs[.]y[.]CI/bs_y_CI/g
+s/Ce[.]CI[.]L/Ce_CI_L/g
+s/Ci[.]CI[.]L/Ci_CI_L/g
+s/Co[.]CI[.]L/Co_CI_L/g
+s/del[.]ind/del_ind/g
+s/Delta[.]i/Delta_i/g
+s/DELTA[.]i/DELTA_i/g
+s/f[.]photo/f_photo/g
+s/i[.]block/i_block/g
+s/i[.]field/i_field/g
+s/i[.]n[.]obs/i_n_obs/g
+s/i[.]nrows/i_nrows/g
+s/i[.]sheet/i_sheet/g
+s/ind[.]all/ind_all/g
+s/La[.]CI[.]L/La_CI_L/g
+s/Licor[.]n/Licor_n/g
+s/line[.]lm/line_lm/g
+s/n[.]sites/n_sites/g
+s/na[.]data/na_data/g
+s/par[.]ext/par_ext/g
+s/par[.]int/par_int/g
+s/par[.]mar/par_mar/g
+s/par[.]oma/par_oma/g
+s/par[.]xpd/par_xpd/g
+s/pi[.]CI[.]L/pi_CI_L/g
+s/rc[.]data/rc_data/g
+s/ref[.]tot/ref_tot/g
+s/tank[.]hi/tank_hi/g
+s/try[.]zoo/try_zoo/g
+s/use[.]TDL/use_TDL/g
+s/val[.]TDL/val_TDL/g
+s/x[.]title/x_title/g
+s/xi[.]CI[.]L/xi_CI_L/g
+s/ylim[.]12/ylim_12/g
+s/ylim[.]13/ylim_13/g
+s/A[.]CI[.]L/A_CI_L/g
+s/E[.]CI[.]L/E_CI_L/g
+s/i[.]list/i_list/g
+s/i[.]plot/i_plot/g
+s/i[.]site/i_site/g
+s/i[.]time/i_time/g
+s/ind[.]CI/ind_CI/g
+s/line[.]x/line_x/g
+s/line[.]y/line_y/g
+s/n[.]meas/n_meas/g
+s/p[.]CI[.]L/p_CI_L/g
+s/par[.]bg/par_bg/g
+s/R[.]cham/R_cham/g
+s/rh[.]ref/rh_ref/g
+s/rh[.]sam/rh_sam/g
+s/sig[.]CI/sig_CI/g
+s/TDL[.]fn/TDL_fn/g
+s/temp[.]x/temp_x/g
+s/temp[.]y/temp_y/g
+s/val[.]bs/val_bs/g
+s/val[.]CI/val_CI/g
+s/x[.]mean/x_mean/g
+s/x[.]time/x_time/g
+s/Ci[.]Ca/Ci_Ca/g
+s/D[.]obs/D_obs/g
+s/i[.]col/i_col/g
+s/n[.]sam/n_sam/g
+s/R[.]obs/R_obs/g
+s/R[.]ref/R_ref/g
+s/R[.]std/R_std/g
+s/TDL[.]n/TDL_n/g
+s/x[.]sum/x_sum/g
+s/x[.]var/x_var/g
+s/y[.]hat/y_hat/g
+s/y[.]var/y_var/g
+s/b[.]gm/b_gm/g
+s/bs[.]y/bs_y/g
+s/i[.]bs/i_bs/g
+s/x[.]bs/x_bs/g
+s/x[.]CI/x_CI/g
+s/a[.]b/a_b/g
+s/c[.]v/c_v/g
+s/i[.]n/i_n/g
+s/p[.]o/p_o/g
+s/r[.]v/r_v/g
+s/x[.]n/x_n/g
+
+
+# END
+
+## ## to change back or skip:
+## Sys.timezone
+## as.POSIXct
+## as.list
+## as.numeric
+## capture.output
+## create.logger
+## dev.control
+## dev.set
+## dir.create
+## do.call
+## e.g.
+## error.message
+## file.copy
+## file.exists
+## file.remove
+## file.rename
+## flush.console
+## graphics.off
+## i.e.
+## install.packages
+## is.finite
+## is.na
+## is.na
+## is.null
+## is.numeric
+## na.rm
+## new.env
+## pkgs.had.co.nz
+## rbind.fill
+## read.csv
+## read.delim
+## read.xls
+## read.xls
+## set.seed
+## write.csv
+## X.U.S.
+##
+## ## RegEx Find "[a-zA-Z][.][a-zA-Z]" in C:\Dropbox\StatAcumen\consult\Authorship\2009_DavidHanson_Isotopes\R-package\isogasex\R [*.R].  Found 4134 time(s) in 86 file(s). Scanned 93 file(s).
+#
+# After sed
+#
+# postscript(file = PLOT_SETTINGS$file_eps, ': unused argument (print_it = PLOT_SETTINGS$print_it) at s_plot_settings_begin_end.R:162
+# replace
+#   as_character as.character
+#   smooth_spline smooth.spline
+#   interp. interp_
+#

@@ -2,10 +2,10 @@
 #'
 #' @param obs.12C
 #' @param obs.13C
-#' @param gain.12C
-#' @param gain.13C
-#' @param offset.12C
-#' @param offset.13C
+#' @param gain_12C
+#' @param gain_13C
+#' @param offset_12C
+#' @param offset_13C
 #'
 #' @return
 #' @export
@@ -18,13 +18,13 @@ function# corrected (Corrected 12C, Corrected 13C)
 ###
 , obs.13C
 ###
-, gain.12C
+, gain_12C
 ###
-, gain.13C
+, gain_13C
 ###
-, offset.12C
+, offset_12C
 ###
-, offset.13C
+, offset_13C
 ###
 )
 {
@@ -32,8 +32,8 @@ function# corrected (Corrected 12C, Corrected 13C)
 
   ##details<<
   ##\deqn{corrected = (obs * gain) + offset;}
-  corrected$corrected.12C <- (obs.12C * gain.12C) + offset.12C;
-  corrected$corrected.13C <- (obs.13C * gain.13C) + offset.13C;
+  corrected$corrected_12C <- (obs.12C * gain_12C) + offset_12C;
+  corrected$corrected_13C <- (obs.13C * gain_13C) + offset_13C;
 
   return( corrected );
   ### corrected 12C and 13C

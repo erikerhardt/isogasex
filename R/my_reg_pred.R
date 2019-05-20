@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param beta.hat
+#' @param beta_hat
 #' @param x
 #'
 #' @return
@@ -10,7 +10,7 @@
 my_reg_pred <-
 function# basic SLR y pred
 ###
-(beta.hat
+(beta_hat
 ###
 , x
 ###
@@ -20,23 +20,23 @@ function# basic SLR y pred
   ## Calculate predictions given the intercept and slope of a simple linear regression fit.
 
   # DEBUG
-  # beta.hat = my_reg_fit(temp.y, temp.x)
-  # x        = line.x
+  # beta_hat = my_reg_fit(temp_y, temp_x)
+  # x        = line_x
 
   n <- length(x);
 
   # 4/27/2013 9:36PM For some reason, once we had all NaNs for a cycle in plot_data_cycles.R
-  #   This returned a beta.hat = NA, so return NAs of the right dimension.
+  #   This returned a beta_hat = NA, so return NAs of the right dimension.
   #   I don't know why this happened, the data looks ok.
-  if (any(is.na(beta.hat))) {
-    warning("Unable to predict regression line, beta.hat=NA (my_reg_pred.R)")
+  if (any(is.na(beta_hat))) {
+    warning("Unable to predict regression line, beta_hat=NA (my_reg_pred.R)")
     return(matrix(NA, nrow = n, ncol = 1))
   }
 
   x1 <- cbind(matrix(rep(1,n),ncol=1), matrix(x,ncol=1));
-  y.hat <- x1 %*% beta.hat;
+  y_hat <- x1 %*% beta_hat;
 
-  return( y.hat );
-  ### y.hat
+  return( y_hat );
+  ### y_hat
 }
 

@@ -20,10 +20,10 @@ function# Total mol fraction CO2
 )
 {
   ##details<<
-  ##\deqn{total.mol.fraction.CO2 = (obs.12C + obs.13C) / (1 - fo.13C)}
-  total.mol.fraction.CO2 <- (obs.12C + obs.13C) / (1 - fo.13C);
+  ##\deqn{total_mol_fraction_CO2 = (obs.12C + obs.13C) / (1 - fo.13C)}
+  total_mol_fraction_CO2 <- (obs.12C + obs.13C) / (1 - fo.13C);
 
-  return( total.mol.fraction.CO2 );
-  ### total.mol.fraction.CO2
+  return( total_mol_fraction_CO2 );
+  ### total_mol_fraction_CO2
 }
 

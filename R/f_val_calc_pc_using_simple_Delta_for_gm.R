@@ -4,8 +4,8 @@
 #' @param pa
 #' @param ps
 #' @param a
-#' @param b.gm
-#' @param a.b
+#' @param b_gm
+#' @param a_b
 #'
 #' @return
 #' @export
@@ -22,15 +22,15 @@ function# pc using simple D for gm, includes boundary layer
 ###
 , a
 ###
-, b.gm
+, b_gm
 ###
-, a.b
+, a_b
 ###
 )
 {
   ##details<<
-  ##\deqn{pc = (Delta * pa - a.b * (pa - ps) - a * ps) / (b.gm - a)}
-  pc <- (Delta * pa - a.b * (pa - ps) - a * ps) / (b.gm - a);
+  ##\deqn{pc = (Delta * pa - a_b * (pa - ps) - a * ps) / (b_gm - a)}
+  pc <- (Delta * pa - a_b * (pa - ps) - a * ps) / (b_gm - a);
 
   return( pc );
   ### pc

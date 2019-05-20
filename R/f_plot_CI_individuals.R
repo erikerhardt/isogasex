@@ -1,14 +1,14 @@
 #' Title
 #'
-#' @param x.bs
-#' @param x.sum
-#' @param x.CI
-#' @param x.title
-#' @param x.time
-#' @param x.n
-#' @param R.bootstrap
-#' @param plot.format.list
-#' @param output.fn.prefix
+#' @param x_bs
+#' @param x_sum
+#' @param x_CI
+#' @param x_title
+#' @param x_time
+#' @param x_n
+#' @param R_bootstrap
+#' @param plot_format_list
+#' @param output_fn_prefix
 #'
 #' @return
 #' @export
@@ -17,50 +17,50 @@
 f_plot_CI_individuals <-
 function# plot all variables with bs values, mean value, and CI intervals
 ###
-(x.bs
+(x_bs
 ###
-, x.sum
+, x_sum
 ###
-, x.CI
+, x_CI
 ###
-, x.title
+, x_title
 ###
-, x.time
+, x_time
 ###
-, x.n
+, x_n
 ###
-, R.bootstrap
+, R_bootstrap
 ###
-, plot.format.list
+, plot_format_list
 ###
-, output.fn.prefix
+, output_fn_prefix
 ###
 )
 {
   ##details<<
   ## For every variable, plots the mean and bootstrap CI, after removing NAs with \code{\link{plot_not_na}}.
-  for (i.plot in plot.format.list)
+  for (i_plot in plot_format_list)
   {
-    x.title <- gsub("[ ]","",x.title);
-    plot.filename <- paste("BS_CHECK_",gsub("[ $]","_",x.title), sep="");
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "begin", plot.format = i.plot);
+    x_title <- gsub("[ ]","",x_title);
+    plot_filename <- paste("BS_CHECK_",gsub("[ $]","_",x_title), sep="");
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
     par(mfrow=c(1,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
 
-    bs.time <- matrix(x.time, nrow=x.n, ncol=R.bootstrap); # matrix of times to plot with matrix of BS samples
-    bs.y     <- x.bs;
-    bs.y.sum <- x.sum;
-    bs.y.CI  <- x.CI;
+    bs_time <- matrix(x_time, nrow=x_n, ncol=R_bootstrap); # matrix of times to plot with matrix of BS samples
+    bs_y     <- x_bs;
+    bs_y_sum <- x_sum;
+    bs_y_CI  <- x_CI;
 
-    plot_not_na.val <- plot_not_na(bs.time, bs.y, pch=20, type="p", cex=.1, xlab="summary index", ylab="", main=x.title);
-    if (plot_not_na.val) {
-      points(bs.time[,1], bs.y.CI[,1] , type="l", col="green");
-      points(bs.time[,1], bs.y.CI[,2] , type="l", col="cyan");
-      points(bs.time[,1], bs.y.sum    , type="l", col="red"  );
+    plot_not_na_val <- plot_not_na(bs_time, bs_y, pch=20, type="p", cex=.1, xlab="summary index", ylab="", main=x_title);
+    if (plot_not_na_val) {
+      points(bs_time[,1], bs_y_CI[,1] , type="l", col="green");
+      points(bs_time[,1], bs_y_CI[,2] , type="l", col="cyan");
+      points(bs_time[,1], bs_y_sum    , type="l", col="red"  );
     }
 
     #axis(3); axis(4); # add axis labels to top and right sides
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "end", i.plot);
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
   return( NULL );

@@ -4,10 +4,10 @@
 \alias{f_val_bs_matrix}
 \title{Title}
 \usage{
-f_val_bs_matrix(bs, val.calc.bs.temp, i.bs)
+f_val_bs_matrix(bs, val_calc_bs_temp, i_bs)
 }
 \arguments{
-\item{i.bs}{}
+\item{i_bs}{}
 }
 \description{
 Title

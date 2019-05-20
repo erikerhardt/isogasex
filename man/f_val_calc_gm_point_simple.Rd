@@ -4,10 +4,10 @@
 \alias{f_val_calc_gm_point_simple}
 \title{Title}
 \usage{
-f_val_calc_gm_point_simple(b, bs, al, A, pa, Di, D.obs)
+f_val_calc_gm_point_simple(b, bs, al, A, pa, Di, D_obs)
 }
 \arguments{
-\item{D.obs}{}
+\item{D_obs}{}
 }
 \description{
 Title

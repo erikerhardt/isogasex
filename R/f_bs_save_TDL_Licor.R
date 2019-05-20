@@ -1,9 +1,9 @@
 #' Title
 #'
-#' @param val.bs.sum
-#' @param val.bs
-#' @param i.bs
-#' @param R.bootstrap
+#' @param val_bs_sum
+#' @param val_bs
+#' @param i_bs
+#' @param R_bootstrap
 #' @param sw
 #'
 #' @return
@@ -13,173 +13,173 @@
 f_bs_save_TDL_Licor <-
 function# save BS resample of TDL and Licor means
 ###
-(val.bs.sum
+(val_bs_sum
 ###
-, val.bs
+, val_bs
 ###
-, i.bs
+, i_bs
 ###
-, R.bootstrap
+, R_bootstrap
 ###
 , sw
 ###
 )
 {
   ## Debug
-  # val.bs.sum  <- val.bs.sum
-  # val.bs      <- val$bs
-  # i.bs        <- i.bs
-  # R.bootstrap <- R.bootstrap
+  # val_bs_sum  <- val_bs_sum
+  # val_bs      <- val$bs
+  # i_bs        <- i_bs
+  # R_bootstrap <- R_bootstrap
 
   ##details<<
-  ## create val.bs$TDL and $Licor for calculated observed values to use in NP bootstrap
-  if (i.bs == 1) {
-    val.bs$TDL    <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
-    val.bs$Licor  <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
+  ## create val_bs$TDL and $Licor for calculated observed values to use in NP bootstrap
+  if (i_bs == 1) {
+    val_bs$TDL    <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
+    val_bs$Licor  <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
 
     ##details<<
     ## Initialize values to zeros.
-    zeros <- matrix(0, nrow=val.bs.sum$TDL$n, ncol=R.bootstrap);
+    zeros <- matrix(0, nrow=val_bs_sum$TDL$n, ncol=R_bootstrap);
     # TDL
-    if (sw$use.TDL) {
-      val.bs$TDL$n                     <- val.bs.sum$TDL$n        ;
-      val.bs$TDL$first.ind             <- val.bs.sum$TDL$first.ind;
-      val.bs$TDL$ind                   <- val.bs.sum$TDL$ind      ;
-      val.bs$TDL$site                  <- val.bs.sum$TDL$site     ;
-      val.bs$TDL$n.sam                 <- val.bs.sum$TDL$n.sam    ;
-      val.bs$TDL$time                  <- val.bs.sum$TDL$time     ;
-      val.bs$TDL$conc12CO2             <- zeros;
-      val.bs$TDL$conc13CO2             <- zeros;
-      val.bs$TDL$TGApressure           <- zeros;
-      val.bs$TDL$MassFlow1             <- zeros;
-      val.bs$TDL$Pressure1             <- zeros;
-      val.bs$TDL$MassFlow2             <- zeros;
-      val.bs$TDL$Pressure2             <- zeros;
-      val.bs$TDL$PressureProMan        <- zeros;
-      val.bs$TDL$interp.tank.hi.12     <- zeros;
-      val.bs$TDL$interp.tank.hi.13     <- zeros;
-      val.bs$TDL$interp.tank.low.12    <- zeros;
-      val.bs$TDL$interp.tank.low.13    <- zeros;
-      val.bs$TDL$interp.reference.12   <- zeros;
-      val.bs$TDL$interp.reference.13   <- zeros;
-      val.bs$TDL$chamber.12            <- zeros;
-      val.bs$TDL$chamber.13            <- zeros;
+    if (sw$use_TDL) {
+      val_bs$TDL$n                     <- val_bs_sum$TDL$n        ;
+      val_bs$TDL$first_ind             <- val_bs_sum$TDL$first_ind;
+      val_bs$TDL$ind                   <- val_bs_sum$TDL$ind      ;
+      val_bs$TDL$site                  <- val_bs_sum$TDL$site     ;
+      val_bs$TDL$n_sam                 <- val_bs_sum$TDL$n_sam    ;
+      val_bs$TDL$time                  <- val_bs_sum$TDL$time     ;
+      val_bs$TDL$conc12CO2             <- zeros;
+      val_bs$TDL$conc13CO2             <- zeros;
+      val_bs$TDL$TGApressure           <- zeros;
+      val_bs$TDL$MassFlow1             <- zeros;
+      val_bs$TDL$Pressure1             <- zeros;
+      val_bs$TDL$MassFlow2             <- zeros;
+      val_bs$TDL$Pressure2             <- zeros;
+      val_bs$TDL$PressureProMan        <- zeros;
+      val_bs$TDL$interp_tank_hi_12     <- zeros;
+      val_bs$TDL$interp_tank_hi_13     <- zeros;
+      val_bs$TDL$interp_tank_low_12    <- zeros;
+      val_bs$TDL$interp_tank_low_13    <- zeros;
+      val_bs$TDL$interp_reference_12   <- zeros;
+      val_bs$TDL$interp_reference_13   <- zeros;
+      val_bs$TDL$chamber_12            <- zeros;
+      val_bs$TDL$chamber_13            <- zeros;
     }
 
     # Licor
-    if (sw$use.Licor) {
-      val.bs$Licor$n                   <- val.bs.sum$Licor$n        ;
-      val.bs$Licor$first.ind           <- val.bs.sum$Licor$first.ind;
-      val.bs$Licor$ind                 <- val.bs.sum$Licor$ind      ;
-      val.bs$Licor$site                <- val.bs.sum$Licor$site     ;
-      val.bs$Licor$time                <- val.bs.sum$Licor$time     ;
-      val.bs$Licor$FTime               <- zeros;
-      val.bs$Licor$A                   <- zeros;
-      val.bs$Licor$gsc                 <- zeros;
-      val.bs$Licor$Ci                  <- zeros;
-      val.bs$Licor$E                   <- zeros;
-      val.bs$Licor$VPD                 <- zeros;
-      val.bs$Licor$La                  <- zeros;
-      val.bs$Licor$StmRat              <- zeros;
-      val.bs$Licor$gbw                 <- zeros;
-      val.bs$Licor$temp.air            <- zeros;
-      val.bs$Licor$temp.leaf           <- zeros;
-      val.bs$Licor$temp.block          <- zeros;
-      val.bs$Licor$Ce                  <- zeros;
-      val.bs$Licor$Co                  <- zeros;
-      val.bs$Licor$xin                 <- zeros;
-      val.bs$Licor$xout                <- zeros;
-      val.bs$Licor$rh.ref              <- zeros;
-      val.bs$Licor$rh.sam              <- zeros;
-      val.bs$Licor$uin                 <- zeros;
-      val.bs$Licor$par.int             <- zeros;
-      val.bs$Licor$par.ext             <- zeros;
-      val.bs$Licor$Atm.press           <- zeros;
-      val.bs$Licor$CsMch               <- zeros;
-      val.bs$Licor$HsMch               <- zeros;
-      val.bs$Licor$StableF             <- zeros;
-      val.bs$Licor$Status              <- zeros;
-      val.bs$Licor$VpdA                <- zeros;
-      val.bs$Licor$Ci.Ca               <- zeros;
-      val.bs$Licor$pi                  <- zeros;
-      val.bs$Licor$uc_20_mV            <- zeros;
-      val.bs$Licor$uc_21_mV            <- zeros;
-      val.bs$Licor$U_S                 <- zeros;
-      val.bs$Licor$Trans               <- zeros;
-      val.bs$Licor$CndCO2              <- zeros;
-      val.bs$Licor$Ref_mV              <- zeros;
-      val.bs$Licor$xTemp1              <- zeros;
-      val.bs$Licor$xTemp2              <- zeros;
+    if (sw$use_Licor) {
+      val_bs$Licor$n                   <- val_bs_sum$Licor$n        ;
+      val_bs$Licor$first_ind           <- val_bs_sum$Licor$first_ind;
+      val_bs$Licor$ind                 <- val_bs_sum$Licor$ind      ;
+      val_bs$Licor$site                <- val_bs_sum$Licor$site     ;
+      val_bs$Licor$time                <- val_bs_sum$Licor$time     ;
+      val_bs$Licor$FTime               <- zeros;
+      val_bs$Licor$A                   <- zeros;
+      val_bs$Licor$gsc                 <- zeros;
+      val_bs$Licor$Ci                  <- zeros;
+      val_bs$Licor$E                   <- zeros;
+      val_bs$Licor$VPD                 <- zeros;
+      val_bs$Licor$La                  <- zeros;
+      val_bs$Licor$StmRat              <- zeros;
+      val_bs$Licor$gbw                 <- zeros;
+      val_bs$Licor$temp_air            <- zeros;
+      val_bs$Licor$temp_leaf           <- zeros;
+      val_bs$Licor$temp_block          <- zeros;
+      val_bs$Licor$Ce                  <- zeros;
+      val_bs$Licor$Co                  <- zeros;
+      val_bs$Licor$xin                 <- zeros;
+      val_bs$Licor$xout                <- zeros;
+      val_bs$Licor$rh_ref              <- zeros;
+      val_bs$Licor$rh_sam              <- zeros;
+      val_bs$Licor$uin                 <- zeros;
+      val_bs$Licor$par_int             <- zeros;
+      val_bs$Licor$par_ext             <- zeros;
+      val_bs$Licor$Atm_press           <- zeros;
+      val_bs$Licor$CsMch               <- zeros;
+      val_bs$Licor$HsMch               <- zeros;
+      val_bs$Licor$StableF             <- zeros;
+      val_bs$Licor$Status              <- zeros;
+      val_bs$Licor$VpdA                <- zeros;
+      val_bs$Licor$Ci_Ca               <- zeros;
+      val_bs$Licor$pi                  <- zeros;
+      val_bs$Licor$uc_20_mV            <- zeros;
+      val_bs$Licor$uc_21_mV            <- zeros;
+      val_bs$Licor$U_S                 <- zeros;
+      val_bs$Licor$Trans               <- zeros;
+      val_bs$Licor$CndCO2              <- zeros;
+      val_bs$Licor$Ref_mV              <- zeros;
+      val_bs$Licor$xTemp1              <- zeros;
+      val_bs$Licor$xTemp2              <- zeros;
     }
   }
 
   ##details<<
-  ## If using TDL, copy val.bs.sum$TDL$* to val.bs$TDL$*
+  ## If using TDL, copy val_bs_sum$TDL$* to val_bs$TDL$*
   # TDL
-  if (sw$use.TDL) {
-    val.bs$TDL$conc12CO2           [,i.bs]  <- val.bs.sum$TDL$conc12CO2           ;
-    val.bs$TDL$conc13CO2           [,i.bs]  <- val.bs.sum$TDL$conc13CO2           ;
-    val.bs$TDL$TGApressure         [,i.bs]  <- val.bs.sum$TDL$TGApressure         ;
-    val.bs$TDL$MassFlow1           [,i.bs]  <- val.bs.sum$TDL$MassFlow1           ;
-    val.bs$TDL$Pressure1           [,i.bs]  <- val.bs.sum$TDL$Pressure1           ;
-    val.bs$TDL$MassFlow2           [,i.bs]  <- val.bs.sum$TDL$MassFlow2           ;
-    val.bs$TDL$Pressure2           [,i.bs]  <- val.bs.sum$TDL$Pressure2           ;
-    val.bs$TDL$PressureProMan      [,i.bs]  <- val.bs.sum$TDL$PressureProMan      ;
-    val.bs$TDL$interp.tank.hi.12   [,i.bs]  <- val.bs.sum$TDL$interp.tank.hi.12   ;
-    val.bs$TDL$interp.tank.hi.13   [,i.bs]  <- val.bs.sum$TDL$interp.tank.hi.13   ;
-    val.bs$TDL$interp.tank.low.12  [,i.bs]  <- val.bs.sum$TDL$interp.tank.low.12  ;
-    val.bs$TDL$interp.tank.low.13  [,i.bs]  <- val.bs.sum$TDL$interp.tank.low.13  ;
-    val.bs$TDL$interp.reference.12 [,i.bs]  <- val.bs.sum$TDL$interp.reference.12 ;
-    val.bs$TDL$interp.reference.13 [,i.bs]  <- val.bs.sum$TDL$interp.reference.13 ;
-    val.bs$TDL$chamber.12          [,i.bs]  <- val.bs.sum$TDL$chamber.12          ;
-    val.bs$TDL$chamber.13          [,i.bs]  <- val.bs.sum$TDL$chamber.13          ;
+  if (sw$use_TDL) {
+    val_bs$TDL$conc12CO2           [,i_bs]  <- val_bs_sum$TDL$conc12CO2           ;
+    val_bs$TDL$conc13CO2           [,i_bs]  <- val_bs_sum$TDL$conc13CO2           ;
+    val_bs$TDL$TGApressure         [,i_bs]  <- val_bs_sum$TDL$TGApressure         ;
+    val_bs$TDL$MassFlow1           [,i_bs]  <- val_bs_sum$TDL$MassFlow1           ;
+    val_bs$TDL$Pressure1           [,i_bs]  <- val_bs_sum$TDL$Pressure1           ;
+    val_bs$TDL$MassFlow2           [,i_bs]  <- val_bs_sum$TDL$MassFlow2           ;
+    val_bs$TDL$Pressure2           [,i_bs]  <- val_bs_sum$TDL$Pressure2           ;
+    val_bs$TDL$PressureProMan      [,i_bs]  <- val_bs_sum$TDL$PressureProMan      ;
+    val_bs$TDL$interp_tank_hi_12   [,i_bs]  <- val_bs_sum$TDL$interp_tank_hi_12   ;
+    val_bs$TDL$interp_tank_hi_13   [,i_bs]  <- val_bs_sum$TDL$interp_tank_hi_13   ;
+    val_bs$TDL$interp_tank_low_12  [,i_bs]  <- val_bs_sum$TDL$interp_tank_low_12  ;
+    val_bs$TDL$interp_tank_low_13  [,i_bs]  <- val_bs_sum$TDL$interp_tank_low_13  ;
+    val_bs$TDL$interp_reference_12 [,i_bs]  <- val_bs_sum$TDL$interp_reference_12 ;
+    val_bs$TDL$interp_reference_13 [,i_bs]  <- val_bs_sum$TDL$interp_reference_13 ;
+    val_bs$TDL$chamber_12          [,i_bs]  <- val_bs_sum$TDL$chamber_12          ;
+    val_bs$TDL$chamber_13          [,i_bs]  <- val_bs_sum$TDL$chamber_13          ;
   }
 
   ##details<<
-  ## If using Licor, copy val.bs.sum$Licor$* to val.bs$Licor$*
+  ## If using Licor, copy val_bs_sum$Licor$* to val_bs$Licor$*
   # Licor
-  if (sw$use.Licor) {
+  if (sw$use_Licor) {
     # Still need to determine what to do about BS for Licor data
-    val.bs$Licor$FTime             [,i.bs]  <- val.bs.sum$Licor$FTime             ;
-    val.bs$Licor$A                 [,i.bs]  <- val.bs.sum$Licor$A                 ;
-    val.bs$Licor$gsc               [,i.bs]  <- val.bs.sum$Licor$gsc               ;
-    val.bs$Licor$Ci                [,i.bs]  <- val.bs.sum$Licor$Ci                ;
-    val.bs$Licor$E                 [,i.bs]  <- val.bs.sum$Licor$E                 ;
-    val.bs$Licor$VPD               [,i.bs]  <- val.bs.sum$Licor$VPD               ;
-    val.bs$Licor$La                [,i.bs]  <- val.bs.sum$Licor$La                ;
-    val.bs$Licor$StmRat            [,i.bs]  <- val.bs.sum$Licor$StmRat            ;
-    val.bs$Licor$gbw               [,i.bs]  <- val.bs.sum$Licor$gbw               ;
-    val.bs$Licor$temp.air          [,i.bs]  <- val.bs.sum$Licor$temp.air          ;
-    val.bs$Licor$temp.leaf         [,i.bs]  <- val.bs.sum$Licor$temp.leaf         ;
-    val.bs$Licor$temp.block        [,i.bs]  <- val.bs.sum$Licor$temp.block        ;
-    val.bs$Licor$Ce                [,i.bs]  <- val.bs.sum$Licor$Ce                ;
-    val.bs$Licor$Co                [,i.bs]  <- val.bs.sum$Licor$Co                ;
-    val.bs$Licor$xin               [,i.bs]  <- val.bs.sum$Licor$xin               ;
-    val.bs$Licor$xout              [,i.bs]  <- val.bs.sum$Licor$xout              ;
-    val.bs$Licor$rh.ref            [,i.bs]  <- val.bs.sum$Licor$rh.ref            ;
-    val.bs$Licor$rh.sam            [,i.bs]  <- val.bs.sum$Licor$rh.sam            ;
-    val.bs$Licor$uin               [,i.bs]  <- val.bs.sum$Licor$uin               ;
-    val.bs$Licor$par.int           [,i.bs]  <- val.bs.sum$Licor$par.int           ;
-    val.bs$Licor$par.ext           [,i.bs]  <- val.bs.sum$Licor$par.ext           ;
-    val.bs$Licor$Atm.press         [,i.bs]  <- val.bs.sum$Licor$Atm.press         ;
-    val.bs$Licor$CsMch             [,i.bs]  <- val.bs.sum$Licor$CsMch             ;
-    val.bs$Licor$HsMch             [,i.bs]  <- val.bs.sum$Licor$HsMch             ;
-    val.bs$Licor$StableF           [,i.bs]  <- val.bs.sum$Licor$StableF           ;
-    val.bs$Licor$Status            [,i.bs]  <- val.bs.sum$Licor$Status            ;
-    val.bs$Licor$VpdA              [,i.bs]  <- val.bs.sum$Licor$VpdA              ;
-    val.bs$Licor$Ci.Ca             [,i.bs]  <- val.bs.sum$Licor$Ci.Ca             ;
-    val.bs$Licor$pi                [,i.bs]  <- val.bs.sum$Licor$pi                ;
-    val.bs$Licor$uc_20_mV          [,i.bs]  <- val.bs.sum$Licor$uc_20_mV          ;
-    val.bs$Licor$uc_21_mV          [,i.bs]  <- val.bs.sum$Licor$uc_21_mV          ;
-    val.bs$Licor$U_S               [,i.bs]  <- val.bs.sum$Licor$U_S               ;
-    val.bs$Licor$Trans             [,i.bs]  <- val.bs.sum$Licor$Trans             ;
-    val.bs$Licor$CndCO2            [,i.bs]  <- val.bs.sum$Licor$CndCO2            ;
-    val.bs$Licor$Ref_mV            [,i.bs]  <- val.bs.sum$Licor$Ref_mV            ;
-    val.bs$Licor$xTemp1            [,i.bs]  <- val.bs.sum$Licor$xTemp1            ;
-    val.bs$Licor$xTemp2            [,i.bs]  <- val.bs.sum$Licor$xTemp2            ;
+    val_bs$Licor$FTime             [,i_bs]  <- val_bs_sum$Licor$FTime             ;
+    val_bs$Licor$A                 [,i_bs]  <- val_bs_sum$Licor$A                 ;
+    val_bs$Licor$gsc               [,i_bs]  <- val_bs_sum$Licor$gsc               ;
+    val_bs$Licor$Ci                [,i_bs]  <- val_bs_sum$Licor$Ci                ;
+    val_bs$Licor$E                 [,i_bs]  <- val_bs_sum$Licor$E                 ;
+    val_bs$Licor$VPD               [,i_bs]  <- val_bs_sum$Licor$VPD               ;
+    val_bs$Licor$La                [,i_bs]  <- val_bs_sum$Licor$La                ;
+    val_bs$Licor$StmRat            [,i_bs]  <- val_bs_sum$Licor$StmRat            ;
+    val_bs$Licor$gbw               [,i_bs]  <- val_bs_sum$Licor$gbw               ;
+    val_bs$Licor$temp_air          [,i_bs]  <- val_bs_sum$Licor$temp_air          ;
+    val_bs$Licor$temp_leaf         [,i_bs]  <- val_bs_sum$Licor$temp_leaf         ;
+    val_bs$Licor$temp_block        [,i_bs]  <- val_bs_sum$Licor$temp_block        ;
+    val_bs$Licor$Ce                [,i_bs]  <- val_bs_sum$Licor$Ce                ;
+    val_bs$Licor$Co                [,i_bs]  <- val_bs_sum$Licor$Co                ;
+    val_bs$Licor$xin               [,i_bs]  <- val_bs_sum$Licor$xin               ;
+    val_bs$Licor$xout              [,i_bs]  <- val_bs_sum$Licor$xout              ;
+    val_bs$Licor$rh_ref            [,i_bs]  <- val_bs_sum$Licor$rh_ref            ;
+    val_bs$Licor$rh_sam            [,i_bs]  <- val_bs_sum$Licor$rh_sam            ;
+    val_bs$Licor$uin               [,i_bs]  <- val_bs_sum$Licor$uin               ;
+    val_bs$Licor$par_int           [,i_bs]  <- val_bs_sum$Licor$par_int           ;
+    val_bs$Licor$par_ext           [,i_bs]  <- val_bs_sum$Licor$par_ext           ;
+    val_bs$Licor$Atm_press         [,i_bs]  <- val_bs_sum$Licor$Atm_press         ;
+    val_bs$Licor$CsMch             [,i_bs]  <- val_bs_sum$Licor$CsMch             ;
+    val_bs$Licor$HsMch             [,i_bs]  <- val_bs_sum$Licor$HsMch             ;
+    val_bs$Licor$StableF           [,i_bs]  <- val_bs_sum$Licor$StableF           ;
+    val_bs$Licor$Status            [,i_bs]  <- val_bs_sum$Licor$Status            ;
+    val_bs$Licor$VpdA              [,i_bs]  <- val_bs_sum$Licor$VpdA              ;
+    val_bs$Licor$Ci_Ca             [,i_bs]  <- val_bs_sum$Licor$Ci_Ca             ;
+    val_bs$Licor$pi                [,i_bs]  <- val_bs_sum$Licor$pi                ;
+    val_bs$Licor$uc_20_mV          [,i_bs]  <- val_bs_sum$Licor$uc_20_mV          ;
+    val_bs$Licor$uc_21_mV          [,i_bs]  <- val_bs_sum$Licor$uc_21_mV          ;
+    val_bs$Licor$U_S               [,i_bs]  <- val_bs_sum$Licor$U_S               ;
+    val_bs$Licor$Trans             [,i_bs]  <- val_bs_sum$Licor$Trans             ;
+    val_bs$Licor$CndCO2            [,i_bs]  <- val_bs_sum$Licor$CndCO2            ;
+    val_bs$Licor$Ref_mV            [,i_bs]  <- val_bs_sum$Licor$Ref_mV            ;
+    val_bs$Licor$xTemp1            [,i_bs]  <- val_bs_sum$Licor$xTemp1            ;
+    val_bs$Licor$xTemp2            [,i_bs]  <- val_bs_sum$Licor$xTemp2            ;
   }
 
-  return( val.bs );
-  ### val.bs
+  return( val_bs );
+  ### val_bs
 }
 

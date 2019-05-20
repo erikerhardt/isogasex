@@ -4,7 +4,7 @@
 \alias{f_val_bs_CI}
 \title{Title}
 \usage{
-f_val_bs_CI(val.calc.bs, val.bs.TDL, val.bs.Licor, R.bootstrap, sig.CI, sw)
+f_val_bs_CI(val_calc_bs, val_bs_TDL, val_bs_Licor, R_bootstrap, sig_CI, sw)
 }
 \arguments{
 \item{sw}{}

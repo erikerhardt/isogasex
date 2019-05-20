@@ -4,8 +4,8 @@
 \alias{f_val_calc_Delta_i_complex_for_gm}
 \title{Title}
 \usage{
-f_val_calc_Delta_i_complex_for_gm(a, b, a.b, pa, ps, pi, b.gm, f.photo,
-  Gamma.star, e, Rd, k)
+f_val_calc_Delta_i_complex_for_gm(a, b, a_b, pa, ps, pi, b_gm, f_photo,
+  Gamma_star, e, Rd, k)
 }
 \arguments{
 \item{k}{}

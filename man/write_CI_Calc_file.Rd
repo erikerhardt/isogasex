@@ -4,11 +4,11 @@
 \alias{write_CI_Calc_file}
 \title{Title}
 \usage{
-write_CI_Calc_file(val, TDL.cycle, output.CI.Calc.fn,
-  output.CI.Calc.last.fn)
+write_CI_Calc_file(val, TDL_cycle, output_CI_Calc_fn,
+  output_CI_Calc_last_fn)
 }
 \arguments{
-\item{output.CI.Calc.last.fn}{}
+\item{output_CI_Calc_last_fn}{}
 }
 \description{
 Title

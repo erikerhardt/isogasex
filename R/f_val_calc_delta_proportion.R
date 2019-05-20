@@ -2,7 +2,7 @@
 #'
 #' @param obs.12C
 #' @param obs.13C
-#' @param R.std
+#' @param R_std
 #'
 #' @return
 #' @export
@@ -15,18 +15,18 @@ function# delta as proportion (Isotopic composition (d) as fraction)
 ###
 , obs.13C
 ###
-, R.std
+, R_std
 ###
 )
 {
   ##details<<
-  ## First calculates R.obs with \code{\link{f_val_calc_isotope_ratio}}
-  ##\deqn{delta.proportion <- (R.obs / R.std) - 1}
+  ## First calculates R_obs with \code{\link{f_val_calc_isotope_ratio}}
+  ##\deqn{delta_proportion <- (R_obs / R_std) - 1}
   ## this quantity is not in per mil
-  R.obs <- f_val_calc_isotope_ratio(obs.12C, obs.13C);
-  delta.proportion <- (R.obs / R.std) - 1; # not in per mil
+  R_obs <- f_val_calc_isotope_ratio(obs.12C, obs.13C);
+  delta_proportion <- (R_obs / R_std) - 1; # not in per mil
 
-  return( delta.proportion );
-  ### delta.proportion
+  return( delta_proportion );
+  ### delta_proportion
 }
 

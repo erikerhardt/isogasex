@@ -4,7 +4,7 @@
 \alias{isogasex}
 \title{Title}
 \usage{
-isogasex(input.fn, path = getwd())
+isogasex(input_fn, path = getwd())
 }
 \arguments{
 \item{path}{}

@@ -4,11 +4,11 @@
 \alias{plot_Licor_temp_light}
 \title{Title}
 \usage{
-plot_Licor_temp_light(VPD, E.transpiration, leaf.temp, air.temp, light.in,
-  light.out, x.time, plot.format.list, output.fn.prefix)
+plot_Licor_temp_light(VPD, E_transpiration, leaf_temp, air_temp, light_in,
+  light_out, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

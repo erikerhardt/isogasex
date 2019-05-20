@@ -23,16 +23,16 @@ function# Delta from ratios in and out?, (Re/Ro)-1, is this really the same?
 )
 {
   ##details<<
-  ## First calculates R.ref and R.cham with \code{\link{f_val_calc_isotope_ratio}}
-  R.ref  <- f_val_calc_isotope_ratio(ref.12Ce, ref.13Ce);
-  R.cham <- f_val_calc_isotope_ratio(cham.12Co, cham.13Co);
+  ## First calculates R_ref and R_cham with \code{\link{f_val_calc_isotope_ratio}}
+  R_ref  <- f_val_calc_isotope_ratio(ref.12Ce, ref.13Ce);
+  R_cham <- f_val_calc_isotope_ratio(cham.12Co, cham.13Co);
 
   ##details<<
-  ##\deqn{Delta.from.ratios.in.out <- (R.ref / R.cham) - 1}
+  ##\deqn{Delta_from_ratios_in_out <- (R_ref / R_cham) - 1}
   ## this quantity is not in per mil
-  Delta.from.ratios.in.out <- (R.ref / R.cham) - 1; # not in per mil
+  Delta_from_ratios_in_out <- (R_ref / R_cham) - 1; # not in per mil
 
-  return( Delta.from.ratios.in.out );
-  ### Delta.from.ratios.in.out
+  return( Delta_from_ratios_in_out );
+  ### Delta_from_ratios_in_out
 }
 

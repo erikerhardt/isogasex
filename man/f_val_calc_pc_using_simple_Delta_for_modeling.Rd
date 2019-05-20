@@ -4,10 +4,10 @@
 \alias{f_val_calc_pc_using_simple_Delta_for_modeling}
 \title{Title}
 \usage{
-f_val_calc_pc_using_simple_Delta_for_modeling(Delta, pa, a, b.modeling)
+f_val_calc_pc_using_simple_Delta_for_modeling(Delta, pa, a, b_modeling)
 }
 \arguments{
-\item{b.modeling}{}
+\item{b_modeling}{}
 }
 \description{
 Title

@@ -4,12 +4,12 @@
 \alias{plot_gm}
 \title{Title}
 \usage{
-plot_gm(chamber.Totalgm.point.simple, chamber.12gm.point.simple,
-  chamber.13gm.point.simple, chamber.Totalgm.point.complex, x.time,
-  plot.format.list, output.fn.prefix)
+plot_gm(chamber_Totalgm_point_simple, chamber_12gm_point_simple,
+  chamber_13gm_point_simple, chamber_Totalgm_point_complex, x_time,
+  plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

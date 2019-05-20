@@ -4,7 +4,7 @@
 \alias{f_par_bs_mean}
 \title{Title}
 \usage{
-f_par_bs_mean(x, x.var, n.sam, n)
+f_par_bs_mean(x, x_var, n_sam, n)
 }
 \arguments{
 \item{n}{}

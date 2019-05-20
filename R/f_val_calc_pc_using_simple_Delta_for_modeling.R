@@ -3,7 +3,7 @@
 #' @param Delta
 #' @param pa
 #' @param a
-#' @param b.modeling
+#' @param b_modeling
 #'
 #' @return
 #' @export
@@ -18,13 +18,13 @@ function# pc using simple D for modeling
 ###
 , a
 ###
-, b.modeling
+, b_modeling
 ###
 )
 {
   ##details<<
-  ##\deqn{pc = (pa * (Delta - a)) / (b.modeling - a)}
-  pc <- (pa * (Delta - a)) / (b.modeling - a);
+  ##\deqn{pc = (pa * (Delta - a)) / (b_modeling - a)}
+  pc <- (pa * (Delta - a)) / (b_modeling - a);
 
   return( pc );
   ### pc

@@ -6,7 +6,7 @@
 #' @param A
 #' @param pa
 #' @param Di
-#' @param D.obs
+#' @param D_obs
 #'
 #' @return
 #' @export
@@ -27,15 +27,15 @@ function# gm point simple, internal leaf (mesophyll) conductance calculated for 
 ###
 , Di
 ###
-, D.obs
+, D_obs
 ###
 )
 {
   ##details<<
-  ##\deqn{gm.point.simple = (( b - bs - al) * A / pa) / (Di - D.obs)}
-  gm.point.simple <- (( b - bs - al) * A / pa) / (Di - D.obs);
+  ##\deqn{gm_point_simple = (( b - bs - al) * A / pa) / (Di - D_obs)}
+  gm_point_simple <- (( b - bs - al) * A / pa) / (Di - D_obs);
 
-  return( gm.point.simple );
-  ### gm.point.simple
+  return( gm_point_simple );
+  ### gm_point_simple
 }
 

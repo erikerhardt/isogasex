@@ -1,7 +1,7 @@
 #' Title
 #'
-#' @param x.time
-#' @param y.var
+#' @param x_time
+#' @param y_var
 #' @param pch
 #' @param type
 #' @param cex
@@ -16,9 +16,9 @@
 plot_not_na <-
 function# if no data to plot, plot a dummy box (for when certain Licor columns are not collected)
 ###
-(x.time
+(x_time
 ###
-, y.var
+, y_var
 ###
 , pch=20
 ###
@@ -37,12 +37,12 @@ function# if no data to plot, plot a dummy box (for when certain Licor columns a
   ##details<<
   ## If no data to plot, returns a "no data" (0,0) point as plot place holder.
 
-  if (sum(is.na(y.var)) < length(x.time))
-    { plot(x.time, y.var, pch=pch, type=type, cex=cex, xlab=xlab, ylab=ylab, main=main); plot_not_na.val <- 1; }
+  if (sum(is.na(y_var)) < length(x_time))
+    { plot(x_time, y_var, pch=pch, type=type, cex=cex, xlab=xlab, ylab=ylab, main=main); plot_not_na_val <- 1; }
   else
-    { plot(0, 0, pch="x", ylab="no data", main=main); plot_not_na.val <- 0; };
+    { plot(0, 0, pch="x", ylab="no data", main=main); plot_not_na_val <- 0; };
 
-  return( plot_not_na.val );
-  ### plot_not_na.val
+  return( plot_not_na_val );
+  ### plot_not_na_val
 }
 

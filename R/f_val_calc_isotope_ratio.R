@@ -17,10 +17,10 @@ function# Isotope ratio
 )
 {
   ##details<<
-  ##\deqn{isotope.ratio = obs.13C / obs.12C}
-  isotope.ratio <- obs.13C / obs.12C;
+  ##\deqn{isotope_ratio = obs.13C / obs.12C}
+  isotope_ratio <- obs.13C / obs.12C;
 
-  return( isotope.ratio );
-  ### isotope.ratio
+  return( isotope_ratio );
+  ### isotope_ratio
 }
 

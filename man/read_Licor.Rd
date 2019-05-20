@@ -4,7 +4,7 @@
 \alias{read_Licor}
 \title{Title}
 \usage{
-read_Licor(Licor.fn, Licor.TDL.time.offset.seconds, sw)
+read_Licor(Licor_fn, Licor_TDL_time_offset_seconds, sw)
 }
 \arguments{
 \item{sw}{}

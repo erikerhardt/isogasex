@@ -4,11 +4,11 @@
 \alias{plot_pa_ps}
 \title{Title}
 \usage{
-plot_pa_ps(chamber.Totalpa, chamber.12pa, chamber.13pa, chamber.Totalps,
-  chamber.12ps, chamber.13ps, x.time, plot.format.list, output.fn.prefix)
+plot_pa_ps(chamber_Totalpa, chamber_12pa, chamber_13pa, chamber_Totalps,
+  chamber_12ps, chamber_13ps, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

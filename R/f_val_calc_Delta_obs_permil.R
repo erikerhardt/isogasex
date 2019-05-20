@@ -1,7 +1,7 @@
 #' Title
 #'
-#' @param reference.delta.e
-#' @param chamber.delta.o
+#' @param reference_delta_e
+#' @param chamber_delta_o
 #' @param xi
 #'
 #' @return
@@ -11,9 +11,9 @@
 f_val_calc_Delta_obs_permil <-
 function# Delta per mil, observed discrimination
 ###
-(reference.delta.e
+(reference_delta_e
 ###
-, chamber.delta.o
+, chamber_delta_o
 ###
 , xi
 ###
@@ -21,9 +21,9 @@ function# Delta per mil, observed discrimination
 {
   ##details<<
   ## Multiply 1000 by \code{\link{f_val_calc_Delta_obs}}
-  Delta.obs.permil <- 1000 * f_val_calc_Delta_obs( reference.delta.e, chamber.delta.o, xi);
+  Delta_obs_permil <- 1000 * f_val_calc_Delta_obs( reference_delta_e, chamber_delta_o, xi);
 
-  return( Delta.obs.permil );
-  ### Delta.obs.permil
+  return( Delta_obs_permil );
+  ### Delta_obs_permil
 }
 

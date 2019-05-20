@@ -1,12 +1,12 @@
 #' Title
 #'
-#' @param chamber.Totalpc.using.simple.Delta.for.gm
-#' @param chamber.Totalpc.using.simple.Delta.for.modeling
-#' @param chamber.Totalpc.using.complex.Delta.no.decarboxylation
-#' @param chamber.Totalpc.using.complex.Delta.full.model
-#' @param x.time
-#' @param plot.format.list
-#' @param output.fn.prefix
+#' @param chamber_Totalpc_using_simple_Delta_for_gm
+#' @param chamber_Totalpc_using_simple_Delta_for_modeling
+#' @param chamber_Totalpc_using_complex_Delta_no_decarboxylation
+#' @param chamber_Totalpc_using_complex_Delta_full_model
+#' @param x_time
+#' @param plot_format_list
+#' @param output_fn_prefix
 #'
 #' @return
 #' @export
@@ -15,38 +15,38 @@
 plot_pc_simple_complex <-
 function# Plot pc, simple and complex
 ###
-(chamber.Totalpc.using.simple.Delta.for.gm
+(chamber_Totalpc_using_simple_Delta_for_gm
 ###
-, chamber.Totalpc.using.simple.Delta.for.modeling
+, chamber_Totalpc_using_simple_Delta_for_modeling
 ###
-, chamber.Totalpc.using.complex.Delta.no.decarboxylation
+, chamber_Totalpc_using_complex_Delta_no_decarboxylation
 ###
-, chamber.Totalpc.using.complex.Delta.full.model
+, chamber_Totalpc_using_complex_Delta_full_model
 ###
-, x.time
+, x_time
 ###
-, plot.format.list
+, plot_format_list
 ###
-, output.fn.prefix
+, output_fn_prefix
 ###
 )
 {
   ##details<<
   ## Plots the input variables.
 
-  for (i.plot in plot.format.list)
+  for (i_plot in plot_format_list)
   {
-    plot.filename <- "plot_pc_simple_complex";
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "begin", plot.format = i.plot);
+    plot_filename <- "plot_pc_simple_complex";
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
     par(mfrow=c(4,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
-    plot_not_na(x.time, chamber.Totalpc.using.simple.Delta.for.gm             , pch=20, type="l", ylab="", main="Total pc using simple D for gm, includes boundary layer");
-    plot_not_na(x.time, chamber.Totalpc.using.simple.Delta.for.modeling       , pch=20, type="l", ylab="", main="Total pc using simple D for modeling");
-    plot_not_na(x.time, chamber.Totalpc.using.complex.Delta.no.decarboxylation, pch=20, type="l", ylab="", main="Total pc using complex D, no decarboxylation");
-    plot_not_na(x.time, chamber.Totalpc.using.complex.Delta.full.model        , pch=20, type="l", ylab="", main="Total pc using complex D, full model");
+    plot_not_na(x_time, chamber_Totalpc_using_simple_Delta_for_gm             , pch=20, type="l", ylab="", main="Total pc using simple D for gm, includes boundary layer");
+    plot_not_na(x_time, chamber_Totalpc_using_simple_Delta_for_modeling       , pch=20, type="l", ylab="", main="Total pc using simple D for modeling");
+    plot_not_na(x_time, chamber_Totalpc_using_complex_Delta_no_decarboxylation, pch=20, type="l", ylab="", main="Total pc using complex D, no decarboxylation");
+    plot_not_na(x_time, chamber_Totalpc_using_complex_Delta_full_model        , pch=20, type="l", ylab="", main="Total pc using complex D, full model");
 
     #axis(3); axis(4); # add axis labels to top and right sides
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "end", i.plot);
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
   return( NULL );

@@ -4,11 +4,11 @@
 \alias{plot_gain_offset}
 \title{Title}
 \usage{
-plot_gain_offset(gain.12C, gain.13C, offset.12C, offset.13C, x.time,
-  plot.format.list, output.fn.prefix)
+plot_gain_offset(gain_12C, gain_13C, offset_12C, offset_13C, x_time,
+  plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

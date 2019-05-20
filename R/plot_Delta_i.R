@@ -1,56 +1,56 @@
 #' Title
 #'
-#' @param chamber.Delta.i.simple.for.gm
-#' @param chamber.Delta.i.simple.for.modeling
-#' @param chamber.Delta.i.complex.for.gm
-#' @param chamber.Delta.i.simple.for.gm_Delta.obs
-#' @param chamber.Delta.i.complex.for.gm_Delta.obs
-#' @param x.time
-#' @param plot.format.list
-#' @param output.fn.prefix
+#' @param chamber_Delta_i_simple_for_gm
+#' @param chamber_Delta_i_simple_for_modeling
+#' @param chamber_Delta_i_complex_for_gm
+#' @param chamber_Delta_i_simple_for_gm_Delta_obs
+#' @param chamber_Delta_i_complex_for_gm_Delta_obs
+#' @param x_time
+#' @param plot_format_list
+#' @param output_fn_prefix
 #'
 #' @return
 #' @export
 #'
 #' @examples
 plot_Delta_i <-
-function# Plot Delta.i, predicted discrimination
+function# Plot Delta_i, predicted discrimination
 ###
-(chamber.Delta.i.simple.for.gm
+(chamber_Delta_i_simple_for_gm
 ###
-, chamber.Delta.i.simple.for.modeling
+, chamber_Delta_i_simple_for_modeling
 ###
-, chamber.Delta.i.complex.for.gm
+, chamber_Delta_i_complex_for_gm
 ###
-, chamber.Delta.i.simple.for.gm_Delta.obs
+, chamber_Delta_i_simple_for_gm_Delta_obs
 ###
-, chamber.Delta.i.complex.for.gm_Delta.obs
+, chamber_Delta_i_complex_for_gm_Delta_obs
 ###
-, x.time
+, x_time
 ###
-, plot.format.list
+, plot_format_list
 ###
-, output.fn.prefix
+, output_fn_prefix
 ###
 )
 {
   ##details<<
   ## Plots the input variables.
 
-  for (i.plot in plot.format.list)
+  for (i_plot in plot_format_list)
   {
-    plot.filename <- "plot_Delta_i_predicted_discrimination";
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "begin", plot.format = i.plot);
+    plot_filename <- "plot_Delta_i_predicted_discrimination";
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
     par(mfrow=c(5,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
-    plot_not_na(x.time, chamber.Delta.i.simple.for.gm           , pch=20, type="l", ylab="", main="Delta.i simple for gm");
-    plot_not_na(x.time, chamber.Delta.i.simple.for.modeling     , pch=20, type="l", ylab="", main="Delta.i simple for modeling");
-    plot_not_na(x.time, chamber.Delta.i.complex.for.gm          , pch=20, type="l", ylab="", main="Delta.i complex for gm");
-    plot_not_na(x.time, chamber.Delta.i.simple.for.gm_Delta.obs , pch=20, type="l", ylab="", main="difference of Delta.i simple for gm and Delta.obs from TDL");
-    plot_not_na(x.time, chamber.Delta.i.complex.for.gm_Delta.obs, pch=20, type="l", ylab="", main="difference of Delta.i complex for gm and Delta.obs from TDL");
+    plot_not_na(x_time, chamber_Delta_i_simple_for_gm           , pch=20, type="l", ylab="", main="Delta_i simple for gm");
+    plot_not_na(x_time, chamber_Delta_i_simple_for_modeling     , pch=20, type="l", ylab="", main="Delta_i simple for modeling");
+    plot_not_na(x_time, chamber_Delta_i_complex_for_gm          , pch=20, type="l", ylab="", main="Delta_i complex for gm");
+    plot_not_na(x_time, chamber_Delta_i_simple_for_gm_Delta_obs , pch=20, type="l", ylab="", main="difference of Delta_i simple for gm and Delta_obs from TDL");
+    plot_not_na(x_time, chamber_Delta_i_complex_for_gm_Delta_obs, pch=20, type="l", ylab="", main="difference of Delta_i complex for gm and Delta_obs from TDL");
 
     #axis(3); axis(4); # add axis labels to top and right sides
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "end", i.plot);
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
   return( NULL );

@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param plot.format
+#' @param plot_format
 #'
 #' @return
 #' @export
@@ -9,7 +9,7 @@
 move_plot_files <-
 function# move selected plot files to subdirectories
 ###
-(plot.format
+(plot_format
 ###
 )
 {
@@ -18,7 +18,7 @@ function# move selected plot files to subdirectories
   dir.create("BS");
   dir.create("var");
 
-  for (ii in plot.format) {
+  for (ii in plot_format) {
     if (ii == 1) { type <- ".png" ; };
     if (ii == 2) { type <- ".eps" ; };
     if (ii == 3) { type <- ".pdf" ; };
@@ -28,26 +28,26 @@ function# move selected plot files to subdirectories
 
     ##details<<
     ## Move \file{BS_CHECK*} files into \file{BS} directory.
-    plot.list <- list.files(pattern=type);               # jpeg files in out dir
-    BS.list.all <- list.files(pattern="BS_CHECK");
-    BS.list <- intersect(plot.list, BS.list.all);
-    if (length(BS.list)) {
-      for (i in 1:length(BS.list)) {
-        file.rename(BS.list[i], paste("BS/",BS.list[i],sep=""));
+    plot_list <- list.files(pattern=type);               # jpeg files in out dir
+    BS_list_all <- list.files(pattern="BS_CHECK");
+    BS_list <- intersect(plot_list, BS_list_all);
+    if (length(BS_list)) {
+      for (i in 1:length(BS_list)) {
+        file.rename(BS_list[i], paste("BS/",BS_list[i],sep=""));
       }
     }
 
     ##details<<
     ## Move files that are not (TDL, Licor, offset) into \file{var} directory.
-    remaining.list <- list.files(pattern=type)               # jpeg files in out dir
-    ind.remaining <- 1:length(remaining.list);               # assign indices
-    ind.remaining.TDL    <- grep("TDL",    remaining.list);  # TDL indices
-    ind.remaining.Licor  <- grep("Licor",  remaining.list);  # Licor indices
-    ind.remaining.offset <- grep("offset", remaining.list);  # offset indices
-    ind.nomove <- unique(c(ind.remaining.TDL, ind.remaining.Licor, ind.remaining.offset));  # files not to move
-    ind.move <- setdiff(ind.remaining, ind.nomove);  # files to move
-    for (i in ind.move) {
-      file.rename(remaining.list[i], paste("var/",remaining.list[i],sep=""));
+    remaining_list <- list.files(pattern=type)               # jpeg files in out dir
+    ind_remaining <- 1:length(remaining_list);               # assign indices
+    ind_remaining_TDL    <- grep("TDL",    remaining_list);  # TDL indices
+    ind_remaining_Licor  <- grep("Licor",  remaining_list);  # Licor indices
+    ind_remaining_offset <- grep("offset", remaining_list);  # offset indices
+    ind_nomove <- unique(c(ind_remaining_TDL, ind_remaining_Licor, ind_remaining_offset));  # files not to move
+    ind_move <- setdiff(ind_remaining, ind_nomove);  # files to move
+    for (i in ind_move) {
+      file.rename(remaining_list[i], paste("var/",remaining_list[i],sep=""));
     }
 
   } # ii

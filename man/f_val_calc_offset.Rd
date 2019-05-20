@@ -4,11 +4,11 @@
 \alias{f_val_calc_offset}
 \title{Title}
 \usage{
-f_val_calc_offset(true.value.hi.12C, true.value.hi.13C, gain.12C, gain.13C,
-  cal.tank.hi.12C, cal.tank.hi.13C)
+f_val_calc_offset(true_value_hi_12C, true_value_hi_13C, gain_12C, gain_13C,
+  cal_tank_hi_12C, cal_tank_hi_13C)
 }
 \arguments{
-\item{cal.tank.hi.13C}{}
+\item{cal_tank_hi_13C}{}
 }
 \description{
 Title

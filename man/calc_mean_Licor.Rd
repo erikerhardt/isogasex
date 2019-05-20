@@ -4,7 +4,7 @@
 \alias{calc_mean_Licor}
 \title{Title}
 \usage{
-calc_mean_Licor(TDL, Licor, TDL.cycle, sw)
+calc_mean_Licor(TDL, Licor, TDL_cycle, sw)
 }
 \arguments{
 \item{sw}{}

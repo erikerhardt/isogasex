@@ -1,11 +1,11 @@
 #' Title
 #'
-#' @param chamber.TotalCc
-#' @param chamber.12Cc
-#' @param chamber.13Cc
-#' @param x.time
-#' @param plot.format.list
-#' @param output.fn.prefix
+#' @param chamber_TotalCc
+#' @param chamber_12Cc
+#' @param chamber_13Cc
+#' @param x_time
+#' @param plot_format_list
+#' @param output_fn_prefix
 #'
 #' @return
 #' @export
@@ -14,35 +14,35 @@
 plot_Cc_total <-
 function# Plot Cc, ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol
 ###
-(chamber.TotalCc
+(chamber_TotalCc
 ###
-, chamber.12Cc
+, chamber_12Cc
 ###
-, chamber.13Cc
+, chamber_13Cc
 ###
-, x.time
+, x_time
 ###
-, plot.format.list
+, plot_format_list
 ###
-, output.fn.prefix
+, output_fn_prefix
 ###
 )
 {
   ##details<<
   ## Plots the input variables.
 
-  for (i.plot in plot.format.list)
+  for (i_plot in plot_format_list)
   {
-    plot.filename <- "plot_Cc_ppm_CO2_concentration";
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "begin", plot.format = i.plot);
+    plot_filename <- "plot_Cc_ppm_CO2_concentration";
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
     par(mfrow=c(3,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
-    plot_not_na(x.time, chamber.TotalCc, pch=20, type="l", ylab="", main="Total Cc, ppm CO2 concentration at the site of carboxylation");
-    plot_not_na(x.time, chamber.12Cc   , pch=20, type="l", ylab="", main="12 Cc, ppm CO2 concentration at the site of carboxylation");
-    plot_not_na(x.time, chamber.13Cc   , pch=20, type="l", ylab="", main="13 Cc, ppm CO2 concentration at the site of carboxylation");
+    plot_not_na(x_time, chamber_TotalCc, pch=20, type="l", ylab="", main="Total Cc, ppm CO2 concentration at the site of carboxylation");
+    plot_not_na(x_time, chamber_12Cc   , pch=20, type="l", ylab="", main="12 Cc, ppm CO2 concentration at the site of carboxylation");
+    plot_not_na(x_time, chamber_13Cc   , pch=20, type="l", ylab="", main="13 Cc, ppm CO2 concentration at the site of carboxylation");
 
     #axis(3); axis(4); # add axis labels to top and right sides
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "end", i.plot);
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
   return( NULL );

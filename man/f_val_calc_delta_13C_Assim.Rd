@@ -4,10 +4,10 @@
 \alias{f_val_calc_delta_13C_Assim}
 \title{Title}
 \usage{
-f_val_calc_delta_13C_Assim(chamber.delta.o, Delta.obs)
+f_val_calc_delta_13C_Assim(chamber_delta_o, Delta_obs)
 }
 \arguments{
-\item{Delta.obs}{}
+\item{Delta_obs}{}
 }
 \description{
 Title

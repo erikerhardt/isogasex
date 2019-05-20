@@ -4,10 +4,10 @@
 \alias{f_init_bs_matrix}
 \title{Title}
 \usage{
-f_init_bs_matrix(n, R.bootstrap)
+f_init_bs_matrix(n, R_bootstrap)
 }
 \arguments{
-\item{R.bootstrap}{}
+\item{R_bootstrap}{}
 }
 \description{
 Title

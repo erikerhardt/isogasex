@@ -4,7 +4,7 @@
 \alias{val_TDL_Licor_variables}
 \title{Title}
 \usage{
-val_TDL_Licor_variables(TDL, Licor, TDL.cycle, val, sw)
+val_TDL_Licor_variables(TDL, Licor, TDL_cycle, val, sw)
 }
 \arguments{
 \item{sw}{}

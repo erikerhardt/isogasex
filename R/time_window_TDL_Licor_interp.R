@@ -2,7 +2,7 @@
 #'
 #' @param TDL
 #' @param Licor
-#' @param TDL.Licor.times
+#' @param TDL_Licor_times
 #' @param sw
 #'
 #' @return
@@ -13,58 +13,58 @@
 time_window_TDL_Licor_interp <-
 function# keep only the overlapping time window of TDL and Licor files
 ### interpolate the Licor measurements via cubic splines to TDL faster sampling rate
-### assign_variables names within TDL and Licor.interp
+### assign_variables names within TDL and Licor_interp
 (TDL
 ###
 , Licor
 ###
-, TDL.Licor.times
+, TDL_Licor_times
 ###
 , sw
 ###
 )
 {
-  #try.zoo <- library(zoo, logical.return = TRUE); # date functions to merge TDL and Licor by time
+  #try_zoo <- library(zoo, logical.return = TRUE); # date functions to merge TDL and Licor by time
   #
   ## install the package if not already in the library
-  #if ( try.zoo == FALSE ) {
+  #if ( try_zoo == FALSE ) {
   #  install.packages("zoo");
   #  library(zoo);
   #}
 
   ##details<<
   ## BEGIN If use TDL
-  if (sw$use.TDL) {
+  if (sw$use_TDL) {
     ##details<<
     ## - Indices to keep based on TDL/Licor time window overlap.
-    TDL.ind.keep        <- seq(TDL.Licor.times$TDL.time.ind.first,   TDL.Licor.times$TDL.time.ind.last);
+    TDL_ind_keep        <- seq(TDL_Licor_times$TDL_time_ind_first,   TDL_Licor_times$TDL_time_ind_last);
 
-    TDL$n               <- length(TDL.ind.keep);
-    TDL$time            <- TDL$time[TDL.ind.keep];
-    TDL$time_org        <- TDL$time_org[TDL.ind.keep];
-    TDL$data            <- TDL$data[TDL.ind.keep,];
+    TDL$n               <- length(TDL_ind_keep);
+    TDL$time            <- TDL$time[TDL_ind_keep];
+    TDL$time_org        <- TDL$time_org[TDL_ind_keep];
+    TDL$data            <- TDL$data[TDL_ind_keep,];
 
     ##details<<
     ## - TDL summary ind to keep.
-    TDL.summary.ind        <- (TDL$last.list[,1] %in% TDL.ind.keep);
-    TDL$last.list          <- TDL$last.list[TDL.summary.ind,];
-    TDL$last.list[,c(1,2)] <- TDL$last.list[,c(1,2)]-TDL.Licor.times$TDL.time.ind.first+1; # reset indices
+    TDL_summary_ind        <- (TDL$last_list[,1] %in% TDL_ind_keep);
+    TDL$last_list          <- TDL$last_list[TDL_summary_ind,];
+    TDL$last_list[,c(1,2)] <- TDL$last_list[,c(1,2)]-TDL_Licor_times$TDL_time_ind_first+1; # reset indices
 
     ##details<<
     ## - Reduce TDL summary.
-    TDL$summary$n         <- sum(TDL.summary.ind);
-    TDL$summary$first.ind <- TDL$summary$first.ind[TDL.summary.ind] - TDL.Licor.times$TDL.time.ind.first + 1;
-    TDL$summary$ind       <- TDL$summary$ind      [TDL.summary.ind] - TDL.Licor.times$TDL.time.ind.first + 1;
-    TDL$summary$site      <- TDL$summary$site     [TDL.summary.ind];
-    TDL$summary$n.sam     <- TDL$summary$n.sam    [TDL.summary.ind];
-    TDL$summary$time      <- TDL$summary$time     [TDL.summary.ind];
-    TDL$summary$mean      <- TDL$summary$mean     [TDL.summary.ind,];
-    TDL$summary$var       <- TDL$summary$var      [TDL.summary.ind,];
-    TDL$summary$sd        <- TDL$summary$sd       [TDL.summary.ind,];
+    TDL$summary$n         <- sum(TDL_summary_ind);
+    TDL$summary$first_ind <- TDL$summary$first_ind[TDL_summary_ind] - TDL_Licor_times$TDL_time_ind_first + 1;
+    TDL$summary$ind       <- TDL$summary$ind      [TDL_summary_ind] - TDL_Licor_times$TDL_time_ind_first + 1;
+    TDL$summary$site      <- TDL$summary$site     [TDL_summary_ind];
+    TDL$summary$n_sam     <- TDL$summary$n_sam    [TDL_summary_ind];
+    TDL$summary$time      <- TDL$summary$time     [TDL_summary_ind];
+    TDL$summary$mean      <- TDL$summary$mean     [TDL_summary_ind,];
+    TDL$summary$var       <- TDL$summary$var      [TDL_summary_ind,];
+    TDL$summary$sd        <- TDL$summary$sd       [TDL_summary_ind,];
 
     ##details<<
     ## - Reduce TDL interp.
-    TDL$interp <- TDL$interp[TDL.ind.keep,];
+    TDL$interp <- TDL$interp[TDL_ind_keep,];
 
     ## assign TDL variables  moved to read_TDL.R 8/18/2011 10:50AM
     #TDL$ind             <- 1:TDL$n;
@@ -74,119 +74,119 @@ function# keep only the overlapping time window of TDL and Licor files
 
   ##details<<
   ## BEGIN If use Licor
-  if (sw$use.Licor) {
+  if (sw$use_Licor) {
     ##details<<
     ## - Indices to keep based on TDL/Licor time window overlap.
-    Licor.ind.keep      <- seq(TDL.Licor.times$Licor.time.ind.first, TDL.Licor.times$Licor.time.ind.last);
+    Licor_ind_keep      <- seq(TDL_Licor_times$Licor_time_ind_first, TDL_Licor_times$Licor_time_ind_last);
 
     # note, if change this, also change same lines below in if() statement
     ## Licor
-    Licor$n             <- length(Licor.ind.keep);
-    Licor$time          <- Licor$time[Licor.ind.keep];
-    Licor$data          <- Licor$data[Licor.ind.keep,];
+    Licor$n             <- length(Licor_ind_keep);
+    Licor$time          <- Licor$time[Licor_ind_keep];
+    Licor$data          <- Licor$data[Licor_ind_keep,];
 
     ### only consider non-NA values in TDL (NAs were substituted for pre-end tank values, transition periods)
-    ##TDL.nonNA.ind <- !is.na(TDL$time);
+    ##TDL_nonNA_ind <- !is.na(TDL$time);
 
     ##details<<
     ## - Use \code{zoo} to merge the times for TDL and Licor.
 
-    if ((sw$use.TDL==0)) { # not using TDL, replace with Licor values used below
+    if ((sw$use_TDL==0)) { # not using TDL, replace with Licor values used below
       TDL$n <- Licor$n;
       TDL$time_org <- Licor$time;
     }
 
-    TDL.time.merge      <- zoo::zoo(1:TDL$n,   TDL$time_org);
-    Licor.time.merge    <- zoo::zoo(1:Licor$n, Licor$time);
-    TL.merge            <- merge(TDL.time.merge, Licor.time.merge);      # matching TDL with Licor times
-    TDL.ind.match.Licor <- TL.merge[is.finite(TL.merge[,2]),1]; # indices of TDL matching Licor times
-    #Licor.matched.with.non.NA.TDL <- (1:length(TDL.ind.match.Licor))[!is.na(TDL.ind.match.Licor)]; # 2/9/2012 0:22AM add - if NA in TDL file, skip those
-    #ind.match <- TDL.ind.match.Licor[Licor.matched.with.non.NA.TDL];
+    TDL_time_merge      <- zoo::zoo(1:TDL$n,   TDL$time_org);
+    Licor_time_merge    <- zoo::zoo(1:Licor$n, Licor$time);
+    TL_merge            <- merge(TDL_time_merge, Licor_time_merge);      # matching TDL with Licor times
+    TDL_ind_match_Licor <- TL_merge[is.finite(TL_merge[,2]),1]; # indices of TDL matching Licor times
+    #Licor_matched_with_non_NA_TDL <- (1:length(TDL_ind_match_Licor))[!is.na(TDL_ind_match_Licor)]; # 2/9/2012 0:22AM add - if NA in TDL file, skip those
+    #ind_match <- TDL_ind_match_Licor[Licor_matched_with_non_NA_TDL];
 
     ## DEBUG 2/12/2012 9:45PM
-    # TL.merge[is.na(TL.merge[,1]),]
+    # TL_merge[is.na(TL_merge[,1]),]
 
 
     # 2/9/2012 2:01AM
-    if (sum(is.na(TL.merge[,1]))) { # NA records in TDL file, see read_TDL.R for # Where TDL$StartSeqFlag!=0 or TDL$SeqActiveFlag==0
-      p.o <- paste("WARNING: Times in Licor that do not appear in TDL", "\n"); wWw <- write_out(p.o);
-      p.o <- paste("           (maybe an interval when TDL wasn't collecting data?)", "\n"); wWw <- write_out(p.o);
-      p.o <- paste("         removing these time points from Licor data", "\n"); wWw <- write_out(p.o);
-      p.o <- paste("         list of times:", "\n"); wWw <- write_out(p.o);
-      Licor.ind.not.in.TDL <- as.numeric(TL.merge[is.na(TL.merge[,1]),2]);
-      p.o <- paste("           ", Licor$time[Licor.ind.not.in.TDL], "\n"); wWw <- write_out(p.o);
+    if (sum(is.na(TL_merge[,1]))) { # NA records in TDL file, see read_TDL.R for # Where TDL$StartSeqFlag!=0 or TDL$SeqActiveFlag==0
+      p_o <- paste("WARNING: Times in Licor that do not appear in TDL", "\n"); wWw <- write_out(p_o);
+      p_o <- paste("           (maybe an interval when TDL wasn't collecting data?)", "\n"); wWw <- write_out(p_o);
+      p_o <- paste("         removing these time points from Licor data", "\n"); wWw <- write_out(p_o);
+      p_o <- paste("         list of times:", "\n"); wWw <- write_out(p_o);
+      Licor_ind_not_in_TDL <- as.numeric(TL_merge[is.na(TL_merge[,1]),2]);
+      p_o <- paste("           ", Licor$time[Licor_ind_not_in_TDL], "\n"); wWw <- write_out(p_o);
 
 
         # not ideal, but redo Licor data lines without these observations
-        Licor.ind.keep      <- setdiff(1:Licor$n, Licor.ind.not.in.TDL)
-        Licor$n             <- length(Licor.ind.keep);
-        Licor$time          <- Licor$time[Licor.ind.keep];
-        Licor$data          <- Licor$data[Licor.ind.keep,];
-        Licor.time.merge    <- zoo::zoo(1:Licor$n, Licor$time);
-        TL.merge            <- merge(TDL.time.merge, Licor.time.merge);      # matching TDL with Licor times
-        TDL.ind.match.Licor <- TL.merge[is.finite(TL.merge[,2]),1]; # indices of TDL matching Licor times
-        if (sum(is.na(TL.merge[,1]))) { # NA records in TDL file, see read_TDL.R for # Where TDL$StartSeqFlag!=0 or TDL$SeqActiveFlag==0
-          p.o <- paste("THIS WARNING SHOULD NEVER APPEAR, time_window_TDL_Licor_interp.R times1", "\n"); wWw <- write_out(p.o);
+        Licor_ind_keep      <- setdiff(1:Licor$n, Licor_ind_not_in_TDL)
+        Licor$n             <- length(Licor_ind_keep);
+        Licor$time          <- Licor$time[Licor_ind_keep];
+        Licor$data          <- Licor$data[Licor_ind_keep,];
+        Licor_time_merge    <- zoo::zoo(1:Licor$n, Licor$time);
+        TL_merge            <- merge(TDL_time_merge, Licor_time_merge);      # matching TDL with Licor times
+        TDL_ind_match_Licor <- TL_merge[is.finite(TL_merge[,2]),1]; # indices of TDL matching Licor times
+        if (sum(is.na(TL_merge[,1]))) { # NA records in TDL file, see read_TDL.R for # Where TDL$StartSeqFlag!=0 or TDL$SeqActiveFlag==0
+          p_o <- paste("THIS WARNING SHOULD NEVER APPEAR, time_window_TDL_Licor_interp.R times1", "\n"); wWw <- write_out(p_o);
         }
 
-      #(1:length(TL.merge[,1]))[is.na(TL.merge[,1])]
+      #(1:length(TL_merge[,1]))[is.na(TL_merge[,1])]
     }
 
     ##details<<
-    ## Create \code{Licor.interp} to hold interpolated Licor values at resolution of TDL observations.
+    ## Create \code{Licor_interp} to hold interpolated Licor values at resolution of TDL observations.
 
-    Licor.interp <- as.list(new.env());  # create a list to return with data
-    Licor.interp$data <- matrix(NA,nrow=TDL$n,ncol=dim(Licor$data)[2]);  # init matrix
-    colnames(Licor.interp$data) <- colnames(Licor$data);                # assign col names
-    for (i.col in 1:dim(Licor$data)[2]) {
+    Licor_interp <- as.list(new.env());  # create a list to return with data
+    Licor_interp$data <- matrix(NA,nrow=TDL$n,ncol=dim(Licor$data)[2]);  # init matrix
+    colnames(Licor_interp$data) <- colnames(Licor$data);                # assign col names
+    for (i_col in 1:dim(Licor$data)[2]) {
       ##details<<
       ## populate with observed values in right locations
-      Licor.interp$data[TDL.ind.match.Licor,i.col] <- Licor$data[,i.col];
-      #Licor.interp$data[ind.match,i.col] <- Licor$data[Licor.matched.with.non.NA.TDL,i.col]; # populate with observed values in right locations # 2/9/2012 0:22AM change - if NA in TDL file, skip those
+      Licor_interp$data[TDL_ind_match_Licor,i_col] <- Licor$data[,i_col];
+      #Licor_interp$data[ind_match,i_col] <- Licor$data[Licor_matched_with_non_NA_TDL,i_col]; # populate with observed values in right locations # 2/9/2012 0:22AM change - if NA in TDL file, skip those
     }
 
-    Licor.interp$ind    <- 1:TDL$n;
-    Licor.interp$time   <- TDL$time_org;  # time is same as in TDL
+    Licor_interp$ind    <- 1:TDL$n;
+    Licor_interp$time   <- TDL$time_org;  # time is same as in TDL
 
 
-    Licor.interp$n                <- TDL$n;
-    Licor.interp$noninterp.ind    <- rep(0,TDL$n);
+    Licor_interp$n                <- TDL$n;
+    Licor_interp$noninterp_ind    <- rep(0,TDL$n);
     ##details<<
     ## These indices have actual Licor values, the others are interpolated.
-    Licor.interp$noninterp.ind[TDL.ind.match.Licor] <- 1;
+    Licor_interp$noninterp_ind[TDL_ind_match_Licor] <- 1;
 
     ##details<<
     ## Some Licor values maybe shouldn't be interpolated --
-    for (i.col in 1:dim(Licor$data)[2]) {
+    for (i_col in 1:dim(Licor$data)[2]) {
       ##details<<
       ## If all values are NA, then consider column as a missing column and don't interp.
-      if (sum(is.na(as.numeric(Licor$data[,i.col]))) != Licor$n) {
+      if (sum(is.na(as.numeric(Licor$data[,i_col]))) != Licor$n) {
         ##details<<
         ## Cubic interpolation of Licor values to TDL sampling time points using \code{nknots}=\code{df}=
         ## Cubic spline interpolation using \code{smooth.spline} with \code{nknots}=\code{df}=number of Licor times matching TDL times.
-        ss <- smooth.spline(Licor.interp$ind[TDL.ind.match.Licor], Licor.interp$data[TDL.ind.match.Licor,i.col], nknots=length(TDL.ind.match.Licor), df=length(TDL.ind.match.Licor));
-        #ss <- smooth.spline(Licor.interp$ind[ind.match], Licor.interp$data[ind.match,i.col], nknots=length(ind.match), df=length(ind.match));  # 2/9/2012 1:16AM
-        Licor.interp$data[,i.col] <- predict(ss,Licor.interp$ind)$y;
+        ss <- smooth.spline(Licor_interp$ind[TDL_ind_match_Licor], Licor_interp$data[TDL_ind_match_Licor,i_col], nknots=length(TDL_ind_match_Licor), df=length(TDL_ind_match_Licor));
+        #ss <- smooth.spline(Licor_interp$ind[ind_match], Licor_interp$data[ind_match,i_col], nknots=length(ind_match), df=length(ind_match));  # 2/9/2012 1:16AM
+        Licor_interp$data[,i_col] <- predict(ss,Licor_interp$ind)$y;
       }
-      #plot(Licor.interp$ind[TDL.ind.match.Licor], Licor.interp$data[TDL.ind.match.Licor,i.col],pch=20)
+      #plot(Licor_interp$ind[TDL_ind_match_Licor], Licor_interp$data[TDL_ind_match_Licor,i_col],pch=20)
       #points(ss,col="red")
-      #points(Licor.interp$ind,Licor.interp$data[,i.col],col="green",type="l")
-      #points(Licor.interp$ind,Licor.interp$data[,i.col],col="blue",pch=".")
+      #points(Licor_interp$ind,Licor_interp$data[,i_col],col="green",type="l")
+      #points(Licor_interp$ind,Licor_interp$data[,i_col],col="blue",pch=".")
     }
   } else {
     # not using Licor data
-    Licor.interp <- Licor;
+    Licor_interp <- Licor;
   }
   ##details<<
   ## END
 
   ##details<<
-  ## Put TDL and Licor.interp together to return.
-  TDL.and.Licor.interp <- as.list(new.env());
-  TDL.and.Licor.interp$TDL <- TDL;
-  TDL.and.Licor.interp$Licor.interp <- Licor.interp;
+  ## Put TDL and Licor_interp together to return.
+  TDL_and_Licor_interp <- as.list(new.env());
+  TDL_and_Licor_interp$TDL <- TDL;
+  TDL_and_Licor_interp$Licor_interp <- Licor_interp;
 
-  return( TDL.and.Licor.interp );
-  ### TDL.and.Licor.interp
+  return( TDL_and_Licor_interp );
+  ### TDL_and_Licor_interp
 }
 

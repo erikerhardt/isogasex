@@ -1,8 +1,8 @@
 #' Title
 #'
 #' @param x
-#' @param x.var
-#' @param n.sam
+#' @param x_var
+#' @param n_sam
 #' @param n
 #'
 #' @return
@@ -14,9 +14,9 @@ function# calculate Par BS mean
 ###
 (x
 ###
-, x.var
+, x_var
 ###
-, n.sam
+, n_sam
 ###
 , n
 ###
@@ -24,12 +24,12 @@ function# calculate Par BS mean
 {
   ##details<<
   ## Sample from normal distribution with mean and se from the data, calculating mean of n parametric bootstrap resamples.
-  x.mean <- rep(0,n);
-  for (i.bs in 1:n) {
-    x.mean[i.bs] <- rnorm(1, mean=x[i.bs], sd=sqrt(x.var/n.sam[i.bs]) );
+  x_mean <- rep(0,n);
+  for (i_bs in 1:n) {
+    x_mean[i_bs] <- rnorm(1, mean=x[i_bs], sd=sqrt(x_var/n_sam[i_bs]) );
   };
 
-  return( x.mean );
-  ### x.mean
+  return( x_mean );
+  ### x_mean
 }
 

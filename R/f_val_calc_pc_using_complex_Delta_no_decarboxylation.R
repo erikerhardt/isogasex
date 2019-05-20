@@ -5,7 +5,7 @@
 #' @param ps
 #' @param pi
 #' @param a
-#' @param a.b
+#' @param a_b
 #' @param al
 #' @param b
 #' @param bs
@@ -27,7 +27,7 @@ function# pc using complex D, no decarboxylation  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-
 ###
 , a
 ###
-, a.b
+, a_b
 ###
 , al
 ###
@@ -38,8 +38,8 @@ function# pc using complex D, no decarboxylation  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-
 )
 {
   ##details<<
-  ##\deqn{pc = (a.b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa) / (bs + al - b)}
-  pc <- (a.b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa) / (bs + al - b);
+  ##\deqn{pc = (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa) / (bs + al - b)}
+  pc <- (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa) / (bs + al - b);
 
   return( pc );
   ### pc

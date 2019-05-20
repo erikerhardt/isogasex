@@ -4,8 +4,8 @@
 \alias{plot_val_calc_sum}
 \title{Title}
 \usage{
-plot_val_calc_sum(val.TDL, val.Licor, val.const, val.temp,
-  plot.format.list, output.fn.prefix, sw)
+plot_val_calc_sum(val_TDL, val_Licor, val_const, val_temp,
+  plot_format_list, output_fn_prefix, sw)
 }
 \arguments{
 \item{sw}{}

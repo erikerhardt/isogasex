@@ -4,10 +4,10 @@
 \alias{set_TDL_cycle}
 \title{Title}
 \usage{
-set_TDL_cycle(TDL.cycle)
+set_TDL_cycle(TDL_cycle)
 }
 \arguments{
-\item{TDL.cycle}{}
+\item{TDL_cycle}{}
 }
 \description{
 Title

@@ -4,11 +4,11 @@
 \alias{write_summary_Calc_file}
 \title{Title}
 \usage{
-write_summary_Calc_file(val, TDL.cycle, output.summary.Calc.fn,
-  output.summary.Calc.last.fn)
+write_summary_Calc_file(val, TDL_cycle, output_summary_Calc_fn,
+  output_summary_Calc_last_fn)
 }
 \arguments{
-\item{output.summary.Calc.last.fn}{}
+\item{output_summary_Calc_last_fn}{}
 }
 \description{
 Title

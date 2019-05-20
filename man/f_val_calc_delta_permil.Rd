@@ -4,10 +4,10 @@
 \alias{f_val_calc_delta_permil}
 \title{Title}
 \usage{
-f_val_calc_delta_permil(obs.12C, obs.13C, R.std)
+f_val_calc_delta_permil(obs.12C, obs.13C, R_std)
 }
 \arguments{
-\item{R.std}{}
+\item{R_std}{}
 }
 \description{
 Title

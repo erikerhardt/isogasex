@@ -6,9 +6,9 @@
 #' @param A
 #' @param pa
 #' @param Di
-#' @param D.obs
-#' @param f.photo
-#' @param Gamma.star
+#' @param D_obs
+#' @param f_photo
+#' @param Gamma_star
 #' @param e
 #' @param Rd
 #' @param k
@@ -32,11 +32,11 @@ function# gm point complex, internal leaf (mesophyll) conductance calculated for
 ###
 , Di
 ###
-, D.obs
+, D_obs
 ###
-, f.photo
+, f_photo
 ###
-, Gamma.star
+, Gamma_star
 ###
 , e
 ###
@@ -47,10 +47,10 @@ function# gm point complex, internal leaf (mesophyll) conductance calculated for
 )
 {
   ##details<<
-  ##\deqn{gm.point.complex = ((b - bs - al) * A / pa) / (Di - D.obs - (f.photo * Gamma.star / pa) - ((e * Rd) / (k * pa)))}
-  gm.point.complex <- ((b - bs - al) * A / pa) / (Di - D.obs - (f.photo * Gamma.star / pa) - ((e * Rd) / (k * pa)));
+  ##\deqn{gm_point_complex = ((b - bs - al) * A / pa) / (Di - D_obs - (f_photo * Gamma_star / pa) - ((e * Rd) / (k * pa)))}
+  gm_point_complex <- ((b - bs - al) * A / pa) / (Di - D_obs - (f_photo * Gamma_star / pa) - ((e * Rd) / (k * pa)));
 
-  return( gm.point.complex );
-  ### gm.point.complex
+  return( gm_point_complex );
+  ### gm_point_complex
 }
 

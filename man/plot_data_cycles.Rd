@@ -4,11 +4,11 @@
 \alias{plot_data_cycles}
 \title{Title}
 \usage{
-plot_data_cycles(TDL, TDL.cycle, plot.format.list, output.fn.prefix,
-  Rstd.13C, full.or.window)
+plot_data_cycles(TDL, TDL_cycle, plot_format_list, output_fn_prefix,
+  Rstd.13C, full_or_window)
 }
 \arguments{
-\item{full.or.window}{}
+\item{full_or_window}{}
 }
 \description{
 Title

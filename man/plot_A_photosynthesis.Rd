@@ -4,12 +4,12 @@
 \alias{plot_A_photosynthesis}
 \title{Title}
 \usage{
-plot_A_photosynthesis(TDL.A.photosynthesis, TDL.12A.photosynthesis,
-  TDL.13A.photosynthesis, Licor.A.photosynthesis, Delta.from.ratios.in.out,
-  Delta.from.A.ratio, x.time, plot.format.list, output.fn.prefix)
+plot_A_photosynthesis(TDL_A_photosynthesis, TDL_12A_photosynthesis,
+  TDL_13A_photosynthesis, Licor_A_photosynthesis, Delta_from_ratios_in_out,
+  Delta_from_A_ratio, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

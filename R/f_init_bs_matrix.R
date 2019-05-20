@@ -1,7 +1,7 @@
 #' Title
 #'
 #' @param n
-#' @param R.bootstrap
+#' @param R_bootstrap
 #'
 #' @return
 #' @export
@@ -12,100 +12,100 @@ function# init bs values to zero
 ###
 (n
 ###
-, R.bootstrap
+, R_bootstrap
 ###
 )
 {
   ##details<<
   ## Create bs for calculated bootstrap values to estimate error, initializing to zeros.
   bs  <- as.list(new.env()); # for calculated bootstrap values to estimate error
-  zeros <- matrix(0, nrow=n, ncol=R.bootstrap);
-  bs$gain.12C                                                <- zeros;
-  bs$gain.13C                                                <- zeros;
-  bs$offset.12C                                              <- zeros;
-  bs$offset.13C                                              <- zeros;
-  bs$reference.12Ce                                          <- zeros;
-  bs$reference.13Ce                                          <- zeros;
-  bs$chamber.12Co                                            <- zeros;
-  bs$chamber.13Co                                            <- zeros;
-  bs$reference.TotalCe                                       <- zeros;
-  bs$chamber.TotalCo                                         <- zeros;
-  bs$chamber.reference.Total.diff.CeCo                       <- zeros;
-  bs$chamber.reference.12.diff.CeCo                          <- zeros;
-  bs$chamber.reference.13.diff.CeCo                          <- zeros;
+  zeros <- matrix(0, nrow=n, ncol=R_bootstrap);
+  bs$gain_12C                                                <- zeros;
+  bs$gain_13C                                                <- zeros;
+  bs$offset_12C                                              <- zeros;
+  bs$offset_13C                                              <- zeros;
+  bs$reference_12Ce                                          <- zeros;
+  bs$reference_13Ce                                          <- zeros;
+  bs$chamber_12Co                                            <- zeros;
+  bs$chamber_13Co                                            <- zeros;
+  bs$reference_TotalCe                                       <- zeros;
+  bs$chamber_TotalCo                                         <- zeros;
+  bs$chamber_reference_Total_diff_CeCo                       <- zeros;
+  bs$chamber_reference_12_diff_CeCo                          <- zeros;
+  bs$chamber_reference_13_diff_CeCo                          <- zeros;
   bs$xi                                                      <- zeros;
-  #bs$flow.adjusted                                           <- zeros;  # 9/5/2012
-  bs$TDL.A.photosynthesis                                    <- zeros;
-  bs$TDL.12A.photosynthesis                                  <- zeros;
-  bs$TDL.13A.photosynthesis                                  <- zeros;
-  bs$Licor.A.photosynthesis                                  <- zeros;
-  bs$Delta.from.ratios.in.out                                <- zeros;
-  bs$Delta.from.A.ratio                                      <- zeros;
+  #bs$flow_adjusted                                           <- zeros;  # 9/5/2012
+  bs$TDL_A_photosynthesis                                    <- zeros;
+  bs$TDL_12A_photosynthesis                                  <- zeros;
+  bs$TDL_13A_photosynthesis                                  <- zeros;
+  bs$Licor_A_photosynthesis                                  <- zeros;
+  bs$Delta_from_ratios_in_out                                <- zeros;
+  bs$Delta_from_A_ratio                                      <- zeros;
   bs$VPD                                                     <- zeros;
-  bs$E.transpiration                                         <- zeros;
-  bs$leaf.temp                                               <- zeros;
-  bs$air.temp                                                <- zeros;
-  bs$light.in                                                <- zeros;
-  bs$light.out                                               <- zeros;
-  bs$reference.delta.e                                       <- zeros;
-  bs$chamber.delta.o                                         <- zeros;
-  bs$chamber.reference.delta.diff.CoCe                       <- zeros;
-  bs$Delta.obs                                               <- zeros;
-  bs$Delta.obs.permil                                        <- zeros;
-  bs$delta.13C.Assim                                         <- zeros;
+  bs$E_transpiration                                         <- zeros;
+  bs$leaf_temp                                               <- zeros;
+  bs$air_temp                                                <- zeros;
+  bs$light_in                                                <- zeros;
+  bs$light_out                                               <- zeros;
+  bs$reference_delta_e                                       <- zeros;
+  bs$chamber_delta_o                                         <- zeros;
+  bs$chamber_reference_delta_diff_CoCe                       <- zeros;
+  bs$Delta_obs                                               <- zeros;
+  bs$Delta_obs_permil                                        <- zeros;
+  bs$delta_13C_Assim                                         <- zeros;
   bs$p                                                       <- zeros;
-  bs$delta.13C.Resp                                          <- zeros;
-  bs$chamber.TotalCa                                         <- zeros;
-  bs$chamber.12Ca                                            <- zeros;
-  bs$chamber.13Ca                                            <- zeros;
-  bs$chamber.TotalCs                                         <- zeros;
-  bs$chamber.12Cs                                            <- zeros;
-  bs$chamber.13Cs                                            <- zeros;
-  bs$chamber.Totalpa                                         <- zeros;
-  bs$chamber.12pa                                            <- zeros;
-  bs$chamber.13pa                                            <- zeros;
-  bs$chamber.Totalps                                         <- zeros;
-  bs$chamber.12ps                                            <- zeros;
-  bs$chamber.13ps                                            <- zeros;
-  bs$chamber.Totalgbw                                        <- zeros;
-  bs$chamber.Totalgbc                                        <- zeros;
-  bs$chamber.12gbc                                           <- zeros;
-  bs$chamber.13gbc                                           <- zeros;
-  bs$chamber.Totalgsw                                        <- zeros;
-  bs$chamber.Totalgsc                                        <- zeros;
-  bs$chamber.12gsc                                           <- zeros;
-  bs$chamber.13gsc                                           <- zeros;
-  bs$chamber.Totalgtc                                        <- zeros;
-  bs$chamber.12gtc                                           <- zeros;
-  bs$chamber.13gtc                                           <- zeros;
-  bs$chamber.TotalCi                                         <- zeros;
-  bs$chamber.12Ci                                            <- zeros;
-  bs$chamber.13Ci                                            <- zeros;
-  bs$chamber.Totalpi                                         <- zeros;
-  bs$chamber.12pi                                            <- zeros;
-  bs$chamber.13pi                                            <- zeros;
-  bs$chamber.Totalpi_pa                                      <- zeros;
-  bs$chamber.Delta.i.simple.for.gm                           <- zeros;
-  bs$chamber.Delta.i.simple.for.modeling                     <- zeros;
-  bs$chamber.Delta.i.complex.for.gm                          <- zeros;
-  bs$chamber.Delta.i.simple.for.gm_Delta.obs                 <- zeros;
-  bs$chamber.Delta.i.complex.for.gm_Delta.obs                <- zeros;
-  bs$chamber.Totalgm.point.simple                            <- zeros;
-  bs$chamber.12gm.point.simple                               <- zeros;
-  bs$chamber.13gm.point.simple                               <- zeros;
-  bs$chamber.Totalgm.point.complex                           <- zeros;
-  bs$chamber.Totalgm.to.use                                  <- zeros;
-  bs$chamber.Totalpc.using.gm                                <- zeros;
-  bs$chamber.12pc.using.gm                                   <- zeros;
-  bs$chamber.13pc.using.gm                                   <- zeros;
-  bs$chamber.Totalpc.using.simple.Delta.for.gm               <- zeros;
-  bs$chamber.Totalpc.using.simple.Delta.for.modeling         <- zeros;
-  bs$chamber.Totalpc.using.complex.Delta.no.decarboxylation  <- zeros;
-  bs$chamber.Totalpc.using.complex.Delta.full.model          <- zeros;
-  bs$chamber.Totalpc.to.use                                  <- zeros;
-  bs$chamber.TotalCc                                         <- zeros;
-  bs$chamber.12Cc                                            <- zeros;
-  bs$chamber.13Cc                                            <- zeros;
+  bs$delta_13C_Resp                                          <- zeros;
+  bs$chamber_TotalCa                                         <- zeros;
+  bs$chamber_12Ca                                            <- zeros;
+  bs$chamber_13Ca                                            <- zeros;
+  bs$chamber_TotalCs                                         <- zeros;
+  bs$chamber_12Cs                                            <- zeros;
+  bs$chamber_13Cs                                            <- zeros;
+  bs$chamber_Totalpa                                         <- zeros;
+  bs$chamber_12pa                                            <- zeros;
+  bs$chamber_13pa                                            <- zeros;
+  bs$chamber_Totalps                                         <- zeros;
+  bs$chamber_12ps                                            <- zeros;
+  bs$chamber_13ps                                            <- zeros;
+  bs$chamber_Totalgbw                                        <- zeros;
+  bs$chamber_Totalgbc                                        <- zeros;
+  bs$chamber_12gbc                                           <- zeros;
+  bs$chamber_13gbc                                           <- zeros;
+  bs$chamber_Totalgsw                                        <- zeros;
+  bs$chamber_Totalgsc                                        <- zeros;
+  bs$chamber_12gsc                                           <- zeros;
+  bs$chamber_13gsc                                           <- zeros;
+  bs$chamber_Totalgtc                                        <- zeros;
+  bs$chamber_12gtc                                           <- zeros;
+  bs$chamber_13gtc                                           <- zeros;
+  bs$chamber_TotalCi                                         <- zeros;
+  bs$chamber_12Ci                                            <- zeros;
+  bs$chamber_13Ci                                            <- zeros;
+  bs$chamber_Totalpi                                         <- zeros;
+  bs$chamber_12pi                                            <- zeros;
+  bs$chamber_13pi                                            <- zeros;
+  bs$chamber_Totalpi_pa                                      <- zeros;
+  bs$chamber_Delta_i_simple_for_gm                           <- zeros;
+  bs$chamber_Delta_i_simple_for_modeling                     <- zeros;
+  bs$chamber_Delta_i_complex_for_gm                          <- zeros;
+  bs$chamber_Delta_i_simple_for_gm_Delta_obs                 <- zeros;
+  bs$chamber_Delta_i_complex_for_gm_Delta_obs                <- zeros;
+  bs$chamber_Totalgm_point_simple                            <- zeros;
+  bs$chamber_12gm_point_simple                               <- zeros;
+  bs$chamber_13gm_point_simple                               <- zeros;
+  bs$chamber_Totalgm_point_complex                           <- zeros;
+  bs$chamber_Totalgm_to_use                                  <- zeros;
+  bs$chamber_Totalpc_using_gm                                <- zeros;
+  bs$chamber_12pc_using_gm                                   <- zeros;
+  bs$chamber_13pc_using_gm                                   <- zeros;
+  bs$chamber_Totalpc_using_simple_Delta_for_gm               <- zeros;
+  bs$chamber_Totalpc_using_simple_Delta_for_modeling         <- zeros;
+  bs$chamber_Totalpc_using_complex_Delta_no_decarboxylation  <- zeros;
+  bs$chamber_Totalpc_using_complex_Delta_full_model          <- zeros;
+  bs$chamber_Totalpc_to_use                                  <- zeros;
+  bs$chamber_TotalCc                                         <- zeros;
+  bs$chamber_12Cc                                            <- zeros;
+  bs$chamber_13Cc                                            <- zeros;
 
   return( bs );
   ### bs

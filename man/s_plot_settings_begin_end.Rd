@@ -4,12 +4,12 @@
 \alias{s_plot_settings_begin_end}
 \title{Title}
 \usage{
-s_plot_settings_begin_end(filename.prefix = "Prefix",
-  plot.filename = "default_filename", plot.mode = "settings",
-  plot.format = 1)
+s_plot_settings_begin_end(filename_prefix = "Prefix",
+  plot_filename = "default_filename", plot_mode = "settings",
+  plot_format = 1)
 }
 \arguments{
-\item{plot.format}{}
+\item{plot_format}{}
 }
 \description{
 Title

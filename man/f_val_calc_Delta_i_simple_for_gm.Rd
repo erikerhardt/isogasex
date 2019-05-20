@@ -4,7 +4,7 @@
 \alias{f_val_calc_Delta_i_simple_for_gm}
 \title{Title}
 \usage{
-f_val_calc_Delta_i_simple_for_gm(a, b, a.b, pa, ps, pi)
+f_val_calc_Delta_i_simple_for_gm(a, b, a_b, pa, ps, pi)
 }
 \arguments{
 \item{pi}{}

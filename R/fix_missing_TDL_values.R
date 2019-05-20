@@ -1,7 +1,7 @@
 #' Title
 #'
 #' @param TDL
-#' @param bad.ind
+#' @param bad_ind
 #'
 #' @return
 #' @export
@@ -12,45 +12,45 @@ function# Replace NA and NAN values in TDL$data by previous value for that varia
 ###
 (TDL
 ###
-, bad.ind
+, bad_ind
 ###
 )
 {
 
 
 
-  ii.fix.count <- 0;
-  rc.data <- dim(TDL$data);
-  for (i.bad.ind in bad.ind) {
+  ii_fix_count <- 0;
+  rc_data <- dim(TDL$data);
+  for (i_bad_ind in bad_ind) {
       # counting
-      ii.fix.count <- ii.fix.count + 1;
-      p.o <- paste(ii.fix.count," "); wWw <- write_out(p.o);
-      if ((ii.fix.count %% 20) == 0) {p.o <- paste("\n"); wWw <- write_out(p.o);};
+      ii_fix_count <- ii_fix_count + 1;
+      p_o <- paste(ii_fix_count," "); wWw <- write_out(p_o);
+      if ((ii_fix_count %% 20) == 0) {p_o <- paste("\n"); wWw <- write_out(p_o);};
 
     ##details<<
     ## Look at each field.
-    for (i.field in 1:rc.data[2]) {
+    for (i_field in 1:rc_data[2]) {
       ##details<<
       ## If not finite, then it's a bad value to replace.
-      if (!is.finite(TDL$data[i.bad.ind,i.field])) {
+      if (!is.finite(TDL$data[i_bad_ind,i_field])) {
         ##details<<
         ## Replace bad value with previous value in the file.
-        TDL$data[i.bad.ind,i.field] <- TDL$data[i.bad.ind-1,i.field];
+        TDL$data[i_bad_ind,i_field] <- TDL$data[i_bad_ind-1,i_field];
       }
     }
   }
-  p.o <- paste("\n"); wWw <- write_out(p.o);
+  p_o <- paste("\n"); wWw <- write_out(p_o);
 
   ## 3/23/2012 access TDL$data directly
-  #for (i.bad.ind in bad.ind) {
-  #  data.bad  <- TDL$data[i.bad.ind,];            # current bad line
-  #  data.prev <- TDL$data[i.bad.ind-1,];          # previous line (that was not bad)
-  #  for (i.field in 1:length(data.bad)) {         # look at each field
-  #    if (!is.finite(data.bad[i.field])) {      # if not finite, then a bad value to replace
-  #      data.bad[i.field] <- data.prev[i.field];  # replace with previous value in the file
+  #for (i_bad_ind in bad_ind) {
+  #  data_bad  <- TDL$data[i_bad_ind,];            # current bad line
+  #  data_prev <- TDL$data[i_bad_ind-1,];          # previous line (that was not bad)
+  #  for (i_field in 1:length(data_bad)) {         # look at each field
+  #    if (!is.finite(data_bad[i_field])) {      # if not finite, then a bad value to replace
+  #      data_bad[i_field] <- data_prev[i_field];  # replace with previous value in the file
   #    }
   #  }
-  #  TDL$data[i.bad.ind,] <- data.bad;             # replace data with fixed data
+  #  TDL$data[i_bad_ind,] <- data_bad;             # replace data with fixed data
   #}
 
   return( TDL );

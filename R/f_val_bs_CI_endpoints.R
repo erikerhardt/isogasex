@@ -2,7 +2,7 @@
 #'
 #' @param x
 #' @param n
-#' @param ind.CI
+#' @param ind_CI
 #'
 #' @return
 #' @export
@@ -15,19 +15,19 @@ function# create CI endpoints
 ###
 , n
 ###
-, ind.CI
+, ind_CI
 ###
 )
 {
   ##details<<
-  ## Sorts BS samples, takes quantiles for equal-tailed sig.CI Level CIs.
+  ## Sorts BS samples, takes quantiles for equal-tailed sig_CI Level CIs.
 
-  x.CI <- matrix(0,nrow=n,ncol=2);
-  for (i.n in 1:n) {
-    x.CI[i.n,] <- sort(x[i.n,])[ind.CI];
+  x_CI <- matrix(0,nrow=n,ncol=2);
+  for (i_n in 1:n) {
+    x_CI[i_n,] <- sort(x[i_n,])[ind_CI];
   }
 
-  return(x.CI);
-  ### x.CI
+  return(x_CI);
+  ### x_CI
 }
 

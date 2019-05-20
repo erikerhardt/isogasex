@@ -4,14 +4,14 @@
 \alias{plot_pc_simple_complex}
 \title{Title}
 \usage{
-plot_pc_simple_complex(chamber.Totalpc.using.simple.Delta.for.gm,
-  chamber.Totalpc.using.simple.Delta.for.modeling,
-  chamber.Totalpc.using.complex.Delta.no.decarboxylation,
-  chamber.Totalpc.using.complex.Delta.full.model, x.time, plot.format.list,
-  output.fn.prefix)
+plot_pc_simple_complex(chamber_Totalpc_using_simple_Delta_for_gm,
+  chamber_Totalpc_using_simple_Delta_for_modeling,
+  chamber_Totalpc_using_complex_Delta_no_decarboxylation,
+  chamber_Totalpc_using_complex_Delta_full_model, x_time, plot_format_list,
+  output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

@@ -1,14 +1,14 @@
 #' Title
 #'
-#' @param TDL.A.photosynthesis
-#' @param TDL.12A.photosynthesis
-#' @param TDL.13A.photosynthesis
-#' @param Licor.A.photosynthesis
-#' @param Delta.from.ratios.in.out
-#' @param Delta.from.A.ratio
-#' @param x.time
-#' @param plot.format.list
-#' @param output.fn.prefix
+#' @param TDL_A_photosynthesis
+#' @param TDL_12A_photosynthesis
+#' @param TDL_13A_photosynthesis
+#' @param Licor_A_photosynthesis
+#' @param Delta_from_ratios_in_out
+#' @param Delta_from_A_ratio
+#' @param x_time
+#' @param plot_format_list
+#' @param output_fn_prefix
 #'
 #' @return
 #' @export
@@ -17,44 +17,44 @@
 plot_A_photosynthesis <-
 function# Plot A photosynthesis
 ###
-(TDL.A.photosynthesis
+(TDL_A_photosynthesis
 ###
-, TDL.12A.photosynthesis
+, TDL_12A_photosynthesis
 ###
-, TDL.13A.photosynthesis
+, TDL_13A_photosynthesis
 ###
-, Licor.A.photosynthesis
+, Licor_A_photosynthesis
 ###
-, Delta.from.ratios.in.out
+, Delta_from_ratios_in_out
 ###
-, Delta.from.A.ratio
+, Delta_from_A_ratio
 ###
-, x.time
+, x_time
 ###
-, plot.format.list
+, plot_format_list
 ###
-, output.fn.prefix
+, output_fn_prefix
 ###
 )
 {
   ##details<<
   ## Plots the input variables.
 
-  for (i.plot in plot.format.list)
+  for (i_plot in plot_format_list)
   {
-    plot.filename <- "plot_A_photosynthesis";
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "begin", plot.format = i.plot);
+    plot_filename <- "plot_A_photosynthesis";
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
     par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
-    plot_not_na(x.time, Licor.A.photosynthesis  , pch=20, type="l", ylab="", main="A, Licor photosynthesis");
-    plot_not_na(x.time, TDL.A.photosynthesis    , pch=20, type="l", ylab="", main="A, TDL photosynthesis");
-    plot_not_na(x.time, TDL.12A.photosynthesis  , pch=20, type="l", ylab="", main="12A, TDL photosynthesis");
-    plot_not_na(x.time, TDL.13A.photosynthesis  , pch=20, type="l", ylab="", main="13A, TDL photosynthesis");
-    plot_not_na(x.time, Delta.from.ratios.in.out, pch=20, type="l", ylab="", main="Delta from ratios in and out?");
-    plot_not_na(x.time, Delta.from.A.ratio      , pch=20, type="l", ylab="", main="D from A ratio, should be the same as Delta.obs");
+    plot_not_na(x_time, Licor_A_photosynthesis  , pch=20, type="l", ylab="", main="A, Licor photosynthesis");
+    plot_not_na(x_time, TDL_A_photosynthesis    , pch=20, type="l", ylab="", main="A, TDL photosynthesis");
+    plot_not_na(x_time, TDL_12A_photosynthesis  , pch=20, type="l", ylab="", main="12A, TDL photosynthesis");
+    plot_not_na(x_time, TDL_13A_photosynthesis  , pch=20, type="l", ylab="", main="13A, TDL photosynthesis");
+    plot_not_na(x_time, Delta_from_ratios_in_out, pch=20, type="l", ylab="", main="Delta from ratios in and out?");
+    plot_not_na(x_time, Delta_from_A_ratio      , pch=20, type="l", ylab="", main="D from A ratio, should be the same as Delta_obs");
 
     #axis(3); axis(4); # add axis labels to top and right sides
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "end", i.plot);
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
   return( NULL );

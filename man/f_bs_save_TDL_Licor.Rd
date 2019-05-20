@@ -4,7 +4,7 @@
 \alias{f_bs_save_TDL_Licor}
 \title{Title}
 \usage{
-f_bs_save_TDL_Licor(val.bs.sum, val.bs, i.bs, R.bootstrap, sw)
+f_bs_save_TDL_Licor(val_bs_sum, val_bs, i_bs, R_bootstrap, sw)
 }
 \arguments{
 \item{sw}{}

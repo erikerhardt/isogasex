@@ -4,7 +4,7 @@
 \alias{my_reg_pred}
 \title{Title}
 \usage{
-my_reg_pred(beta.hat, x)
+my_reg_pred(beta_hat, x)
 }
 \arguments{
 \item{x}{}

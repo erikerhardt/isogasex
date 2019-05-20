@@ -1,13 +1,13 @@
 #' Title
 #'
-#' @param true.value.hi.12C
-#' @param true.value.hi.13C
-#' @param true.value.lo.12C
-#' @param true.value.lo.13C
-#' @param cal.tank.hi.12C
-#' @param cal.tank.hi.13C
-#' @param cal.tank.lo.12C
-#' @param cal.tank.lo.13C
+#' @param true_value_hi_12C
+#' @param true_value_hi_13C
+#' @param true_value_lo_12C
+#' @param true_value_lo_13C
+#' @param cal_tank_hi_12C
+#' @param cal_tank_hi_13C
+#' @param cal_tank_lo_12C
+#' @param cal_tank_lo_13C
 #'
 #' @return
 #' @export
@@ -16,30 +16,30 @@
 f_val_calc_gain <-
 function# gain (12C Gain, 13C Gain)
 ###
-(true.value.hi.12C
+(true_value_hi_12C
 ###
-, true.value.hi.13C
+, true_value_hi_13C
 ###
-, true.value.lo.12C
+, true_value_lo_12C
 ###
-, true.value.lo.13C
+, true_value_lo_13C
 ###
-, cal.tank.hi.12C
+, cal_tank_hi_12C
 ###
-, cal.tank.hi.13C
+, cal_tank_hi_13C
 ###
-, cal.tank.lo.12C
+, cal_tank_lo_12C
 ###
-, cal.tank.lo.13C
+, cal_tank_lo_13C
 ###
 )
 {
   gain <- as.list(new.env());  # create a list to return with data
 
   ##details<<
-  ##\deqn{gain = (true.value.hi - true.value.lo) / (cal.tank.hi - cal.tank.lo)}
-  gain$gain.12C <- (true.value.hi.12C - true.value.lo.12C) / (cal.tank.hi.12C - cal.tank.lo.12C);
-  gain$gain.13C <- (true.value.hi.13C - true.value.lo.13C) / (cal.tank.hi.13C - cal.tank.lo.13C);
+  ##\deqn{gain = (true_value_hi - true.value.lo) / (cal.tank_hi - cal.tank.lo)}
+  gain$gain_12C <- (true_value_hi_12C - true_value_lo_12C) / (cal_tank_hi_12C - cal_tank_lo_12C);
+  gain$gain_13C <- (true_value_hi_13C - true_value_lo_13C) / (cal_tank_hi_13C - cal_tank_lo_13C);
 
   return( gain );
   ### gain for 12C and 13C

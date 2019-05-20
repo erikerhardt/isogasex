@@ -6,7 +6,7 @@
 \title{Title}
 \usage{
 f_val_calc_pc_using_complex_Delta_no_decarboxylation(Delta, pa, ps, pi, a,
-  a.b, al, b, bs)
+  a_b, al, b, bs)
 }
 \arguments{
 \item{bs}{}

@@ -4,11 +4,11 @@
 \alias{plot_Ca_Cs}
 \title{Title}
 \usage{
-plot_Ca_Cs(chamber.TotalCa, chamber.12Ca, chamber.13Ca, chamber.TotalCs,
-  chamber.12Cs, chamber.13Cs, x.time, plot.format.list, output.fn.prefix)
+plot_Ca_Cs(chamber_TotalCa, chamber_12Ca, chamber_13Ca, chamber_TotalCs,
+  chamber_12Cs, chamber_13Cs, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

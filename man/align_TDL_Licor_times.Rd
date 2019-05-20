@@ -4,7 +4,7 @@
 \alias{align_TDL_Licor_times}
 \title{Title}
 \usage{
-align_TDL_Licor_times(TDL.time, TDL.n, Licor.time, Licor.n, val.timewindow,
+align_TDL_Licor_times(TDL_time, TDL_n, Licor_time, Licor_n, val_timewindow,
   sw)
 }
 \arguments{

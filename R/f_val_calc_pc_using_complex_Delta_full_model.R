@@ -5,7 +5,7 @@
 #' @param ps
 #' @param pi
 #' @param a
-#' @param a.b
+#' @param a_b
 #' @param al
 #' @param b
 #' @param bs
@@ -13,7 +13,7 @@
 #' @param Rd
 #' @param k
 #' @param f
-#' @param Gamma.star
+#' @param Gamma_star
 #'
 #' @return
 #' @export
@@ -32,7 +32,7 @@ function# pc using complex D, full model  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-(eRd/k+f
 ###
 , a
 ###
-, a.b
+, a_b
 ###
 , al
 ###
@@ -48,13 +48,13 @@ function# pc using complex D, full model  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-(eRd/k+f
 ###
 , f
 ###
-, Gamma.star
+, Gamma_star
 ###
 )
 {
   ##details<<
-  ##\deqn{pc = (a.b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa  - (e * Rd / k + f * Gamma.star)) / (bs + al - b)}
-  pc <- (a.b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa  - (e * Rd / k + f * Gamma.star)) / (bs + al - b);
+  ##\deqn{pc = (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa  - (e * Rd / k + f * Gamma_star)) / (bs + al - b)}
+  pc <- (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa  - (e * Rd / k + f * Gamma_star)) / (bs + al - b);
 
   return( pc );
   ### pc

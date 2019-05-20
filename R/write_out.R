@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param text.to.cat
+#' @param text_to_cat
 #'
 #' @return
 #' @export
@@ -9,12 +9,12 @@
 write_out <-
 function# write_progress to the screen
 ###
-(text.to.cat
+(text_to_cat
 ###
 )
 {
-  cat(text.to.cat);
-  capture.output(expr = cat(text.to.cat), append=TRUE, file="process_info.txt");
+  cat(text_to_cat);
+  capture.output(expr = cat(text_to_cat), append=TRUE, file="process_info.txt");
   flush.console();
 
   return( NULL );

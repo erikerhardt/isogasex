@@ -4,10 +4,10 @@
 \alias{write_CI_Licor_file}
 \title{Title}
 \usage{
-write_CI_Licor_file(val, TDL.cycle, output.CI.Licor.fn)
+write_CI_Licor_file(val, TDL_cycle, output_CI_Licor_fn)
 }
 \arguments{
-\item{output.CI.Licor.fn}{}
+\item{output_CI_Licor_fn}{}
 }
 \description{
 Title

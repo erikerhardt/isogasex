@@ -4,11 +4,11 @@
 \alias{f_plot_CI_individuals}
 \title{Title}
 \usage{
-f_plot_CI_individuals(x.bs, x.sum, x.CI, x.title, x.time, x.n, R.bootstrap,
-  plot.format.list, output.fn.prefix)
+f_plot_CI_individuals(x_bs, x_sum, x_CI, x_title, x_time, x_n, R_bootstrap,
+  plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

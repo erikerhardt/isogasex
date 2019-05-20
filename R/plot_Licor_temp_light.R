@@ -1,14 +1,14 @@
 #' Title
 #'
 #' @param VPD
-#' @param E.transpiration
-#' @param leaf.temp
-#' @param air.temp
-#' @param light.in
-#' @param light.out
-#' @param x.time
-#' @param plot.format.list
-#' @param output.fn.prefix
+#' @param E_transpiration
+#' @param leaf_temp
+#' @param air_temp
+#' @param light_in
+#' @param light_out
+#' @param x_time
+#' @param plot_format_list
+#' @param output_fn_prefix
 #'
 #' @return
 #' @export
@@ -19,45 +19,45 @@ function# Plot Licor Temp Light values
 ###
 (VPD
 ###
-, E.transpiration
+, E_transpiration
 ###
-, leaf.temp
+, leaf_temp
 ###
-, air.temp
+, air_temp
 ###
-, light.in
+, light_in
 ###
-, light.out
+, light_out
 ###
-, x.time
+, x_time
 ###
-, plot.format.list
+, plot_format_list
 ###
-, output.fn.prefix
+, output_fn_prefix
 ###
 )
-            #, flow.adjusted   # 9/5/2012
+            #, flow_adjusted   # 9/5/2012
 {
   ##details<<
   ## Plots the input variables.
 
-  for (i.plot in plot.format.list)
+  for (i_plot in plot_format_list)
   {
-    plot.filename <- "plot_Licor_temp_light";
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "begin", plot.format = i.plot);
+    plot_filename <- "plot_Licor_temp_light";
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
     par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
-    plot_not_na(x.time, VPD              , pch=20, type="l", ylab="", main="VPD, Licor");
-    plot_not_na(x.time, E.transpiration  , pch=20, type="l", ylab="", main="Transpiration Trmmol, Licor");
-    plot_not_na(x.time, leaf.temp        , pch=20, type="l", ylab="", main="Leaf Temp, Licor");
-    plot_not_na(x.time, air.temp         , pch=20, type="l", ylab="", main="Air Temp, Licor");
-    plot_not_na(x.time, light.in         , pch=20, type="l", ylab="", main="Light in  PARi, Licor");
-    plot_not_na(x.time, light.out        , pch=20, type="l", ylab="", main="Light out PARo, Licor");
-    #plot_not_na(x.time, flow.adjusted    , pch=20, type="l", ylab="", main="Adjusted flow when water removed"); # 9/5/2012
-    #plot_not_na(x.time, x.time           , pch=20, type="l", ylab="", main="(blank)");                          # 9/5/2012
+    plot_not_na(x_time, VPD              , pch=20, type="l", ylab="", main="VPD, Licor");
+    plot_not_na(x_time, E_transpiration  , pch=20, type="l", ylab="", main="Transpiration Trmmol, Licor");
+    plot_not_na(x_time, leaf_temp        , pch=20, type="l", ylab="", main="Leaf Temp, Licor");
+    plot_not_na(x_time, air_temp         , pch=20, type="l", ylab="", main="Air Temp, Licor");
+    plot_not_na(x_time, light_in         , pch=20, type="l", ylab="", main="Light in  PARi, Licor");
+    plot_not_na(x_time, light_out        , pch=20, type="l", ylab="", main="Light out PARo, Licor");
+    #plot_not_na(x_time, flow_adjusted    , pch=20, type="l", ylab="", main="Adjusted flow when water removed"); # 9/5/2012
+    #plot_not_na(x_time, x_time           , pch=20, type="l", ylab="", main="(blank)");                          # 9/5/2012
 
     #axis(3); axis(4); # add axis labels to top and right sides
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "end", i.plot);
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
   return( NULL );

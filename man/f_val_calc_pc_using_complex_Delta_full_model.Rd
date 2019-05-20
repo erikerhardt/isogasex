@@ -4,11 +4,11 @@
 \alias{f_val_calc_pc_using_complex_Delta_full_model}
 \title{Title}
 \usage{
-f_val_calc_pc_using_complex_Delta_full_model(Delta, pa, ps, pi, a, a.b, al,
-  b, bs, e, Rd, k, f, Gamma.star)
+f_val_calc_pc_using_complex_Delta_full_model(Delta, pa, ps, pi, a, a_b, al,
+  b, bs, e, Rd, k, f, Gamma_star)
 }
 \arguments{
-\item{Gamma.star}{}
+\item{Gamma_star}{}
 }
 \description{
 Title

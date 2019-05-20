@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param time.start
+#' @param time_start
 #'
 #' @return
 #' @export
@@ -9,16 +9,16 @@
 progress_time <-
 function# Calc amount of time since program started
 ###
-(time.start
+(time_start
 ###
 )
 {
   ##details<<
   ## Calculate time elapsed.
 
-  time.sofar <- proc.time()[3] - time.start;   # calculate time elapsed
+  time_sofar <- proc.time()[3] - time_start;   # calculate time elapsed
 
-  return( floor(time.sofar) );
-  ### floor(time.sofar)
+  return( floor(time_sofar) );
+  ### floor(time_sofar)
 }
 

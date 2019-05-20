@@ -4,10 +4,10 @@
 \alias{f_val_calc_TDL_A_photosynthesis}
 \title{Title}
 \usage{
-f_val_calc_TDL_A_photosynthesis(flow, Ce, Co, leaf.area)
+f_val_calc_TDL_A_photosynthesis(flow, Ce, Co, leaf_area)
 }
 \arguments{
-\item{leaf.area}{}
+\item{leaf_area}{}
 }
 \description{
 Title

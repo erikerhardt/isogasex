@@ -1,9 +1,9 @@
 #' Title
 #'
 #' @param val
-#' @param TDL.cycle
-#' @param output.summary.Calc.fn
-#' @param output.summary.Calc.last.fn
+#' @param TDL_cycle
+#' @param output_summary_Calc_fn
+#' @param output_summary_Calc_last_fn
 #'
 #' @return
 #' @export
@@ -14,11 +14,11 @@ function# write_output section
 ### Write summary values for all time points.
 (val
 ###
-, TDL.cycle
+, TDL_cycle
 ###
-, output.summary.Calc.fn
+, output_summary_Calc_fn
 ###
-, output.summary.Calc.last.fn
+, output_summary_Calc_last_fn
 ###
 )
 {
@@ -27,261 +27,261 @@ function# write_output section
      "date"
     ,"time"
     ,"site"
-    ,"site.name"
-    ,"first.ind"
+    ,"site_name"
+    ,"first_ind"
     ,"ind"
-    ,"tank.hi.12"
-    ,"tank.hi.13"
-    ,"tank.low.12"
-    ,"tank.low.13"
-    ,"gain.12C"
-    ,"gain.13C"
-    ,"offset.12C"
-    ,"offset.13C"
-    ,"reference.12Ce"
-    ,"reference.13Ce"
-    ,"chamber.12Co"
-    ,"chamber.13Co"
-    ,"reference.TotalCe"
-    ,"chamber.TotalCo"
-    ,"chamber.reference.Total.diff.CeCo"
-    ,"chamber.reference.12.diff.CeCo"
-    ,"chamber.reference.13.diff.CeCo"
+    ,"tank_hi_12"
+    ,"tank_hi_13"
+    ,"tank_low_12"
+    ,"tank_low_13"
+    ,"gain_12C"
+    ,"gain_13C"
+    ,"offset_12C"
+    ,"offset_13C"
+    ,"reference_12Ce"
+    ,"reference_13Ce"
+    ,"chamber_12Co"
+    ,"chamber_13Co"
+    ,"reference_TotalCe"
+    ,"chamber_TotalCo"
+    ,"chamber_reference_Total_diff_CeCo"
+    ,"chamber_reference_12_diff_CeCo"
+    ,"chamber_reference_13_diff_CeCo"
     ,"xi"
-    #,"flow.adjusted"    # 9/5/2012
-    ,"TDL.A.photosynthesis"
-    ,"TDL.12A.photosynthesis"
-    ,"TDL.13A.photosynthesis"
-    ,"Licor.A.photosynthesis"
-    ,"Delta.from.ratios.in.out"
-    ,"Delta.from.A.ratio"
+    #,"flow_adjusted"    # 9/5/2012
+    ,"TDL_A_photosynthesis"
+    ,"TDL_12A_photosynthesis"
+    ,"TDL_13A_photosynthesis"
+    ,"Licor_A_photosynthesis"
+    ,"Delta_from_ratios_in_out"
+    ,"Delta_from_A_ratio"
     ,"VPD"
-    ,"E.transpiration"
-    ,"leaf.temp"
-    ,"air.temp"
-    ,"light.in"
-    ,"light.out"
-    ,"reference.delta.e"
-    ,"chamber.delta.o"
-    ,"chamber.reference.delta.diff.CoCe"
-    ,"Delta.obs"
-    ,"Delta.obs.permil"
-    ,"delta.13C.Assim"
+    ,"E_transpiration"
+    ,"leaf_temp"
+    ,"air_temp"
+    ,"light_in"
+    ,"light_out"
+    ,"reference_delta_e"
+    ,"chamber_delta_o"
+    ,"chamber_reference_delta_diff_CoCe"
+    ,"Delta_obs"
+    ,"Delta_obs_permil"
+    ,"delta_13C_Assim"
     ,"p"
-    ,"delta.13C.Resp"
-    ,"chamber.TotalCa"
-    ,"chamber.12Ca"
-    ,"chamber.13Ca"
-    ,"chamber.TotalCs"
-    ,"chamber.12Cs"
-    ,"chamber.13Cs"
-    ,"chamber.Totalpa"
-    ,"chamber.12pa"
-    ,"chamber.13pa"
-    ,"chamber.Totalps"
-    ,"chamber.12ps"
-    ,"chamber.13ps"
-    ,"chamber.Totalgbw"
-    ,"chamber.Totalgbc"
-    ,"chamber.12gbc"
-    ,"chamber.13gbc"
-    ,"chamber.Totalgsw"
-    ,"chamber.Totalgsc"
-    ,"chamber.12gsc"
-    ,"chamber.13gsc"
-    ,"chamber.Totalgtc"
-    ,"chamber.12gtc"
-    ,"chamber.13gtc"
-    ,"chamber.TotalCi"
-    ,"chamber.12Ci"
-    ,"chamber.13Ci"
-    ,"chamber.Totalpi"
-    ,"chamber.12pi"
-    ,"chamber.13pi"
-    ,"chamber.Totalpi_pa"
-    ,"chamber.Delta.i.simple.for.gm"
-    ,"chamber.Delta.i.simple.for.modeling"
-    ,"chamber.Delta.i.complex.for.gm"
-    ,"chamber.Delta.i.simple.for.gm_Delta.obs"
-    ,"chamber.Delta.i.complex.for.gm_Delta.obs"
-    ,"chamber.Totalgm.point.simple"
-    ,"chamber.12gm.point.simple"
-    ,"chamber.13gm.point.simple"
-    ,"chamber.Totalgm.point.complex"
-    ,"chamber.Totalgm.to.use"
-    ,"chamber.Totalpc.using.gm"
-    ,"chamber.12pc.using.gm"
-    ,"chamber.13pc.using.gm"
-    ,"chamber.Totalpc.using.simple.Delta.for.gm"
-    ,"chamber.Totalpc.using.simple.Delta.for.modeling"
-    ,"chamber.Totalpc.using.complex.Delta.no.decarboxylation"
-    ,"chamber.Totalpc.using.complex.Delta.full.model"
-    ,"chamber.Totalpc.to.use"
-    ,"chamber.TotalCc"
-    ,"chamber.12Cc"
-    ,"chamber.13Cc"
-    ,"Licor.flow.uin"
-    ,"Licor.H2OR.xin"
-    ,"Licor.La"
-    ,"Licor.Atm.press"
-    ,"Licor.gsc"
-    ,"Licor.Ci"
-    ,"Licor.StmRat"
-    ,"Licor.gbw"
-    ,"Licor.temp.block"
-    ,"Licor.Ce"
-    ,"Licor.Co"
-    ,"Licor.xout"
-    ,"Licor.rh.ref"
-    ,"Licor.rh.sam"
-    ,"Licor.CsMch"
-    ,"Licor.HsMch"
-    ,"Licor.StableF"
-    ,"Licor.Status"
+    ,"delta_13C_Resp"
+    ,"chamber_TotalCa"
+    ,"chamber_12Ca"
+    ,"chamber_13Ca"
+    ,"chamber_TotalCs"
+    ,"chamber_12Cs"
+    ,"chamber_13Cs"
+    ,"chamber_Totalpa"
+    ,"chamber_12pa"
+    ,"chamber_13pa"
+    ,"chamber_Totalps"
+    ,"chamber_12ps"
+    ,"chamber_13ps"
+    ,"chamber_Totalgbw"
+    ,"chamber_Totalgbc"
+    ,"chamber_12gbc"
+    ,"chamber_13gbc"
+    ,"chamber_Totalgsw"
+    ,"chamber_Totalgsc"
+    ,"chamber_12gsc"
+    ,"chamber_13gsc"
+    ,"chamber_Totalgtc"
+    ,"chamber_12gtc"
+    ,"chamber_13gtc"
+    ,"chamber_TotalCi"
+    ,"chamber_12Ci"
+    ,"chamber_13Ci"
+    ,"chamber_Totalpi"
+    ,"chamber_12pi"
+    ,"chamber_13pi"
+    ,"chamber_Totalpi_pa"
+    ,"chamber_Delta_i_simple_for_gm"
+    ,"chamber_Delta_i_simple_for_modeling"
+    ,"chamber_Delta_i_complex_for_gm"
+    ,"chamber_Delta_i_simple_for_gm_Delta_obs"
+    ,"chamber_Delta_i_complex_for_gm_Delta_obs"
+    ,"chamber_Totalgm_point_simple"
+    ,"chamber_12gm_point_simple"
+    ,"chamber_13gm_point_simple"
+    ,"chamber_Totalgm_point_complex"
+    ,"chamber_Totalgm_to_use"
+    ,"chamber_Totalpc_using_gm"
+    ,"chamber_12pc_using_gm"
+    ,"chamber_13pc_using_gm"
+    ,"chamber_Totalpc_using_simple_Delta_for_gm"
+    ,"chamber_Totalpc_using_simple_Delta_for_modeling"
+    ,"chamber_Totalpc_using_complex_Delta_no_decarboxylation"
+    ,"chamber_Totalpc_using_complex_Delta_full_model"
+    ,"chamber_Totalpc_to_use"
+    ,"chamber_TotalCc"
+    ,"chamber_12Cc"
+    ,"chamber_13Cc"
+    ,"Licor_flow_uin"
+    ,"Licor_H2OR_xin"
+    ,"Licor_La"
+    ,"Licor_Atm_press"
+    ,"Licor_gsc"
+    ,"Licor_Ci"
+    ,"Licor_StmRat"
+    ,"Licor_gbw"
+    ,"Licor_temp_block"
+    ,"Licor_Ce"
+    ,"Licor_Co"
+    ,"Licor_xout"
+    ,"Licor_rh_ref"
+    ,"Licor_rh_sam"
+    ,"Licor_CsMch"
+    ,"Licor_HsMch"
+    ,"Licor_StableF"
+    ,"Licor_Status"
     , sep=",");
 
-  for (i.time in 1:val$sum$TDL$n) {
+  for (i_time in 1:val$sum$TDL$n) {
     val$write$summary_Calc <-
       rbind( val$write$summary_Calc
         ,paste(
-           format(val$sum$TDL$time[i.time],format="%Y-%m-%d")
-          ,format(val$sum$TDL$time[i.time],format="%H:%M:%S")  # "%H:%M:%OS" ## can't use %OS format since Excel doesn't display decimal seconds automatically
-          ,val$sum$TDL$site[i.time]
-          ,TDL.cycle$table.name[(TDL.cycle$table[,1] == val$sum$TDL$site[i.time])]
-          ,val$sum$TDL$first.ind[i.time]
-          ,val$sum$TDL$ind[i.time]
-          ,val$calc$sum$tank.hi.12[i.time]
-          ,val$calc$sum$tank.hi.13[i.time]
-          ,val$calc$sum$tank.low.12[i.time]
-          ,val$calc$sum$tank.low.13[i.time]
-          ,val$calc$sum$gain.12C[i.time]
-          ,val$calc$sum$gain.13C[i.time]
-          ,val$calc$sum$offset.12C[i.time]
-          ,val$calc$sum$offset.13C[i.time]
-          ,val$calc$sum$reference.12Ce[i.time]
-          ,val$calc$sum$reference.13Ce[i.time]
-          ,val$calc$sum$chamber.12Co[i.time]
-          ,val$calc$sum$chamber.13Co[i.time]
-          ,val$calc$sum$reference.TotalCe[i.time]
-          ,val$calc$sum$chamber.TotalCo[i.time]
-          ,val$calc$sum$chamber.reference.Total.diff.CeCo[i.time]
-          ,val$calc$sum$chamber.reference.12.diff.CeCo[i.time]
-          ,val$calc$sum$chamber.reference.13.diff.CeCo[i.time]
-          ,val$calc$sum$xi[i.time]
-          #,val$calc$sum$flow.adjusted[i.time]    # 9/5/2012
-          ,val$calc$sum$TDL.A.photosynthesis[i.time]
-          ,val$calc$sum$TDL.12A.photosynthesis[i.time]
-          ,val$calc$sum$TDL.13A.photosynthesis[i.time]
-          ,val$calc$sum$Licor.A.photosynthesis[i.time]
-          ,val$calc$sum$Delta.from.ratios.in.out[i.time]
-          ,val$calc$sum$Delta.from.A.ratio[i.time]
-          ,val$calc$sum$VPD[i.time]
-          ,val$calc$sum$E.transpiration[i.time]
-          ,val$calc$sum$leaf.temp[i.time]
-          ,val$calc$sum$air.temp[i.time]
-          ,val$calc$sum$light.in[i.time]
-          ,val$calc$sum$light.out[i.time]
-          ,val$calc$sum$reference.delta.e[i.time]
-          ,val$calc$sum$chamber.delta.o[i.time]
-          ,val$calc$sum$chamber.reference.delta.diff.CoCe[i.time]
-          ,val$calc$sum$Delta.obs[i.time]
-          ,val$calc$sum$Delta.obs.permil[i.time]
-          ,val$calc$sum$delta.13C.Assim[i.time]
-          ,val$calc$sum$p[i.time]
-          ,val$calc$sum$delta.13C.Resp[i.time]
-          ,val$calc$sum$chamber.TotalCa[i.time]
-          ,val$calc$sum$chamber.12Ca[i.time]
-          ,val$calc$sum$chamber.13Ca[i.time]
-          ,val$calc$sum$chamber.TotalCs[i.time]
-          ,val$calc$sum$chamber.12Cs[i.time]
-          ,val$calc$sum$chamber.13Cs[i.time]
-          ,val$calc$sum$chamber.Totalpa[i.time]
-          ,val$calc$sum$chamber.12pa[i.time]
-          ,val$calc$sum$chamber.13pa[i.time]
-          ,val$calc$sum$chamber.Totalps[i.time]
-          ,val$calc$sum$chamber.12ps[i.time]
-          ,val$calc$sum$chamber.13ps[i.time]
-          ,val$calc$sum$chamber.Totalgbw[i.time]
-          ,val$calc$sum$chamber.Totalgbc[i.time]
-          ,val$calc$sum$chamber.12gbc[i.time]
-          ,val$calc$sum$chamber.13gbc[i.time]
-          ,val$calc$sum$chamber.Totalgsw[i.time]
-          ,val$calc$sum$chamber.Totalgsc[i.time]
-          ,val$calc$sum$chamber.12gsc[i.time]
-          ,val$calc$sum$chamber.13gsc[i.time]
-          ,val$calc$sum$chamber.Totalgtc[i.time]
-          ,val$calc$sum$chamber.12gtc[i.time]
-          ,val$calc$sum$chamber.13gtc[i.time]
-          ,val$calc$sum$chamber.TotalCi[i.time]
-          ,val$calc$sum$chamber.12Ci[i.time]
-          ,val$calc$sum$chamber.13Ci[i.time]
-          ,val$calc$sum$chamber.Totalpi[i.time]
-          ,val$calc$sum$chamber.12pi[i.time]
-          ,val$calc$sum$chamber.13pi[i.time]
-          ,val$calc$sum$chamber.Totalpi_pa[i.time]
-          ,val$calc$sum$chamber.Delta.i.simple.for.gm[i.time]
-          ,val$calc$sum$chamber.Delta.i.simple.for.modeling[i.time]
-          ,val$calc$sum$chamber.Delta.i.complex.for.gm[i.time]
-          ,val$calc$sum$chamber.Delta.i.simple.for.gm_Delta.obs[i.time]
-          ,val$calc$sum$chamber.Delta.i.complex.for.gm_Delta.obs[i.time]
-          ,val$calc$sum$chamber.Totalgm.point.simple[i.time]
-          ,val$calc$sum$chamber.12gm.point.simple[i.time]
-          ,val$calc$sum$chamber.13gm.point.simple[i.time]
-          ,val$calc$sum$chamber.Totalgm.point.complex[i.time]
-          ,val$calc$sum$chamber.Totalgm.to.use[i.time]
-          ,val$calc$sum$chamber.Totalpc.using.gm[i.time]
-          ,val$calc$sum$chamber.12pc.using.gm[i.time]
-          ,val$calc$sum$chamber.13pc.using.gm[i.time]
-          ,val$calc$sum$chamber.Totalpc.using.simple.Delta.for.gm[i.time]
-          ,val$calc$sum$chamber.Totalpc.using.simple.Delta.for.modeling[i.time]
-          ,val$calc$sum$chamber.Totalpc.using.complex.Delta.no.decarboxylation[i.time]
-          ,val$calc$sum$chamber.Totalpc.using.complex.Delta.full.model[i.time]
-          ,val$calc$sum$chamber.Totalpc.to.use[i.time]
-          ,val$calc$sum$chamber.TotalCc[i.time]
-          ,val$calc$sum$chamber.12Cc[i.time]
-          ,val$calc$sum$chamber.13Cc[i.time]
-          ,val$calc$sum$Licor.flow.uin[i.time]
-          ,val$calc$sum$Licor.H2OR.xin[i.time]
-          ,val$calc$sum$Licor.La[i.time]
-          ,val$calc$sum$Licor.Atm.press[i.time]
-          ,val$calc$sum$Licor.gsc[i.time]
-          ,val$calc$sum$Licor.Ci[i.time]
-          ,val$calc$sum$Licor.StmRat[i.time]
-          ,val$calc$sum$Licor.gbw[i.time]
-          ,val$calc$sum$Licor.temp.block[i.time]
-          ,val$calc$sum$Licor.Ce[i.time]
-          ,val$calc$sum$Licor.Co[i.time]
-          ,val$calc$sum$Licor.xout[i.time]
-          ,val$calc$sum$Licor.rh.ref[i.time]
-          ,val$calc$sum$Licor.rh.sam[i.time]
-          ,val$calc$sum$Licor.CsMch[i.time]
-          ,val$calc$sum$Licor.HsMch[i.time]
-          ,val$calc$sum$Licor.StableF[i.time]
-          ,val$calc$sum$Licor.Status[i.time]
+           format(val$sum$TDL$time[i_time],format="%Y-%m-%d")
+          ,format(val$sum$TDL$time[i_time],format="%H:%M:%S")  # "%H:%M:%OS" ## can't use %OS format since Excel doesn't display decimal seconds automatically
+          ,val$sum$TDL$site[i_time]
+          ,TDL_cycle$table_name[(TDL_cycle$table[,1] == val$sum$TDL$site[i_time])]
+          ,val$sum$TDL$first_ind[i_time]
+          ,val$sum$TDL$ind[i_time]
+          ,val$calc$sum$tank_hi_12[i_time]
+          ,val$calc$sum$tank_hi_13[i_time]
+          ,val$calc$sum$tank_low_12[i_time]
+          ,val$calc$sum$tank_low_13[i_time]
+          ,val$calc$sum$gain_12C[i_time]
+          ,val$calc$sum$gain_13C[i_time]
+          ,val$calc$sum$offset_12C[i_time]
+          ,val$calc$sum$offset_13C[i_time]
+          ,val$calc$sum$reference_12Ce[i_time]
+          ,val$calc$sum$reference_13Ce[i_time]
+          ,val$calc$sum$chamber_12Co[i_time]
+          ,val$calc$sum$chamber_13Co[i_time]
+          ,val$calc$sum$reference_TotalCe[i_time]
+          ,val$calc$sum$chamber_TotalCo[i_time]
+          ,val$calc$sum$chamber_reference_Total_diff_CeCo[i_time]
+          ,val$calc$sum$chamber_reference_12_diff_CeCo[i_time]
+          ,val$calc$sum$chamber_reference_13_diff_CeCo[i_time]
+          ,val$calc$sum$xi[i_time]
+          #,val$calc$sum$flow_adjusted[i_time]    # 9/5/2012
+          ,val$calc$sum$TDL_A_photosynthesis[i_time]
+          ,val$calc$sum$TDL_12A_photosynthesis[i_time]
+          ,val$calc$sum$TDL_13A_photosynthesis[i_time]
+          ,val$calc$sum$Licor_A_photosynthesis[i_time]
+          ,val$calc$sum$Delta_from_ratios_in_out[i_time]
+          ,val$calc$sum$Delta_from_A_ratio[i_time]
+          ,val$calc$sum$VPD[i_time]
+          ,val$calc$sum$E_transpiration[i_time]
+          ,val$calc$sum$leaf_temp[i_time]
+          ,val$calc$sum$air_temp[i_time]
+          ,val$calc$sum$light_in[i_time]
+          ,val$calc$sum$light_out[i_time]
+          ,val$calc$sum$reference_delta_e[i_time]
+          ,val$calc$sum$chamber_delta_o[i_time]
+          ,val$calc$sum$chamber_reference_delta_diff_CoCe[i_time]
+          ,val$calc$sum$Delta_obs[i_time]
+          ,val$calc$sum$Delta_obs_permil[i_time]
+          ,val$calc$sum$delta_13C_Assim[i_time]
+          ,val$calc$sum$p[i_time]
+          ,val$calc$sum$delta_13C_Resp[i_time]
+          ,val$calc$sum$chamber_TotalCa[i_time]
+          ,val$calc$sum$chamber_12Ca[i_time]
+          ,val$calc$sum$chamber_13Ca[i_time]
+          ,val$calc$sum$chamber_TotalCs[i_time]
+          ,val$calc$sum$chamber_12Cs[i_time]
+          ,val$calc$sum$chamber_13Cs[i_time]
+          ,val$calc$sum$chamber_Totalpa[i_time]
+          ,val$calc$sum$chamber_12pa[i_time]
+          ,val$calc$sum$chamber_13pa[i_time]
+          ,val$calc$sum$chamber_Totalps[i_time]
+          ,val$calc$sum$chamber_12ps[i_time]
+          ,val$calc$sum$chamber_13ps[i_time]
+          ,val$calc$sum$chamber_Totalgbw[i_time]
+          ,val$calc$sum$chamber_Totalgbc[i_time]
+          ,val$calc$sum$chamber_12gbc[i_time]
+          ,val$calc$sum$chamber_13gbc[i_time]
+          ,val$calc$sum$chamber_Totalgsw[i_time]
+          ,val$calc$sum$chamber_Totalgsc[i_time]
+          ,val$calc$sum$chamber_12gsc[i_time]
+          ,val$calc$sum$chamber_13gsc[i_time]
+          ,val$calc$sum$chamber_Totalgtc[i_time]
+          ,val$calc$sum$chamber_12gtc[i_time]
+          ,val$calc$sum$chamber_13gtc[i_time]
+          ,val$calc$sum$chamber_TotalCi[i_time]
+          ,val$calc$sum$chamber_12Ci[i_time]
+          ,val$calc$sum$chamber_13Ci[i_time]
+          ,val$calc$sum$chamber_Totalpi[i_time]
+          ,val$calc$sum$chamber_12pi[i_time]
+          ,val$calc$sum$chamber_13pi[i_time]
+          ,val$calc$sum$chamber_Totalpi_pa[i_time]
+          ,val$calc$sum$chamber_Delta_i_simple_for_gm[i_time]
+          ,val$calc$sum$chamber_Delta_i_simple_for_modeling[i_time]
+          ,val$calc$sum$chamber_Delta_i_complex_for_gm[i_time]
+          ,val$calc$sum$chamber_Delta_i_simple_for_gm_Delta_obs[i_time]
+          ,val$calc$sum$chamber_Delta_i_complex_for_gm_Delta_obs[i_time]
+          ,val$calc$sum$chamber_Totalgm_point_simple[i_time]
+          ,val$calc$sum$chamber_12gm_point_simple[i_time]
+          ,val$calc$sum$chamber_13gm_point_simple[i_time]
+          ,val$calc$sum$chamber_Totalgm_point_complex[i_time]
+          ,val$calc$sum$chamber_Totalgm_to_use[i_time]
+          ,val$calc$sum$chamber_Totalpc_using_gm[i_time]
+          ,val$calc$sum$chamber_12pc_using_gm[i_time]
+          ,val$calc$sum$chamber_13pc_using_gm[i_time]
+          ,val$calc$sum$chamber_Totalpc_using_simple_Delta_for_gm[i_time]
+          ,val$calc$sum$chamber_Totalpc_using_simple_Delta_for_modeling[i_time]
+          ,val$calc$sum$chamber_Totalpc_using_complex_Delta_no_decarboxylation[i_time]
+          ,val$calc$sum$chamber_Totalpc_using_complex_Delta_full_model[i_time]
+          ,val$calc$sum$chamber_Totalpc_to_use[i_time]
+          ,val$calc$sum$chamber_TotalCc[i_time]
+          ,val$calc$sum$chamber_12Cc[i_time]
+          ,val$calc$sum$chamber_13Cc[i_time]
+          ,val$calc$sum$Licor_flow_uin[i_time]
+          ,val$calc$sum$Licor_H2OR_xin[i_time]
+          ,val$calc$sum$Licor_La[i_time]
+          ,val$calc$sum$Licor_Atm_press[i_time]
+          ,val$calc$sum$Licor_gsc[i_time]
+          ,val$calc$sum$Licor_Ci[i_time]
+          ,val$calc$sum$Licor_StmRat[i_time]
+          ,val$calc$sum$Licor_gbw[i_time]
+          ,val$calc$sum$Licor_temp_block[i_time]
+          ,val$calc$sum$Licor_Ce[i_time]
+          ,val$calc$sum$Licor_Co[i_time]
+          ,val$calc$sum$Licor_xout[i_time]
+          ,val$calc$sum$Licor_rh_ref[i_time]
+          ,val$calc$sum$Licor_rh_sam[i_time]
+          ,val$calc$sum$Licor_CsMch[i_time]
+          ,val$calc$sum$Licor_HsMch[i_time]
+          ,val$calc$sum$Licor_StableF[i_time]
+          ,val$calc$sum$Licor_Status[i_time]
           , sep=",")
       )
   }
 
-  write(val$write$summary_Calc, file=output.summary.Calc.fn, append=FALSE);#, colnames=FALSE, row.names=FALSE)
+  write(val$write$summary_Calc, file=output_summary_Calc_fn, append=FALSE);#, colnames=FALSE, row.names=FALSE)
 
   # last file, last measurement of each cycle file, remove rows that are not last measurements
   n <- val$sum$TDL$n;
   sites <- val$sum$TDL$site;
-  last.sites <- rep(0,n);
-  for (i.site in 1:n) {
+  last_sites <- rep(0,n);
+  for (i_site in 1:n) {
     # if last record, then last by definition
-    if (i.site == n) { last.sites[i.site] <- i.site; }
+    if (i_site == n) { last_sites[i_site] <- i_site; }
     else {
       # if current different from next, then last
-      if (sites[i.site] != sites[i.site+1]) { last.sites[i.site] <- i.site; }
+      if (sites[i_site] != sites[i_site+1]) { last_sites[i_site] <- i_site; }
     }
   }
-  last.sites <- last.sites[last.sites > 0]; # include only last sites
-  last.sites <- c(1,last.sites+1); # include header row
+  last_sites <- last_sites[last_sites > 0]; # include only last sites
+  last_sites <- c(1,last_sites+1); # include header row
 
-  val$write$summary_Calc_last <- val$write$summary_Calc[last.sites];
+  val$write$summary_Calc_last <- val$write$summary_Calc[last_sites];
 
-  write(val$write$summary_Calc_last, file=output.summary.Calc.last.fn, append=FALSE);#, colnames=FALSE, row.names=FALSE)
+  write(val$write$summary_Calc_last, file=output_summary_Calc_last_fn, append=FALSE);#, colnames=FALSE, row.names=FALSE)
 
   return( val$write );
   ### val$write

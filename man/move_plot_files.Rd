@@ -4,10 +4,10 @@
 \alias{move_plot_files}
 \title{Title}
 \usage{
-move_plot_files(plot.format)
+move_plot_files(plot_format)
 }
 \arguments{
-\item{plot.format}{}
+\item{plot_format}{}
 }
 \description{
 Title

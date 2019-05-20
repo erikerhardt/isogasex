@@ -2,13 +2,13 @@
 #'
 #' @param a
 #' @param b
-#' @param a.b
+#' @param a_b
 #' @param pa
 #' @param ps
 #' @param pi
-#' @param b.gm
-#' @param f.photo
-#' @param Gamma.star
+#' @param b_gm
+#' @param f_photo
+#' @param Gamma_star
 #' @param e
 #' @param Rd
 #' @param k
@@ -18,13 +18,13 @@
 #'
 #' @examples
 f_val_calc_Delta_i_complex_for_gm <-
-function# Delta.i complex for gm  CHECK DERIVATION  predicted discrimination including boundary layer effects AND decarboxylation effects
+function# Delta_i complex for gm  CHECK DERIVATION  predicted discrimination including boundary layer effects AND decarboxylation effects
 ###
 (a
 ###
 , b
 ###
-, a.b
+, a_b
 ###
 , pa
 ###
@@ -32,11 +32,11 @@ function# Delta.i complex for gm  CHECK DERIVATION  predicted discrimination inc
 ###
 , pi
 ###
-, b.gm
+, b_gm
 ###
-, f.photo
+, f_photo
 ###
-, Gamma.star
+, Gamma_star
 ###
 , e
 ###
@@ -47,11 +47,11 @@ function# Delta.i complex for gm  CHECK DERIVATION  predicted discrimination inc
 )
 {
   ##details<<
-  ##\deqn{Delta.i.complex.for.gm = a.b * ((pa - ps) / pa) + a * ((ps - pi) / pa) + b * (pi / pa) - (f.photo * Gamma.star / pa) - (e * Rd / (k * pa))}
-  Delta.i.complex.for.gm <-
-    a.b * ((pa - ps) / pa) + a * ((ps - pi) / pa) + b * (pi / pa) - (f.photo * Gamma.star / pa) - (e * Rd / (k * pa));
+  ##\deqn{Delta_i_complex_for_gm = a_b * ((pa - ps) / pa) + a * ((ps - pi) / pa) + b * (pi / pa) - (f_photo * Gamma_star / pa) - (e * Rd / (k * pa))}
+  Delta_i_complex_for_gm <-
+    a_b * ((pa - ps) / pa) + a * ((ps - pi) / pa) + b * (pi / pa) - (f_photo * Gamma_star / pa) - (e * Rd / (k * pa));
 
-  return( Delta.i.complex.for.gm );
-  ### Delta.i.complex.for.gm
+  return( Delta_i_complex_for_gm );
+  ### Delta_i_complex_for_gm
 }
 

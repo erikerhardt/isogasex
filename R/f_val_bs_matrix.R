@@ -1,8 +1,8 @@
 #' Title
 #'
 #' @param bs
-#' @param val.calc.bs.temp
-#' @param i.bs
+#' @param val_calc_bs_temp
+#' @param i_bs
 #'
 #' @return
 #' @export
@@ -13,102 +13,102 @@ function# update values for each bs iterate
 ###
 (bs
 ###
-, val.calc.bs.temp
+, val_calc_bs_temp
 ###
-, i.bs
+, i_bs
 ###
 )
 {
 
   ##details<<
-  ## Move current value of \code{val.calc.bs.temp} into \code{bs$*} after checked with \code{\link{f_val_bs_matrix_check}}.
+  ## Move current value of \code{val_calc_bs_temp} into \code{bs$*} after checked with \code{\link{f_val_bs_matrix_check}}.
 
-  bs$gain.12C                                              [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$gain.12C                                              );
-  bs$gain.13C                                              [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$gain.13C                                              );
-  bs$offset.12C                                            [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$offset.12C                                            );
-  bs$offset.13C                                            [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$offset.13C                                            );
-  bs$reference.12Ce                                        [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$reference.12Ce                                        );
-  bs$reference.13Ce                                        [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$reference.13Ce                                        );
-  bs$chamber.12Co                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12Co                                          );
-  bs$chamber.13Co                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13Co                                          );
-  bs$reference.TotalCe                                     [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$reference.TotalCe                                     );
-  bs$chamber.TotalCo                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.TotalCo                                       );
-  bs$chamber.reference.Total.diff.CeCo                     [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.reference.Total.diff.CeCo                     );
-  bs$chamber.reference.12.diff.CeCo                        [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.reference.12.diff.CeCo                        );
-  bs$chamber.reference.13.diff.CeCo                        [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.reference.13.diff.CeCo                        );
-  bs$xi                                                    [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$xi                                                    );
-  #bs$flow.adjusted                                         [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$flow.adjusted                                         ); # 9/5/2012
-  bs$TDL.A.photosynthesis                                  [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$TDL.A.photosynthesis                                  );
-  bs$TDL.12A.photosynthesis                                [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$TDL.12A.photosynthesis                                );
-  bs$TDL.13A.photosynthesis                                [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$TDL.13A.photosynthesis                                );
-  bs$Licor.A.photosynthesis                                [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$Licor.A.photosynthesis                                );
-  bs$Delta.from.ratios.in.out                              [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$Delta.from.ratios.in.out                              );
-  bs$Delta.from.A.ratio                                    [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$Delta.from.A.ratio                                    );
-  bs$VPD                                                   [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$VPD                                                   );
-  bs$E.transpiration                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$E.transpiration                                       );
-  bs$leaf.temp                                             [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$leaf.temp                                             );
-  bs$air.temp                                              [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$air.temp                                              );
-  bs$light.in                                              [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$light.in                                              );
-  bs$light.out                                             [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$light.out                                             );
-  bs$reference.delta.e                                     [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$reference.delta.e                                     );
-  bs$chamber.delta.o                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.delta.o                                       );
-  bs$chamber.reference.delta.diff.CoCe                     [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.reference.delta.diff.CoCe                     );
-  bs$Delta.obs                                             [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$Delta.obs                                             );
-  bs$Delta.obs.permil                                      [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$Delta.obs.permil                                      );
-  bs$delta.13C.Assim                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$delta.13C.Assim                                       );
-  bs$p                                                     [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$p                                                     );
-  bs$delta.13C.Resp                                        [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$delta.13C.Resp                                        );
-  bs$chamber.TotalCa                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.TotalCa                                       );
-  bs$chamber.12Ca                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12Ca                                          );
-  bs$chamber.13Ca                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13Ca                                          );
-  bs$chamber.TotalCs                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.TotalCs                                       );
-  bs$chamber.12Cs                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12Cs                                          );
-  bs$chamber.13Cs                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13Cs                                          );
-  bs$chamber.Totalpa                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalpa                                       );
-  bs$chamber.12pa                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12pa                                          );
-  bs$chamber.13pa                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13pa                                          );
-  bs$chamber.Totalps                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalps                                       );
-  bs$chamber.12ps                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12ps                                          );
-  bs$chamber.13ps                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13ps                                          );
-  bs$chamber.Totalgbw                                      [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalgbw                                      );
-  bs$chamber.Totalgbc                                      [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalgbc                                      );
-  bs$chamber.12gbc                                         [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12gbc                                         );
-  bs$chamber.13gbc                                         [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13gbc                                         );
-  bs$chamber.Totalgsw                                      [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalgsw                                      );
-  bs$chamber.Totalgsc                                      [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalgsc                                      );
-  bs$chamber.12gsc                                         [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12gsc                                         );
-  bs$chamber.13gsc                                         [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13gsc                                         );
-  bs$chamber.Totalgtc                                      [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalgtc                                      );
-  bs$chamber.12gtc                                         [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12gtc                                         );
-  bs$chamber.13gtc                                         [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13gtc                                         );
-  bs$chamber.TotalCi                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.TotalCi                                       );
-  bs$chamber.12Ci                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12Ci                                          );
-  bs$chamber.13Ci                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13Ci                                          );
-  bs$chamber.Totalpi                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalpi                                       );
-  bs$chamber.12pi                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12pi                                          );
-  bs$chamber.13pi                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13pi                                          );
-  bs$chamber.Totalpi_pa                                    [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalpi_pa                                    );
-  bs$chamber.Delta.i.simple.for.gm                         [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Delta.i.simple.for.gm                         );
-  bs$chamber.Delta.i.simple.for.modeling                   [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Delta.i.simple.for.modeling                   );
-  bs$chamber.Delta.i.complex.for.gm                        [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Delta.i.complex.for.gm                        );
-  bs$chamber.Delta.i.simple.for.gm_Delta.obs               [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Delta.i.simple.for.gm_Delta.obs               );
-  bs$chamber.Delta.i.complex.for.gm_Delta.obs              [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Delta.i.complex.for.gm_Delta.obs              );
-  bs$chamber.Totalgm.point.simple                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalgm.point.simple                          );
-  bs$chamber.12gm.point.simple                             [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12gm.point.simple                             );
-  bs$chamber.13gm.point.simple                             [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13gm.point.simple                             );
-  bs$chamber.Totalgm.point.complex                         [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalgm.point.complex                         );
-  bs$chamber.Totalgm.to.use                                [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalgm.to.use                                );
-  bs$chamber.Totalpc.using.gm                              [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalpc.using.gm                              );
-  bs$chamber.12pc.using.gm                                 [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12pc.using.gm                                 );
-  bs$chamber.13pc.using.gm                                 [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13pc.using.gm                                 );
-  bs$chamber.Totalpc.using.simple.Delta.for.gm             [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalpc.using.simple.Delta.for.gm             );
-  bs$chamber.Totalpc.using.simple.Delta.for.modeling       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalpc.using.simple.Delta.for.modeling       );
-  bs$chamber.Totalpc.using.complex.Delta.no.decarboxylation[,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalpc.using.complex.Delta.no.decarboxylation);
-  bs$chamber.Totalpc.using.complex.Delta.full.model        [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalpc.using.complex.Delta.full.model        );
-  bs$chamber.Totalpc.to.use                                [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.Totalpc.to.use                                );
-  bs$chamber.TotalCc                                       [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.TotalCc                                       );
-  bs$chamber.12Cc                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.12Cc                                          );
-  bs$chamber.13Cc                                          [,i.bs]  <- f_val_bs_matrix_check(val.calc.bs.temp$chamber.13Cc                                          );
+  bs$gain_12C                                              [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$gain_12C                                              );
+  bs$gain_13C                                              [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$gain_13C                                              );
+  bs$offset_12C                                            [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$offset_12C                                            );
+  bs$offset_13C                                            [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$offset_13C                                            );
+  bs$reference_12Ce                                        [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$reference_12Ce                                        );
+  bs$reference_13Ce                                        [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$reference_13Ce                                        );
+  bs$chamber_12Co                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12Co                                          );
+  bs$chamber_13Co                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13Co                                          );
+  bs$reference_TotalCe                                     [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$reference_TotalCe                                     );
+  bs$chamber_TotalCo                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_TotalCo                                       );
+  bs$chamber_reference_Total_diff_CeCo                     [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_reference_Total_diff_CeCo                     );
+  bs$chamber_reference_12_diff_CeCo                        [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_reference_12_diff_CeCo                        );
+  bs$chamber_reference_13_diff_CeCo                        [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_reference_13_diff_CeCo                        );
+  bs$xi                                                    [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$xi                                                    );
+  #bs$flow_adjusted                                         [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$flow_adjusted                                         ); # 9/5/2012
+  bs$TDL_A_photosynthesis                                  [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$TDL_A_photosynthesis                                  );
+  bs$TDL_12A_photosynthesis                                [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$TDL_12A_photosynthesis                                );
+  bs$TDL_13A_photosynthesis                                [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$TDL_13A_photosynthesis                                );
+  bs$Licor_A_photosynthesis                                [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$Licor_A_photosynthesis                                );
+  bs$Delta_from_ratios_in_out                              [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$Delta_from_ratios_in_out                              );
+  bs$Delta_from_A_ratio                                    [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$Delta_from_A_ratio                                    );
+  bs$VPD                                                   [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$VPD                                                   );
+  bs$E_transpiration                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$E_transpiration                                       );
+  bs$leaf_temp                                             [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$leaf_temp                                             );
+  bs$air_temp                                              [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$air_temp                                              );
+  bs$light_in                                              [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$light_in                                              );
+  bs$light_out                                             [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$light_out                                             );
+  bs$reference_delta_e                                     [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$reference_delta_e                                     );
+  bs$chamber_delta_o                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_delta_o                                       );
+  bs$chamber_reference_delta_diff_CoCe                     [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_reference_delta_diff_CoCe                     );
+  bs$Delta_obs                                             [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$Delta_obs                                             );
+  bs$Delta_obs_permil                                      [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$Delta_obs_permil                                      );
+  bs$delta_13C_Assim                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$delta_13C_Assim                                       );
+  bs$p                                                     [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$p                                                     );
+  bs$delta_13C_Resp                                        [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$delta_13C_Resp                                        );
+  bs$chamber_TotalCa                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_TotalCa                                       );
+  bs$chamber_12Ca                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12Ca                                          );
+  bs$chamber_13Ca                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13Ca                                          );
+  bs$chamber_TotalCs                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_TotalCs                                       );
+  bs$chamber_12Cs                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12Cs                                          );
+  bs$chamber_13Cs                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13Cs                                          );
+  bs$chamber_Totalpa                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalpa                                       );
+  bs$chamber_12pa                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12pa                                          );
+  bs$chamber_13pa                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13pa                                          );
+  bs$chamber_Totalps                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalps                                       );
+  bs$chamber_12ps                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12ps                                          );
+  bs$chamber_13ps                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13ps                                          );
+  bs$chamber_Totalgbw                                      [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalgbw                                      );
+  bs$chamber_Totalgbc                                      [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalgbc                                      );
+  bs$chamber_12gbc                                         [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12gbc                                         );
+  bs$chamber_13gbc                                         [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13gbc                                         );
+  bs$chamber_Totalgsw                                      [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalgsw                                      );
+  bs$chamber_Totalgsc                                      [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalgsc                                      );
+  bs$chamber_12gsc                                         [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12gsc                                         );
+  bs$chamber_13gsc                                         [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13gsc                                         );
+  bs$chamber_Totalgtc                                      [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalgtc                                      );
+  bs$chamber_12gtc                                         [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12gtc                                         );
+  bs$chamber_13gtc                                         [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13gtc                                         );
+  bs$chamber_TotalCi                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_TotalCi                                       );
+  bs$chamber_12Ci                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12Ci                                          );
+  bs$chamber_13Ci                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13Ci                                          );
+  bs$chamber_Totalpi                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalpi                                       );
+  bs$chamber_12pi                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12pi                                          );
+  bs$chamber_13pi                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13pi                                          );
+  bs$chamber_Totalpi_pa                                    [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalpi_pa                                    );
+  bs$chamber_Delta_i_simple_for_gm                         [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Delta_i_simple_for_gm                         );
+  bs$chamber_Delta_i_simple_for_modeling                   [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Delta_i_simple_for_modeling                   );
+  bs$chamber_Delta_i_complex_for_gm                        [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Delta_i_complex_for_gm                        );
+  bs$chamber_Delta_i_simple_for_gm_Delta_obs               [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Delta_i_simple_for_gm_Delta_obs               );
+  bs$chamber_Delta_i_complex_for_gm_Delta_obs              [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Delta_i_complex_for_gm_Delta_obs              );
+  bs$chamber_Totalgm_point_simple                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalgm_point_simple                          );
+  bs$chamber_12gm_point_simple                             [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12gm_point_simple                             );
+  bs$chamber_13gm_point_simple                             [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13gm_point_simple                             );
+  bs$chamber_Totalgm_point_complex                         [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalgm_point_complex                         );
+  bs$chamber_Totalgm_to_use                                [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalgm_to_use                                );
+  bs$chamber_Totalpc_using_gm                              [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalpc_using_gm                              );
+  bs$chamber_12pc_using_gm                                 [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12pc_using_gm                                 );
+  bs$chamber_13pc_using_gm                                 [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13pc_using_gm                                 );
+  bs$chamber_Totalpc_using_simple_Delta_for_gm             [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalpc_using_simple_Delta_for_gm             );
+  bs$chamber_Totalpc_using_simple_Delta_for_modeling       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalpc_using_simple_Delta_for_modeling       );
+  bs$chamber_Totalpc_using_complex_Delta_no_decarboxylation[,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalpc_using_complex_Delta_no_decarboxylation);
+  bs$chamber_Totalpc_using_complex_Delta_full_model        [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalpc_using_complex_Delta_full_model        );
+  bs$chamber_Totalpc_to_use                                [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_Totalpc_to_use                                );
+  bs$chamber_TotalCc                                       [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_TotalCc                                       );
+  bs$chamber_12Cc                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_12Cc                                          );
+  bs$chamber_13Cc                                          [,i_bs]  <- f_val_bs_matrix_check(val_calc_bs_temp$chamber_13Cc                                          );
 
   return( bs );
   ### bs

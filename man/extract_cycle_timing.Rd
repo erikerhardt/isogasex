@@ -4,10 +4,10 @@
 \alias{extract_cycle_timing}
 \title{Title}
 \usage{
-extract_cycle_timing(TDL, TDL.cycle, TDL.site.timing.filename)
+extract_cycle_timing(TDL, TDL_cycle, TDL_site_timing_filename)
 }
 \arguments{
-\item{TDL.site.timing.filename}{}
+\item{TDL_site_timing_filename}{}
 }
 \description{
 Title

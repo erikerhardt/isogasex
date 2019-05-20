@@ -4,12 +4,12 @@
 \alias{plot_delta_Delta_p}
 \title{Title}
 \usage{
-plot_delta_Delta_p(reference.delta.e, chamber.delta.o,
-  chamber.reference.delta.diff.CoCe, Delta.obs, p, delta.13C.Assim,
-  delta.13C.Resp, x.time, plot.format.list, output.fn.prefix)
+plot_delta_Delta_p(reference_delta_e, chamber_delta_o,
+  chamber_reference_delta_diff_CoCe, Delta_obs, p, delta_13C_Assim,
+  delta_13C_Resp, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

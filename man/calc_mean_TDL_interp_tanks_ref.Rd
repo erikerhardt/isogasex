@@ -4,10 +4,10 @@
 \alias{calc_mean_TDL_interp_tanks_ref}
 \title{Title}
 \usage{
-calc_mean_TDL_interp_tanks_ref(TDL, TDL.cycle)
+calc_mean_TDL_interp_tanks_ref(TDL, TDL_cycle)
 }
 \arguments{
-\item{TDL.cycle}{}
+\item{TDL_cycle}{}
 }
 \description{
 Title

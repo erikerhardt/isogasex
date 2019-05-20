@@ -4,10 +4,10 @@
 \alias{write_all_Calc_file}
 \title{Title}
 \usage{
-write_all_Calc_file(val, TDL.cycle, output.all.Calc.fn)
+write_all_Calc_file(val, TDL_cycle, output_all_Calc_fn)
 }
 \arguments{
-\item{output.all.Calc.fn}{}
+\item{output_all_Calc_fn}{}
 }
 \description{
 Title

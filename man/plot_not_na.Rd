@@ -4,7 +4,7 @@
 \alias{plot_not_na}
 \title{Title}
 \usage{
-plot_not_na(x.time, y.var, pch = 20, type, cex = 0.1, xlab = "",
+plot_not_na(x_time, y_var, pch = 20, type, cex = 0.1, xlab = "",
   ylab, main)
 }
 \arguments{

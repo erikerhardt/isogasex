@@ -4,7 +4,7 @@
 \alias{interp_TDL_tanks_ref}
 \title{Title}
 \usage{
-interp_TDL_tanks_ref(TDL, TDL.cycle, plot.format.list, output.fn.prefix,
+interp_TDL_tanks_ref(TDL, TDL_cycle, plot_format_list, output_fn_prefix,
   sw)
 }
 \arguments{

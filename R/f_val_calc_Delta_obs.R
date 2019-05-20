@@ -1,7 +1,7 @@
 #' Title
 #'
-#' @param reference.delta.e
-#' @param chamber.delta.o
+#' @param reference_delta_e
+#' @param chamber_delta_o
 #' @param xi
 #'
 #' @return
@@ -11,21 +11,21 @@
 f_val_calc_Delta_obs <-
 function# Delta, observed discrimination
 ###
-(reference.delta.e
+(reference_delta_e
 ###
-, chamber.delta.o
+, chamber_delta_o
 ###
 , xi
 ###
 )
 {
   ##details<<
-  ##\deqn{temp.xidode = xi * (chamber.delta.o - reference.delta.e)}
-  ##\deqn{Delta.obs = temp.xidode / (1 + chamber.delta.o - temp.xidode)}
-  temp.xidode <- xi * (chamber.delta.o - reference.delta.e);
-  Delta.obs <- temp.xidode / (1 + chamber.delta.o - temp.xidode);
+  ##\deqn{temp_xidode = xi * (chamber_delta_o - reference_delta_e)}
+  ##\deqn{Delta_obs = temp_xidode / (1 + chamber_delta_o - temp_xidode)}
+  temp_xidode <- xi * (chamber_delta_o - reference_delta_e);
+  Delta_obs <- temp_xidode / (1 + chamber_delta_o - temp_xidode);
 
-  return( Delta.obs );
-  ### Delta.obs
+  return( Delta_obs );
+  ### Delta_obs
 }
 

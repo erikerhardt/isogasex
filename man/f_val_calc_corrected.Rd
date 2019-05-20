@@ -4,11 +4,11 @@
 \alias{f_val_calc_corrected}
 \title{Title}
 \usage{
-f_val_calc_corrected(obs.12C, obs.13C, gain.12C, gain.13C, offset.12C,
-  offset.13C)
+f_val_calc_corrected(obs.12C, obs.13C, gain_12C, gain_13C, offset_12C,
+  offset_13C)
 }
 \arguments{
-\item{offset.13C}{}
+\item{offset_13C}{}
 }
 \description{
 Title

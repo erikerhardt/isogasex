@@ -4,12 +4,12 @@
 \alias{f_val_calc_gain}
 \title{Title}
 \usage{
-f_val_calc_gain(true.value.hi.12C, true.value.hi.13C, true.value.lo.12C,
-  true.value.lo.13C, cal.tank.hi.12C, cal.tank.hi.13C, cal.tank.lo.12C,
-  cal.tank.lo.13C)
+f_val_calc_gain(true_value_hi_12C, true_value_hi_13C, true_value_lo_12C,
+  true_value_lo_13C, cal_tank_hi_12C, cal_tank_hi_13C, cal_tank_lo_12C,
+  cal_tank_lo_13C)
 }
 \arguments{
-\item{cal.tank.lo.13C}{}
+\item{cal_tank_lo_13C}{}
 }
 \description{
 Title

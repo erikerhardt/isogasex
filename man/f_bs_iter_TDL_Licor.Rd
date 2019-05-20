@@ -4,11 +4,11 @@
 \alias{f_bs_iter_TDL_Licor}
 \title{Title}
 \usage{
-f_bs_iter_TDL_Licor(val.obs.TDL, val.sum.TDL, val.obs.Licor, val.sum.Licor,
-  var.interp)
+f_bs_iter_TDL_Licor(val_obs_TDL, val_sum_TDL, val_obs_Licor, val_sum_Licor,
+  var_interp)
 }
 \arguments{
-\item{var.interp}{}
+\item{var_interp}{}
 }
 \description{
 Title

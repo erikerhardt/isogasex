@@ -4,10 +4,10 @@
 \alias{f_val_bs_CI_endpoints}
 \title{Title}
 \usage{
-f_val_bs_CI_endpoints(x, n, ind.CI)
+f_val_bs_CI_endpoints(x, n, ind_CI)
 }
 \arguments{
-\item{ind.CI}{}
+\item{ind_CI}{}
 }
 \description{
 Title

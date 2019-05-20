@@ -4,11 +4,11 @@
 \alias{plot_corrected_total_diff_xi}
 \title{Title}
 \usage{
-plot_corrected_total_diff_xi(ref.12C, ref.13C, cham.12C, cham.13C, ref.tot,
-  cham.tot, diff.tot, xi, x.time, plot.format.list, output.fn.prefix)
+plot_corrected_total_diff_xi(ref.12C, ref.13C, cham.12C, cham.13C, ref_tot,
+  cham_tot, diff_tot, xi, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

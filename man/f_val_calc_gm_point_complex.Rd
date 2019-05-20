@@ -4,8 +4,8 @@
 \alias{f_val_calc_gm_point_complex}
 \title{Title}
 \usage{
-f_val_calc_gm_point_complex(b, bs, al, A, pa, Di, D.obs, f.photo,
-  Gamma.star, e, Rd, k)
+f_val_calc_gm_point_complex(b, bs, al, A, pa, Di, D_obs, f_photo,
+  Gamma_star, e, Rd, k)
 }
 \arguments{
 \item{k}{}

@@ -4,10 +4,10 @@
 \alias{f_val_calc_pc_using_simple_Delta_for_gm}
 \title{Title}
 \usage{
-f_val_calc_pc_using_simple_Delta_for_gm(Delta, pa, ps, a, b.gm, a.b)
+f_val_calc_pc_using_simple_Delta_for_gm(Delta, pa, ps, a, b_gm, a_b)
 }
 \arguments{
-\item{a.b}{}
+\item{a_b}{}
 }
 \description{
 Title

@@ -4,11 +4,11 @@
 \alias{plot_Cc_total}
 \title{Title}
 \usage{
-plot_Cc_total(chamber.TotalCc, chamber.12Cc, chamber.13Cc, x.time,
-  plot.format.list, output.fn.prefix)
+plot_Cc_total(chamber_TotalCc, chamber_12Cc, chamber_13Cc, x_time,
+  plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

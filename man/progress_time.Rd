@@ -4,10 +4,10 @@
 \alias{progress_time}
 \title{Title}
 \usage{
-progress_time(time.start)
+progress_time(time_start)
 }
 \arguments{
-\item{time.start}{}
+\item{time_start}{}
 }
 \description{
 Title

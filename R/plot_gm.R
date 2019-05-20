@@ -1,12 +1,12 @@
 #' Title
 #'
-#' @param chamber.Totalgm.point.simple
-#' @param chamber.12gm.point.simple
-#' @param chamber.13gm.point.simple
-#' @param chamber.Totalgm.point.complex
-#' @param x.time
-#' @param plot.format.list
-#' @param output.fn.prefix
+#' @param chamber_Totalgm_point_simple
+#' @param chamber_12gm_point_simple
+#' @param chamber_13gm_point_simple
+#' @param chamber_Totalgm_point_complex
+#' @param x_time
+#' @param plot_format_list
+#' @param output_fn_prefix
 #'
 #' @return
 #' @export
@@ -15,38 +15,38 @@
 plot_gm <-
 function# Plot gm point simple and complex, internal leaf (mesophyll) conductance calculated for every D value ignoring and estimating decarboxylation effects
 ###
-(chamber.Totalgm.point.simple
+(chamber_Totalgm_point_simple
 ###
-, chamber.12gm.point.simple
+, chamber_12gm_point_simple
 ###
-, chamber.13gm.point.simple
+, chamber_13gm_point_simple
 ###
-, chamber.Totalgm.point.complex
+, chamber_Totalgm_point_complex
 ###
-, x.time
+, x_time
 ###
-, plot.format.list
+, plot_format_list
 ###
-, output.fn.prefix
+, output_fn_prefix
 ###
 )
 {
   ##details<<
   ## Plots the input variables.
 
-  for (i.plot in plot.format.list)
+  for (i_plot in plot_format_list)
   {
-    plot.filename <- "plot_gm_internal_conductance";
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "begin", plot.format = i.plot);
+    plot_filename <- "plot_gm_internal_conductance";
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
     par(mfrow=c(4,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
-    plot_not_na(x.time, chamber.Totalgm.point.simple , pch=20, type="l", ylab="", main="Total gm point simple, ignoring decarboxylation effects");
-    plot_not_na(x.time, chamber.12gm.point.simple    , pch=20, type="l", ylab="", main="12 gm point simple, ignoring decarboxylation effects");
-    plot_not_na(x.time, chamber.13gm.point.simple    , pch=20, type="l", ylab="", main="13 gm point simple, ignoring decarboxylation effects");
-    plot_not_na(x.time, chamber.Totalgm.point.complex, pch=20, type="l", ylab="", main="Total gm point complex, estimating decarboxylation effects");
+    plot_not_na(x_time, chamber_Totalgm_point_simple , pch=20, type="l", ylab="", main="Total gm point simple, ignoring decarboxylation effects");
+    plot_not_na(x_time, chamber_12gm_point_simple    , pch=20, type="l", ylab="", main="12 gm point simple, ignoring decarboxylation effects");
+    plot_not_na(x_time, chamber_13gm_point_simple    , pch=20, type="l", ylab="", main="13 gm point simple, ignoring decarboxylation effects");
+    plot_not_na(x_time, chamber_Totalgm_point_complex, pch=20, type="l", ylab="", main="Total gm point complex, estimating decarboxylation effects");
 
     #axis(3); axis(4); # add axis labels to top and right sides
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "end", i.plot);
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
   return( NULL );

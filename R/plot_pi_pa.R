@@ -1,11 +1,11 @@
 #' Title
 #'
-#' @param chamber.Totalpi
-#' @param chamber.Totalpa
-#' @param chamber.Totalpi_pa
-#' @param x.time
-#' @param plot.format.list
-#' @param output.fn.prefix
+#' @param chamber_Totalpi
+#' @param chamber_Totalpa
+#' @param chamber_Totalpi_pa
+#' @param x_time
+#' @param plot_format_list
+#' @param output_fn_prefix
 #'
 #' @return
 #' @export
@@ -14,35 +14,35 @@
 plot_pi_pa <-
 function# Plot Totalpi_pa, ratio of substomatal CO2 partial pressure to CO2 partial pressure above leaf = Ci/Ca ratio of mol fractions
 ###
-(chamber.Totalpi
+(chamber_Totalpi
 ###
-, chamber.Totalpa
+, chamber_Totalpa
 ###
-, chamber.Totalpi_pa
+, chamber_Totalpi_pa
 ###
-, x.time
+, x_time
 ###
-, plot.format.list
+, plot_format_list
 ###
-, output.fn.prefix
+, output_fn_prefix
 ###
 )
 {
   ##details<<
   ## Plots the input variables.
 
-  for (i.plot in plot.format.list)
+  for (i_plot in plot_format_list)
   {
-    plot.filename <- "plot_pi_pa_ratio";
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "begin", plot.format = i.plot);
+    plot_filename <- "plot_pi_pa_ratio";
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
     par(mfrow=c(3,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
-    plot_not_na(x.time, chamber.Totalpi   , pch=20, type="l", ylab="", main="Total pi, partial pressure of CO2 in the substomatal cavities");
-    plot_not_na(x.time, chamber.Totalpa   , pch=20, type="l", ylab="", main="Total pa, partial pressure of CO2 above the leaf");
-    plot_not_na(x.time, chamber.Totalpi_pa, pch=20, type="l", ylab="", main="Total pi/pa, ratio of substomatal CO2 partial pressure to CO2 partial pressure above leaf");
+    plot_not_na(x_time, chamber_Totalpi   , pch=20, type="l", ylab="", main="Total pi, partial pressure of CO2 in the substomatal cavities");
+    plot_not_na(x_time, chamber_Totalpa   , pch=20, type="l", ylab="", main="Total pa, partial pressure of CO2 above the leaf");
+    plot_not_na(x_time, chamber_Totalpi_pa, pch=20, type="l", ylab="", main="Total pi/pa, ratio of substomatal CO2 partial pressure to CO2 partial pressure above leaf");
 
     #axis(3); axis(4); # add axis labels to top and right sides
-    s_plot_settings_begin_end(output.fn.prefix, plot.filename, plot.mode = "end", i.plot);
+    s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "end", i_plot);
   } # plotting loop
 
   return( NULL );

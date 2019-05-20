@@ -4,7 +4,7 @@
 \alias{f_np_bs_mean}
 \title{Title}
 \usage{
-f_np_bs_mean(x, first.ind, last.ind, n.sam, n)
+f_np_bs_mean(x, first_ind, last_ind, n_sam, n)
 }
 \arguments{
 \item{n}{}

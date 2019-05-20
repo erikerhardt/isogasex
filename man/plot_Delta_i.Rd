@@ -4,14 +4,14 @@
 \alias{plot_Delta_i}
 \title{Title}
 \usage{
-plot_Delta_i(chamber.Delta.i.simple.for.gm,
-  chamber.Delta.i.simple.for.modeling, chamber.Delta.i.complex.for.gm,
-  chamber.Delta.i.simple.for.gm_Delta.obs,
-  chamber.Delta.i.complex.for.gm_Delta.obs, x.time, plot.format.list,
-  output.fn.prefix)
+plot_Delta_i(chamber_Delta_i_simple_for_gm,
+  chamber_Delta_i_simple_for_modeling, chamber_Delta_i_complex_for_gm,
+  chamber_Delta_i_simple_for_gm_Delta_obs,
+  chamber_Delta_i_complex_for_gm_Delta_obs, x_time, plot_format_list,
+  output_fn_prefix)
 }
 \arguments{
-\item{output.fn.prefix}{}
+\item{output_fn_prefix}{}
 }
 \description{
 Title

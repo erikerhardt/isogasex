@@ -21,10 +21,10 @@ function# Adjusted flow
 )
 {
   ##details<<
-  ##\deqn{flow.adjusted <- flow * (1 - (H2OR / 1000))}
-  flow.adjusted <- flow * (1 - (H2OR / 1000));
+  ##\deqn{flow_adjusted <- flow * (1 - (H2OR / 1000))}
+  flow_adjusted <- flow * (1 - (H2OR / 1000));
 
-  return( flow.adjusted );
-  ### flow.adjusted
+  return( flow_adjusted );
+  ### flow_adjusted
 }
 

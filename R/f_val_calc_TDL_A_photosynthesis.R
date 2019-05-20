@@ -3,7 +3,7 @@
 #' @param flow
 #' @param Ce
 #' @param Co
-#' @param leaf.area
+#' @param leaf_area
 #'
 #' @return
 #' @export
@@ -18,13 +18,13 @@ function# A, TDL photosynthesis
 ###
 , Co
 ###
-, leaf.area
+, leaf_area
 ###
 )
 {
   ##details<<
-  ##\deqn{A = (flow / 10^6) * (Ce - Co) / (leaf.area / 10^4)}
-  A <- (flow / 10^6) * (Ce - Co) / (leaf.area / 10^4);
+  ##\deqn{A = (flow / 10^6) * (Ce - Co) / (leaf_area / 10^4)}
+  A <- (flow / 10^6) * (Ce - Co) / (leaf_area / 10^4);
 
   return( A );
   ### A

@@ -2,7 +2,7 @@
 #'
 #' @param TDL
 #' @param Licor
-#' @param TDL.cycle
+#' @param TDL_cycle
 #' @param sw
 #'
 #' @return
@@ -16,56 +16,56 @@ function# Calculate the mean for the Licor data based on last measurements
 ###
 , Licor
 ###
-, TDL.cycle
+, TDL_cycle
 ###
 , sw
 ###
 )
 {
-  Licor.var.names <- colnames(Licor$data); # 7/15/2010 don't hardset column names
+  Licor_var_names <- colnames(Licor$data); # 7/15/2010 don't hardset column names
     #c("FTime", "Photo", "Cond", "Ci", "Trmmol", "VpdL", "Area"
     #, "StmRat", "BLCond", "Tair", "Tleaf", "TBlk", "CO2R", "CO2S", "H2OR"
     #, "H2OS", "RH_R", "RH_S", "Flow", "PARi", "PARo", "Press", "CsMch"
     #, "HsMch", "StableF", "Status"
     ## additional columns
-    #, "VpdA", "Ci.Ca", "Ci_Pa", "uc_20_mV", "uc_21_mV", "X.U.S.", "Trans", "CndCO2", "Ref_mV", "xTemp1", "xTemp2");  # , "TChamAir"
+    #, "VpdA", "Ci_Ca", "Ci_Pa", "uc_20_mV", "uc_21_mV", "X.U.S.", "Trans", "CndCO2", "Ref_mV", "xTemp1", "xTemp2");  # , "TChamAir"
 
   ##details<<
   ## create Licor$summary for numerical summaries
   Licor$summary           <- as.list(new.env());
   Licor$summary$n         <- TDL$summary$n;
   Licor$summary$ind       <- TDL$summary$ind;
-  Licor$summary$first.ind <- TDL$summary$first.ind;
+  Licor$summary$first_ind <- TDL$summary$first_ind;
   Licor$summary$site      <- TDL$summary$site;
   Licor$summary$time      <- TDL$summary$time;
-  Licor$summary$mean      <- matrix(0,nrow=Licor$summary$n,ncol=length(Licor.var.names));
+  Licor$summary$mean      <- matrix(0,nrow=Licor$summary$n,ncol=length(Licor_var_names));
 
-  colnames(Licor$summary$mean ) <- Licor.var.names;
+  colnames(Licor$summary$mean ) <- Licor_var_names;
 
   ##details<<
   ## Calculate mean for each site for retained observations
-  ind.temp <- NULL;
-  for (i.list in 1:Licor$summary$n) {
+  ind_temp <- NULL;
+  for (i_list in 1:Licor$summary$n) {
     # summarized values
-    i.n.obs <- TDL.cycle$table[(TDL$summary$site[i.list] == TDL.cycle$table[,"site"]),"last.n.obs"]; # number of obs
-    i.ind.first <- TDL$summary$first.ind[i.list];                                                    # first index
-    i.ind.last  <- TDL$summary$ind[i.list];                                                          # last index
-    if (i.ind.last > Licor$n) {i.ind.last <- Licor$n;};
-    rows.temp <- i.ind.first:i.ind.last;
-    if (length(rows.temp) > 1) {
-      Licor$summary$mean[i.list,] <- apply( Licor$data[rows.temp, Licor.var.names], MARGIN=2, mean, na.rm = TRUE); # mean, ignoring NA's
+    i_n_obs <- TDL_cycle$table[(TDL$summary$site[i_list] == TDL_cycle$table[,"site"]),"last_n_obs"]; # number of obs
+    i_ind_first <- TDL$summary$first_ind[i_list];                                                    # first index
+    i_ind_last  <- TDL$summary$ind[i_list];                                                          # last index
+    if (i_ind_last > Licor$n) {i_ind_last <- Licor$n;};
+    rows_temp <- i_ind_first:i_ind_last;
+    if (length(rows_temp) > 1) {
+      Licor$summary$mean[i_list,] <- apply( Licor$data[rows_temp, Licor_var_names], MARGIN=2, mean, na.rm = TRUE); # mean, ignoring NA's
     } else { # if only 1 observation, don't use apply "0.1-16" "2012-07-10"
-      Licor$summary$mean[i.list,] <- as.matrix(Licor$data[rows.temp, Licor.var.names]); # mean
+      Licor$summary$mean[i_list,] <- as.matrix(Licor$data[rows_temp, Licor_var_names]); # mean
     }
 
-    #ind.temp <- c(ind.temp, i.ind.first:i.ind.last);  # indices to keep in data
+    #ind_temp <- c(ind_temp, i_ind_first:i_ind_last);  # indices to keep in data
   }
 
-  #ind.temp.NA <- x_wo_y(seq(1,TDL$n), ind.temp); # excluded indices
-  ind.temp.NA <- is.na(TDL$time); # excluded indices
+  #ind_temp_NA <- x_wo_y(seq(1,TDL$n), ind_temp); # excluded indices
+  ind_temp_NA <- is.na(TDL$time); # excluded indices
 
   # data updated to exclude indices that we don't summarize
-  Licor$data[ind.temp.NA,] <- NA;
+  Licor$data[ind_temp_NA,] <- NA;
 
   return( Licor );
   ### Licor
