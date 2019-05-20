@@ -5,14 +5,16 @@ Version: 0.2.0
 Author: Erik B. Erhardt <erike@stat.unm.edu> and David T. Hanson <dthanson@unm.edu>
 Maintainer: Erik B. Erhardt <erike@stat.unm.edu>
 Description: Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals, and creates plots and tables.
-  Edit \file{tdllicor_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{tdllicor}}. See output in \file{./out} directory.
+  Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{isogasex}}. See output in \file{./out} directory.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
-Suggests: 
+Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
-Imports: 
-    magrittr
+Imports:
+    magrittr,
+    crayon,
+    purrr
