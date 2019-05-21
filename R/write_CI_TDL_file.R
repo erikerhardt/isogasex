@@ -7,7 +7,6 @@
 #' @param output_CI_TDL_fn
 #'
 #' @return val$write
-#' @export
 #'
 #' @examples
 write_CI_TDL_file <-

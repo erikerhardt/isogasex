@@ -7,7 +7,6 @@
 #' @param p
 #'
 #' @return delta_13C_Resp
-#' @export
 #'
 #' @examples
 f_val_calc_delta_13C_Resp <-

@@ -45,7 +45,6 @@
 #' @param sw
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 plot_val_calc_sum <-

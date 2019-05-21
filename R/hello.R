@@ -23,7 +23,6 @@
 #' @param sep A string separator passed to \code{paste()}
 #'
 #' @return NULL, side effect is printing string.
-#' @export
 #'
 #' @examples
 #' hello()

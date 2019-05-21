@@ -8,7 +8,6 @@
 #' @param A
 #'
 #' @return Cs
-#' @export
 #'
 #' @examples
 f_val_calc_Cs <-

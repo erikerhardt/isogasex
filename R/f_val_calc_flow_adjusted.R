@@ -12,7 +12,6 @@
 #' @param H2OR
 #'
 #' @return flow_adjusted
-#' @export
 #'
 #' @examples
 f_val_calc_flow_adjusted <-

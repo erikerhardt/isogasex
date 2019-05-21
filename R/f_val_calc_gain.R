@@ -12,7 +12,6 @@
 #' @param cal_tank_lo_13C
 #'
 #' @return gain for 12C and 13C
-#' @export
 #'
 #' @examples
 f_val_calc_gain <-

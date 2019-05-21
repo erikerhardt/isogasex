@@ -25,7 +25,6 @@
 #' @param TDL_cycle
 #'
 #' @return TDL
-#' @export
 #'
 #' @examples
 last_TDL_index_for_means <-

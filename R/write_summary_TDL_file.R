@@ -7,7 +7,6 @@
 #' @param output_summary_TDL_fn
 #'
 #' @return val$write
-#' @export
 #'
 #' @examples
 write_summary_TDL_file <-

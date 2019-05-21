@@ -9,7 +9,6 @@
 #' @param plot_format
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 move_plot_files <-

@@ -8,7 +8,6 @@
 #' @param leaf_area
 #'
 #' @return A
-#' @export
 #'
 #' @examples
 f_val_calc_TDL_A_photosynthesis <-

@@ -13,7 +13,6 @@
 #' @param bs
 #'
 #' @return pc
-#' @export
 #'
 #' @examples
 f_val_calc_pc_using_complex_Delta_no_decarboxylation <-

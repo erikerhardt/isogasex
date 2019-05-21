@@ -25,7 +25,6 @@
 #' @param sw
 #'
 #' @return TDL
-#' @export
 #'
 #' @examples
 interp_TDL_tanks_ref <-

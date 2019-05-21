@@ -6,7 +6,6 @@
 #'
 #' @return DATA
 #' @importFrom readxl read_xls
-#' @export
 #'
 #' @examples
 get_data <-

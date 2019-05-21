@@ -7,7 +7,6 @@
 #' @param output_CI_Licor_fn
 #'
 #' @return val$write
-#' @export
 #'
 #' @examples
 write_CI_Licor_file <-

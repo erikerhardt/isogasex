@@ -8,7 +8,6 @@
 #' @param output_CI_Calc_last_fn
 #'
 #' @return val$write
-#' @export
 #'
 #' @examples
 write_CI_Calc_file <-

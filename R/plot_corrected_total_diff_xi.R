@@ -15,7 +15,6 @@
 #' @param output_fn_prefix
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 plot_corrected_total_diff_xi <-

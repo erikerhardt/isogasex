@@ -9,7 +9,6 @@
 #' @param xi
 #'
 #' @return Delta_obs
-#' @export
 #'
 #' @examples
 f_val_calc_Delta_obs <-

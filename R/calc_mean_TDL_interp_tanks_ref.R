@@ -8,7 +8,6 @@
 #' @param TDL_cycle
 #'
 #' @return TDL
-#' @export
 #'
 #' @examples
 calc_mean_TDL_interp_tanks_ref <-

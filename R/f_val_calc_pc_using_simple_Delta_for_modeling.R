@@ -8,7 +8,6 @@
 #' @param b_modeling
 #'
 #' @return pc
-#' @export
 #'
 #' @examples
 f_val_calc_pc_using_simple_Delta_for_modeling <-

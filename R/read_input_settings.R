@@ -20,7 +20,6 @@
 #' @importFrom dplyr bind_rows
 #' @importFrom dplyr arrange
 #' @importFrom dplyr last
-#' @export
 read_input_settings <-
   function(
     fn_scorecard  = NULL

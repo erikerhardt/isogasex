@@ -6,7 +6,6 @@
 #' @param Co
 #'
 #' @return xi
-#' @export
 #'
 #' @examples
 f_val_calc_xi <-

@@ -6,7 +6,6 @@
 #' @param x
 #'
 #' @return beta_hat
-#' @export
 #'
 #' @examples
 my_reg_fit <-

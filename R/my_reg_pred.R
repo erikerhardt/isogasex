@@ -6,7 +6,6 @@
 #' @param x
 #'
 #' @return y_hat
-#' @export
 #'
 #' @examples
 my_reg_pred <-

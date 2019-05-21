@@ -7,7 +7,6 @@
 #' @param TDL_site_timing_filename
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 extract_cycle_timing <-

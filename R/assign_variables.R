@@ -37,7 +37,6 @@
 #' @param path
 #'
 #' @return VARIABLES list of all inputs from Excel template
-#' @export
 #'
 #' @examples
 assign_variables <-

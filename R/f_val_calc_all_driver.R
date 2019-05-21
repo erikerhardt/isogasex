@@ -126,7 +126,6 @@
 #' @param sw
 #'
 #' @return val_temp
-#' @export
 #'
 #' @examples
 f_val_calc_all_driver <-

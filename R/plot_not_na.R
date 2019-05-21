@@ -12,7 +12,6 @@
 #' @param main
 #'
 #' @return plot_not_na_val
-#' @export
 #'
 #' @examples
 plot_not_na <-

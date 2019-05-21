@@ -10,7 +10,6 @@
 #' @param offset_13C
 #'
 #' @return corrected 12C and 13C
-#' @export
 #'
 #' @examples
 f_val_calc_corrected <-

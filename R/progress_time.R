@@ -5,7 +5,6 @@
 #' @param time_start
 #'
 #' @return time_sofar
-#' @export
 #'
 #' @examples
 progress_time <-

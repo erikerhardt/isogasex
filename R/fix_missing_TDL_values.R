@@ -10,7 +10,6 @@
 #' @param bad_ind
 #'
 #' @return TDL
-#' @export
 #'
 #' @examples
 fix_missing_TDL_values <-

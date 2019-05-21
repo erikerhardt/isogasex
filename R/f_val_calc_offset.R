@@ -10,7 +10,6 @@
 #' @param cal_tank_hi_13C
 #'
 #' @return offset for 12C and 13C
-#' @export
 #'
 #' @examples
 f_val_calc_offset <-

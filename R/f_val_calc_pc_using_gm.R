@@ -7,7 +7,6 @@
 #' @param gm
 #'
 #' @return pc
-#' @export
 #'
 #' @examples
 f_val_calc_pc_using_gm <-

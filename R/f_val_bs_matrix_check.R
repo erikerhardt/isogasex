@@ -3,7 +3,6 @@
 #' @param val
 #'
 #' @return val
-#' @export
 #'
 #' @examples
 f_val_bs_matrix_check <-

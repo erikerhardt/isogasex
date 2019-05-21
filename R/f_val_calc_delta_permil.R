@@ -7,7 +7,6 @@
 #' @param R_std
 #'
 #' @return delta_permil
-#' @export
 #'
 #' @examples
 f_val_calc_delta_permil <-

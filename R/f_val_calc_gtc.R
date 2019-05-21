@@ -6,7 +6,6 @@
 #' @param gsc
 #'
 #' @return gtc
-#' @export
 #'
 #' @examples
 f_val_calc_gtc <-

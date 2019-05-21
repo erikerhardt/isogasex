@@ -14,7 +14,6 @@
 #' @param var_interp
 #'
 #' @return val_bs_sum
-#' @export
 #'
 #' @examples
 f_bs_iter_TDL_Licor <-

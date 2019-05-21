@@ -5,7 +5,6 @@
 #' @param TDL_cycle
 #'
 #' @return TDL_cycle
-#' @export
 #'
 #' @examples
 set_TDL_cycle <-

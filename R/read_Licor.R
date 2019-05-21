@@ -19,7 +19,6 @@
 #' @param sw
 #'
 #' @return Licor
-#' @export
 #'
 #' @examples
 read_Licor <-

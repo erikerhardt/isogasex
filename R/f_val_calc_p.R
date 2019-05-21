@@ -6,7 +6,6 @@
 #' @param Co
 #'
 #' @return p
-#' @export
 #'
 #' @examples
 f_val_calc_p <-

@@ -6,7 +6,6 @@
 #' @param Press
 #'
 #' @return pa
-#' @export
 #'
 #' @examples
 f_val_calc_pp <-

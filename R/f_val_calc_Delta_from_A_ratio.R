@@ -11,7 +11,6 @@
 #' @param TDL.12A
 #'
 #' @return Delta_from_A_ratio
-#' @export
 #'
 #' @examples
 f_val_calc_Delta_from_A_ratio <-

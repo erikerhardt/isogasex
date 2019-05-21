@@ -8,7 +8,6 @@
 #' @param pi
 #'
 #' @return Delta_i_simple_for_modeling
-#' @export
 #'
 #' @examples
 f_val_calc_Delta_i_simple_for_modeling <-

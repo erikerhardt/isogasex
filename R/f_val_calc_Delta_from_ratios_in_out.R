@@ -11,7 +11,6 @@
 #' @param cham.13Co
 #'
 #' @return Delta_from_ratios_in_out
-#' @export
 #'
 #' @examples
 f_val_calc_Delta_from_ratios_in_out <-

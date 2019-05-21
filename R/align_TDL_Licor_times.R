@@ -31,7 +31,6 @@
 #' @param sw
 #'
 #' @return TDL_Licor_times
-#' @export
 #'
 #' @examples
 align_TDL_Licor_times <-

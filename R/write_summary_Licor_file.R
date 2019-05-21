@@ -6,7 +6,6 @@
 #' @param output_summary_Licor_fn
 #'
 #' @return val$write
-#' @export
 #'
 #' @examples
 write_summary_Licor_file <-

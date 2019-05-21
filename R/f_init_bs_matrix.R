@@ -6,7 +6,6 @@
 #' @param R_bootstrap
 #'
 #' @return bs
-#' @export
 #'
 #' @examples
 f_init_bs_matrix <-

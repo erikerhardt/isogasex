@@ -7,7 +7,6 @@
 #' @param xi
 #'
 #' @return Delta_obs_permil
-#' @export
 #'
 #' @examples
 f_val_calc_Delta_obs_permil <-

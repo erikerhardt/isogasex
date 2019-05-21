@@ -4,7 +4,6 @@
 #' @param y
 #'
 #' @return x without y
-#' @export
 #'
 #' @examples
 x_wo_y <-

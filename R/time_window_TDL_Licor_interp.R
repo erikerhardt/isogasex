@@ -45,7 +45,6 @@
 #'
 #' @return TDL_and_Licor_interp
 #' @importFrom zoo zoo
-#' @export
 #'
 #' @examples
 time_window_TDL_Licor_interp <-

@@ -10,7 +10,6 @@
 #' @param output_fn_prefix
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 plot_pc_total <-

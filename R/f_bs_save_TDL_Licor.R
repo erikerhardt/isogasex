@@ -15,7 +15,6 @@
 #' @param sw
 #'
 #' @return val_bs
-#' @export
 #'
 #' @examples
 f_bs_save_TDL_Licor <-

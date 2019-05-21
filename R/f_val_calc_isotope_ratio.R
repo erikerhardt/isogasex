@@ -6,7 +6,6 @@
 #' @param obs_13C
 #'
 #' @return isotope_ratio
-#' @export
 #'
 #' @examples
 f_val_calc_isotope_ratio <-

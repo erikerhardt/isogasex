@@ -13,7 +13,6 @@
 #' @param output_fn_prefix
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 f_plot_CI_individuals <-

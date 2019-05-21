@@ -14,7 +14,6 @@
 #' @param sw
 #'
 #' @return val_CI
-#' @export
 #'
 #' @examples
 f_val_bs_CI <-

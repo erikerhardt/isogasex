@@ -3,7 +3,6 @@
 #' @param text_to_cat
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 write_out <-

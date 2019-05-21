@@ -9,7 +9,6 @@
 #' @param n
 #'
 #' @return x_mean
-#' @export
 #'
 #' @examples
 f_np_bs_mean <-

@@ -10,7 +10,6 @@
 #' @param full_or_window
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 plot_data_cycles <-

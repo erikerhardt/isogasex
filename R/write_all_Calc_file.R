@@ -7,7 +7,6 @@
 #' @param output_all_Calc_fn
 #'
 #' @return val$write
-#' @export
 #'
 #' @examples
 write_all_Calc_file <-

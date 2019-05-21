@@ -7,7 +7,6 @@
 #' @param fo_13C
 #'
 #' @return total_mol_fraction_CO2
-#' @export
 #'
 #' @examples
 f_val_calc_total_mol_fraction_CO2 <-

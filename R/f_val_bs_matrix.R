@@ -7,7 +7,6 @@
 #' @param i_bs
 #'
 #' @return bs
-#' @export
 #'
 #' @examples
 f_val_bs_matrix <-

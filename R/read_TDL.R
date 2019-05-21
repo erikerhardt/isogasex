@@ -18,7 +18,6 @@
 #' @param sw
 #'
 #' @return TDL
-#' @export
 #'
 #' @examples
 read_TDL <-

@@ -11,7 +11,6 @@
 #' @param D_obs
 #'
 #' @return gm_point_simple
-#' @export
 #'
 #' @examples
 f_val_calc_gm_point_simple <-

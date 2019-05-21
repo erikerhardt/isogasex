@@ -16,7 +16,6 @@
 #' @param k
 #'
 #' @return gm_point_complex
-#' @export
 #'
 #' @examples
 f_val_calc_gm_point_complex <-

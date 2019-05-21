@@ -18,7 +18,6 @@
 #' @param Gamma_star
 #'
 #' @return pc
-#' @export
 #'
 #' @examples
 f_val_calc_pc_using_complex_Delta_full_model <-

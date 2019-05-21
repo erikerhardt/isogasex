@@ -12,7 +12,6 @@
 #' @param output_fn_prefix
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 plot_Delta_i <-

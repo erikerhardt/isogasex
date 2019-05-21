@@ -8,7 +8,6 @@
 #' @param output_summary_Calc_last_fn
 #'
 #' @return val$write
-#' @export
 #'
 #' @examples
 write_summary_Calc_file <-

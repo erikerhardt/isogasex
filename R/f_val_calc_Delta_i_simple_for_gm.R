@@ -10,7 +10,6 @@
 #' @param pi
 #'
 #' @return Delta_i_simple_for_gm
-#' @export
 #'
 #' @examples
 f_val_calc_Delta_i_simple_for_gm <-

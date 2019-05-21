@@ -34,7 +34,6 @@
 #' @param plot_format
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 s_plot_settings_begin_end <-

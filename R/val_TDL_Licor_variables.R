@@ -86,7 +86,6 @@
 #' @param sw
 #'
 #' @return val
-#' @export
 #'
 #' @examples
 val_TDL_Licor_variables <-

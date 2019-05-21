@@ -5,7 +5,6 @@
 #' @param type_print
 #'
 #' @return NULL
-#' @export
 #'
 #' @examples
 write_progress <-

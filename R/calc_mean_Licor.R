@@ -10,7 +10,6 @@
 #' @param sw
 #'
 #' @return Licor
-#' @export
 #'
 #' @examples
 calc_mean_Licor <-
