@@ -15,6 +15,13 @@ Suggests:
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
 Imports:
-    magrittr,
     crayon,
-    purrr
+    dplyr,
+    log4r,
+    magrittr,
+    purrr,
+    readr,
+    readxl,
+    stringr,
+    yaml,
+    zoo
