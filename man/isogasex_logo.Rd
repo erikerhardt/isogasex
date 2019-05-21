@@ -2,13 +2,17 @@
 % Please edit documentation in R/isogasex_logo.R
 \name{isogasex_logo}
 \alias{isogasex_logo}
-\title{isogasex logo, just for fun}
+\title{The isogasex logo, using ASCII or Unicode characters}
 \usage{
 isogasex_logo(sw_unicode = l10n_info()$`UTF-8`)
 }
 \arguments{
-\item{sw_unicode}{}
+\item{sw_unicode}{Whether to use Unicode symbols. Default is \code{TRUE}
+on UTF-8 platforms.}
 }
 \description{
-isogasex logo, just for fun
+Use \code{\link[crayon:strip_style]{crayon::strip_style()}} to get rid of the colors.
+}
+\examples{
+isogasex_logo()
 }
