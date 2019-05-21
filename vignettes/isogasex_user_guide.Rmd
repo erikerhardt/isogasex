@@ -562,7 +562,7 @@ $$
 \end{aligned}
 $$
 
-(circular, assume $\spc\equiv\spi$)
+(circular, assume $\spc \equiv \spi$)
 
 
 
