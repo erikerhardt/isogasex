@@ -146,7 +146,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
 ### Directory where TDL and Licor data are to be read from, and where ./out directory for results are to be written to.
 )
 {
-  isogasex_logo()
+  print(isogasex_logo())
   # DRIVER FUNCTION -------------------------------------------------------------
   # DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG
   # #library(isogasex)
@@ -553,9 +553,10 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
     p_o <- paste("Output:", path_prefix, "\n"); wWw <- write_out(p_o);
 
     p_o <- paste("\n"); wWw <- write_out(p_o);
-    p_o <- paste("Note: If there are WARNINGS below (except existing directories), please report to Erik by", "\n"); wWw <- write_out(p_o);
-    p_o <- paste("        sending email with full console text above copied into the email body and", "\n"); wWw <- write_out(p_o);
-    p_o <- paste("        creating folder in dropbox folder /Sharing with Erhardt/ and copying your data and template file there.", "\n\n"); wWw <- write_out(p_o);
+    #p_o <- paste("Note: If there are WARNINGS below (except existing directories), please report to Erik by", "\n"); wWw <- write_out(p_o);
+    #p_o <- paste("        sending email with full console text above copied into the email body and", "\n"); wWw <- write_out(p_o);
+    #p_o <- paste("        creating folder in dropbox folder /Sharing with Erhardt/ and copying your data and template file there.", "\n\n"); wWw <- write_out(p_o);
+    p_o <- paste("Note: If there are WARNINGS below (except existing directories), please report to Erik", "\n"); wWw <- write_out(p_o);
 
     p_o <- paste("COMPLETE\n\n"); wWw <- write_progress(p_o, time_start);
 
