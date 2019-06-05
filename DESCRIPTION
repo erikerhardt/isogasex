@@ -24,4 +24,5 @@ Imports:
     readxl,
     stringr,
     yaml,
-    zoo
+    zoo,
+    jsonlite
