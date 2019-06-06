@@ -4,12 +4,11 @@
 #'
 #' Data updated to exclude indices that we don't summarize.
 #'
-#' @param TDL
-#' @param TDL_cycle
+#' @param TDL xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
 #'
-#' @return TDL
+#' @return TDL xxxRETURNxxx
 #'
-#' @examples
 calc_mean_TDL_interp_tanks_ref <-
 function# Summary values for TDL interpolated tanks and reference
 ###

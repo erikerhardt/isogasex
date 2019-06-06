@@ -7,10 +7,18 @@
 f_bs_save_TDL_Licor(val_bs_sum, val_bs, i_bs, R_bootstrap, sw)
 }
 \arguments{
-\item{sw}{}
+\item{val_bs_sum}{xxxPARAMxxx}
+
+\item{val_bs}{xxxPARAMxxx}
+
+\item{i_bs}{xxxPARAMxxx}
+
+\item{R_bootstrap}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-val_bs
+val_bs xxxRETURNxxx
 }
 \description{
 create val_bs$TDL and $Licor for calculated observed values to use in NP bootstrap

@@ -9,7 +9,22 @@ plot_gm(chamber_Totalgm_point_simple, chamber_12gm_point_simple,
   plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_Totalgm_point_simple}{xxxPARAMxxx}
+
+\item{chamber_12gm_point_simple}{xxxPARAMxxx}
+
+\item{chamber_13gm_point_simple}{xxxPARAMxxx}
+
+\item{chamber_Totalgm_point_complex}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

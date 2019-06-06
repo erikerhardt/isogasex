@@ -7,10 +7,14 @@
 f_val_calc_delta_13C_Resp(reference_delta_e, chamber_delta_o, p)
 }
 \arguments{
-\item{p}{}
+\item{reference_delta_e}{xxxPARAMxxx}
+
+\item{chamber_delta_o}{xxxPARAMxxx}
+
+\item{p}{xxxPARAMxxx}
 }
 \value{
-delta_13C_Resp
+delta_13C_Resp xxxRETURNxxx
 }
 \description{
 \deqn{delta_13C_Resp = (chamber_delta_o - reference_delta_e * (1 - p)) / p}

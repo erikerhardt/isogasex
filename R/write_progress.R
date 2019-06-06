@@ -1,12 +1,11 @@
 #' write progress to the screen with time elapsed
 #'
-#' @param text_to_cat
-#' @param time_start
-#' @param type_print
+#' @param text_to_cat xxxPARAMxxx
+#' @param time_start xxxPARAMxxx
+#' @param type_print xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 write_progress <-
 function# write_progress to the screen with time elapsed
 ###

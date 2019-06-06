@@ -7,10 +7,12 @@
 my_reg_pred(beta_hat, x)
 }
 \arguments{
-\item{x}{}
+\item{beta_hat}{xxxPARAMxxx}
+
+\item{x}{xxxPARAMxxx}
 }
 \value{
-y_hat
+y_hat xxxRETURNxxx
 }
 \description{
 Calculate predictions given the intercept and slope of a simple linear regression fit.

@@ -1,9 +1,8 @@
 #' Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals.
 #'
-#' Edit \file{tdllicor_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{tdllicor}}. See output in \file{./out} directory.
-#' Edit tdllicor_templateX.xls and input parameters and TDL/Licor filenames.
-#' Run tdllicor().
-#' See output in ./out directory.}
+#' Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames.
+#' Run \code{\link{isogasex}}.
+#' See output in \file{./out} directory.
 #'
 #' SECTION Preamble
 #' Set version.
@@ -22,7 +21,7 @@
 #'
 #' Create output directory (prefix) and update the process_info.txt.
 #'
-#' Check that template version matches version of tdllicor.
+#' Check that template version matches version of isogasex.
 #'
 #' Set random seed for samples.
 #'
@@ -127,13 +126,12 @@
 #'
 #' Complete.
 #'
-#' @param input_fn
-#' @param path
+#' @param input_fn xxxPARAMxxx
+#' @param path xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #' @export
 #'
-#' @examples
 isogasex <-
 function# Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals.
 ### Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{isogasex}}. See output in \file{./out} directory.

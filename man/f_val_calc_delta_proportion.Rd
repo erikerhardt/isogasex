@@ -7,10 +7,14 @@
 f_val_calc_delta_proportion(obs_12C, obs_13C, R_std)
 }
 \arguments{
-\item{R_std}{}
+\item{obs_12C}{xxxPARAMxxx}
+
+\item{obs_13C}{xxxPARAMxxx}
+
+\item{R_std}{xxxPARAMxxx}
 }
 \value{
-delta_proportion
+delta_proportion xxxRETURNxxx
 }
 \description{
 I prefer using the fraction for calculations and then converting to composition at the end

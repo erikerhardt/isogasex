@@ -8,7 +8,20 @@ plot_pc_total(chamber_Totalpc_using_gm, chamber_12pc_using_gm,
   chamber_13pc_using_gm, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_Totalpc_using_gm}{xxxPARAMxxx}
+
+\item{chamber_12pc_using_gm}{xxxPARAMxxx}
+
+\item{chamber_13pc_using_gm}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

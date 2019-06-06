@@ -7,10 +7,12 @@
 f_val_calc_p(Ce, Co)
 }
 \arguments{
-\item{Co}{}
+\item{Ce}{xxxPARAMxxx}
+
+\item{Co}{xxxPARAMxxx}
 }
 \value{
-p
+p xxxRETURNxxx
 }
 \description{
 \deqn{p = (Co-Ce) / Co}

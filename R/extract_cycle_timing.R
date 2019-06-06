@@ -2,13 +2,12 @@
 #'
 #' Write cycle timing to the timing file.
 #'
-#' @param TDL
-#' @param TDL_cycle
-#' @param TDL_site_timing_filename
+#' @param TDL xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param TDL_site_timing_filename xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 extract_cycle_timing <-
 function# Cycle timing
 ###

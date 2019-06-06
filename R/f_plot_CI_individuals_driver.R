@@ -2,14 +2,13 @@
 #'
 #' For every variable, creates plots using \code{\link{f_plot_CI_individuals}}.
 #'
-#' @param val
-#' @param R_bootstrap
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param val xxxPARAMxxx
+#' @param R_bootstrap xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 f_plot_CI_individuals_driver <-
 function# plot each individual variable
 ###

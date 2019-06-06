@@ -1,10 +1,9 @@
 #' write progress to the screen
 #'
-#' @param text_to_cat
+#' @param text_to_cat xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 write_out <-
 function# write_progress to the screen
 ###

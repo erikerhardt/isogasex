@@ -9,10 +9,24 @@ f_val_calc_gain(true_value_hi_12C, true_value_hi_13C, true_value_lo_12C,
   cal_tank_lo_13C)
 }
 \arguments{
-\item{cal_tank_lo_13C}{}
+\item{true_value_hi_12C}{xxxPARAMxxx}
+
+\item{true_value_hi_13C}{xxxPARAMxxx}
+
+\item{true_value_lo_12C}{xxxPARAMxxx}
+
+\item{true_value_lo_13C}{xxxPARAMxxx}
+
+\item{cal_tank_hi_12C}{xxxPARAMxxx}
+
+\item{cal_tank_hi_13C}{xxxPARAMxxx}
+
+\item{cal_tank_lo_12C}{xxxPARAMxxx}
+
+\item{cal_tank_lo_13C}{xxxPARAMxxx}
 }
 \value{
-gain for 12C and 13C
+gain for 12C and 13C xxxRETURNxxx
 }
 \description{
 \deqn{gain = (true_value_hi - true.value.lo) / (cal.tank_hi - cal.tank.lo)}

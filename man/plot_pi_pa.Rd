@@ -8,7 +8,20 @@ plot_pi_pa(chamber_Totalpi, chamber_Totalpa, chamber_Totalpi_pa, x_time,
   plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_Totalpi}{xxxPARAMxxx}
+
+\item{chamber_Totalpa}{xxxPARAMxxx}
+
+\item{chamber_Totalpi_pa}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

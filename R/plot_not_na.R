@@ -2,18 +2,17 @@
 #'
 #' If no data to plot, returns a "no data" (0,0) point as plot place holder.
 #'
-#' @param x_time
-#' @param y_var
-#' @param pch
-#' @param type
-#' @param cex
-#' @param xlab
-#' @param ylab
-#' @param main
+#' @param x_time xxxPARAMxxx
+#' @param y_var xxxPARAMxxx
+#' @param pch xxxPARAMxxx
+#' @param type xxxPARAMxxx
+#' @param cex xxxPARAMxxx
+#' @param xlab xxxPARAMxxx
+#' @param ylab xxxPARAMxxx
+#' @param main xxxPARAMxxx
 #'
-#' @return plot_not_na_val
+#' @return plot_not_na_val xxxRETURNxxx
 #'
-#' @examples
 plot_not_na <-
 function# if no data to plot, plot a dummy box (for when certain Licor columns are not collected)
 ###

@@ -2,18 +2,17 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_Delta_i_simple_for_gm
-#' @param chamber_Delta_i_simple_for_modeling
-#' @param chamber_Delta_i_complex_for_gm
-#' @param chamber_Delta_i_simple_for_gm_Delta_obs
-#' @param chamber_Delta_i_complex_for_gm_Delta_obs
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_Delta_i_simple_for_gm xxxPARAMxxx
+#' @param chamber_Delta_i_simple_for_modeling xxxPARAMxxx
+#' @param chamber_Delta_i_complex_for_gm xxxPARAMxxx
+#' @param chamber_Delta_i_simple_for_gm_Delta_obs xxxPARAMxxx
+#' @param chamber_Delta_i_complex_for_gm_Delta_obs xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_Delta_i <-
 function# Plot Delta_i, predicted discrimination
 ###

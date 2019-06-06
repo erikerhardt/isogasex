@@ -12,6 +12,8 @@ read_input_settings(fn_scorecard = NULL, sw_read_write = c("read",
 
 \item{sw_read_write}{"read" for infiles to train or classify, "write" for classification results (includes a column of classifications)}
 
+\item{out_dat}{xxxPARAMxxx}
+
 \item{sw_log_file}{see AT_ScoreCard_SigTest()}
 
 \item{out_log}{defined inside AT_ScoreCard_SigTest()}

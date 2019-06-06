@@ -2,19 +2,18 @@
 #'
 #' Plots the input variables.
 #'
-#' @param TDL_A_photosynthesis
-#' @param TDL_12A_photosynthesis
-#' @param TDL_13A_photosynthesis
-#' @param Licor_A_photosynthesis
-#' @param Delta_from_ratios_in_out
-#' @param Delta_from_A_ratio
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param TDL_A_photosynthesis xxxPARAMxxx
+#' @param TDL_12A_photosynthesis xxxPARAMxxx
+#' @param TDL_13A_photosynthesis xxxPARAMxxx
+#' @param Licor_A_photosynthesis xxxPARAMxxx
+#' @param Delta_from_ratios_in_out xxxPARAMxxx
+#' @param Delta_from_A_ratio xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_A_photosynthesis <-
 function# Plot A photosynthesis
 ###

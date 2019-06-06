@@ -8,7 +8,26 @@ plot_pa_ps(chamber_Totalpa, chamber_12pa, chamber_13pa, chamber_Totalps,
   chamber_12ps, chamber_13ps, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_Totalpa}{xxxPARAMxxx}
+
+\item{chamber_12pa}{xxxPARAMxxx}
+
+\item{chamber_13pa}{xxxPARAMxxx}
+
+\item{chamber_Totalps}{xxxPARAMxxx}
+
+\item{chamber_12ps}{xxxPARAMxxx}
+
+\item{chamber_13ps}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

@@ -14,12 +14,11 @@
 #'
 #' Keep all the time values available for Licor/TDL time merge.
 #'
-#' @param TDL_fn
-#' @param sw
+#' @param TDL_fn xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return TDL
+#' @return TDL xxxRETURNxxx
 #'
-#' @examples
 read_TDL <-
 function# read_TDL file
 ###

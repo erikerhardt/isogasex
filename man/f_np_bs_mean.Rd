@@ -7,10 +7,18 @@
 f_np_bs_mean(x, first_ind, last_ind, n_sam, n)
 }
 \arguments{
-\item{n}{}
+\item{x}{xxxPARAMxxx}
+
+\item{first_ind}{xxxPARAMxxx}
+
+\item{last_ind}{xxxPARAMxxx}
+
+\item{n_sam}{xxxPARAMxxx}
+
+\item{n}{xxxPARAMxxx}
 }
 \value{
-x_mean
+x_mean xxxRETURNxxx
 }
 \description{
 Resample from data with replacement, calculating mean of n nonparametric bootstrap resamples.

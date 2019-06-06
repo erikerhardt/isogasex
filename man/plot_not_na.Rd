@@ -8,10 +8,24 @@ plot_not_na(x_time, y_var, pch = 20, type, cex = 0.1, xlab = "",
   ylab, main)
 }
 \arguments{
-\item{main}{}
+\item{x_time}{xxxPARAMxxx}
+
+\item{y_var}{xxxPARAMxxx}
+
+\item{pch}{xxxPARAMxxx}
+
+\item{type}{xxxPARAMxxx}
+
+\item{cex}{xxxPARAMxxx}
+
+\item{xlab}{xxxPARAMxxx}
+
+\item{ylab}{xxxPARAMxxx}
+
+\item{main}{xxxPARAMxxx}
 }
 \value{
-plot_not_na_val
+plot_not_na_val xxxRETURNxxx
 }
 \description{
 If no data to plot, returns a "no data" (0,0) point as plot place holder.

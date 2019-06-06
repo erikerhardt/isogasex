@@ -7,10 +7,14 @@
 f_val_calc_pc_using_gm(pi, A, gm)
 }
 \arguments{
-\item{gm}{}
+\item{pi}{xxxPARAMxxx}
+
+\item{A}{xxxPARAMxxx}
+
+\item{gm}{xxxPARAMxxx}
 }
 \value{
-pc
+pc xxxRETURNxxx
 }
 \description{
 \deqn{pc = pi - (A / gm)}

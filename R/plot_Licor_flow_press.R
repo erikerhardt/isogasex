@@ -2,17 +2,16 @@
 #'
 #' Plots the input variables.
 #'
-#' @param Licor_flow_uin
-#' @param Licor_H2OR_xin
-#' @param Licor_La
-#' @param Licor_Atm_press
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param Licor_flow_uin xxxPARAMxxx
+#' @param Licor_H2OR_xin xxxPARAMxxx
+#' @param Licor_La xxxPARAMxxx
+#' @param Licor_Atm_press xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_Licor_flow_press <-
 function# Plot Licor uin, xin, La, Atm_press values 7/21/2012
 ###

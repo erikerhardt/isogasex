@@ -4,12 +4,11 @@
 #'
 #' Calculate mean, var, and sd for each site for retained observations
 #'
-#' @param TDL
-#' @param TDL_cycle
+#' @param TDL xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
 #'
-#' @return TDL
+#' @return TDL xxxRETURNxxx
 #'
-#' @examples
 calc_mean_TDL <-
 function# Calculate the mean and variance for the TDL/Licor data based on last measurements
 ###

@@ -4,14 +4,13 @@
 #'
 #' Calculate mean for each site for retained observations
 #'
-#' @param TDL
-#' @param Licor
-#' @param TDL_cycle
-#' @param sw
+#' @param TDL xxxPARAMxxx
+#' @param Licor xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return Licor
+#' @return Licor xxxRETURNxxx
 #'
-#' @examples
 calc_mean_Licor <-
 function# Calculate the mean for the Licor data based on last measurements
 ###

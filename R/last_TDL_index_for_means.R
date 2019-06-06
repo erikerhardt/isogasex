@@ -21,12 +21,11 @@
 #'
 #' Sort by index.
 #'
-#' @param TDL
-#' @param TDL_cycle
+#' @param TDL xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
 #'
-#' @return TDL
+#' @return TDL xxxRETURNxxx
 #'
-#' @examples
 last_TDL_index_for_means <-
 function# Determine the last index for admissible values to calculate means
 ###

@@ -2,19 +2,18 @@
 #'
 #' Plots the input variables.
 #'
-#' @param VPD
-#' @param E_transpiration
-#' @param leaf_temp
-#' @param air_temp
-#' @param light_in
-#' @param light_out
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param VPD xxxPARAMxxx
+#' @param E_transpiration xxxPARAMxxx
+#' @param leaf_temp xxxPARAMxxx
+#' @param air_temp xxxPARAMxxx
+#' @param light_in xxxPARAMxxx
+#' @param light_out xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_Licor_temp_light <-
 function# Plot Licor Temp Light values
 ###

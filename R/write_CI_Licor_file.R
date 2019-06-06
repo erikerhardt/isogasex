@@ -2,13 +2,12 @@
 #'
 #' Write observed Licor values with BS CIs for all time points.
 #'
-#' @param val
-#' @param TDL_cycle
-#' @param output_CI_Licor_fn
+#' @param val xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param output_CI_Licor_fn xxxPARAMxxx
 #'
-#' @return val$write
+#' @return val$write xxxRETURNxxx
 #'
-#' @examples
 write_CI_Licor_file <-
 function# write_output section: Licor file
 ### Write observed Licor values with BS CIs for all time points.

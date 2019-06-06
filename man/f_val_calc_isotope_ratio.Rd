@@ -7,10 +7,12 @@
 f_val_calc_isotope_ratio(obs_12C, obs_13C)
 }
 \arguments{
-\item{obs_13C}{}
+\item{obs_12C}{xxxPARAMxxx}
+
+\item{obs_13C}{xxxPARAMxxx}
 }
 \value{
-isotope_ratio
+isotope_ratio xxxRETURNxxx
 }
 \description{
 \deqn{isotope_ratio = obs_13C / obs_12C}

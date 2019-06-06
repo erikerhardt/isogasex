@@ -7,10 +7,16 @@
 f_val_calc_Delta_i_simple_for_modeling(a, b, pa, pi)
 }
 \arguments{
-\item{pi}{}
+\item{a}{xxxPARAMxxx}
+
+\item{b}{xxxPARAMxxx}
+
+\item{pa}{xxxPARAMxxx}
+
+\item{pi}{xxxPARAMxxx}
 }
 \value{
-Delta_i_simple_for_modeling
+Delta_i_simple_for_modeling xxxRETURNxxx
 }
 \description{
 \deqn{Delta_i_simple_for_modeling = a + (b - a) * pi / pa}

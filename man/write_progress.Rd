@@ -7,7 +7,14 @@
 write_progress(text_to_cat, time_start, type_print = "cat")
 }
 \arguments{
-\item{type_print}{}
+\item{text_to_cat}{xxxPARAMxxx}
+
+\item{time_start}{xxxPARAMxxx}
+
+\item{type_print}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 write progress to the screen with time elapsed

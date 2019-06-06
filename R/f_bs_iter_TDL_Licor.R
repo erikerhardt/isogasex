@@ -7,15 +7,14 @@
 #' Licor
 #' XXX Still need to determine what to do about BS for Licor data
 #'
-#' @param val_obs_TDL
-#' @param val_sum_TDL
-#' @param val_obs_Licor
-#' @param val_sum_Licor
-#' @param var_interp
+#' @param val_obs_TDL xxxPARAMxxx
+#' @param val_sum_TDL xxxPARAMxxx
+#' @param val_obs_Licor xxxPARAMxxx
+#' @param val_sum_Licor xxxPARAMxxx
+#' @param var_interp xxxPARAMxxx
 #'
-#' @return val_bs_sum
+#' @return val_bs_sum xxxRETURNxxx
 #'
-#' @examples
 f_bs_iter_TDL_Licor <-
 function# one BS resample of TDL and Licor means
 ###

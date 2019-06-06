@@ -11,7 +11,22 @@ plot_pc_simple_complex(chamber_Totalpc_using_simple_Delta_for_gm,
   output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_Totalpc_using_simple_Delta_for_gm}{xxxPARAMxxx}
+
+\item{chamber_Totalpc_using_simple_Delta_for_modeling}{xxxPARAMxxx}
+
+\item{chamber_Totalpc_using_complex_Delta_no_decarboxylation}{xxxPARAMxxx}
+
+\item{chamber_Totalpc_using_complex_Delta_full_model}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

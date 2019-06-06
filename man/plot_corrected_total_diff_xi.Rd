@@ -8,7 +8,30 @@ plot_corrected_total_diff_xi(ref.12C, ref.13C, cham.12C, cham.13C, ref_tot,
   cham_tot, diff_tot, xi, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{ref.12C}{xxxPARAMxxx}
+
+\item{ref.13C}{xxxPARAMxxx}
+
+\item{cham.12C}{xxxPARAMxxx}
+
+\item{cham.13C}{xxxPARAMxxx}
+
+\item{ref_tot}{xxxPARAMxxx}
+
+\item{cham_tot}{xxxPARAMxxx}
+
+\item{diff_tot}{xxxPARAMxxx}
+
+\item{xi}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

@@ -2,16 +2,15 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_Totalpi
-#' @param chamber_Totalpa
-#' @param chamber_Totalpi_pa
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_Totalpi xxxPARAMxxx
+#' @param chamber_Totalpa xxxPARAMxxx
+#' @param chamber_Totalpi_pa xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_pi_pa <-
 function# Plot Totalpi_pa, ratio of substomatal CO2 partial pressure to CO2 partial pressure above leaf = Ci/Ca ratio of mol fractions
 ###

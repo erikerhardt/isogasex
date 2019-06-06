@@ -1,19 +1,18 @@
 #' Adjusted flow
 #'
-#' Deprecated (0.1-20, 9/5/2012
+#' Deprecated (0.1-20, 9/5/2012)
 #'
 #' This is no longer used since the correction is not required.
 #'
-#' LI6400 flow includes water in the entering air but the TDL removes this water before measuring and this effectively reduces the flow (use H2OR to correct it).}
+#' LI6400 flow includes water in the entering air but the TDL removes this water before measuring and this effectively reduces the flow (use H2OR to correct it).
 #'
 #' \deqn{flow_adjusted <- flow * (1 - (H2OR / 1000))}
 #'
-#' @param flow
-#' @param H2OR
+#' @param flow xxxPARAMxxx
+#' @param H2OR xxxPARAMxxx
 #'
-#' @return flow_adjusted
+#' @return flow_adjusted xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_flow_adjusted <-
 function# Adjusted flow
 ### Deprecated (0.1-20, 9/5/2012)

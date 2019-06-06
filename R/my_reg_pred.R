@@ -2,12 +2,11 @@
 #'
 #' Calculate predictions given the intercept and slope of a simple linear regression fit.
 #'
-#' @param beta_hat
-#' @param x
+#' @param beta_hat xxxPARAMxxx
+#' @param x xxxPARAMxxx
 #'
-#' @return y_hat
+#' @return y_hat xxxRETURNxxx
 #'
-#' @examples
 my_reg_pred <-
 function# basic SLR y pred
 ###

@@ -7,10 +7,16 @@
 f_val_calc_Delta_from_A_ratio(cham.12Co, cham.13Co, TDL.13A, TDL.12A)
 }
 \arguments{
-\item{TDL.12A}{}
+\item{cham.12Co}{xxxPARAMxxx}
+
+\item{cham.13Co}{xxxPARAMxxx}
+
+\item{TDL.13A}{xxxPARAMxxx}
+
+\item{TDL.12A}{xxxPARAMxxx}
 }
 \value{
-Delta_from_A_ratio
+Delta_from_A_ratio xxxRETURNxxx
 }
 \description{
 First calculates R_cham with \code{\link{f_val_calc_isotope_ratio}}

@@ -2,13 +2,12 @@
 #'
 #' Sorts BS samples, takes quantiles for equal-tailed sig_CI Level CIs.
 #'
-#' @param x
-#' @param n
-#' @param ind_CI
+#' @param x xxxPARAMxxx
+#' @param n xxxPARAMxxx
+#' @param ind_CI xxxPARAMxxx
 #'
-#' @return x_CI
+#' @return x_CI xxxRETURNxxx
 #'
-#' @examples
 f_val_bs_CI_endpoints <-
 function# create CI endpoints
 ###

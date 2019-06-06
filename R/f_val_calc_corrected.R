@@ -2,16 +2,15 @@
 #'
 #' \deqn{corrected = (obs * gain) + offset}
 #'
-#' @param obs_12C
-#' @param obs_13C
-#' @param gain_12C
-#' @param gain_13C
-#' @param offset_12C
-#' @param offset_13C
+#' @param obs_12C xxxPARAMxxx
+#' @param obs_13C xxxPARAMxxx
+#' @param gain_12C xxxPARAMxxx
+#' @param gain_13C xxxPARAMxxx
+#' @param offset_12C xxxPARAMxxx
+#' @param offset_13C xxxPARAMxxx
 #'
 #' @return corrected 12C and 13C
 #'
-#' @examples
 f_val_calc_corrected <-
 function# corrected (Corrected 12C, Corrected 13C)
 ###

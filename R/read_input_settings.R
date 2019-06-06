@@ -2,6 +2,7 @@
 #'
 #' @param fn_scorecard         a list of csv filenames to read and join together, expected to have same column names.
 #' @param sw_read_write     "read" for infiles to train or classify, "write" for classification results (includes a column of classifications)
+#' @param out_dat           xxxPARAMxxx
 #' @param sw_log_file       see AT_ScoreCard_SigTest()
 #' @param out_log           defined inside AT_ScoreCard_SigTest()
 #'

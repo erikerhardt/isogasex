@@ -8,7 +8,20 @@ plot_Cc_total(chamber_TotalCc, chamber_12Cc, chamber_13Cc, x_time,
   plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_TotalCc}{xxxPARAMxxx}
+
+\item{chamber_12Cc}{xxxPARAMxxx}
+
+\item{chamber_13Cc}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

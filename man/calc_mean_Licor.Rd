@@ -7,10 +7,16 @@
 calc_mean_Licor(TDL, Licor, TDL_cycle, sw)
 }
 \arguments{
-\item{sw}{}
+\item{TDL}{xxxPARAMxxx}
+
+\item{Licor}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-Licor
+Licor xxxRETURNxxx
 }
 \description{
 create Licor$summary for numerical summaries

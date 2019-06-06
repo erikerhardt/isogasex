@@ -8,10 +8,32 @@ f_val_calc_gm_point_complex(b, bs, al, A, pa, Di, D_obs, f_photo,
   Gamma_star, e, Rd, k)
 }
 \arguments{
-\item{k}{}
+\item{b}{xxxPARAMxxx}
+
+\item{bs}{xxxPARAMxxx}
+
+\item{al}{xxxPARAMxxx}
+
+\item{A}{xxxPARAMxxx}
+
+\item{pa}{xxxPARAMxxx}
+
+\item{Di}{xxxPARAMxxx}
+
+\item{D_obs}{xxxPARAMxxx}
+
+\item{f_photo}{xxxPARAMxxx}
+
+\item{Gamma_star}{xxxPARAMxxx}
+
+\item{e}{xxxPARAMxxx}
+
+\item{Rd}{xxxPARAMxxx}
+
+\item{k}{xxxPARAMxxx}
 }
 \value{
-gm_point_complex
+gm_point_complex xxxRETURNxxx
 }
 \description{
 \deqn{gm_point_complex = ((b - bs - al) * A / pa) / (Di - D_obs - (f_photo * Gamma_star / pa) - ((e * Rd) / (k * pa)))}

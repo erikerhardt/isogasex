@@ -8,10 +8,18 @@ interp_TDL_tanks_ref(TDL, TDL_cycle, plot_format_list, output_fn_prefix,
   sw)
 }
 \arguments{
-\item{sw}{}
+\item{TDL}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-TDL
+TDL xxxRETURNxxx
 }
 \description{
 Create TDL$interp to hold interpolated values between measurement cycles and observed values within measurement cycles

@@ -7,10 +7,16 @@
 f_val_calc_all_driver(val_TDL, val_Licor, val_const, sw)
 }
 \arguments{
-\item{sw}{}
+\item{val_TDL}{xxxPARAMxxx}
+
+\item{val_Licor}{xxxPARAMxxx}
+
+\item{val_const}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-val_temp
+val_temp xxxRETURNxxx
 }
 \description{
 SECTION Licor data assign variables

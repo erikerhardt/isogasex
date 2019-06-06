@@ -2,13 +2,12 @@
 #'
 #' \deqn{total_mol_fraction_CO2 = (obs_12C + obs_13C) / (1 - fo_13C)}
 #'
-#' @param obs_12C
-#' @param obs_13C
-#' @param fo_13C
+#' @param obs_12C xxxPARAMxxx
+#' @param obs_13C xxxPARAMxxx
+#' @param fo_13C xxxPARAMxxx
 #'
-#' @return total_mol_fraction_CO2
+#' @return total_mol_fraction_CO2 xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_total_mol_fraction_CO2 <-
 function# Total mol fraction CO2
 ###

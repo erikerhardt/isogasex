@@ -38,15 +38,14 @@
 #'
 #' Put TDL and Licor_interp together to return.
 #'
-#' @param TDL
-#' @param Licor
-#' @param TDL_Licor_times
-#' @param sw
+#' @param TDL xxxPARAMxxx
+#' @param Licor xxxPARAMxxx
+#' @param TDL_Licor_times xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return TDL_and_Licor_interp
+#' @return TDL_and_Licor_interp xxxRETURNxxx
 #' @importFrom zoo zoo
 #'
-#' @examples
 time_window_TDL_Licor_interp <-
 function# keep only the overlapping time window of TDL and Licor files
 ### interpolate the Licor measurements via cubic splines to TDL faster sampling rate

@@ -7,10 +7,22 @@
 f_val_calc_gm_point_simple(b, bs, al, A, pa, Di, D_obs)
 }
 \arguments{
-\item{D_obs}{}
+\item{b}{xxxPARAMxxx}
+
+\item{bs}{xxxPARAMxxx}
+
+\item{al}{xxxPARAMxxx}
+
+\item{A}{xxxPARAMxxx}
+
+\item{pa}{xxxPARAMxxx}
+
+\item{Di}{xxxPARAMxxx}
+
+\item{D_obs}{xxxPARAMxxx}
 }
 \value{
-gm_point_simple
+gm_point_simple xxxRETURNxxx
 }
 \description{
 \deqn{gm_point_simple = (( b - bs - al) * A / pa) / (Di - D_obs)}

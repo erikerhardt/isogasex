@@ -8,10 +8,16 @@ write_CI_Calc_file(val, TDL_cycle, output_CI_Calc_fn,
   output_CI_Calc_last_fn)
 }
 \arguments{
-\item{output_CI_Calc_last_fn}{}
+\item{val}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{output_CI_Calc_fn}{xxxPARAMxxx}
+
+\item{output_CI_Calc_last_fn}{xxxPARAMxxx}
 }
 \value{
-val$write
+val$write xxxRETURNxxx
 }
 \description{
 Write all observed and calculated values with BS CIs for all time points.

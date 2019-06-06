@@ -7,10 +7,12 @@
 read_TDL(TDL_fn, sw)
 }
 \arguments{
-\item{sw}{}
+\item{TDL_fn}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-TDL
+TDL xxxRETURNxxx
 }
 \description{
 See \code{\link{val_TDL_Licor_variables}} for expected column names.

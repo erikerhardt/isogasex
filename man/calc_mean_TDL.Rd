@@ -7,10 +7,12 @@
 calc_mean_TDL(TDL, TDL_cycle)
 }
 \arguments{
-\item{TDL_cycle}{}
+\item{TDL}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
 }
 \value{
-TDL
+TDL xxxRETURNxxx
 }
 \description{
 create TDL$summary for numerical summaries

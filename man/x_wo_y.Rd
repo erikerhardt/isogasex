@@ -7,7 +7,9 @@
 x_wo_y(x, y)
 }
 \arguments{
-\item{y}{}
+\item{x}{xxxPARAMxxx}
+
+\item{y}{xxxPARAMxxx}
 }
 \value{
 x without y

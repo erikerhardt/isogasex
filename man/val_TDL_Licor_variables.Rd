@@ -7,10 +7,18 @@
 val_TDL_Licor_variables(TDL, Licor, TDL_cycle, val, sw)
 }
 \arguments{
-\item{sw}{}
+\item{TDL}{xxxPARAMxxx}
+
+\item{Licor}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{val}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-val
+val xxxRETURNxxx
 }
 \description{
 Function to assign TDL and Licor values to variable names,

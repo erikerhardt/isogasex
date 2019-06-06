@@ -2,12 +2,11 @@
 #'
 #' \deqn{isotope_ratio = obs_13C / obs_12C}
 #'
-#' @param obs_12C
-#' @param obs_13C
+#' @param obs_12C xxxPARAMxxx
+#' @param obs_13C xxxPARAMxxx
 #'
-#' @return isotope_ratio
+#' @return isotope_ratio xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_isotope_ratio <-
 function# Isotope ratio
 ###

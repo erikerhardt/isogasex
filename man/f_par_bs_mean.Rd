@@ -7,10 +7,16 @@
 f_par_bs_mean(x, x_var, n_sam, n)
 }
 \arguments{
-\item{n}{}
+\item{x}{xxxPARAMxxx}
+
+\item{x_var}{xxxPARAMxxx}
+
+\item{n_sam}{xxxPARAMxxx}
+
+\item{n}{xxxPARAMxxx}
 }
 \value{
-x_mean
+x_mean xxxRETURNxxx
 }
 \description{
 Sample from normal distribution with mean and se from the data, calculating mean of n parametric bootstrap resamples.

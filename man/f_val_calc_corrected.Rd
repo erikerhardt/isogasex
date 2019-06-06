@@ -8,7 +8,17 @@ f_val_calc_corrected(obs_12C, obs_13C, gain_12C, gain_13C, offset_12C,
   offset_13C)
 }
 \arguments{
-\item{offset_13C}{}
+\item{obs_12C}{xxxPARAMxxx}
+
+\item{obs_13C}{xxxPARAMxxx}
+
+\item{gain_12C}{xxxPARAMxxx}
+
+\item{gain_13C}{xxxPARAMxxx}
+
+\item{offset_12C}{xxxPARAMxxx}
+
+\item{offset_13C}{xxxPARAMxxx}
 }
 \value{
 corrected 12C and 13C

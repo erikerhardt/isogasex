@@ -8,7 +8,22 @@ plot_val_calc_sum(val_TDL, val_Licor, val_const, val_temp,
   plot_format_list, output_fn_prefix, sw)
 }
 \arguments{
-\item{sw}{}
+\item{val_TDL}{xxxPARAMxxx}
+
+\item{val_Licor}{xxxPARAMxxx}
+
+\item{val_const}{xxxPARAMxxx}
+
+\item{val_temp}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 most plots are not created when not using Licor file

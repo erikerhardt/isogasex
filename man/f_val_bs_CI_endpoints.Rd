@@ -7,10 +7,14 @@
 f_val_bs_CI_endpoints(x, n, ind_CI)
 }
 \arguments{
-\item{ind_CI}{}
+\item{x}{xxxPARAMxxx}
+
+\item{n}{xxxPARAMxxx}
+
+\item{ind_CI}{xxxPARAMxxx}
 }
 \value{
-x_CI
+x_CI xxxRETURNxxx
 }
 \description{
 Sorts BS samples, takes quantiles for equal-tailed sig_CI Level CIs.

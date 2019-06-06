@@ -11,7 +11,24 @@ plot_Delta_i(chamber_Delta_i_simple_for_gm,
   output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_Delta_i_simple_for_gm}{xxxPARAMxxx}
+
+\item{chamber_Delta_i_simple_for_modeling}{xxxPARAMxxx}
+
+\item{chamber_Delta_i_complex_for_gm}{xxxPARAMxxx}
+
+\item{chamber_Delta_i_simple_for_gm_Delta_obs}{xxxPARAMxxx}
+
+\item{chamber_Delta_i_complex_for_gm_Delta_obs}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

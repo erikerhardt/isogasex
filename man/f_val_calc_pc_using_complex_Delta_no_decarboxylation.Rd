@@ -9,10 +9,26 @@ f_val_calc_pc_using_complex_Delta_no_decarboxylation(Delta, pa, ps, pi, a,
   a_b, al, b, bs)
 }
 \arguments{
-\item{bs}{}
+\item{Delta}{xxxPARAMxxx}
+
+\item{pa}{xxxPARAMxxx}
+
+\item{ps}{xxxPARAMxxx}
+
+\item{pi}{xxxPARAMxxx}
+
+\item{a}{xxxPARAMxxx}
+
+\item{a_b}{xxxPARAMxxx}
+
+\item{al}{xxxPARAMxxx}
+
+\item{b}{xxxPARAMxxx}
+
+\item{bs}{xxxPARAMxxx}
 }
 \value{
-pc
+pc xxxRETURNxxx
 }
 \description{
 \deqn{pc = (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa) / (bs + al - b)}

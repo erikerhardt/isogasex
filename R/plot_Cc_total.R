@@ -2,16 +2,15 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_TotalCc
-#' @param chamber_12Cc
-#' @param chamber_13Cc
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_TotalCc xxxPARAMxxx
+#' @param chamber_12Cc xxxPARAMxxx
+#' @param chamber_13Cc xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_Cc_total <-
 function# Plot Cc, ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol
 ###

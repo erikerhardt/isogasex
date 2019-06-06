@@ -8,7 +8,20 @@ plot_data_cycles(TDL, TDL_cycle, plot_format_list, output_fn_prefix,
   Rstd_13C, full_or_window)
 }
 \arguments{
-\item{full_or_window}{}
+\item{TDL}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+
+\item{Rstd_13C}{xxxPARAMxxx}
+
+\item{full_or_window}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

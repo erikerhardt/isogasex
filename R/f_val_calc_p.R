@@ -2,12 +2,11 @@
 #'
 #' \deqn{p = (Co-Ce) / Co}
 #'
-#' @param Ce
-#' @param Co
+#' @param Ce xxxPARAMxxx
+#' @param Co xxxPARAMxxx
 #'
-#' @return p
+#' @return p xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_p <-
 function# p
 ###

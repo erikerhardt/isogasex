@@ -2,12 +2,11 @@
 #'
 #' Create bs for calculated bootstrap values to estimate error, initializing to zeros.
 #'
-#' @param n
-#' @param R_bootstrap
+#' @param n xxxPARAMxxx
+#' @param R_bootstrap xxxPARAMxxx
 #'
-#' @return bs
+#' @return bs xxxRETURNxxx
 #'
-#' @examples
 f_init_bs_matrix <-
 function# init bs values to zero
 ###

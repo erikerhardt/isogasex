@@ -2,13 +2,12 @@
 #'
 #' Write observed TDL values with BS CIs for all time points.
 #'
-#' @param val
-#' @param TDL_cycle
-#' @param output_CI_TDL_fn
+#' @param val xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param output_CI_TDL_fn xxxPARAMxxx
 #'
-#' @return val$write
+#' @return val$write xxxRETURNxxx
 #'
-#' @examples
 write_CI_TDL_file <-
 function# write_output section: TDL file
 ### Write observed TDL values with BS CIs for all time points.

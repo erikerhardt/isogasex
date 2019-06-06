@@ -2,14 +2,13 @@
 #'
 #' \deqn{pc = (pa * (Delta - a)) / (b_modeling - a)}
 #'
-#' @param Delta
-#' @param pa
-#' @param a
-#' @param b_modeling
+#' @param Delta xxxPARAMxxx
+#' @param pa xxxPARAMxxx
+#' @param a xxxPARAMxxx
+#' @param b_modeling xxxPARAMxxx
 #'
-#' @return pc
+#' @return pc xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_pc_using_simple_Delta_for_modeling <-
 function# pc using simple D for modeling
 ###

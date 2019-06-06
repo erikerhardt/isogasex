@@ -1,6 +1,6 @@
 Package: isogasex
 Type: Package
-Title: Isotopic gas exchange using TDL and Licor input.  Updated version of package tdllicor.
+Title: Isotopic gas exchange using TDL and Licor input.  Updated version of package tdllicor
 Version: 0.2.0
 Author: Erik B. Erhardt <erike@stat.unm.edu> and David T. Hanson <dthanson@unm.edu>
 Maintainer: Erik B. Erhardt <erike@stat.unm.edu>
@@ -17,6 +17,7 @@ RoxygenNote: 6.1.1
 Imports:
     crayon,
     dplyr,
+    jsonlite,
     log4r,
     magrittr,
     purrr,
@@ -24,5 +25,4 @@ Imports:
     readxl,
     stringr,
     yaml,
-    zoo,
-    jsonlite
+    zoo

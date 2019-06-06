@@ -6,12 +6,11 @@
 #'
 #' Replace bad value with previous value in the file.
 #'
-#' @param TDL
-#' @param bad_ind
+#' @param TDL xxxPARAMxxx
+#' @param bad_ind xxxPARAMxxx
 #'
-#' @return TDL
+#' @return TDL xxxRETURNxxx
 #'
-#' @examples
 fix_missing_TDL_values <-
 function# Replace NA and NAN values in TDL$data by previous value for that variable
 ###

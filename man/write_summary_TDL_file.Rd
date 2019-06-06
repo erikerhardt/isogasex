@@ -7,10 +7,14 @@
 write_summary_TDL_file(val, TDL_cycle, output_summary_TDL_fn)
 }
 \arguments{
-\item{output_summary_TDL_fn}{}
+\item{val}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{output_summary_TDL_fn}{xxxPARAMxxx}
 }
 \value{
-val$write
+val$write xxxRETURNxxx
 }
 \description{
 Write TDL summary values for all time points.

@@ -7,10 +7,10 @@
 get_data(filename)
 }
 \arguments{
-\item{filename}{}
+\item{filename}{xxxPARAMxxx}
 }
 \value{
-DATA
+DATA xxxRETURNxxx
 }
 \description{
 Read Excel template with \code{gdata} \code{read.xls} using perl.

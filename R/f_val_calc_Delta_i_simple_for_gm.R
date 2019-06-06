@@ -2,16 +2,15 @@
 #'
 #' \deqn{Delta_i_simple_for_gm = a_b * ((pa - ps) / pa) + a*((ps - pi) / pa) + b * (pi / pa)}
 #'
-#' @param a
-#' @param b
-#' @param a_b
-#' @param pa
-#' @param ps
-#' @param pi
+#' @param a xxxPARAMxxx
+#' @param b xxxPARAMxxx
+#' @param a_b xxxPARAMxxx
+#' @param pa xxxPARAMxxx
+#' @param ps xxxPARAMxxx
+#' @param pi xxxPARAMxxx
 #'
-#' @return Delta_i_simple_for_gm
+#' @return Delta_i_simple_for_gm xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_Delta_i_simple_for_gm <-
 function# Delta_i simple for gm, predicted discrimination including boundary layer effects but not decarboxylation effects
 ###

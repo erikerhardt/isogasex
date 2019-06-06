@@ -7,10 +7,12 @@
 f_val_calc_gtc(gbc, gsc)
 }
 \arguments{
-\item{gsc}{}
+\item{gbc}{xxxPARAMxxx}
+
+\item{gsc}{xxxPARAMxxx}
 }
 \value{
-gtc
+gtc xxxRETURNxxx
 }
 \description{
 \deqn{gtc = 1 / ((1 / gbc) + (1 / gsc))}

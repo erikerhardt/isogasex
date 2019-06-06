@@ -2,14 +2,13 @@
 #'
 #' Write all observed and calculated values with BS CIs for all time points.
 #'
-#' @param val
-#' @param TDL_cycle
-#' @param output_CI_Calc_fn
-#' @param output_CI_Calc_last_fn
+#' @param val xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param output_CI_Calc_fn xxxPARAMxxx
+#' @param output_CI_Calc_last_fn xxxPARAMxxx
 #'
-#' @return val$write
+#' @return val$write xxxRETURNxxx
 #'
-#' @examples
 write_CI_Calc_file <-
 function# write_output section
 ### Write all observed and calculated values with BS CIs for all time points.

@@ -7,10 +7,16 @@
 time_window_TDL_Licor_interp(TDL, Licor, TDL_Licor_times, sw)
 }
 \arguments{
-\item{sw}{}
+\item{TDL}{xxxPARAMxxx}
+
+\item{Licor}{xxxPARAMxxx}
+
+\item{TDL_Licor_times}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-TDL_and_Licor_interp
+TDL_and_Licor_interp xxxRETURNxxx
 }
 \description{
 interpolate the Licor measurements via cubic splines to TDL faster sampling rate

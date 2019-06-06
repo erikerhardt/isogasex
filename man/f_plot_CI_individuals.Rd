@@ -8,7 +8,26 @@ f_plot_CI_individuals(x_bs, x_sum, x_CI, x_title, x_time, x_n, R_bootstrap,
   plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{x_bs}{xxxPARAMxxx}
+
+\item{x_sum}{xxxPARAMxxx}
+
+\item{x_CI}{xxxPARAMxxx}
+
+\item{x_title}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{x_n}{xxxPARAMxxx}
+
+\item{R_bootstrap}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 For every variable, plots the mean and bootstrap CI, after removing NAs with \code{\link{plot_not_na}}.

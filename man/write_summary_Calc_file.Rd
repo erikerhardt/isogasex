@@ -8,10 +8,16 @@ write_summary_Calc_file(val, TDL_cycle, output_summary_Calc_fn,
   output_summary_Calc_last_fn)
 }
 \arguments{
-\item{output_summary_Calc_last_fn}{}
+\item{val}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{output_summary_Calc_fn}{xxxPARAMxxx}
+
+\item{output_summary_Calc_last_fn}{xxxPARAMxxx}
 }
 \value{
-val$write
+val$write xxxRETURNxxx
 }
 \description{
 Write summary values for all time points.

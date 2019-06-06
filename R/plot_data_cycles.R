@@ -2,16 +2,15 @@
 #'
 #' Plots the input variables.
 #'
-#' @param TDL
-#' @param TDL_cycle
-#' @param plot_format_list
-#' @param output_fn_prefix
-#' @param Rstd_13C
-#' @param full_or_window
+#' @param TDL xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
+#' @param Rstd_13C xxxPARAMxxx
+#' @param full_or_window xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_data_cycles <-
 function# Plot each cycle of TDL measurements (visual diagnostics)
 ###

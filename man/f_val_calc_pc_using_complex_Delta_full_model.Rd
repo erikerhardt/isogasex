@@ -8,10 +8,36 @@ f_val_calc_pc_using_complex_Delta_full_model(Delta, pa, ps, pi, a, a_b, al,
   b, bs, e, Rd, k, f, Gamma_star)
 }
 \arguments{
-\item{Gamma_star}{}
+\item{Delta}{xxxPARAMxxx}
+
+\item{pa}{xxxPARAMxxx}
+
+\item{ps}{xxxPARAMxxx}
+
+\item{pi}{xxxPARAMxxx}
+
+\item{a}{xxxPARAMxxx}
+
+\item{a_b}{xxxPARAMxxx}
+
+\item{al}{xxxPARAMxxx}
+
+\item{b}{xxxPARAMxxx}
+
+\item{bs}{xxxPARAMxxx}
+
+\item{e}{xxxPARAMxxx}
+
+\item{Rd}{xxxPARAMxxx}
+
+\item{k}{xxxPARAMxxx}
+
+\item{f}{xxxPARAMxxx}
+
+\item{Gamma_star}{xxxPARAMxxx}
 }
 \value{
-pc
+pc xxxRETURNxxx
 }
 \description{
 \deqn{pc = (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa  - (e * Rd / k + f * Gamma_star)) / (bs + al - b)}

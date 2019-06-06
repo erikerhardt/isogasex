@@ -7,10 +7,14 @@
 f_val_bs_matrix(bs, val_calc_bs_temp, i_bs)
 }
 \arguments{
-\item{i_bs}{}
+\item{bs}{xxxPARAMxxx}
+
+\item{val_calc_bs_temp}{xxxPARAMxxx}
+
+\item{i_bs}{xxxPARAMxxx}
 }
 \value{
-bs
+bs xxxRETURNxxx
 }
 \description{
 Move current value of \code{val_calc_bs_temp} into \code{bs$*} after checked with \code{\link{f_val_bs_matrix_check}}.

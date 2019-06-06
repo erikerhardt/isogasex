@@ -2,13 +2,12 @@
 #'
 #' Multiply 1000 by \code{\link{f_val_calc_Delta_obs}}
 #'
-#' @param reference_delta_e
-#' @param chamber_delta_o
-#' @param xi
+#' @param reference_delta_e xxxPARAMxxx
+#' @param chamber_delta_o xxxPARAMxxx
+#' @param xi xxxPARAMxxx
 #'
-#' @return Delta_obs_permil
+#' @return Delta_obs_permil xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_Delta_obs_permil <-
 function# Delta per mil, observed discrimination
 ###

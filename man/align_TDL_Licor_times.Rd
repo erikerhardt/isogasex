@@ -8,10 +8,20 @@ align_TDL_Licor_times(TDL_time, TDL_n, Licor_time, Licor_n, val_timewindow,
   sw)
 }
 \arguments{
-\item{sw}{}
+\item{TDL_time}{xxxPARAMxxx}
+
+\item{TDL_n}{xxxPARAMxxx}
+
+\item{Licor_time}{xxxPARAMxxx}
+
+\item{Licor_n}{xxxPARAMxxx}
+
+\item{val_timewindow}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-TDL_Licor_times
+TDL_Licor_times xxxRETURNxxx
 }
 \description{
 Unused sites (comment):

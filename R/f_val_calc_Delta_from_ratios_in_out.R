@@ -5,14 +5,13 @@
 #' \deqn{Delta_from_ratios_in_out <- (R_ref / R_cham) - 1}
 #' this quantity is not in per mil
 #'
-#' @param ref.12Ce
-#' @param ref.13Ce
-#' @param cham.12Co
-#' @param cham.13Co
+#' @param ref.12Ce xxxPARAMxxx
+#' @param ref.13Ce xxxPARAMxxx
+#' @param cham.12Co xxxPARAMxxx
+#' @param cham.13Co xxxPARAMxxx
 #'
-#' @return Delta_from_ratios_in_out
+#' @return Delta_from_ratios_in_out xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_Delta_from_ratios_in_out <-
 function# Delta from ratios in and out?, (Re/Ro)-1, is this really the same?
 ###

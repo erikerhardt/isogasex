@@ -2,19 +2,18 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_TotalCa
-#' @param chamber_12Ca
-#' @param chamber_13Ca
-#' @param chamber_TotalCs
-#' @param chamber_12Cs
-#' @param chamber_13Cs
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_TotalCa xxxPARAMxxx
+#' @param chamber_12Ca xxxPARAMxxx
+#' @param chamber_13Ca xxxPARAMxxx
+#' @param chamber_TotalCs xxxPARAMxxx
+#' @param chamber_12Cs xxxPARAMxxx
+#' @param chamber_13Cs xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_Ca_Cs <-
 function# Plot Ca Cs, CO2 concentrations above the leaf and at the leaf surface
 ###

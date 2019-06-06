@@ -7,10 +7,12 @@
 f_init_bs_matrix(n, R_bootstrap)
 }
 \arguments{
-\item{R_bootstrap}{}
+\item{n}{xxxPARAMxxx}
+
+\item{R_bootstrap}{xxxPARAMxxx}
 }
 \value{
-bs
+bs xxxRETURNxxx
 }
 \description{
 Create bs for calculated bootstrap values to estimate error, initializing to zeros.

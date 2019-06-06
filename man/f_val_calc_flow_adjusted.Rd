@@ -7,11 +7,20 @@
 f_val_calc_flow_adjusted(flow, H2OR)
 }
 \arguments{
-\item{H2OR}{}
+\item{flow}{xxxPARAMxxx}
+
+\item{H2OR}{xxxPARAMxxx}
 }
 \value{
-flow_adjusted
+flow_adjusted xxxRETURNxxx
 }
 \description{
-Deprecated (0.1-20, 9/5/2012
+Deprecated (0.1-20, 9/5/2012)
+}
+\details{
+This is no longer used since the correction is not required.
+
+LI6400 flow includes water in the entering air but the TDL removes this water before measuring and this effectively reduces the flow (use H2OR to correct it).
+
+\deqn{flow_adjusted <- flow * (1 - (H2OR / 1000))}
 }

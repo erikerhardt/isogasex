@@ -2,20 +2,19 @@
 #'
 #' Plots the input variables.
 #'
-#' @param reference_delta_e
-#' @param chamber_delta_o
-#' @param chamber_reference_delta_diff_CoCe
-#' @param Delta_obs
-#' @param p
-#' @param delta_13C_Assim
-#' @param delta_13C_Resp
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param reference_delta_e xxxPARAMxxx
+#' @param chamber_delta_o xxxPARAMxxx
+#' @param chamber_reference_delta_diff_CoCe xxxPARAMxxx
+#' @param Delta_obs xxxPARAMxxx
+#' @param p xxxPARAMxxx
+#' @param delta_13C_Assim xxxPARAMxxx
+#' @param delta_13C_Resp xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_delta_Delta_p <-
 function# Plot delta, Delta, and p
 ###

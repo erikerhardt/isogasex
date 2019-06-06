@@ -9,7 +9,16 @@ s_plot_settings_begin_end(filename_prefix = "Prefix",
   plot_format = 1)
 }
 \arguments{
-\item{plot_format}{}
+\item{filename_prefix}{xxxPARAMxxx}
+
+\item{plot_filename}{xxxPARAMxxx}
+
+\item{plot_mode}{xxxPARAMxxx}
+
+\item{plot_format}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Settings:

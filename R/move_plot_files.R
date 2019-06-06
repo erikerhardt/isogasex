@@ -6,11 +6,10 @@
 #'
 #' Move files that are not (TDL, Licor, offset) into \file{var} directory.
 #'
-#' @param plot_format
+#' @param plot_format xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 move_plot_files <-
 function# move selected plot files to subdirectories
 ###

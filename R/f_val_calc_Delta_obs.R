@@ -4,13 +4,12 @@
 #'
 #' \deqn{Delta_obs = temp_xidode / (1 + chamber_delta_o - temp_xidode)}
 #'
-#' @param reference_delta_e
-#' @param chamber_delta_o
-#' @param xi
+#' @param reference_delta_e xxxPARAMxxx
+#' @param chamber_delta_o xxxPARAMxxx
+#' @param xi xxxPARAMxxx
 #'
-#' @return Delta_obs
+#' @return Delta_obs xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_Delta_obs <-
 function# Delta, observed discrimination
 ###

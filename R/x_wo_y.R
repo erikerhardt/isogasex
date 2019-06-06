@@ -1,11 +1,10 @@
 #' x without y
 #'
-#' @param x
-#' @param y
+#' @param x xxxPARAMxxx
+#' @param y xxxPARAMxxx
 #'
 #' @return x without y
 #'
-#' @examples
 x_wo_y <-
 function# define function to find indices that were excluded
 ###

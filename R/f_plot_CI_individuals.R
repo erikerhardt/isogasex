@@ -2,19 +2,18 @@
 #'
 #' For every variable, plots the mean and bootstrap CI, after removing NAs with \code{\link{plot_not_na}}.
 #'
-#' @param x_bs
-#' @param x_sum
-#' @param x_CI
-#' @param x_title
-#' @param x_time
-#' @param x_n
-#' @param R_bootstrap
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param x_bs xxxPARAMxxx
+#' @param x_sum xxxPARAMxxx
+#' @param x_CI xxxPARAMxxx
+#' @param x_title xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param x_n xxxPARAMxxx
+#' @param R_bootstrap xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 f_plot_CI_individuals <-
 function# plot all variables with bs values, mean value, and CI intervals
 ###

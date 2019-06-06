@@ -7,10 +7,20 @@
 f_val_bs_CI(val_calc_bs, val_bs_TDL, val_bs_Licor, R_bootstrap, sig_CI, sw)
 }
 \arguments{
-\item{sw}{}
+\item{val_calc_bs}{xxxPARAMxxx}
+
+\item{val_bs_TDL}{xxxPARAMxxx}
+
+\item{val_bs_Licor}{xxxPARAMxxx}
+
+\item{R_bootstrap}{xxxPARAMxxx}
+
+\item{sig_CI}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-val_CI
+val_CI xxxRETURNxxx
 }
 \description{
 Create val_CI CI endpoints for $TDL, $Licor, and $calc.

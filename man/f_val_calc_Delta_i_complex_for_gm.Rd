@@ -8,10 +8,32 @@ f_val_calc_Delta_i_complex_for_gm(a, b, a_b, pa, ps, pi, b_gm, f_photo,
   Gamma_star, e, Rd, k)
 }
 \arguments{
-\item{k}{}
+\item{a}{xxxPARAMxxx}
+
+\item{b}{xxxPARAMxxx}
+
+\item{a_b}{xxxPARAMxxx}
+
+\item{pa}{xxxPARAMxxx}
+
+\item{ps}{xxxPARAMxxx}
+
+\item{pi}{xxxPARAMxxx}
+
+\item{b_gm}{xxxPARAMxxx}
+
+\item{f_photo}{xxxPARAMxxx}
+
+\item{Gamma_star}{xxxPARAMxxx}
+
+\item{e}{xxxPARAMxxx}
+
+\item{Rd}{xxxPARAMxxx}
+
+\item{k}{xxxPARAMxxx}
 }
 \value{
-Delta_i_complex_for_gm
+Delta_i_complex_for_gm xxxRETURNxxx
 }
 \description{
 \deqn{Delta_i_complex_for_gm = a_b * ((pa - ps) / pa) + a * ((ps - pi) / pa) + b * (pi / pa) - (f_photo * Gamma_star / pa) - (e * Rd / (k * pa))}

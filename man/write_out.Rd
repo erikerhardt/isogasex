@@ -7,7 +7,10 @@
 write_out(text_to_cat)
 }
 \arguments{
-\item{text_to_cat}{}
+\item{text_to_cat}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 write progress to the screen

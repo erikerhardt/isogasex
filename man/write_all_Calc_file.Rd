@@ -7,10 +7,14 @@
 write_all_Calc_file(val, TDL_cycle, output_all_Calc_fn)
 }
 \arguments{
-\item{output_all_Calc_fn}{}
+\item{val}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{output_all_Calc_fn}{xxxPARAMxxx}
 }
 \value{
-val$write
+val$write xxxRETURNxxx
 }
 \description{
 Write all observed and calculated values for all time points.

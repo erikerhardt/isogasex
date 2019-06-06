@@ -79,15 +79,14 @@
 #'
 #' Summarized values from TDL or Licor  prefix: \code{val$sum$*}
 #'
-#' @param TDL
-#' @param Licor
-#' @param TDL_cycle
-#' @param val
-#' @param sw
+#' @param TDL xxxPARAMxxx
+#' @param Licor xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param val xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return val
+#' @return val xxxRETURNxxx
 #'
-#' @examples
 val_TDL_Licor_variables <-
 function# Assign TDL and Licor values to val variable names, raw and summarized values
 ###

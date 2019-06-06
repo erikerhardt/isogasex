@@ -8,10 +8,18 @@ f_bs_iter_TDL_Licor(val_obs_TDL, val_sum_TDL, val_obs_Licor, val_sum_Licor,
   var_interp)
 }
 \arguments{
-\item{var_interp}{}
+\item{val_obs_TDL}{xxxPARAMxxx}
+
+\item{val_sum_TDL}{xxxPARAMxxx}
+
+\item{val_obs_Licor}{xxxPARAMxxx}
+
+\item{val_sum_Licor}{xxxPARAMxxx}
+
+\item{var_interp}{xxxPARAMxxx}
 }
 \value{
-val_bs_sum
+val_bs_sum xxxRETURNxxx
 }
 \description{
 create val_bs_sum for calculated observed values to use in NP bootstrap

@@ -2,16 +2,15 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_Totalpc_using_gm
-#' @param chamber_12pc_using_gm
-#' @param chamber_13pc_using_gm
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_Totalpc_using_gm xxxPARAMxxx
+#' @param chamber_12pc_using_gm xxxPARAMxxx
+#' @param chamber_13pc_using_gm xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_pc_total <-
 function# Plot pc, total partial pressure of CO2 at the site of carboxylation
 ###

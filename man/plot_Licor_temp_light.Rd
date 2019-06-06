@@ -8,7 +8,26 @@ plot_Licor_temp_light(VPD, E_transpiration, leaf_temp, air_temp, light_in,
   light_out, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{VPD}{xxxPARAMxxx}
+
+\item{E_transpiration}{xxxPARAMxxx}
+
+\item{leaf_temp}{xxxPARAMxxx}
+
+\item{air_temp}{xxxPARAMxxx}
+
+\item{light_in}{xxxPARAMxxx}
+
+\item{light_out}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

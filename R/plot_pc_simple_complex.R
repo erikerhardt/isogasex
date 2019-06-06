@@ -2,17 +2,16 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_Totalpc_using_simple_Delta_for_gm
-#' @param chamber_Totalpc_using_simple_Delta_for_modeling
-#' @param chamber_Totalpc_using_complex_Delta_no_decarboxylation
-#' @param chamber_Totalpc_using_complex_Delta_full_model
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_Totalpc_using_simple_Delta_for_gm xxxPARAMxxx
+#' @param chamber_Totalpc_using_simple_Delta_for_modeling xxxPARAMxxx
+#' @param chamber_Totalpc_using_complex_Delta_no_decarboxylation xxxPARAMxxx
+#' @param chamber_Totalpc_using_complex_Delta_full_model xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_pc_simple_complex <-
 function# Plot pc, simple and complex
 ###

@@ -7,7 +7,9 @@
 assign_variables(D, path)
 }
 \arguments{
-\item{path}{}
+\item{D}{xxxPARAMxxx}
+
+\item{path}{xxxPARAMxxx}
 }
 \value{
 VARIABLES list of all inputs from Excel template

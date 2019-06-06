@@ -33,12 +33,11 @@
 #'
 #' create a list to all returned parameters
 #'
-#' @param D
-#' @param path
+#' @param D xxxPARAMxxx
+#' @param path xxxPARAMxxx
 #'
 #' @return VARIABLES list of all inputs from Excel template
 #'
-#' @examples
 assign_variables <-
 function# Assign variables from input file to variable names
 ###

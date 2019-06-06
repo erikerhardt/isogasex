@@ -2,16 +2,15 @@
 #'
 #' \deqn{pc = (Delta * pa - a_b * (pa - ps) - a * ps) / (b_gm - a)}
 #'
-#' @param Delta
-#' @param pa
-#' @param ps
-#' @param a
-#' @param b_gm
-#' @param a_b
+#' @param Delta xxxPARAMxxx
+#' @param pa xxxPARAMxxx
+#' @param ps xxxPARAMxxx
+#' @param a xxxPARAMxxx
+#' @param b_gm xxxPARAMxxx
+#' @param a_b xxxPARAMxxx
 #'
-#' @return pc
+#' @return pc xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_pc_using_simple_Delta_for_gm <-
 function# pc using simple D for gm, includes boundary layer
 ###

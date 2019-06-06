@@ -2,11 +2,10 @@
 #'
 #' Calculate time elapsed.
 #'
-#' @param time_start
+#' @param time_start xxxPARAMxxx
 #'
-#' @return time_sofar
+#' @return time_sofar xxxRETURNxxx
 #'
-#' @examples
 progress_time <-
 function# Calc amount of time since program started
 ###

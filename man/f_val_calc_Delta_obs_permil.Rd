@@ -7,10 +7,14 @@
 f_val_calc_Delta_obs_permil(reference_delta_e, chamber_delta_o, xi)
 }
 \arguments{
-\item{xi}{}
+\item{reference_delta_e}{xxxPARAMxxx}
+
+\item{chamber_delta_o}{xxxPARAMxxx}
+
+\item{xi}{xxxPARAMxxx}
 }
 \value{
-Delta_obs_permil
+Delta_obs_permil xxxRETURNxxx
 }
 \description{
 Multiply 1000 by \code{\link{f_val_calc_Delta_obs}}

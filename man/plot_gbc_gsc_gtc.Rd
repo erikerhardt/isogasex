@@ -9,7 +9,26 @@ plot_gbc_gsc_gtc(chamber_Totalgbc, chamber_13gbc, chamber_Totalgsc,
   output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_Totalgbc}{xxxPARAMxxx}
+
+\item{chamber_13gbc}{xxxPARAMxxx}
+
+\item{chamber_Totalgsc}{xxxPARAMxxx}
+
+\item{chamber_13gsc}{xxxPARAMxxx}
+
+\item{chamber_Totalgtc}{xxxPARAMxxx}
+
+\item{chamber_13gtc}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

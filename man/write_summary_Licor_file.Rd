@@ -7,10 +7,14 @@
 write_summary_Licor_file(val, TDL_cycle, output_summary_Licor_fn)
 }
 \arguments{
-\item{output_summary_Licor_fn}{}
+\item{val}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{output_summary_Licor_fn}{xxxPARAMxxx}
 }
 \value{
-val$write
+val$write xxxRETURNxxx
 }
 \description{
 write output section: Licor file

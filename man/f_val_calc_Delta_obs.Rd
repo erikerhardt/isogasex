@@ -7,10 +7,14 @@
 f_val_calc_Delta_obs(reference_delta_e, chamber_delta_o, xi)
 }
 \arguments{
-\item{xi}{}
+\item{reference_delta_e}{xxxPARAMxxx}
+
+\item{chamber_delta_o}{xxxPARAMxxx}
+
+\item{xi}{xxxPARAMxxx}
 }
 \value{
-Delta_obs
+Delta_obs xxxRETURNxxx
 }
 \description{
 \deqn{temp_xidode = xi * (chamber_delta_o - reference_delta_e)}

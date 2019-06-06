@@ -7,10 +7,10 @@
 set_TDL_cycle(TDL_cycle)
 }
 \arguments{
-\item{TDL_cycle}{}
+\item{TDL_cycle}{xxxPARAMxxx}
 }
 \value{
-TDL_cycle
+TDL_cycle xxxRETURNxxx
 }
 \description{
 \code{last_n_obs.*} is the number of observations to take to be \code{seconds.*} long.

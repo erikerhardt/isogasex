@@ -2,12 +2,11 @@
 #'
 #' \deqn{pa = (Co / 10^6) * (Press * 1000)}
 #'
-#' @param Co
-#' @param Press
+#' @param Co xxxPARAMxxx
+#' @param Press xxxPARAMxxx
 #'
-#' @return pa
+#' @return pa xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_pp <-
 function# pa, partial pressure of CO2 above the leaf, Press is the atmospheric pressure value from the LI6400
 ###

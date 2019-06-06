@@ -2,17 +2,16 @@
 #'
 #' Plots the input variables.
 #'
-#' @param gain_12C
-#' @param gain_13C
-#' @param offset_12C
-#' @param offset_13C
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param gain_12C xxxPARAMxxx
+#' @param gain_13C xxxPARAMxxx
+#' @param offset_12C xxxPARAMxxx
+#' @param offset_13C xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_gain_offset <-
 function# Plot active gains, offsets, and corrected magnitudes
 ###

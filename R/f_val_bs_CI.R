@@ -6,16 +6,15 @@
 #'
 #' For reasonable variables, calculates CIs using \code{\link{f_val_bs_CI_endpoints}}.
 #'
-#' @param val_calc_bs
-#' @param val_bs_TDL
-#' @param val_bs_Licor
-#' @param R_bootstrap
-#' @param sig_CI
-#' @param sw
+#' @param val_calc_bs xxxPARAMxxx
+#' @param val_bs_TDL xxxPARAMxxx
+#' @param val_bs_Licor xxxPARAMxxx
+#' @param R_bootstrap xxxPARAMxxx
+#' @param sig_CI xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return val_CI
+#' @return val_CI xxxRETURNxxx
 #'
-#' @examples
 f_val_bs_CI <-
 function# create CI for each calculated value
 ###

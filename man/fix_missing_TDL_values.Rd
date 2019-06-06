@@ -7,10 +7,12 @@
 fix_missing_TDL_values(TDL, bad_ind)
 }
 \arguments{
-\item{bad_ind}{}
+\item{TDL}{xxxPARAMxxx}
+
+\item{bad_ind}{xxxPARAMxxx}
 }
 \value{
-TDL
+TDL xxxRETURNxxx
 }
 \description{
 Look at each field.

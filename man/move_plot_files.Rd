@@ -7,7 +7,10 @@
 move_plot_files(plot_format)
 }
 \arguments{
-\item{plot_format}{}
+\item{plot_format}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Create \file{BS} and \file{var} directories.

@@ -7,10 +7,16 @@
 f_val_calc_Cs(gbc, E, Co, A)
 }
 \arguments{
-\item{A}{}
+\item{gbc}{xxxPARAMxxx}
+
+\item{E}{xxxPARAMxxx}
+
+\item{Co}{xxxPARAMxxx}
+
+\item{A}{xxxPARAMxxx}
 }
 \value{
-Cs
+Cs xxxRETURNxxx
 }
 \description{
 \deqn{Cs = (((gbc - (E / 2000)) * Co) - A) / (gbc + (E / 2000))}

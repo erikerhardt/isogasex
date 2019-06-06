@@ -2,14 +2,13 @@
 #'
 #' Sample from normal distribution with mean and se from the data, calculating mean of n parametric bootstrap resamples.
 #'
-#' @param x
-#' @param x_var
-#' @param n_sam
-#' @param n
+#' @param x xxxPARAMxxx
+#' @param x_var xxxPARAMxxx
+#' @param n_sam xxxPARAMxxx
+#' @param n xxxPARAMxxx
 #'
-#' @return x_mean
+#' @return x_mean xxxRETURNxxx
 #'
-#' @examples
 f_par_bs_mean <-
 function# calculate Par BS mean
 ###

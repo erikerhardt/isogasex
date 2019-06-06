@@ -8,7 +8,17 @@ f_val_calc_offset(true_value_hi_12C, true_value_hi_13C, gain_12C, gain_13C,
   cal_tank_hi_12C, cal_tank_hi_13C)
 }
 \arguments{
-\item{cal_tank_hi_13C}{}
+\item{true_value_hi_12C}{xxxPARAMxxx}
+
+\item{true_value_hi_13C}{xxxPARAMxxx}
+
+\item{gain_12C}{xxxPARAMxxx}
+
+\item{gain_13C}{xxxPARAMxxx}
+
+\item{cal_tank_hi_12C}{xxxPARAMxxx}
+
+\item{cal_tank_hi_13C}{xxxPARAMxxx}
 }
 \value{
 offset for 12C and 13C

@@ -8,10 +8,16 @@ f_val_calc_Delta_from_ratios_in_out(ref.12Ce, ref.13Ce, cham.12Co,
   cham.13Co)
 }
 \arguments{
-\item{cham.13Co}{}
+\item{ref.12Ce}{xxxPARAMxxx}
+
+\item{ref.13Ce}{xxxPARAMxxx}
+
+\item{cham.12Co}{xxxPARAMxxx}
+
+\item{cham.13Co}{xxxPARAMxxx}
 }
 \value{
-Delta_from_ratios_in_out
+Delta_from_ratios_in_out xxxRETURNxxx
 }
 \description{
 First calculates R_ref and R_cham with \code{\link{f_val_calc_isotope_ratio}}

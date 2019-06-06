@@ -7,10 +7,14 @@
 f_val_calc_delta_permil(obs_12C, obs_13C, R_std)
 }
 \arguments{
-\item{R_std}{}
+\item{obs_12C}{xxxPARAMxxx}
+
+\item{obs_13C}{xxxPARAMxxx}
+
+\item{R_std}{xxxPARAMxxx}
 }
 \value{
-delta_permil
+delta_permil xxxRETURNxxx
 }
 \description{
 Multiply 1000 by \code{\link{f_val_calc_delta_proportion}}

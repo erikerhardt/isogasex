@@ -7,10 +7,14 @@
 read_Licor(Licor_fn, Licor_TDL_time_offset_seconds, sw)
 }
 \arguments{
-\item{sw}{}
+\item{Licor_fn}{xxxPARAMxxx}
+
+\item{Licor_TDL_time_offset_seconds}{xxxPARAMxxx}
+
+\item{sw}{xxxPARAMxxx}
 }
 \value{
-Licor
+Licor xxxRETURNxxx
 }
 \description{
 See \code{\link{val_TDL_Licor_variables}} for expected column names.

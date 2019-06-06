@@ -2,13 +2,12 @@
 #'
 #' Write all observed and calculated values for all time points.
 #'
-#' @param val
-#' @param TDL_cycle
-#' @param output_all_Calc_fn
+#' @param val xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param output_all_Calc_fn xxxPARAMxxx
 #'
-#' @return val$write
+#' @return val$write xxxRETURNxxx
 #'
-#' @examples
 write_all_Calc_file <-
 function# write_output section
 ### Write all observed and calculated values for all time points.

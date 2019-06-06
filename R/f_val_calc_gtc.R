@@ -2,12 +2,11 @@
 #'
 #' \deqn{gtc = 1 / ((1 / gbc) + (1 / gsc))}
 #'
-#' @param gbc
-#' @param gsc
+#' @param gbc xxxPARAMxxx
+#' @param gsc xxxPARAMxxx
 #'
-#' @return gtc
+#' @return gtc xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_gtc <-
 function# gtc, total (stomatal and boundary layer) conductance for CO2
 ###

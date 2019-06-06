@@ -2,13 +2,12 @@
 #'
 #' Write TDL summary values for all time points.
 #'
-#' @param val
-#' @param TDL_cycle
-#' @param output_summary_TDL_fn
+#' @param val xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param output_summary_TDL_fn xxxPARAMxxx
 #'
-#' @return val$write
+#' @return val$write xxxRETURNxxx
 #'
-#' @examples
 write_summary_TDL_file <-
 function# write_output section: TDL file
 ### Write TDL summary values for all time points.

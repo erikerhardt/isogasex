@@ -7,10 +7,20 @@
 f_val_calc_Delta_i_simple_for_gm(a, b, a_b, pa, ps, pi)
 }
 \arguments{
-\item{pi}{}
+\item{a}{xxxPARAMxxx}
+
+\item{b}{xxxPARAMxxx}
+
+\item{a_b}{xxxPARAMxxx}
+
+\item{pa}{xxxPARAMxxx}
+
+\item{ps}{xxxPARAMxxx}
+
+\item{pi}{xxxPARAMxxx}
 }
 \value{
-Delta_i_simple_for_gm
+Delta_i_simple_for_gm xxxRETURNxxx
 }
 \description{
 \deqn{Delta_i_simple_for_gm = a_b * ((pa - ps) / pa) + a*((ps - pi) / pa) + b * (pi / pa)}

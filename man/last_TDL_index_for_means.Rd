@@ -7,10 +7,12 @@
 last_TDL_index_for_means(TDL, TDL_cycle)
 }
 \arguments{
-\item{TDL_cycle}{}
+\item{TDL}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
 }
 \value{
-TDL
+TDL xxxRETURNxxx
 }
 \description{
 Rind indices just before where site change occurs.

@@ -36,17 +36,16 @@
 #'
 #' Plot Cc, ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol. \code{\link{plot_Cc_total}}
 #'
-#' @param val_TDL
-#' @param val_Licor
-#' @param val_const
-#' @param val_temp
-#' @param plot_format_list
-#' @param output_fn_prefix
-#' @param sw
+#' @param val_TDL xxxPARAMxxx
+#' @param val_Licor xxxPARAMxxx
+#' @param val_const xxxPARAMxxx
+#' @param val_temp xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_val_calc_sum <-
 function# This function plots all the calculated values
 ### most plots are not created when not using Licor file

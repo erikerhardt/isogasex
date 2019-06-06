@@ -2,21 +2,20 @@
 #'
 #' Plots the input variables.
 #'
-#' @param ref.12C
-#' @param ref.13C
-#' @param cham.12C
-#' @param cham.13C
-#' @param ref_tot
-#' @param cham_tot
-#' @param diff_tot
-#' @param xi
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param ref.12C xxxPARAMxxx
+#' @param ref.13C xxxPARAMxxx
+#' @param cham.12C xxxPARAMxxx
+#' @param cham.13C xxxPARAMxxx
+#' @param ref_tot xxxPARAMxxx
+#' @param cham_tot xxxPARAMxxx
+#' @param diff_tot xxxPARAMxxx
+#' @param xi xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_corrected_total_diff_xi <-
 function# Plot corrected 12CO2 and 13CO2, total, and difference for reference and sample
 ###

@@ -23,16 +23,15 @@
 #'
 #' Use narrower timewindow start and end times, if specified.
 #'
-#' @param TDL_time
-#' @param TDL_n
-#' @param Licor_time
-#' @param Licor_n
-#' @param val_timewindow
-#' @param sw
+#' @param TDL_time xxxPARAMxxx
+#' @param TDL_n xxxPARAMxxx
+#' @param Licor_time xxxPARAMxxx
+#' @param Licor_n xxxPARAMxxx
+#' @param val_timewindow xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return TDL_Licor_times
+#' @return TDL_Licor_times xxxRETURNxxx
 #'
-#' @examples
 align_TDL_Licor_times <-
 function# find the overlapping time window of the TDL and Licor files and return the start/end indices of each file
 ###

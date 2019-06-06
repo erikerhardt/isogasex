@@ -7,10 +7,10 @@
 progress_time(time_start)
 }
 \arguments{
-\item{time_start}{}
+\item{time_start}{xxxPARAMxxx}
 }
 \value{
-time_sofar
+time_sofar xxxRETURNxxx
 }
 \description{
 Calculate time elapsed.

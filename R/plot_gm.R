@@ -2,17 +2,16 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_Totalgm_point_simple
-#' @param chamber_12gm_point_simple
-#' @param chamber_13gm_point_simple
-#' @param chamber_Totalgm_point_complex
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_Totalgm_point_simple xxxPARAMxxx
+#' @param chamber_12gm_point_simple xxxPARAMxxx
+#' @param chamber_13gm_point_simple xxxPARAMxxx
+#' @param chamber_Totalgm_point_complex xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_gm <-
 function# Plot gm point simple and complex, internal leaf (mesophyll) conductance calculated for every D value ignoring and estimating decarboxylation effects
 ###

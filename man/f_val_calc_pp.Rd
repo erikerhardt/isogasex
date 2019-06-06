@@ -7,10 +7,12 @@
 f_val_calc_pp(Co, Press)
 }
 \arguments{
-\item{Press}{}
+\item{Co}{xxxPARAMxxx}
+
+\item{Press}{xxxPARAMxxx}
 }
 \value{
-pa
+pa xxxRETURNxxx
 }
 \description{
 \deqn{pa = (Co / 10^6) * (Press * 1000)}

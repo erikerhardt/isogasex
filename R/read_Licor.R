@@ -14,13 +14,12 @@
 #'
 #' Date (day) of run, fix Thursday (Thr to Thu) representation.
 #'
-#' @param Licor_fn
-#' @param Licor_TDL_time_offset_seconds
-#' @param sw
+#' @param Licor_fn xxxPARAMxxx
+#' @param Licor_TDL_time_offset_seconds xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return Licor
+#' @return Licor xxxRETURNxxx
 #'
-#' @examples
 read_Licor <-
 function# read_Licor file
 ###

@@ -9,7 +9,28 @@ plot_delta_Delta_p(reference_delta_e, chamber_delta_o,
   delta_13C_Resp, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{reference_delta_e}{xxxPARAMxxx}
+
+\item{chamber_delta_o}{xxxPARAMxxx}
+
+\item{chamber_reference_delta_diff_CoCe}{xxxPARAMxxx}
+
+\item{Delta_obs}{xxxPARAMxxx}
+
+\item{p}{xxxPARAMxxx}
+
+\item{delta_13C_Assim}{xxxPARAMxxx}
+
+\item{delta_13C_Resp}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

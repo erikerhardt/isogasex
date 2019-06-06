@@ -7,10 +7,20 @@
 f_val_calc_pc_using_simple_Delta_for_gm(Delta, pa, ps, a, b_gm, a_b)
 }
 \arguments{
-\item{a_b}{}
+\item{Delta}{xxxPARAMxxx}
+
+\item{pa}{xxxPARAMxxx}
+
+\item{ps}{xxxPARAMxxx}
+
+\item{a}{xxxPARAMxxx}
+
+\item{b_gm}{xxxPARAMxxx}
+
+\item{a_b}{xxxPARAMxxx}
 }
 \value{
-pc
+pc xxxRETURNxxx
 }
 \description{
 \deqn{pc = (Delta * pa - a_b * (pa - ps) - a * ps) / (b_gm - a)}

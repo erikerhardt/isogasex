@@ -2,13 +2,12 @@
 #'
 #' Multiply 1000 by \code{\link{f_val_calc_delta_proportion}}
 #'
-#' @param obs_12C
-#' @param obs_13C
-#' @param R_std
+#' @param obs_12C xxxPARAMxxx
+#' @param obs_13C xxxPARAMxxx
+#' @param R_std xxxPARAMxxx
 #'
-#' @return delta_permil
+#' @return delta_permil xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_delta_permil <-
 function# delta permil (Isotopic composition (d) per mil)
 ###

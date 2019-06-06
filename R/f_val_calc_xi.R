@@ -2,12 +2,11 @@
 #'
 #' \deqn{xi = Ce / (Ce - Co)}
 #'
-#' @param Ce
-#' @param Co
+#' @param Ce xxxPARAMxxx
+#' @param Co xxxPARAMxxx
 #'
-#' @return xi
+#' @return xi xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_xi <-
 function# xi
 ###

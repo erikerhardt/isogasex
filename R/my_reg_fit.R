@@ -2,12 +2,11 @@
 #'
 #' Calculate intercept and slope of a simple linear regression fit.
 #'
-#' @param y
-#' @param x
+#' @param y xxxPARAMxxx
+#' @param x xxxPARAMxxx
 #'
-#' @return beta_hat
+#' @return beta_hat xxxRETURNxxx
 #'
-#' @examples
 my_reg_fit <-
 function# basic SLR beta fit
 ###

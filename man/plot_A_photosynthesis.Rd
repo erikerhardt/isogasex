@@ -9,7 +9,26 @@ plot_A_photosynthesis(TDL_A_photosynthesis, TDL_12A_photosynthesis,
   Delta_from_A_ratio, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{TDL_A_photosynthesis}{xxxPARAMxxx}
+
+\item{TDL_12A_photosynthesis}{xxxPARAMxxx}
+
+\item{TDL_13A_photosynthesis}{xxxPARAMxxx}
+
+\item{Licor_A_photosynthesis}{xxxPARAMxxx}
+
+\item{Delta_from_ratios_in_out}{xxxPARAMxxx}
+
+\item{Delta_from_A_ratio}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

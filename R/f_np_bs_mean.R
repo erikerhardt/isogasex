@@ -2,15 +2,14 @@
 #'
 #' Resample from data with replacement, calculating mean of n nonparametric bootstrap resamples.
 #'
-#' @param x
-#' @param first_ind
-#' @param last_ind
-#' @param n_sam
-#' @param n
+#' @param x xxxPARAMxxx
+#' @param first_ind xxxPARAMxxx
+#' @param last_ind xxxPARAMxxx
+#' @param n_sam xxxPARAMxxx
+#' @param n xxxPARAMxxx
 #'
-#' @return x_mean
+#' @return x_mean xxxRETURNxxx
 #'
-#' @examples
 f_np_bs_mean <-
 function# calculate NP BS mean
 ###

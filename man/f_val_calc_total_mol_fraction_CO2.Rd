@@ -7,10 +7,14 @@
 f_val_calc_total_mol_fraction_CO2(obs_12C, obs_13C, fo_13C)
 }
 \arguments{
-\item{fo_13C}{}
+\item{obs_12C}{xxxPARAMxxx}
+
+\item{obs_13C}{xxxPARAMxxx}
+
+\item{fo_13C}{xxxPARAMxxx}
 }
 \value{
-total_mol_fraction_CO2
+total_mol_fraction_CO2 xxxRETURNxxx
 }
 \description{
 \deqn{total_mol_fraction_CO2 = (obs_12C + obs_13C) / (1 - fo_13C)}

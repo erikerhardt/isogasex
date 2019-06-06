@@ -5,14 +5,13 @@
 #' \deqn{Delta_from_A_ratio <- (R_cham / (TDL.13A / TDL.12A)) - 1}
 #' this quantity is not in per mil
 #'
-#' @param cham.12Co
-#' @param cham.13Co
-#' @param TDL.13A
-#' @param TDL.12A
+#' @param cham.12Co xxxPARAMxxx
+#' @param cham.13Co xxxPARAMxxx
+#' @param TDL.13A xxxPARAMxxx
+#' @param TDL.12A xxxPARAMxxx
 #'
-#' @return Delta_from_A_ratio
+#' @return Delta_from_A_ratio xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_Delta_from_A_ratio <-
 function# D from A ratio, (Ro/(13A/12A))-1, should be the same as Dobs above
 ###

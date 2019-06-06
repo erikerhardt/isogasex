@@ -7,10 +7,17 @@
 isogasex(input_fn, path = getwd())
 }
 \arguments{
-\item{path}{}
+\item{input_fn}{xxxPARAMxxx}
+
+\item{path}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
-Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals.
+Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames.
+Run \code{\link{isogasex}}.
+See output in \file{./out} directory.
 }
 \details{
 SECTION Preamble
@@ -30,7 +37,7 @@ Assign variables. \code{\link{assign_variables}}
 
 Create output directory (prefix) and update the process_info.txt.
 
-Check that template version matches version of tdllicor.
+Check that template version matches version of isogasex.
 
 Set random seed for samples.
 

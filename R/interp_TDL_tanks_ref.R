@@ -18,15 +18,14 @@
 #'
 #' Plot the interpolated values.
 #'
-#' @param TDL
-#' @param TDL_cycle
-#' @param plot_format_list
-#' @param output_fn_prefix
-#' @param sw
+#' @param TDL xxxPARAMxxx
+#' @param TDL_cycle xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return TDL
+#' @return TDL xxxRETURNxxx
 #'
-#' @examples
 interp_TDL_tanks_ref <-
 function# Interpolate TDL tank and reference values
 ###

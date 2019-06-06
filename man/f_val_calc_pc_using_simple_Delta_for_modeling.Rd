@@ -7,10 +7,16 @@
 f_val_calc_pc_using_simple_Delta_for_modeling(Delta, pa, a, b_modeling)
 }
 \arguments{
-\item{b_modeling}{}
+\item{Delta}{xxxPARAMxxx}
+
+\item{pa}{xxxPARAMxxx}
+
+\item{a}{xxxPARAMxxx}
+
+\item{b_modeling}{xxxPARAMxxx}
 }
 \value{
-pc
+pc xxxRETURNxxx
 }
 \description{
 \deqn{pc = (pa * (Delta - a)) / (b_modeling - a)}

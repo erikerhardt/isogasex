@@ -120,14 +120,13 @@
 #' Cc  (pc*10^6)/(Press*1000)  ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol. \code{\link{f_val_calc_pp}}
 #' NB: same formula as pa, but using pc instead of Co
 #'
-#' @param val_TDL
-#' @param val_Licor
-#' @param val_const
-#' @param sw
+#' @param val_TDL xxxPARAMxxx
+#' @param val_Licor xxxPARAMxxx
+#' @param val_const xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return val_temp
+#' @return val_temp xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_all_driver <-
 function# This function calls all the \code{f_val_calc.*} files
 (val_TDL

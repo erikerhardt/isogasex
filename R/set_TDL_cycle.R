@@ -2,11 +2,10 @@
 #'
 #' \code{last_n_obs.*} is the number of observations to take to be \code{seconds.*} long.
 #'
-#' @param TDL_cycle
+#' @param TDL_cycle xxxPARAMxxx
 #'
-#' @return TDL_cycle
+#' @return TDL_cycle xxxRETURNxxx
 #'
-#' @examples
 set_TDL_cycle <-
 function# TDL_cycle variables
 ###

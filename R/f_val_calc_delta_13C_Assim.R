@@ -7,12 +7,11 @@
 #'
 #' \deqn{delta_13C_Assim = (chamber_delta_o - Delta_obs) / (Delta_obs + 1)}
 #'
-#' @param chamber_delta_o
-#' @param Delta_obs
+#' @param chamber_delta_o xxxPARAMxxx
+#' @param Delta_obs xxxPARAMxxx
 #'
-#' @return delta_13C_Assim
+#' @return delta_13C_Assim xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_delta_13C_Assim <-
 function# delta13C Assimilated, isotopic composition of assimilated sugars
 ### d13CA (do-Dobs)/(Dobs+1)  isotopic composition of assimilated sugars

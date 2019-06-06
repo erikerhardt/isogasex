@@ -8,15 +8,14 @@
 #'
 #' If using Licor, copy val_bs_sum$Licor$* to val_bs$Licor$*
 #'
-#' @param val_bs_sum
-#' @param val_bs
-#' @param i_bs
-#' @param R_bootstrap
-#' @param sw
+#' @param val_bs_sum xxxPARAMxxx
+#' @param val_bs xxxPARAMxxx
+#' @param i_bs xxxPARAMxxx
+#' @param R_bootstrap xxxPARAMxxx
+#' @param sw xxxPARAMxxx
 #'
-#' @return val_bs
+#' @return val_bs xxxRETURNxxx
 #'
-#' @examples
 f_bs_save_TDL_Licor <-
 function# save BS resample of TDL and Licor means
 ###

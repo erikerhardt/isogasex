@@ -7,10 +7,12 @@
 f_val_calc_delta_13C_Assim(chamber_delta_o, Delta_obs)
 }
 \arguments{
-\item{Delta_obs}{}
+\item{chamber_delta_o}{xxxPARAMxxx}
+
+\item{Delta_obs}{xxxPARAMxxx}
 }
 \value{
-delta_13C_Assim
+delta_13C_Assim xxxRETURNxxx
 }
 \description{
 d13CA (do-Dobs)/(Dobs+1)  isotopic composition of assimilated sugars

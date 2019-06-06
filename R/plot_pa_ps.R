@@ -2,19 +2,18 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_Totalpa
-#' @param chamber_12pa
-#' @param chamber_13pa
-#' @param chamber_Totalps
-#' @param chamber_12ps
-#' @param chamber_13ps
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_Totalpa xxxPARAMxxx
+#' @param chamber_12pa xxxPARAMxxx
+#' @param chamber_13pa xxxPARAMxxx
+#' @param chamber_Totalps xxxPARAMxxx
+#' @param chamber_12ps xxxPARAMxxx
+#' @param chamber_13ps xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_pa_ps <-
 function# Plot Pa Ps, partial pressure of CO2 above the leaf and at the leaf surface
 ###

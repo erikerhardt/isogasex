@@ -7,10 +7,14 @@
 write_CI_TDL_file(val, TDL_cycle, output_CI_TDL_fn)
 }
 \arguments{
-\item{output_CI_TDL_fn}{}
+\item{val}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{output_CI_TDL_fn}{xxxPARAMxxx}
 }
 \value{
-val$write
+val$write xxxRETURNxxx
 }
 \description{
 Write observed TDL values with BS CIs for all time points.

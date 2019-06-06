@@ -28,14 +28,13 @@
 #'
 #' End:
 #'
-#' @param filename_prefix
-#' @param plot_filename
-#' @param plot_mode
-#' @param plot_format
+#' @param filename_prefix xxxPARAMxxx
+#' @param plot_filename xxxPARAMxxx
+#' @param plot_mode xxxPARAMxxx
+#' @param plot_format xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 s_plot_settings_begin_end <-
 function# Plot settings for all plots
 ###

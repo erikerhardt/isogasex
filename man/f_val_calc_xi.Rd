@@ -7,10 +7,12 @@
 f_val_calc_xi(Ce, Co)
 }
 \arguments{
-\item{Co}{}
+\item{Ce}{xxxPARAMxxx}
+
+\item{Co}{xxxPARAMxxx}
 }
 \value{
-xi
+xi xxxRETURNxxx
 }
 \description{
 \deqn{xi = Ce / (Ce - Co)}

@@ -6,13 +6,12 @@
 #' \deqn{delta_proportion <- (R_obs / R_std) - 1}
 #' this quantity is not in per mil
 #'
-#' @param obs_12C
-#' @param obs_13C
-#' @param R_std
+#' @param obs_12C xxxPARAMxxx
+#' @param obs_13C xxxPARAMxxx
+#' @param R_std xxxPARAMxxx
 #'
-#' @return delta_proportion
+#' @return delta_proportion xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_delta_proportion <-
 function# delta as proportion (Isotopic composition (d) as fraction)
 ###   I prefer using the fraction for calculations and then converting to composition at the end

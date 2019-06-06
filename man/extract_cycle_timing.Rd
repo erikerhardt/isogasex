@@ -7,7 +7,14 @@
 extract_cycle_timing(TDL, TDL_cycle, TDL_site_timing_filename)
 }
 \arguments{
-\item{TDL_site_timing_filename}{}
+\item{TDL}{xxxPARAMxxx}
+
+\item{TDL_cycle}{xxxPARAMxxx}
+
+\item{TDL_site_timing_filename}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Write cycle timing to the timing file.

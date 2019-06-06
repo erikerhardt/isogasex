@@ -8,7 +8,26 @@ plot_Ca_Cs(chamber_TotalCa, chamber_12Ca, chamber_13Ca, chamber_TotalCs,
   chamber_12Cs, chamber_13Cs, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_TotalCa}{xxxPARAMxxx}
+
+\item{chamber_12Ca}{xxxPARAMxxx}
+
+\item{chamber_13Ca}{xxxPARAMxxx}
+
+\item{chamber_TotalCs}{xxxPARAMxxx}
+
+\item{chamber_12Cs}{xxxPARAMxxx}
+
+\item{chamber_13Cs}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

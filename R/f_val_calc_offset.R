@@ -2,16 +2,15 @@
 #'
 #' \deqn{offset = true_value_hi - (gain * cal.tank_hi)}
 #'
-#' @param true_value_hi_12C
-#' @param true_value_hi_13C
-#' @param gain_12C
-#' @param gain_13C
-#' @param cal_tank_hi_12C
-#' @param cal_tank_hi_13C
+#' @param true_value_hi_12C xxxPARAMxxx
+#' @param true_value_hi_13C xxxPARAMxxx
+#' @param gain_12C xxxPARAMxxx
+#' @param gain_13C xxxPARAMxxx
+#' @param cal_tank_hi_12C xxxPARAMxxx
+#' @param cal_tank_hi_13C xxxPARAMxxx
 #'
 #' @return offset for 12C and 13C
 #'
-#' @examples
 f_val_calc_offset <-
 function# offset (12C Offset, 13C Offset) using hi tank
 ###

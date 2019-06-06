@@ -8,7 +8,16 @@ f_plot_CI_individuals_driver(val, R_bootstrap, plot_format_list,
   output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{val}{xxxPARAMxxx}
+
+\item{R_bootstrap}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 For every variable, creates plots using \code{\link{f_plot_CI_individuals}}.

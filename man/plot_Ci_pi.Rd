@@ -8,7 +8,26 @@ plot_Ci_pi(chamber_TotalCi, chamber_12Ci, chamber_13Ci, chamber_Totalpi,
   chamber_12pi, chamber_13pi, x_time, plot_format_list, output_fn_prefix)
 }
 \arguments{
-\item{output_fn_prefix}{}
+\item{chamber_TotalCi}{xxxPARAMxxx}
+
+\item{chamber_12Ci}{xxxPARAMxxx}
+
+\item{chamber_13Ci}{xxxPARAMxxx}
+
+\item{chamber_Totalpi}{xxxPARAMxxx}
+
+\item{chamber_12pi}{xxxPARAMxxx}
+
+\item{chamber_13pi}{xxxPARAMxxx}
+
+\item{x_time}{xxxPARAMxxx}
+
+\item{plot_format_list}{xxxPARAMxxx}
+
+\item{output_fn_prefix}{xxxPARAMxxx}
+}
+\value{
+NULL xxxRETURNxxx
 }
 \description{
 Plots the input variables.

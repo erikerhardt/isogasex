@@ -2,13 +2,12 @@
 #'
 #' Move current value of \code{val_calc_bs_temp} into \code{bs$*} after checked with \code{\link{f_val_bs_matrix_check}}.
 #'
-#' @param bs
-#' @param val_calc_bs_temp
-#' @param i_bs
+#' @param bs xxxPARAMxxx
+#' @param val_calc_bs_temp xxxPARAMxxx
+#' @param i_bs xxxPARAMxxx
 #'
-#' @return bs
+#' @return bs xxxRETURNxxx
 #'
-#' @examples
 f_val_bs_matrix <-
 function# update values for each bs iterate
 ###

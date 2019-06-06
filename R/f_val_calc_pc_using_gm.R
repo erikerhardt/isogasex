@@ -2,13 +2,12 @@
 #'
 #' \deqn{pc = pi - (A / gm)}
 #'
-#' @param pi
-#' @param A
-#' @param gm
+#' @param pi xxxPARAMxxx
+#' @param A xxxPARAMxxx
+#' @param gm xxxPARAMxxx
 #'
-#' @return pc
+#' @return pc xxxRETURNxxx
 #'
-#' @examples
 f_val_calc_pc_using_gm <-
 function# pc using gm,  total partial pressure of CO2 at the site of carboxylation, Press is the atmospheric pressure value from the LI6400
 ###

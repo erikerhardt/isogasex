@@ -2,19 +2,18 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_Totalgbc
-#' @param chamber_13gbc
-#' @param chamber_Totalgsc
-#' @param chamber_13gsc
-#' @param chamber_Totalgtc
-#' @param chamber_13gtc
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_Totalgbc xxxPARAMxxx
+#' @param chamber_13gbc xxxPARAMxxx
+#' @param chamber_Totalgsc xxxPARAMxxx
+#' @param chamber_13gsc xxxPARAMxxx
+#' @param chamber_Totalgtc xxxPARAMxxx
+#' @param chamber_13gtc xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_gbc_gsc_gtc <-
 function# Plot gbc, gsc, gtc: boundary layer, stomatal, and total conductance for CO2
 ###

@@ -7,10 +7,16 @@
 f_val_calc_TDL_A_photosynthesis(flow, Ce, Co, leaf_area)
 }
 \arguments{
-\item{leaf_area}{}
+\item{flow}{xxxPARAMxxx}
+
+\item{Ce}{xxxPARAMxxx}
+
+\item{Co}{xxxPARAMxxx}
+
+\item{leaf_area}{xxxPARAMxxx}
 }
 \value{
-A
+A xxxRETURNxxx
 }
 \description{
 \deqn{A = (flow / 10^6) * (Ce - Co) / (leaf_area / 10^4)}

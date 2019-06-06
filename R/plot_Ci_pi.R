@@ -2,19 +2,18 @@
 #'
 #' Plots the input variables.
 #'
-#' @param chamber_TotalCi
-#' @param chamber_12Ci
-#' @param chamber_13Ci
-#' @param chamber_Totalpi
-#' @param chamber_12pi
-#' @param chamber_13pi
-#' @param x_time
-#' @param plot_format_list
-#' @param output_fn_prefix
+#' @param chamber_TotalCi xxxPARAMxxx
+#' @param chamber_12Ci xxxPARAMxxx
+#' @param chamber_13Ci xxxPARAMxxx
+#' @param chamber_Totalpi xxxPARAMxxx
+#' @param chamber_12pi xxxPARAMxxx
+#' @param chamber_13pi xxxPARAMxxx
+#' @param x_time xxxPARAMxxx
+#' @param plot_format_list xxxPARAMxxx
+#' @param output_fn_prefix xxxPARAMxxx
 #'
-#' @return NULL
+#' @return NULL xxxRETURNxxx
 #'
-#' @examples
 plot_Ci_pi <-
 function# Plot Ci, pi, CO2 concentration and partial pressure of CO2 in the substomatal cavities
 ###

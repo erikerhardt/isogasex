@@ -2,12 +2,11 @@
 #'
 #' Read Excel template with \code{gdata} \code{read.xls} using perl.
 #'
-#' @param filename
+#' @param filename xxxPARAMxxx
 #'
-#' @return DATA
+#' @return DATA xxxRETURNxxx
 #' @importFrom readxl read_xls
 #'
-#' @examples
 get_data <-
 function# Get data from Excel spreadsheet
 ###
