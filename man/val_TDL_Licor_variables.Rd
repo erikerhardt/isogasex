@@ -31,7 +31,7 @@ Any columns with headers not listed here will not be used.
 
 EXPECTED column names for Licor:
 \preformatted{
-(in tdllicor)     (column from Licor)
+(in isogasex)     (column from Licor)
 Obs               Obs
 HHMMSS            HHMMSS
 FTime             FTime
@@ -76,7 +76,7 @@ TChamAir          TChamAir
 
 EXPECTED column names for TDL:
 \preformatted{
-(in tdllicor)       (column from TDL)
+(in isogasex)       (column from TDL)
 TIMESTAMP           TIMESTAMP
 RECORD              RECORD
 PrevSite            PrevSite

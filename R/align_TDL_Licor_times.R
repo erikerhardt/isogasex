@@ -79,14 +79,14 @@ function# find the overlapping time window of the TDL and Licor files and return
             TDL_run_time_first,
             " to ",
             TDL_run_time_last,
-            "\n"); wWw <- write_out(p_o);
+            "\n"); write_out(p_o);
   }
   if(sw$use_Licor) {
     p_o <- paste("            Licor first and last run times are ",
             Licor_run_time_first,
             " to ",
             Licor_run_time_last,
-            "\n"); wWw <- write_out(p_o);
+            "\n"); write_out(p_o);
   }
 
   ##details<<
@@ -100,10 +100,10 @@ function# find the overlapping time window of the TDL and Licor files and return
             if(!is.na(time_window_first)) {time_window_first} else {"_BEGIN_"} ,
             " to ",
             if(!is.na(time_window_last)) {time_window_last} else {"_END_"} ,
-            "\n"); wWw <- write_out(p_o);
+            "\n"); write_out(p_o);
   if (!is.na(time_window_first) & !is.na(time_window_last)) {
     if ( time_window_first >= time_window_last ) {
-      p_o <- paste("ERROR -- ERROR -- Time Window start time is after end time \n"); wWw <- write_out(p_o);
+      p_o <- paste("ERROR -- ERROR -- Time Window start time is after end time \n"); write_out(p_o);
       return (NULL);
     }
   }
@@ -144,17 +144,17 @@ function# find the overlapping time window of the TDL and Licor files and return
     # p_o <- paste("            First matching time TDL=",
     #         TDL_time[temp_TDL_time_ind_first],
     #         ",  Licor=",
-    #         Licor_time[temp_Licor_time_ind_first], "\n"); wWw <- write_out(p_o);
+    #         Licor_time[temp_Licor_time_ind_first], "\n"); write_out(p_o);
     # p_o <- paste("            Last  matching time TDL=",
     #         TDL_time[temp_TDL_time_ind_last],
     #         ",  Licor=",
-    #         Licor_time[temp_Licor_time_ind_last], "\n"); wWw <- write_out(p_o);
+    #         Licor_time[temp_Licor_time_ind_last], "\n"); write_out(p_o);
 
   }
 
   if (sw$use_TDL) {
     if (sum(!is.na(TDL_time_window))==0) {
-      p_o <- paste("ERROR -- ERROR -- no TDL   times overlapping with Licor and time window \n"); wWw <- write_out(p_o);
+      p_o <- paste("ERROR -- ERROR -- no TDL   times overlapping with Licor and time window \n"); write_out(p_o);
       return (NULL);
     } else {
       TDL_time_window_first <- min(TDL_time_window,na.rm=TRUE);
@@ -163,7 +163,7 @@ function# find the overlapping time window of the TDL and Licor files and return
   }
   if (sw$use_Licor) {
     if (sum(!is.na(Licor_time_window))==0) {
-      p_o <- paste("ERROR -- ERROR -- no Licor times overlapping with TDL   and time window \n"); wWw <- write_out(p_o);
+      p_o <- paste("ERROR -- ERROR -- no Licor times overlapping with TDL   and time window \n"); write_out(p_o);
       return (NULL);
     } else {
       Licor_time_window_first <- min(Licor_time_window,na.rm=TRUE);
@@ -178,13 +178,13 @@ function# find the overlapping time window of the TDL and Licor files and return
       p_o <- paste("WARNING: first time window times don't match, are - ",
               "TDL:", TDL_time_window_first,
               ", Licor:", Licor_time_window_first,
-              "\n"); wWw <- write_out(p_o);
+              "\n"); write_out(p_o);
     }
     if (!(TDL_time_window_last == Licor_time_window_last)) {
       p_o <- paste("WARNING: last  time window times don't match, are - ",
               "TDL:", TDL_time_window_last,
               ", Licor:", Licor_time_window_last,
-              "\n"); wWw <- write_out(p_o);
+              "\n"); write_out(p_o);
     }
   }
 
@@ -197,7 +197,7 @@ function# find the overlapping time window of the TDL and Licor files and return
             "index ", TDL_time_ind_first, " time ", TDL_time_window_first,
             " to ",
             "index ", TDL_time_ind_last, " time ", TDL_time_window_last,
-            "\n"); wWw <- write_out(p_o);
+            "\n"); write_out(p_o);
   } else {
     TDL_time_ind_first   <- NA;
     TDL_time_ind_last    <- NA;
@@ -209,7 +209,7 @@ function# find the overlapping time window of the TDL and Licor files and return
             "index ", Licor_time_ind_first, " time ", Licor_time_window_first,
             " to ",
             "index ", Licor_time_ind_last, " time ", Licor_time_window_last,
-            "\n"); wWw <- write_out(p_o);
+            "\n"); write_out(p_o);
   } else {
     Licor_time_ind_first   <- NA;
     Licor_time_ind_last    <- NA;
@@ -218,7 +218,7 @@ function# find the overlapping time window of the TDL and Licor files and return
   if (sw$use_TDL & sw$use_Licor) {
     TDL_time_points   <- TDL_time_ind_last   - TDL_time_ind_first  ;
     Licor_time_points <- Licor_time_ind_last - Licor_time_ind_first;
-    p_o <- paste("            On average there are roughly", format(TDL_time_points/Licor_time_points, digits=4), "TDL timepoints per Licor timepoint.", "\n"); wWw <- write_out(p_o);
+    p_o <- paste("            On average there are roughly", format(TDL_time_points/Licor_time_points, digits=4), "TDL timepoints per Licor timepoint.", "\n"); write_out(p_o);
   } # if TDL & Licor
 
   # Time overlap 9/8/2011
@@ -235,7 +235,7 @@ function# find the overlapping time window of the TDL and Licor files and return
       , if(sw$use_Licor)                    {as.POSIXct(Licor_time_window_last)} else {NA}
     ), na.rm=TRUE);
 
-  p_o <- paste("            Time window used for analysis is: ", window_start, " to ", window_end, ".", "\n"); wWw <- write_out(p_o);
+  p_o <- paste("            Time window used for analysis is: ", window_start, " to ", window_end, ".", "\n"); write_out(p_o);
 
   ## all new code above, 10/4/2011
   ## commented code (at bottom) was removed from here on 10/4/2011
@@ -261,7 +261,7 @@ function# find the overlapping time window of the TDL and Licor files and return
   #   LinT <- Licor_time %in% TDL_time;
   #
   #   if ( (sum(TinL) == 0) || (sum(LinT) == 0) ) {
-  #     p_o <- paste("ERROR -- ERROR -- TDL and Licor times do not overlap \n"); wWw <- write_out(p_o);
+  #     p_o <- paste("ERROR -- ERROR -- TDL and Licor times do not overlap \n"); write_out(p_o);
   #     return (NULL);
   #   }
   #
@@ -275,15 +275,15 @@ function# find the overlapping time window of the TDL and Licor files and return
   #   p_o <- paste("            First matching time TDL=",
   #           TDL_time[temp_TDL_time_ind_first],
   #           ",  Licor=",
-  #           Licor_time[temp_Licor_time_ind_first], "\n"); wWw <- write_out(p_o);
+  #           Licor_time[temp_Licor_time_ind_first], "\n"); write_out(p_o);
   #   p_o <- paste("            Last  matching time TDL=",
   #           TDL_time[temp_TDL_time_ind_last],
   #           ",  Licor=",
-  #           Licor_time[temp_Licor_time_ind_last], "\n"); wWw <- write_out(p_o);
+  #           Licor_time[temp_Licor_time_ind_last], "\n"); write_out(p_o);
   #
   #   TDL_time_points   <- temp_TDL_time_ind_last   - temp_TDL_time_ind_first  ;
   #   Licor_time_points <- temp_Licor_time_ind_last - temp_Licor_time_ind_first;
-  #   p_o <- paste("            On average there are roughly", format(TDL_time_points/Licor_time_points, digits=4), "TDL timepoints per Licor timepoint.", "\n"); wWw <- write_out(p_o);
+  #   p_o <- paste("            On average there are roughly", format(TDL_time_points/Licor_time_points, digits=4), "TDL timepoints per Licor timepoint.", "\n"); write_out(p_o);
   #
   #   # # Time overlap 9/8/2011
   #   # # use timewindow start time
@@ -318,7 +318,7 @@ function# find the overlapping time window of the TDL and Licor files and return
   #   # };
   #   #
   #   # if ( window_start >= window_end ) {
-  #   #   p_o <- paste("ERROR -- ERROR -- Time Window start time is after end time \n"); wWw <- write_out(p_o);
+  #   #   p_o <- paste("ERROR -- ERROR -- Time Window start time is after end time \n"); write_out(p_o);
   #   #   return (NULL);
   #   # }
   #   #
@@ -328,7 +328,7 @@ function# find the overlapping time window of the TDL and Licor files and return
   #   # Licor_time_ind_first <- min(seq(1,Licor_n)[!is.na(Licor_time)][Licor_time[!is.na(Licor_time)] >= window_start]);
   #   # Licor_time_ind_last  <- max(seq(1,Licor_n)[!is.na(Licor_time)][Licor_time[!is.na(Licor_time)] <= window_end  ]);
   #   #
-  #   # p_o <- paste("            Time window used for analysis is: ", window_start, " to ", window_end, ".", "\n"); wWw <- write_out(p_o);
+  #   # p_o <- paste("            Time window used for analysis is: ", window_start, " to ", window_end, ".", "\n"); write_out(p_o);
   #
   # } # if TDL & Licor
   #
@@ -368,11 +368,11 @@ function# find the overlapping time window of the TDL and Licor files and return
   #   ), na.rm=TRUE);
   #
   # if ( window_start >= window_end ) {
-  #   p_o <- paste("ERROR -- ERROR -- Time Window start time is after end time \n"); wWw <- write_out(p_o);
+  #   p_o <- paste("ERROR -- ERROR -- Time Window start time is after end time \n"); write_out(p_o);
   #   return (NULL);
   # }
   #
-  # p_o <- paste("            Time window used for analysis is: ", window_start, " to ", window_end, ".", "\n"); wWw <- write_out(p_o);
+  # p_o <- paste("            Time window used for analysis is: ", window_start, " to ", window_end, ".", "\n"); write_out(p_o);
   #
   # # indices of first and last in overlap window
   # if (sw$use_TDL) { # TDL

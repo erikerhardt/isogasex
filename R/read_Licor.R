@@ -44,7 +44,7 @@ function# read_Licor file
     ####################
     ##details<<
     ## Read Licor file
-    p_o <- paste("               Reading Licor file: ", Licor_fn, "\n"); wWw <- write_out(p_o);
+    p_o <- paste("               Reading Licor file: ", Licor_fn, "\n"); write_out(p_o);
     ##details<<
     ## Find the row where the column headers and data begin.
     Licor_head_nrows = 30;  # more rows than we need to check
@@ -63,7 +63,7 @@ function# read_Licor file
     ## If any extra lines in Licor file, remove those lines and fix the Obs and HHMMSS columns.
     fix_factor <- is.factor(Licor$data[,1]);
       if(fix_factor){
-        p_o <- paste("            Note: Some junk lines in Licor file, removing those lines (may see NA warning)", "\n"); wWw <- write_out(p_o);
+        p_o <- paste("            Note: Some junk lines in Licor file, removing those lines (may see NA warning)", "\n"); write_out(p_o);
         Licor$data2 <- utils::read.delim(Licor_fn, header=TRUE, sep="", as.is=TRUE, skip=Licor_header_skip);     # any white space is delim, as.is does not convert to factors
         na_data <- is.na(as.numeric(Licor$data2[,1]));
         Licor$data <- Licor$data[!na_data,]; # remove any lines that don't begin with a number -- such as lines: "Const=" -52 "Oxygen%" 2.0
@@ -111,7 +111,7 @@ function# read_Licor file
 
       Licor$time <- Licor_time_corrected;
   } else {
-    p_o <- paste("                Not using Licor file", "\n"); wWw <- write_out(p_o);
+    p_o <- paste("                Not using Licor file", "\n"); write_out(p_o);
     Licor$data <- as.list(new.env());
 
     Licor$n    <- NA;

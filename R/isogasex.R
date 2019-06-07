@@ -266,7 +266,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   if (!is.na(file.info(process_filename)$size)) {
     file.remove(process_filename);
   }; # delete old process_info file
-  wWw <- write_out(p_o_temp); # write log so far
+  write_out(p_o_temp); # write log so far
 
   ##details<<
   ## Check that template version matches version of isogasex.
@@ -317,7 +317,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
       ## _ Extract cycle timing, write to file. \code{\link{extract_cycle_timing}}
       TDL_site_timing_filename <- paste(output_fn_prefix,"_TDL_site_timing.csv",sep="");
         p_o <- paste("Extract cycle timing, write to file: ", TDL_site_timing_filename, "\n"); wWw <- write_progress(p_o, time_start);
-        p_o <- paste("  (takes a LONG time)", "\n"); wWw <- write_out(p_o);
+        p_o <- paste("  (takes a LONG time)", "\n"); write_out(p_o);
       extract_cycle_timing(TDL, TDL_cycle, TDL_site_timing_filename); # usually not run because it takes a long time
     }
 
@@ -472,10 +472,10 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
     for (i_bs in 1:R_bootstrap) {
         if (i_bs == 1 ) { time.bs.01 <- progress_time(time_start); };
         if (i_bs == 21) { time.bs.21 <- progress_time(time_start);
-                          p_o <- paste("  **  Average time per BS sample (based on first 20):", sprintf("%4.2f",(time.bs.21-time.bs.01)/20),"s \n"); wWw <- write_out(p_o);
+                          p_o <- paste("  **  Average time per BS sample (based on first 20):", sprintf("%4.2f",(time.bs.21-time.bs.01)/20),"s \n"); write_out(p_o);
         };
-        p_o <- paste(i_bs," "); wWw <- write_out(p_o);
-        if ((i_bs %% 20) == 0) {p_o <- paste("\n"); wWw <- write_out(p_o);};
+        p_o <- paste(i_bs," "); write_out(p_o);
+        if ((i_bs %% 20) == 0) {p_o <- paste("\n"); write_out(p_o);};
 
       ##details<< . \code{\link{f_bs_iter_TDL_Licor}}
       # one BS resample of TDL and Licor means
@@ -490,7 +490,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
       # update values for each bs iterate
       val$calc$bs <- f_val_bs_matrix(val$calc$bs, val_calc_bs_temp, i_bs);
     }
-      p_o <- paste("\n"); wWw <- write_out(p_o);
+      p_o <- paste("\n"); write_out(p_o);
       p_o <- paste("Bootstrap complete\n"); wWw <- write_progress(p_o, time_start);
 
     ##details<<
@@ -550,15 +550,15 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
     move_plot_files(plot_format_list);
 
   #path_prefix <- paste(path, "/", path_output_fn_prefix, sep="");
-    p_o <- paste("\n"); wWw <- write_out(p_o);
-    p_o <- paste("Note: See output directory for results:", "\n"); wWw <- write_out(p_o);
-    p_o <- paste("Output:", path_prefix, "\n"); wWw <- write_out(p_o);
+    p_o <- paste("\n"); write_out(p_o);
+    p_o <- paste("Note: See output directory for results:", "\n"); write_out(p_o);
+    p_o <- paste("Output:", path_prefix, "\n"); write_out(p_o);
 
-    p_o <- paste("\n"); wWw <- write_out(p_o);
-    #p_o <- paste("Note: If there are WARNINGS below (except existing directories), please report to Erik by", "\n"); wWw <- write_out(p_o);
-    #p_o <- paste("        sending email with full console text above copied into the email body and", "\n"); wWw <- write_out(p_o);
-    #p_o <- paste("        creating folder in dropbox folder /Sharing with Erhardt/ and copying your data and template file there.", "\n\n"); wWw <- write_out(p_o);
-    p_o <- paste("Note: If there are WARNINGS below (except existing directories), please report to Erik", "\n"); wWw <- write_out(p_o);
+    p_o <- paste("\n"); write_out(p_o);
+    #p_o <- paste("Note: If there are WARNINGS below (except existing directories), please report to Erik by", "\n"); write_out(p_o);
+    #p_o <- paste("        sending email with full console text above copied into the email body and", "\n"); write_out(p_o);
+    #p_o <- paste("        creating folder in dropbox folder /Sharing with Erhardt/ and copying your data and template file there.", "\n\n"); write_out(p_o);
+    p_o <- paste("Note: If there are WARNINGS below (except existing directories), please report to Erik", "\n"); write_out(p_o);
 
     p_o <- paste("COMPLETE\n\n"); wWw <- write_progress(p_o, time_start);
 

@@ -28,8 +28,8 @@ function# Replace NA and NAN values in TDL$data by previous value for that varia
   for (i_bad_ind in bad_ind) {
       # counting
       ii_fix_count <- ii_fix_count + 1;
-      p_o <- paste(ii_fix_count," "); wWw <- write_out(p_o);
-      if ((ii_fix_count %% 20) == 0) {p_o <- paste("\n"); wWw <- write_out(p_o);};
+      p_o <- paste(ii_fix_count," "); write_out(p_o);
+      if ((ii_fix_count %% 20) == 0) {p_o <- paste("\n"); write_out(p_o);};
 
     ##details<<
     ## Look at each field.
@@ -43,7 +43,7 @@ function# Replace NA and NAN values in TDL$data by previous value for that varia
       }
     }
   }
-  p_o <- paste("\n"); wWw <- write_out(p_o);
+  p_o <- paste("\n"); write_out(p_o);
 
   ## 3/23/2012 access TDL$data directly
   #for (i_bad_ind in bad_ind) {

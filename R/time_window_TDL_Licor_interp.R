@@ -145,12 +145,12 @@ function# keep only the overlapping time window of TDL and Licor files
 
     # 2/9/2012 2:01AM
     if (sum(is.na(TL_merge[,1]))) { # NA records in TDL file, see read_TDL.R for # Where TDL$StartSeqFlag!=0 or TDL$SeqActiveFlag==0
-      p_o <- paste("WARNING: Times in Licor that do not appear in TDL", "\n"); wWw <- write_out(p_o);
-      p_o <- paste("           (maybe an interval when TDL wasn't collecting data?)", "\n"); wWw <- write_out(p_o);
-      p_o <- paste("         removing these time points from Licor data", "\n"); wWw <- write_out(p_o);
-      p_o <- paste("         list of times:", "\n"); wWw <- write_out(p_o);
+      p_o <- paste("WARNING: Times in Licor that do not appear in TDL", "\n"); write_out(p_o);
+      p_o <- paste("           (maybe an interval when TDL wasn't collecting data?)", "\n"); write_out(p_o);
+      p_o <- paste("         removing these time points from Licor data", "\n"); write_out(p_o);
+      p_o <- paste("         list of times:", "\n"); write_out(p_o);
       Licor_ind_not_in_TDL <- as.numeric(TL_merge[is.na(TL_merge[,1]),2]);
-      p_o <- paste("           ", Licor$time[Licor_ind_not_in_TDL], "\n"); wWw <- write_out(p_o);
+      p_o <- paste("           ", Licor$time[Licor_ind_not_in_TDL], "\n"); write_out(p_o);
 
 
         # not ideal, but redo Licor data lines without these observations
@@ -162,7 +162,7 @@ function# keep only the overlapping time window of TDL and Licor files
         TL_merge            <- merge(TDL_time_merge, Licor_time_merge);      # matching TDL with Licor times
         TDL_ind_match_Licor <- TL_merge[is.finite(TL_merge[,2]),1]; # indices of TDL matching Licor times
         if (sum(is.na(TL_merge[,1]))) { # NA records in TDL file, see read_TDL.R for # Where TDL$StartSeqFlag!=0 or TDL$SeqActiveFlag==0
-          p_o <- paste("THIS WARNING SHOULD NEVER APPEAR, time_window_TDL_Licor_interp.R times1", "\n"); wWw <- write_out(p_o);
+          p_o <- paste("THIS WARNING SHOULD NEVER APPEAR, time_window_TDL_Licor_interp.R times1", "\n"); write_out(p_o);
         }
 
       #(1:length(TL_merge[,1]))[is.na(TL_merge[,1])]
