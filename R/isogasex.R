@@ -130,6 +130,8 @@
 #' @param path xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom utils capture.output sessionInfo packageDescription
+#'
 #' @export
 #'
 isogasex <-
@@ -176,6 +178,8 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   ## Display header.
   #isogasex_version  <- "0.1-23";
   #isogasex_date     <- "2014-04-08"; # yyyy-mm-dd
+
+  isogasex_version  <- utils::packageDescription("isogasex")$Version
   isogasex_template <- 4;
 
   ##details<<
@@ -200,9 +204,9 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
     p_o_temp <- rbind(p_o_temp, paste("================================================================================\n"));
     p_o_temp <- rbind(p_o_temp, paste("SESSION INFO AND PACKAGE VERSION ---- BEGIN ------------------------------------\n"));
     p_o_temp <- rbind(p_o_temp, paste("\n\n"));
-    p_o_temp <- rbind(p_o_temp, as.matrix(paste0(capture.output(sessionInfo()), "\n"), ncol=1));
+    p_o_temp <- rbind(p_o_temp, as.matrix(paste0(utils::capture.output(utils::sessionInfo()), "\n"), ncol=1));
     p_o_temp <- rbind(p_o_temp, paste("\n\n"));
-    p_o_temp <- rbind(p_o_temp, as.matrix(paste0(capture.output(packageDescription("isogasex")), "\n"), ncol=1));
+    p_o_temp <- rbind(p_o_temp, as.matrix(paste0(utils::capture.output(utils::packageDescription("isogasex")), "\n"), ncol=1));
     p_o_temp <- rbind(p_o_temp, paste("\n\n"));
     p_o_temp <- rbind(p_o_temp, paste("SESSION INFO AND PACKAGE VERSION ---- END   ------------------------------------\n"));
     p_o_temp <- rbind(p_o_temp, paste("================================================================================\n"));
@@ -300,7 +304,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
       if (length(bad_ind) > 0) {
         p_o <- paste("Printing", length(bad_ind), "lines with missing values in TDL file (a few are normal, CHECK THAT NOT TOO MANY ARE CLOSE IN TIME)\n"); wWw <- write_progress(p_o, time_start);
         TDL_missing <- TDL$data[bad_ind,];
-        p_o <- TDL_missing; wWw <- write_progress(p_o, time_start, type = "matrix");
+        p_o <- TDL_missing; wWw <- write_progress(p_o, time_start, type_print = "matrix");
         rm(TDL_missing);
         p_o <- paste("  Note: Replacing bad TDL values in ", length(bad_ind), "lines with previous value in the file\n"); wWw <- write_progress(p_o, time_start);
         TDL <- fix_missing_TDL_values(TDL, bad_ind);
@@ -536,7 +540,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   if (sw$save_RData) {
       R_workspace_fn <- paste(output_fn_prefix,".RData",sep="");
       p_o <- paste("Saving R workspace:", R_workspace_fn, "\n"); wWw <- write_progress(p_o, time_start);
-    save(list = ls(all=TRUE), file = R_workspace_fn, version = NULL, ascii = FALSE, compress = TRUE, compression_level=9) #, safe = TRUE)
+    save(list = ls(all.names = TRUE), file = R_workspace_fn, version = NULL, ascii = FALSE, compress = TRUE, compression_level=9) #, safe = TRUE)
   }
 
   ##details<<

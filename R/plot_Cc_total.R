@@ -10,6 +10,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_Cc_total <-
 function# Plot Cc, ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol
@@ -36,7 +37,7 @@ function# Plot Cc, ppm CO2 concentration at the site of carboxylation, generally
     plot_filename <- "plot_Cc_ppm_CO2_concentration";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(3,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(3,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, chamber_TotalCc, pch=20, type="l", ylab="", main="Total Cc, ppm CO2 concentration at the site of carboxylation");
     plot_not_na(x_time, chamber_12Cc   , pch=20, type="l", ylab="", main="12 Cc, ppm CO2 concentration at the site of carboxylation");
     plot_not_na(x_time, chamber_13Cc   , pch=20, type="l", ylab="", main="13 Cc, ppm CO2 concentration at the site of carboxylation");

@@ -11,6 +11,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_gain_offset <-
 function# Plot active gains, offsets, and corrected magnitudes
@@ -45,7 +46,7 @@ function# Plot active gains, offsets, and corrected magnitudes
     plot_filename <- "plot_gain_offset";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, gain_12C,   pch=20, type="l", ylab="ppm", main="gain 12CO2");
     plot_not_na(x_time, gain_13C,   pch=20, type="l", ylab="ppm", main="gain 13CO2");
     plot_not_na(x_time, offset_12C, pch=20, type="l", ylab="ppm", main="offset 12CO2");

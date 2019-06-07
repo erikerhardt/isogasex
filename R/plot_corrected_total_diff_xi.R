@@ -15,6 +15,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_corrected_total_diff_xi <-
 function# Plot corrected 12CO2 and 13CO2, total, and difference for reference and sample
@@ -51,7 +52,7 @@ function# Plot corrected 12CO2 and 13CO2, total, and difference for reference an
     plot_filename <- "plot_corrected_total_diff";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(4,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(4,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, ref.12C , pch=20, type="l", ylab="ppm", main="reference 12CO2");
     plot_not_na(x_time, cham.12C, pch=20, type="l", ylab="ppm", main="chamber 12CO2");
     plot_not_na(x_time, ref.13C , pch=20, type="l", ylab="ppm", main="reference 13CO2");

@@ -19,6 +19,7 @@
 #' @param sw xxxPARAMxxx
 #'
 #' @return Licor xxxRETURNxxx
+#' @importFrom utils read.delim
 #'
 read_Licor <-
 function# read_Licor file
@@ -47,7 +48,7 @@ function# read_Licor file
     ##details<<
     ## Find the row where the column headers and data begin.
     Licor_head_nrows = 30;  # more rows than we need to check
-    Licor_head <- read.delim(Licor_fn, header=FALSE, sep="\n", nrows=Licor_head_nrows);
+    Licor_head <- utils::read.delim(Licor_fn, header=FALSE, sep="\n", nrows=Licor_head_nrows);
     ##details<<
     ## Look for "Obs" as the first row (used to look for $STARTOFDATA$, but not in every version of Licor file).
     #Licor_header_skip = seq(1,Licor_head_nrows)[(Licor_head == "$STARTOFDATA$")];
@@ -63,7 +64,7 @@ function# read_Licor file
     fix_factor <- is.factor(Licor$data[,1]);
       if(fix_factor){
         p_o <- paste("            Note: Some junk lines in Licor file, removing those lines (may see NA warning)", "\n"); wWw <- write_out(p_o);
-        Licor$data2 <- read.delim(Licor_fn, header=TRUE, sep="", as.is=TRUE, skip=Licor_header_skip);     # any white space is delim, as.is does not convert to factors
+        Licor$data2 <- utils::read.delim(Licor_fn, header=TRUE, sep="", as.is=TRUE, skip=Licor_header_skip);     # any white space is delim, as.is does not convert to factors
         na_data <- is.na(as.numeric(Licor$data2[,1]));
         Licor$data <- Licor$data[!na_data,]; # remove any lines that don't begin with a number -- such as lines: "Const=" -52 "Oxygen%" 2.0
         Licor$data[,"Obs"   ] <- as.numeric(Licor$data2[!na_data,"Obs"   ]); # fix the affected columns

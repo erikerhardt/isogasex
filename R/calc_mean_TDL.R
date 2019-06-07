@@ -8,6 +8,7 @@
 #' @param TDL_cycle xxxPARAMxxx
 #'
 #' @return TDL xxxRETURNxxx
+#' @importFrom stats sd var
 #'
 calc_mean_TDL <-
 function# Calculate the mean and variance for the TDL/Licor data based on last measurements
@@ -75,8 +76,8 @@ function# Calculate the mean and variance for the TDL/Licor data based on last m
     rows_temp <- i_ind_first:i_ind_last;
     if (length(rows_temp) > 1) {
       TDL$summary$mean  [i_list,] <- apply( TDL$data  [rows_temp, TDL_var_names]  , MARGIN=2, mean, na.rm = TRUE); # mean, ignoring NA's
-      TDL$summary$var   [i_list,] <- apply( TDL$data  [rows_temp, TDL_var_names]  , MARGIN=2, var , na.rm = TRUE); # var , ignoring NA's
-      TDL$summary$sd    [i_list,] <- apply( TDL$data  [rows_temp, TDL_var_names]  , MARGIN=2, sd  , na.rm = TRUE); # sd  , ignoring NA's
+      TDL$summary$var   [i_list,] <- apply( TDL$data  [rows_temp, TDL_var_names]  , MARGIN=2, stats::var , na.rm = TRUE); # var , ignoring NA's
+      TDL$summary$sd    [i_list,] <- apply( TDL$data  [rows_temp, TDL_var_names]  , MARGIN=2, stats::sd  , na.rm = TRUE); # sd  , ignoring NA's
     } else { # if only 1 observation, don't use apply "0.1-16" "2012-07-10"
       TDL$summary$mean  [i_list,] <- as.matrix(TDL$data  [rows_temp, TDL_var_names]); # mean
       # var and sd are initialized at 0

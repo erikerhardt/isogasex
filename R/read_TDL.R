@@ -18,6 +18,7 @@
 #' @param sw xxxPARAMxxx
 #'
 #' @return TDL xxxRETURNxxx
+#' @importFrom utils read.csv
 #'
 read_TDL <-
 function# read_TDL file
@@ -40,9 +41,9 @@ function# read_TDL file
     ##details<<
     ## Read TDL file
     p_o <- paste("               Reading TDL   file: ", TDL_fn, "\n"); wWw <- write_out(p_o);
-    TDL$program_name <- read.csv(TDL_fn, header=FALSE, nrows=1)[6]; # program name from header
-    TDL$header_names <- read.csv(TDL_fn, header=FALSE, nrows=1, skip=1); # column headers names
-    TDL$data <- read.csv(TDL_fn, header=FALSE, skip=4, na.strings=c("\"NaN\"","NaN","\"NAN\"","NAN"));
+    TDL$program_name <- utils::read.csv(TDL_fn, header=FALSE, nrows=1)[6]; # program name from header
+    TDL$header_names <- utils::read.csv(TDL_fn, header=FALSE, nrows=1, skip=1); # column headers names
+    TDL$data         <- utils::read.csv(TDL_fn, header=FALSE, skip=4, na.strings=c("\"NaN\"","NaN","\"NAN\"","NAN"));
     colnames(TDL$data) <- t(TDL$header_names); # assign column header names
 
        # 10 Hz data from TDL: TOA5_2257.RawData_2009_08_18_0956.dat

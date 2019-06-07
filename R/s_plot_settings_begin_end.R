@@ -34,6 +34,9 @@
 #' @param plot_format xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
+#' @importFrom grDevices dev.new dev.off postscript pdf bmp jpeg tiff
+#' @importFrom grDevices X11 windows
 #'
 s_plot_settings_begin_end <-
 function# Plot settings for all plots
@@ -168,14 +171,15 @@ function# Plot settings for all plots
     ##details<<
     ## to interactive display
     if (plot_format == 0) {
-      if (OS == "unix") { X11(); }
-      if (OS == "windows") { windows(); }
+      #if (OS == "unix") { X11(); }
+      #if (OS == "windows") { windows(); }
+      dev.new()
     }
 
     ##details<<
     ## png is default output since quick display on web and used to convert to other raster formats
     if (plot_format == 1) {
-      png       (filename   = PLOT_SETTINGS$file_png
+      grDevices::png       (filename   = PLOT_SETTINGS$file_png
                , width      = PLOT_SETTINGS$width_px
                , height     = PLOT_SETTINGS$height_px
       #         , res        = PLOT_SETTINGS$resolution
@@ -185,7 +189,7 @@ function# Plot settings for all plots
     ##details<<
     ## ps
     if (plot_format == 2) {
-      postscript(file       = PLOT_SETTINGS$file_eps   ,
+      grDevices::postscript(file       = PLOT_SETTINGS$file_eps   ,
                  onefile    = PLOT_SETTINGS$onefile    ,
       #           family     = PLOT_SETTINGS$family     ,
       #           encoding   = PLOT_SETTINGS$encoding   ,
@@ -201,7 +205,7 @@ function# Plot settings for all plots
     ##details<<
     ## pdf
     if (plot_format == 3) {
-      pdf       (file       = PLOT_SETTINGS$file_pdf   ,
+      grDevices::pdf       (file       = PLOT_SETTINGS$file_pdf   ,
                  onefile    = PLOT_SETTINGS$onefile    ,
                  #family     = PLOT_SETTINGS$family     ,
                  #encoding   = PLOT_SETTINGS$encoding   ,
@@ -217,7 +221,7 @@ function# Plot settings for all plots
     ##details<<
     ## bmp
     if (plot_format == 4) {
-      bmp       (filename   = PLOT_SETTINGS$file_bmp
+      grDevices::bmp       (filename   = PLOT_SETTINGS$file_bmp
                , width      = PLOT_SETTINGS$width_px
                , height     = PLOT_SETTINGS$height_px
       #         , res        = PLOT_SETTINGS$resolution
@@ -231,7 +235,7 @@ function# Plot settings for all plots
     ##details<<
     ## jpeg
     if (plot_format == 5) {
-      jpeg      (filename   = PLOT_SETTINGS$file_jpeg
+      grDevices::jpeg      (filename   = PLOT_SETTINGS$file_jpeg
                , width      = PLOT_SETTINGS$width_px
                , height     = PLOT_SETTINGS$height_px
                , quality    = PLOT_SETTINGS$quality_jpeg
@@ -249,7 +253,7 @@ function# Plot settings for all plots
     ##details<<
     ## tiff
     if (plot_format == 6) {
-      tiff      (filename    = PLOT_SETTINGS$file_tiff
+      grDevices::tiff      (filename    = PLOT_SETTINGS$file_tiff
                , width       = PLOT_SETTINGS$width_px
                , height      = PLOT_SETTINGS$height_px
                , compression = PLOT_SETTINGS$compress_tiff
@@ -263,7 +267,7 @@ function# Plot settings for all plots
 
     ##details<<
     ## par settings
-    par(oma = PLOT_SETTINGS$par_oma,
+    graphics::par(oma = PLOT_SETTINGS$par_oma,
         mar = PLOT_SETTINGS$par_mar,
       mfrow = PLOT_SETTINGS$par_mfrow,
          bg = PLOT_SETTINGS$par_bg,
@@ -276,7 +280,7 @@ function# Plot settings for all plots
   ## End:
   if (plot_mode == "end")
   {
-    if (plot_format != 0) { dev.off(); };
+    if (plot_format != 0) { grDevices::dev.off(); };
     #graphics.off(); # don't use
   } # end
 

@@ -13,6 +13,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_A_photosynthesis <-
 function# Plot A photosynthesis
@@ -45,7 +46,7 @@ function# Plot A photosynthesis
     plot_filename <- "plot_A_photosynthesis";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, Licor_A_photosynthesis  , pch=20, type="l", ylab="", main="A, Licor photosynthesis");
     plot_not_na(x_time, TDL_A_photosynthesis    , pch=20, type="l", ylab="", main="A, TDL photosynthesis");
     plot_not_na(x_time, TDL_12A_photosynthesis  , pch=20, type="l", ylab="", main="12A, TDL photosynthesis");

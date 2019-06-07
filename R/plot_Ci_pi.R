@@ -13,6 +13,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_Ci_pi <-
 function# Plot Ci, pi, CO2 concentration and partial pressure of CO2 in the substomatal cavities
@@ -45,7 +46,7 @@ function# Plot Ci, pi, CO2 concentration and partial pressure of CO2 in the subs
     plot_filename <- "plot_Ci_pi_partial_pressure_of_CO2";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, chamber_TotalCi, pch=20, type="l", ylab="", main="Total Ci, ppm CO2 concentration in the sub-stomatal cavities");
     plot_not_na(x_time, chamber_Totalpi, pch=20, type="l", ylab="", main="Total pi, partial pressure of CO2 in the substomatal cavities");
     plot_not_na(x_time, chamber_12Ci   , pch=20, type="l", ylab="", main="12 Ci, ppm CO2 concentration in the sub-stomatal cavities");

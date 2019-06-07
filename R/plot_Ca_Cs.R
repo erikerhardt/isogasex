@@ -13,6 +13,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_Ca_Cs <-
 function# Plot Ca Cs, CO2 concentrations above the leaf and at the leaf surface
@@ -45,7 +46,7 @@ function# Plot Ca Cs, CO2 concentrations above the leaf and at the leaf surface
     plot_filename <- "plot_Ca_Cs_CO2_concentrations";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, chamber_TotalCa, pch=20, type="l", ylab="", main="Total Ca, ppm CO2 concentration above the leaf");
     plot_not_na(x_time, chamber_TotalCs, pch=20, type="l", ylab="", main="Total Cs, ppm CO2 concentration at the leaf surface");
     plot_not_na(x_time, chamber_12Ca   , pch=20, type="l", ylab="", main="12 Ca, ppm CO2 concentration above the leaf");

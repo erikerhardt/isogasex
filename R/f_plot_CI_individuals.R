@@ -13,6 +13,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 f_plot_CI_individuals <-
 function# plot all variables with bs values, mean value, and CI intervals
@@ -45,7 +46,7 @@ function# plot all variables with bs values, mean value, and CI intervals
     plot_filename <- paste("BS_CHECK_",gsub("[ $]","_",x_title), sep="");
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(1,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(1,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
 
     bs_time <- matrix(x_time, nrow=x_n, ncol=R_bootstrap); # matrix of times to plot with matrix of BS samples
     bs_y     <- x_bs;

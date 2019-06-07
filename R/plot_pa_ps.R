@@ -13,6 +13,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_pa_ps <-
 function# Plot Pa Ps, partial pressure of CO2 above the leaf and at the leaf surface
@@ -45,7 +46,7 @@ function# Plot Pa Ps, partial pressure of CO2 above the leaf and at the leaf sur
     plot_filename <- "plot_pa_ps_partial_pressure_of_CO2";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, chamber_Totalpa, pch=20, type="l", ylab="", main="Total pa, partial pressure of CO2 above the leaf");
     plot_not_na(x_time, chamber_Totalps, pch=20, type="l", ylab="", main="Total ps, partial pressure of CO2 at the leaf surface");
     plot_not_na(x_time, chamber_12pa   , pch=20, type="l", ylab="", main="12 pa, partial pressure of CO2 above the leaf");

@@ -3,6 +3,7 @@
 #' @param text_to_cat xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom utils capture.output flush.console
 #'
 write_out <-
 function# write_progress to the screen
@@ -12,8 +13,8 @@ function# write_progress to the screen
 )
 {
   cat(text_to_cat);
-  capture.output(expr = cat(text_to_cat), append=TRUE, file="process_info.txt");
-  flush.console();
+  utils::capture.output(expr = cat(text_to_cat), append=TRUE, file="process_info.txt");
+  utils::flush.console();
 
   invisible(NULL);
   ### NULL

@@ -2,7 +2,7 @@
 % Please edit documentation in R/f_val_calc_all_driver.R
 \name{f_val_calc_all_driver}
 \alias{f_val_calc_all_driver}
-\title{This function calls all the \code{f_val_calc.*} files}
+\title{This function calls all of the \code{f_val_calc.*} files}
 \usage{
 f_val_calc_all_driver(val_TDL, val_Licor, val_const, sw)
 }

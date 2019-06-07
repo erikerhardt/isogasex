@@ -1,4 +1,4 @@
-#' This function calls all the \code{f_val_calc.*} files
+#' This function calls all of the \code{f_val_calc.*} files
 #'
 #' SECTION Licor data assign variables
 #'

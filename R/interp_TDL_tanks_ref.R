@@ -25,6 +25,8 @@
 #' @param sw xxxPARAMxxx
 #'
 #' @return TDL xxxRETURNxxx
+#' @importFrom graphics par
+#' @importFrom stats smooth.spline predict
 #'
 interp_TDL_tanks_ref <-
 function# Interpolate TDL tank and reference values
@@ -69,16 +71,16 @@ function# Interpolate TDL tank and reference values
     # 12CO2
       ##details<<
       ## Cubic spline interpolation using \code{smooth.spline} with \code{nknots}=\code{df}=number of cycles for current site.
-    ssA <- smooth.spline(ind,TDL$data[ind,"ConcA"], nknots=n_sites, df=n_sites);
-    TDL$interp[,i_site*2-1] <- predict(ssA,1:TDL$n)$y;   # TDL$time
+    ssA <- stats::smooth.spline(ind,TDL$data[ind,"ConcA"], nknots=n_sites, df=n_sites);
+    TDL$interp[,i_site*2-1] <- stats::predict(ssA,1:TDL$n)$y;   # TDL$time
       ##details<<
       ## Extrapolate the first/last cal tank to the first/last time values for the run.
     TDL$interp[1:ind_first,i_site*2-1]    <- TDL$interp[ind_first,i_site*2-1];
     TDL$interp[ind_last:TDL$n,i_site*2-1] <- TDL$interp[ind_last,i_site*2-1];
 
     # 13CO2
-    ssB <- smooth.spline(ind,TDL$data[ind,"ConcB"], nknots=n_sites, df=n_sites);
-    TDL$interp[,i_site*2] <- predict(ssB,1:TDL$n)$y;   # TDL$time
+    ssB <- stats::smooth.spline(ind,TDL$data[ind,"ConcB"], nknots=n_sites, df=n_sites);
+    TDL$interp[,i_site*2] <- stats::predict(ssB,1:TDL$n)$y;   # TDL$time
       # extrapolate the first/last cal tank to the beginning/ending time values
     TDL$interp[1:ind_first,i_site*2]    <- TDL$interp[ind_first,i_site*2];
     TDL$interp[ind_last:TDL$n,i_site*2] <- TDL$interp[ind_last,i_site*2];
@@ -139,7 +141,7 @@ function# Interpolate TDL tank and reference values
     plot_filename <- "plot_TDL_interp";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     for (i_site in 1:3) {
       #n_sites <- sum(TDL$summary$site == TDL_cycle$table[i_site,1]); # set spline nknots and df to n_sites, smooth not overfit
       n_sites <- sum(TDL$last_list[,3] == TDL_cycle$table[i_site,1]); # set spline nknots and df to n_sites, smooth not overfit

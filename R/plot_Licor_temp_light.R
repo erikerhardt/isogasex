@@ -13,6 +13,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_Licor_temp_light <-
 function# Plot Licor Temp Light values
@@ -46,7 +47,7 @@ function# Plot Licor Temp Light values
     plot_filename <- "plot_Licor_temp_light";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, VPD              , pch=20, type="l", ylab="", main="VPD, Licor");
     plot_not_na(x_time, E_transpiration  , pch=20, type="l", ylab="", main="Transpiration Trmmol, Licor");
     plot_not_na(x_time, leaf_temp        , pch=20, type="l", ylab="", main="Leaf Temp, Licor");

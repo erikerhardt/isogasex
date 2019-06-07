@@ -13,6 +13,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_gbc_gsc_gtc <-
 function# Plot gbc, gsc, gtc: boundary layer, stomatal, and total conductance for CO2
@@ -45,7 +46,7 @@ function# Plot gbc, gsc, gtc: boundary layer, stomatal, and total conductance fo
     plot_filename <- "plot_gbc_gsc_gtc_conductance_for_CO2";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(3,2), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, chamber_Totalgbc, pch=20, type="l", ylab="", main="Total and 12 gbc, boundary layer conductance for CO2");
     plot_not_na(x_time, chamber_13gbc   , pch=20, type="l", ylab="", main="13 gbc, boundary layer conductance for CO2");
     plot_not_na(x_time, chamber_Totalgsc, pch=20, type="l", ylab="", main="Total and 12 gsc, stomatal conductance for CO2");

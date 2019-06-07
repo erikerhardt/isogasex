@@ -12,6 +12,7 @@
 #' @param output_fn_prefix xxxPARAMxxx
 #'
 #' @return NULL xxxRETURNxxx
+#' @importFrom graphics par
 #'
 plot_Delta_i <-
 function# Plot Delta_i, predicted discrimination
@@ -42,7 +43,7 @@ function# Plot Delta_i, predicted discrimination
     plot_filename <- "plot_Delta_i_predicted_discrimination";
     s_plot_settings_begin_end(output_fn_prefix, plot_filename, plot_mode = "begin", plot_format = i_plot);
 
-    par(mfrow=c(5,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
+    graphics::par(mfrow=c(5,1), mar=c(4,4,2,2), oma=c(1,1,1,1));  # mar allows the histograms to touch top-bottom c(bot,lef,top,rig)
     plot_not_na(x_time, chamber_Delta_i_simple_for_gm           , pch=20, type="l", ylab="", main="Delta_i simple for gm");
     plot_not_na(x_time, chamber_Delta_i_simple_for_modeling     , pch=20, type="l", ylab="", main="Delta_i simple for modeling");
     plot_not_na(x_time, chamber_Delta_i_complex_for_gm          , pch=20, type="l", ylab="", main="Delta_i complex for gm");

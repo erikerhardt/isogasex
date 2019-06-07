@@ -8,6 +8,7 @@
 #' @param TDL_cycle xxxPARAMxxx
 #'
 #' @return TDL xxxRETURNxxx
+#' @importFrom stats sd var
 #'
 calc_mean_TDL_interp_tanks_ref <-
 function# Summary values for TDL interpolated tanks and reference
@@ -31,8 +32,8 @@ function# Summary values for TDL interpolated tanks and reference
     rows_temp <- TDL$summary$first_ind[i_list]:TDL$summary$ind[i_list];
     if (length(rows_temp) > 1) {
       TDL_interp_summary_mean[i_list,] <- apply( TDL$interp[rows_temp,]  , MARGIN=2, mean, na.rm = TRUE); # mean, ignoring NA's
-      TDL_interp_summary_var [i_list,] <- apply( TDL$interp[rows_temp,]  , MARGIN=2, var , na.rm = TRUE); # var , ignoring NA's
-      TDL_interp_summary_sd  [i_list,] <- apply( TDL$interp[rows_temp,]  , MARGIN=2, sd  , na.rm = TRUE); # sd  , ignoring NA's
+      TDL_interp_summary_var [i_list,] <- apply( TDL$interp[rows_temp,]  , MARGIN=2, stats::var , na.rm = TRUE); # var , ignoring NA's
+      TDL_interp_summary_sd  [i_list,] <- apply( TDL$interp[rows_temp,]  , MARGIN=2, stats::sd  , na.rm = TRUE); # sd  , ignoring NA's
     } else { # if only 1 observation, don't use apply "0.1-16" "2012-07-10"
       TDL_interp_summary_mean[i_list,] <- as.matrix(TDL$interp[rows_temp,]); # mean
       # var and sd are initialized at 0
