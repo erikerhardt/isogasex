@@ -44,7 +44,7 @@ knitr::opts_chunk$set(
   setwd("C:/Dropbox/StatAcumen/consult/Authorship/2009_DavidHanson_Isotopes/R-package/isogasex/vignettes")
   library(knitr)
   knitr::purl(fn.this)
-  rmarkdown::render(fn.this)
+  rmarkdown::render(fn.this, encoding = "UTF-8")
 -->
 
 ```{r ch_01, echo=FALSE}
@@ -58,8 +58,8 @@ knitr::opts_chunk$set(fig.align = "center", fig.height = 4, fig.width = 6)
 \newcommand{\defin}{\bf}
 \renewcommand{\vector}{}
 \renewcommand{\matrix}{\mathbf}
-\renewcommand{\permil}{‰}
-\renewcommand{\circ}{°}
+\newcommand{\permil}{{}^\textrm{o}\mkern-5mu/\mkern-3mu_\textrm{oo}}
+\newcommand{\circ}{\textrm{o}}
 
 \newcommand{\Normal}          {\textrm{Normal}}
 \newcommand{\Wishart}         {\textrm{Wishart}}
