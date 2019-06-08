@@ -34,7 +34,7 @@ function# read_TDL file
 
   ##details<<
   ## Create \code{TDL} to hold data.
-  TDL <- as.list(new.env());  # create a list to return with data
+  TDL <- list();  # create a list to return with data
 
   if (sw$use_TDL  ) {
     ####################
@@ -107,7 +107,7 @@ function# read_TDL file
     TDL$time_org <- TDL$time; # keep all the time values available for Licor/TDL time merge
   } else {
     p_o <- paste("            Not using TDL file", "\n"); write_out(p_o);
-    TDL$data <- as.list(new.env());
+    TDL$data <- list();
 
     TDL$data$TIMESTAMP       <- NA  ;
     TDL$data$RECORD          <- NA  ;

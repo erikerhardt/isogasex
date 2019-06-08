@@ -110,7 +110,7 @@ function# Plot settings for all plots
 
 
     # list
-    PLOT_SETTINGS <- as.list(new.env());  # create a list to return with all data
+    PLOT_SETTINGS <- list();  # create a list to return with all data
 
       # filenames
     PLOT_SETTINGS$file_png      <- file_png     ;

@@ -37,7 +37,7 @@ function# read_Licor file
 
   ##details<<
   ## Create \code{Licor} to hold data.
-  Licor <- as.list(new.env());  # create a list to return with data
+  Licor <- list();  # create a list to return with data
 
   if (sw$use_Licor ) {
 
@@ -112,7 +112,7 @@ function# read_Licor file
       Licor$time <- Licor_time_corrected;
   } else {
     p_o <- paste("                Not using Licor file", "\n"); write_out(p_o);
-    Licor$data <- as.list(new.env());
+    Licor$data <- list();
 
     Licor$n    <- NA;
     Licor$time <- NA;

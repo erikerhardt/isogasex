@@ -34,7 +34,7 @@ function# Calculate the mean for the Licor data based on last measurements
 
   ##details<<
   ## create Licor$summary for numerical summaries
-  Licor$summary           <- as.list(new.env());
+  Licor$summary           <- list();
   Licor$summary$n         <- TDL$summary$n;
   Licor$summary$ind       <- TDL$summary$ind;
   Licor$summary$first_ind <- TDL$summary$first_ind;

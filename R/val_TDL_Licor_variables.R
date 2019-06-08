@@ -187,14 +187,14 @@ function# Assign TDL and Licor values to val variable names, raw and summarized 
   ##details<<
   ## Conventions, put everything in \code{val}.
   ## Observed values from TDL or Licor  prefix: \code{val$obs$*}
-  val$obs       <- as.list(new.env());
-  val$obs$TDL   <- as.list(new.env());
-  val$obs$Licor <- as.list(new.env());
+  val$obs       <- list();
+  val$obs$TDL   <- list();
+  val$obs$Licor <- list();
   ##details<<
   ## Summarized values from TDL or Licor  prefix: \code{val$sum$*}
-  val$sum       <- as.list(new.env());
-  val$sum$TDL   <- as.list(new.env());
-  val$sum$Licor <- as.list(new.env());
+  val$sum       <- list();
+  val$sum$TDL   <- list();
+  val$sum$Licor <- list();
 
   #Licor$data:
   if (sw$use_Licor) {

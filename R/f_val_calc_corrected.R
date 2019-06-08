@@ -28,7 +28,7 @@ function# corrected (Corrected 12C, Corrected 13C)
 ###
 )
 {
-  corrected <- as.list(new.env());  # create a list to return with data
+  corrected <- list();  # create a list to return with data
 
   ##details<<
   ##\deqn{corrected = (obs * gain) + offset;}

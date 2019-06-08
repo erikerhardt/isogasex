@@ -33,9 +33,9 @@ function# one BS resample of TDL and Licor means
 
   ##details<<
   ## create val_bs_sum for calculated observed values to use in NP bootstrap
-  val_bs_sum        <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
-  val_bs_sum$TDL    <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
-  val_bs_sum$Licor  <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
+  val_bs_sum        <- list(); # for calculated observed values to use in NP bootstrap
+  val_bs_sum$TDL    <- list(); # for calculated observed values to use in NP bootstrap
+  val_bs_sum$Licor  <- list(); # for calculated observed values to use in NP bootstrap
 
   ##details<<
   ## TDL using \code{\link{f_np_bs_mean}}

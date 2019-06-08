@@ -34,7 +34,7 @@ function# gain (12C Gain, 13C Gain)
 ###
 )
 {
-  gain <- as.list(new.env());  # create a list to return with data
+  gain <- list();  # create a list to return with data
 
   ##details<<
   ##\deqn{gain = (true_value_hi - true.value.lo) / (cal.tank_hi - cal.tank.lo)}

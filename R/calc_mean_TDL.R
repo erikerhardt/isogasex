@@ -39,7 +39,7 @@ function# Calculate the mean and variance for the TDL/Licor data based on last m
 
   ##details<<
   ## create TDL$summary for numerical summaries
-  TDL$summary           <- as.list(new.env());
+  TDL$summary           <- list();
   TDL$summary$n         <- dim(TDL$last_list)[1];
   TDL$summary$first_ind <- TDL$last_list[,"first_ind"];
   TDL$summary$ind       <- TDL$last_list[,"ind"];
@@ -51,7 +51,7 @@ function# Calculate the mean and variance for the TDL/Licor data based on last m
   TDL$summary$sd        <- matrix(0,nrow=TDL$summary$n,ncol=length(TDL_var_names));
 
   ## create Licor$summary for numerical summaries
-  #Licor$summary           <- as.list(new.env());
+  #Licor$summary           <- list();
   #Licor$summary$n         <- TDL$summary$n;
   #Licor$summary$ind       <- TDL$summary$ind;
   #Licor$summary$first_ind <- TDL$summary$first_ind;
@@ -94,7 +94,7 @@ function# Calculate the mean and variance for the TDL/Licor data based on last m
   TDL$data  [ind_temp_NA,] <- NA;
   #Licor$data[ind_temp_NA,] <- NA;
 
-  #TDL_summary <- as.list(new.env());  # create a list to return with data
+  #TDL_summary <- list();  # create a list to return with data
   #TDL_summary$TDL   <- TDL;
   #TDL_Licor_summary$Licor <- Licor;
   return( TDL );

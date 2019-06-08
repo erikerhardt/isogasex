@@ -144,7 +144,7 @@ function# This function calls all the \code{f_val_calc.*} files
   # val_Licor <- val$sum$Licor;
   # val_const <- val$const;
   # DEBUG DEBUG DEBUG DEBUG DEBUG
-  val_temp <- as.list(new.env()); # hold current set of calculated values below
+  val_temp <- list(); # hold current set of calculated values below
 
   #-------------------
   ##details<<

@@ -24,7 +24,7 @@ function# Get data from Excel spreadsheet
   n_sheets = 1;  # number of worksheets in Excel workbook
   #    p_o = paste("   reading ", n_sheets, "sheets: "); write_out(p_o);
 
-  #DATA = as.list(new.env());  # create a list to return with all data
+  #DATA = list();  # create a list to return with all data
   # below wasDATA$D1
 
   ## 3/23/2012 now all data read with gdata's read.xls using perl

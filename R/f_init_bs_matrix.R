@@ -18,7 +18,7 @@ function# init bs values to zero
 {
   ##details<<
   ## Create bs for calculated bootstrap values to estimate error, initializing to zeros.
-  bs  <- as.list(new.env()); # for calculated bootstrap values to estimate error
+  bs  <- list(); # for calculated bootstrap values to estimate error
   zeros <- matrix(0, nrow=n, ncol=R_bootstrap);
   bs$gain_12C                                                <- zeros;
   bs$gain_13C                                                <- zeros;

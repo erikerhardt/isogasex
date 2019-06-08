@@ -36,10 +36,10 @@ function# create CI for each calculated value
   ##details<<
   ## Create val_CI CI endpoints for $TDL, $Licor, and $calc.
 
-  val_CI              <- as.list(new.env());
-  val_CI$TDL          <- as.list(new.env());
-  val_CI$Licor        <- as.list(new.env());
-  val_CI$calc         <- as.list(new.env());
+  val_CI              <- list();
+  val_CI$TDL          <- list();
+  val_CI$Licor        <- list();
+  val_CI$calc         <- list();
 
   ##details<<
   ## Calculate quantile indices of sorted data for sig_CI.

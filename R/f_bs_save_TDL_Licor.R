@@ -40,8 +40,8 @@ function# save BS resample of TDL and Licor means
   ##details<<
   ## create val_bs$TDL and $Licor for calculated observed values to use in NP bootstrap
   if (i_bs == 1) {
-    val_bs$TDL    <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
-    val_bs$Licor  <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
+    val_bs$TDL    <- list(); # for calculated observed values to use in NP bootstrap
+    val_bs$Licor  <- list(); # for calculated observed values to use in NP bootstrap
 
     ##details<<
     ## Initialize values to zeros.

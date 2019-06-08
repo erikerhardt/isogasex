@@ -171,7 +171,7 @@ function# keep only the overlapping time window of TDL and Licor files
     ##details<<
     ## Create \code{Licor_interp} to hold interpolated Licor values at resolution of TDL observations.
 
-    Licor_interp <- as.list(new.env());  # create a list to return with data
+    Licor_interp <- list();  # create a list to return with data
     Licor_interp$data <- matrix(NA,nrow=TDL$n,ncol=dim(Licor$data)[2]);  # init matrix
     colnames(Licor_interp$data) <- colnames(Licor$data);                # assign col names
     for (i_col in 1:dim(Licor$data)[2]) {
@@ -218,7 +218,7 @@ function# keep only the overlapping time window of TDL and Licor files
 
   ##details<<
   ## Put TDL and Licor_interp together to return.
-  TDL_and_Licor_interp <- as.list(new.env());
+  TDL_and_Licor_interp <- list();
   TDL_and_Licor_interp$TDL <- TDL;
   TDL_and_Licor_interp$Licor_interp <- Licor_interp;
 

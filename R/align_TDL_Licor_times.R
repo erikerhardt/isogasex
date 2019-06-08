@@ -240,7 +240,7 @@ function# find the overlapping time window of the TDL and Licor files and return
   ## all new code above, 10/4/2011
   ## commented code (at bottom) was removed from here on 10/4/2011
 
-  TDL_Licor_times <- as.list(new.env());  # create a list to return with data
+  TDL_Licor_times <- list();  # create a list to return with data
 
   TDL_Licor_times$TDL_time_ind_first   <- TDL_time_ind_first   ;
   TDL_Licor_times$TDL_time_ind_last    <- TDL_time_ind_last    ;

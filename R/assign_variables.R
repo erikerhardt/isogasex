@@ -57,19 +57,19 @@ function# Assign variables from input file to variable names
 
   ##details<<
   ## initialize lists to hold all data/output
-  sw  <- as.list(new.env());  # create a list for option switches
+  sw  <- list();  # create a list for option switches
   # Conventions, ultimately put everything in val
-  val <- as.list(new.env());
+  val <- list();
 
   # Constants   prefix: val$const$*
-  val$const     <- as.list(new.env());
+  val$const     <- list();
   ## Results (output) are in val$calc variables
   # Calculated  prefix: val$calc$*
-  val$calc      <- as.list(new.env());
-  val$calc$obs  <- as.list(new.env()); # for calculated observed values to use in NP bootstrap
-  val$calc$all  <- as.list(new.env()); # for all calculated values in time window "0.1-16" "2012-07-11"
-  val$calc$sum  <- as.list(new.env()); # for calculated summarized (mean) values to use as estimates
-  val$write     <- as.list(new.env()); # to create tables to write_out to files
+  val$calc      <- list();
+  val$calc$obs  <- list(); # for calculated observed values to use in NP bootstrap
+  val$calc$all  <- list(); # for all calculated values in time window "0.1-16" "2012-07-11"
+  val$calc$sum  <- list(); # for calculated summarized (mean) values to use as estimates
+  val$write     <- list(); # to create tables to write_out to files
 
   # column 2 of the spreadsheet has the values
   c_v <- 2;
@@ -167,7 +167,7 @@ function# Assign variables from input file to variable names
 
   ##details<<
   ## TDL sampling information
-  TDL_cycle <- as.list(new.env());  # create a list to return with data
+  TDL_cycle <- list();  # create a list to return with data
           # number.* is TDL field "PrevSite"
   r_v<-r_v+1; TDL_cycle$number_tank_hi    <- as.numeric(D[r_v,c_v]);   # 9; # high tank
   r_v<-r_v+1; TDL_cycle$number_tank_low   <- as.numeric(D[r_v,c_v]);   #10; # low tank
@@ -190,7 +190,7 @@ function# Assign variables from input file to variable names
   TDL_cycle <- set_TDL_cycle(TDL_cycle); # TDL_cycle variables
  #if (sw$use_TDL  ) {
  #  # TDL sampling information
- #  TDL_cycle <- as.list(new.env());  # create a list to return with data
+ #  TDL_cycle <- list();  # create a list to return with data
  #          # number.* is TDL field "PrevSite"
  #  TDL_cycle$number_tank_hi    <-  9; # high tank
  #  TDL_cycle$number_tank_low   <- 10; # low tank
@@ -319,7 +319,7 @@ function# Assign variables from input file to variable names
   ##############################################################################
   ##details<<
   ## create a list to all returned parameters
-  VARIABLES <- new.env();
+  VARIABLES <- list();
 
   VARIABLES$val                             <- val                          ;
   VARIABLES$sw                              <- sw                           ;
@@ -342,7 +342,7 @@ function# Assign variables from input file to variable names
   VARIABLES$TDL_cycle                       <- TDL_cycle                    ;
   VARIABLES$Licor_TDL_time_offset_seconds   <- Licor_TDL_time_offset_seconds;
 
-  return( as.list(VARIABLES) );
+  return( VARIABLES );
   ### VARIABLES list of all inputs from Excel template
 } # assign_variables()
 

@@ -28,7 +28,7 @@ function# offset (12C Offset, 13C Offset) using hi tank
 ###
 )
 {
-  offset <- as.list(new.env());  # create a list to return with data
+  offset <- list();  # create a list to return with data
 
   ##details<<
   ##\deqn{offset = true_value_hi - (gain * cal.tank_hi)}

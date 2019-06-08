@@ -349,7 +349,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
 
     ##details<<
     ## _ Calculate mean Variance for interp values for Par BS of tanks and reference.
-    var_interp <- as.list(new.env());
+    var_interp <- list();
         ind_tank_hi           <- (TDL$summary$site == TDL_cycle$number_tank_hi);
       var_interp$tank_hi_12   <- mean(TDL$summary$var[ind_tank_hi,"interp_tank_hi_12"]);
       var_interp$tank_hi_13   <- mean(TDL$summary$var[ind_tank_hi,"interp_tank_hi_13"]);
@@ -462,7 +462,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
     ##details<<
     ## _ Generate NP and Par BS samples for observed values.
 
-    val$bs            <- as.list(new.env());
+    val$bs            <- list();
 
     ##details<< . \code{\link{f_init_bs_matrix}}
     # init bs values to zero
@@ -499,7 +499,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
     ## _ create CI for each calculated value. \code{\link{f_val_bs_CI}}
       p_o <- paste("Calculate the endpoints of the central ", sig_CI, "bootstrap CI\n"); wWw <- write_progress(p_o, time_start);
     val_CI <- f_val_bs_CI(val$calc$bs, val$bs$TDL, val$bs$Licor, R_bootstrap, sig_CI, sw);
-      val$CI        <- as.list(new.env());
+      val$CI        <- list();
       val$CI$TDL    <- val_CI$TDL;
       val$CI$Licor  <- val_CI$Licor;
       val$calc$CI   <- val_CI$calc;
