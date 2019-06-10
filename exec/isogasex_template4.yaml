@@ -1,134 +1,124 @@
-|
-  output.summary.TDL.fn: write_summary_Licor_file_summary_TDL.csv
-  sig.CI: 0.95
-  output.summary.Calc.fn: write_summary_Licor_file_summary_Calc.csv
-  output.CI.TDL.fn: write_summary_Licor_file_CI_TDL.csv
-  R.bootstrap: 0.0
-  output.fn.prefix: write_summary_Licor_file
-  seed: 0.0
-  Licor.TDL.time.offset.seconds: 0.0
-  sw:
-    template.version: 4.0
-    use.TDL: 1.0
-    use.Licor: 1.0
-    print.TDL.missing: 1.0
-    print.TDL.cycle.timing: 0.0
-    write.all.obs.file: 0.0
-    save.RData: 0.0
-    interp.tank.hi: 1.0
-    interp.tank.low: 1.0
-    interp.reference: 2.0
-    Licor.or.TDL.A.photosynthesis: 1.0
-    val.const.override.Licor.flow.rate: 1.0
-    val.const.override.Licor.leaf.area: 1.0
-    val.const.override.Licor.boundary.layer.cond.to.water: 1.0
-    val.const.override.Licor.H2OS: 1.0
-    val.const.override.Licor.StmRat: 1.0
-    calc.pc.to.use: 1.0
-    calc.Delta.i.to.use: .na.real
-    calc.gm.to.use: 1.0
-  output.CI.Calc.fn: write_summary_Licor_file_CI_Calc.csv
-  Licor.fn: C:\Dropbox\StatAcumen\consult\Authorship\2009_DavidHanson_Isotopes\package_testing/Soybean
-    Flame 5
-  output.all.Calc.fn: write_summary_Licor_file_all_Calc.csv
-  output.summary.Licor.fn: write_summary_Licor_file_summary_Licor.csv
-  TDL.fn: C:\Dropbox\StatAcumen\consult\Authorship\2009_DavidHanson_Isotopes\package_testing/20120530_CR3000_2_RawData.dat
-  plot.format.list:
-  - 5.0
-  - 6.0
-  output.CI.Calc.last.fn: write_summary_Licor_file_CI_Calc_last.csv
-  TDL.cycle:
-    number.tank.hi: 9.0
-    number.tank.low: 10.0
-    number.reference: 1.0
-    number.chamber: 21.0
-    name.tank.hi: tank.hi
-    name.tank.low: tank.low
-    name.reference: reference
-    name.chamber: chamber
-    seconds.tank.hi: 10.0
-    seconds.tank.low: 10.0
-    seconds.reference: 10.0
-    seconds.chamber: 10.0
-    Hz: 10.0
-    seconds.exclude.first.chamber: 20.0
-    last.n.obs.tank.hi: 100.0
-    last.n.obs.tank.low: 100.0
-    last.n.obs.reference: 100.0
-    last.n.obs.chamber: 100.0
-    first.n.last.skip.chamber: 2.0
-    table:
-    - 9.0
-    - 10.0
-    - 1.0
-    - 21.0
-    - 100.0
-    - 100.0
-    - 100.0
-    - 100.0
-    table.name:
-    - tank.hi
-    - tank.low
-    - reference
-    - chamber
-  val:
-    const:
-      true.value.hi.12C: 473.3358029
-      true.value.hi.13C: 5.1832093
-      true.value.lo.12C: 243.4737846
-      true.value.lo.13C: 2.6663011
-      fo.13C: 0.004922
-      fo.18O: 0.000821
-      Rstd.13C: 0.0111797
-      Rstd.18O: 0.0020052
-      Gamma.star: 1.0
-      f.photo.respiration: 1.0
-      e: 1.0
-      Rd: 1.0
-      k: 1.0
-      b.gm: 29.0
-      b.modeling: 27.0
-      b.s: 1.1
-      a: 4.44
-      a.b: 2.96
-      a.l: 0.7
-      a.i: 1.8
-      flow.rate: 288.0
-      leaf.area: 5.0
-      boundary.layer.cond.to.water: 2.55
-      H2OS: 88.0
-      StmRat: 99.0
-      gbc.1.37: 1.37
-      gsc.1.6: 1.6
-    calc:
-      obs: []
-      all: []
-      sum: []
-    write: []
-    timewindow:
-      start.time:
-        sec: .na.real
-        min: .na.integer
-        hour: .na.integer
-        mday: .na.integer
-        mon: .na.integer
-        year: .na.integer
-        wday: .na.integer
-        yday: .na.integer
-        isdst: -1
-        zone: ''
-        gmtoff: .na.integer
-      end.time:
-        sec: .na.real
-        min: .na.integer
-        hour: .na.integer
-        mday: .na.integer
-        mon: .na.integer
-        year: .na.integer
-        wday: .na.integer
-        yday: .na.integer
-        isdst: -1
-        zone: ''
-        gmtoff: .na.integer
-  output.CI.Licor.fn: write_summary_Licor_file_CI_Licor.csv
-  output.summary.Calc.last.fn: write_summary_Licor_file_summary_Calc_last.csv
+# isogasex
+# input file
+# sets parameters for isogasex R package by David T. Hanson and Erik B. Erhardt of UNM
+
+Template_version:               4               # Template 4, starting at isogasex version: 0.1-20, Date: 2012-09-05
+
+# Parameter                     Value                   # Detail
+sw_use_TDL:                     1                       # 1 = process TDL   data, 0 = do not use TDL   data
+TDL_fn:                         20120530_CR3000_2_RawData.dat     # TDL filename
+sw_use_Licor:                   1                       # 1 = process Licor data, 0 = do not use Licor data
+Licor_fn:                       Soybean Flame 5         # Licor filename
+
+
+# Prefix for output filenames
+output_fn_prefix:               write_out       # Output files will have this prefix on the filenames. You can run the analysis with different settings and name the output files accordingly.
+# Time Window                                   # Analysis range is the intersection of the TDL times, Licor times, and Time window.  Leave blank to use full time range (intersection of TDL and Licor).
+Start_date:                                     # mm/dd/yy    date is required because of possibility of multi-day runs -- sorry. Also, just 2 digits to the year.)
+Start_time:                                     # hh:mm:ss    (24 hour, so 15:00:00 is 3pm, please specify down to the seconds.)
+End_date:                                       # mm/dd/yy
+End_time:                                       # hh:mm:ss    (NOTE: leave some time (a few minutes) on either side of actual time range of interest, to help the interpolation behave)
+# OUTPUT SECTION
+print_TDL_missing:              1               # Print rows in TDL file with missing values to screen and output file
+print_TDL_cycle_timing:         0               # Print TDL cycle timing to file prefix_TDL_site_timing.csv (takes a long time)
+write_all_obs_file:             0               # Write all observations file
+save_RData:                     0               # Save R workspace (all data and calculated variables in memory) to a file (can be used to calculate specific quantities from two runs, e.g., Licor vs TDL A.photosynthesis)
+
+
+# plot formats
+png:                            0
+eps:                            0
+pdf:                            0
+bmp:                            0
+jpeg:                           1
+tiff:                           2
+
+# interpolation                                 # 1 = smooth.spline() like tanks
+                                                # 2 = use last reference mean until next measurement (horizontal interp) - for abrupt ref gas changes
+interp_tank_hi:                 1               # high tank
+interp_tank_low:                1               # low tank
+interp_reference:               2               # leaf reference
+
+# Bootstrap Confidence Intervals and random number seed
+R_bootstrap:                    0               # Number of bootstrap replicates to assess uncertainty of estimates
+sig_CI:                         0.95            # Confidence level for central confidence interval
+seed:                           1234            # pseudorandom number seed, 0 is random based on clock, set to integer for results to be repeatable
+
+# If using TDL file       TDL sampling information        number.* is TDL field "PrevSite"
+number_tank_hi:                 9               # high tank
+number_tank_low:                10              # low tank
+number_reference:               1               # leaf reference
+number_chamber:                 21              # leaf chamber
+name_tank_hi:                   tank_hi         # high tank
+name_tank_low:                  tank_low        # low tank
+name_reference:                 reference       # leaf reference
+name_chamber:                   chamber         # leaf chamber
+                                                # in seconds
+seconds_tank_hi:                10              # high tank
+seconds_tank_low:               10              # low tank
+seconds_reference:              10              # leaf reference
+seconds_chamber:                10              # leaf chamber
+Hz:                             10              # sampling rate (number per second), output of TDL
+seconds_exclude_first_chamber:  20              # time it takes to equilbrate from reference to leaf chamber
+
+# If using Licor file
+Licor_TDL_time_offset_seconds:          0       # positive indicates Licor is ahead of TDL
+                                                # (e.g., 16 has Licor = 12:00:00 matches TDL = 12:00:16)
+                                                # (that is, gas takes 16 seconds to get from Licor to TDL)
+
+# CONSTANTS SECTION
+true_value_hi_12C:              473.335802876395    # True calibration tank values
+true_value_hi_13C:              5.18320929165481
+true_value_lo_12C:              243.473784568456
+true_value_lo_13C:              2.66630113136477
+
+fo_13C:                         0.004922        # if only 12 and 13CO2 are measured, fo means fraction of other isotopologues not measured
+fo_18O:                         0.000821        # if 12 and 13CO2, and 12C18O16O are measured (not ususal for Dave's machine)
+Rstd_13C:                       0.0111797       # (Rvpdb)
+Rstd_18O:                       0.0020052       # (Rvsmow) may occaisionally be used with Dave's machine, method not tested yet
+
+Gamma_star:                     1               # CO2 compensation point in absence of day respiration.  I will need to specify experiment specific values for these constants in the equations below
+f_photo_respiration:            1               # fractionation associated with photorespiration
+e:                              1               # fractionation associated with day respiration
+Rd:                             1               # day respiration
+k:                              1               # carboxylation efficiency, often initial slope of A/Ci, or better A/Cc
+b_gm:                           29
+b_modeling:                     27
+b_s:                            1.1             # per mil fractionation as CO2 enters solution at 25C bs =  1.1
+
+a:                              4.44            # per mil fractionation in still air (stomatal pore and substomata) a = 4.44
+a_b:                            2.96            # per mil fractionation in boundary layer (slightly mixed), a.b = 2.96
+a_l:                            0.7             # per mil fractionation during diffusion in water, a.l =  0.7
+                                                # a_i = a.l+b.s
+
+# Which values to use
+Licor_or_TDL_A_photosynthesis:          1       # 0=Licor, 1=TDL (1 is the "Ci ternary corrected" data)
+                                                # 1 to override, then fill in value to use as a constant for the entire analysis
+override_Licor_flow_rate:               1       # 0=use Licor values, 1=use specified value below
+Licor_flow_rate:                        288     # flow rate
+override_Licor_leaf_area:               1       # 0=use Licor values, 1=use specified value below
+Licor_leaf_area:                        5       # leaf area
+override_Licor_boundary_layer_cond_to_water:  1       # 0=use Licor values, 1=use specified value below
+Licor_boundary_layer_cond_to_water:     2.55    # boundary.layer.cond.to.water
+override_Licor_H2OS:                    1       # 0=use Licor values, 1=use specified value below
+Licor_H2OS:                             88      # H2OS
+override_Licor_StmRat:                  1       # 0=use Licor values, 1=use specified value below
+Licor_StmRat:                           99      # StmRat
+# constants in formulas not given names
+gbc_1_37:                       1.37            # gbc  BLcond/1.37 boudary layer conductance for CO2
+gsc_1_6:                        1.6             # gsc  gsw/1.6 stomatal conductance for CO2
+
+# Calculation information
+calc_pc_to_use:                 1               # 1 = pc.using.gm
+                                                # 2 = pc.using.simple.Delta.for.gm
+                                                # 3 = pc.using.simple.Delta.for.modeling
+                                                # 4 = pc.using.complex.Delta.no.decarboxylation
+                                                # 5 = pc.using.complex.Delta.full.model
+# NOT USED
+calc_Delta_i_to_use:                            # 1 = Delta.i.simple.for.gm
+                                                # 2 = Delta.i.simple.for.modeling
+                                                # 3 = Delta.i.complex.for.gm
+
+calc_gm_to_use:                 1               # 1 = gm.point.simple
+                                                # 2 = gm.point.complex
+

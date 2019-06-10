@@ -4,18 +4,19 @@
 \alias{isogasex}
 \title{Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals.}
 \usage{
-isogasex(input_fn, path = getwd())
+isogasex(input_fn = c("isogasex_template4.yaml",
+  "isogasex_template4.xls"), path = getwd())
 }
 \arguments{
-\item{input_fn}{xxxPARAMxxx}
+\item{input_fn}{The parameter template file name.  A modified version of isogasex_template4.yaml (text) or isogasex_template4.xls (Excel worksheet)}
 
-\item{path}{xxxPARAMxxx}
+\item{path}{Directory path to input data files and the location where the ./out folder will be saved with all results.}
 }
 \value{
-NULL xxxRETURNxxx
+NULL invisibly, all results are saved as files in the ./out folder
 }
 \description{
-Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames.
+Edit \file{isogasex_template4.yaml} or \file{isogasex_template4.xls} and input parameters and TDL/Licor filenames.
 Run \code{\link{isogasex}}.
 See output in \file{./out} directory.
 }
@@ -31,9 +32,9 @@ Create output directory.
 
 SECTION Read data.
 
-Input Excel workbook. \code{\link{get_data}}
+Input Excel workbook. \code{\link{read_template_param}}
 
-Assign variables. \code{\link{assign_variables}}
+Assign variables. \code{\link{assign_param_variables}}
 
 Create output directory (prefix) and update the process_info.txt.
 

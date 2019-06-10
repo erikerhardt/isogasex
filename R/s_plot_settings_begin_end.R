@@ -53,7 +53,7 @@ function# Plot settings for all plots
 #
 #   if modifying plot file types, need to update:
 #     Excel workbook, for input settings
-#     assign_variables.R, for reading workbook input and setting plot_format_list
+#     assign_param_variables.R, for reading workbook input and setting plot_format_list
 #     s_plot_settings_begin_end.R, this function for settings
 #
 {
