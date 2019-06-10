@@ -219,7 +219,6 @@ function(
   ## Input Excel workbook. \code{\link{read_template_param}}
 
 
-
   param_fn <- paste(path, "/", input_fn, sep="");
     #p_o = paste("Reading workbook: ", input_fn, "\n"); wWw <- write_progress(p_o, time_start);
     p_o_temp <- rbind(p_o_temp, paste("Reading template parameters from: ", input_fn, "\n"));
