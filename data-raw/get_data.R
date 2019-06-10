@@ -1,16 +1,16 @@
 #' Get data from Excel spreadsheet
 #'
-#' Read Excel template with \code{gdata} \code{read.xls} using perl.
+#' Read Excel template
 #'
-#' @param filename xxxPARAMxxx
+#' @param param_fn Path including filename to Excel template file
 #'
-#' @return DATA xxxRETURNxxx
+#' @return DATA Template data from Excel spreadsheet in table form
 #' @importFrom readxl read_xls
 #'
 get_data <-
 function# Get data from Excel spreadsheet
 ###
-(filename
+(param_fn
 ###
 )
 {
@@ -33,7 +33,7 @@ function# Get data from Excel spreadsheet
   #  library("xlsReadWrite"); # to read Excel files
   #
   #  # assign each worksheet to a variable within the DATA environment
-  #  i_sheet <- 1; DATA = as.matrix( read.xls(filename, colNames=FALSE, sheet=i_sheet, type="character") ); write_out(paste(" ", i_sheet));
+  #  i_sheet <- 1; DATA = as.matrix( read.xls(param_fn, colNames=FALSE, sheet=i_sheet, type="character") ); write_out(paste(" ", i_sheet));
   #    write_out(paste("\n"));
   #} # windows
 
@@ -44,9 +44,9 @@ function# Get data from Excel spreadsheet
 
     # assign each worksheet to a variable within the DATA environment
     #perl_command <- system("which perl", intern=TRUE);
-    #i_sheet <- 1; DATA = as.matrix( read.xls(filename, sheet=i_sheet, verbose=FALSE, header=FALSE, perl=perl_command) ); write_out(paste(" ", i_sheet));
-    #i_sheet <- 1; DATA = as.matrix( read.xls(filename, sheet=i_sheet, verbose=FALSE, header=FALSE, blank.lines.skip=FALSE, perl="perl") ); # write_out(paste(" ", i_sheet));
-    i_sheet <- 1; DATA = as.matrix( readxl::read_xls(filename, sheet=i_sheet)); #, verbose=FALSE, header=FALSE, blank.lines.skip=FALSE, perl="perl") ); # write_out(paste(" ", i_sheet));
+    #i_sheet <- 1; DATA = as.matrix( read.xls(param_fn, sheet=i_sheet, verbose=FALSE, header=FALSE, perl=perl_command) ); write_out(paste(" ", i_sheet));
+    #i_sheet <- 1; DATA = as.matrix( read.xls(param_fn, sheet=i_sheet, verbose=FALSE, header=FALSE, blank.lines.skip=FALSE, perl="perl") ); # write_out(paste(" ", i_sheet));
+    i_sheet <- 1; DATA = as.matrix( readxl::read_xls(param_fn, sheet=i_sheet)); #, verbose=FALSE, header=FALSE, blank.lines.skip=FALSE, perl="perl") ); # write_out(paste(" ", i_sheet));
       #write_out(paste("\n"));
   #} # unix
 

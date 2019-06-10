@@ -1,6 +1,6 @@
 #' Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals.
 #'
-#' Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames.
+#' Edit \file{isogasex_template4.yaml} or \file{isogasex_template4.xls} and input parameters and TDL/Licor filenames.
 #' Run \code{\link{isogasex}}.
 #' See output in \file{./out} directory.
 #'
@@ -126,27 +126,21 @@
 #'
 #' Complete.
 #'
-#' @param input_fn xxxPARAMxxx
-#' @param path xxxPARAMxxx
+#' @param input_fn The parameter template file name.  A modified version of isogasex_template4.yaml (text) or isogasex_template4.xls (Excel worksheet)
+#' @param path Directory path to input data files and the location where the ./out folder will be saved with all results.
 #'
-#' @return NULL xxxRETURNxxx
+#' @return NULL invisibly, all results are saved as files in the ./out folder
 #' @importFrom utils capture.output sessionInfo packageDescription
 #'
 #' @export
 #'
 isogasex <-
-function# Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals.
-### Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{isogasex}}. See output in \file{./out} directory.
-### Edit isogasex_templateX.xls and input parameters and TDL/Licor filenames.
-### Run isogasex().
-### See output in ./out directory.
-(input_fn
-### The Excel workbook name.  A modified version of isogasex_templateX.xls
+function(
+  input_fn = c("isogasex_template4.yaml", "isogasex_template4.xls")
 , path = getwd()
 ### Directory where TDL and Licor data are to be read from, and where ./out directory for results are to be written to.
 )
 {
-  print(isogasex_logo())
   # DRIVER FUNCTION -------------------------------------------------------------
   # DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG
   # #library(isogasex)
@@ -193,6 +187,9 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   p_o_temp <- NULL; # initial output buffer to print after we create prefix output directory
 
   time_start <- proc.time()[3];    # start timer
+
+    print(isogasex_logo())
+
     p_o_temp <- rbind(p_o_temp, paste("isogasex: TDL/Licor processing", "\n\n", sep=""));
     #p_o_temp <- rbind(p_o_temp, paste("  Version: ", isogasex_version, ", Date: ", isogasex_date,", Template ", isogasex_template, "\n", sep=""));
     p_o_temp <- rbind(p_o_temp, paste("  Concept by David T. Hanson", "\n"));
@@ -215,41 +212,45 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   # convert date/time from character to POSIX
     options(digits_secs=1); # set resolution of seconds in time to 0.1
 
-  ##details<<
-  ## SECTION Read data.
-  ##details<<
+
+
+  ## SECTION Read template input parameters.
+
   ## Input Excel workbook. \code{\link{get_data}}
-  filename <- paste(path, "/", input_fn, sep="");
+
+
+
+  param_fn <- paste(path, "/", input_fn, sep="");
     #p_o = paste("Reading workbook: ", input_fn, "\n"); wWw <- write_progress(p_o, time_start);
-    p_o_temp <- rbind(p_o_temp, paste("Reading workbook: ", input_fn, "\n"));
-  DATA <- get_data(filename);   # read data in
+    p_o_temp <- rbind(p_o_temp, paste("Reading template parameters from: ", input_fn, "\n"));
+  PARAM_RAW <- read_template_param(param_fn)
 
   ##details<<
-  ## Assign variables. \code{\link{assign_variables}}
+  ## Assign variables. \code{\link{assign_param_variables}}
     #p_o = paste("Assign variables", "\n"); wWw <- write_progress(p_o, time_start);
-    p_o_temp <- rbind(p_o_temp, paste("Assign variables", "\n"));
-  VARIABLES <- assign_variables(DATA, path)
-  val                             <- VARIABLES$val                          ;
-  sw                              <- VARIABLES$sw                           ;
-  TDL_fn                          <- VARIABLES$TDL_fn                       ;
-  Licor_fn                        <- VARIABLES$Licor_fn                     ;
-  plot_format_list                <- VARIABLES$plot_format_list             ;
-  output_fn_prefix                <- VARIABLES$output_fn_prefix             ;
-  output_summary_TDL_fn           <- VARIABLES$output_summary_TDL_fn        ;
-  output_summary_Licor_fn         <- VARIABLES$output_summary_Licor_fn      ;
-  output_summary_Calc_fn          <- VARIABLES$output_summary_Calc_fn       ;
-  output_summary_Calc_last_fn     <- VARIABLES$output_summary_Calc_last_fn  ;
-  output_all_Calc_fn              <- VARIABLES$output_all_Calc_fn           ; # "0.1-16" "2012-07-11"
-  output_CI_TDL_fn                <- VARIABLES$output_CI_TDL_fn             ;
-  output_CI_Licor_fn              <- VARIABLES$output_CI_Licor_fn           ;
-  output_CI_Calc_fn               <- VARIABLES$output_CI_Calc_fn            ;
-  output_CI_Calc_last_fn          <- VARIABLES$output_CI_Calc_last_fn       ;
-  R_bootstrap                     <- VARIABLES$R_bootstrap                  ;
-  sig_CI                          <- VARIABLES$sig_CI                       ;
-  seed                            <- VARIABLES$seed                         ;
-  TDL_cycle                       <- VARIABLES$TDL_cycle                    ;
-  Licor_TDL_time_offset_seconds   <- VARIABLES$Licor_TDL_time_offset_seconds;
-  rm(VARIABLES);
+    p_o_temp <- rbind(p_o_temp, paste("Assign parameter to variables", "\n"));
+  PARAM <- assign_param_variables(PARAM_RAW, path)
+  val                             <- PARAM$val                          ;
+  sw                              <- PARAM$sw                           ;
+  TDL_fn                          <- PARAM$TDL_fn                       ;
+  Licor_fn                        <- PARAM$Licor_fn                     ;
+  plot_format_list                <- PARAM$plot_format_list             ;
+  output_fn_prefix                <- PARAM$output_fn_prefix             ;
+  output_summary_TDL_fn           <- PARAM$output_summary_TDL_fn        ;
+  output_summary_Licor_fn         <- PARAM$output_summary_Licor_fn      ;
+  output_summary_Calc_fn          <- PARAM$output_summary_Calc_fn       ;
+  output_summary_Calc_last_fn     <- PARAM$output_summary_Calc_last_fn  ;
+  output_all_Calc_fn              <- PARAM$output_all_Calc_fn           ; # "0.1-16" "2012-07-11"
+  output_CI_TDL_fn                <- PARAM$output_CI_TDL_fn             ;
+  output_CI_Licor_fn              <- PARAM$output_CI_Licor_fn           ;
+  output_CI_Calc_fn               <- PARAM$output_CI_Calc_fn            ;
+  output_CI_Calc_last_fn          <- PARAM$output_CI_Calc_last_fn       ;
+  R_bootstrap                     <- PARAM$R_bootstrap                  ;
+  sig_CI                          <- PARAM$sig_CI                       ;
+  seed                            <- PARAM$seed                         ;
+  TDL_cycle                       <- PARAM$TDL_cycle                    ;
+  Licor_TDL_time_offset_seconds   <- PARAM$Licor_TDL_time_offset_seconds;
+  rm(PARAM);
 
   ##details<<
   ## Create output directory (prefix) and update the process_info.txt.
@@ -566,7 +567,7 @@ function# Reads TDL and Licor files, aligns them, calculates quantities of inter
   #file.rename(path_out,path_prefix);
   ##details<<
   ## Copy template file to out dir.
-  file.copy(filename, paste(path_out, "/", input_fn, sep=""));
+  file.copy(param_fn, paste(path_out, "/", input_fn, sep=""));
   ##details<<
   ## Change back to original dir.
   setwd(path_original);

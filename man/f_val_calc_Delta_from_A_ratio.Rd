@@ -4,16 +4,16 @@
 \alias{f_val_calc_Delta_from_A_ratio}
 \title{D from A ratio, (Ro/(13A/12A))-1, should be the same as Dobs above}
 \usage{
-f_val_calc_Delta_from_A_ratio(cham.12Co, cham.13Co, TDL.13A, TDL.12A)
+f_val_calc_Delta_from_A_ratio(cham_12Co, cham_13Co, TDL_13A, TDL_12A)
 }
 \arguments{
-\item{cham.12Co}{xxxPARAMxxx}
+\item{cham_12Co}{xxxPARAMxxx}
 
-\item{cham.13Co}{xxxPARAMxxx}
+\item{cham_13Co}{xxxPARAMxxx}
 
-\item{TDL.13A}{xxxPARAMxxx}
+\item{TDL_13A}{xxxPARAMxxx}
 
-\item{TDL.12A}{xxxPARAMxxx}
+\item{TDL_12A}{xxxPARAMxxx}
 }
 \value{
 Delta_from_A_ratio xxxRETURNxxx
@@ -22,6 +22,6 @@ Delta_from_A_ratio xxxRETURNxxx
 First calculates R_cham with \code{\link{f_val_calc_isotope_ratio}}
 }
 \details{
-\deqn{Delta_from_A_ratio <- (R_cham / (TDL.13A / TDL.12A)) - 1}
+\deqn{Delta_from_A_ratio <- (R_cham / (TDL_13A / TDL_12A)) - 1}
 this quantity is not in per mil
 }
