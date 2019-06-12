@@ -32,20 +32,16 @@ function# read_Licor file
 ###
 )
 {
-  ##details<<
   ## See \code{\link{val_TDL_Licor_variables}} for expected column names.
 
-  ##details<<
   ## Create \code{Licor} to hold data.
   Licor <- list();  # create a list to return with data
 
   if (sw$use_Licor ) {
 
     ####################
-    ##details<<
     ## Read Licor file
     p_o <- paste("               Reading Licor file: ", Licor_fn, "\n"); write_out(p_o);
-    ##details<<
     ## Find the row where the column headers and data begin.
     Licor_head_nrows = 30;  # more rows than we need to check
     Licor_head <- utils::read.delim(Licor_fn, header=FALSE, sep="\n", nrows=Licor_head_nrows);
@@ -59,7 +55,7 @@ function# read_Licor file
     }
     # 11/22/2010 7:40PM changed
     Licor$data <- read.delim(Licor_fn, header=TRUE, sep="", skip=Licor_header_skip);     # any white space is delim
-    ##details<<
+
     ## If any extra lines in Licor file, remove those lines and fix the Obs and HHMMSS columns.
     fix_factor <- is.factor(Licor$data[,1]);
       if(fix_factor){
@@ -88,7 +84,6 @@ function# read_Licor file
     #  Licor$data <- cbind(Licor$data, temp_add);
     #}
 
-    ##details<<
     ## Date (day) of run, fix Thursday (Thr to Thu) representation.
     Licor_date_temp   <- scan(Licor_fn, what="character", skip=1, nlines=1);
       Licor_date_temp <- sub("Thr", "Thu", Licor_date_temp);  # Thursday has an alternate representation in Licor than R

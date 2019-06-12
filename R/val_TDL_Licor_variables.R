@@ -107,12 +107,10 @@ function# Assign TDL and Licor values to val variable names, raw and summarized 
   ###   in cases in the calculations, variables are referred to by their column header name
   ###   Look at the variable names again and decide whether to use var name or col name.
 
-  ##details<<
   ## Function to assign TDL and Licor values to variable names,
   ##   summaries and some smart way for individual observations (later for NPBS).
   ## If the variable has values, use those, if not then populate with NAs.
 
-  ##details<<
   ## These are the columns expected from the Licor and TDL.
   ## Any columns with headers not listed here will not be used.
   ##
@@ -184,13 +182,11 @@ function# Assign TDL and Licor values to val variable names, raw and summarized 
   ## }
 
 
-  ##details<<
   ## Conventions, put everything in \code{val}.
   ## Observed values from TDL or Licor  prefix: \code{val$obs$*}
   val$obs       <- list();
   val$obs$TDL   <- list();
   val$obs$Licor <- list();
-  ##details<<
   ## Summarized values from TDL or Licor  prefix: \code{val$sum$*}
   val$sum       <- list();
   val$sum$TDL   <- list();

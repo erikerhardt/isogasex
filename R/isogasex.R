@@ -188,8 +188,6 @@ function(
 
   time_start <- proc.time()[3];    # start timer
 
-    print(isogasex_logo())
-
     p_o_temp <- rbind(p_o_temp, paste("isogasex: TDL/Licor processing", "\n\n", sep=""));
     #p_o_temp <- rbind(p_o_temp, paste("  Version: ", isogasex_version, ", Date: ", isogasex_date,", Template ", isogasex_template, "\n", sep=""));
     p_o_temp <- rbind(p_o_temp, paste("  Concept by David T. Hanson", "\n"));
@@ -208,6 +206,8 @@ function(
     p_o_temp <- rbind(p_o_temp, paste("SESSION INFO AND PACKAGE VERSION ---- END   ------------------------------------\n"));
     p_o_temp <- rbind(p_o_temp, paste("================================================================================\n"));
     p_o_temp <- rbind(p_o_temp, paste("\n\n"));
+
+    print(isogasex_logo())
 
   # convert date/time from character to POSIX
     options(digits_secs=1); # set resolution of seconds in time to 0.1
@@ -394,21 +394,17 @@ function(
 
 
   #-------------------
-  ##details<<
   ## SECTION Mean Calculations
 
-  ##details<<
   ## Assign TDL and Licor values to val variable names, raw and summarized values. \code{\link{val_TDL_Licor_variables}}
     p_o <- paste("Assign TDL and Licor values to val variable names, raw and summarized values\n"); wWw <- write_progress(p_o, time_start);
   val <- val_TDL_Licor_variables(TDL, Licor, TDL_cycle, val, sw);
 
-  ##details<<
   ## summary values (mean). \code{\link{f_val_calc_all_driver}}
     p_o <- paste("Calculate mean values\n"); wWw <- write_progress(p_o, time_start);
   val$calc$sum <- f_val_calc_all_driver(val$sum$TDL, val$sum$Licor, val$const, sw);
 
   # do val$calc$all "0.1-16" "2012-07-10"
-  ##details<<
   ## All time point values. \code{\link{f_val_calc_all_driver}}
     p_o <- paste("Calculate all values\n"); wWw <- write_progress(p_o, time_start);
   val$calc$all <- f_val_calc_all_driver(val$obs$TDL, val$obs$Licor, val$const, sw);
@@ -419,52 +415,42 @@ function(
 
 
   #-------------------
-  ##details<<
   ## SECTION Write out results
     p_o <- paste("Write mean summary files\n"); wWw <- write_progress(p_o, time_start);
-  ##details<<
   ## Summary files
   if (sw$use_TDL ) {
-    ##details<<
     ## TDL file. \code{\link{write_summary_TDL_file}}
     val$write <- write_summary_TDL_file(val, TDL_cycle, output_summary_TDL_fn);
   }
   if (sw$use_Licor ) {
-    ##details<<
     ## Licor file. \code{\link{write_summary_Licor_file}}
     val$write <- write_summary_Licor_file(val, TDL_cycle, output_summary_Licor_fn);
   }
 
-  ##details<<
   ## Summary Calculation file. \code{\link{write_summary_Calc_file}}
   val$write <- write_summary_Calc_file(val, TDL_cycle, output_summary_Calc_fn, output_summary_Calc_last_fn);
 
   if (sw$write_all_obs_file) {
       p_o <- paste("Write all observations file (big file -- takes a while)\n"); wWw <- write_progress(p_o, time_start);
-    ##details<<
     ## All Calculation file. \code{\link{write_all_Calc_file}}
     val$write <- write_all_Calc_file(val, TDL_cycle, output_all_Calc_fn);
   }
 
-  ##details<<
   ## plot all the calculated values. \code{\link{plot_val_calc_sum}}
     p_o <- paste("Plot mean values\n"); wWw <- write_progress(p_o, time_start);
   plot_val_calc_sum(val$sum$TDL, val$sum$Licor, val$const, val$calc$sum, plot_format_list, output_fn_prefix, sw);
 
   #-------------------
-  ##details<<
   ## SECTION Bootstrap
-  ##details<<
   ## BEGIN Bootstrap Calculations
   if (R_bootstrap > 0) {
       p_o <- paste("Begin Bootstrap\n"); wWw <- write_progress(p_o, time_start);
 
-    ##details<<
     ## _ Generate NP and Par BS samples for observed values.
 
     val$bs            <- list();
 
-    ##details<< . \code{\link{f_init_bs_matrix}}
+    ## . \code{\link{f_init_bs_matrix}}
     # init bs values to zero
     val$calc$bs <- f_init_bs_matrix(val$sum$TDL$n, R_bootstrap);
 
@@ -477,25 +463,23 @@ function(
         p_o <- paste(i_bs," "); write_out(p_o);
         if ((i_bs %% 20) == 0) {p_o <- paste("\n"); write_out(p_o);};
 
-      ##details<< . \code{\link{f_bs_iter_TDL_Licor}}
+      ## . \code{\link{f_bs_iter_TDL_Licor}}
       # one BS resample of TDL and Licor means
       val_bs_sum <- f_bs_iter_TDL_Licor(val$obs$TDL, val$sum$TDL, val$obs$Licor, val$sum$Licor, var_interp);
-      ##details<< . \code{\link{f_bs_save_TDL_Licor}}
+      ##. \code{\link{f_bs_save_TDL_Licor}}
       # save BS resample of TDL and Licor means
       val$bs <- f_bs_save_TDL_Licor(val_bs_sum, val$bs, i_bs, R_bootstrap, sw);
-      ##details<< . \code{\link{f_val_calc_all_driver}}
+      ##. \code{\link{f_val_calc_all_driver}}
       # This function calls all the calc files
       val_calc_bs_temp <- f_val_calc_all_driver(val_bs_sum$TDL, val_bs_sum$Licor, val$const, sw);
-      ##details<< . \code{\link{f_val_bs_matrix}}
+      ##. \code{\link{f_val_bs_matrix}}
       # update values for each bs iterate
       val$calc$bs <- f_val_bs_matrix(val$calc$bs, val_calc_bs_temp, i_bs);
     }
       p_o <- paste("\n"); write_out(p_o);
       p_o <- paste("Bootstrap complete\n"); wWw <- write_progress(p_o, time_start);
 
-    ##details<<
     ## _ calculate central 95% intervals.
-    ##details<<
     ## _ create CI for each calculated value. \code{\link{f_val_bs_CI}}
       p_o <- paste("Calculate the endpoints of the central ", sig_CI, "bootstrap CI\n"); wWw <- write_progress(p_o, time_start);
     val_CI <- f_val_bs_CI(val$calc$bs, val$bs$TDL, val$bs$Licor, R_bootstrap, sig_CI, sw);
@@ -505,37 +489,29 @@ function(
       val$calc$CI   <- val_CI$calc;
       rm(val_CI);
 
-    ##details<<
     ## _ plot all variables with bs values, mean value, and CI intervals. \code{\link{f_plot_CI_individuals_driver}}
       p_o <- paste("Plot all variables with bs values, mean value, and CI intervals\n"); wWw <- write_progress(p_o, time_start);
     f_plot_CI_individuals_driver(val, R_bootstrap, plot_format_list, output_fn_prefix);
 
-    ##details<<
     ## _ write_out central 95% interval, SD,
       p_o <- paste("Write central bootstrap confidence intervals\n"); wWw <- write_progress(p_o, time_start);
-    ##details<<
     ## _ Summary files. \code{\link{write_CI_TDL_file}}
     if (sw$use_TDL ) {
-      ##details<<
       ## _ TDL file
       val$write <- write_CI_TDL_file(val, TDL_cycle, output_CI_TDL_fn);
     }
     if (sw$use_Licor ) {
-      ##details<<
       ## _ Licor file. \code{\link{write_CI_Licor_file}}
       val$write <- write_CI_Licor_file(val, TDL_cycle, output_CI_Licor_fn);
     }
-    ##details<<
     ## _ Calculation file. \code{\link{write_CI_Calc_file}}
     val$write <- write_CI_Calc_file(val, TDL_cycle, output_CI_Calc_fn, output_CI_Calc_last_fn);
 
   } else {
     p_o <- paste("No bootstrap\n"); wWw <- write_progress(p_o, time_start);
   }
-  ##details<<
   ## END
 
-  ##details<<
   ## Save workspace.
   if (sw$save_RData) {
       R_workspace_fn <- paste(output_fn_prefix,".RData",sep="");
@@ -543,7 +519,6 @@ function(
     save(list = ls(all.names = TRUE), file = R_workspace_fn, version = NULL, ascii = FALSE, compress = TRUE, compression_level=9) #, safe = TRUE)
   }
 
-  ##details<<
   ## SECTION Wrap it up.
   ## Move selected plot files into subdirectories. \code{\link{move_plot_files}}
     p_o <- paste("Move selected plot files to subdirectories\n"); wWw <- write_progress(p_o, time_start);
@@ -564,14 +539,11 @@ function(
 
   # rename outtemp directory to prefix name
   #file.rename(path_out,path_prefix);
-  ##details<<
   ## Copy template file to out dir.
   file.copy(param_fn, paste(path_out, "/", input_fn, sep=""));
-  ##details<<
   ## Change back to original dir.
   setwd(path_original);
 
-  ##details<<
   ## Complete.
 
   invisible( NULL );
