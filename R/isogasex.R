@@ -182,8 +182,6 @@ function(
     p_o_temp <- rbind(p_o_temp, paste("================================================================================\n"));
     p_o_temp <- rbind(p_o_temp, paste("\n\n"));
 
-    print(isogasex_logo())
-
   # convert date/time from character to POSIX
     options(digits_secs=1); # set resolution of seconds in time to 0.1
 
@@ -519,7 +517,9 @@ function(
 
   ## Complete.
 
+  # Display logo
+  print(isogasex_logo())
+
   invisible( NULL );
-  ### NULL
 }
 
