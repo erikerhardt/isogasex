@@ -19,5 +19,12 @@ Modern package update complete.
 # isogasex 0.2.02
 
 6/9/2019
-Two versionf of input parameter file: yaml and xls.
+Two version of input parameter file: yaml and xls.
 When copying decimal values from xls to yaml, copy full number from value bar (16 digits) instead of the 10 digits from the table cell.
+
+# isogasex 0.2.03
+
+6/14/2019
+Uses new RLicor package to read in Licor 6400 and 6800 files.
+Currently works with 6400 version.
+Renamed read_Licor to get_Licor to reduce chance of conflict with RLicor::read_Licor().

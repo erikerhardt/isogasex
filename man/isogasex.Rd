@@ -5,7 +5,7 @@
 \title{Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals.}
 \usage{
 isogasex(input_fn = c("isogasex_template4.yaml",
-  "isogasex_template4.xls"), path = getwd())
+  "isogasex_template4.xls")[1], path = getwd())
 }
 \arguments{
 \item{input_fn}{The parameter template file name.  A modified version of isogasex_template4.yaml (text) or isogasex_template4.xls (Excel worksheet)}

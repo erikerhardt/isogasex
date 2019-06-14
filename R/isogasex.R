@@ -136,37 +136,13 @@
 #'
 isogasex <-
 function(
-  input_fn = c("isogasex_template4.yaml", "isogasex_template4.xls")
+  input_fn = c("isogasex_template4.yaml", "isogasex_template4.xls")[1]
 , path = getwd()
 ### Directory where TDL and Licor data are to be read from, and where ./out directory for results are to be written to.
 )
 {
   # DRIVER FUNCTION -------------------------------------------------------------
-  # DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG
-  # #library(isogasex)
-  # #path <- "C:/Dropbox/StatAcumen/consult/Authorship/DavidHanson_Isotopes_2009/Sharing with Erhardt/Daves problem July 19";
-  # #input_fn <- "isogasex_template3.xls"
-  # #setwd(path);
-  # rm(list=ls()); # clear workspace
-  # library(isogasex)
-  # path <- "c:\\Dropbox\\StatAcumen\\consult\\Authorship\\DavidHanson_Isotopes_2009\\Sharing\ with\ Erhardt\\201207_Photoresp_conf_paper\\Pater2011round2data";
-  # setwd(path);
-  # input_fn <- "2011Pater_isogasex_05262011AT_PMDH201.xls"
-  # #isogasex(input_fn)
-  #
-  # DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG
 
-  # install required packages if not in R already
-  #list_of_packages <- c("gdata", "zoo")
-  #new_packages <- list_of_packages[!(list_of_packages %in% installed.packages()[,"Package"])]
-  #if(length(new_packages)) {
-  #  install.packages(new_packages);
-  #  if (.Platform$OS.type == "windows") {
-  #    library(xlsReadWrite);  xls_getshlib();  # get shared library
-  #  }
-  #}
-
-  ##details<<
   ## SECTION Preamble
   ## Set version.
   ## Display header.
@@ -176,7 +152,6 @@ function(
   isogasex_version  <- utils::packageDescription("isogasex")$Version
   isogasex_template <- 4;
 
-  ##details<<
   ## Save original working directory, change to data dir.
   ## (This is a little hokey.)  Change to data dir, then to out dir, then back to original at end.
     path_original <- getwd(); # changed back at very end of isogasex()
@@ -224,7 +199,6 @@ function(
     p_o_temp <- rbind(p_o_temp, paste("Reading template parameters from: ", input_fn, "\n"));
   PARAM_RAW <- read_template_param(param_fn)
 
-  ##details<<
   ## Assign variables. \code{\link{assign_param_variables}}
     #p_o = paste("Assign variables", "\n"); wWw <- write_progress(p_o, time_start);
     p_o_temp <- rbind(p_o_temp, paste("Assign parameter to variables", "\n"));
@@ -251,7 +225,6 @@ function(
   Licor_TDL_time_offset_seconds   <- PARAM$Licor_TDL_time_offset_seconds;
   rm(PARAM);
 
-  ##details<<
   ## Create output directory (prefix) and update the process_info.txt.
   path_output_fn_prefix <- paste("out_",output_fn_prefix,sep="");
   path_prefix <- paste(path, "/", path_output_fn_prefix, sep="");
@@ -289,7 +262,7 @@ function(
   TDL   <- read_TDL(TDL_fn, sw); # read_TDL file,   reference with TDL$[col.name]
 
     p_o <- paste("Reading Licor data \n"); wWw <- write_progress(p_o, time_start);
-  Licor <- read_Licor(Licor_fn, Licor_TDL_time_offset_seconds, sw); # read_Licor file, reference with Licor$[col.name]
+  Licor <- get_Licor(Licor_fn, Licor_TDL_time_offset_seconds, sw); # get_Licor file, reference with Licor$[col.name]
 
   ##details<<
   ## SECTION TDL Plot and interpolate.
