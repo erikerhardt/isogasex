@@ -14,7 +14,7 @@ function# write_progress to the screen with time elapsed
 ###
 , time_start
 ###
-, type_print= c("cat", "matrix")
+, type_print = c("cat", "matrix")[1]
 ###
 )
 {
@@ -30,6 +30,5 @@ function# write_progress to the screen with time elapsed
   flush.console();
 
   invisible(NULL);
-  ### NULL
 } # write_progress()
 
