@@ -25,13 +25,13 @@ write_all_obs_file:             0               # Write all observations file
 save_RData:                     0               # Save R workspace (all data and calculated variables in memory) to a file (can be used to calculate specific quantities from two runs, e.g., Licor vs TDL A.photosynthesis)
 
 
-# plot formats
+# plot formats, 0 = do not print this format, 1 = print this format
 png:                            0
 eps:                            0
 pdf:                            0
 bmp:                            0
 jpeg:                           1
-tiff:                           2
+tiff:                           1
 
 # interpolation                                 # 1 = smooth.spline() like tanks
                                                 # 2 = use last reference mean until next measurement (horizontal interp) - for abrupt ref gas changes
@@ -44,7 +44,7 @@ R_bootstrap:                    0               # Number of bootstrap replicates
 sig_CI:                         0.95            # Confidence level for central confidence interval
 seed:                           1234            # pseudorandom number seed, 0 is random based on clock, set to integer for results to be repeatable
 
-# If using TDL file       TDL sampling information        number.* is TDL field "PrevSite"
+# If using TDL file       TDL sampling information        number_* is TDL field "PrevSite"
 number_tank_hi:                 9               # high tank
 number_tank_low:                10              # low tank
 number_reference:               1               # leaf reference
@@ -87,9 +87,9 @@ b_modeling:                     27
 b_s:                            1.1             # per mil fractionation as CO2 enters solution at 25C bs =  1.1
 
 a:                              4.44            # per mil fractionation in still air (stomatal pore and substomata) a = 4.44
-a_b:                            2.96            # per mil fractionation in boundary layer (slightly mixed), a.b = 2.96
-a_l:                            0.7             # per mil fractionation during diffusion in water, a.l =  0.7
-                                                # a_i = a.l+b.s
+a_b:                            2.96            # per mil fractionation in boundary layer (slightly mixed), a_b = 2.96
+a_l:                            0.7             # per mil fractionation during diffusion in water, a_l =  0.7
+                                                # a_i = a_l+b_s
 
 # Which values to use
 Licor_or_TDL_A_photosynthesis:          1       # 0=Licor, 1=TDL (1 is the "Ci ternary corrected" data)
@@ -99,7 +99,7 @@ Licor_flow_rate:                        288     # flow rate
 override_Licor_leaf_area:               1       # 0=use Licor values, 1=use specified value below
 Licor_leaf_area:                        5       # leaf area
 override_Licor_boundary_layer_cond_to_water:  1       # 0=use Licor values, 1=use specified value below
-Licor_boundary_layer_cond_to_water:     2.55    # boundary.layer.cond.to.water
+Licor_boundary_layer_cond_to_water:     2.55    # boundary_layer_cond_to_water
 override_Licor_H2OS:                    1       # 0=use Licor values, 1=use specified value below
 Licor_H2OS:                             88      # H2OS
 override_Licor_StmRat:                  1       # 0=use Licor values, 1=use specified value below
@@ -109,16 +109,16 @@ gbc_1_37:                       1.37            # gbc  BLcond/1.37 boudary layer
 gsc_1_6:                        1.6             # gsc  gsw/1.6 stomatal conductance for CO2
 
 # Calculation information
-calc_pc_to_use:                 1               # 1 = pc.using.gm
-                                                # 2 = pc.using.simple.Delta.for.gm
-                                                # 3 = pc.using.simple.Delta.for.modeling
-                                                # 4 = pc.using.complex.Delta.no.decarboxylation
-                                                # 5 = pc.using.complex.Delta.full.model
+calc_pc_to_use:                 1               # 1 = pc_using_gm
+                                                # 2 = pc_using_simple_Delta_for_gm
+                                                # 3 = pc_using_simple_Delta_for_modeling
+                                                # 4 = pc_using_complex_Delta_no_decarboxylation
+                                                # 5 = pc_using_complex_Delta_full_model
 # NOT USED
-calc_Delta_i_to_use:                            # 1 = Delta.i.simple.for.gm
-                                                # 2 = Delta.i.simple.for.modeling
-                                                # 3 = Delta.i.complex.for.gm
+calc_Delta_i_to_use:                            # 1 = Delta_i_simple_for_gm
+                                                # 2 = Delta_i_simple_for_modeling
+                                                # 3 = Delta_i_complex_for_gm
 
-calc_gm_to_use:                 1               # 1 = gm.point.simple
-                                                # 2 = gm.point.complex
+calc_gm_to_use:                 1               # 1 = gm_point_simple
+                                                # 2 = gm_point_complex
 
