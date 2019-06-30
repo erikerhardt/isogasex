@@ -1,7 +1,7 @@
 ---
 title: "isogasex: Isotopic Gas Exchange"
 subtitle: "R package documentation for TDL and Licor data processing"
-author: "Erik B. Erhardt and David T. Hanson"
+author: "Profs. Erik B. Erhardt and David T. Hanson"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 header-includes:
    - \usepackage{amsmath,wasysym}
@@ -58,7 +58,7 @@ knitr::opts_chunk$set(fig.align = "center", fig.height = 4, fig.width = 6)
 \newcommand{\defin}{\bf}
 \renewcommand{\vector}{}
 \renewcommand{\matrix}{\mathbf}
-\newcommand{\permil}{{}^\textrm{o}\mkern-5mu/\mkern-3mu_\textrm{oo}}
+\newcommand{\permil}{{~}^\textrm{o}\mkern-6mu/\mkern-4mu_\textrm{oo}}
 \newcommand{\circ}{\textrm{o}}
 
 \newcommand{\Normal}          {\textrm{Normal}}
@@ -225,7 +225,7 @@ knitr::opts_chunk$set(fig.align = "center", fig.height = 4, fig.width = 6)
 
 ## Install R
 
-R and Perl are required.  Rstudio may make your experience more enjoyable.
+R is required.  Rstudio will make your experience more enjoyable.
 
 1. R (requires R 2.15.1+)
 
@@ -235,16 +235,6 @@ R and Perl are required.  Rstudio may make your experience more enjoyable.
 1. Rstudio
 
     1. Rstudio (http://www.rstudio.org/download/) nicer GUI
-
-1. Perl
-
-    1. Mac and linux, you already have it installed
-    1. Windows
-
-        * http://www.activestate.com/activeperl/downloads
-        * Change the path variable to include `C:\Perl\bin` (or whatever it is on your machine, and use backslashes): http://www.java.com/en/download/help/path.xml
-
-
 
 
 
@@ -342,8 +332,32 @@ isogasex(input.fn, path)
 ## Constants
 
 While each of these values have their own associated uncertainty,
-  we take them to be constant at their (accepted) values for an analysis.
+  we take them to be constant at their (accepted or measured) values for the analysis.
 Common values are included below, though these may be changed in the template.
+
+Variable                     |  Value               | Description
+-----------------------------|----------------------|---------------------------
+true_value_hi_12C            |  473.335802876395    | True calibration tank values
+true_value_hi_13C            |  5.18320929165481    |
+true_value_lo_12C            |  243.473784568456    |
+true_value_lo_13C            |  2.66630113136477    |
+fo_13C                       |  0.004922            | if only 12 and 13CO2 are measured, fo means fraction of other isotopologues not measured
+fo_18O                       |  0.000821            | if 12 and 13CO2, and 12C18O16O are measured (not ususal for Dave's machine)
+Rstd_13C                     |  0.0111797           | (Rvpdb)
+Rstd_18O                     |  0.0020052           | (Rvsmow) may occaisionally be used with Dave's machine, method not tested yet
+Gamma_star                   |  1                   | CO2 compensation point in absence of day respiration.  I will need to specify experiment specific values for these constants in the equations below
+f_photo_respiration          |  1                   | fractionation associated with photorespiration
+e                            |  1                   | fractionation associated with day respiration
+Rd                           |  1                   | day respiration
+k                            |  1                   | carboxylation efficiency, often initial slope of A/Ci, or better A/Cc
+b_gm                         |  29                  |
+b_modeling                   |  27                  |
+b_s                          |  1.1                 | per mil fractionation as CO2 enters solution at 25C bs =  1.1
+a                            |  4.44                | per mil fractionation in still air (stomatal pore and substomata) a = 4.44
+a_b                          |  2.96                | per mil fractionation in boundary layer (slightly mixed), a_b = 2.96
+a_l                          |  0.7                 | per mil fractionation during diffusion in water, a_l =  0.7
+a_i                          |  a_l + b_s           | a_i = a_l + b_s
+
 
 $$
 \begin{aligned}
@@ -385,6 +399,33 @@ $$
 
 ### TDL
 
+Required | TDL            | isogasex var name
+---------|----------------|------------------
+Yes      | TIMESTAMP      | TIMESTAMP
+Yes      | RECORD         | RECORD
+Yes      | PrevSite       | PrevSite
+Yes      | SiteOutput     | SiteOutput
+Yes      | StartSeqFlag   | StartSeqFlag
+Yes      | SeqActiveFlag  | SeqActiveFlag
+Yes      | SiteCount      | SiteCount
+Yes      | ConcA          | conc12CO2, chamber_12
+Yes      | ConcB          | conc13CO2, chamber_13
+Yes      | ConcC          | ConcC
+Yes      | TGAStatus      | TGAStatus
+Yes      | TGApressure    | TGApressure
+Yes      | MassFlow1      | MassFlow1
+Yes      | Pressure1      | Pressure1
+Yes      | MassFlow2      | MassFlow2
+Yes      | Pressure2      | Pressure2
+Yes      | PressureProMan | PressureProMan
+Yes      | tank_hi_12     | interp_tank_hi_12
+Yes      | tank_hi_13     | interp_tank_hi_13
+Yes      | tank_low_12    | interp_tank_low_12
+Yes      | tank_low_13    | interp_tank_low_13
+Yes      | reference_12   | interp_reference_12
+Yes      | reference_13   | interp_reference_13
+
+
 Concentrations for high and low calibration tanks (H and L),
   reference gas entering the chamber (R),
   and chamber gas exiting the chamber (C).
@@ -410,6 +451,51 @@ $$
 
 ### Licor
 
+isogasex accepts data from Licor 6400 or 6800.
+Since the original design of the software was based on the 6400,
+  we have matched the variables from the 6800 that correspond to what
+  is needed for the software based on the 6400 variable names.
+
+
+
+Required | Licor 6400    | Licor 6800   | isogasex var name
+---------|---------------|--------------|------------------
+Yes      | Obs           | obs          | Obs
+Yes      | HHMMSS        | time         | HHMMSS
+Yes      | FTime         | elapsed      | FTime
+Yes      | Photo         | A            | A
+Yes      | Trmmol (mmol) | E (mol)*1000 | E
+Yes      | Tair          | Tair         | temp_air
+Yes      | Tleaf         | Tleaf        | temp_leaf
+Yes      | TBlk          | Tirga        | temp_block
+Yes      | CO2R          | CO2_r        | Ce
+Yes      | CO2S          | CO2_s        | Co
+Yes      | H2OR          | H2O_r        | xin
+Yes      | H2OS          | H2O_s        | xout
+Yes      | RH_R          | ?            | rh_ref
+Yes      | RH_S          | RHcham       | rh_sam
+Yes      | Flow          | Flow         | uin
+Yes      | PARi          | Qin          | par_int
+Yes      | PARo          | Qamb_out     | par_ext
+Yes      | Press         | Pa           | Atm_press
+Yes      | CsMch         | ?            | CsMch
+Yes      | HsMch         | ?            | HsMch
+Yes      | StableF       | ?            | StableF
+Yes      | Status        | ?            | Status
+-        | Cond          | gtc          | gsc
+-        | Ci            | Ci           | Ci
+-        | VpdL          | VPDleaf      | VPD
+-        | Area          | -            | La
+-        | StmRat        | -            | StmRat
+-        | BLCond        | gbw          | gbw
+-        | EBal?         | -            | -
+-        | CTleaf        | -            | -
+-        | BLC_1         | -            | -
+-        | BLCslope      | -            | -
+-        | BLCoffst      | -            | -
+-        | f_parin       | -            | -
+-        | f_parout      | -            | -
+-        | alphaK        | -            | -
 
 $$
 \begin{aligned}
@@ -430,26 +516,24 @@ $$
 
 I have a note that $\sdatagtc$ is a function of $\sgbc$, $\sgsc$, $\sdotab$, $\sdotgsc$, and $\sdotgbc$.
 
+If switches are set, then constants set in the parameter file can override Licor values.
+
+Switch                                                | Licor  | Constant to replace Licor values
+------------------------------------------------------|--------|---------------------------------
+val_const_override_Licor_flow_rate                    | uin    | flow_rate
+val_const_override_Licor_leaf_area                    | La     | leaf_area
+val_const_override_Licor_boundary_layer_cond_to_water | gbw    | boundary_layer_cond_to_water
+val_const_override_Licor_H2OS                         | xout   | H2OS
+val_const_override_Licor_StmRat                       | StmRat | StmRat
+
+
 ## Calculations
 
 ### Concentration
 
+#### Calibration tank concentrations
 
-Offset
-
-$$
-\begin{aligned}
-\sotw
-  & = & \sdotkappaHtw - \sgtw\skappaHtw
-  & \quad \textrm{} \\
-\soth
-  & = & \sdotkappaHth - \sgth\skappaHth
-  & \quad \textrm{} \\
-\end{aligned}
-$$
-
-
-Gain
+#### Calibration tank gain. `f_val_calc_gain()`
 
 $$
 \begin{aligned}
@@ -463,7 +547,26 @@ $$
 $$
 
 
-Corrected
+#### Calibration tank offset. `f_val_calc_offset()`
+
+$$
+\begin{aligned}
+\sotw
+  & = & \sdotkappaHtw - \sgtw\skappaHtw
+  & \quad \textrm{} \\
+\soth
+  & = & \sdotkappaHth - \sgth\skappaHth
+  & \quad \textrm{} \\
+\end{aligned}
+$$
+
+
+#### Corrected reference values. `f_val_calc_corrected()`
+
+12Ce: 12C Site 1 reference Ce is the ppm CO2 concentration entering the leaf chamber, equivalent terms: reference, Site 1, CO2R
+
+13Ce: 13C Site 1 reference
+
 
 $$
 \begin{aligned}
@@ -473,6 +576,18 @@ $$
 \skappaRthp
   & = & \skappaRth\sgth + \soth
   & \quad \textrm{Ref} \\
+\end{aligned}
+$$
+
+
+#### Corrected chamber values. `f_val_calc_corrected()`
+
+12Co: 12C Site 21 chamber Co is the outgoing ppm CO2 concentration from the leaf chamber: sample, Site 21, CO2S, Ca, also air above the leaf
+
+13Co: 13C Site 21 chamber
+
+$$
+\begin{aligned}
 \skappaCtwp
   & = & \skappaCtw\sgtw + \sotw
   & \quad \textrm{Chamber} \\
@@ -483,7 +598,30 @@ $$
 $$
 
 
-xi
+#### Total reference and chamber values. `f_val_calc_total_mol_fraction_CO2()`
+
+Total Ce  Total Site 1
+
+Total Co  Total Site 21
+
+$$
+\begin{aligned}
+\sCe
+  & = & (\skappaRtwp+\skappaRthp)(1-\sdotfthC)^{-1}
+  & \quad \textrm{entering Reference} \\
+\sCo
+  & \equiv \sCa = & (\skappaCtwp+\skappaCthp)(1-\sdotfthC)^{-1}
+  & \quad \textrm{outgoing Chamber} \\
+\end{aligned}
+$$
+
+
+Ce-Co Total Site 1 - Total Site 21  I like having this as an output for diagnostics
+
+
+#### xi. `f_val_calc_xi()`
+
+An output for diagnostics.
 
 $$
 \begin{aligned}
@@ -494,7 +632,57 @@ $$
 $$
 
 
-delta
+
+
+### A Photosynthesis
+
+#### A, TDL photosynthesis. `f_val_calc_TDL_A_photosynthesis()`
+
+Total, as well as:
+
+12A, TDL photosynthesis.
+
+13A, TDL photosynthesis.
+
+$$
+\begin{aligned}
+A
+  & = &
+  (flow / 10^6) * (Ce - Co) / (leaf_area / 10^4)
+\end{aligned}
+$$
+
+#### Delta from ratios in and out?, (Re/Ro)-1, is this really the same? `f_val_calc_Delta_from_ratios_in_out()`
+
+not in per mil
+
+$$
+\begin{aligned}
+Delta_from_ratios_in_out
+  & = &
+  ((ref_13Ce / ref_12Ce) / (cham_13Co / cham_12Co)) - 1
+\end{aligned}
+$$
+
+
+#### D from A ratio, (Ro/(13A/12A))-1, should be the same as Dobs above. `f_val_calc_Delta_from_A_ratio()`
+
+not in per mil
+
+$$
+\begin{aligned}
+\textrm{Delta_from_A_ratio}
+  & = &
+  ((cham_13Co / cham_12Co) / (TDL_13A / TDL_12A)) - 1
+\end{aligned}
+$$
+
+#### Select TDL or Licor based on switch
+
+
+### Delta
+
+#### delta reference and chamber values. `f_val_calc_delta_proportion()`
 
 $$
 \begin{aligned}
@@ -507,76 +695,434 @@ $$
 \end{aligned}
 $$
 
+#### delta diff
 
-Total mol fractions (paired, either both Licor or both TDL)
-
-$$
-\begin{aligned}
-\sCe
-  & = (& \skappaRtwp+\skappaRthp)(1-\sdotfthC)^{-1}
-  & \quad \textrm{entering Reference} \\
-\sCa
-  & \equiv & \sCo = (\skappaCtwp+\skappaCthp)(1-\sdotfthC)^{-1}
-  & \quad \textrm{outgoing Chamber} \\
-\end{aligned}
-$$
-
-
-
-## Partial Pressures
+An output for diagnostics.
 
 $$
 \begin{aligned}
-\spa
-  & = & (\sCa 10^{-6})(\spatmL 10^3)
-  & \quad \textrm{atmosphere} \\
-\sps
-  & = & (\sCs 10^{-6})(\spatmL 10^3)
-  & \quad \textrm{surface} \\
-\spi
-  & = & (\sCi 10^{-6})(\spatmL 10^3)
-  & \quad \textrm{internal} \\
-\spc
-  & = & \spi - \sAL \sgm^{-1}
-  & \quad \textrm{(chloroplast) carboxylation site} \\
-\sgm
-  & = & (\sdotb - \sdotbs - \sdotaw)\sAL\spa^{-1}(\sDeltapred-\sDeltaobs)^{-1}
-  & \quad \textrm{}\\
+\sdeltao - \sdeltae
 \end{aligned}
 $$
 
+#### Delta discrimination.
 
+Dobs observed discrimination. `f_val_calc_Delta_obs()`
 
-### Discrimination
-
-{\bf (can put priors here, if desired)}
+Dobs per mil  1000*Dobs. `f_val_calc_Delta_obs_permil()`
 
 $$
 \begin{aligned}
 \sDeltaobs
   & = & \sxi(\sdeltao-\sdeltae)\{1+\sdeltao-\sxi(\sdeltao-\sdeltae)\}^{-1}10^3
   & \quad \textrm{}\\
-\sDeltapred
-  & = & \spa^{-1} \{ \sdotab(\spa-\sps) + \sdota(\sps-\spi) + \sdotb\spc \}
-  & \quad \textrm{}\\
 \end{aligned}
 $$
 
-(circular, assume $\spc \equiv \spi$)
+
+#### delta13C Assimilated, isotopic composition of assimilated sugars. `f_val_calc_delta_13C_Assim()`
+
+NB: Chris did this differently for d13Cs in his paper see following:
+I think this could be calculated for modelling using the equivalent of de instead of do,
+i.e., when the leaf modelled is not in a chamber so the air above a leaf is equivalent to the bulk atmosphere.
+
+$$
+\begin{aligned}
+delta_13C_Assim
+  & = &
+  (chamber_delta_o - Delta_obs) / (Delta_obs + 1)
+\end{aligned}
+$$
+
+#### p = (Co - Ce) / Co. `f_val_calc_p()`
+
+$$
+\begin{aligned}
+p
+  & = &
+  (Co - Ce) / Co
+\end{aligned}
+$$
+
+#### delta13C Respired, isotopic composition of respired CO2. `f_val_calc_delta_13C_Resp()`
+
+$$
+\begin{aligned}
+delta_13C_Resp
+  & = &
+  (chamber_delta_o - reference_delta_e * (1 - p)) / p
+\end{aligned}
+$$
 
 
+### g conductance
 
-Leaf surface:
+#### gbw BLcond  boundary layer conductance for water, Blcond is LI 6400 header
+
+$$
+\begin{aligned}
+chamber_Totalgbw
+  & = &
+  gbw
+\end{aligned}
+$$
+
+#### gbc BLcond/1.37 boundary layer conductance for CO2
+
+$$
+\begin{aligned}
+chamber_Totalgbc
+  & = &
+  gbw / gbc_1.37 \\
+chamber_12gbc
+  & = &
+  chamber_Totalgbc \\
+chamber_13gbc
+  & = &
+  chamber_Totalgbc / (1 + (a_b / 1000)) \\
+\end{aligned}
+$$
+
+#### gsw cond  stomatal conductance for water
+
+$$
+\begin{aligned}
+chamber_Totalgsw
+  & = &
+  gsc
+\end{aligned}
+$$
+
+#### gsc gsw/1.6 stomatal conductance for CO2
+
+$$
+\begin{aligned}
+chamber_Totalgsc
+  & = &
+  chamber_Totalgsw / gsc_1.6 \\
+chamber_12gsc
+  & = &
+  chamber_Totalgsc \\
+chamber_13gsc
+  & = &
+  chamber_Totalgsc / (1 + (a_b / 1000)) \\
+\end{aligned}
+$$
+
+#### gtc, total (stomatal and boundary layer) conductance for CO2
+
+
+$$
+\begin{aligned}
+chamber_Totalgtc
+  & = &
+  1 / ((1 / chamber_Totalgbc) + (1 / chamber_Totalgsc)) \\
+chamber_12gtc
+  & = &
+  chamber_Totalgtc \\
+chamber_13gtc
+  & = &
+  1 / ((1 / chamber_13gbc) + (1 / chamber_13gsc)) \\
+\end{aligned}
+$$
+
+
+### Cx and px (concentrations and pressures)
+
+#### Ca = Co, ppm CO2 concentration above the leaf = concentration leaving the leaf chamber = ambient CO2 concentration
+
+#### Cs, ppm CO2 concentration at the leaf surface, cs calculated from eq 40 Ball 1987 Ch 20 Stomatal Function, eds Zeiger, Farquhar, Cowan. `f_val_calc_Cs()`
+
+This value can be from the TDL or Licor: $\sCo$ and $\sAL$.
+
+Total, 12, and 13 values.
+
+$$
+\begin{aligned}
+Cs
+  & = &
+  (((gbc - (E / 2000)) * Co) - A) / (gbc + (E / 2000)) \\
+Cs_{12}
+  & = &
+  (((gbc_{12} - (E / 2000)) * Co_{12}) - A_{12}) / (gbc_{12} + (E / 2000)) \\
+Cs_{13}
+  & = &
+  (((gbc_{13} - (E / 2000)) * Co_{13}) - A_{13}) / (gbc_{13} + (E / 2000)) \\
+\end{aligned}
+$$
 
 $$
 \begin{aligned}
 \sCs
   & = & \{ (\sgbc - \sE/2000)\sCo - \sAL \} ( \sgbc + \sE/2000 )^{-1}
   & \quad \textrm{}\\
+\end{aligned}
+$$
+
+
+#### pa, partial pressure of CO2 above the leaf, Press is the atmospheric pressure value from the LI6400. `f_val_calc_pp()`
+
+Total, 12, and 13 values.
+
+$$
+\begin{aligned}
+pa
+  & = &
+  (Co / 10^6) * (Press * 1000) \\
+pa_{12}
+  & = &
+  (Co_{12} / 10^6) * (Press * 1000) \\
+pa_{13}
+  & = &
+  (Co_{13} / 10^6) * (Press * 1000) \\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\spa
+  & = & (\sCa 10^{-6})(\spatmL 10^3)
+  & \quad \textrm{atmosphere} \\
+\end{aligned}
+$$
+
+
+#### ps, partial pressure of CO2 at the leaf surface, Press is the atmospheric pressure value from the LI6400. `f_val_calc_pp()`
+
+NB: same formula as pa, but using Cs instead of Co
+
+$$
+\begin{aligned}
+\sps
+  & = & (\sCs 10^{-6})(\spatmL 10^3)
+  & \quad \textrm{surface} \\
+\end{aligned}
+$$
+
+#### Ci, ppm CO2 concentration in the sub-stomatal cavities, ci calculated from eq 35 Ball 1987 Ch 20 Stomatal Function, eds Zeiger, Farquhar, Cowan. `f_val_calc_Cs()`
+
+NB: same formula as Cs, but using gtc instead of gbc
+
+This value can be from the TDL or Licor: $\sCo$ and $\sAL$.
+
+Total, 12, and 13 values.
+
+$$
+\begin{aligned}
 \sCi
   & = & \{ (\sgtc - \sE/2000)\sCo - \sAL \} ( \sgtc + \sE/2000 )^{-1}
   & \quad \textrm{}\\
 \end{aligned}
 $$
 
-Either of these values can be from the TDL or Licor: $\sCo$ and $\sAL$.
+#### pi, partial pressure of CO2 in the substomatal cavities, Press is the atmospheric pressure value from the LI6400. `f_val_calc_pp()`
+
+NB: same formula as pa, but using Ci instead of Co
+
+$$
+\begin{aligned}
+\spi
+  & = & (\sCi 10^{-6})(\spatmL 10^3)
+  & \quad \textrm{internal} \\
+\end{aligned}
+$$
+
+
+#### pi/pa total pi/pa or total Ci/Ca  ratio of substomatal CO2 partial pressure to CO2 partial pressure above leaf = Ci/Ca ratio of mol fractions
+
+$$
+\begin{aligned}
+chamber_Totalpi_pa
+  & = &
+  chamber_Totalpi / chamber_Totalpa
+\end{aligned}
+$$
+
+
+### Delta_i predictions
+
+**I'm not sure where this formula belongs -- it's from an older project**
+
+$$
+\begin{aligned}
+\sDeltapred
+  & = & \spa^{-1} \{ \sdotab(\spa-\sps) + \sdota(\sps-\spi) + \sdotb\spc \}
+  & \quad \textrm{}\\
+\end{aligned}
+$$
+
+#### Delta_i simple for gm, predicted discrimination including boundary layer effects but not decarboxylation effects. `f_val_calc_Delta_i_simple_for_gm()`
+
+Total values.  b_gm constant.
+
+$$
+\begin{aligned}
+\textrm{Delta_i_simple_for_gm}
+  & = &
+  a_b * ((pa - ps) / pa) + a*((ps - pi) / pa) + b * (pi / pa)
+\end{aligned}
+$$
+
+#### Delta_i simple for modeling  a + (b-a) pi/pa predicted discrimination including boundary layer effects but using b adjustments to approximate effects of gm and decarboxylations. `f_val_calc_Delta_i_simple_for_modeling()`
+
+Total values.  b_modeling constant.
+
+$$
+\begin{aligned}
+\textrm{Delta_i_simple_for_modeling}
+  & = &
+  a + (b - a) * pi / pa
+\end{aligned}
+$$
+
+#### Delta_i complex for gm  CHECK DERIVATION  predicted discrimination including boundary layer effects AND decarboxylation effects. `f_val_calc_Delta_i_complex_for_gm()`
+
+Total values.  b_gm constant.
+
+$$
+\begin{aligned}
+\textrm{Delta_i_complex_for_gm}
+  & = &
+  a_b * ((pa - ps) / pa) + a * ((ps - pi) / pa) + b * (pi / pa) - (f_photo * Gamma_star / pa) - (e * Rd / (k * pa))
+\end{aligned}
+$$
+
+#### Delta_i simple for gm-Dobs   (Di simple for gm)-(Dobs per mil)
+
+$$
+\begin{aligned}
+\textrm{chamber_Delta_i_simple_for_gm_Delta_obs}
+  & = &
+  \textrm{chamber_Delta_i_simple_for_gm} - \textrm{Delta_obs_permil}
+\end{aligned}
+$$
+
+#### Delta_i complex for gm-Dobs  (Di complex for gm)-(Dobs per mil)
+
+$$
+\begin{aligned}
+\textrm{chamber_Delta_i_complex_for_gm_Delta_obs}
+  & = &
+  \textrm{chamber_Delta_i_complex_for_gm} - \textrm{Delta_obs_permil}
+\end{aligned}
+$$
+
+### gm mesophyll conductance
+
+#### gm point simple, internal leaf (mesophyll) conductance calculated for every D value ignoring decarboxylation effects. `f_val_calc_gm_point_simple()`
+
+Total, 12, and 13 values.
+
+$$
+\begin{aligned}
+\sgm
+  & = & (\sdotb - \sdotbs - \sdotaw)\sAL\spa^{-1}(\sDeltapred-\sDeltaobs)^{-1}
+  & \quad \textrm{}\\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+gm_point_simple
+  & = &
+  (( b - bs - al) * A / pa) / (Di - D_obs)
+\end{aligned}
+$$
+
+#### gm point complex, internal leaf (mesophyll) conductance calculated for every D value estimating decarboxylation effects. `f_val_calc_gm_point_complex()`
+
+$$
+\begin{aligned}
+gm_point_complex
+  & = &
+  ((b - bs - al) * A / pa) / (Di - D_obs - (f_photo * Gamma_star / pa) - ((e * Rd) / (k * pa)))
+\end{aligned}
+$$
+
+#### select one of the calculated gm values to use
+
+Sets gm to be either gm_point_simple or gm_point_complex.
+
+### pc
+
+#### pc using gm,  total partial pressure of CO2 at the site of carboxylation, Press is the atmospheric pressure value from the LI6400. `f_val_calc_pc_using_gm()`
+
+Total, 12, and 13 values.
+
+$$
+\begin{aligned}
+\spc
+  & = & \spi - \sAL \sgm^{-1}
+  & \quad \textrm{(chloroplast) carboxylation site} \\
+\end{aligned}
+$$
+
+
+#### pc using simple D for gm, includes boundary layer. `f_val_calc_pc_using_simple_Delta_for_gm()`
+
+Total values.  b_gm constant.
+
+$$
+\begin{aligned}
+pc
+  & = &
+  (Delta * pa - a_b * (pa - ps) - a * ps) / (b_gm - a)
+\end{aligned}
+$$
+
+#### pc using simple D for modeling. `f_val_calc_pc_using_simple_Delta_for_modeling()`
+
+Total values.  b_modeling constant.
+
+$$
+\begin{aligned}
+pc
+  & = &
+  (pa * (Delta - a)) / (b_modeling - a)
+\end{aligned}
+$$
+
+#### pc using complex D, no decarboxylation  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-Dpa]/(bs+al-b)  is this different from two up? They give different values but both may not be derived properly. `f_val_calc_pc_using_complex_Delta_no_decarboxylation()`
+
+Total values.  b_modeling constant.
+
+$$
+\begin{aligned}
+pc
+  & = &
+  (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa) / (bs + al - b)
+\end{aligned}
+$$
+
+#### pc using complex D, full model  [ab(pa-ps)+a(ps-pi)+pi(bs+al)-(eRd/k+fG*)-Dpa]/(bs+al-b)  includes boundary layer and decarboxylation effects. `f_val_calc_pc_using_complex_Delta_full_model()`
+
+Total values.  b_modeling constant.
+
+$$
+\begin{aligned}
+pc
+  & = &
+  (a_b * (pa - ps) + a * (ps - pi) + pi * (bs + al) - Delta * pa  - (e * Rd / k + f * Gamma_star)) / (bs + al - b)
+\end{aligned}
+$$
+
+#### select one of the calculated pc values to use
+
+Select one of the five pc values above to use in calculations.
+
+
+#### Cc  (pc*10^6)/(Press*1000)  ppm CO2 concentration at the site of carboxylation, generally meaning inside the chloroplast and ignoring PEPC in cytosol. `f_val_calc_pp()`
+
+NB: same formula as pa, but using pc instead of Co
+
+**CURRENTLY using first pc only -- should it use the selected pc in the parameter file?**
+
+$$
+\begin{aligned}
+Cc
+  & = & (pc 10^{-6})(\spatmL 10^3)
+  & \quad \textrm{surface} \\
+\end{aligned}
+$$
+
+
