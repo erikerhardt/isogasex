@@ -1,0 +1,62 @@
+isogasex: TDL/Licor processing
+
+   Concept by David T. Hanson 
+   Written by Erik B. Erhardt 
+   Professors at the University of New Mexico 
+
+ Starting  2019-07-01 22:01:52 
+
+ 
+
+ ================================================================================
+ SESSION INFO AND PACKAGE VERSION ---- BEGIN ------------------------------------
+ 
+
+ R version 3.6.0 (2019-04-26)
+ Platform: x86_64-w64-mingw32/x64 (64-bit)
+ Running under: Windows 7 x64 (build 7601) Service Pack 1
+ 
+ Matrix products: default
+ 
+ locale:
+ [1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United States.1252    LC_MONETARY=English_United States.1252
+ [4] LC_NUMERIC=C                           LC_TIME=English_United States.1252    
+ 
+ attached base packages:
+ [1] stats     graphics  grDevices utils     datasets  methods   base     
+ 
+ other attached packages:
+ [1] magrittr_1.5
+ 
+ loaded via a namespace (and not attached):
+ [1] compiler_3.6.0    tools_3.6.0       yaml_2.2.0        R.methodsS3_1.7.1 R.utils_2.9.0     R.oo_1.22.0      
+ 
+
+ Package: isogasex
+ Type: Package
+ Title: Isotopic gas exchange using TDL and Licor input.  Updated version of package tdllicor
+ Version: 0.2.03
+ Author: Erik B. Erhardt <erike@stat.unm.edu> and David T. Hanson <dthanson@unm.edu>
+ Maintainer: Erik B. Erhardt <erike@stat.unm.edu>
+ Description: Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals, and creates
+               plots and tables.  Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames. Run
+               \code{\link{isogasex}}. See output in \file{./out} directory.
+ License: GPL (>= 2)
+ Encoding: UTF-8
+ LazyData: true
+ Depends: R (>= 3.6.0)
+ Suggests: knitr, rmarkdown
+ VignetteBuilder: knitr
+ RoxygenNote: 6.1.1
+ Imports: crayon, dplyr, jsonlite, log4r, magrittr, purrr, readr, readxl, stringr, yaml, zoo, RLicor
+ Built: R 3.6.0; ; 2019-06-17 04:12:41 UTC; windows
+ 
+ -- File: C:/Program Files/R/R-3.6.0/library/isogasex/Meta/package.rds 
+ 
+
+ SESSION INFO AND PACKAGE VERSION ---- END   ------------------------------------
+ ================================================================================
+ 
+
+ Reading template parameters from:  isogasex_template4.yaml 
+ Assign parameter to variables 
