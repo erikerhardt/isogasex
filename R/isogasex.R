@@ -141,6 +141,12 @@ function(
 ### Directory where TDL and Licor data are to be read from, and where ./out directory for results are to be written to.
 )
 {
+  ## DEBUG
+  # R.utils::sourceDirectory("C:/Dropbox/StatAcumen/consult/Authorship/2009_DavidHanson_Isotopes/R-package/isogasex/R/")
+  # library(magrittr)
+  # input_fn = c("isogasex_template4.yaml", "isogasex_template4.xls")[1]
+  # path = "C:/Dropbox/StatAcumen/consult/Authorship/2009_DavidHanson_Isotopes/package_testing/isogasex/0.2.03"
+
   # DRIVER FUNCTION -------------------------------------------------------------
 
   ## SECTION Preamble
@@ -356,6 +362,7 @@ function(
     # NOTE, THE lm() does not recognize the value after the ~ if run driver script with source(*.R), but works if copy lines by line.
   plot_data_cycles(TDL, TDL_cycle, plot_format_list, output_fn_prefix, val$const$Rstd_13C, "window");
 
+
   if (sw$use_Licor ) {
     ##details<<
     ## Calculate the mean and variance for the Licor data based on last measurements. \code{\link{calc_mean_Licor}}
@@ -516,6 +523,8 @@ function(
   setwd(path_original);
 
   ## Complete.
+
+  print(citation(package="isogasex"))
 
   # Display logo
   print(isogasex_logo())

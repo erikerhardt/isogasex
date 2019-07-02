@@ -20,7 +20,7 @@
 #'
 #' @return Licor xxxRETURNxxx
 #' @importFrom utils read.delim
-#' @importFrom dplyr select
+#' @importFrom dplyr select rename
 #' @importFrom magrittr %>%
 #' @importFrom RLicor read_Licor
 #'
@@ -53,41 +53,80 @@ function# read_Licor file
   # Read licor data from 6400 or 6800
   dat_Licor <- RLicor::read_Licor(Licor_fn)
 
-  # If Licor 6800, convert required columns to 6400 format for compatability
-  if (dat_Licor$model == 6800) {
-
-
-
-
-
+  # If Licor 6400
+  if (dat_Licor$model == 6400) {
+    # Remove remark rows and change to data.frame (tibbles work differently and break the code)
+    Licor$data <-
+      dat_Licor$data %>%
+      dplyr::select(
+        -remark
+      ) %>%
+      dplyr::filter(
+        !is.na(Obs)
+      ) %>%
+      as.data.frame()
   }
 
+  # If Licor 6800, convert required columns to 6400 format for compatability
+  # See vignettes/isogasex_user_guide.Rmd for column matching
+  if (dat_Licor$model == 6800) {
 
-  # Remove remark rows and change to data.frame (tibbles work differently and break the code)
-  Licor$data <-
-    dat_Licor$data %>%
-    dplyr::select(
-      -remark
-    ) %>%
-    dplyr::filter(
-      !is.na(Obs)
-    ) %>%
-    as.data.frame()
+    Licor$data <-
+      dat_Licor$data %>%
+      dplyr::select(
+        obs
+      , hhmmss
+      , elapsed
+      , A
+      , E
+      , Tair
+      , Tleaf
+      , Tirga
+      , CO2_r
+      , CO2_s
+      , H2O_r
+      , H2O_s
+      , RHcham
+      , Flow
+      , Qin
+      , Qamb_out
+      , Pa
+      , gtc
+      , Ci
+      , VPDleaf
+      , S
+      , gbw
+      ) %>%
+      dplyr::rename(
+        Obs     = obs
+      , HHMMSS  = hhmmss
+      , FTime   = elapsed
+      , Photo   = A
+      , Trmmol  = E
+      , Tair    = Tair
+      , Tleaf   = Tleaf
+      , TBlk    = Tirga
+      , CO2R    = CO2_r
+      , CO2S    = CO2_s
+      , H2OR    = H2O_r
+      , H2OS    = H2O_s
+      , RH_S    = RHcham
+      , Flow    = Flow
+      , PARi    = Qin
+      , PARo    = Qamb_out
+      , Press   = Pa
+      , Cond    = gtc
+      , Ci      = Ci
+      , VpdL    = VPDleaf
+      , Area    = S
+      , BLCond  = gbw
+      ) %>%
+      dplyr::mutate(
+        Trmmol = Trmmol * 1000 # mol to mmol
+      ) %>%
+      as.data.frame() # change to data.frame (tibbles work differently and break the code)
 
-
-  # ## If any extra lines in Licor file, remove those lines and fix the Obs and HHMMSS columns.
-  # fix_factor <- is.factor(Licor$data[,1]);
-  #   if(fix_factor){
-  #     p_o <- paste("            Note: Some junk lines in Licor file, removing those lines (may see NA warning)", "\n"); write_out(p_o);
-  #     Licor$data2 <- utils::read.delim(Licor_fn, header=TRUE, sep="", as.is=TRUE, skip=Licor_header_skip);     # any white space is delim, as.is does not convert to factors
-  #     na_data <- is.na(as.numeric(Licor$data2[,1]));
-  #     Licor$data <- Licor$data[!na_data,]; # remove any lines that don't begin with a number -- such as lines: "Const=" -52 "Oxygen%" 2.0
-  #     Licor$data[,"Obs"   ] <- as.numeric(Licor$data2[!na_data,"Obs"   ]); # fix the affected columns
-  #     #Licor$data[,"HHMMSS"] <-            Licor$data2[!na_data,"HHMMSS"] ;
-  #     Licor$data[,"FTime" ] <- as.numeric(Licor$data2[!na_data,"FTime" ]);
-  #     Licor$data2 <- NULL; # remove after fixing
-  #   }
-
+  }
 
 
   #Licor$data <- read.delim(Licor_fn, header=TRUE, sep="\t", skip=Licor_header_skip);  # only tabs is delim

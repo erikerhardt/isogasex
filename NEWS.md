@@ -28,3 +28,8 @@ When copying decimal values from xls to yaml, copy full number from value bar (1
 Uses new RLicor package to read in Licor 6400 and 6800 files.
 Currently works with 6400 version.
 Renamed read_Licor to get_Licor to reduce chance of conflict with RLicor::read_Licor().
+
+# isogasex 0.2.04
+
+7/2/2019
+Works with Licor 6800 files.
