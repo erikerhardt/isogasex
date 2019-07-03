@@ -98,6 +98,7 @@ function# read_Licor file
       , gbw
       ) %>%
       dplyr::rename(
+        # Licor 6400    = Licor 6800
         Obs     = obs
       , HHMMSS  = hhmmss
       , FTime   = elapsed
