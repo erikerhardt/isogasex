@@ -33,3 +33,9 @@ Renamed read_Licor to get_Licor to reduce chance of conflict with RLicor::read_L
 
 7/2/2019
 Works with Licor 6800 files.
+
+# isogasex 0.2.05
+
+7/15/2019
+Updated warning message for Site mismatch between Template and TDL files.
+

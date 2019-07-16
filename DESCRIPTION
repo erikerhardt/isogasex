@@ -1,12 +1,12 @@
 Package: isogasex
 Type: Package
 Title: Isotopic gas exchange using TDL and Licor input.  Updated version of package tdllicor
-Version: 0.2.04
+Version: 0.2.05
 Date: 2019-07-02
 Author: Erik B. Erhardt <erike@stat.unm.edu> and David T. Hanson <dthanson@unm.edu>
 Maintainer: Erik B. Erhardt <erike@stat.unm.edu>
 Description: Reads TDL and Licor files, aligns them, calculates quantities of interest with bootstrap intervals, and creates plots and tables.
-  Edit \file{isogasex_templateX.xls} and input parameters and TDL/Licor filenames. Run \code{\link{isogasex}}. See output in \file{./out} directory.
+  Edit Template file (\file{isogasex_templateX.xls} or \file{isogasex_templateX.yaml}) including the input parameters and TDL/Licor filenames. Run \code{\link{isogasex}}. See output in \file{./out} directory.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
