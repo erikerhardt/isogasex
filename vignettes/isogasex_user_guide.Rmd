@@ -399,31 +399,36 @@ $$
 
 ### TDL
 
-Required | TDL            | isogasex var name
----------|----------------|------------------
-Yes      | TIMESTAMP      | TIMESTAMP
-Yes      | RECORD         | RECORD
-Yes      | PrevSite       | PrevSite
-Yes      | SiteOutput     | SiteOutput
-Yes      | StartSeqFlag   | StartSeqFlag
-Yes      | SeqActiveFlag  | SeqActiveFlag
-Yes      | SiteCount      | SiteCount
-Yes      | ConcA          | conc12CO2, chamber_12
-Yes      | ConcB          | conc13CO2, chamber_13
-Yes      | ConcC          | ConcC
-Yes      | TGAStatus      | TGAStatus
-Yes      | TGApressure    | TGApressure
-Yes      | MassFlow1      | MassFlow1
-Yes      | Pressure1      | Pressure1
-Yes      | MassFlow2      | MassFlow2
-Yes      | Pressure2      | Pressure2
-Yes      | PressureProMan | PressureProMan
-Yes      | tank_hi_12     | interp_tank_hi_12
-Yes      | tank_hi_13     | interp_tank_hi_13
-Yes      | tank_low_12    | interp_tank_low_12
-Yes      | tank_low_13    | interp_tank_low_13
-Yes      | reference_12   | interp_reference_12
-Yes      | reference_13   | interp_reference_13
+The table below lists variables that are required or not.
+Timing and calculation variables are required.
+Variables only used for plotting for diagnostics are not strictly required, but
+  the software currently does not handle them if they are missing.
+
+Required | Use    | TDL            | isogasex var name
+---------|--------|----------------|------------------
+Yes      | Time   | TIMESTAMP      | TIMESTAMP
+No       | .      | RECORD         | RECORD
+Yes      | Time   | PrevSite       | PrevSite
+No       | .      | SiteOutput     | SiteOutput
+Yes      | Time   | StartSeqFlag   | StartSeqFlag
+Yes      | Time   | SeqActiveFlag  | SeqActiveFlag
+No       | .      | SiteCount      | SiteCount
+Yes      | Calc   | ConcA          | conc12CO2, chamber_12
+Yes      | Calc   | ConcB          | conc13CO2, chamber_13
+No       | .      | ConcC          | ConcC
+No       | .      | TGAStatus      | TGAStatus
+No       | Plot   | TGApressure    | TGApressure
+No       | Plot   | MassFlow1      | MassFlow1
+No       | Plot   | Pressure1      | Pressure1
+No       | Plot   | MassFlow2      | MassFlow2
+No       | Plot   | Pressure2      | Pressure2
+No       | Plot   | PressureProMan | PressureProMan
+Yes      | Calc   | tank_hi_12     | interp_tank_hi_12
+Yes      | Calc   | tank_hi_13     | interp_tank_hi_13
+Yes      | Calc   | tank_low_12    | interp_tank_low_12
+Yes      | Calc   | tank_low_13    | interp_tank_low_13
+Yes      | Calc   | reference_12   | interp_reference_12
+Yes      | Calc   | reference_13   | interp_reference_13
 
 
 Concentrations for high and low calibration tanks (H and L),
@@ -456,46 +461,54 @@ Since the original design of the software was based on the 6400,
   we have matched the variables from the 6800 that correspond to what
   is needed for the software based on the 6400 variable names.
 
+The table below lists variables that are required or not.
+Timing and calculation variables are required.
+Variables only used for plotting for diagnostics are not strictly required, but
+  the software currently does not handle them if they are missing.
+
+The template can provide constants that override some Licor variables (see below).
+* `xout` and `StmRat` are not used in calculations or plots.
 
 
-Required | Licor 6400    | Licor 6800   | isogasex var name
----------|---------------|--------------|------------------
-Yes      | Obs           | obs          | Obs
-Yes      | HHMMSS        | hhmmss       | HHMMSS
-Yes      | FTime         | elapsed      | FTime
-Yes      | Photo         | A            | A
-Yes      | Trmmol (mmol) | E (mol)*1000 | E
-Yes      | Tair          | Tair         | temp_air
-Yes      | Tleaf         | Tleaf        | temp_leaf
-Yes      | TBlk          | Tirga        | temp_block
-Yes      | CO2R          | CO2_r        | Ce
-Yes      | CO2S          | CO2_s        | Co
-Yes      | H2OR          | H2O_r        | xin
-Yes      | H2OS          | H2O_s        | xout
-Yes      | RH_R          | ?            | rh_ref
-Yes      | RH_S          | RHcham       | rh_sam
-Yes      | Flow          | Flow         | uin
-Yes      | PARi          | Qin          | par_int
-Yes      | PARo          | Qamb_out     | par_ext
-Yes      | Press         | Pa           | Atm_press
-Yes      | CsMch         | ?            | CsMch
-Yes      | HsMch         | ?            | HsMch
-Yes      | StableF       | ?            | StableF
-Yes      | Status        | ?            | Status
--        | Cond          | gtc          | gsc
--        | Ci            | Ci           | Ci
--        | VpdL          | VPDleaf      | VPD
--        | Area          | S            | La
--        | StmRat        | -            | StmRat
--        | BLCond        | gbw          | gbw
--        | EBal?         | -            | -
--        | CTleaf        | -            | -
--        | BLC_1         | -            | -
--        | BLCslope      | -            | -
--        | BLCoffst      | -            | -
--        | f_parin       | -            | -
--        | f_parout      | -            | -
--        | alphaK        | -            | -
+
+Required | Use    | Override | Licor 6400    | Licor 6800   | isogasex var name
+---------|--------|----------|---------------|--------------|------------------
+No       | Time   | No       | Obs           | obs          | Obs
+Yes      | Time   | No       | HHMMSS        | hhmmss       | HHMMSS
+Yes      | Time   | No       | FTime         | elapsed      | FTime
+Yes      | Calc   | No       | Photo         | A            | A
+Yes      | Calc   | No       | Trmmol (mmol) | E (mol)*1000 | E
+Yes      | Plot   | No       | Tair          | Tair         | temp_air
+Yes      | Plot   | No       | Tleaf         | Tleaf        | temp_leaf
+No       | .      | No       | TBlk          | Tirga        | temp_block
+No       | Plot   | No       | CO2R          | CO2_r        | Ce
+No       | .      | Yes      | CO2S          | CO2_s        | Co
+Yes      | Plot   | No       | H2OR          | H2O_r        | xin
+No       | .      | No       | H2OS          | H2O_s        | xout
+No       | .      | No       | RH_R          | ?            | rh_ref
+No       | .      | No       | RH_S          | RHcham       | rh_sam
+Yes      | Calc   | Yes      | Flow          | Flow         | uin
+No       | Plot   | No       | PARi          | Qin          | par_int
+No       | Plot   | No       | PARo          | Qamb_out     | par_ext
+Yes      | Calc   | No       | Press         | Pa           | Atm_press
+No       | .      | No       | CsMch         | ?            | CsMch
+No       | .      | No       | HsMch         | ?            | HsMch
+No       | .      | No       | StableF       | ?            | StableF
+No       | .      | No       | Status        | ?            | Status
+Yes      | Calc   | No       | Cond          | gtc          | gsc
+No       | .      | No       | Ci            | Ci           | Ci
+No       | Plot   | No       | VpdL          | VPDleaf      | VPD
+Yes      | Calc   | Yes      | Area          | S            | La
+No       | .      | Yes      | StmRat        | -            | StmRat
+Yes      | Calc   | Yes      | BLCond        | gbw          | gbw
+No       | .      | No       | EBal?         | -            | -
+No       | .      | No       | CTleaf        | -            | -
+No       | .      | No       | BLC_1         | -            | -
+No       | .      | No       | BLCslope      | -            | -
+No       | .      | No       | BLCoffst      | -            | -
+No       | .      | No       | f_parin       | -            | -
+No       | .      | No       | f_parout      | -            | -
+No       | .      | No       | alphaK        | -            | -
 
 $$
 \begin{aligned}
@@ -1125,128 +1138,4 @@ Cc
 \end{aligned}
 $$
 
-
-
-names(dat$data)
-"remark"
-"obs"
-"time"
-"elapsed"
-"date"
-"hhmmss"
-"Ci(m)"
-"H2O_B"
-"P_B"
-"T_B"
-"Dp_B"
-"CO2R_DAC"
-"H2OR_DAC"
-"Flow_s+r"
-"Flow_S+R"
-"gtc_ mmol"
-"gtc*_mmol"
-"rtc*-rtc"
-"TIME"
-"E"
-"A"
-"Ca"
-"Ci"
-"Pci"
-"Pca"
-"gsw"
-"gbw"
-"gtw"
-"gtc"
-"Rabs"
-"TleafEB"
-"TleafCnd"
-"SVPleaf"
-"RHcham"
-"VPcham"
-"SVPcham"
-"VPDleaf"
-"LatHFlux"
-"SenHFlux"
-"NetTherm"
-"EBSum"
-"blfa_1"
-"blfa_2"
-"blfa_3"
-"Leak"
-"LeakPct"
-"CorrFact"
-"CorrFactPct"
-"Fan"
-"Qin"
-"Qabs"
-"alpha"
-"convert"
-"S"
-"K"
-"Geometry"
-"TIME_1"
-"CO2_s"
-"CO2_r"
-"H2O_s"
-"H2O_r"
-"Flow"
-"Pa"
-"?Pcham"
-"Tair"
-"Tleaf"
-"Tleaf2"
-"Offset"
-"Offset2"
-"Fan_speed"
-"Qamb_in"
-"Qamb_out"
-"time_1"
-"hhmmss_1"
-"count"
-"co2_adj"
-"h2o_adj"
-"co2_at"
-"h2o_at"
-"co2_cv"
-"h2o_cv"
-"ADC_CH1"
-"ADC_CH2"
-"ADC_CH3"
-"ADC_CH4"
-"ADC_CH5"
-"ADC_CH6"
-"ADC_CH7"
-"ADC_CH8"
-"DAC_1"
-"DAC_2"
-"DAC_3"
-"DAC_4"
-"GPIO"
-"GPIO_dir"
-"excit_5v"
-"power_12v"
-"power_5v"
-"ch1_pullup"
-"AuxPower"
-"MatchValveR"
-"MatchValveS"
-"MatchCO2"
-"MatchH2O"
-"DIAG"
-"Flow_s"
-"Flow_r"
-"Txchg"
-"Tirga"
-"Tchopper"
-"Ts"
-"Tr"
-"CO2_%"
-"Desiccant_%"
-"Humidifier_%"
-"Txchg_sp"
-"CO2_r_sp"
-"H2O_r_sp"
-"SS_s"
-"SS_r"
-"X120"
 
